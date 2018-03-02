@@ -13,13 +13,13 @@ class Admin extends CI_Controller {
 	}
 
 	public function login(){
-		// $mail = $this->input->post('mail');
-		// $pass = $this->input->post('pass');
+		$mail = $this->input->post('mail');
+		$pass = $this->input->post('pass');
 
-		$CI =&get_instance();
+		
 
-		$CI->load->model('beheer_model');
-		$data['return'] = $CI->beheer_model->login($mail, $pass);
+		$this->load->model('beheer_model');
+		$data['return'] = $this->beheer_model->login($mail, $pass);
 		
 		$this->load->view('req_output', $data);
 	}
