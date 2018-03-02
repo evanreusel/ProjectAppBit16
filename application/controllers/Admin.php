@@ -12,9 +12,9 @@ class Admin extends CI_Controller {
 		$this->load->view('login');
 	}
 
-	public function login(){
-		$username = $this->input->post('username');
-		$pass = $this->input->post('pass');
+	public function login($username, $pass){
+		// $username = $this->input->post('username');
+		// $pass = $this->input->post('pass');
 		$data['return'] = '';
 
 		if($username != '' && $pass != ''){
