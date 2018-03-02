@@ -12,9 +12,13 @@ class Admin extends CI_Controller {
 		$this->load->view('login');
 	}
 
-	public function login($username, $pass){
-		$this->load->model('beheer_model');
-		$data['return'] = json_encode($this->beheer_model->login($username, $pass));
+	public function login($username = null, $pass = null){
+		$data['return'] = '';
+		
+		if(!is_null($username) && !is_null($pass)){
+			$this->load->model('beheer_model');
+			$data['return'] = json_encode($this->beheer_model->login($username, $pass));
+		}
 		
 		$this->load->view('req_output', $data);
 	}
