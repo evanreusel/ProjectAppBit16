@@ -4,7 +4,7 @@ class Beheer_model extends CI_Model {
     {
         $this->db->where(array('mail' => $mail, 'pass' => $pass));
         $query = $this->db->get('Beheer');
-        return json_encode($query->result());
+        return $query->result();
     }
 }
 ?>
