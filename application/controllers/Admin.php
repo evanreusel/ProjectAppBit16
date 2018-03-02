@@ -19,8 +19,8 @@ class Admin extends CI_Controller {
 		$mail = $this->input->post('mail');
 		$pass = $this->input->post('pass');
 
-		$this->load->model('beheer_model');
-		$data['return'] = $this->beheer_model->login($mail, $pass);
+		$this->load->model('Beheer_model');
+		$data['return'] = $this->Beheer_model->login($mail, $pass);
 		
 		$this->load->view('req_output', $data);
 	}
