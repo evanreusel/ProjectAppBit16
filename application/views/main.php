@@ -67,7 +67,7 @@
 		<h1>Hoi</h1>
 
 	</div>
-<script src="assets/js/bootstrap.js"/>
-<script src="assets/js/mdb.min.js"/>
+<script src="assets/js/bootstrap.js" />
+<script src="assets/js/mdb.min.js" />
 </body>
 </html>
