@@ -5,12 +5,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-	<script src="main.js"></script>
+	<script src="assets/js/jquery-3.2.1.min.js"/></script>
+
+	<script>
+		$(document).ready(function(){
+			alert("ok");
+		});
+	</script>
 </head>
 <body>
 	<h1>
-		MAIN PAGE
+		LOGIN
 	</h1>
 </body>
 </html>
