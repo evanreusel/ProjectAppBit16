@@ -13,7 +13,7 @@
 <body>
 <!--Navbar-->
 <?php
-$this->load->view('header');
+$this->load->view('template/header');
 ?>
 <!--/.Navbar-->
 	<div class="container">
@@ -22,7 +22,7 @@ $this->load->view('header');
 	</div>
 <!--Footer-->
 <?php
-$this->load->view('footer');
+$this->load->view('template/footer');
 ?>
 <!--/.Footer-->
 <script src="assets/js/bootstrap.js"/>
