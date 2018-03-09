@@ -14,7 +14,8 @@ class Main extends CI_Controller {
 	{
 	    //$data['message'] = "hello";
 	    $data['view'] = 'home';
-	    $data['css_files'] = array("home.css");
+		$data['css_files'] = array("home.css");
+		$data['clearscreen'] = true;
 		$this->load->view('template/main', $data);
 	}
 
