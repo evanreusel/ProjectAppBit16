@@ -9,13 +9,14 @@
                 There you go admin
             </a>
             <p>
-                Samples by mail
+                Sample signins by mail
             </p>
             <a href="/index.php/main/signin/1/0prol2vZH3IgYBMapBI2">
-                Sample student login
+                Sample student login (person with id=1)
             </a>
+            <br/>
             <a href="/index.php/main/signin/6/FR8QqonWJ56bSjokRRPH">
-                Sample docent login
+                Sample docent login (person with id=6)
             </a>
         </div>
     </div>
