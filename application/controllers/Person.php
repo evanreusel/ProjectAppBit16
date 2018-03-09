@@ -23,7 +23,7 @@ class Person extends CI_Controller {
 	
 	// DEFAULT
 	public function index($id = null, $token = null)
-	{	
+	{
 		// Check login vals
 		if(!is_null($id) && !is_null($token)){
 			// Get data from db
@@ -35,9 +35,12 @@ class Person extends CI_Controller {
                 $this->session->set_userdata('id', $login_return->id);
                 $this->session->set_userdata('role', $login_return->soort);
 
-                print_r($login_return);
                 // redirect('/' . strtolower($login_return->soort) . '/index', 'location');
+				$data['return'] = json_encode($login_return);
 			}
+			
+			// Print in default api output view
+			$this->load->view('req_output', $data);
         }
 
         // Redir to default page
