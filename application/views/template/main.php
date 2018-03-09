@@ -30,8 +30,8 @@
         $this->load->view('template/footer');
         ?>
         <!--/.Footer-->
+        <script src="assets/js/jquery-3.2.1.min.js"></script>
         <script src="assets/js/bootstrap.js"></script>
         <script src="assets/js/mdb.min.js"></script>
-        <script src="assets/js/jquery-3.2.1.min.js"></script>
     </body>
 </html>
