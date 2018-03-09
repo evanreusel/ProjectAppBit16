@@ -46,7 +46,7 @@
 
 <script>
 	$('#btnSend').click(function () {
-		$.get('<?php echo base_url(); ?>/index.php/admin/login/' + $('#inpUsername').val() + '/' + $('#inpPass').val(), function (data) {
+		$.get('<?php echo base_url(); ?>index.php/admin/login/' + $('#inpUsername').val() + '/' + $('#inpPass').val(), function (data) {
 			alert(data);
 		});
 	});
