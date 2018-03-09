@@ -9,9 +9,9 @@ class Admin extends CI_Controller {
 		
 	public function index()
 	{
-		$data['message'] = "hello";
+		$data['message'] = "Welcome admin | Login";
 	    $data['view'] = 'login';
-		$data['css_files'] = array("home.css");
+		$data['css_files'] = array("login.css");
 		$data['clearscreen'] = true;
 		$this->load->view('template/main', $data);
 	}

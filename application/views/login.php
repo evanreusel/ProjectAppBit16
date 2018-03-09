@@ -1,43 +1,45 @@
-<div class="row">
-	<div class="col"></div>
-	<div class="col-6">
-		<!--Modal: Contact form-->
-		<div class="modal-dialog cascading-modal" role="document">
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col-6">
+			<!--Modal: Contact form-->
+			<div class="modal-dialog cascading-modal" role="document">
 
-			<!--Content-->
-			<div class="modal-content">
+				<!--Content-->
+				<div class="modal-content">
 
-				<!--Header-->
-				<div class="modal-header info-color white-text">
-					<h4 class="title">
-						<i class="fa fa-pencil"></i> Admin login
-					</h4>
-				</div>
-				<!--Body-->
-				<div class="modal-body">
-					<!-- input username -->
-					<label for="username">Username</label>
-					<input type="text" id="username" class="form-control form-control-sm">
-
-					<br>
-
-					<!-- input password -->
-					<label for="pass">Password</label>
-					<input type="password" id="pass" class="form-control form-control-sm">
-
-					<br>
-
-					<div class="text-center mt-4 mb-2">
-						<button class="btn btn-info">Send
-							<i class="fa fa-send ml-2"></i>
-						</button>
+					<!--Header-->
+					<div class="modal-header info-color white-text">
+						<h4 class="title">
+							<i class="fa fa-pencil"></i> Admin login
+						</h4>
 					</div>
+					<!--Body-->
+					<div class="modal-body">
+						<!-- input username -->
+						<label for="username">Username</label>
+						<input type="text" id="username" class="form-control form-control-sm">
 
+						<br>
+
+						<!-- input password -->
+						<label for="pass">Password</label>
+						<input type="password" id="pass" class="form-control form-control-sm">
+
+						<br>
+
+						<div class="text-center mt-4 mb-2">
+							<button class="btn btn-info">Send
+								<i class="fa fa-send ml-2"></i>
+							</button>
+						</div>
+
+					</div>
 				</div>
+				<!--/.Content-->
 			</div>
-			<!--/.Content-->
+			<!--/Modal: Contact form-->
 		</div>
-		<!--/Modal: Contact form-->
+		<div class="col"></div>
 	</div>
-	<div class="col"></div>
 </div>
