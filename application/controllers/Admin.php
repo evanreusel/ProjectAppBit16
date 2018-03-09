@@ -59,7 +59,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function dash($view = null){
-		if(!is_null($view))
+		if(is_null($view) )
 		{
 			$view = 'home';
 		}
