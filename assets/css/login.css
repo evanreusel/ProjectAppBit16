@@ -1,4 +1,4 @@
-body{
+html{
     background-image: url("../img/background/TM.jpg");
     background-size: cover;
     background-position: top;
@@ -12,4 +12,8 @@ body{
     position: absolute;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content_container .row{
+    width: 100%;
 }
