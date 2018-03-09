@@ -22,13 +22,13 @@ class Person extends CI_Controller {
 	}
 	
 	// DEFAULT
-	public function index($userid = null, $token = null)
+	public function index($id = null, $token = null)
 	{	
 		// Check login vals
-		if(!is_null($userid) && !is_null($token)){
+		if(!is_null($id) && !is_null($token)){
 			// Get data from db
 			$this->load->model('persoon_model');
-			$login_return = $this->persoon_model->login($userid, $token);
+			$login_return = $this->persoon_model->login($id, $token);
 
 			// Set session vars if succeeded
 			if($login_return != ''){
