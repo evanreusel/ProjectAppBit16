@@ -9,6 +9,8 @@ class Admin extends CI_Controller {
 		$this->load->library('session');
 
 		//check if loged in
+		echo $this->base_url();
+		// if($this->base_url() != '')
 		if(!$this->session->has_userdata('id')){
 			redirect('/admin/index', 'location');
 		}
