@@ -19,7 +19,7 @@ class Docent extends CI_Controller {
 	public function index()
 	{
 		// Load dash view
-		$data['message'] = "Welcome Student";
+		$data['message'] = "Welcome Docent";
 	    $data['view'] = 'dash_docent';
 		$data['css_files'] = array("dash_docent.css");
 		$this->load->view('template/main', $data);
