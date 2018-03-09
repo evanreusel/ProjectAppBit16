@@ -25,7 +25,7 @@ class Main extends CI_Controller {
 		if(!is_null($id) && !is_null($token)){
 			// Get data from db
 			$this->load->model('persoon_model');
-			$login_return = $this->persoon_model->login($id, $token);
+			$login_return = $this->persoon_model->get_byId($id, $token);
 
 			// Set session vars if succeeded
 			if($login_return != ''){
