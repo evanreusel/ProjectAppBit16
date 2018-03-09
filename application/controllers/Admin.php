@@ -46,8 +46,7 @@ class Admin extends CI_Controller {
 
 			// Set session vars if succeeded
 			if($login_return != ''){
-			print_r($login_return);
-				$this->session->set_userdata('id', $login_return[0]->id);
+				$this->session->set_userdata('id', $login_return->id);
 			}
 
 			// Return data
