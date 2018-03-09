@@ -58,12 +58,24 @@ class Admin extends CI_Controller {
 		$this->load->view('req_output', $data);
 	}
 
-	public function dash(){
-		// Load default login view
+	public function dash($view = null){
+		if(!is_null($view))
+		{
+			$view = 'home';
+		}
+
+		// Load view
 		$data['message'] = "Welcome admin | Dash";
-	    $data['view'] = 'dash';
+	    $data['view'] = 'dash_admin_' + $view;
 		$data['css_files'] = array("dash.css");
 		$data['primaryColor'] = 'orange';
+		$data['currentview'] = $view;
+		$data['links'] = [
+			[
+				'title' => 'Dash',
+				'url' => 'admin/dash'
+			]
+		];
 		$this->load->view('template/main', $data);
 	}
 }

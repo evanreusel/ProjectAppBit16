@@ -1,12 +1,17 @@
 <?php
     // Set default navspecs
     $nav_specs = [
-        'color' => 'primary-color'
+        'color' => 'primary-color',
+        'links' => []
     ];
 
     // Check custom
     if(isset($primaryColor)){
         $nav_specs['color'] = $primaryColor;    
+    }
+
+    if(isset($links)){
+        $nav_specs['links'] = $links;
     }
 ?>
 
@@ -51,12 +56,6 @@
 
         </ul>
         <!-- Links -->
-
-        <form class="form-inline">
-            <div class="md-form mt-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            </div>
-        </form>
     </div>
     <!-- Collapsible content -->
 
