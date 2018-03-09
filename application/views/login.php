@@ -17,19 +17,19 @@
 					<!--Body-->
 					<div class="modal-body">
 						<!-- input username -->
-						<label for="username">Username</label>
-						<input type="text" id="username" class="form-control form-control-sm">
+						<label for="inpUsername">Username</label>
+						<input type="text" id="inpUsername" class="form-control form-control-sm">
 
 						<br>
 
 						<!-- input password -->
-						<label for="pass">Password</label>
-						<input type="password" id="pass" class="form-control form-control-sm">
+						<label for="inpPass">Password</label>
+						<input type="password" id="inpPass" class="form-control form-control-sm">
 
 						<br>
 
 						<div class="text-center mt-4 mb-2">
-							<button class="btn btn-info">Send
+							<button id="btnSend" class="btn btn-info">Send
 								<i class="fa fa-send ml-2"></i>
 							</button>
 						</div>
@@ -43,3 +43,11 @@
 		<div class="col"></div>
 	</div>
 </div>
+
+<script>
+	$('#btnSend').click(function () {
+		$.get('<?php echo base_url(); ?>index.php/admin/login/' + $('#inpUsername').val() + '/' + $('#inpPass').val(), function (data) {
+			alert(data);
+		});
+	});
+</script>

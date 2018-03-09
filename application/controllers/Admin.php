@@ -5,6 +5,16 @@ class Admin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+
+		$this->load->library('session');
+
+		$is_home = ($this->router->class === 'admin' && $this->router->method === 'index') ? true : false;
+
+		if(!$is_home){
+			if(!$this->session->has_userdata('id')){
+				redirect('/admin/index', 'location');
+			}
+		}
 	}
 		
 	public function index()
@@ -21,7 +31,12 @@ class Admin extends CI_Controller {
 		
 		if(!is_null($username) && !is_null($pass)){
 			$this->load->model('beheer_model');
-			$data['return'] = json_encode($this->beheer_model->login($username, $pass));
+			$login_return = $this->beheer_model->login($username, $pass);
+
+			if($login_return != ''){
+				$this->session->set_userdata('id', $login_return->id);
+			}
+			$data['return'] = json_encode($login_return);
 		}
 		
 		$this->load->view('req_output', $data);
