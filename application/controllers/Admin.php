@@ -6,19 +6,26 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 
+		// Autoload
 		$this->load->library('session');
 
+		// Check location is home of admin controller
 		$is_home = ($this->router->class === 'admin' && $this->router->method === 'index') ? true : false;
+		$is_api_login = ($this->router->class === 'admin' && $this->router->method === 'login') ? true : false;
 
-		if(!$is_home){
+		// Homepage check
+		if(!$is_home && !$is_api_login){
+			// Redirect to home if no session started
 			if(!$this->session->has_userdata('id')){
 				redirect('/admin/index', 'location');
 			}
 		}
 	}
-		
+	
+	// DEFAULT
 	public function index()
 	{
+		// Load default login view
 		$data['message'] = "Welcome admin | Login";
 	    $data['view'] = 'login';
 		$data['css_files'] = array("login.css");
@@ -26,19 +33,36 @@ class Admin extends CI_Controller {
 		$this->load->view('template/main', $data);
 	}
 
+	// API
+	// LOGIN
 	public function login($username = null, $pass = null){
 		$data['return'] = '';
 		
+		// Check login vals
 		if(!is_null($username) && !is_null($pass)){
+			// Get data from db
 			$this->load->model('beheer_model');
 			$login_return = $this->beheer_model->login($username, $pass);
 
+			// Set session vars if succeeded
 			if($login_return != ''){
 				$this->session->set_userdata('id', $login_return->id);
 			}
+
+			// Return data
 			$data['return'] = json_encode($login_return);
 		}
 		
+		// Print in default api output view
 		$this->load->view('req_output', $data);
+	}
+
+	public function dash(){
+		// Load default login view
+		$data['message'] = "Welcome admin | Dash";
+	    $data['view'] = 'dash';
+		$data['css_files'] = array("dash.css");
+		$data['clearscreen'] = true;
+		$this->load->view('template/main', $data);
 	}
 }
