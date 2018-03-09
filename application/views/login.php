@@ -10,35 +10,22 @@
 				<!--Header-->
 				<div class="modal-header info-color white-text">
 					<h4 class="title">
-						<i class="fa fa-pencil"></i> Contact form</h4>
-					<button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
+						<i class="fa fa-pencil"></i> Admin login
+					</h4>
 				</div>
 				<!--Body-->
 				<div class="modal-body">
-
-					<!-- Default input name -->
-					<label for="defaultFormNameModalEx">Your name</label>
-					<input type="text" id="defaultFormNameModalEx" class="form-control form-control-sm">
-
-					<br>
-
-					<!-- Default input email -->
-					<label for="defaultFormEmailModalEx">Your email</label>
-					<input type="password" id="defaultFormEmailModalEx" class="form-control form-control-sm">
+					<!-- input username -->
+					<label for="username">Username</label>
+					<input type="text" id="username" class="form-control form-control-sm">
 
 					<br>
 
-					<!-- Default input subject -->
-					<label for="defaultFormSubjectModalEx">Subject</label>
-					<input type="text" id="defaultFormSubjectModalEx" class="form-control form-control-sm">
+					<!-- input password -->
+					<label for="pass">Password</label>
+					<input type="password" id="pass" class="form-control form-control-sm">
 
 					<br>
-
-					<!-- Default textarea message -->
-					<label for="defaultFormMessageModalEx">Your message</label>
-					<textarea type="text" id="defaultFormMessageModalEx" class="md-textarea form-control"></textarea>
 
 					<div class="text-center mt-4 mb-2">
 						<button class="btn btn-info">Send
