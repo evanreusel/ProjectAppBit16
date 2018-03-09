@@ -1,3 +1,3 @@
 <div class="container-fluid">
-    <h1>Home Page</h1>
+    <h1>Home Page <?php echo $message;?></h1>
 </div>
