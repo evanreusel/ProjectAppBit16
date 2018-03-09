@@ -29,7 +29,7 @@
 						<br>
 
 						<div class="text-center mt-4 mb-2">
-							<button class="btn btn-info">Send
+							<button id="btnSend" class="btn btn-info">Send
 								<i class="fa fa-send ml-2"></i>
 							</button>
 						</div>
@@ -45,7 +45,9 @@
 </div>
 
 <script>
-	$.get('<?php echo base_url(); ?>/index.php/admin/login/' + $('#inpUsername').val() + '/' + $('#inpPass').val(), function (data) {
-		alert(data);
+	$('#btnSend').click(function () {
+		$.get('<?php echo base_url(); ?>/index.php/admin/login/' + $('#inpUsername').val() + '/' + $('#inpPass').val(), function (data) {
+			alert(data);
+		});
 	});
 </script>
