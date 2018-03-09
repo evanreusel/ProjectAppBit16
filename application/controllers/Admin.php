@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		// Load default login view
-		$data['message'] = $this->session->userdata('id') . "Welcome admin | Login";
+		$data['message'] = "Welcome admin | Login";
 	    $data['view'] = 'login';
 		$data['css_files'] = array("login.css");
 		$data['clearscreen'] = true;
@@ -55,5 +55,14 @@ class Admin extends CI_Controller {
 		
 		// Print in default api output view
 		$this->load->view('req_output', $data);
+	}
+
+	public function dash(){
+		// Load default login view
+		$data['message'] = "Welcome admin | Dash";
+	    $data['view'] = 'dash';
+		$data['css_files'] = array("dash.css");
+		$data['clearscreen'] = true;
+		$this->load->view('template/main', $data);
 	}
 }
