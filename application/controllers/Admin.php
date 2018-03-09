@@ -15,7 +15,7 @@ class Admin extends CI_Controller {
 
 		// Homepage check
 		if(!$is_home && !$is_api_login){
-			// Redirect to login if no session started
+			// Redirect to home if no session started
 			if(!$this->session->has_userdata('id')){
 				redirect('/admin/index', 'location');
 			}
@@ -46,6 +46,7 @@ class Admin extends CI_Controller {
 
 			// Set session vars if succeeded
 			if($login_return != ''){
+			print_r($login_return->id);
 				$this->session->set_userdata('id', $login_return->id);
 			}
 
