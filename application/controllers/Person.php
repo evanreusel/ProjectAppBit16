@@ -13,12 +13,12 @@ class Person extends CI_Controller {
 		$is_home = ($this->router->class === 'person' && $this->router->method === 'index') ? true : false;
 
 		// Homepage check
-		// if(!$is_home){
-		// 	// Redirect to default page if no session set
-		// 	if(!$this->session->has_userdata('id')){
-		// 		redirect('/main/index', 'location');
-		// 	}
-		// }
+		if(!$is_home){
+			// Redirect to default page if no session set
+			if(!$this->session->has_userdata('id')){
+				redirect('/main/index', 'location');
+			}
+		}
 	}
 	
 	// DEFAULT
@@ -35,15 +35,11 @@ class Person extends CI_Controller {
                 $this->session->set_userdata('id', $login_return->id);
                 $this->session->set_userdata('role', $login_return->soort);
 
-                // redirect('/' . strtolower($login_return->soort) . '/index', 'location');
-				$data['return'] = json_encode($login_return);
+                redirect('/' . strtolower($login_return->soort) . '/index', 'location');
 			}
-			
-			// Print in default api output view
-			$this->load->view('req_output', $data);
         }
 
         // Redir to default page
-        // redirect('/main/index', 'location');
+        redirect('/main/index', 'location');
 	}
 }
