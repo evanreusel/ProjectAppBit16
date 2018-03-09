@@ -1,5 +1,17 @@
+<?php
+    // Set default navspecs
+    $nav_specs = [
+        'color' => 'primary-color'
+    ];
+
+    // Check custom
+    if(isset($primaryColor)){
+        $nav_specs['color'] = $primaryColor;    
+    }
+?>
+
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+<nav class="navbar navbar-expand-lg navbar-dark <?php echo $nav_specs['color']; ?>">
 
     <!-- Navbar brand -->
     <a class="navbar-brand" href="#">Navbar</a>
