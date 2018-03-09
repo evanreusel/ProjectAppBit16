@@ -66,7 +66,7 @@ class Admin extends CI_Controller {
 
 		// Load view
 		$data['message'] = "Welcome admin | Dash";
-	    $data['view'] = 'dash_admin_' + $view;
+	    $data['view'] = 'dash_admin_' . $view;
 		$data['css_files'] = array("dash.css");
 		$data['primaryColor'] = 'orange';
 		$data['currentview'] = $view;
