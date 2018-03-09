@@ -11,7 +11,8 @@ class Admin extends CI_Controller {
 	{
 		$data['message'] = "hello";
 	    $data['view'] = 'login';
-	    $data['css_files'] = array("home.css");
+		$data['css_files'] = array("home.css");
+		$data['clearscreen'] = true;
 		$this->load->view('template/main', $data);
 	}
 

@@ -19,7 +19,9 @@
     <body>
         <!--Navbar-->
         <?php
+        if(!isset($clearscreen)){
         $this->load->view('template/header');
+        }
         ?>
         <!--/.Navbar-->
         <?php
@@ -27,7 +29,9 @@
         ?>
         <!--Footer-->
         <?php
+        if(!isset($clearscreen)){
         $this->load->view('template/footer');
+        }
         ?>
         <!--/.Footer-->
         <script src="<?php echo base_url(); ?>/assets/js/jquery-3.2.1.min.js"></script>
