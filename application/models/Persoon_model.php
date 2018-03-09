@@ -5,7 +5,7 @@ class Persoon_model extends CI_Model {
         $this->db->where(array('id' => $id, 'token' => $token));
         $query = $this->db->get('Persoon');
 
-        return $query->result();
+        return $query->result()[0];
     }
 }
 ?>
