@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		// Load default login view
-		$data['message'] = $this->session->get_userdata('id') . "Welcome admin | Login";
+		$data['message'] = $this->session->userdata('id') . "Welcome admin | Login";
 	    $data['view'] = 'login';
 		$data['css_files'] = array("login.css");
 		$data['clearscreen'] = true;
