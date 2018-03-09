@@ -1,5 +1,11 @@
 body{
     background-image: url("../img/background/TM.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: top;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    width: 100%;
 }
