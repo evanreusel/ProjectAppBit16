@@ -12,7 +12,7 @@ class Main extends CI_Controller {
 	// Default page
 	public function index()
 	{
-	    //$data['message'] = "hello";
+	    $data['message'] = "Hi there";
 	    $data['view'] = 'home';
 		$data['css_files'] = array("home.css");
 		$data['clearscreen'] = true;
