@@ -35,7 +35,8 @@ class Person extends CI_Controller {
                 $this->session->set_userdata('id', $login_return->id);
                 $this->session->set_userdata('role', $login_return->soort);
 
-                redirect('/' . strtolower($login_return->soort) . '/index', 'location');
+                print_r($login_return);
+                // redirect('/' . strtolower($login_return->soort) . '/index', 'location');
 			}
         }
 
