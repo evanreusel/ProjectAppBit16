@@ -47,6 +47,7 @@ class Admin extends CI_Controller {
 			// Set session vars if succeeded
 			if($login_return != ''){
 				$this->session->set_userdata('id', $login_return->id);
+				$this->session->set_userdata('role', 'admin');
 			}
 
 			// Return data
@@ -62,7 +63,6 @@ class Admin extends CI_Controller {
 		$data['message'] = "Welcome admin | Dash";
 	    $data['view'] = 'dash';
 		$data['css_files'] = array("dash.css");
-		$data['clearscreen'] = true;
 		$this->load->view('template/main', $data);
 	}
 }
