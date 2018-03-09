@@ -8,6 +8,11 @@
         <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/mdb.min.css"/>
         <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>/assets/css/style.css"/>
+        
+        <script src="<?php echo base_url(); ?>/assets/js/jquery-3.2.1.min.js"></script>
+        <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
+        <script src="<?php echo base_url(); ?>/assets/js/mdb.min.js"></script>
+        
         <?php
         foreach ($css_files as $file)
         {?>
@@ -34,8 +39,5 @@
         }
         ?>
         <!--/.Footer-->
-        <script src="<?php echo base_url(); ?>/assets/js/jquery-3.2.1.min.js"></script>
-        <script src="<?php echo base_url(); ?>/assets/js/bootstrap.js"></script>
-        <script src="<?php echo base_url(); ?>/assets/js/mdb.min.js"></script>
     </body>
 </html>
