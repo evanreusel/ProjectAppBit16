@@ -10,7 +10,7 @@ class Person extends CI_Controller {
 		$this->load->library('session');
 
 		// Check location is home of admin controller
-		$is_home = ($this->router->class === 'person' && $this->router->method === 'index') ? true : false;
+		$is_home = ($this->router->class === 'person' && $this->router->method === 'signin') ? true : false;
 
 		// Homepage check
 		if(!$is_home){
@@ -20,9 +20,13 @@ class Person extends CI_Controller {
 			}
 		}
 	}
+
+	public function index(){
+		redirect('/main/index', 'location');
+	}
 	
 	// DEFAULT
-	public function index($id = null, $token = null)
+	public function signin($id = null, $token = null)
 	{
 		// Check login vals
 		if(!is_null($id) && !is_null($token)){
