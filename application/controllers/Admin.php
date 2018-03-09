@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
 
 		$this->load->library('session');
 
-		$is_home = ($this->router->fetch_class() === 'Admin' && $this->router->fetch_method() === 'index') ? true : false;
+		$is_home = ($this->router->class === 'Admin' && $this->router->method === 'index') ? true : false;
 
 		if(!$is_home){
 			if(!$this->session->has_userdata('id')){
