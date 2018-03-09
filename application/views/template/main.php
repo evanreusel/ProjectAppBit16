@@ -29,7 +29,8 @@
         ?>
         <!--Footer-->
         <?php
-        if(!isset($clearscreen)){
+        if(!isset($clearscreen))
+        {
         $this->load->view('template/footer');
         }
         ?>

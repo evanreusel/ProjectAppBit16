@@ -24,7 +24,7 @@ class Main extends CI_Controller {
 	 */
 	public function index()
 	{
-	    $data['message'] = "hello";
+	    //$data['message'] = "hello";
 	    $data['view'] = 'home';
 	    $data['css_files'] = array("home.css");
 		$this->load->view('template/main', $data);
