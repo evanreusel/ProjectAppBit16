@@ -5,7 +5,7 @@ class Beheer_model extends CI_Model {
         $this->db->where(array('username' => $username));
         $query = $this->db->get('Beheer');
 
-        if (password_verify($query->row()->pass, $hash)) {
+        if (password_verify($query->row()->pass, $pass)) {
             return $query->result();
         }
     }
