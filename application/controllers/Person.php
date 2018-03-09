@@ -44,6 +44,6 @@ class Person extends CI_Controller {
         }
 
         // Redir to default page
-        redirect('/main/index', 'location');
+        // redirect('/main/index', 'location');
 	}
 }
