@@ -11,7 +11,7 @@ class Beheer_model extends CI_Model {
         echo '</br>';
         echo $pass;
 
-        if (password_verify($query->row()->pass, $pass)) {
+        if (password_verify($pass, $query->row()->pass)) {
             return $query->result();
         }
     }
