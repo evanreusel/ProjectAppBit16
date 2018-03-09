@@ -9,7 +9,10 @@ class Admin extends CI_Controller {
 		
 	public function index()
 	{
-		$this->load->view('login');
+		$data['message'] = "hello";
+	    $data['view'] = 'login';
+	    $data['css_files'] = array("home.css");
+		$this->load->view('template/main', $data);
 	}
 
 	public function login($username = null, $pass = null){
