@@ -6,6 +6,8 @@ class Admin extends CI_Controller {
 	{
 		parent::__construct();
 
+		$this->load->library('session');
+
 		//check if loged in
 		if(!$this->session->has_userdata('id')){
 			redirect('/admin/index', 'location');
