@@ -8,6 +8,7 @@ class Admin extends CI_Controller {
 
 		// Autoload
 		$this->load->library('session');
+		$this->load->helper('form');
 
 		// Check location is home of admin controller
 		$is_home = ($this->router->class === 'admin' && $this->router->method === 'index') ? true : false;
@@ -78,4 +79,65 @@ class Admin extends CI_Controller {
 		];
 		$this->load->view('template/main', $data);
 	}
+
+	public function beheerAdmin(){
+    
+    $this->load->model('Admin_model');
+    $data['admins'] = $this->Admin_model->getAll();
+
+    $this->load->view('admin/adminbeheer',$data);
 }
+
+public function updatepage($id){
+
+    $this->load->model('Admin_model');
+    $data['admin'] = $this->Admin_model->get($id);
+    
+    $this->load->view('admin/newadmin',$data);
+}
+
+	public function update()
+	{
+        $admin = new stdClass();
+
+        $admin->id = $this->input->post('id');
+        $admin->username = $this->input->post('username');
+        $admin->pass =  password_hash($this->input->post('nieuwpass'), PASSWORD_DEFAULT);
+
+        $this->load->model('Admin_model');
+        
+        if($admin->id == 0){
+        $this->Admin_model->new($admin);
+        } else {
+        $this->Admin_model->update($admin);
+        }
+
+		redirect('admin/beheerAdmin');
+	}
+
+    public function nieuwadmin()
+	{        
+		$this->load->view('admin/newadmin');
+	}
+
+     public function verwijder($id)
+	{
+        $this->load->model('Admin_model');
+        $this->Admin_model->verwijder($id);
+		
+		redirect('admin/beheerAdmin');
+	}
+
+    public function json_checkpass(){
+        $id = $_POST['id']; 
+        $oudpass = $_POST['oudpass']; 
+        
+        $this->load->model('Admin_model');
+        $admin = $this->Admin_model->get($id);
+
+        // for first row only and suppose table having data
+        echo json_encode(password_verify($oudpass,$admin->pass));
+    }
+}
+
+?>
