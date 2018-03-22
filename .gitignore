@@ -7,3 +7,7 @@ application/config/database.php
 .idea/vcs.xml
 .idea/workspace.xml
 .vscode/settings.json
+application/config.php
+application/routes.php
+application/autoload.php
+application/config/database.php
