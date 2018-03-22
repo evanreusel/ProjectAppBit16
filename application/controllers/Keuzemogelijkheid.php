@@ -19,8 +19,12 @@ class Keuzemogelijkheid extends CI_Controller{
             
             $data['titel']  = 'Database beheer';
         
-        
-       $this->load->view('keuzemogelijkheid', $data);
+
+            $data['message'] = "Beheer";
+            $data['view'] = 'keuzemogelijkheid';
+            $data['css_files'] = array("dash_docent.css");
+            $this->load->view('template/main', $data);
+       
         
     }
 

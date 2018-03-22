@@ -3,17 +3,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
         <title>keuzemogelijkheden</title>
     </head>
     <body>
-        
+        <ul class="nav nav-tabs">
+        <?php foreach ($activiteiten as $activiteit) {
+                echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
+            
+        }?>
+        </ul>
+        <div class="tab-content">
         <?php foreach ($activiteiten as $activiteit) {
             
-            echo anchor("#",$activiteit->naam,array('class' => 'btn btn-primary'));
+            
 
             $kollommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
-            echo "<table><tr>";
+            echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="primary-color">';
             
                 foreach ($kollommen as $kollom) {
                     
@@ -32,9 +37,11 @@
                    echo "</tr>"; 
             }
 
-            echo "</table>";
+            echo "</table></div>";
 
         }?>
-        
+        </div>
+       
+        <script src="../assets/Keuzemogelijkheid.js"></script>
     </body>
 </html>
