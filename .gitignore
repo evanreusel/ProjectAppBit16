@@ -1,2 +1,9 @@
 _config.yaml
 .DS_Store
+application/config/database.php
+.gitignore
+.idea/modules.xml
+.idea/ProjectAppBit16.iml
+.idea/vcs.xml
+.idea/workspace.xml
+.vscode/settings.json

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7b3c0d51-d6b0-4f93-bf8c-3d35406d4bfd" name="ProjectAb16Erik" url="http://projectab16.ddns.net">
+        <fileTransfer host="projectab16.ddns.net" port="22" rootFolder="/var/www/projectab16erik" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
