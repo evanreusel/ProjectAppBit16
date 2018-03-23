@@ -15,7 +15,6 @@
         </tr>
 
     <?php
-    echo json_encode($data);
     foreach($data['admins'] as $admin){
     echo "<tr> \n";        
     echo "<td>" . $admin->username . "</td> \n";
