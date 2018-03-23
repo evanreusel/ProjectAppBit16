@@ -60,21 +60,22 @@ class Admin extends CI_Controller {
 
 		$data['primaryColor'] = 'orange';										// Primary color (orange for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
+		$data['homelink'] = base_url() . 'index.php/admin/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
 			[
-				'title' => 'Dash',
-				'url' => base_url() . 'index.php/admin/dash/'
+				'title' => 'Keuzemogelijheden',
+				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
 			],
+			[
+				'title' => 'Jaargang',
+				'url' => base_url() . 'index.php/admin/dash/jaargangbeheer/'
+			]
+		];
+		$data['actions'] = [
 			[
 				'title' => 'Admin beheren',
 				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
 			],
-			[
-				'title' => 'Keuzemogelijheden beheren',
-				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
-			]
-		];
-		$data['actions'] = [
 			[
 				'title' => 'Log out',
 				'url' => base_url() . 'index.php/admin/logout/'
