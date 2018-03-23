@@ -31,7 +31,7 @@
                 }
             });
         }
-        
+
         return true;
     }
 
@@ -66,8 +66,7 @@
         $('#nieuwpasscheckerror').hide();
     
         $("#send").click(function(){
-            if(passcheck() && nieuwpassmatch()){
-                alert("submit");             
+            if(passcheck() && nieuwpassmatch()){    
                 $('#adminform').submit();
             }
         });

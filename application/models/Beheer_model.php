@@ -42,11 +42,11 @@ class Beheer_model extends CI_Model {
     function update($admin)
     {
         $this->db->where('id', $admin->id);
-        $this->db->update('Beheer', $this->security->xss_clean($admin));
+        $this->db->update('Beheer', $admin);
     }
 
     function add($admin){
-        $this->db->insert('Beheer', $this->security->xss_clean($admin));
+        $this->db->insert('Beheer', $admin);
         return $this->db->insert_id();
     }
 
