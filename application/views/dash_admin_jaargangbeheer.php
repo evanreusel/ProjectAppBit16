@@ -1,7 +1,3 @@
-<?php
-    echo json_encode($data['jaargangen']);
-?>
-
 <table class="table">
     <tr class="primary-color">
         <th>naam</th>
