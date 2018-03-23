@@ -81,18 +81,12 @@ class Admin extends CI_Controller {
 		//get data for view
 		switch($view){
 			case "adminbeheer":
-			$data['data'] = $this->beheerAdmin();
+				$this->load->model('Admin_model');
+				$data['admins'] = $this->Admin_model->getAll();
 			break;
 		}
 
 		$this->load->view('template/main', $data);
-	}
-
-	public function beheerAdmin(){
-		$this->load->model('Admin_model');
-		$data['admins'] = $this->Admin_model->getAll();
-
-		return $data;
 	}
 
 public function updatepage($id){
