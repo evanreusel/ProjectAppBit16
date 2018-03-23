@@ -23,7 +23,7 @@
     echo "<td>" . anchor("admin/verwijder/$admin->id","<button>Verwijderen</button>") . "</td>";
     echo "</tr> \n";
     }
-    echo '<tr><td rowspan="4">' . anchor("admin/nieuwadmin","<button>Niewe admin</button>") . '</td></tr>';
+    echo '<tr><td rowspan="4">' . anchor("admin/addAdmin","<button>Niewe admin</button>") . '</td></tr>';
     echo "<td>" . anchor("admin","home") . "</td>";
     ?>
     </table>    

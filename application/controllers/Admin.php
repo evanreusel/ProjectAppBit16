@@ -124,11 +124,6 @@ public function updatepage($id){
 		redirect('admin/beheerAdmin');
 	}
 
-    public function nieuwadmin()
-	{        
-		$this->load->view('admin/newadmin');
-	}
-
      public function delete($id)
 	{
         $this->load->model('beheer_model');
