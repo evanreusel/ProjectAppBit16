@@ -68,6 +68,10 @@ class Admin extends CI_Controller {
 			[
 				'title' => 'Admin beheren',
 				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
+			],
+			[
+				'title' => 'Keuzemogelijheden beheren',
+				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
 			]
 		];
 		$data['actions'] = [
@@ -86,6 +90,10 @@ class Admin extends CI_Controller {
 				if($extras != null) {
 					$data['data']['admin'] = $this->beheer_model->get_byId($extras);
 				}
+			break;
+			case "keuzemogelijkheidbeheer":
+				$this->load->model('keuzemogelijkheid_model');
+				$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->getAll();
 			break;
 		}
 
