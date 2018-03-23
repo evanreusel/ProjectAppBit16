@@ -52,7 +52,7 @@ class Plaats extends CI_Controller {
 
         $plaats->id = $this->input->post('id');
 
-        $this->load->model('brouwerij_model');
+        $this->load->model('plaats_model');
         
         if ($plaats->id == 0) {
             $this->plaats_model->insert($plaats);
@@ -60,7 +60,7 @@ class Plaats extends CI_Controller {
             $this->plaats_model->update($plaats);
         }
         
-    redirect("home/index"); 
+        $this->load->view('plaats_toevoegen', $data);
     
         }
 }
