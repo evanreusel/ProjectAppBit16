@@ -18,9 +18,7 @@
                 async: false,
                 type: "GET",
                 dataType:'json',
-                success: function(data){
-                    console.log(data);
-                    
+                success: function(data){                    
                     if(data != null){
                         $('#oudpasserror').hide();
                         return true;
@@ -33,6 +31,9 @@
                 }
             });
         }
+
+        alert('id');
+        return false;
     }
 
     function nieuwpassmatch(){  
