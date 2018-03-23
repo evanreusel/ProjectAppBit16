@@ -121,7 +121,7 @@ public function updatepage($id){
         $this->beheer_model->update($admin);
         }
 
-		redirect('admin/beheerAdmin');
+		redirect('admin/dash/adminbeheer');
 	}
 
      public function delete($id)
@@ -129,7 +129,7 @@ public function updatepage($id){
         $this->load->model('beheer_model');
         $this->beheer_model->delete($id);
 		
-		redirect('admin/beheerAdmin');
+		redirect('admin/dash/adminbeheer');
 	}
 
     public function json_checkpass(){
