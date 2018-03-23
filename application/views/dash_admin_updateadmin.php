@@ -65,7 +65,8 @@
         $('#nieuwpasscheckerror').hide();
     
         $("#send").click(function(){
-            if(passcheck() && nieuwpassmatch()){              
+            if(passcheck() && nieuwpassmatch()){
+                alert("submit");             
                 $('#adminform').submit();
             }
         });
