@@ -17,9 +17,7 @@
 
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark <?php echo $nav_specs['color']; ?>">
-
-        <!-- Navbar brand -->
-        <a class="navbar-brand" href="#">Navbar</a>
+    <img src="<?php echo base_url(); ?>assets/svg/logo.svg">
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -39,7 +37,7 @@
                     </a>
                 </li>
             <?php } ?>
-            
+
             <!-- Dropdown -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
