@@ -48,12 +48,14 @@ class Admin extends CI_Controller {
 		}
 
 		// Load view
-		$data['message'] = "Welcome admin | Dash";
-	    $data['view'] = 'dash_admin_' . $view;
-		$data['css_files'] = array("dash.css");
-		$data['primaryColor'] = 'orange';
-		$data['currentview'] = $view;
-		$data['links'] = [
+		$data['message'] = "Welcome admin | Dash";								// Title
+		$data['view'] = 'dash_admin_' . $view;									// View
+		
+		$data['css_files'] = array("dash.css");									// Default dash style
+
+		$data['primaryColor'] = 'orange';										// Primary color (orange for admin, blue for others??)
+		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
+		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Dash',
 				'url' => base_url() . 'index.php/admin/dash/'
@@ -64,14 +66,14 @@ class Admin extends CI_Controller {
 			]
 		];
 
-		//get data for view
+		// Get data for view
 		switch($view){
 			case "adminbeheer":
-				$data['data']['admins'] = $this->adminbeheer();
+				$data['data']['admins'] = $this->beheer_model->getAll();
 			break;
 			case "updateadmin":
 				if($extras != null) {
-					$data['data']['admin'] = $this->updateadmin($extras);
+					$data['data']['admin'] = $this->beheer_model->get_byId($extras);
 				}
 			break;
 		}
@@ -105,56 +107,41 @@ class Admin extends CI_Controller {
 		$this->load->view('req_output', $data);
 	}
 
-	private function adminbeheer(){
-		$this->load->model('beheer_model');
-		return $this->beheer_model->getAll();
-	}
-
-public function updateadmin($id){
-	if($id != null){
-		$this->load->model('beheer_model');
-		return $this->beheer_model->get_byId($id);
-	}
-
-	return null;
-}
-
+	// FUNCTIONAL
+	// Update admin
 	public function update()
 	{
+		// Setup Admin class
         $admin = new stdClass();
 
         $admin->id = $this->input->post('id');
         $admin->username = $this->input->post('username');
         $admin->pass =  password_hash($this->input->post('nieuwpass'), PASSWORD_DEFAULT);
 
+		// Check data
         $this->load->model('beheer_model');
-        
+		
+		// Add admin or update
         if($admin->id == 0){
-        $this->beheer_model->add($admin);
+       		$this->beheer_model->add($admin);
         } else {
-        $this->beheer_model->update($admin);
+        	$this->beheer_model->update($admin);
         }
 
+		// Redirect to adminbeheer
 		redirect('admin/dash/adminbeheer');
 	}
 
-     public function delete($id)
+	// Delete admin
+    public function delete($id)
 	{
+		// Delete
         $this->load->model('beheer_model');
         $this->beheer_model->delete($id);
 		
+		// Redirect to adminbeheer
 		redirect('admin/dash/adminbeheer');
 	}
-
-    public function json_checkpass(){
-        $id = $_POST['id']; 
-		$oudpass = $_POST['oudpass'];
-        
-        $this->load->model('beheer_model');
-		$admin = $this->beheer_model->get_byId($id);
-		
-		echo json_encode(password_verify($oudpass, $admin->pass));
-    }
 }
 
 ?>
