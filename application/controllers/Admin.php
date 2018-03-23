@@ -41,6 +41,9 @@ class Admin extends CI_Controller {
 	}
 
 	public function dash($view = null, $extras = null){
+		// Beheer model
+		$this->load->model('beheer_model');
+
 		// Check if dashboard view is requested else default homeview
 		if(is_null($view) )
 		{
@@ -50,6 +53,8 @@ class Admin extends CI_Controller {
 		// Load view
 		$data['message'] = "Welcome admin | Dash";								// Title
 		$data['view'] = 'dash_admin_' . $view;									// View
+
+		$data['user'] = $this->beheer_model->get_byId($this->session->userdata('id'));
 		
 		$data['css_files'] = array("dash.css");									// Default dash style
 
@@ -73,7 +78,6 @@ class Admin extends CI_Controller {
 		];
 
 		// Get data for view
-		$this->load->model('beheer_model');
 		switch($view){
 			case "adminbeheer":
 				$data['data']['admins'] = $this->beheer_model->getAll();
