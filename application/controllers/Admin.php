@@ -178,8 +178,10 @@ class Admin extends CI_Controller {
 	}
 
 	// Delete admin
-    public function delete($id)
+    public function delete()
 	{
+		$id = $this->input->post('id');
+
 		// Delete
         $this->load->model('beheer_model');
         $this->beheer_model->delete($id);
