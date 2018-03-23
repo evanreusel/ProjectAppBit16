@@ -2,8 +2,8 @@
 
 $arrayparameters = array();
 $arrayparameters['id'] = 'send';
-$arrayparameters['value'] = (isset($admin)) ? $admin->id : '0';
-if(isset($admin)){
+$arrayparameters['value'] = (isset($data['admin'])) ? $data['admin']->id : '0';
+if(isset($data['admin'])){
 $arrayparameters['content'] = "Pas admin aan";
 } else {
 $arrayparameters['content'] = "Maak nieuwe admin aan";
@@ -11,14 +11,6 @@ $arrayparameters['content'] = "Maak nieuwe admin aan";
 
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-
-      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
       <script> 
 
       function ajax_passcheck(){
@@ -100,7 +92,7 @@ $attributes = array('name' => 'adminform', 'id' => 'adminform', 'role' => 'form'
 echo form_open('admin/update',$attributes);
 ?>
     <?php
-    if(isset($admin)){
+    if(isset($data['admin'])){
     echo '<label for="oudpass">oude passwoord: </label>' . "\n" . 
     '<br/>' . "\n" .
     '<input id="oudpass" name="oudpass" type="password">'  . "\n" .
@@ -112,29 +104,26 @@ echo form_open('admin/update',$attributes);
     ?>
     <label for="username">username: </label>    
     <br/>
-    <input id="username" name="username" <?php if (isset($admin)) echo 'value=' . $admin->username; ?> >
+    <input id="username" name="username" <?php if (isset($data['admin'])) echo 'value=' . $data['admin']->username; ?> >
     <br/>
-    <label for="nieuwpass"><?php if (!isset($admin)) echo 'nieuwe '; ?>passwoord: </label>
+    <label for="nieuwpass"><?php if (!isset($data['admin'])) echo 'nieuwe '; ?>passwoord: </label>
     <br/>
     <input id="nieuwpass" name="nieuwpass" type="password">
     <br/>
     <div id="nieuwpasserror">
     <label for="nieuwpasscheck" style="color:red">Gelieve een passwoord in te vullen</label>
     <br/></div>
-    <label for="nieuwpasscheck">bevestig <?php if (!isset($admin)) echo 'nieuwe '; ?>passwoord: </label>
+    <label for="nieuwpasscheck">bevestig <?php if (!isset($data['admin'])) echo 'nieuwe '; ?>passwoord: </label>
     <br/>
     <input id="nieuwpasscheck" name="nieuwpasscheck" type="password">
     <br/>
     <div id="nieuwpasscheckerror">
     <label for="nieuwpasscheck" style="color:red">Het passwoord is niet correct</label>
     <br/></div>
-    <input type="hidden" name="id" id="id" value="<?php echo (isset($admin)) ? $admin->id : '0';?>" />
+    <input type="hidden" name="id" id="id" value="<?php echo (isset($data['admin'])) ? $data['admin']->id : '0';?>" />
     <?php    
     echo form_button($arrayparameters);
     ?>
 
     
 <?php echo form_close(); ?>
-
-</body>
-</html>

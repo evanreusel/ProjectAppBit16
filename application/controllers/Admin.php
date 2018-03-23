@@ -87,12 +87,10 @@ class Admin extends CI_Controller {
 			case "adminbeheer":
 				$data['data']['admins'] = $this->adminbeheer();
 			break;
-			case "addadmin":
-				$id = null;
+			case "updateadmin":
 				if(count($extras) == 1) {
-					$id = $extras[0];
+					$data['data']['admin'] = $this->updateadmin($id);
 				}
-				$data['data']['admin'] = $this->newadmin($id);
 			break;
 		}
 
@@ -104,7 +102,7 @@ class Admin extends CI_Controller {
 		return $this->beheer_model->getAll();
 	}
 
-public function newadmin($id){
+public function updateadmin($id){
 	if($id != null){
 		$this->load->model('beheer_model');
 		return $this->beheer_model->get_byId($id);
