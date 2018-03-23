@@ -74,11 +74,11 @@ class Admin extends CI_Controller {
 		$data['links'] = [
 			[
 				'title' => 'Dash',
-				'url' => base_url() . 'index.php/admin/dash/';
+				'url' => base_url() . 'index.php/admin/dash/'
 			],
 			[
 				'title' => 'Admin beheren',
-				'url' => base_url() . 'index.php/admin/dash/adminbeheer/';
+				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
 			]
 		];
 
