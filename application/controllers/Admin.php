@@ -65,6 +65,12 @@ class Admin extends CI_Controller {
 				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
 			]
 		];
+		$data['actions'] = [
+			[
+				'title' => 'Log out',
+				'url' => base_url() . 'index.php/admin/logout/'
+			]
+		];
 
 		// Get data for view
 		$this->load->model('beheer_model');
@@ -127,6 +133,14 @@ class Admin extends CI_Controller {
 	}
 
 	// FUNCTIONAL
+	// Logout admin
+	public function logout(){
+		$this->session->unset_userdata('id');
+
+		// Redirect to adminbeheer
+		redirect('admin/');
+	}
+
 	// Update admin
 	public function update()
 	{
