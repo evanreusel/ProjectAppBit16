@@ -15,6 +15,7 @@
         if($('#id').val() != 0){
             $.ajax({
                 url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),
+                async: false,
                 type: "GET",
                 dataType:'json',
                 success: function(data){
