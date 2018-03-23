@@ -3,7 +3,8 @@
     $nav_specs = [
         'color' => 'primary-color',
         'links' => [],
-        'actions' => []
+        'actions' => [],
+        'user' => null
     ];
 
     // Check custom
@@ -17,6 +18,10 @@
 
     if(isset($actions)){
         $nav_specs['actions'] = $actions;
+    }
+
+    if(isset($user)){
+        $nav_specs['user'] = $user;
     }
 ?>
 
@@ -45,7 +50,10 @@
             <!-- Dropdown for actions -->
             <?php if(count($nav_specs['actions']) > 0) { ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <?php echo $user->name; ?>
+                    </a>
+                    
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                         <?php foreach($nav_specs['actions'] as $action) { ?>
                             <a class="dropdown-item" href="<?php echo $action['url']; ?>">
