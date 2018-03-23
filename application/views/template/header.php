@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse" id="basicExampleNav">
             <!-- Links for contents -->
             <ul class="navbar-nav mr-auto">
-            
+
             <?php foreach($nav_specs['links'] as $link){ ?>
                 <li class="nav-item active">
                     <a class="nav-link" href="<?php echo $link['url']; ?>">
@@ -43,7 +43,7 @@
             <?php } ?>
 
             <!-- Dropdown for actions -->
-            <?php if count($nav_specs['actions']) > 0) { ?>
+            <?php if(count($nav_specs['actions']) > 0) { ?>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
