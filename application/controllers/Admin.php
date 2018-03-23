@@ -77,16 +77,23 @@ class Admin extends CI_Controller {
 				'url' => 'admin/dash'
 			]
 		];
+
+		//get data for view
+		switch($view){
+			case "adminbeheer":
+			$data['data'] = beheerAdmin();
+			break;
+		}
+
 		$this->load->view('template/main', $data);
 	}
 
 	public function beheerAdmin(){
-    
-    $this->load->model('Admin_model');
-    $data['admins'] = $this->Admin_model->getAll();
+		$this->load->model('Admin_model');
+		$data['admins'] = $this->Admin_model->getAll();
 
-    $this->load->view('admin/adminbeheer',$data);
-}
+		return $data;
+	}
 
 public function updatepage($id){
 
