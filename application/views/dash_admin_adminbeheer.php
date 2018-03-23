@@ -15,7 +15,6 @@
             <td>" . anchor("admin/delete/$admin->id","<button>Verwijderen</button>") . "</td>
             </tr> \n";
         }
-        echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin","<button>Niewe admin</button>") . '</td></tr>
-        <td>' . anchor("admin","home") . "</td>";
+        echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin","<button>Niewe admin</button>") . '</td></tr>';
     ?>
 </table>
