@@ -145,7 +145,7 @@ public function updateadmin($id){
         $this->load->model('beheer_model');
 		$admin = $this->beheer_model->get_byId($id);
 		
-		echo password_verify($oudpass, $admin->pass);
+		echo json_encode(password_verify($oudpass, $admin->pass));
     }
 }
 
