@@ -93,7 +93,7 @@ class Admin extends CI_Controller {
 			break;
 			case "keuzemogelijkheidbeheer":
 				$this->load->model('keuzemogelijkheid_model');
-				$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->getAll();
+				$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->getAllByNaam();
 			break;
 		}
 
