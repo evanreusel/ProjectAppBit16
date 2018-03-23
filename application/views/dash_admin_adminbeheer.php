@@ -50,8 +50,7 @@ function popup(data){
             <td>" . form_button("verwijder","verwijderen",array('value'=>"$admin->id,$admin->username",'class'=>"verwijder")) . "</td>
             </tr> \n";
         }
-        echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin","<button>Niewe admin</button>") . '</td></tr>
-        <td>' . anchor("admin","home") . "</td>";
+        echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin","<button>Niewe admin</button>") . '</td></tr>';
     ?>
 </table>
 
