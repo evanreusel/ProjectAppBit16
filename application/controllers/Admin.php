@@ -5,7 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // - LOGIN
 // - DASH
 
-
 class Admin extends CI_Controller {
 	public function __construct()
 	{
@@ -28,6 +27,7 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	// VIEWS
 	// DEFAULT
 	public function index()
 	{
@@ -40,36 +40,11 @@ class Admin extends CI_Controller {
 		$this->load->view('template/main', $data);
 	}
 
-	// API
-	// LOGIN
-	public function login($username = null, $pass = null)
-	{
-		$data['return'] = '';
-		
-		// Check login vals
-		if(!is_null($username) && !is_null($pass)){
-			// Get data from db
-			$this->load->model('beheer_model');
-			$login_return = $this->beheer_model->login($username, $pass);
-
-			// Set session vars if succeeded
-			if($login_return != ''){
-				$this->session->set_userdata('id', $login_return->id);
-				$this->session->set_userdata('role', 'admin');
-			}
-
-			// Return data
-			$data['return'] = json_encode($login_return);
-		}
-		
-		// Print in default api output view
-		$this->load->view('req_output', $data);
-	}
-
 	public function dash($view = null, $extras = null){
+		// Check if dashboard view is requested else default homeview
 		if(is_null($view) )
 		{
-			$view = 'home';
+			$view = 'index';
 		}
 
 		// Load view
@@ -102,6 +77,32 @@ class Admin extends CI_Controller {
 		}
 
 		$this->load->view('template/main', $data);
+	}
+
+	// API
+	// LOGIN
+	public function login($username = null, $pass = null)
+	{
+		$data['return'] = '';
+		
+		// Check login vals
+		if(!is_null($username) && !is_null($pass)){
+			// Get data from db
+			$this->load->model('beheer_model');
+			$login_return = $this->beheer_model->login($username, $pass);
+
+			// Set session vars if succeeded
+			if($login_return != ''){
+				$this->session->set_userdata('id', $login_return->id);
+				$this->session->set_userdata('role', 'admin');
+			}
+
+			// Return data
+			$data['return'] = json_encode($login_return);
+		}
+		
+		// Print in default api output view
+		$this->load->view('req_output', $data);
 	}
 
 	private function adminbeheer(){
