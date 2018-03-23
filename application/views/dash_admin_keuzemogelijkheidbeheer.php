@@ -1,24 +1,13 @@
-<!DOCTYPE html>
+<ul class="nav nav-tabs">
+<?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
+    echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
+}?>
+</ul>
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>keuzemogelijkheden</title>
-    </head>
-    <body>
-        <ul class="nav nav-tabs">
-        <?php foreach ($activiteiten as $activiteit) {
-                echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
-            
-        }?>
-        </ul>
-        <div class="tab-content">
-        <?php foreach ($activiteiten as $activiteit) {
-            
-            
-
+<div class="tab-content">
+    <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
             $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
-            echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="primary-color">';
+          echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="primary-color">';
             
                 foreach ($kolommen as $kolom) {
                     
@@ -43,8 +32,6 @@
             echo "</table></div>";
 
         }?>
-        </div>
-       
-        <script src="../assets/Keuzemogelijkheid.js"></script>
-    </body>
-</html>
+</div>
+
+<script src="../assets/Keuzemogelijkheid.js"></script>

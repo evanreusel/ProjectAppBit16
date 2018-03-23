@@ -4,36 +4,30 @@
 class Keuzemogelijkheid_Model extends CI_Model {
     
     function __construct() {
-        
         $this->load->database();
-        
     }
 
-    function get($id)
+    function get_byId($id)
     {
         $this->db->where($id);
-        $query = $this->db->get('Keuzemogelijkheid');
+        $query = $this->db->get('KeuzeMogelijkheid');
         return $query->row();
     }
     
     function getAllByNaam()
     {
         $this->db->order_by('naam', 'asc');
-        $query = $this->db->get('Keuzemogelijkheid');
+        $query = $this->db->get('KeuzeMogelijkheid');
         return $query->result();
     }
 
     function getAllByNaamWithKeuzeOpties()
     {
-        $this->db->order_by('naam', 'asc');
-        $query = $this->db->get('Keuzemogelijkheid');
-        $activiteiten = $query->result();
-
-        $this->load->model('KeuzeOptie_Model');
+        $activiteiten = $this->getAllByNaam();
+        $this->load->model('keuzeoptie_model');
 
         foreach ($activiteiten as $activiteit) {
-            $activiteit->keuzeopties=
-                $this->KeuzeOptie_Model->getAllByNaamWhereKeuzeMogelijkheid($activiteit->id);
+            $activiteit->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($activiteit->id);
         }
 
         return $activiteiten;
@@ -48,14 +42,14 @@ class Keuzemogelijkheid_Model extends CI_Model {
         $keuzeMogelijkheid->eindDatum = $eindDatum;
         $keuzeMogelijkheid->deadline = $deadline;
         $keuzeMogelijkheid->jaargangId = 0;
-        $this->db->insert('Keuzemogelijkheid', $keuzeMogelijkheid);
+        $this->db->insert('KeuzeMogelijkheid', $keuzeMogelijkheid);
         return $this->db->insert_id();
     }
     
     function deleteKeuzemogelijkheid ($id)
     {
      $this->db->where($id);
-     $query = $this->db->delete('Keuzemogelijkheid');   
+     $query = $this->db->delete('KeuzeMogelijkheid');   
     }
    
 }

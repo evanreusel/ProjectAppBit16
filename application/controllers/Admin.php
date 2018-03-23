@@ -41,6 +41,9 @@ class Admin extends CI_Controller {
 	}
 
 	public function dash($view = null, $extras = null){
+		// Beheer model
+		$this->load->model('beheer_model');
+
 		// Check if dashboard view is requested else default homeview
 		if(is_null($view) )
 		{
@@ -50,6 +53,8 @@ class Admin extends CI_Controller {
 		// Load view
 		$data['message'] = "Welcome admin | Dash";								// Title
 		$data['view'] = 'dash_admin_' . $view;									// View
+
+		$data['user'] = $this->beheer_model->get_byId($this->session->userdata('id'));
 		
 		$data['css_files'] = array("dash.css");									// Default dash style
 
@@ -63,6 +68,10 @@ class Admin extends CI_Controller {
 			[
 				'title' => 'Admin beheren',
 				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
+			],
+			[
+				'title' => 'Keuzemogelijheden beheren',
+				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
 			]
 		];
 		$data['actions'] = [
@@ -73,7 +82,6 @@ class Admin extends CI_Controller {
 		];
 
 		// Get data for view
-		$this->load->model('beheer_model');
 		switch($view){
 			case "adminbeheer":
 				$data['data']['admins'] = $this->beheer_model->getAll();
@@ -82,6 +90,10 @@ class Admin extends CI_Controller {
 				if($extras != null) {
 					$data['data']['admin'] = $this->beheer_model->get_byId($extras);
 				}
+			break;
+			case "keuzemogelijkheidbeheer":
+				$this->load->model('keuzemogelijkheid_model');
+				$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
 			break;
 		}
 
@@ -166,8 +178,10 @@ class Admin extends CI_Controller {
 	}
 
 	// Delete admin
-    public function delete($id)
+    public function delete()
 	{
+		$id = $this->input->post('id');
+
 		// Delete
         $this->load->model('beheer_model');
         $this->beheer_model->delete($id);
