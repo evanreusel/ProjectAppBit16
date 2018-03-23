@@ -140,13 +140,12 @@ public function updateadmin($id){
 
     public function json_checkpass(){
         $id = $_POST['id']; 
-        $oudpass = $_POST['oudpass']; 
+		$oudpass = $_POST['oudpass'];
         
         $this->load->model('beheer_model');
-        $admin = $this->beheer_model->get_byId($id);
-
-        // for first row only and suppose table having data
-        echo json_encode(password_verify($oudpass,$admin->pass));
+		$admin = $this->beheer_model->get_byId($id);
+		
+		echo password_verify($oudpass, $admin->pass);
     }
 }
 
