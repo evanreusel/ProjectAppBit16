@@ -59,7 +59,7 @@ class Admin extends CI_Controller {
 		$this->load->view('req_output', $data);
 	}
 
-	public function dash($view = null, $extras = []){
+	public function dash($view = null, $extras = null){
 		if(is_null($view) )
 		{
 			$view = 'home';
@@ -88,8 +88,8 @@ class Admin extends CI_Controller {
 				$data['data']['admins'] = $this->adminbeheer();
 			break;
 			case "updateadmin":
-				if(count($extras) == 1) {
-					$data['data']['admin'] = $this->updateadmin($id);
+				if($extras != null) {
+					$data['data']['admin'] = $this->updateadmin($extras);
 				}
 			break;
 		}
