@@ -38,7 +38,7 @@
             <!--Footer-->
             <?php
         if(!isset($clearscreen)){
-        $this->load->view('template/footer');
+        // $this->load->view('template/footer');
         }
         ?>
                 <!--/.Footer-->
