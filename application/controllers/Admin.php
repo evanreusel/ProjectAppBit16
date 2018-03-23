@@ -81,7 +81,7 @@ class Admin extends CI_Controller {
 		//get data for view
 		switch($view){
 			case "adminbeheer":
-			$data['data'] = beheerAdmin();
+			$data['data'] = $this->beheerAdmin();
 			break;
 		}
 
