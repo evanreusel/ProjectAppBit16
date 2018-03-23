@@ -59,7 +59,7 @@ class Admin extends CI_Controller {
 		$this->load->view('req_output', $data);
 	}
 
-	public function dash($view = null){
+	public function dash($view = null, $extras = []){
 		if(is_null($view) )
 		{
 			$view = 'home';
@@ -87,6 +87,13 @@ class Admin extends CI_Controller {
 			case "adminbeheer":
 				$data['data']['admins'] = $this->adminbeheer();
 			break;
+			case "addadmin":
+				$id = null;
+				if(count($extras) == 1) {
+					$id = $extras[0];
+				}
+				$data['data']['admin'] = $this->newadmin($id);
+			break;
 		}
 
 		$this->load->view('template/main', $data);
@@ -97,12 +104,13 @@ class Admin extends CI_Controller {
 		return $this->beheer_model->getAll();
 	}
 
-public function updatepage($id){
+public function newadmin($id){
+	if($id != null){
+		$this->load->model('beheer_model');
+		return $this->beheer_model->get_byId($id);
+	}
 
-    $this->load->model('beheer_model');
-    $data['admin'] = $this->beheer_model->get_byId($id);
-    
-    $this->load->view('admin/newadmin',$data);
+	return null;
 }
 
 	public function update()
