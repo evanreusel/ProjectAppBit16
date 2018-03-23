@@ -9,7 +9,7 @@ class Keuzemogelijkheid extends CI_Controller{
         parent::__construct();
     }
 
-    public function get($id){
+    public function get_byId($id){
         $data['return'] = '';
 		
         // Get data from db
