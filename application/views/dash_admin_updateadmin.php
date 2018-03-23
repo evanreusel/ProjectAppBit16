@@ -31,9 +31,8 @@
                 }
             });
         }
-
-        alert('id');
-        return false;
+        
+        return true;
     }
 
     function nieuwpassmatch(){  
