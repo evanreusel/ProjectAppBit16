@@ -20,7 +20,7 @@
     echo "<td>" . $admin->username . "</td> \n";
     echo "<td> ***** </td> \n";
     echo "<td>" . anchor("admin/updatepage/$admin->id","<button>Aanpassen</button>") . "</td>";
-    echo "<td>" . anchor("admin/verwijder/$admin->id","<button>Verwijderen</button>") . "</td>";
+    echo "<td>" . anchor("admin/delete/$admin->id","<button>Verwijderen</button>") . "</td>";
     echo "</tr> \n";
     }
     echo '<tr><td rowspan="4">' . anchor("admin/dash/addAdmin","<button>Niewe admin</button>") . '</td></tr>';
