@@ -74,7 +74,7 @@ class Admin extends CI_Controller {
 		$data['links'] = [
 			[
 				'title' => 'Dash',
-				'url' => 'dash'
+				'url' => ''
 			],
 			[
 				'title' => 'Admin beheren',
