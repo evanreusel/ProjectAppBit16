@@ -9,12 +9,12 @@ class Keuzemogelijkheid extends CI_Controller{
         parent::__construct();
     }
 
-    public function get_byId($id){
+    public function get($id){
         $data['return'] = '';
 		
         // Get data from db
-        $this->load->model('keuzeoptie_model');
-        $returndata = $this->keuzeoptie_model->get($id);
+        $this->load->model('keuzemogelijkheid_model');
+        $returndata = $this->keuzemogelijkheid_model->get_byId($id);
 
         // Return data
         $data['return'] = json_encode($returndata);
@@ -22,5 +22,6 @@ class Keuzemogelijkheid extends CI_Controller{
 		// Print in default api output view
 		$this->load->view('req_output', $data);
     }
-    
+
+
 }
