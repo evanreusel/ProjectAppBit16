@@ -17,7 +17,7 @@
 
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark <?php echo $nav_specs['color']; ?>">
-    <img src="<?php echo base_url(); ?>assets/svg/logo.svg">
+    <img src="<?php echo base_url(); ?>assets/img/svg/logo.svg">
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
