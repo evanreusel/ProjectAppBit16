@@ -1,5 +1,5 @@
 <table class="table">
-    <tr class="primary-color">
+    <tr class="colored">
         <th>naam</th>
         <th>info</th>
         <th>thema</th>
