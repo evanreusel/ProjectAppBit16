@@ -1,7 +1,4 @@
 <?php
-
-echo json_encode($data);
-
 $arrayparameters = array();
 $arrayparameters['id'] = 'send';
 $arrayparameters['value'] = (isset($data['admin'])) ? $data['admin']->id : '0';

@@ -143,7 +143,7 @@ public function updateadmin($id){
         $oudpass = $_POST['oudpass']; 
         
         $this->load->model('beheer_model');
-        $admin = $this->beheer_model->get($id);
+        $admin = $this->beheer_model->get_byId($id);
 
         // for first row only and suppose table having data
         echo json_encode(password_verify($oudpass,$admin->pass));
