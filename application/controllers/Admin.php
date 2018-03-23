@@ -67,6 +67,7 @@ class Admin extends CI_Controller {
 		];
 
 		// Get data for view
+		$this->load->model('beheer_model');
 		switch($view){
 			case "adminbeheer":
 				$data['data']['admins'] = $this->beheer_model->getAll();
