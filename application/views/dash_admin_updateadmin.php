@@ -21,14 +21,13 @@
                 success: function(data){
                     console.log(data);
                     
-                    if($data != ''){
+                    if($data != null){
                         $('#oudpasserror').hide();
                         return true;
                     } else {
                         $('#oudpasserror').show();
+                        return false;
                     }
-
-                    return false;
                 }, error: function (xhr, status, error) {
                     alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
