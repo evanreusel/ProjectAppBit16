@@ -35,5 +35,13 @@ class Keuzemogelijkheid extends CI_Controller{
 
         $this->load->view('keuzeoptie', $data);
     }
+
+    public function delete($id)
+	{
+        $this->load->model('keuzemogelijkheid_model');
+        $this->beheer_model->deleteKeuzemogelijkheid($id);
+		
+		redirect('/Keuzemogelijkheid/index', 'location');
+	}
     
 }

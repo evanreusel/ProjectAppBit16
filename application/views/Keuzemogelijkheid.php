@@ -17,22 +17,25 @@
             
             
 
-            $kollommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
+            $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
             echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="primary-color">';
             
-                foreach ($kollommen as $kollom) {
+                foreach ($kolommen as $kolom) {
                     
-                    echo "<th>".$kollom."</th>";
+                    echo "<th>".$kolom."</th>";
                 }       
                         
-           echo "</tr>";   
+           echo "<td></td><td></td></tr>";   
 
             foreach ($activiteit->keuzeopties as $keuzeoptie) {
                 echo "<tr>";
 
-                foreach ($kollommen as $kollom) {
-                    echo '<td>' . $keuzeoptie->$kollom . '</td>';
+                foreach ($kolommen as $kolom) {
+                    echo '<td>' . $keuzeoptie->$kolom . '</td>';
                 }
+
+                echo '<td>'.anchor('"keuzemogelijkheid/'.$keuzeoptie->id.'"','<button class="btn btn-round btn-warning"><i class="fa fa-cog">&#xf014;</i></button>').'</td>';
+                echo '<td>'.anchor('"keuzemogelijkheid/'.$keuzeoptie->id.'"','<button class="btn btn-round btn-danger"><i class="fa fa-trash-o"></i></button>').'</td>';
 
                    echo "</tr>"; 
             }
