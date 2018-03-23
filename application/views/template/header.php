@@ -25,12 +25,12 @@
     <img src="<?php echo base_url(); ?>assets/img/svg/logo.svg">
 
         <!-- Collapse button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="basicExampleNav">
+        <div class="collapse navbar-collapse" id="nav">
             <!-- Links for contents -->
             <ul class="navbar-nav mr-auto">
 
