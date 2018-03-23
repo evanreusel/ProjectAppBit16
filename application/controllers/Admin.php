@@ -94,7 +94,7 @@ class Admin extends CI_Controller {
 
 	private function adminbeheer(){
 		$this->load->model('Admin_model');
-		$data['admins'] = $this->Admin_model->getAll();
+		return $this->Admin_model->getAll();
 	}
 
 public function updatepage($id){
