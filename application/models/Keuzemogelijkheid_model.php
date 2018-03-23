@@ -29,7 +29,7 @@ class Keuzemogelijkheid_Model extends CI_Model {
         $query = $this->db->get('KeuzeMogelijkheid');
         $activiteiten = $query->result();
 
-        $this->load->model('KeuzeMogelijkheid');
+        $this->load->model('keuzemogelijkheid_model');
 
         foreach ($activiteiten as $activiteit) {
             $activiteit->keuzeopties=
