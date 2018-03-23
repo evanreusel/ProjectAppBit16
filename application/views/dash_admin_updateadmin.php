@@ -67,7 +67,7 @@
     
         $("#send").click(function(){
             if(passcheck() && nieuwpassmatch()){              
-                // $('#adminform').submit();
+                $('#adminform').submit();
             }
         });
     });
