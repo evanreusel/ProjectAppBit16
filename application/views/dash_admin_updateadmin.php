@@ -14,10 +14,9 @@
     function passcheck(){
         if($('#id').val() != 0){
             $.ajax({
-                url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),     
-                async: false, //passcontrol kan buiten ajax gebruikt worden
-                type: "POST",
-                dataType:'json', // add json datatype to get json
+                url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),
+                type: "GET",
+                dataType:'json',
                 success: function(data){
                     console.log(data);
                     
@@ -54,7 +53,7 @@
         }
 
         if($passsame && $passnietleeg) {
-            return true
+            return true;
         } else {
             return false;
         }
@@ -73,9 +72,8 @@
     });
 </script>
 
-<?php 
-    $attributes = array('name' => 'adminform', 'id' => 'adminform', 'role' => 'form');
-    echo form_open('admin/update',$attributes);
+<?php
+    echo form_open('admin/update', array('name' => 'adminform', 'id' => 'adminform', 'role' => 'form'));
 
     if(isset($data['admin'])){
     echo '<label for="oudpass">oude passwoord: </label>' . "\n" . 
