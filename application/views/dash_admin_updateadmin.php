@@ -21,7 +21,7 @@
                 success: function(data){
                     console.log(data);
                     
-                    if($data != null){
+                    if(data != null){
                         $('#oudpasserror').hide();
                         return true;
                     } else {
