@@ -4,9 +4,7 @@
 class Keuzemogelijkheid_Model extends CI_Model {
     
     function __construct() {
-        
         $this->load->database();
-        
     }
 
     function get($id)
@@ -25,15 +23,11 @@ class Keuzemogelijkheid_Model extends CI_Model {
 
     function getAllByNaamWithKeuzeOpties()
     {
-        $this->db->order_by('naam', 'asc');
-        $query = $this->db->get('KeuzeMogelijkheid');
-        $activiteiten = $query->result();
-
+        $activiteiten = getAllByNaam();
         $this->load->model('keuzeoptie_model');
 
         foreach ($activiteiten as $activiteit) {
-            $activiteit->keuzeopties=
-                $this->KeuzeOptie_Model->getAllByNaamWhereKeuzeMogelijkheid($activiteit->id);
+            $activiteit->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($activiteit->id);
         }
 
         return $activiteiten;
