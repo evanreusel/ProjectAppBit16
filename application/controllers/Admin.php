@@ -63,12 +63,12 @@ class Admin extends CI_Controller {
 		$data['homelink'] = base_url() . 'index.php/admin/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
 			[
-				'title' => 'Keuzemogelijheden',
-				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
-			],
-			[
 				'title' => 'Jaargang',
 				'url' => base_url() . 'index.php/admin/dash/jaargangbeheer/'
+			],
+			[
+				'title' => 'Keuzemogelijheden',
+				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
 			]
 		];
 		$data['actions'] = [
