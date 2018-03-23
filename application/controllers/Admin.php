@@ -60,21 +60,22 @@ class Admin extends CI_Controller {
 
 		$data['primaryColor'] = 'orange';										// Primary color (orange for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
+		$data['homelink'] = base_url() . 'index.php/admin/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
 			[
-				'title' => 'Dash',
-				'url' => base_url() . 'index.php/admin/dash/'
+				'title' => 'Jaargang',
+				'url' => base_url() . 'index.php/admin/dash/jaargangbeheer/'
 			],
 			[
-				'title' => 'Admin beheren',
-				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
-			],
-			[
-				'title' => 'Keuzemogelijheden beheren',
+				'title' => 'Keuzemogelijheden',
 				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
 			]
 		];
 		$data['actions'] = [
+			[
+				'title' => 'Administrators beheren',
+				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
+			],
 			[
 				'title' => 'Log out',
 				'url' => base_url() . 'index.php/admin/logout/'
@@ -94,6 +95,10 @@ class Admin extends CI_Controller {
 			case "keuzemogelijkheidbeheer":
 				$this->load->model('keuzemogelijkheid_model');
 				$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
+			break;
+			case "jaargangbeheer":
+				$this->load->model('jaargang_model');
+				$data['data']['jaargangen'] = $this->jaargang_model->getAll();
 			break;
 		}
 

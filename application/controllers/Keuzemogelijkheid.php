@@ -7,33 +7,21 @@ class Keuzemogelijkheid extends CI_Controller{
     
      public function __construct() {
         parent::__construct();
-
-        $this->load->helper('url');
-        $this->load->helper('form');
-    }
-    
-    public function index() {
-        $this->load->model('Keuzemogelijkheid_model');
-            $data['activiteiten'] 
-                    = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
-            
-            $data['titel']  = 'Database beheer';
-        
-
-            $data['message'] = "Beheer";
-            $data['view'] = 'keuzemogelijkheid';
-            $data['css_files'] = array("dash_docent.css");
-            $this->load->view('template/main', $data);
-       
-        
     }
 
     public function get($id){
-        $this->load->model('Keuzeoptie_model');
-        $data['keuzeOptie'] = $this->Keuzeoptie_model->get($id);
-        $data['titel'] = 'getid';
+        $data['return'] = '';
+		
+        // Get data from db
+        $this->load->model('keuzemogelijkheid_model');
+        $returndata = $this->keuzemogelijkheid_model->get_byId($id);
 
-        $this->load->view('keuzeoptie', $data);
+        // Return data
+        $data['return'] = json_encode($returndata);
+		
+		// Print in default api output view
+		$this->load->view('req_output', $data);
     }
-    
+
+
 }

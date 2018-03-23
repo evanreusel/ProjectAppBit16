@@ -1,8 +1,7 @@
 <script> 
 
 function popup(data){    
-    $('#popup').dialog();    
-    console.log(data);    
+    $('#popup').dialog();
     splitdata = data.split(',');
     var id = splitdata[0];
     var user = splitdata[1];
@@ -14,7 +13,6 @@ function popup(data){
     $('#popup').hide();
     $('.verwijder').click(function(){
         var data = $(this).val();
-        console.log('ok');
         popup(data);
     })
 
@@ -50,8 +48,7 @@ function popup(data){
             <td>" . form_button("verwijder","verwijderen",array('value'=>"$admin->id,$admin->username",'class'=>"verwijder")) . "</td>
             </tr> \n";
         }
-        echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin","<button>Niewe admin</button>") . '</td></tr>
-        <td>' . anchor("admin","home") . "</td>";
+        echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin","<button>Niewe admin</button>") . '</td></tr>';
     ?>
 </table>
 

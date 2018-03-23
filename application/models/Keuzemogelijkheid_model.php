@@ -7,7 +7,7 @@ class Keuzemogelijkheid_Model extends CI_Model {
         $this->load->database();
     }
 
-    function get($id)
+    function get_byId($id)
     {
         $this->db->where($id);
         $query = $this->db->get('KeuzeMogelijkheid');

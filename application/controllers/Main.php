@@ -5,8 +5,6 @@ class Main extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-
-		$this->load->library('session');
 	}
 	
 	// Default page
@@ -16,6 +14,7 @@ class Main extends CI_Controller {
 	    $data['view'] = 'home';
 		$data['css_files'] = array("home.css");
 		$data['clearscreen'] = true;
+		
 		$this->load->view('template/main', $data);
 	}
 
