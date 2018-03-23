@@ -15,35 +15,31 @@
     }
 ?>
 
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark <?php echo $nav_specs['color']; ?>">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark <?php echo $nav_specs['color']; ?>">
 
-    <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Navbar</a>
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">Navbar</a>
 
-    <!-- Collapse button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
             aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="basicExampleNav">
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
 
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+            <?php foreach($nav_specs['links'] as $link){ ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo $link['url']; ?>">
+                        <?php echo $link['title']; ?>
+                    </a>
+                </li>
+            <?php } ?>
+            
             <!-- Dropdown -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -54,10 +50,10 @@
                 </div>
             </li>
 
-        </ul>
-        <!-- Links -->
-    </div>
-    <!-- Collapsible content -->
+            </ul>
+            <!-- Links -->
+        </div>
+        <!-- Collapsible content -->
 
-</nav>
-<!--/.Navbar-->
+    </nav>
+    <!--/.Navbar-->
