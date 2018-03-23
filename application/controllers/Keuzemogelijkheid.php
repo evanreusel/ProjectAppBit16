@@ -10,11 +10,17 @@ class Keuzemogelijkheid extends CI_Controller{
     }
 
     public function get($id){
-        $this->load->model('Keuzeoptie_model');
-        $data['keuzeOptie'] = $this->Keuzeoptie_model->get($id);
-        $data['titel'] = 'getid';
+        $data['return'] = '';
+		
+        // Get data from db
+        $this->load->model('keuzeoptie_model');
+        $returndata = $this->keuzeoptie_model->get($id);
 
-        $this->load->view('keuzeoptie', $data);
+        // Return data
+        $data['return'] = json_encode($returndata);
+		
+		// Print in default api output view
+		$this->load->view('req_output', $data);
     }
     
 }
