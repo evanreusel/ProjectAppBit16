@@ -4,6 +4,8 @@
 }?>
 </ul>
 
+<?php echo json_encode($data['keuzemogelijkheden']); ?>
+
 <div class="tab-content">
     <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
             $kollommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
