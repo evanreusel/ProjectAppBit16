@@ -15,6 +15,16 @@ class Beheer_model extends CI_Model {
         }
     }
 
+    function login_byId($id, $pass)
+    {
+        $this->db->where(array('id' => $id));
+        $query = $this->db->get('Beheer');
+
+        if (password_verify($pass, $query->row()->pass)) {
+            return $query->result()[0];
+        }
+    }
+
     function getAll()
     {
         $this->db->order_by('id', 'asc');

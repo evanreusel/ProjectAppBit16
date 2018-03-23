@@ -20,7 +20,7 @@ $arrayparameters['content'] = "Maak nieuwe admin aan";
         var $passcontrol;
     if($('#id').val() != 0){
         $.ajax({
-            url: '<?= site_url(); ?>/admin/login/' + $('#id').val() + '/' + $('#oudpass').val(),     
+            url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),     
             async: false, //passcontrol kan buiten ajax gebruikt worden
             type: "POST",
             dataType:'json' // add json datatype to get json

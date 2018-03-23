@@ -108,6 +108,24 @@ class Admin extends CI_Controller {
 		$this->load->view('req_output', $data);
 	}
 
+	public function checkpass($id = null, $pass = null)
+	{
+		$data['return'] = '';
+		
+		// Check login vals
+		if(!is_null($id) && !is_null($pass)){
+			// Get data from db
+			$this->load->model('beheer_model');
+			$return = $this->beheer_model->login_byId($id, $pass);
+
+			// Return data
+			$data['return'] = json_encode($return);
+		}
+		
+		// Print in default api output view
+		$this->load->view('req_output', $data);
+	}
+
 	// FUNCTIONAL
 	// Update admin
 	public function update()
