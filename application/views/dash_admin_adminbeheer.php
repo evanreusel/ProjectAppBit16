@@ -1,8 +1,7 @@
 <script> 
 
 function popup(data){    
-    $('#popup').dialog();    
-    console.log(data);    
+    $('#popup').dialog();
     splitdata = data.split(',');
     var id = splitdata[0];
     var user = splitdata[1];
@@ -14,7 +13,6 @@ function popup(data){
     $('#popup').hide();
     $('.verwijder').click(function(){
         var data = $(this).val();
-        console.log('ok');
         popup(data);
     })
 
