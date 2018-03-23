@@ -93,14 +93,14 @@ class Admin extends CI_Controller {
 	}
 
 	private function adminbeheer(){
-		$this->load->model('Admin_model');
-		return $this->Admin_model->getAll();
+		$this->load->model('beheer_model');
+		return $this->beheer_model->getAll();
 	}
 
 public function updatepage($id){
 
-    $this->load->model('Admin_model');
-    $data['admin'] = $this->Admin_model->get($id);
+    $this->load->model('beheer_model');
+    $data['admin'] = $this->beheer_model->get_byId($id);
     
     $this->load->view('admin/newadmin',$data);
 }
@@ -113,12 +113,12 @@ public function updatepage($id){
         $admin->username = $this->input->post('username');
         $admin->pass =  password_hash($this->input->post('nieuwpass'), PASSWORD_DEFAULT);
 
-        $this->load->model('Admin_model');
+        $this->load->model('beheer_model');
         
         if($admin->id == 0){
-        $this->Admin_model->new($admin);
+        $this->beheer_model->add($admin);
         } else {
-        $this->Admin_model->update($admin);
+        $this->beheer_model->update($admin);
         }
 
 		redirect('admin/beheerAdmin');
@@ -129,10 +129,10 @@ public function updatepage($id){
 		$this->load->view('admin/newadmin');
 	}
 
-     public function verwijder($id)
+     public function delete($id)
 	{
-        $this->load->model('Admin_model');
-        $this->Admin_model->verwijder($id);
+        $this->load->model('beheer_model');
+        $this->beheer_model->delete($id);
 		
 		redirect('admin/beheerAdmin');
 	}
@@ -141,8 +141,8 @@ public function updatepage($id){
         $id = $_POST['id']; 
         $oudpass = $_POST['oudpass']; 
         
-        $this->load->model('Admin_model');
-        $admin = $this->Admin_model->get($id);
+        $this->load->model('beheer_model');
+        $admin = $this->beheer_model->get($id);
 
         // for first row only and suppose table having data
         echo json_encode(password_verify($oudpass,$admin->pass));
