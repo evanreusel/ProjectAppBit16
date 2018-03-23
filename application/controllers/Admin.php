@@ -75,6 +75,10 @@ class Admin extends CI_Controller {
 			[
 				'title' => 'Dash',
 				'url' => 'admin/dash'
+			],
+			[
+				'title' => 'Admin beheren',
+				'url' => 'admin/adminbeheer'
 			]
 		];
 
