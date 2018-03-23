@@ -5,9 +5,6 @@ if (!defined('BASEPATH'))
 
 class Jaargang extends CI_Controller{
     
-     public function __construct() {
-        parent::__construct();
-    }
 }
 
 ?>
