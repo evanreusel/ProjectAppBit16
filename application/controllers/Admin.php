@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+// ADMIN CONTROLLER
+// - LOGIN
+// - DASH
+
+
 class Admin extends CI_Controller {
 	public function __construct()
 	{
@@ -10,7 +15,7 @@ class Admin extends CI_Controller {
 		$this->load->library('session');
 		$this->load->helper('form');
 
-		// Check location is home of admin controller
+		// Check location is home of admin controller or api request page
 		$is_home = ($this->router->class === 'admin' && $this->router->method === 'index') ? true : false;
 		$is_api_login = ($this->router->class === 'admin' && $this->router->method === 'login') ? true : false;
 
@@ -31,12 +36,14 @@ class Admin extends CI_Controller {
 	    $data['view'] = 'login';
 		$data['css_files'] = array("login.css");
 		$data['clearscreen'] = true;
+
 		$this->load->view('template/main', $data);
 	}
 
 	// API
 	// LOGIN
-	public function login($username = null, $pass = null){
+	public function login($username = null, $pass = null)
+	{
 		$data['return'] = '';
 		
 		// Check login vals
