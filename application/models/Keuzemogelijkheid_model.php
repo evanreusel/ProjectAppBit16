@@ -12,21 +12,21 @@ class Keuzemogelijkheid_Model extends CI_Model {
     function get($id)
     {
         $this->db->where($id);
-        $query = $this->db->get('Keuzemogelijkheid');
+        $query = $this->db->get('keuzemogelijkheid');
         return $query->row();
     }
     
     function getAllByNaam()
     {
         $this->db->order_by('naam', 'asc');
-        $query = $this->db->get('Keuzemogelijkheid');
+        $query = $this->db->get('keuzemogelijkheid');
         return $query->result();
     }
 
     function getAllByNaamWithKeuzeOpties()
     {
         $this->db->order_by('naam', 'asc');
-        $query = $this->db->get('Keuzemogelijkheid');
+        $query = $this->db->get('keuzemogelijkheid');
         $activiteiten = $query->result();
 
         $this->load->model('KeuzeOptie_Model');
@@ -48,14 +48,14 @@ class Keuzemogelijkheid_Model extends CI_Model {
         $keuzeMogelijkheid->eindDatum = $eindDatum;
         $keuzeMogelijkheid->deadline = $deadline;
         $keuzeMogelijkheid->jaargangId = 0;
-        $this->db->insert('Keuzemogelijkheid', $keuzeMogelijkheid);
+        $this->db->insert('keuzemogelijkheid', $keuzeMogelijkheid);
         return $this->db->insert_id();
     }
     
     function deleteKeuzemogelijkheid ($id)
     {
      $this->db->where($id);
-     $query = $this->db->delete('Keuzemogelijkheid');   
+     $query = $this->db->delete('keuzemogelijkheid');   
     }
    
 }
