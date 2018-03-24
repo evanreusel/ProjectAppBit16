@@ -12,7 +12,7 @@
             
                 foreach ($kolommen as $kolom) {
                     
-                    echo "<th>".$kollom."</th>";
+                    echo "<th>".$kolom."</th>";
                 }       
                         
            echo "</tr>";   
