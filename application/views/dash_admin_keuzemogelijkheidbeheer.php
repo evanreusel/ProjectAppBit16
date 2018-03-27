@@ -3,7 +3,7 @@
     echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
 }?>
     <li><a href="http://projectab16.ddns.net/index.php/admin/dash/updateKeuzemogelijkheid" class="btn btn-primary">+</a></li>
-    <?php echo anchor("admin/dash/updateKeuzemogelijkheid","+", class => "btn btn-primary");?>
+    <?php echo anchor("admin/dash/updateKeuzemogelijkheid","+",'class="btn btn-primary"');?>
 </ul>
 
 <div class="tab-content">
