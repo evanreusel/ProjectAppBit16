@@ -2,7 +2,7 @@
 <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
     echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
 }?>
-    <li><a href="" class="btn btn-primary">+</a></li>
+    <li><a href="admin/dash/updateKeuzemogelijkheid" class="btn btn-primary">+</a></li>
 </ul>
 
 <div class="tab-content">
