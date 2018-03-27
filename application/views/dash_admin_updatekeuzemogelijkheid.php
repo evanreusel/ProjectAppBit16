@@ -1,7 +1,7 @@
 
-    <label for="keuzemogelijkheid">Begin datum en tijdstip:</label>
+    <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
     <input id="keuzemogelijkheid" name="naam" type="text" value="">
-    
+
 
     <label for="begin">Begin datum en tijdstip:</label>
     <input id="begin" name="beginTijdstip" size="16" type="text" value="" readonly class="form_datetime">
