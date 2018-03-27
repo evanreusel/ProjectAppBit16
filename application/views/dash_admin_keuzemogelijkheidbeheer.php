@@ -28,7 +28,7 @@
             }
 
             echo "</table>";
-            echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' toevoegen</a>';
+            echo '<a href="" class="btn btn-primary">Keuzeoptie toevoegen</a>';
             echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' aanpassen</a>';
             echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' verwijderen</a></div>';
 

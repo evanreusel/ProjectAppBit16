@@ -23,5 +23,27 @@ class Keuzemogelijkheid extends CI_Controller{
 		$this->load->view('req_output', $data);
     }
 
+    public function update()
+	{
+		// klasse keuzemogelijkheid aanmaken en initialiseren
+        $keuzemogelijkheid = new stdClass();
+
+        $keuzemogelijkheid->id = $this->input->post('id');
+        $keuzemogelijkheid->username = $this->input->post('username');
+        $keuzemogelijkheid->pass =  password_hash($this->input->post('nieuwpass'), PASSWORD_DEFAULT);
+
+		// Model inladen
+        $this->load->model('keuzemogelijkheid_model');
+		
+		// Keuzemogelijkheid toevoegen of aanpassen
+        if($admin->id == 0){
+       		$this->keuzemogelijkheid_model->insertKeuzemogelijkheid($keuzemogelijkheid);
+        } else {
+        	$this->keuzemogelijkheid_model->deleteKeuzemogelijkheid($keuzemogelijkheid);
+        }
+
+		// Redirect naar keuzemogelijkheid pagina
+		redirect('admin/dash/keuzemogelijkheidbeheer');
+	}
 
 }
