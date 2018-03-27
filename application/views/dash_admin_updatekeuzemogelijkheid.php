@@ -1,18 +1,18 @@
 
 <div class="well">
-  <div id="datetimepicker1" class="input-append date">
-    <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-    <span class="add-on">
-      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-      </i>
-    </span>
+  <div class="input-append date">
+    <input type="text" id="datetimepicker1"></input>
   </div>
 </div>
 
 <script type="text/javascript">
+$( document ).ready(function() {
   $(function() {
     $('#datetimepicker1').datetimepicker({
-      language: 'pt-BR'
+      format: 'yyyy-mm-dd hh:ii'
+      language: 'nl'
     });
   });
+});
+  
 </script>
