@@ -48,9 +48,13 @@
         $('#deactivate').click(function () {
             var id = this.getAttribute("data-id");
 
+            console.log(id);
+            console.log('<?php echo base_url(); ?>index.php/jaargang/end/' + id);
+
             $.get('<?php echo base_url(); ?>index.php/jaargang/end/' + id, function (data) {
                 if (data) {
-                    window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/jaargangbeheer/';
+                    console.log(data);
+                    // window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/jaargangbeheer/';
                 }else{
                     alert('Something went wrong deactivating jaargang');
                 }

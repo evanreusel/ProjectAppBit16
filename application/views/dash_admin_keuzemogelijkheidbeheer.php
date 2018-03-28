@@ -34,6 +34,7 @@
             echo '<a href="" class="btn btn-primary">Keuzeoptie toevoegen</a>';
             echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' aanpassen</a>';
             echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' verwijderen</a></div>';
+            echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round">'. $activiteit->naam .'<span class="glyphicon glyphicon-remove"></span></button>');
 
         }?>
 </div>
