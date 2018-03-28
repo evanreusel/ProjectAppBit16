@@ -40,7 +40,7 @@ class Keuzemogelijkheid extends CI_Controller{
         $this->load->model('keuzemogelijkheid_model');
 		
 		// Keuzemogelijkheid toevoegen of aanpassen
-        if($admin->id == 0){
+        if($keuzemogelijkheid->id == 0){
        		$this->keuzemogelijkheid_model->add($keuzemogelijkheid);
         } else {
         	$this->keuzemogelijkheid_model->update($keuzemogelijkheid);
