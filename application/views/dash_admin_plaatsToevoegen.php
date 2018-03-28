@@ -1,4 +1,4 @@
-<body>
+
 <div class="form-group">
     <?php
     $attributes = array('name' => 'plaats');
@@ -41,6 +41,3 @@
 <?php
 echo anchor('home', '<button class="btn">Terug</button>');
 ?>
-
-
-</body>
