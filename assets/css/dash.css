@@ -11,7 +11,7 @@ td .tableaction{
     height: 100%;
 }
 
-td .tableaction_container{
+td.tableaction_container{
     width: 380px;
 }
 
