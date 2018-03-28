@@ -50,15 +50,13 @@ class Keuzemogelijkheid extends CI_Controller{
 		redirect('admin/dash/keuzemogelijkheidbeheer');
     }
     
-    public function delete()
+    public function delete($id)
 	{
-		$id = $this->input->post('id', TRUE);
-
-		// Delete
+		
         $this->load->model('keuzemogelijkheid_model');
         $this->beheer_model->delete($id);
 		
-		// Redirect to adminbeheer
+		// Redirect to keuzemogelijkheidbeheer
 		redirect('admin/dash/keuzemogeelijkheidbeheer');
 	}
 
