@@ -57,7 +57,7 @@ class Keuzemogelijkheid extends CI_Controller{
         $this->Keuzemogelijkheid_model->delete($id);
 		
 		// Redirect to keuzemogelijkheidbeheer
-		redirect('admin/dash/keuzemogeelijkheidbeheer');
+		redirect('admin/dash/keuzemogelijkheidbeheer');
 	}
 
 }
