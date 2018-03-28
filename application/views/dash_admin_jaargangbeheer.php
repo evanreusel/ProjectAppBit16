@@ -49,8 +49,8 @@
             var id = this.getAttribute("data-id");
 
             $.get('<?php echo base_url(); ?>index.php/jaargang/end/' + id, function (data) {
+                console.log(data);
                 if (data) {
-                    console.log(data);
                     window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/jaargangbeheer/';
                 }else{
                     alert('Something went wrong deactivating jaargang');
