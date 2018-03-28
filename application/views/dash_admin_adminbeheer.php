@@ -33,16 +33,14 @@
 <table class="table">
     <tr class="colored">
         <td>User</td>
-        <td colspan="2">Actions</td>
-        <td></td>
+        <td>Actions</td>
     </tr>
 
     <?php
         foreach($data['admins'] as $admin){
             echo "<tr> \n
             <td>" . $admin->username . "</td> \n
-            <td>" . anchor("admin/dash/updateadmin/$admin->id","<button>Aanpassen</button>") . "</td>
-            <td>" . form_button("verwijder","verwijderen",array('value'=>"$admin->id,$admin->username",'class'=>"verwijder")) . "</td>
+            <td>" . anchor("admin/dash/updateadmin/$admin->id","<button>Aanpassen</button>") . form_button("verwijder","verwijderen",array('value'=>"$admin->id,$admin->username",'class'=>"verwijder")) . "</td>
             </tr> \n";
         }
         echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin","<button>Niewe admin</button>") . '</td></tr>';
