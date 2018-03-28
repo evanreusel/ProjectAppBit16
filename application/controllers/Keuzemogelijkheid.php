@@ -29,8 +29,12 @@ class Keuzemogelijkheid extends CI_Controller{
         $keuzemogelijkheid = new stdClass();
 
         $keuzemogelijkheid->id = $this->input->post('id');
-        $keuzemogelijkheid->username = $this->input->post('username');
-        $keuzemogelijkheid->pass =  password_hash($this->input->post('nieuwpass'), PASSWORD_DEFAULT);
+        $keuzemogelijkheid->plaats = $this->input->post('plaats');
+        $keuzemogelijkheid->jaar = $this->input->post('jaar');
+        $keuzemogelijkheid->naam = $this->input->post('naam');
+        $keuzemogelijkheid->eindTijdstip = $this->input->post('eindTijdstip');
+        $keuzemogelijkheid->beginTijdstip = $this->input->post('beginTijdstip');
+        $keuzemogelijkheid->deadlineTijdstip = $this->input->post('deadlineTijdstip');
 
 		// Model inladen
         $this->load->model('keuzemogelijkheid_model');

@@ -15,7 +15,7 @@
                     echo "<th>".$kolom."</th>";
                 }       
                         
-           echo "</tr>";   
+           echo "<td></td><td></td></tr>";   
 
             foreach ($activiteit->keuzeopties as $keuzeoptie) {
                 echo "<tr>";
@@ -23,6 +23,9 @@
                 foreach ($kolommen as $kolom) {
                     echo '<td>' . $keuzeoptie->$kolom . '</td>';
                 }
+
+                echo '<td>'.anchor('"keuzemogelijkheid/'.$keuzeoptie->id.'"','<button class="btn btn-round btn-warning"><i class="fa fa-cog">&#xf014;</i></button>').'</td>';
+                echo '<td>'.anchor('"keuzemogelijkheid/'.$keuzeoptie->id.'"','<button class="btn btn-round btn-danger"><i class="fa fa-trash-o"></i></button>').'</td>';
 
                    echo "</tr>"; 
             }

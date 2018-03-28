@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+		/*require APPPATH . 'third_party/PhpSpreadsheet-develop/src/PhpSpreadsheet/IOFactory.php';
+	
+		use PhpOffice\PhpSpreadsheet\Spreadsheet;
+		use PhpOffice\PhpSpreadsheet\Writer\Xlsx;*/
+
 // ADMIN CONTROLLER
 // - LOGIN
 // - DASH
@@ -58,7 +63,7 @@ class Admin extends CI_Controller {
 		
 		$data['css_files'] = array("dash.css");									// Default dash style
 
-		$data['primaryColor'] = 'orange';										// Primary color (orange for admin, blue for others??)
+		$data['primaryColor'] = 'deep-purple';										// Primary color (orange for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/admin/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
@@ -172,9 +177,9 @@ class Admin extends CI_Controller {
 		// Setup Admin class
         $admin = new stdClass();
 
-        $admin->id = $this->input->post('id');
-        $admin->username = $this->input->post('username');
-        $admin->pass =  password_hash($this->input->post('nieuwpass'), PASSWORD_DEFAULT);
+        $admin->id = $this->input->post('id', TRUE);
+        $admin->username = $this->input->post('username', TRUE);
+        $admin->pass =  password_hash($this->input->post('nieuwpass', TRUE), PASSWORD_DEFAULT);
 
 		// Check data
         $this->load->model('beheer_model');
@@ -193,7 +198,7 @@ class Admin extends CI_Controller {
 	// Delete admin
     public function delete()
 	{
-		$id = $this->input->post('id');
+		$id = $this->input->post('id', TRUE);
 
 		// Delete
         $this->load->model('beheer_model');
@@ -201,6 +206,15 @@ class Admin extends CI_Controller {
 		
 		// Redirect to adminbeheer
 		redirect('admin/dash/adminbeheer');
+	}
+
+	public function excel(){
+	/*$spreadsheet = new Spreadsheet();
+   $sheet = $spreadsheet->getActiveSheet();
+   $sheet->setCellValue('A1', 'Hello World !');
+
+   $writer = new Xlsx($spreadsheet);
+   $writer->save('hello world.xlsx');*/
 	}
 }
 

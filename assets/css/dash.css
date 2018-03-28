@@ -1,3 +1,12 @@
 tr.colored{
-    background-color: #F5F5F5;
+    background-color: #D1C4E9;
+}
+
+.navbar{
+    box-shadow: none;
+}
+
+td .tableaction{
+    position: relative;
+    height: 100%;
 }
