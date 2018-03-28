@@ -36,11 +36,11 @@ class Jaargang extends CI_Controller{
             $this->db->update('Jaargang', $jaargang);
 
             // Output succes
-            return TRUE;
+            echo 'TRUE';
         }
 
         // Output failure
-        return FALSE;
+        return 'FALSE';
     }
 }
 
