@@ -2,12 +2,17 @@
 <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
     echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
 }?>
+    <li><?php echo anchor("admin/dash/updatekeuzemogelijkheid","+",'class="btn btn-primary"');?></li>
 </ul>
 
 <div class="tab-content">
     <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
             $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
+<<<<<<< HEAD
           echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="primary-color">';
+=======
+            echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';
+>>>>>>> e43ed63cd0d1457c48e70621093df9e3b422340f
             
                 foreach ($kolommen as $kolom) {
                     
@@ -29,7 +34,10 @@
                    echo "</tr>"; 
             }
 
-            echo "</table></div>";
+            echo "</table>";
+            echo '<a href="" class="btn btn-primary">Keuzeoptie toevoegen</a>';
+            echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' aanpassen</a>';
+            echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' verwijderen</a></div>';
 
         }?>
 </div>

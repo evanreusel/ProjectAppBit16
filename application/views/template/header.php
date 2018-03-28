@@ -4,7 +4,8 @@
         'color' => 'primary-color',
         'links' => [],
         'actions' => [],
-        'user' => null
+        'user' => null,
+        'homelink' => ''
     ];
 
     // Check custom
@@ -23,11 +24,17 @@
     if(isset($user)){
         $nav_specs['user'] = $user;
     }
+
+    if(isset($homelink)){
+        $nav_specs['homelink'] = $homelink;
+    }
 ?>
 
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark <?php echo $nav_specs['color']; ?>">
-    <img src="<?php echo base_url(); ?>assets/img/svg/logo.svg">
+    <a href="<?php echo $nav_specs['homelink']; ?>">
+        <img src="<?php echo base_url(); ?>assets/img/svg/logo.svg">
+    </a>
 
         <!-- Collapse button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav"
