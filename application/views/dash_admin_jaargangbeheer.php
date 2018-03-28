@@ -32,7 +32,7 @@
                 }else{
                     if(new DateTIme($jaargang->beginTijdstip) < new DateTime())
                     {
-                        echo '<a class="deactivate" data-id="' . $jaargang->id . '" class="btn btn-primary"><i class="fa fa-ban"></i> Afsluiten</a>';
+                        echo '<a class="deactivate btn btn-primary" data-id="' . $jaargang->id . '"><i class="fa fa-ban"></i> Afsluiten</a>';
                     }else{
                         echo 'Deze editie is nog bezig';
                     }
