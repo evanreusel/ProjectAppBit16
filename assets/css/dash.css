@@ -11,8 +11,8 @@ td .tableaction{
     height: 100%;
 }
 
-td .tableaction i{
-    /* color: #fff!important; */
+td .tableaction_container{
+    width: 380px;
 }
 
 tr p{
