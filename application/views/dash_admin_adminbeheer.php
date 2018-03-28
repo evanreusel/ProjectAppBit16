@@ -33,8 +33,7 @@
 <table class="table">
     <tr class="colored">
         <td><p>User</p></td>
-        <td><p>Actions</p></td>
-        <td><?php echo anchor("admin/dash/updateadmin/",'<i class="fa fa-plus"></i> Administrator toevoegen</a>', array('class' => 'tableaction')); ?></td>
+        <td><?php echo anchor("admin/dash/updateadmin/",'<i class="fa fa-plus"></i> Administrator toevoegen</a>', array('class' => 'tableaction btn')); ?></td>
     </tr>
 
     <?php
