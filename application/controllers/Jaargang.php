@@ -28,16 +28,18 @@ class Jaargang extends CI_Controller{
             // Get from db
             $jaargang = $this->jaargang_model->get_byId($id);
 
+            // Deactivate
             $jaargang->actief = 0;
 
-            print_r($jaargang);
-
+            // Update db
             $this->db->where('id', $jaargang->id);
             $this->db->update('Jaargang', $jaargang);
 
+            // Output succes
             return TRUE;
         }
 
+        // Output failure
         return FALSE;
     }
 }
