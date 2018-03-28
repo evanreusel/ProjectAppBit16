@@ -5,3 +5,8 @@ tr.colored{
 .navbar{
     box-shadow: none;
 }
+
+td .tableaction{
+    position: relative;
+    height: 100%;
+}

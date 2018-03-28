@@ -32,17 +32,16 @@
 
 <table class="table">
     <tr class="colored">
-        <td>User</td>
-        <td>Actions</td>
-        <td><?php echo anchor("admin/dash/updateadmin/","Niewe admin", array('class' => 'btn btn-primary')); ?></td>
+        <td><p>User</p></td>
+        <td><p>Actions</p></td>
+        <td><?php echo anchor("admin/dash/updateadmin/",'<i class="fa fa-plus"></i></a>', array('class' => 'btn-floating tableaction')); ?></td>
     </tr>
 
     <?php
         foreach($data['admins'] as $admin){
-            echo "<tr> \n
-            <td>" . $admin->username . '</td> \n
-            <td colspan="2">' . anchor("admin/dash/updateadmin/$admin->id","Aanpassen", array('class' => 'btn btn-primary')) . form_button("verwijder",'<i class="fa fa-magic mr-1"></i>Verwijder',array('value'=>"$admin->id,$admin->username",'class'=>"verwijder btn btn-primary")) . "</td>
-            </tr> \n";
+            echo "<tr><td><p>" . $admin->username . '</p></td>
+            <td colspan="2">' . anchor("admin/dash/updateadmin/$admin->id",'<i class="fa fa-cog mr-1"></i> Aanpassen', array('class' => 'btn btn-round btn-warning')) . form_button("verwijder",'<i class="fa fa-trash mr-1"></i> Verwijder',array('value'=>"$admin->id,$admin->username",'class'=>"verwijder btn btn-round btn-danger")) . "</td>
+            </tr>";
         };
     ?>
 </table>

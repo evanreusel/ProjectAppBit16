@@ -103,6 +103,7 @@ class Admin extends CI_Controller {
 			break;
 			case "updateKeuzemogelijkheid":
 				if($extras != null) {
+					$this->load->model('keuzemogelijkheid_model');
 					$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->get_byId($extras);
 				}
 			break;
@@ -110,6 +111,9 @@ class Admin extends CI_Controller {
 				$this->load->model('jaargang_model');
 				$data['data']['jaargangen'] = $this->jaargang_model->getAll();
 			break;
+			case "plaatsToevoegen":
+				$this->load->model('plaats_model');
+				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 		}
 
 		$this->load->view('template/main', $data);
