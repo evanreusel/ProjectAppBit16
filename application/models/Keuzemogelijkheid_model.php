@@ -36,17 +36,17 @@ class Keuzemogelijkheid_Model extends CI_Model {
     function update($keuzemogelijkheid)
     {
         $this->db->where('id', $keuzemogelijkheid->id);
-        $this->db->update('Beheer', $keuzemogelijkheid);
+        $this->db->update('Keuzemogelijkheid', $keuzemogelijkheid);
     }
 
     function add($keuzemogelijkheid){
-        $this->db->insert('Beheer', $keuzemogelijkheid);
+        $this->db->insert('Keuzemogelijkheid', $keuzemogelijkheid);
         return $this->db->insert_id();
     }
 
     function delete($id){
         $this->db->where('id', $id);
-        $this->db->delete('Beheer');
+        $this->db->delete('Keuzemogelijkheid');
     }
    
 }
