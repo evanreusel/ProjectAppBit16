@@ -37,7 +37,3 @@
     echo form_close();
     ?>
 </div>
-
-<?php
-echo anchor('home', '<button class="btn">Terug</button>');
-?>

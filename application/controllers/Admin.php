@@ -103,6 +103,7 @@ class Admin extends CI_Controller {
 			break;
 			case "updateKeuzemogelijkheid":
 				if($extras != null) {
+					$this->load->model('keuzemogelijkheid_model');
 					$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->get_byId($extras);
 				}
 			break;
