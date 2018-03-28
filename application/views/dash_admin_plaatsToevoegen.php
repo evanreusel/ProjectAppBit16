@@ -22,6 +22,11 @@
         'class' => 'form-control',
         'required' => 'required'));
 
+                // variabele aanmaken om dit even te testen
+                $idtje = "";
+        if (!in_array ( ($plaats->naam), $plaats)) {
+            $idtje = '0';
+        }
     echo '</br>';
     echo form_labelpro('Locatie', 'locatie');
     echo form_input(array('name' => 'locatie',
@@ -30,11 +35,8 @@
         'class' => 'form-control',
         'required' => 'required'));
 
-        // variabele aanmaken om dit even te testen
-        $idtje = "";
-if (!in_array ( $plaats->naam, array $plaats)) {
-    $idtje = '0';
-}
+
+
 
 
     echo form_hidden('id', $idtje);
