@@ -1,3 +1,7 @@
 tr.colored{
     background-color: #F5F5F5;
 }
+
+.navbar{
+    box-shadow: none;
+}
