@@ -11,16 +11,11 @@ class Jaargang extends CI_Controller{
         // Autoload
         $this->load->library('session');
 
-		// Check location is home of admin controller or api request page
-		$is_api_end = ($this->router->class === 'jaargang' && $this->router->method === 'end') ? true : false;
-
-		// Homepage check
-		if($is_api_end){
-			// Redirect to home if no session started
-			if(!$this->session->has_userdata('id')){
-				redirect('/admin/index', 'location');
-			}
-		}
+		// Login validation
+        // Redirect to home if no session started
+        if(!$this->session->has_userdata('id')){
+            redirect('/admin/index', 'location');
+        }
     }
     
     // API
@@ -31,7 +26,7 @@ class Jaargang extends CI_Controller{
             $this->load->model('jaargang_model');
 
             // Get from db
-            $jaargang = $jaargang_model->get_byId($id);
+            $jaargang = $this->jaargang_model->get_byId($id);
 
             $jaargang->actief = 0;
 
