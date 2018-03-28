@@ -30,11 +30,7 @@
         'class' => 'form-control',
         'required' => 'required'));
 
-
-
-
-
-    echo form_hidden('id', $plaats->id);
+//     echo form_hidden('id', $plaats->id);
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();
