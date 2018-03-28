@@ -41,13 +41,25 @@ class Keuzemogelijkheid extends CI_Controller{
 		
 		// Keuzemogelijkheid toevoegen of aanpassen
         if($admin->id == 0){
-       		$this->keuzemogelijkheid_model->insertKeuzemogelijkheid($keuzemogelijkheid);
+       		$this->keuzemogelijkheid_model->add($keuzemogelijkheid);
         } else {
-        	$this->keuzemogelijkheid_model->deleteKeuzemogelijkheid($keuzemogelijkheid);
+        	$this->keuzemogelijkheid_model->update($keuzemogelijkheid);
         }
 
 		// Redirect naar keuzemogelijkheid pagina
 		redirect('admin/dash/keuzemogelijkheidbeheer');
+    }
+    
+    public function delete()
+	{
+		$id = $this->input->post('id', TRUE);
+
+		// Delete
+        $this->load->model('keuzemogelijkheid_model');
+        $this->beheer_model->delete($id);
+		
+		// Redirect to adminbeheer
+		redirect('admin/dash/keuzemogeelijkheidbeheer');
 	}
 
 }

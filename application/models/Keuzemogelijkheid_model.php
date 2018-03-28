@@ -33,23 +33,20 @@ class Keuzemogelijkheid_Model extends CI_Model {
         return $activiteiten;
     }
     
-    function insertKeuzemogelijkheid($naam, $plaatsId, $beginDatum, $eindDatum, $deadline) 
+    function update($keuzemogelijkheid)
     {
-        $keuzeMogelijkheid = new stdClass();
-        $keuzeMogelijkheid->naam = $naam;
-        $keuzeMogelijkheid->plaatsId = $plaatsId;
-        $keuzeMogelijkheid->beginDatum = $beginDatum;
-        $keuzeMogelijkheid->eindDatum = $eindDatum;
-        $keuzeMogelijkheid->deadline = $deadline;
-        $keuzeMogelijkheid->jaargangId = 0;
-        $this->db->insert('KeuzeMogelijkheid', $keuzeMogelijkheid);
+        $this->db->where('id', $keuzemogelijkheid->id);
+        $this->db->update('Beheer', $keuzemogelijkheid);
+    }
+
+    function add($keuzemogelijkheid){
+        $this->db->insert('Beheer', $keuzemogelijkheid);
         return $this->db->insert_id();
     }
-    
-    function deleteKeuzemogelijkheid ($id)
-    {
-     $this->db->where($id);
-     $query = $this->db->delete('KeuzeMogelijkheid');   
+
+    function delete($id){
+        $this->db->where('id', $id);
+        $this->db->delete('Beheer');
     }
    
 }
