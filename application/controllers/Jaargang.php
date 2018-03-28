@@ -26,7 +26,7 @@ class Jaargang extends CI_Controller{
             $this->load->model('jaargang_model');
 
             // Get from db
-            $jaargang = $this->$jaargang_model->get_byId($id);
+            $jaargang = $this->jaargang_model->get_byId($id);
 
             $jaargang->actief = 0;
 
