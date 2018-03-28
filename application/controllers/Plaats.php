@@ -8,24 +8,7 @@ class Plaats extends CI_Controller {
                 $this->load->helper('form');
 	}
 	
-        	public function index($view = null)
-	{
-        if(is_null($view) )
-		{
-			$view = 'plaatsToevoegen';
-        }
-        // load view
-        $data['view'] = 'dash_admin_' . $view;
 
-        $this->load->model('plaats_model');
-        $data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
-
-		$data['message'] = "hello";
-		$data['css_files'] = array("home.css");
-		$data['clearscreen'] = true;
-        $this->load->view('plaats_toevoegen', $data);
-    
-	}
 	
         function getEmptyPlaats() {
         $plaats = new stdClass();
