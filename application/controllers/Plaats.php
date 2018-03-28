@@ -8,8 +8,6 @@ class Plaats extends CI_Controller {
                 $this->load->helper('form');
 	}
 	
-
-	
         function getEmptyPlaats() {
         $plaats = new stdClass();
 
@@ -26,9 +24,9 @@ class Plaats extends CI_Controller {
         $data['plaats'] = $this->getEmptyPlaats();
  
 
-        $data['view'] = 'login';
+        $data['view'] = 'plaatsToevoegen';
 
-        $this->load->view('plaats_toevoegen', $data);
+        $this->load->view('template/main', $data);
     }
     
     public function registreer() {
@@ -38,7 +36,7 @@ class Plaats extends CI_Controller {
         $plaats->locatie = $this->input->post('locatie');
 
         $plaats->id = $this->input->post('id');
-
+        $data['view'] = 'plaatsToevoegen';
         $this->load->model('plaats_model');
         
         if ($plaats->id == 0) {
@@ -47,7 +45,7 @@ class Plaats extends CI_Controller {
             $this->plaats_model->update($plaats);
         }
         
-        $this->load->view('plaats_toevoegen', $data);
+        $this->load->view('template/main', $data);
     
         }
 }
