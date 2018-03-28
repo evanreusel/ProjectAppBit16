@@ -29,8 +29,8 @@ class Keuzemogelijkheid extends CI_Controller{
         $keuzemogelijkheid = new stdClass();
 
         $keuzemogelijkheid->id = $this->input->post('id');
-        $keuzemogelijkheid->plaats = $this->input->post('plaats');
-        $keuzemogelijkheid->jaar = $this->input->post('jaar');
+        $keuzemogelijkheid->plaatsId = $this->input->post('plaats');
+        $keuzemogelijkheid->jaargangId = $this->input->post('jaar');
         $keuzemogelijkheid->naam = $this->input->post('naam');
         $keuzemogelijkheid->eindTijdstip = $this->input->post('eindTijdstip');
         $keuzemogelijkheid->beginTijdstip = $this->input->post('beginTijdstip');
