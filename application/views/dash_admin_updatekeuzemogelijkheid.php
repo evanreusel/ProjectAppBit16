@@ -8,10 +8,10 @@
     $plaats = array();
 
     foreach ($jaargangen as $jaargang) {
-        $jaren.array_push($jaargang->naam);
+        array_push($jaren, $jaargang->naam);
     }
     foreach ($plaatsen as $plek) {
-        $plaats.array_push($plek->naam);
+        array_push($plaats, $plek->naam);
     }
     // if(isset($data['admin'])){
     //     $arrayparameters['content'] = "Pas admin aan";
