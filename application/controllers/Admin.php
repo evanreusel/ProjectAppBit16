@@ -174,9 +174,9 @@ class Admin extends CI_Controller {
 		// Setup Admin class
         $admin = new stdClass();
 
-        $admin->id = $this->input->post('id',true);
-        $admin->username = $this->input->post('username',true);
-        $admin->pass =  password_hash($this->input->post('nieuwpass',true), PASSWORD_DEFAULT);
+        $admin->id = $this->input->post('id', TRUE);
+        $admin->username = $this->input->post('username', TRUE);
+        $admin->pass =  password_hash($this->input->post('nieuwpass', TRUE), PASSWORD_DEFAULT);
 
 		// Check data
         $this->load->model('beheer_model');
@@ -195,7 +195,7 @@ class Admin extends CI_Controller {
 	// Delete admin
     public function delete()
 	{
-		$id = $this->input->post('id',true);
+		$id = $this->input->post('id', TRUE);
 
 		// Delete
         $this->load->model('beheer_model');
