@@ -40,10 +40,10 @@
         foreach($data['admins'] as $admin){
             echo "<tr> \n
             <td>" . $admin->username . "</td> \n
-            <td>" . anchor("admin/dash/updateadmin/$admin->id","<button>Aanpassen</button>") . form_button("verwijder","verwijderen",array('value'=>"$admin->id,$admin->username",'class'=>"verwijder")) . "</td>
+            <td>" . anchor("admin/dash/updateadmin/$admin->id","Aanpassen", array('class' => 'btn btn-primary')) . form_button("verwijder",'<i class="fa fa-magic mr-1"></i>Verwijder',array('value'=>"$admin->id,$admin->username",'class'=>"verwijder btn btn-primary")) . "</td>
             </tr> \n";
         }
-        echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin","<button>Niewe admin</button>") . '</td></tr>';
+        echo '<tr><td rowspan="4">' . anchor("admin/dash/updateadmin/","Niewe admin", array('class' => 'btn btn-primary')) . '</td></tr>';
     ?>
 </table>
 
