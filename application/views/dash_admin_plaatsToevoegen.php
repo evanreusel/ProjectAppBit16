@@ -30,7 +30,14 @@
         'class' => 'form-control',
         'required' => 'required'));
 
-    echo form_hidden('id', '0');
+        // variabele aanmaken om dit even te testen
+        $idtje = "";
+if (!in_array ( $plaats->naam, array $plaats)) {
+    $idtje = '0';
+}
+
+
+    echo form_hidden('id', $idtje);
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();
