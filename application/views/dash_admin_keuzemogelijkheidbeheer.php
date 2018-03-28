@@ -8,11 +8,7 @@
 <div class="tab-content">
     <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
             $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
-<<<<<<< HEAD
-          echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="primary-color">';
-=======
             echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';
->>>>>>> e43ed63cd0d1457c48e70621093df9e3b422340f
             
                 foreach ($kolommen as $kolom) {
                     
