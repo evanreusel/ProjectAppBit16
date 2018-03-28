@@ -122,7 +122,7 @@ class Admin extends CI_Controller {
 			break;
 			case "jaargangbeheer":
 				$this->load->model('jaargang_model');
-				$data['data']['jaargangen'] = $this->jaargang_model->getAll();
+				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
 			break;
 			case "plaatsToevoegen":
 				$this->load->model('plaats_model');
@@ -176,7 +176,7 @@ class Admin extends CI_Controller {
 		$this->load->view('req_output', $data);
 	}
 
-	// FUNCTIONAL
+	// FLOW
 	// Logout admin
 	public function logout(){
 		$this->session->unset_userdata('id');

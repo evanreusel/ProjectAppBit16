@@ -20,7 +20,13 @@ class Jaargang_model extends CI_Model {
     }
 
     function getAllByJaargang() {
-        $this->db->order_by('naam', 'desc');
+        $this->db->order_by('naam', 'DESC');
+        $query = $this->db->get('Jaargang');
+        return $query->result();
+    }
+
+    function getAllbyBeginTijdstip(){
+        $this->db->order_by('beginTijdstip', 'DESC');
         $query = $this->db->get('Jaargang');
         return $query->result();
     }
