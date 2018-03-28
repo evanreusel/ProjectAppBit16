@@ -26,7 +26,7 @@ class Plaats extends CI_Controller {
 
         $data['view'] = 'plaatsToevoegen';
 
-        $this->load->view('template/main', $data);
+        redirect('admin/dash/plaatsToevoegen');
     }
     
     public function registreer() {
@@ -45,7 +45,7 @@ class Plaats extends CI_Controller {
             $this->plaats_model->update($plaats);
         }
         
-        $this->load->view('template/main', $data);
+        redirect('admin/dash/plaatsToevoegen');
     
         }
 }

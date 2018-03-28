@@ -5,8 +5,8 @@
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
     
-    $jaren = array();
-    $plaats = array();
+    $jaren = array('');
+    $plaats = array('');
 
     foreach ($jaargangen as $jaargang) {
         array_push($jaren, $jaargang->naam);
