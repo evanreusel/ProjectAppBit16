@@ -2,6 +2,14 @@
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
     $arrayparameters['value'] = '0';
+    $arrayparameters['content'] = "Bevestig";
+
+    $options = array(
+        'small'         => 'Small Shirt',
+        'med'           => 'Medium Shirt',
+        'large'         => 'Large Shirt',
+        'xlarge'        => 'Extra Large Shirt',
+        );
     
     // if(isset($data['admin'])){
     //     $arrayparameters['content'] = "Pas admin aan";
@@ -9,12 +17,7 @@
     //     $arrayparameters['content'] = "Maak nieuwe admin aan";
     // }
 ?>
-    $options = array(
-        'small'         => 'Small Shirt',
-        'med'           => 'Medium Shirt',
-        'large'         => 'Large Shirt',
-        'xlarge'        => 'Extra Large Shirt',
-        );
+    
 
 
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
