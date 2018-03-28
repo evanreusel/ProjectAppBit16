@@ -34,7 +34,7 @@
     <tr class="colored">
         <td>User</td>
         <td>Actions</td>
-        <td><?php echo anchor("admin/dash/updateadmin/","Niewe admin", array('class' => 'btn btn-primary')); ?></td>
+        <td><?php echo anchor("admin/dash/updateadmin/",'<i class="fa fa-add"></i></a>', array('class' => 'btn-floating deep-purple')); ?></td>
     </tr>
 
     <?php
@@ -42,7 +42,7 @@
             echo "<tr> \n
             <td>" . $admin->username . '</td> \n
             <td colspan="2">' . anchor("admin/dash/updateadmin/$admin->id","Aanpassen", array('class' => 'btn btn-primary')) . form_button("verwijder",'<i class="fa fa-magic mr-1"></i>Verwijder',array('value'=>"$admin->id,$admin->username",'class'=>"verwijder btn btn-primary")) . "</td>
-            </tr> \n";
+            </tr>";
         };
     ?>
 </table>
