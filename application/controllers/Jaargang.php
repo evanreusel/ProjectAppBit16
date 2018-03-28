@@ -30,6 +30,8 @@ class Jaargang extends CI_Controller{
 
             $jaargang->actief = 0;
 
+            print_r($jaargang);
+
             $this->db->where('id', $jaargang->id);
             $this->db->update('Jaargang', $jaargang);
 
