@@ -6,7 +6,10 @@ if (!defined('BASEPATH'))
 class Jaargang extends CI_Controller{
     public function __construct()
 	{
-		parent::__construct();
+        parent::__construct();
+        
+        // Autoload
+        $this->load->library('session');
 
 		// Check location is home of admin controller or api request page
 		$is_api_end = ($this->router->class === 'jaargang' && $this->router->method === 'end') ? true : false;
@@ -20,6 +23,7 @@ class Jaargang extends CI_Controller{
 		}
     }
     
+    // API
     // Deactivate jaargang
     public function end($id){
         if($id > 0)
@@ -33,7 +37,11 @@ class Jaargang extends CI_Controller{
 
             $this->db->where('id', $jaargang->id);
             $this->db->update('Jaargang', $jaargang);
+
+            return TRUE;
         }
+
+        return FALSE;
     }
 }
 

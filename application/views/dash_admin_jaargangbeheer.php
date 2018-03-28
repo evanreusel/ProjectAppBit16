@@ -32,7 +32,7 @@
                 }else{
                     if(new DateTIme($jaargang->beginTijdstip) < new DateTime())
                     {
-                        echo '<a href="' . base_url() . 'index.php/jaargang/end/' . $jaargang->id . '" class="btn btn-primary">Jaargang afsluiten</a>';
+                        echo '<a id="deactivate" data-id="' . $jaargang->id . '" class="btn btn-primary">Jaargang afsluiten</a>';
                     }else{
                         echo 'Deze editie is nog bezig';
                     }
@@ -42,3 +42,19 @@
     </tr>
     <?php } ?>
 </table>
+
+<script>
+    $(document).ready(function () {
+        $('#deactivate').click(function () {
+            var id = this.getAttribute("data-id");
+
+            $.get('<?php echo base_url(); ?>index.php/jaargang/end/' + id, function (data) {
+                if (data) {
+                    window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/jaargangbeheer/';
+                }else{
+                    alert('Something went wrong deactivating jaargang');
+                }
+            });
+        });
+    });
+</script>
