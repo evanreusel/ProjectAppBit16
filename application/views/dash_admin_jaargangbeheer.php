@@ -27,7 +27,7 @@
         </td>
         <td>
             <?php
-                if($jaarging->actief == 0){
+                if($jaargang->actief == 0){
                     echo "Afgesloten";
                 }else{
                     if(new DateTIme($jaargang->beginTijdstip) < new DateTime())
