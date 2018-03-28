@@ -2,6 +2,7 @@
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
     $arrayparameters['value'] = '0';
+    $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
     
     $jaren = array();
@@ -24,7 +25,7 @@
 
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     
-    <label for="jaar">Plaats:</label>
+    <label for="jaar">Jaar:</label>
     <?php echo form_dropdown("jaar", $jaren) ?>
     </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
