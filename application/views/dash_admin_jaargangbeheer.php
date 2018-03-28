@@ -26,7 +26,17 @@
             <?php echo $jaargang->eindTijdstip; ?>
         </td>
         <td>
-            <?php echo $jaargang->actief; ?>
+            <?php
+                if($jaarging-actief == 0){
+                    echo "Afgesloten";
+                }else{
+                    if(new DateTIme($jaargang->beginTijdstip) < new DateTime())
+                    {
+                        echo '<a href="" class="btn btn-primary">Jaargang afsluiten</a>'
+                    }else{
+                        echo 'Deze editie is nog bezig';
+                    }
+                }
         </td>
     </tr>
     <?php } ?>
