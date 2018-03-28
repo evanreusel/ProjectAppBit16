@@ -63,7 +63,7 @@ class Admin extends CI_Controller {
 		
 		$data['css_files'] = array("dash.css");									// Default dash style
 
-		$data['primaryColor'] = 'orange';										// Primary color (orange for admin, blue for others??)
+		$data['primaryColor'] = 'deep-purple';										// Primary color (orange for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/admin/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
