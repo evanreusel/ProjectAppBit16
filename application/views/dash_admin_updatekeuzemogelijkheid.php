@@ -24,22 +24,22 @@
     
     <label for="jaar">Plaats:</label>
     <?php echo form_dropdown("jaar", $options) ?>
-    
+    </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
     <input id="keuzemogelijkheid" name="naam" type="text" value="">
-
+    </br>
     <label for="plaats">Plaats:</label>
     <?php echo form_dropdown("plaats", $options) ?>
-
+    </br>
     <label for="begin">Begin datum en tijdstip:</label>
     <input id="begin" name="beginTijdstip" size="16" type="text" value="" readonly class="form_datetime">
-
+    </br>
     <label for="einde">Eind datum en tijdstip:</label>
     <input id="einde" name="eindTijdstip" size="16" type="text" value="" readonly class="form_datetime">
-
+    </br>
     <label for="deadline">Datum en tijdstip voor deadline:</label>
     <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="" readonly class="form_datetime">
-
+    </br>
     <?php    
         echo form_button($arrayparameters);
         echo form_close();
