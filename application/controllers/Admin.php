@@ -74,7 +74,7 @@ class Admin extends CI_Controller {
 			[
 				'title' => 'Keuzemogelijheden',
 				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
-			]
+			],
 			[
 				'title' => 'Locaties',
 				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
