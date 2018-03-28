@@ -2,16 +2,17 @@
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
     $arrayparameters['value'] = '0';
+    $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
     
     $jaren = array();
     $plaats = array();
 
     foreach ($jaargangen as $jaargang) {
-        $jaren.array_push($jaargang->naam);
+        array_push($jaren, $jaargang->naam);
     }
     foreach ($plaatsen as $plek) {
-        $plaats.array_push($plek->naam);
+        array_push($plaats, $plek->naam);
     }
     // if(isset($data['admin'])){
     //     $arrayparameters['content'] = "Pas admin aan";
@@ -24,7 +25,7 @@
 
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     
-    <label for="jaar">Plaats:</label>
+    <label for="jaar">Jaar:</label>
     <?php echo form_dropdown("jaar", $jaren) ?>
     </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
