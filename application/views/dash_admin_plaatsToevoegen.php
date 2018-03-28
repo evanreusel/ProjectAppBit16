@@ -7,7 +7,7 @@
     <thead><tr><th>Naam</th> <th>Plaats</th> </tr></thead><tbody>
         <?php
         foreach ($plaatsen as $plaats) {
-            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td></tr>" ;
+            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td></tr>" . anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round"><span class="glyphicon glyphicon-remove"></span></button>') .  '</td></tr>';
         }
         ?>
     </tbody>
@@ -29,7 +29,6 @@
         'value' => $plaats->locatie,
         'class' => 'form-control',
         'required' => 'required'));
-
 
     echo form_hidden('id', $plaats->id);
 
