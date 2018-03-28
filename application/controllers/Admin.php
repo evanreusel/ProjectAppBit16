@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+		/*require APPPATH . 'third_party/PhpSpreadsheet-develop/src/PhpSpreadsheet/IOFactory.php';
+	
+		use PhpOffice\PhpSpreadsheet\Spreadsheet;
+		use PhpOffice\PhpSpreadsheet\Writer\Xlsx;*/
+
 // ADMIN CONTROLLER
 // - LOGIN
 // - DASH
@@ -169,9 +174,9 @@ class Admin extends CI_Controller {
 		// Setup Admin class
         $admin = new stdClass();
 
-        $admin->id = $this->input->post('id');
-        $admin->username = $this->input->post('username');
-        $admin->pass =  password_hash($this->input->post('nieuwpass'), PASSWORD_DEFAULT);
+        $admin->id = $this->input->post('id',true);
+        $admin->username = $this->input->post('username',true);
+        $admin->pass =  password_hash($this->input->post('nieuwpass',true), PASSWORD_DEFAULT);
 
 		// Check data
         $this->load->model('beheer_model');
@@ -190,7 +195,7 @@ class Admin extends CI_Controller {
 	// Delete admin
     public function delete()
 	{
-		$id = $this->input->post('id');
+		$id = $this->input->post('id',true);
 
 		// Delete
         $this->load->model('beheer_model');
@@ -198,6 +203,15 @@ class Admin extends CI_Controller {
 		
 		// Redirect to adminbeheer
 		redirect('admin/dash/adminbeheer');
+	}
+
+	public function excel(){
+	/*$spreadsheet = new Spreadsheet();
+   $sheet = $spreadsheet->getActiveSheet();
+   $sheet->setCellValue('A1', 'Hello World !');
+
+   $writer = new Xlsx($spreadsheet);
+   $writer->save('hello world.xlsx');*/
 	}
 }
 
