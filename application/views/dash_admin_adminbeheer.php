@@ -34,7 +34,7 @@
     <tr class="colored">
         <td>User</td>
         <td>Actions</td>
-        <td><?php echo anchor("admin/dash/updateadmin/",'<i class="fa fa-add"></i></a>', array('class' => 'btn-floating deep-purple')); ?></td>
+        <td><?php echo anchor("admin/dash/updateadmin/",'<i class="fa fa-plus"></i></a>', array('class' => 'btn-floating deep-purple')); ?></td>
     </tr>
 
     <?php
