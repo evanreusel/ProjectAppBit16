@@ -10,3 +10,11 @@ td .tableaction{
     position: relative;
     height: 100%;
 }
+
+td .tableaction i{
+    /* color: #fff!important; */
+}
+
+tr {
+    margin: 0;
+}
