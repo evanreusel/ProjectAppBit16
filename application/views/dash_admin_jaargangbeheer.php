@@ -32,7 +32,7 @@
                 }else{
                     if(new DateTIme($jaargang->beginTijdstip) < new DateTime())
                     {
-                        echo '<a href="" class="btn btn-primary">Jaargang afsluiten</a>';
+                        echo '<a href="jaargang/end/<?php echo $jaargang->id; ?>" class="btn btn-primary">Jaargang afsluiten</a>';
                     }else{
                         echo 'Deze editie is nog bezig';
                     }
