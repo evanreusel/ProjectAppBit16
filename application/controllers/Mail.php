@@ -15,7 +15,7 @@ class Mail extends CI_Controller {
         $receiver->email = "evanreusel@gmail.com";
         $receiver->name = "Erik";
         $to = $receiver;
-        $personalizations->$to = $to;
+        $personalizations->to = $to;
         $sendgridData->personalizations = $personalizations;
 
         echo json_encode($sendgridData);
