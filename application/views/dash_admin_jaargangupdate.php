@@ -35,22 +35,40 @@
 
     <div class="md-form">
         <label for="inpInfo">Info</label>
-        <textarea type="text" id="inpInfo" class="form-control md-textarea" rows="3"><?php echo $forminputs['naam']; ?></textarea>
+        <textarea type="text" id="inpInfo" class="form-control md-textarea" rows="3">
+            <?php echo $forminputs['naam']; ?>
+        </textarea>
     </div>
 
     <div class="md-form">
         <label for="einde">Begintijdstip van event:</label>
-        <input id="einde" id="inpBeginTijdstip" size="16" type="text" value="<?php echo $forminputs['beginTijdstip']; ?>" readonly class="datepicker">
+        <input id="einde" id="inpBeginTijdstip" size="16" type="text" value="<?php echo $forminputs['beginTijdstip']; ?>" readonly
+            class="form_datetime">
     </div>
 
     <div class="md-form">
         <label for="deadline">Eindtijdstip van event:</label>
-        <input id="deadline" id="inpEindtijdstip" size="16" type="text" value="<?php echo $forminputs['eindTijdstip']; ?>" readonly class="datepicker">
+        <input id="deadline" id="inpEindtijdstip" size="16" type="text" value="<?php echo $forminputs['eindTijdstip']; ?>" readonly
+            class="form_datetime">
     </div>
 </form>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('.datepicker').pickadate();
+    $(function () {
+        $('#inpBeginTijdstip').datetimepicker({
+            viewMode: 'months',
+            format: 'dd-mm-yyyy'
+        });
+        $('#inpEindtijdstip').datetimepicker({
+            viewMode: 'months',
+            format: 'dd-mm-yyyy',
+            useCurrent: false //Important! See issue #1075
+        });
+        $("#inpBeginTijdstip").on("dp.change", function (e) {
+            $('#inpEindtijdstip').data("DateTimePicker").minDate(e.date);
+        });
+        $("#inpEindtijdstip").on("dp.change", function (e) {
+            $('#inpBeginTijdstip').data("DateTimePicker").maxDate(e.date);
+        });
     });
-</script>            
+</script>
