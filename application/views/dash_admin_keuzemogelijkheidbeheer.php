@@ -1,4 +1,5 @@
 <ul class="nav nav-tabs">
+    <?php print_r($data); ?>
 <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
     echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
 }?>
