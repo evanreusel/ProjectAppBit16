@@ -25,6 +25,9 @@ class Mail extends CI_Controller {
         $secondEmail->email = "r0581776@student.thomasmore.be";
         $secondEmail->name = "Erik";
         array_push($bcc, $secondEmail);
+        $thirdemail = new stdClass();
+        $thirdemail->email = "erik.van.reusel@gmail.com";
+        $thirdemail->name = "Erik";
         $personalizations->bcc = $bcc;
         $sendgridData->personalizations = $personalizations;
 
@@ -36,7 +39,7 @@ class Mail extends CI_Controller {
         array_push($content, $contentItem);
         $sendgridData->content = $content;
 
-        echo json_encode($sendgridData);
+        return json_encode($sendgridData, JSON_UNESCAPED_SLASHES);
     }
     /**
      * Index Page for this controller.
@@ -62,9 +65,9 @@ class Mail extends CI_Controller {
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, "{\"personalizations\": [{\"to\": [{\"email\": \"evanreusel@gmail.com\"}]}],\"from\": {\"email\": \"dirkdepeuter@outlookforandroid.be\"},\"subject\": \"Sending with SendGrid is Fun\",\"content\": [{\"type\": \"text/plain\", \"value\": \"and easy to do anywhere, even with cURL\"}]}");
         curl_setopt($ch, CURLOPT_POST, 1);
-
+        $sendgridData = $this->generateData();
         $headers = array();
-        $headers[] = "Authorization: Bearer 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";
+        $headers[] = "Authorization: Bearer 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";
         $headers[] = "Content-Type: application/json";
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
@@ -73,6 +76,7 @@ class Mail extends CI_Controller {
             echo 'Error:' . curl_error($ch);
         }
         curl_close ($ch);
+        echo $result;
 
     }
 }
