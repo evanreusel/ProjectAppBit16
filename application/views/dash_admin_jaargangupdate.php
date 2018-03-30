@@ -40,15 +40,15 @@
 
     <div class="md-form">
         <label for="einde">Begintijdstip van event:</label>
-        <input id="einde" id="inpBeginTijdstip" size="16" type="text" value="<?php echo $forminputs['beginTijdstip']; ?>" readonly class="form_datetime">
+        <input id="einde" id="inpBeginTijdstip" size="16" type="text" value="<?php echo $forminputs['beginTijdstip']; ?>" readonly class="datepicker">
     </div>
 
     <div class="md-form">
         <label for="deadline">Eindtijdstip van event:</label>
-        <input id="deadline" id="inpEindtijdstip" size="16" type="text" value="<?php echo $forminputs['eindTijdstip']; ?>" readonly class="form_datetime">
+        <input id="deadline" id="inpEindtijdstip" size="16" type="text" value="<?php echo $forminputs['eindTijdstip']; ?>" readonly class="datepicker">
     </div>
 </form>
 
 <script type="text/javascript">
-    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
+    $('.datepicker').pickadate();
 </script>            
