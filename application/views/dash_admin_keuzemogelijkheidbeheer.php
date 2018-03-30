@@ -9,7 +9,9 @@ if(count($data['keuzemogelijkheden']) > 0) {
 </ul>
 
 <div class="tab-content">
-    <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
+    <?php
+        if(count($data['keuzemogelijkheden']) > 0) {
+            foreach ($data['keuzemogelijkheden'] as $activiteit) {
             $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
             echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';
             
@@ -39,7 +41,11 @@ if(count($data['keuzemogelijkheden']) > 0) {
             // echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' verwijderen</a>';
             echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round">'. $activiteit->naam .' verwijderen</button></div>');
 
-        }?>
+        }
+    }
+    else{
+        echo 'No data';   
+    }?>
 </div>
 
 <script src="../assets/Keuzemogelijkheid.js"></script>
