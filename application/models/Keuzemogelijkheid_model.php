@@ -35,7 +35,7 @@ class Keuzemogelijkheid_Model extends CI_Model {
 
     function getAllWithKeuzeOpties_byJaargangId($id){
         $this->db->where('jaargangId', $id);
-        $query = $this->db->get('KeuzeMogelijkheid');
+        $keuzemogelijkheden = $this->db->get('KeuzeMogelijkheid');
 
         $this->load->model('keuzeoptie_model');
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
