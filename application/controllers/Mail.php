@@ -9,15 +9,31 @@ class Mail extends CI_Controller {
     public function generateData()
     {
         $sendgridData = new stdClass();
+
+        //Generate personalizations
         $personalizations = new stdClass();
         $to = array();
-        $receiver = new stdClass();
-        $receiver->email = "evanreusel@gmail.com";
-        $receiver->name = "Erik";
+
+        $firstReceiver = new stdClass();
+        $firstReceiver->email = "evanreusel@gmail.com";
+        $firstReceiver->name = "Erik";
         array_push($to, $receiver);
-        //$to = $receiver;
+        $bcc = array();
+        //TODO: Add foreach for every single email address
+        $secondEmail = new stdClass();
+        $secondEmail->email = "r0581776@student.thomasmore.be";
+        $secondEmail->name = "Erik";
+
         $personalizations->to = $to;
         $sendgridData->personalizations = $personalizations;
+
+        //generate Content mail
+        $content = array();
+        $contentItem = new stdClass();
+        $contentItem->type = "text/html";
+        $contentItem->value = "<h1>SENDGRID MAIL TEST</h1>";
+        array_push($content, $contentItem);
+        $sendgridData->content = $content;
 
         echo json_encode($sendgridData);
     }
