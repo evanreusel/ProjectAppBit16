@@ -47,5 +47,3 @@ if(count($data['keuzemogelijkheden']) > 0) {
         echo 'No data';   
     }?>
 </div>
-
-<script src="../assets/Keuzemogelijkheid.js"></script>
