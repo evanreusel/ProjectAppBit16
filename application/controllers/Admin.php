@@ -125,7 +125,7 @@ class Admin extends CI_Controller {
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 			break;
-			case 'updatejaargang':
+			case 'jaargangupdate':
 				if($extras != null) {
 					$this->load->model('jaargang_model');
 					$data['data']['jaargang'] = $this->keuzemogelijkheid_model->get_byId($extras);
