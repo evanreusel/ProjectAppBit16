@@ -125,7 +125,7 @@ class Admin extends CI_Controller {
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 			default:
-				$view = 'index';
+				$data['view'] = 'dash_admin_view';										// Default view
 			break;
 		}
 
