@@ -61,12 +61,10 @@
 
 <script type="text/javascript">
     $('#inpBeginTijdstip').datetimepicker({
-        viewMode: 'months',
         format: 'dd-mm-yyyy'
     });
 
     $('#inpEindtijdstip').datetimepicker({
-        viewMode: 'months',
         format: 'dd-mm-yyyy',
         useCurrent: false //Important! See issue #1075
     });
@@ -74,6 +72,7 @@
     $("#inpBeginTijdstip").on("dp.change", function (e) {
         $('#inpEindtijdstip').data("DateTimePicker").minDate(e.date);
     });
+    
     $("#inpEindtijdstip").on("dp.change", function (e) {
         $('#inpBeginTijdstip').data("DateTimePicker").maxDate(e.date);
     });
