@@ -40,12 +40,12 @@
 
     <div class="md-form">
         <label for="einde">Begintijdstip van event:</label>
-        <input id="einde" id="inpBeginTijdstip" size="16" type="text" value="" readonly class="form_datetime">
+        <input id="einde" id="inpBeginTijdstip" size="16" type="text" value="<?php echo $forminputs['beginTijdstip']; ?>" readonly class="form_datetime">
     </div>
 
     <div class="md-form">
         <label for="deadline">Eindtijdstip van event:</label>
-        <input id="deadline" id="inpEindtijdstip" size="16" type="text" value="" readonly class="form_datetime">
+        <input id="deadline" id="inpEindtijdstip" size="16" type="text" value="<?php echo $forminputs['eindTijdstip']; ?>" readonly class="form_datetime">
     </div>
 </form>
 
