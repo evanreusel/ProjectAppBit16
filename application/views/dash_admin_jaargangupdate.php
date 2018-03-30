@@ -10,7 +10,7 @@
         'thema' => '',
         'info' => '',
         'beginTijdstip' => '',
-        'eindTijstip' => ''
+        'eindTijdstip' => ''
     ];
 
     if(isset($data)){
@@ -50,5 +50,5 @@
 </form>
 
 <script type="text/javascript">
-    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
 </script>            
