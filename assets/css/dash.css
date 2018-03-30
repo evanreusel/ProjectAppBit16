@@ -27,3 +27,11 @@ tr p{
     margin: 0;
     margin-left: 15px;
 }
+
+form{
+    padding: 25px;
+}
+
+form .md-form{
+    padding-top: 20px;
+}
