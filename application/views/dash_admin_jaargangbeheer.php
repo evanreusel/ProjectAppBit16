@@ -1,11 +1,12 @@
 <table class="table">
     <tr class="colored">
-        <th>naam</th>
-        <th>info</th>
-        <th>thema</th>
-        <th>beginTijdstip</th>
-        <th>eindTijdstip</th>
-        <th>actief</th>
+        <th>Naam</th>
+        <th>Info</th>
+        <th>Thema</th>
+        <th>BeginTijdstip</th>
+        <th>EindTijdstip</th>
+        <th>Actief</th>
+        <th>Actions</th>
     </tr>
 
     <?php foreach($data['jaargangen'] as $jaargang){ ?>
@@ -38,7 +39,7 @@
                     }
                 }
 
-                echo '<a class="btn btn-warning" href="<?php echo base_url(); ?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $jaargang->id; ?>"><i class="fa fa-ban"></i> Keuzemogelijkheden</a>';
+                echo '<td><a class="btn btn-warning" href="<?php echo base_url(); ?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $jaargang->id; ?>"><i class="fa fa-ban"></i> Keuzemogelijkheden</a></td>';
             ?>
         </td>
     </tr>
