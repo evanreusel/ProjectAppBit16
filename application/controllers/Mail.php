@@ -67,7 +67,7 @@ class Mail extends CI_Controller {
         curl_setopt($ch, CURLOPT_POST, 1);
         $sendgridData = $this->generateData();
         $headers = array();
-        $headers[] = "Authorization: Bearer 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";
+        $headers[] = "Authorization: Bearer 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";
         $headers[] = "Content-Type: application/json";
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
