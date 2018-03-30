@@ -128,7 +128,7 @@ class Admin extends CI_Controller {
 			case 'jaargangupdate':
 				if($extras != null) {
 					$this->load->model('jaargang_model');
-					$data['data']['jaargang'] = $this->keuzemogelijkheid_model->get_byId($extras);
+					$data['data']['jaargang'] = $this->jaargang_model->get_byId($extras);
 				}
 			break;
 			default:
