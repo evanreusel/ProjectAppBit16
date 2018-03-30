@@ -23,8 +23,8 @@
         $forminputs['beginTijdstip'] = $data['jaargang']->beginTijdstip;
     }
 
-    if($data['jaargang']->eindTijstip != ''){
-        $forminputs['eindTijstip'] = $data['jaargang']->eindTijstip;
+    if($data['jaargang']->eindTijdstip != ''){
+        $forminputs['eindTijstip'] = $data['jaargang']->eindTijdstip;
     }
 ?>
 
