@@ -46,6 +46,11 @@ class Mail extends CI_Controller {
         $contentItem->value = "SENDGRID MAIL TEST";
         array_push($content, $contentItem);
         $sendgridData->content = $content;
+        //generate from object
+        $from = new stdClass();
+        $from->email = "personeelsfeest@thomasmore.be";
+        $from->name = "Personeelsfeest";
+        $sendgridData->from = $from;
 
         return json_encode($sendgridData, JSON_UNESCAPED_SLASHES);
     }
