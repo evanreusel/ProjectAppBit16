@@ -40,16 +40,22 @@
         </textarea>
     </div>
 
-    <div class="md-form">
-        <label for="einde">Begintijdstip van event:</label>
-        <input id="einde" id="inpBeginTijdstip" size="16" type="text" value="<?php echo $forminputs['beginTijdstip']; ?>" readonly
-            class="form_datetime">
+    <div class="form-group">
+        <div class='input-group date' id='inpBeginTijdstip'>
+            <input type='text' class="form-control" placeholder="Begintijdstip van event" value="<?php echo $forminputs['beginTijdstip']; ?>"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
     </div>
 
-    <div class="md-form">
-        <label for="deadline">Eindtijdstip van event:</label>
-        <input id="deadline" id="inpEindtijdstip" size="16" type="text" value="<?php echo $forminputs['eindTijdstip']; ?>" readonly
-            class="form_datetime">
+    <div class="form-group">
+        <div class='input-group date' id='inpEindtijdstip'>
+            <input type='text' class="form-control" placeholder="Eindtijdstip van event" value="<?php echo $forminputs['eindTijdstip']; ?>"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
     </div>
 </form>
 
@@ -58,11 +64,13 @@
         viewMode: 'months',
         format: 'dd-mm-yyyy'
     });
+
     $('#inpEindtijdstip').datetimepicker({
         viewMode: 'months',
         format: 'dd-mm-yyyy',
         useCurrent: false //Important! See issue #1075
     });
+
     $("#inpBeginTijdstip").on("dp.change", function (e) {
         $('#inpEindtijdstip').data("DateTimePicker").minDate(e.date);
     });
