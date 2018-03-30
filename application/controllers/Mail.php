@@ -36,6 +36,7 @@ class Mail extends CI_Controller {
         $thirdemail->email = "erik.van.reusel@gmail.com";
         $thirdemail->name = "Erik";
         $personalization->bcc = $bcc;
+        $personalization->subject = "Personeelsfeest";
         array_push($personalizations, $personalization);
         $sendgridData->personalizations = $personalizations;
 
