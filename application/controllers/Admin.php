@@ -73,6 +73,10 @@ class Admin extends CI_Controller {
 			[
 				'title' => 'Locaties',
 				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
+			],
+			[
+				'title' => 'Personeelslijst importeren',
+				'url' => base_url() . 'index.php/admin/dash/personeelimporteren'
 			]
 		];
 		$data['actions'] = [
@@ -122,7 +126,7 @@ class Admin extends CI_Controller {
 			case "plaatsToevoegen":
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
-		}
+			} 
 
 		$this->load->view('template/main', $data);
 	}
@@ -215,11 +219,6 @@ class Admin extends CI_Controller {
 		
 		// Redirect to adminbeheer
 		redirect('admin/dash/adminbeheer');
-	}
-
-	public function upload(){
-		$this->load->view('dash_admin_upload.php');
-
 	}
 
 	public function excel(){		
