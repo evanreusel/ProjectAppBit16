@@ -1,11 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-		/*require APPPATH . 'third_party/PhpSpreadsheet-develop/src/PhpSpreadsheet/IOFactory.php';
-	
-		use PhpOffice\PhpSpreadsheet\Spreadsheet;
-		use PhpOffice\PhpSpreadsheet\Writer\Xlsx;*/
-
 // ADMIN CONTROLLER
 // - LOGIN
 // - DASH
@@ -222,13 +217,15 @@ class Admin extends CI_Controller {
 		redirect('admin/dash/adminbeheer');
 	}
 
-	public function excel(){
-	/*$spreadsheet = new Spreadsheet();
-   $sheet = $spreadsheet->getActiveSheet();
-   $sheet->setCellValue('A1', 'Hello World !');
+	public function upload(){
+		$this->load->view('dash_admin_upload.php');
 
-   $writer = new Xlsx($spreadsheet);
-   $writer->save('hello world.xlsx');*/
+	}
+
+	public function excel(){		
+			$this->load->model('CSV_model');
+        	$this->CSV_model->readpersonen();
+		$this->load->view('dash_admin_upload.php');
 	}
 }
 
