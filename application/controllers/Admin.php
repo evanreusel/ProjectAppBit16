@@ -60,7 +60,7 @@ class Admin extends CI_Controller {
 		}
 
 		// Load view
-		$data['message'] = 'Hello there ' . $data['user']->naam . '| Dash';		// Title
+		$data['message'] = 'Hello there ' . $data['user']->username . '| Dash';		// Title
 		$data['css_files'] = array("dash.css");									// Default dash style
 
 		$data['primaryColor'] = 'deep-purple';									// Primary color (purple for admin, blue for others??)
