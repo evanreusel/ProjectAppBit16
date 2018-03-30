@@ -1,11 +1,12 @@
 <table class="table">
     <tr class="colored">
-        <th>naam</th>
-        <th>info</th>
-        <th>thema</th>
-        <th>beginTijdstip</th>
-        <th>eindTijdstip</th>
-        <th>actief</th>
+        <th>Naam</th>
+        <th>Info</th>
+        <th>Thema</th>
+        <th>BeginTijdstip</th>
+        <th>EindTijdstip</th>
+        <th>Actief</th>
+        <th>Actions</th>
     </tr>
 
     <?php foreach($data['jaargangen'] as $jaargang){ ?>
@@ -37,6 +38,8 @@
                         echo 'Deze editie is nog bezig';
                     }
                 }
+
+                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/' . $jaargang->id . '"><i class="fa fa-folder-open"></i> Keuzemogelijkheden</a></td>';
             ?>
         </td>
     </tr>

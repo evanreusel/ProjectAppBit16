@@ -21,16 +21,36 @@ class Keuzemogelijkheid_Model extends CI_Model {
         return $query->result();
     }
 
+    function getAll_byJaargangId($id){
+        // Get Keuzemogelijkheid by jaargangId
+        $this->db->where('jaargangId', $id);
+        $query = $this->db->get('KeuzeMogelijkheid');
+        return $query->result();
+    }
+
     function getAllByNaamWithKeuzeOpties()
     {
-        $activiteiten = $this->getAllByNaam();
+        $keuzemogelijkheden = $this->getAllByNaam();
         $this->load->model('keuzeoptie_model');
 
-        foreach ($activiteiten as $activiteit) {
-            $activiteit->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($activiteit->id);
+        foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
+            $keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
         }
 
-        return $activiteiten;
+        return $keuzemogelijkheden;
+    }
+
+    function getAllWithKeuzeOpties_byJaargangId($id){
+        // Get all keuzemogelijkheden
+       $keuzemogelijkheden = $this->getAll_byJaargangId($id);
+
+        // Get all opties voor keuzemogelijkheden
+        $this->load->model('keuzeoptie_model');
+        foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
+            $keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+        }
+
+        return $keuzemogelijkheden;
     }
     
     function update($keuzemogelijkheid)
