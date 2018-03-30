@@ -102,11 +102,14 @@ class Admin extends CI_Controller {
 				}
 			break;
 			case "keuzemogelijkheidbeheer":
-				$this->load->model('keuzemogelijkheid_model');
-				$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
+				if($extras != null) {
+					$this->load->model('jaargang_model');
+					$output = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
+					$data['data']['keuzemogelijkheden'] = $output->keuzemogelijkheden;
+					$data['data']['jaargang'] = $output->jaargang;
+				}
 			break;
 			case "updatekeuzemogelijkheid":
-
 				//jaren inladen voor dropdown list
 				$this->load->model('jaargang_model');
 				$data['jaargangen'] = $this->jaargang_model->getAllByJaargang();
