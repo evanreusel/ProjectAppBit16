@@ -17,13 +17,13 @@ class Mail extends CI_Controller {
         $firstReceiver = new stdClass();
         $firstReceiver->email = "evanreusel@gmail.com";
         $firstReceiver->name = "Erik";
-        array_push($to, $receiver);
+        array_push($to, $firstReceiver);
         $bcc = array();
         //TODO: Add foreach for every single email address
         $secondEmail = new stdClass();
         $secondEmail->email = "r0581776@student.thomasmore.be";
         $secondEmail->name = "Erik";
-
+        array_push($bcc, $secondEmail);
         $personalizations->to = $to;
         $sendgridData->personalizations = $personalizations;
 
@@ -31,7 +31,7 @@ class Mail extends CI_Controller {
         $content = array();
         $contentItem = new stdClass();
         $contentItem->type = "text/html";
-        $contentItem->value = "<h1>SENDGRID MAIL TEST</h1>";
+        $contentItem->value = "SENDGRID MAIL TEST";
         array_push($content, $contentItem);
         $sendgridData->content = $content;
 
