@@ -13,23 +13,11 @@
         'eindTijstip' => ''
     ];
 
-    if($data['jaargang']->naam != ''){
+    if(isset($data)){
         $forminputs['naam'] = $data['jaargang']->naam;
-    }
-
-    if($data['jaargang']->thema != ''){
         $forminputs['thema'] = $data['jaargang']->thema;
-    }
-
-    if($data['jaargang']->info != ''){
         $forminputs['info'] = $data['jaargang']->info;
-    }
-
-    if($data['jaargang']->beginTijdstip != ''){
         $forminputs['beginTijdstip'] = $data['jaargang']->beginTijdstip;
-    }
-
-    if($data['jaargang']->eindTijdstip != ''){
         $forminputs['eindTijstip'] = $data['jaargang']->eindTijdstip;
     }
 ?>
