@@ -41,8 +41,8 @@ class Jaargang_model extends CI_Model {
 
         $output = [
             'jaargang' => $this->get_byId($id),
-            'keuzemogelijkheden' => $keuzemogelijkheid_model->getAllWithKeuzeOpties_byJaargangId($id);
-        ]
+            'keuzemogelijkheden' => $keuzemogelijkheid_model->getAllWithKeuzeOpties_byJaargangId($id)
+        ];
         
         return $output;
 
