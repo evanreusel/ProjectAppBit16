@@ -18,13 +18,14 @@ class Mail extends CI_Controller {
         $firstReceiver->email = "evanreusel@gmail.com";
         $firstReceiver->name = "Erik";
         array_push($to, $firstReceiver);
+        $personalizations->to = $to;
         $bcc = array();
         //TODO: Add foreach for every single email address
         $secondEmail = new stdClass();
         $secondEmail->email = "r0581776@student.thomasmore.be";
         $secondEmail->name = "Erik";
         array_push($bcc, $secondEmail);
-        $personalizations->to = $to;
+        $personalizations->bcc = $bcc;
         $sendgridData->personalizations = $personalizations;
 
         //generate Content mail
