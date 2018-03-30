@@ -1,3 +1,9 @@
+<!-- 
+    ERIK
+	LAST UPDATED: 18 03 30
+	MAIL CONTROLLER
+-->
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
