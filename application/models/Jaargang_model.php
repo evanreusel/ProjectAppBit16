@@ -17,7 +17,6 @@ class Jaargang_model extends CI_Model {
     {
         $query = $this->db->get('Jaargang');
         return $query->result();
-<<<<<<< HEAD
     }
 
     function getAllByJaargang() {
@@ -35,14 +34,13 @@ class Jaargang_model extends CI_Model {
     function end($jaargang){
         $this->db->where('id', $jaargang->id);
         $this->db->update('Jaargang', $jaargang);
-=======
+
     }   
 
     function getActief(){
         $this->db->where('actief', 1);
         $query = $this->db->get('jaargang');
         return $query->row();
->>>>>>> personen toevoegen met csv
     }
 }
 
