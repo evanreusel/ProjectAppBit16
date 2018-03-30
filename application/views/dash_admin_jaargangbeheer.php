@@ -39,7 +39,7 @@
                     }
                 }
 
-                echo '<td><a class="btn btn-warning" href="<?php echo base_url(); ?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $jaargang->id; ?>"><i class="fa fa-ban"></i> Keuzemogelijkheden</a></td>';
+                echo '<td><a class="btn btn-warning" href="' . base_url(); . 'index.php/admin/dash/keuzemogelijkheidbeheer/' . $jaargang->id . '"><i class="fa fa-folder-open"></i> Keuzemogelijkheden</a></td>';
             ?>
         </td>
     </tr>
