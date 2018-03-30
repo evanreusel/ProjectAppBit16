@@ -117,7 +117,7 @@ class Admin extends CI_Controller {
 					$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->get_byId($extras);
 				}
 			break;
-			case "jaargangbeheer":
+			case 'jaargangbeheer';
 				$this->load->model('jaargang_model');
 				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
 			break;
