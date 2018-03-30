@@ -1,3 +1,9 @@
+<!-- 
+    DAAN
+	LAST UPDATED: 18 03 30
+	PLAATS CONTROLLER
+-->
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 

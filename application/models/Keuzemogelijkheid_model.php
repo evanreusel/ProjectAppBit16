@@ -1,3 +1,9 @@
+<!-- 
+    TIM SWERTS
+	LAST UPDATED: 18 03 30
+	KEUZEMOGELIJKHEID MODEL
+-->
+
 <?php
 
 // klasse voor gegevens van de activiteiten te beheren
@@ -21,13 +27,6 @@ class Keuzemogelijkheid_Model extends CI_Model {
         return $query->result();
     }
 
-    function getAll_byJaargangId($id){
-        // Get Keuzemogelijkheid by jaargangId
-        $this->db->where('jaargangId', $id);
-        $query = $this->db->get('KeuzeMogelijkheid');
-        return $query->result();
-    }
-
     function getAllByNaamWithKeuzeOpties()
     {
         $keuzemogelijkheden = $this->getAllByNaam();
@@ -38,6 +37,14 @@ class Keuzemogelijkheid_Model extends CI_Model {
         }
 
         return $keuzemogelijkheden;
+    }
+
+    // =================================================================================================== GREIF MATTHIAS
+    function getAll_byJaargangId($id){
+        // Get Keuzemogelijkheid by jaargangId
+        $this->db->where('jaargangId', $id);
+        $query = $this->db->get('KeuzeMogelijkheid');
+        return $query->result();
     }
 
     function getAllWithKeuzeOpties_byJaargangId($id){
@@ -52,7 +59,8 @@ class Keuzemogelijkheid_Model extends CI_Model {
 
         return $keuzemogelijkheden;
     }
-    
+    // =================================================================================================== /GREIF MATTHIAS
+
     function update($keuzemogelijkheid)
     {
         $this->db->where('id', $keuzemogelijkheid->id);
