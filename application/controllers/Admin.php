@@ -124,6 +124,9 @@ class Admin extends CI_Controller {
 			case "plaatsToevoegen":
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
+			default:
+				$view = 'index';
+			break;
 		}
 
 		$this->load->view('template/main', $data);
