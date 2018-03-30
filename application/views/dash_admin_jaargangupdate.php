@@ -61,11 +61,13 @@
 
 <script type="text/javascript">
     $('#inpBeginTijdstip').datetimepicker({
-        format: 'dd/MM/YYYY',
+        viewmode: 'years',
+        format: 'dd/MM/yyyy',
     });
 
     $('#inpEindTijdstip').datetimepicker({
-        format: 'dd/MM/YYYY',
+        viewmode: 'years',
+        format: 'dd/MM/yyyy',
         useCurrent: false //Important! See issue #1075
     });
 
