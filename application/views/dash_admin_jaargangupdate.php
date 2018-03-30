@@ -7,7 +7,7 @@
         'eindTijstip' => ''
     ];
 
-    if($data['jaargang']['naam'] != ''){
+    if($data['jaargang']->naam != ''){
         $forminputs['naam'] = $data['jaargang']['naam'];
     }
 
