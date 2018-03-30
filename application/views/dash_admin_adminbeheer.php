@@ -33,13 +33,13 @@
 <table class="table">
     <tr class="colored">
         <td></td>
-        <td class="tableaction_container"><?php echo anchor("admin/dash/updateadmin/",'<i class="fa fa-plus"></i> Toevoegen</a>', array('class' => 'tableaction btn btn-primary')); ?></td>
+        <td class="tableaction_container"><?php echo anchor("admin/dash/adminupdate/",'<i class="fa fa-plus"></i> Toevoegen</a>', array('class' => 'tableaction btn btn-primary')); ?></td>
     </tr>
 
     <?php
         foreach($data['admins'] as $admin){
             echo "<tr><td><p>" . $admin->username . '</p></td>
-            <td colspan="2">' . anchor("admin/dash/updateadmin/$admin->id",'<i class="fa fa-cog mr-1"></i> Aanpassen', array('class' => 'btn btn-round btn-warning')) . form_button("verwijder",'<i class="fa fa-trash mr-1"></i> Verwijder',array('value'=>"$admin->id,$admin->username",'class'=>"verwijder btn btn-round btn-danger")) . "</td>
+            <td colspan="2">' . anchor("admin/dash/adminupdate/$admin->id",'<i class="fa fa-cog mr-1"></i> Aanpassen', array('class' => 'btn btn-round btn-warning')) . form_button("verwijder",'<i class="fa fa-trash mr-1"></i> Verwijder',array('value'=>"$admin->id,$admin->username",'class'=>"verwijder btn btn-round btn-danger")) . "</td>
             </tr>";
         };
     ?>

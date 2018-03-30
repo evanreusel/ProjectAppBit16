@@ -92,7 +92,7 @@ class Admin extends CI_Controller {
 			case "adminbeheer":
 				$data['data']['admins'] = $this->beheer_model->getAll();
 			break;
-			case "updateadmin":
+			case "adminupdate":
 				if($extras != null) {
 					$data['data']['admin'] = $this->beheer_model->get_byId($extras);
 				}
@@ -124,6 +124,13 @@ class Admin extends CI_Controller {
 			case "plaatsToevoegen":
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
+			break;
+			case 'updatejaargang':
+				if($extras != null) {
+					$this->load->model('jaargang_model');
+					$data['data']['jaargang'] = $this->keuzemogelijkheid_model->get_byId($extras);
+				}
+			break;
 			default:
 				$data['view'] = 'dash_admin_index';										// Default view
 			break;
