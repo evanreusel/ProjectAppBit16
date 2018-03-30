@@ -8,23 +8,23 @@
     ];
 
     if($data['jaargang']->naam != ''){
-        $forminputs['naam'] = $data['jaargang']['naam'];
+        $forminputs['naam'] = $data['jaargang']->naam;
     }
 
-    if($data['jaargang']['thema'] != ''){
-        $forminputs['thema'] = $data['jaargang']['thema'];
+    if($data['jaargang']->thema != ''){
+        $forminputs['thema'] = $data['jaargang']->thema;
     }
 
-    if($data['jaargang']['info'] != ''){
-        $forminputs['info'] = $data['jaargang']['info'];
+    if($data['jaargang']->info != ''){
+        $forminputs['info'] = $data['jaargang']->info;
     }
 
-    if($data['jaargang']['beginTijdstip'] != ''){
-        $forminputs['beginTijdstip'] = $data['jaargang']['beginTijdstip'];
+    if($data['jaargang']->beginTijdstip != ''){
+        $forminputs['beginTijdstip'] = $data['jaargang']->beginTijdstip;
     }
 
-    if($data['jaargang']['eindTijstip'] != ''){
-        $forminputs['eindTijstip'] = $data['jaargang']['eindTijstip'];
+    if($data['jaargang']->eindTijstip != ''){
+        $forminputs['eindTijstip'] = $data['jaargang']->eindTijstip;
     }
 ?>
 
