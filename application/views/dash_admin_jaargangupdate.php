@@ -31,10 +31,14 @@
 <div class="md-form">
     <input type="text" id="inpName" class="form-control" value="<?php echo $forminputs['naam']; ?>">
     <label for="inpName">Naam</label>
+</div>
 
+<div class="md-form">
     <input type="text" id="inpThema" class="form-control" value="<?php echo $forminputs['thema']; ?>">
     <label for="inpThema">Thema</label>
+</div>
 
+<div class="md-form">
     <input type="text" id="inpInfo" class="form-control" value="<?php echo $forminputs['naam']; ?>">
     <label for="inpInfo">Info</label>
 </div>
