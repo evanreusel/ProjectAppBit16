@@ -104,9 +104,7 @@ class Admin extends CI_Controller {
 			case "keuzemogelijkheidbeheer":
 				if($extras != null) {
 					$this->load->model('jaargang_model');
-					$output = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
-					$data['data']['keuzemogelijkheden'] = $output->keuzemogelijkheden;
-					$data['data']['jaargang'] = $output->jaargang;
+					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
 				}
 			break;
 			case "updatekeuzemogelijkheid":
