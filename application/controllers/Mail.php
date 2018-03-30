@@ -11,14 +11,15 @@ class Mail extends CI_Controller {
         $sendgridData = new stdClass();
 
         //Generate personalizations
-        $personalizations = new stdClass();
+        $personalizations = array();
+        $personalization = new stdClass();
         $to = array();
 
         $firstReceiver = new stdClass();
         $firstReceiver->email = "evanreusel@gmail.com";
         $firstReceiver->name = "Erik";
         array_push($to, $firstReceiver);
-        $personalizations->to = $to;
+        $personalization->to = $to;
         $bcc = array();
         //TODO: Add foreach for every single email address
         $secondEmail = new stdClass();
@@ -28,7 +29,8 @@ class Mail extends CI_Controller {
         $thirdemail = new stdClass();
         $thirdemail->email = "erik.van.reusel@gmail.com";
         $thirdemail->name = "Erik";
-        $personalizations->bcc = $bcc;
+        $personalization->bcc = $bcc;
+        array_push($personalizations, $personalization);
         $sendgridData->personalizations = $personalizations;
 
         //generate Content mail
