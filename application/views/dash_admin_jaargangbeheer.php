@@ -36,6 +36,8 @@
                     }else{
                         echo 'Deze editie is nog bezig';
                     }
+
+                    echo '<a class="btn btn-warning" href="<?php echo base_url(); ?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $jaargang->id; ?>"><i class="fa fa-ban"></i> Keuzemogelijkheden</a>';
                 }
             ?>
         </td>
