@@ -50,7 +50,7 @@
     </div>
 
     <div class="form-group">
-        <div class='input-group date' id='inpEindtijdstip'>
+        <div class='input-group date' id='inpEindTijdstip'>
             <input type='text' class="form-control" placeholder="Eindtijdstip van event" value="<?php echo $forminputs['eindTijdstip']; ?>"/>
             <span class="input-group-addon">
                 <span class="glyphicon glyphicon-calendar"></span>
@@ -61,19 +61,19 @@
 
 <script type="text/javascript">
     $('#inpBeginTijdstip').datetimepicker({
-        format: 'dd-mm-yyyy'
+        format: 'DD/MM/YYYY',
     });
 
-    $('#inpEindtijdstip').datetimepicker({
-        format: 'dd-mm-yyyy',
+    $('#inpEindTijdstip').datetimepicker({
+        format: 'DD/MM/YYYY',
         useCurrent: false //Important! See issue #1075
     });
 
     $("#inpBeginTijdstip").on("dp.change", function (e) {
-        $('#inpEindtijdstip').data("DateTimePicker").minDate(e.date);
+        $('#inpEindTijdstip').data("DateTimePicker").minDate(e.date);
     });
-    
-    $("#inpEindtijdstip").on("dp.change", function (e) {
+
+    $("#inpEindTijdstip").on("dp.change", function (e) {
         $('#inpBeginTijdstip').data("DateTimePicker").maxDate(e.date);
     });
 </script>
