@@ -1,3 +1,9 @@
+<!-- 
+    TIM SWERTS
+    LAST UPDATED: 18 03 30
+    DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
+-->
+
 <?php
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
@@ -14,11 +20,6 @@
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
     }
-    // if(isset($data['admin'])){
-    //     $arrayparameters['content'] = "Pas admin aan";
-    // } else {
-    //     $arrayparameters['content'] = "Maak nieuwe admin aan";
-    // }
 ?>
     
 
