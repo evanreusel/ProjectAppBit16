@@ -50,5 +50,7 @@
 </form>
 
 <script type="text/javascript">
-    $('.datepicker').pickadate();
+    $(document).ready(function(){
+        $('.datepicker').pickadate();
+    });
 </script>            
