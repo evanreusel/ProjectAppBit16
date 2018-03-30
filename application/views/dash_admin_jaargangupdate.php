@@ -28,17 +28,19 @@
     }
 ?>
 
-<div class="md-form">
-    <input type="text" id="inpName" class="form-control" value="<?php echo $forminputs['naam']; ?>">
-    <label for="inpName">Naam</label>
-</div>
+<form>
+    <div class="md-form">
+        <input type="text" id="inpName" class="form-control" value="<?php echo $forminputs['naam']; ?>">
+        <label for="inpName">Naam</label>
+    </div>
 
-<div class="md-form">
-    <input type="text" id="inpThema" class="form-control" value="<?php echo $forminputs['thema']; ?>">
-    <label for="inpThema">Thema</label>
-</div>
+    <div class="md-form">
+        <input type="text" id="inpThema" class="form-control" value="<?php echo $forminputs['thema']; ?>">
+        <label for="inpThema">Thema</label>
+    </div>
 
-<div class="md-form">
-    <input type="text" id="inpInfo" class="form-control" value="<?php echo $forminputs['naam']; ?>">
-    <label for="inpInfo">Info</label>
+    <div class="md-form">
+        <label for="inpInfo">Info</label>
+        <textarea type="text" id="inpInfo" class="form-control md-textarea" rows="3"><?php echo $forminputs['naam']; ?></textarea>
+    </div>
 </div>
