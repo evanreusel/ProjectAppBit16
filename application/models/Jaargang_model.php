@@ -1,3 +1,9 @@
+<!-- 
+    GREIF MATTHIAS
+    LAST UPDATED: 18 03 30
+    JAARGANG MODEL
+-->
+
 <?php
 
 class Jaargang_model extends CI_Model {

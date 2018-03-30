@@ -1,3 +1,9 @@
+<!-- 
+    TIM SWERTS
+    LAST UPDATED: 18 03 30
+    DASH ADMIN KEUZEMOGELIJKHEIDBEHEER
+-->
+
 <ul class="nav nav-tabs">
 <?php
 if(count($data['keuzemogelijkheden']) > 0) {
@@ -47,5 +53,3 @@ if(count($data['keuzemogelijkheden']) > 0) {
         echo 'No data';   
     }?>
 </div>
-
-<script src="../assets/Keuzemogelijkheid.js"></script>

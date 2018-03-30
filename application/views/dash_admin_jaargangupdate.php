@@ -1,29 +1,23 @@
+<!-- 
+    GREIF MATTHIAS
+    LAST UPDATED: 18 03 30
+    DASH ADMIN JAARGANG ADD/UPDATE
+-->
+
 <?php 
     $forminputs = [
         'naam' => '',
         'thema' => '',
         'info' => '',
         'beginTijdstip' => '',
-        'eindTijstip' => ''
+        'eindTijdstip' => ''
     ];
 
-    if($data['jaargang']->naam != ''){
+    if(isset($data)){
         $forminputs['naam'] = $data['jaargang']->naam;
-    }
-
-    if($data['jaargang']->thema != ''){
         $forminputs['thema'] = $data['jaargang']->thema;
-    }
-
-    if($data['jaargang']->info != ''){
         $forminputs['info'] = $data['jaargang']->info;
-    }
-
-    if($data['jaargang']->beginTijdstip != ''){
         $forminputs['beginTijdstip'] = $data['jaargang']->beginTijdstip;
-    }
-
-    if($data['jaargang']->eindTijdstip != ''){
         $forminputs['eindTijstip'] = $data['jaargang']->eindTijdstip;
     }
 ?>
@@ -43,4 +37,18 @@
         <label for="inpInfo">Info</label>
         <textarea type="text" id="inpInfo" class="form-control md-textarea" rows="3"><?php echo $forminputs['naam']; ?></textarea>
     </div>
-</div>
+
+    <div class="md-form">
+        <label for="einde">Begintijdstip van event:</label>
+        <input id="einde" id="inpBeginTijdstip" size="16" type="text" value="<?php echo $forminputs['beginTijdstip']; ?>" readonly class="datepicker">
+    </div>
+
+    <div class="md-form">
+        <label for="deadline">Eindtijdstip van event:</label>
+        <input id="deadline" id="inpEindtijdstip" size="16" type="text" value="<?php echo $forminputs['eindTijdstip']; ?>" readonly class="datepicker">
+    </div>
+</form>
+
+<script type="text/javascript">
+    $('.datepicker').pickadate();
+</script>            

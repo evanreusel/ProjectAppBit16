@@ -1,3 +1,9 @@
+<!-- 
+    ERIK
+    LAST UPDATED: 18 03 30
+    MAIN VIEW
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -28,23 +34,15 @@
     <script src="<?php echo base_url(); ?>assets/js/mdb.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap-datetimepicker.js"></script>
 
-    <!--Navbar-->
     <?php
+    // =================================================================================================== GREIF MATTHIAS
         if(!isset($clearscreen)){
-        $this->load->view('template/header');
+            $this->load->view('template/header');
         }
-        ?>
-        <!--/.Navbar-->
-        <?php
+
         $this->load->view($view);
-        ?>
-            <!--Footer-->
-            <?php
-        if(!isset($clearscreen)){
-        // $this->load->view('template/footer');
-        }
-        ?>
-                <!--/.Footer-->
+    // =================================================================================================== /GREIF MATTHIAS
+    ?>
 
 </body>
 
