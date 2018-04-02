@@ -74,16 +74,16 @@ class Admin extends CI_Controller {
 			[
 				'title' => 'Locaties',
 				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
-			],
-			[
-				'title' => 'Personeelslijst importeren',
-				'url' => base_url() . 'index.php/admin/dash/personeelimporteren'
 			]
 		];
 		$data['actions'] = [
 			[
 				'title' => 'Administrators beheren',
 				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
+			],
+			[
+				'title' => 'Personeelslijst importeren',
+				'url' => base_url() . 'index.php/admin/dash/personeelimporteren'
 			],
 			[
 				'title' => 'Log out',
@@ -141,6 +141,8 @@ class Admin extends CI_Controller {
 					$this->load->model('jaargang_model');
 					$data['data']['jaargang'] = $this->jaargang_model->get_byId($extras);
 				}
+			break;
+			case 'personeelimporteren':
 			break;
 			default:
 				$view = 'index';
