@@ -1,3 +1,9 @@
+<!-- 
+    TIM
+	LAST UPDATED: 18 03 30
+	PERSOON MODEL
+-->
+
 <?php
 class Persoon_model extends CI_Model {
     function __construct()

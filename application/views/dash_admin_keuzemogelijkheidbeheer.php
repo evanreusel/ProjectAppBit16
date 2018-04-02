@@ -1,12 +1,23 @@
+<!-- 
+    TIM SWERTS
+    LAST UPDATED: 18 03 30
+    DASH ADMIN KEUZEMOGELIJKHEIDBEHEER
+-->
+
 <ul class="nav nav-tabs">
-<?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
-    echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
+<?php
+if(count($data['keuzemogelijkheden']) > 0) {
+    foreach ($data['keuzemogelijkheden'] as $activiteit) {
+        echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
+    }
 }?>
     <li><?php echo anchor("admin/dash/updatekeuzemogelijkheid","+",'class="btn btn-primary"');?></li>
 </ul>
 
 <div class="tab-content">
-    <?php foreach ($data['keuzemogelijkheden'] as $activiteit) {
+    <?php
+        if(count($data['keuzemogelijkheden']) > 0) {
+            foreach ($data['keuzemogelijkheden'] as $activiteit) {
             $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
             echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';
             
@@ -36,7 +47,9 @@
             // echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' verwijderen</a>';
             echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round">'. $activiteit->naam .' verwijderen</button></div>');
 
-        }?>
+        }
+    }
+    else{
+        echo 'No data';   
+    }?>
 </div>
-
-<script src="../assets/Keuzemogelijkheid.js"></script>

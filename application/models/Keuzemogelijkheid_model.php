@@ -1,3 +1,9 @@
+<!-- 
+    TIM SWERTS
+	LAST UPDATED: 18 03 30
+	KEUZEMOGELIJKHEID MODEL
+-->
+
 <?php
 
 // klasse voor gegevens van de activiteiten te beheren
@@ -23,16 +29,38 @@ class Keuzemogelijkheid_Model extends CI_Model {
 
     function getAllByNaamWithKeuzeOpties()
     {
-        $activiteiten = $this->getAllByNaam();
+        $keuzemogelijkheden = $this->getAllByNaam();
         $this->load->model('keuzeoptie_model');
 
-        foreach ($activiteiten as $activiteit) {
-            $activiteit->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($activiteit->id);
+        foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
+            $keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
         }
 
-        return $activiteiten;
+        return $keuzemogelijkheden;
     }
-    
+
+    // =================================================================================================== GREIF MATTHIAS
+    function getAll_byJaargangId($id){
+        // Get Keuzemogelijkheid by jaargangId
+        $this->db->where('jaargangId', $id);
+        $query = $this->db->get('KeuzeMogelijkheid');
+        return $query->result();
+    }
+
+    function getAllWithKeuzeOpties_byJaargangId($id){
+        // Get all keuzemogelijkheden
+       $keuzemogelijkheden = $this->getAll_byJaargangId($id);
+
+        // Get all opties voor keuzemogelijkheden
+        $this->load->model('keuzeoptie_model');
+        foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
+            $keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+        }
+
+        return $keuzemogelijkheden;
+    }
+    // =================================================================================================== /GREIF MATTHIAS
+
     function update($keuzemogelijkheid)
     {
         $this->db->where('id', $keuzemogelijkheid->id);

@@ -1,3 +1,9 @@
+<!-- 
+    GREIF MATTHIAS
+	LAST UPDATED: 18 03 30
+	BEHEER MODEL
+-->
+
 <?php
 class Beheer_model extends CI_Model {
     function __construct()

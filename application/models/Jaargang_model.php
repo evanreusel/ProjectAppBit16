@@ -1,3 +1,9 @@
+<!-- 
+    GREIF MATTHIAS
+    LAST UPDATED: 18 03 30
+    JAARGANG MODEL
+-->
+
 <?php
 
 class Jaargang_model extends CI_Model {
@@ -41,6 +47,18 @@ class Jaargang_model extends CI_Model {
         $this->db->where('actief', 1);
         $query = $this->db->get('jaargang');
         return $query->row();
+    }
+
+    function getWithKeuzemogelijkheidWithOpties_byId($id){
+        $this->load->model('keuzemogelijkheid_model');
+
+        $output = [
+            'jaargang' => $this->get_byId($id),
+            'keuzemogelijkheden' => $this->keuzemogelijkheid_model->getAllWithKeuzeOpties_byJaargangId($id)
+        ];
+        
+        return $output;
+
     }
 }
 

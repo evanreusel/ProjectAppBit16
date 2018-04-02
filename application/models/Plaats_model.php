@@ -1,3 +1,9 @@
+<!-- 
+    DAAN
+    LAST UPDATED: 18 03 30
+    PLAATS MODEL
+-->
+
 <?php
 class Plaats_model extends CI_Model {
 

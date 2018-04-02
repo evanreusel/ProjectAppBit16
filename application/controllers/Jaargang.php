@@ -1,3 +1,9 @@
+<!-- 
+    GREIF MATTHIAS 
+	LAST UPDATED: 18 03 30
+	JAARGANG CONTROLLER
+-->
+
 <?php
 
 if (!defined('BASEPATH'))
@@ -40,7 +46,7 @@ class Jaargang extends CI_Controller{
         }
 
         // Output failure
-        return 'FALSE';
+        echo 'FALSE';
     }
 }
 

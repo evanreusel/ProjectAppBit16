@@ -1,3 +1,9 @@
+<!-- 
+    GREIF MATTHIAS 
+	LAST UPDATED: 18 03 30
+	ADMIN CONTROLLER
+-->
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -41,8 +47,11 @@ class Admin extends CI_Controller {
 	}
 
 	public function dash($view = null, $extras = null){
-		// Beheer model
+		// Load models
 		$this->load->model('beheer_model');
+
+		// Load logged in user
+		$data['user'] = $this->beheer_model->get_byId($this->session->userdata('id'));
 
 		// Check if dashboard view is requested else default homeview
 		if(is_null($view) )
@@ -51,24 +60,16 @@ class Admin extends CI_Controller {
 		}
 
 		// Load view
-		$data['message'] = "Welcome admin | Dash";								// Title
-		$data['view'] = 'dash_admin_' . $view;									// View
-
-		$data['user'] = $this->beheer_model->get_byId($this->session->userdata('id'));
-		
+		$data['message'] = 'Hello there ' . $data['user']->username . ' | Dash';// Title
 		$data['css_files'] = array("dash.css");									// Default dash style
 
-		$data['primaryColor'] = 'deep-purple';										// Primary color (orange for admin, blue for others??)
+		$data['primaryColor'] = 'deep-purple';									// Primary color (purple for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/admin/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Jaargang',
 				'url' => base_url() . 'index.php/admin/dash/jaargangbeheer/'
-			],
-			[
-				'title' => 'Keuzemogelijheden',
-				'url' => base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/'
 			],
 			[
 				'title' => 'Locaties',
@@ -92,20 +93,25 @@ class Admin extends CI_Controller {
 
 		// Get data for view
 		switch($view){
-			case "adminbeheer":
-				$data['data']['admins'] = $this->beheer_model->getAll();
+			case "adminbeheer":													// Admin screen
+				$data['data']['admins'] = $this->beheer_model->getAll();		// Get admin details
 			break;
-			case "updateadmin":
-				if($extras != null) {
+			case "adminupdate":													// Admin add/update screen
+				if($extras != null) {											// Get admin details in case of udpate
 					$data['data']['admin'] = $this->beheer_model->get_byId($extras);
 				}
 			break;
-			case "keuzemogelijkheidbeheer":
-				$this->load->model('keuzemogelijkheid_model');
-				$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
+			case "keuzemogelijkheidbeheer":										// Keuzemogelijkheid screen for jaargang
+				if($extras != null) {											
+					$this->load->model('jaargang_model');
+					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
+				}else{															// Can't load page without jaargang id => load indexpage
+					$view = 'index';
+				}
 			break;
-			case "updatekeuzemogelijkheid":
 
+			// =================================================================================================== TIM SWERTS
+			case "updatekeuzemogelijkheid":
 				//jaren inladen voor dropdown list
 				$this->load->model('jaargang_model');
 				$data['jaargangen'] = $this->jaargang_model->getAllByJaargang();
@@ -119,14 +125,30 @@ class Admin extends CI_Controller {
 					$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->get_byId($extras);
 				}
 			break;
-			case "jaargangbeheer":
+			// =================================================================================================== /TIM SWERTS
+			case 'jaargangbeheer';
 				$this->load->model('jaargang_model');
 				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
 			break;
+			// =================================================================================================== DAAN
 			case "plaatsToevoegen":
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
-			} 
+			break;
+			// =================================================================================================== /DAAN
+			case 'jaargangupdate':
+				if($extras != null) {
+					$this->load->model('jaargang_model');
+					$data['data']['jaargang'] = $this->jaargang_model->get_byId($extras);
+				}
+			break;
+			default:
+				$view = 'index';
+			break;
+		}
+
+		// Set view
+		$data['view'] = 'dash_admin_' . $view;
 
 		$this->load->view('template/main', $data);
 	}
@@ -157,6 +179,7 @@ class Admin extends CI_Controller {
 		$this->load->view('req_output', $data);
 	}
 
+	// =================================================================================================== TIM
 	public function checkpass($id = null, $pass = null)
 	{
 		$data['return'] = '';
@@ -174,6 +197,7 @@ class Admin extends CI_Controller {
 		// Print in default api output view
 		$this->load->view('req_output', $data);
 	}
+	// =================================================================================================== /TIM
 
 	// FLOW
 	// Logout admin
@@ -226,6 +250,7 @@ class Admin extends CI_Controller {
         	$this->CSV_model->readpersonen();
 		$this->load->view('dash_admin_upload.php');
 	}
+	// =================================================================================================== TIM
 }
 
 ?>
