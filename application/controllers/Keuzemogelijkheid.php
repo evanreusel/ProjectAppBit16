@@ -56,7 +56,7 @@ class Keuzemogelijkheid extends CI_Controller{
         }
 
 		// Redirect naar keuzemogelijkheid pagina
-		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
+		redirect('admin/dash/keuzemogelijkheidbeheer/'. $keuzemogelijkheid->jaargangId);
     }
     
     public function delete($id)
@@ -64,11 +64,12 @@ class Keuzemogelijkheid extends CI_Controller{
 		
         $this->load->model('Keuzemogelijkheid_model');
 
-        $data = $this->Keuzemogelijkheid_model->get_byId($id);
+        $returndata = $this->Keuzemogelijkheid_model->get_byId($id);
+        $data = json_encode($returndata);
 
         $this->Keuzemogelijkheid_model->delete($id);
 		
 		// Redirect to keuzemogelijkheidbeheer
-		redirect('admin/dash/keuzemogelijkheidbeheer/'.$data->jaargangId);
+		redirect('admin/dash/keuzemogelijkheidbeheer/'. $data->jaargangId);
 	}
 }
