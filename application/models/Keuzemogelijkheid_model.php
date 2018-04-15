@@ -74,6 +74,9 @@ class Keuzemogelijkheid_Model extends CI_Model {
 
     function delete($id){
         $this->db->where('id', $id);
+        $query = $this->db->get('KeuzeMogelijkheid');
+        return $query->result();
+        
         $this->db->delete('KeuzeMogelijkheid');
     }
    
