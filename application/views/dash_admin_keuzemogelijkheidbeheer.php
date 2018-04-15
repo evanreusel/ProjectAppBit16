@@ -35,8 +35,8 @@ if(count($data['keuzemogelijkheden']) > 0) {
                     echo '<td>' . $keuzeoptie->$kolom . '</td>';
                 }
 
-                echo '<td>'.anchor('"keuzemogelijkheid/'.$keuzeoptie->id.'"','<button class="btn btn-round btn-warning"><i class="fa fa-cog"> Aanpassen</i></button>').'</td>';
-                echo '<td>'.anchor('"keuzeoptie/delete/'.$keuzeoptie->id.'"','<button class="btn btn-round btn-danger"><i class="fa fa-trash"> Verwijderen</i></button>').'</td>';
+                echo '<td>'.anchor('"keuzemogelijkheid/'.$keuzeoptie->id.'"','<button class="btn btn-round btn-warning"><i class="fa fa-cog"></i> Aanpassen</button>').'</td>';
+                echo '<td>'.anchor('"keuzeoptie/delete/'.$keuzeoptie->id.'"','<button class="btn btn-round btn-danger"><i class="fa fa-trash"></i> Verwijderen</button>').'</td>';
 
                    echo "</tr>"; 
             }
@@ -45,7 +45,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
             echo '<a href="" class="btn btn-primary">Keuzeoptie toevoegen</a>';
             echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' aanpassen</a>';
             // echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' verwijderen</a>';
-            echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round"><i class="fa fa-trash">'. $activiteit->naam .' verwijderen</i></button></div>');
+            echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round"><i class="fa fa-trash">'. $activiteit->naam .'</i> Verwijderen</button></div>');
 
         }
     }
