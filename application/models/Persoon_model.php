@@ -43,5 +43,49 @@ class Persoon_model extends CI_Model {
         $query = $this->db->get('Persoon');
         return $query->row();
     }
+
+    //Haal alle medewerkers die voor een activiteit zijn ingeschreven 
+    //samen met de gekoppelde activiteiten
+    function getallwithactiviteit(){
+        //jaargang ophalen
+        $this->load->model("jaargang_model");
+        $jaar = $this->jaargang_model->getActief();
+
+        //tussenvariabele ophalen
+        $query = $this->db->where('jaarid', $jaar->id);
+        $query = $this->db->get('Persoon');
+        $personen = $query->result();
+
+        $deelnemers = new SplObjectStorage;
+
+        foreach($personen as $persoon){
+        //keuzeoptie ophalen
+        $query = $this->db->where('persoonid', $persoon->id);
+        $query = $this->db->get('keuzeoptievandeelnemer');
+        $data = $query->result();
+
+        //keuzemogelijkheden per persoon ophalen
+        $keuzeopties = array();
+
+        if($data != null){
+        foreach($data as $item){
+        $query = $this->db->where('id', $item->keuzeoptieId);
+        $query = $this->db->get('keuzeoptie');
+        $keuzeoptie = $query->row();
+
+        //keuzemogelijkheid koppelen aan keuzeoptie
+        $query = $this->db->where('id', $keuzeoptie->keuzemogelijkheidId);
+        $query = $this->db->get('keuzemogelijkheid');
+        $keuzeoptie->keuzemogelijkheid = $query->row();
+
+        $keuzeopties[] = $keuzeoptie;
+        }
+        }
+
+        $deelnemers[$persoon] = $keuzeopties;
+        }
+
+        return $deelnemers;
+    }
 }
 ?>

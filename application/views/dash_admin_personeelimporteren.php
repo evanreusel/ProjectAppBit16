@@ -38,11 +38,13 @@ function filecheck(){
                 $('#fileform').submit();
                 console.log("ok");
      } else {
+         console.log("error");         
          $("#errormessage").text(error);
         $('#errorpopup').dialog();
-        $('#errorpopup').dialog("option","title", errortitle);
-     }     
+        $('#errorpopup').dialog("option","title", errortitle); 
+     }         
  });
+
     $('#errorclose').click(function() {
          $('#errorpopup').dialog("close");
     });    
@@ -62,13 +64,12 @@ function filecheck(){
 <?php echo form_open('admin/excel', array('name' => 'fileform', 'id' => 'fileform', 'role' => 'form'));?>
 
 <label for="userfile">Kies een CSV-bestand om te importeren</label>
-<br/>
+</br>
 <input type="file" name="usefile" id="userfile" size="20">
 
-<br /><br />
+</br></br>
 
  <?php    
         echo form_button($arrayparameters);
         echo form_close();
     ?>
-</form>
