@@ -68,7 +68,7 @@ class Plaats extends CI_Controller {
         $this->load->model('plaats_model');
         $this->plaats_model->getPlaatsById($id);
 
-        $this->load->controller('Admin');
+        $this->load->library('../controllers/Admin');
         $this->Admin->dash("dash/plaatsToevoegen", $plaats);
     }
 }
