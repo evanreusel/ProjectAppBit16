@@ -38,7 +38,7 @@ class Jaargang extends CI_Controller{
         
         $jaargang->naam = $this->input->post('naam', TRUE);
         $jaargang->thema = $this->input->post('thema', TRUE);
-        $jaargang->$info = $this->input->post('info', TRUE);
+        $jaargang->info = $this->input->post('info', TRUE);
         $jaargang->beginTijdstip = $this->input->post('beginTijdstip', TRUE);
         $jaargang->eindTijdstip = $this->input->post('eindTijdstip', TRUE);
 
