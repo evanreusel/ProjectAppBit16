@@ -25,7 +25,7 @@
     echo form_labelpro('Naam', 'naam');
     echo form_input(array('name' => 'naam',
         'id' => 'naam',
-        'value' => $plaats->naam,
+        // 'value' => $plaats->naam,
         'class' => 'form-control',
         'required' => 'required'));
         
@@ -33,11 +33,11 @@
     echo form_labelpro('Locatie', 'locatie');
     echo form_input(array('name' => 'locatie',
         'id' => 'locatie',
-        'value' => $plaats->locatie,
+        // 'value' => $plaats->locatie,
         'class' => 'form-control',
         'required' => 'required'));
 
-    // echo form_hidden('id', $plaats->id);
+    echo form_hidden('id', $plaats->id);
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();
