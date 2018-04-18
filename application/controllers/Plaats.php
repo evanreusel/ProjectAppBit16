@@ -68,7 +68,6 @@ class Plaats extends CI_Controller {
         $this->load->model('plaats_model');
         $this->plaats_model->getPlaatsById($id);
 
-        $data['huidigePlaats'] = $plaats;
         redirect('admin/dash/plaatsToevoegen');
     }
 }

@@ -42,6 +42,16 @@ class Jaargang_model extends CI_Model {
         $this->db->update('Jaargang', $jaargang);
     }
 
+    function update($jaargang){
+        $this->db->where('id', $jaargang->id);
+        $this->db->update('Jaargang', $jaargang);
+    }
+
+    function add($jaargang){
+        $this->db->insert('Jaargang', $jaargang);
+        return $this->db->insert_id();
+    }
+
     function getWithKeuzemogelijkheidWithOpties_byId($id){
         $this->load->model('keuzemogelijkheid_model');
 

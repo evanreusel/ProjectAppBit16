@@ -13,8 +13,8 @@ class Plaats_model extends CI_Model {
         return $query->result();
     }
 
-    function getPlaatsById() {
-        $this->db->where('id', $plaats->id);
+    function getPlaatsById($id) {
+        $this->db->where('id', $id);
         $query = $this->db->get('Plaats');
         return $query->row();
     }
