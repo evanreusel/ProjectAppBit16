@@ -69,7 +69,7 @@ class Plaats extends CI_Controller {
         $plaats->locatie = $this->input->post('locatie');
 
         $plaats->id = $this->input->post('id');
-        
+
         $this->load->model('plaats_model');
         $this->plaats_model->update($plaats);
 

@@ -15,6 +15,7 @@
             echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . 
             anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round">Remove</button>') .  '</td></tr>';
         }
+        
         ?>
     </tbody>
     <table>
