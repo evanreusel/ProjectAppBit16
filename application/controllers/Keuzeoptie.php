@@ -50,9 +50,9 @@ class Keuzeoptie extends CI_Controller{
 		
 		// Keuzeoptie toevoegen of aanpassen
         if($keuzeoptie->id == 0){
-       		$this->$Keuzeoptie_model->add($keuzeoptie);
+       		$this->Keuzeoptie_model->add($keuzeoptie);
         } else {
-        	$this->$Keuzeoptie_model->update($keuzeoptie);
+        	$this->Keuzeoptie_model->update($keuzeoptie);
         }
 
 		// Redirect naar keuzemogelijkheid pagina
@@ -64,7 +64,7 @@ class Keuzeoptie extends CI_Controller{
 		
         $this->load->model('Keuzeoptie_model');
 
-        $this->$Keuzeoptie_model->delete($id);
+        $this->Keuzeoptie_model->delete($id);
 		
 		// Redirect to keuzemogelijkheidbeheer
 		redirect('admin/dash/jaargangbeheer');
