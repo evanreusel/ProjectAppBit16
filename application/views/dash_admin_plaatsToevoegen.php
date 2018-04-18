@@ -12,7 +12,7 @@
     <thead><tr><th>Naam</th> <th>Plaats</th> </tr></thead><tbody>
         <?php
         foreach ($plaatsen as $plaats) {
-            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . 
+            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . achor('Plaats/wijzig/' . $plaats->id,  '<button type="button" class="btn btn-danger btn-round">Wijzig</button>') . "</td><td>" .
             anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round">Remove</button>') .  '</td></tr>';
         }
         
