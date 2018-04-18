@@ -48,6 +48,34 @@ class Jaargang extends CI_Controller{
         // Output failure
         echo 'FALSE';
     }
+
+    // Update jaargang
+    public function update($id, $name, $thema, $info, $begindate, $enddate)
+    {
+        $this->load->model('jaargang_model');
+
+        if($this->jaargang_model->get_byId($id) != null){
+            // Get from db
+            $jaargang = $this->jaargang_model->get_byId($id);
+        }
+        
+        $jaargang->naam = $name;
+        $jaargang->thema = $thema;
+        $jaargang->$info = $info;
+        $jaargang->beginTijdstip = $begindate;
+        $jaargang->eindTijdstip = $enddate;
+
+        if(isset($jaargang->$id)){
+            // Update db
+            $this->jaargang_model->update($jaargang);
+        }else{
+            // Add to db
+            $this->jaargang_model->add($jaargang);
+        }
+
+        // Output succes
+        echo 'TRUE';
+    }
 }
 
 ?>

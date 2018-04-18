@@ -84,7 +84,22 @@
 
 
         $('#aApply').on("click", function(){
-            alert();
+            $.ajax({
+                url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),
+                async: false,
+                type: "GET",
+                dataType:'json',
+                success: function(data){                    
+                    if(data != null){
+                        $('#oudpasserror').hide();
+                        return true;
+                    } else {
+                        $('#oudpasserror').show();
+                    }
+                }, error: function (xhr, status, error) {
+                    alert("Something went wrong " + xhr.responseText);
+                }
+            });
         });
 
     });
