@@ -22,10 +22,15 @@
 <?php
     echo form_open('plaats/registreer', $attributes);
 
+// testen of plaats leeg is
+$plaatsTest='';
+$locatieTest='';
+
+if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $huidigePlaats->locatie;} 
     echo form_labelpro('Naam', 'naam');
     echo form_input(array('name' => 'naam',
         'id' => 'naam',
-        'value' => if(isset($huidigePlaats)){$huidigePlaats->naam }else {''},
+        'value' => $plaatsTest,
         'class' => 'form-control',
         'required' => 'required'));
         
@@ -33,7 +38,7 @@
     echo form_labelpro('Locatie', 'locatie');
     echo form_input(array('name' => 'locatie',
         'id' => 'locatie',
-        'value' => if(isset($huidigePlaats)){$huidigePlaats->locatie }else {''},
+        'value' =>$locatieTest,
         'class' => 'form-control',
         'required' => 'required'));
 
