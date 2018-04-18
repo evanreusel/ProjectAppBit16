@@ -2,7 +2,7 @@
     $arrayparameters = array();
     $arrayparameters['id'] = 'submit';
     $arrayparameters['value']= 'somethingstupid';
-    $arrayparameters['content'] = '<i class="fa fa-download"></i> Personeelslijst toevoegen';
+    $arrayparameters['content'] = 'Personeelslijst toevoegen';
     ?>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -33,17 +33,15 @@ function filecheck(){
 
  $(document).ready(function () {
  $("#errorpopup").hide();
- $("#submit").click(function(){
-     if(filecheck()){
-                $('#fileform').submit();
-                console.log("ok");
-     } else {
-         console.log("error");         
+ $("#submit").click(function(event){
+     if(!filecheck()){
+                event.preventDefault();
+         console.log("error");  
          $("#errormessage").text(error);
         $('#errorpopup').dialog();
-        $('#errorpopup').dialog("option","title", errortitle); 
-     }         
- });
+        $('#errorpopup').dialog("option","title", errortitle);    
+     }
+     });
 
     $('#errorclose').click(function() {
          $('#errorpopup').dialog("close");
@@ -61,15 +59,16 @@ function filecheck(){
 <button id="errorclose">OK</button>
 </div>
 
-<?php echo form_open('admin/excel', array('name' => 'fileform', 'id' => 'fileform', 'role' => 'form'));?>
+<?php echo form_open('admin/excel', array('name' => 'fileform', 'id' => 'fileform', 'role' => 'form', 'enctype' => 'multipart/form-data'));?>
 
 <label for="userfile">Kies een CSV-bestand om te importeren</label>
 </br>
-<input type="file" name="usefile" id="userfile" size="20">
+<input type="file" name="userfile" id="userfile" size="20">
 
 </br></br>
 
+
  <?php    
-        echo form_button($arrayparameters);
+        echo form_submit($arrayparameters);
         echo form_close();
     ?>

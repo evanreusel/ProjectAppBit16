@@ -261,7 +261,8 @@ class Admin extends CI_Controller {
 	public function excel(){		
 			$this->load->model('CSV_model');
         	$this->CSV_model->readpersonen();
-		$this->load->view('dash_admin_upload.php');
+		echo "test";
+		//$this->load->view('dash_admin_upload.php');
 	}
 
 	public function list(){

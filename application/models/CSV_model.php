@@ -11,26 +11,28 @@ class csv_model extends CI_Model
         //lees de csv file
         $count=0;
         $fp = fopen($_FILES['userfile']['tmp_name'],'r') or die("can't open file");
+        echo "readpersonen";
         while($csv_line = fgetcsv($fp,1024))
         {
+            echo "text";
             $count++;
             //pak de index van e headers van de csv file op de 1ste lijn
             if($count == 1)
             {
                 //lees de 1ste lijn van de file
-            $csvheaders = $csv_line[0];
-            //klaarmaken om de headers te splitsen
-            $csvheaders = str_replace(";","\t",$csvheaders);
-            //splits de headers
-            $headers = explode("\t",$csvheaders);
-            //slaag de index van de headers op voor later
-            $naamindex = array_search("naam",$headers);
-            $nummerindex = array_search("nummer",$headers);
-            $mailindex = array_search("mail",$headers);
-            $adresindex = array_search("adres",$headers);
-            $woonplaatsindex = array_search("woonplaats",$headers);
+                $csvheaders = $csv_line[0];
+                //klaarmaken om de headers te splitsen
+                $csvheaders = str_replace(";","\t",$csvheaders);
+                //splits de headers
+                $headers = explode("\t",$csvheaders);
+                //slaag de index van de headers op voor later
+                $naamindex = array_search("naam",$headers);
+                $nummerindex = array_search("nummer",$headers);
+                $mailindex = array_search("mail",$headers);
+                $adresindex = array_search("adres",$headers);
+                $woonplaatsindex = array_search("woonplaats",$headers);
 
-            continue;
+                continue;
 
             }
 
