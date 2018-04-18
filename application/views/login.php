@@ -1,20 +1,20 @@
+<!-- 
+    GREIF MATTHIAS
+    LAST UPDATED: 18 03 30
+    DASH ADMIN LOGIN
+-->
+
 <div class="content_container">
 	<div class="row">
 		<div class="col"></div>
 		<div class="col-6">
-			<!--Modal: Contact form-->
 			<div class="modal-dialog cascading-modal" role="document">
-
-				<!--Content-->
 				<div class="modal-content">
-
-					<!--Header-->
 					<div class="modal-header info-color white-text">
 						<h4 class="title">
 							<i class="fa fa-pencil"></i> Admin login
 						</h4>
 					</div>
-					<!--Body-->
 					<div class="modal-body">
 						<!-- input username -->
 						<label for="inpUsername">Username</label>
@@ -36,9 +36,7 @@
 
 					</div>
 				</div>
-				<!--/.Content-->
 			</div>
-			<!--/Modal: Contact form-->
 		</div>
 		<div class="col"></div>
 	</div>

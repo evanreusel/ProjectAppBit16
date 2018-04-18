@@ -1,11 +1,18 @@
+<!-- 
+    GREIF MATTHIAS
+    LAST UPDATED: 18 03 30
+    DASH ADMIN JAARGANGBEHEER
+-->
+
 <table class="table">
     <tr class="colored">
-        <th>naam</th>
-        <th>info</th>
-        <th>thema</th>
-        <th>beginTijdstip</th>
-        <th>eindTijdstip</th>
-        <th>actief</th>
+        <th>Naam</th>
+        <th>Info</th>
+        <th>Thema</th>
+        <th>BeginTijdstip</th>
+        <th>EindTijdstip</th>
+        <th>Actief</th>
+        <td class="tableaction_container"><?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i> Toevoegen</a>', array('class' => 'tableaction btn btn-primary')); ?></td>
     </tr>
 
     <?php foreach($data['jaargangen'] as $jaargang){ ?>
@@ -32,11 +39,13 @@
                 }else{
                     if(new DateTIme($jaargang->beginTijdstip) < new DateTime())
                     {
-                        echo '<a id="deactivate" data-id="' . $jaargang->id . '" class="btn btn-primary">Jaargang afsluiten</a>';
+                        echo '<a class="deactivate btn btn-primary" data-id="' . $jaargang->id . '"><i class="fa fa-ban"></i> Afsluiten</a>';
                     }else{
                         echo 'Deze editie is nog bezig';
                     }
                 }
+
+                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/keuzemogelijkheidbeheer/' . $jaargang->id . '"><i class="fa fa-folder-open"></i> Keuzemogelijkheden</a></td>';
             ?>
         </td>
     </tr>
@@ -45,16 +54,12 @@
 
 <script>
     $(document).ready(function () {
-        $('#deactivate').click(function () {
+        $('.deactivate').click(function () {
             var id = this.getAttribute("data-id");
-
-            console.log(id);
-            console.log('<?php echo base_url(); ?>index.php/jaargang/end/' + id);
 
             $.get('<?php echo base_url(); ?>index.php/jaargang/end/' + id, function (data) {
                 if (data) {
-                    console.log(data);
-                    // window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/jaargangbeheer/';
+                    window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/jaargangbeheer/';
                 }else{
                     alert('Something went wrong deactivating jaargang');
                 }

@@ -1,3 +1,9 @@
+<!-- 
+    TIM SWERTS
+	LAST UPDATED: 18 03 30
+	KEUZEMOGELIJKHEID CONTROLLER
+-->
+
 <?php
 
 if (!defined('BASEPATH'))
@@ -9,6 +15,8 @@ class Keuzemogelijkheid extends CI_Controller{
         parent::__construct();
     }
 
+    // =================================================================================================== GREIF MATTHIAS
+    // Get Keuzemogelijkheid by Id
     public function get($id){
         $data['return'] = '';
 		
@@ -22,6 +30,7 @@ class Keuzemogelijkheid extends CI_Controller{
 		// Print in default api output view
 		$this->load->view('req_output', $data);
     }
+    // =================================================================================================== /GREIF MATTHIAS
 
     public function update()
 	{
@@ -47,17 +56,22 @@ class Keuzemogelijkheid extends CI_Controller{
         }
 
 		// Redirect naar keuzemogelijkheid pagina
-		redirect('admin/dash/keuzemogelijkheidbeheer');
+		redirect('admin/dash/keuzemogelijkheidbeheer/'. $keuzemogelijkheid->jaargangId);
     }
     
     public function delete($id)
 	{
 		
-        $this->load->model('Keuzemogelijkheid_model');
-        $this->Keuzemogelijkheid_model->delete($id);
+        $this->load->model('keuzemogelijkheid_model');
+
+        $returndata = $this->keuzemogelijkheid_model->get_byId($id);
+
+        // Return data
+        $data = json_encode($returndata);
+
+        $this->keuzemogelijkheid_model->delete($id);
 		
 		// Redirect to keuzemogelijkheidbeheer
-		redirect('admin/dash/keuzemogelijkheidbeheer');
+		redirect('admin/dash/keuzemogelijkheidbeheer/'. $data->jaargangId);
 	}
-
 }

@@ -1,3 +1,9 @@
+<!-- 
+    GREIF MATTHIAS 
+	LAST UPDATED: 18 03 30
+	JAARGANG CONTROLLER
+-->
+
 <?php
 
 if (!defined('BASEPATH'))
@@ -28,17 +34,19 @@ class Jaargang extends CI_Controller{
             // Get from db
             $jaargang = $this->jaargang_model->get_byId($id);
 
+            // Deactivate
             $jaargang->actief = 0;
 
-            print_r($jaargang);
-
+            // Update db
             $this->db->where('id', $jaargang->id);
             $this->db->update('Jaargang', $jaargang);
 
-            return TRUE;
+            // Output succes
+            echo 'TRUE';
         }
 
-        return FALSE;
+        // Output failure
+        echo 'FALSE';
     }
 }
 

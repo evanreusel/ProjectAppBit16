@@ -1,1 +1,1 @@
-ADMIN HOME DASH
+Hi <?php echo $user->naam; ?>, YOUR MOM GAY LOL

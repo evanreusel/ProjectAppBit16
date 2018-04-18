@@ -1,16 +1,10 @@
+<!-- 
+    TIM SWERTS
+	LAST UPDATED: 18 03 30
+	KEUZEOPTIE MODEL
+-->
+
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of KeuzeOptie_Model
- *
- * @author deswe
- */
 class KeuzeOptie_Model extends CI_Model{
     
     
@@ -54,6 +48,11 @@ class KeuzeOptie_Model extends CI_Model{
         
         $this->db->insert('Keuzeoptie', $keuzeoptie);
         return $this->db->insert_id();
+    }
+
+    function delete($id){
+        $this->db->where('id', $id);
+        $this->db->delete('KeuzeOptie');
     }
 }
 
