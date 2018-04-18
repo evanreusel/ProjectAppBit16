@@ -1,10 +1,9 @@
-<!-- 
-    GREIF MATTHIAS 
-	LAST UPDATED: 18 03 30
-	JAARGANG CONTROLLER
--->
-
 <?php
+/*
+GREIF MATTHIAS 
+LAST UPDATED: 18 03 30
+JAARGANG CONTROLLER
+*/
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
