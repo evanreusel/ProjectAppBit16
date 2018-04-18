@@ -13,8 +13,8 @@
         <?php
         foreach ($plaatsen as $plaats) {
             echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . 
-            anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="glyphicon glyphicon-removed">
-            <span class="glyphicon glyphicon-remove"></span></button>') .  '</td></tr>';
+            anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round">
+            Remove</button>') .  '</td></tr>';
         }
         ?>
     </tbody>
