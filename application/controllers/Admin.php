@@ -141,6 +141,7 @@ class Admin extends CI_Controller {
 			case "plaatsToevoegen":
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
+				$data["huidigeplaats"] = $extras;
 			break;
 			// =================================================================================================== /DAAN
 			case 'jaargangupdate':
