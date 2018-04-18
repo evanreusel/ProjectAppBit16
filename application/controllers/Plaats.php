@@ -63,6 +63,6 @@ class Plaats extends CI_Controller {
     }
 
     public function wijzig($id) {
-        redirect('admin/dash/plaatsToevoegen/' .$id);
+        redirect('admin/dash/plaatsToevoegen/' .$id, 'refresh');
     }
 }
