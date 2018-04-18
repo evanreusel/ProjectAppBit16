@@ -29,6 +29,8 @@ class Jaargang extends CI_Controller{
     {
         $this->load->model('jaargang_model');
 
+        $id = $this->input->post('id', TRUE);
+
         if($this->jaargang_model->get_byId($id) != null){
             // Get from db
             $jaargang = $this->jaargang_model->get_byId($id);
