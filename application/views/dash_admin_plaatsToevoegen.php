@@ -8,11 +8,13 @@
     <?php
     $attributes = array('name' => 'plaats');
 ?>
-    <table  class="table table-condensed striped" >
+    <table  class="table table-condensed" >
     <thead><tr><th>Naam</th> <th>Plaats</th> </tr></thead><tbody>
         <?php
         foreach ($plaatsen as $plaats) {
-            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round"><span class="glyphicon glyphicon-remove"></span></button>') .  '</td></tr>';
+            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . 
+            anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round">
+            </button>') .  '</td></tr>';
         }
         ?>
     </tbody>
