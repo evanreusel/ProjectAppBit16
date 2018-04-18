@@ -23,9 +23,6 @@
 
 
     <?php echo form_open('keuzeoptie/update', array('name' => 'keuzeoptieFrom', 'id' => 'keuzeoptieForm', 'role' => 'form'));  ?>
-    
-    <label for="keuzemogelijkheid">Keuzemogelijkheid:</label>
-    <?php echo form_dropdown("jaar", $jaren) ?>
     </br>
     <label for="keuzeoptie">Naam keuzeoptie:</label>
     <input id="keuzeoptie" name="naam" type="text" value="">
