@@ -34,14 +34,35 @@ class Jaargang extends CI_Controller{
         if($this->jaargang_model->get_byId($id) != null){
             // Get from db
             $jaargang = $this->jaargang_model->get_byId($id);
+        }else{
+            // Set defaults
+            $jaargang->naam = '';
+            $jaargang->thema = '';
+            $jaargang->info = '';
+            $jaargang->beginTijdstip = '';
+            $jaargang->eindTijdstip = '';
         }
         
-        $jaargang->naam = $this->input->post('naam', TRUE);
-        $jaargang->thema = $this->input->post('thema', TRUE);
-        $jaargang->info = $this->input->post('info', TRUE);
-        $jaargang->beginTijdstip = $this->input->post('beginTijdstip', TRUE);
-        $jaargang->eindTijdstip = $this->input->post('eindTijdstip', TRUE);
+        if($this->input->post('naam', TRUE) != null){
+            $jaargang->naam = $this->input->post('naam', TRUE);
+        }
 
+        if($this->input->post('thema', TRUE) != null){
+            $jaargang->thema = $this->input->post('thema', TRUE);
+        }
+
+        if($this->input->post('info', TRUE) != null){
+            $jaargang->info = $this->input->post('info', TRUE);
+        }
+
+        if($this->input->post('beginTijdstip', TRUE) != null){
+            $jaargang->beginTijdstip = $this->input->post('beginTijdstip', TRUE);
+        }
+
+        if($this->input->post('eindTijdstip', TRUE) != null){
+            $jaargang->eindTijdstip = $this->input->post('eindTijdstip', TRUE);
+        }
+        
         if(isset($jaargang->$id)){
             // Update db
             $this->jaargang_model->update($jaargang);
