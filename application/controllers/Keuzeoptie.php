@@ -46,7 +46,7 @@ class Keuzeoptie extends CI_Controller{
         $keuzeoptie->beginTijdstip = $this->input->post('beginTijdstip');
 
 		// Model inladen
-        $this->load->model('$keuzeoptie_model');
+        $this->load->model('keuzeoptie_model');
 		
 		// Keuzeoptie toevoegen of aanpassen
         if($keuzemogelijkheid->id == 0){
