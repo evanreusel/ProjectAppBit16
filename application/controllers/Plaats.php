@@ -65,14 +65,10 @@ class Plaats extends CI_Controller {
     public function wijzig($id) {
         $plaats = new stdClass();
 
-        $plaats->naam = $this->input->post('naam');
-        $plaats->locatie = $this->input->post('locatie');
-
-        $plaats->id = $this->input->post('id');
-
         $this->load->model('plaats_model');
-        $this->plaats_model->update($plaats);
+        $this->plaats_model->getPlaatsById($id);
 
-        redirect('admin/dash/plaatsToevoegen');
+        $this->controller->load('Admin');
+        $this->Admin->dash("dash/plaatsToevoegen", $plaats);
     }
 }

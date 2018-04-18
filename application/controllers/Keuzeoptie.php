@@ -38,12 +38,12 @@ class Keuzeoptie extends CI_Controller{
         $keuzeoptie = new stdClass();
 
         $keuzeoptie->id = $this->input->post('id');
-        $keuzeoptie->plaatsId = $this->input->post('plaats');
-        $keuzeoptie->jaargangId = $this->input->post('jaar');
+        $keuzeoptie->keuzemogelijkheidId = $this->input->post('keuzemogelijkheidId');
         $keuzeoptie->naam = $this->input->post('naam');
+        $keuzeoptie->min = $this->input->post('min');
+        $keuzeoptie->max = $this->input->post('max');
         $keuzeoptie->eindTijdstip = $this->input->post('eindTijdstip');
         $keuzeoptie->beginTijdstip = $this->input->post('beginTijdstip');
-        $keuzeoptie->deadlineTijdstip = $this->input->post('deadlineTijdstip');
 
 		// Model inladen
         $this->load->model('$keuzeoptie_model');
@@ -56,7 +56,7 @@ class Keuzeoptie extends CI_Controller{
         }
 
 		// Redirect naar keuzemogelijkheid pagina
-		redirect('admin/dash/keuzemogelijkheidbeheer/'. $$keuzeoptie->jaargangId);
+		redirect('admin/dash/jaargangbeheer/');
     }
     
     public function delete($id)
