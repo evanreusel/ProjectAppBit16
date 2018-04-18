@@ -30,7 +30,7 @@ DASH ADMIN JAARGANG ADD/UPDATE
 ?>
 
 <?php echo form_open('jaargang/update', array('name' => 'frmJaargang', 'id' => 'frmJaargang', 'role' => 'form'));  ?>
-
+<input name="id" type="hidden" value="<?php echo $defaults['id']; ?>">
 <label for="inpNaam">Naam:</label>
 <input id="inpNaam" name="naam" type="text" value="<?php echo $defaults['naam']; ?>">
 </br>
