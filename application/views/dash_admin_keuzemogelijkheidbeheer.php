@@ -42,10 +42,9 @@ if(count($data['keuzemogelijkheden']) > 0) {
             }
 
             echo "</table>";
-            echo '<a href="" class="btn btn-primary">Keuzeoptie toevoegen</a>';
+            echo anchor("admin/dash/updatekeuzemogelijkheid","Keuzeoptie toevoegen",'class="btn btn-primary"');
             echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' aanpassen</a>';
-            // echo '<a href="" class="btn btn-primary">'.$activiteit->naam.' verwijderen</a>';
-            echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round"><i class="fa fa-trash">'. $activiteit->naam .'</i> Verwijderen</button></div>');
+            echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round"><i class="fa fa-trash"></i>'. $activiteit->naam . 'Verwijderen</button></div>');
 
         }
     }
