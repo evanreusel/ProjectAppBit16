@@ -41,6 +41,7 @@ class Jaargang extends CI_Controller{
             $jaargang->info = '';
             $jaargang->beginTijdstip = '';
             $jaargang->eindTijdstip = '';
+            $jaargang->actief = 1;
         }
         
         if($this->input->post('naam', TRUE) != null){

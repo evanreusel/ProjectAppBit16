@@ -35,10 +35,10 @@ DASH ADMIN JAARGANG ADD/UPDATE
 <input id="inpNaam" name="naam" type="text" value="<?php echo $defaults['naam']; ?>">
 </br>
 <label for="inpThema">Thema:</label>
-<input id="inpThema" name="naam" type="text" value="<?php echo $defaults['thema']; ?>">
+<input id="inpThema" name="thema" type="text" value="<?php echo $defaults['thema']; ?>">
 </br>
 <label for="inpInfo">Info:</label>
-<textarea id="inpInfo" name="naam" type="text" value="<?php echo $defaults['info']; ?>"></textarea>
+<textarea id="inpInfo" name="info" type="text" value="<?php echo $defaults['info']; ?>"></textarea>
 </br>
 <label for="begin">Begin datum en tijdstip:</label>
 <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
