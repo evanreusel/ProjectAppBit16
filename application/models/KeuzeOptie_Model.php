@@ -49,6 +49,11 @@ class KeuzeOptie_Model extends CI_Model{
         $this->db->insert('Keuzeoptie', $keuzeoptie);
         return $this->db->insert_id();
     }
+
+    function delete($id){
+        $this->db->where('id', $id);
+        $this->db->delete('KeuzeOptie');
+    }
 }
 
 
