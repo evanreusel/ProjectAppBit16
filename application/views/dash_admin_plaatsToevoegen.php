@@ -25,7 +25,7 @@
     echo form_labelpro('Naam', 'naam');
     echo form_input(array('name' => 'naam',
         'id' => 'naam',
-        if(isset($huidigePlaats)){'value' => $huidigePlaats->naam, }
+        'value' => if(isset($huidigePlaats)){$huidigePlaats->naam }else {''},
         'class' => 'form-control',
         'required' => 'required'));
         
@@ -33,7 +33,7 @@
     echo form_labelpro('Locatie', 'locatie');
     echo form_input(array('name' => 'locatie',
         'id' => 'locatie',
-        if(isset($huidigePlaats)){'value' => $huidigePlaats->locatie, }
+        'value' => if(isset($huidigePlaats)){$huidigePlaats->locatie }else {''},
         'class' => 'form-control',
         'required' => 'required'));
 
