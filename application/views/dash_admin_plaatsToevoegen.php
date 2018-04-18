@@ -8,7 +8,7 @@
     <?php
     $attributes = array('name' => 'plaats');
 ?>
-    <table  class="table table-condensed" >
+    <table  class="table table-condensed striped" >
     <thead><tr><th>Naam</th> <th>Plaats</th> </tr></thead><tbody>
         <?php
         foreach ($plaatsen as $plaats) {

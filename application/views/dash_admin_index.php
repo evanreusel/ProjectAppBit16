@@ -1,1 +1,1 @@
-Hi <?php echo $user->naam; ?>, YOUR MOM GAY LOL
+Hi <?php echo $user->naam; ?>, UR MOM GAY LOL
