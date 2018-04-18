@@ -140,12 +140,6 @@ class Admin extends CI_Controller {
 			// =================================================================================================== DAAN
 			case "plaatsToevoegen":
 			$this->load->model('plaats_model');
-			if(isset($extras)){
-				$plaats = new stdClass();
-		
-				$plaats = $this->plaats_model->getPlaatsById($extras);
-				$data["huidigeplaats"] = $plaats;
-			}
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 			break;
 			// =================================================================================================== /DAAN
