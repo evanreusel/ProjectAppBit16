@@ -14,8 +14,8 @@ DASH ADMIN JAARGANG ADD/UPDATE
     ];
 
     if(isset($data['jaargang'])){
-        $defaults['id'] = $data['jaargang']['id'];
-        $defaults['naam'] = $data['jaargang']['naam'];
+        $defaults['id'] = $data['jaargang']->id;
+        $defaults['naam'] = $data['jaargang']->naam;
         $defaults['thema'] = $data['jaargang']['thema'];
         $defaults['info'] = $data['jaargang']['info'];
         $defaults['beginTijdstip'] = $data['jaargang']['beginTijdstip'];
