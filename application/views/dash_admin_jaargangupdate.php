@@ -32,16 +32,19 @@ DASH ADMIN JAARGANG ADD/UPDATE
 <?php echo form_open('jaargang/update', array('name' => 'frmJaargang', 'id' => 'frmJaargang', 'role' => 'form'));  ?>
 
 <label for="inpNaam">Naam:</label>
-<input id="inpNaam" name="naam" type="text" value="<?php echo $defaults['id']; ?>">
+<input id="inpNaam" name="naam" type="text" value="<?php echo $defaults['naam']; ?>">
+</br>
+<label for="inpThema">Thema:</label>
+<input id="inpThema" name="naam" type="text" value="<?php echo $defaults['thema']; ?>">
+</br>
+<label for="inpInfo">Info:</label>
+<textarea id="inpInfo" name="naam" type="text" value="<?php echo $defaults['info']; ?>"></textarea>
 </br>
 <label for="begin">Begin datum en tijdstip:</label>
-<input id="begin" name="beginTijdstip" size="16" type="text" value="" readonly class="form_datetime">
+<input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
 </br>
 <label for="einde">Eind datum en tijdstip:</label>
-<input id="einde" name="eindTijdstip" size="16" type="text" value="" readonly class="form_datetime">
-</br>
-<label for="deadline">Datum en tijdstip voor deadline:</label>
-<input id="deadline" name="deadlineTijdstip" size="16" type="text" value="" readonly class="form_datetime">
+<input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults['eindTijdstip']; ?>" readonly class="form_datetime">
 </br>
 <?php    
     echo form_button($arrayparameters);
