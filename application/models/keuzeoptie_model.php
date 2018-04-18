@@ -5,7 +5,7 @@
 -->
 
 <?php
-class KeuzeOptie_Model extends CI_Model{
+class Keuzeoptie_Model extends CI_Model{
     
     
     function __construct() {
