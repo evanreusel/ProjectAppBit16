@@ -1,7 +1,7 @@
 <?php
     $arrayparameters = array();
     $arrayparameters['id'] = 'submit';
-    $arrayparameters['value']= 'somethingstupid';
+    $arrayparameters['value']= 'submit';
     $arrayparameters['content'] = 'Personeelslijst toevoegen';
     ?>
 

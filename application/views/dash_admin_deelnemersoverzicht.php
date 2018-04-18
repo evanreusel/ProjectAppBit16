@@ -2,6 +2,16 @@
 laatstgesorteerd = "";
 asc = true;
 
+function hide(){
+$("tr").each(function(){
+    if($(this).is('[class*="hidden"]')){
+        $(this).hide();
+    }else{
+        $(this).show();
+    }
+});
+}
+
 function search(){
 $(".search").keyup(function(){
     waarde = $(this).val().toLowerCase();
@@ -12,24 +22,36 @@ $(".search").keyup(function(){
 
     $('.' + attribuut + 'item').each(function(){
         console.log($(this).html());
-        if($(this).html().toLowerCase().indexOf(waarde) >= 0 || waarde == ""){
-            $(this).parent().show();
+        if($(this).html().toLowerCase().indexOf(waarde) >= 0 || waarde == "" & $(this).hasClass("hidden" + attribuut)){
+            $(this).parent().removeClass("hidden" + attribuut);
         } else {
-            $(this).parent().hide();
+            $(this).parent().addClass("hidden" + attribuut);
         }
     });
+hide();
 });
 }
 
 function sort(){
     $(".sort").click(function(){
 
+
     attribuut = $(this).attr('id');
     attribuut = attribuut.replace('sort',''); 
 
+    $(".sort > i").each(function(){
+        if($(this).hasClass("fa-angle-down")){
+            $(this).removeClass("fa-angle-down");
+        } else if($(this).hasClass("fa-angle-up")){
+            $(this).removeClass("fa-angle-up");
+        }
+    });
+
     if(attribuut == laatstgesorteerd && asc){
+    $(this).children("i").addClass("fas fa-angle-down");
         asc = false;
     } else {
+    $(this).children("i").addClass("fas fa-angle-up");
         asc = true;
     }
     laatstgesorteerd = attribuut;
@@ -86,10 +108,10 @@ table,td  {
 
 <tHead>
 <tr>
-<td id="naamsort" class="sort">Naam</td>
-<td id="mailsort" class="sort">Mail</td>
-<td id="activiteitsort" class="sort">Activiteit</td>
-<td id="tijdsort" class="sort">Tijd</td>
+<td id="naamsort" class="sort"><i></i>Naam</td>
+<td id="mailsort" class="sort"><i></i>Mail</td>
+<td id="activiteitsort" class="sort"><i></i>Activiteit</td>
+<td id="tijdsort" class="sort"><i></i>Tijd</td>
 </tr>
 </tHead>
 
