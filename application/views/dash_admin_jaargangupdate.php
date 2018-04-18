@@ -14,6 +14,7 @@
     ];
 
     if(isset($data)){
+        $forminputs['id'] = (isset($data['id'])) ? $data['id']->id : '0';
         $forminputs['naam'] = $data['jaargang']->naam;
         $forminputs['thema'] = $data['jaargang']->thema;
         $forminputs['info'] = $data['jaargang']->info;
@@ -85,16 +86,14 @@
 
         $('#aApply').on("click", function(){
             $.ajax({
-                url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),
+                url: '<?= site_url(); ?>/jaargang/update/<?php echo $forminputs["id"]; ?>/' + $('#inpName').val() + '/' + $('#inpThema').val() + '/' + $('#inpInfo').val()
+                + '/' + $('#infpBeginTijdstip').val() + '/' + $('#inpEindTijdstip').val(),
                 async: false,
                 type: "GET",
                 dataType:'json',
-                success: function(data){                    
-                    if(data != null){
-                        $('#oudpasserror').hide();
-                        return true;
-                    } else {
-                        $('#oudpasserror').show();
+                success: function(data){
+                    if(!data){
+                        alert(data);
                     }
                 }, error: function (xhr, status, error) {
                     alert("Something went wrong " + xhr.responseText);
