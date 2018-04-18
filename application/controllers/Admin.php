@@ -144,9 +144,9 @@ class Admin extends CI_Controller {
 				$plaats = new stdClass();
 		
 				$plaats = $this->plaats_model->getPlaatsById($extras);
+				$data["huidigeplaats"] = $plaats;
 			}
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
-				$data["huidigeplaats"] = $plaats;
 			break;
 			// =================================================================================================== /DAAN
 			case 'jaargangupdate':
