@@ -1,11 +1,11 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
 /*
     GREIF MATTHIAS 
 	LAST UPDATED: 18 03 30
 	ADMIN CONTROLLER
 */
+
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 // ADMIN CONTROLLER
 // - LOGIN
