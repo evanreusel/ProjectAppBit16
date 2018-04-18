@@ -46,13 +46,13 @@ class Keuzeoptie extends CI_Controller{
         $keuzeoptie->beginTijdstip = $this->input->post('beginTijdstip');
 
 		// Model inladen
-        $this->load->model('keuzeoptie_model');
+        $this->load->model('Keuzeoptie_model');
 		
 		// Keuzeoptie toevoegen of aanpassen
         if($keuzeoptie->id == 0){
-       		$this->$keuzeoptie_model->add($keuzeoptie);
+       		$this->$Keuzeoptie_model->add($keuzeoptie);
         } else {
-        	$this->$keuzeoptie_model->update($keuzeoptie);
+        	$this->$Keuzeoptie_model->update($keuzeoptie);
         }
 
 		// Redirect naar keuzemogelijkheid pagina
@@ -62,9 +62,9 @@ class Keuzeoptie extends CI_Controller{
     public function delete($id)
 	{
 		
-        $this->load->model('$keuzeoptie_model');
+        $this->load->model('Keuzeoptie_model');
 
-        $this->$keuzeoptie_model->delete($id);
+        $this->$Keuzeoptie_model->delete($id);
 		
 		// Redirect to keuzemogelijkheidbeheer
 		redirect('admin/dash/jaargangbeheer');
