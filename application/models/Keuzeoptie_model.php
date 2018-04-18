@@ -36,19 +36,17 @@ class KeuzeOptie_Model extends CI_Model{
 
     }
 
-    function insertKeuzeoptie($naam, $plaatsId, $min, $max,$beginTijdstip, $eindTijdstip) 
+    function update($keuzemogelijkheid)
     {
-        $keuzeoptie = new stdClass();
-        $keuzeoptie->naam = $naam;
-        $keuzeoptie->beginTijdstip = $beginTijdstip;
-        $keuzeoptie->eindTijdstip = $eindTijdstip;
-        $keuzeoptie->min = $min;
-        $keuzeoptie->max =$max;
-        /*$keuzeoptie->plaatsId = $plaatsId;*/
-        
-        $this->db->insert('Keuzeoptie', $keuzeoptie);
+        $this->db->where('id', $keuzemogelijkheid->id);
+        $this->db->update('KeuzeMogelijkheid', $keuzemogelijkheid);
+    }
+
+    function add($keuzemogelijkheid){
+        $this->db->insert('KeuzeMogelijkheid', $keuzemogelijkheid);
         return $this->db->insert_id();
     }
+    
 
     function delete($id){
         $this->db->where('id', $id);
