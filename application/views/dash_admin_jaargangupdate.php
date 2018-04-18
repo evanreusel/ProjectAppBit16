@@ -1,6 +1,6 @@
 <!-- 
     GREIF MATTHIAS
-    LAST UPDATED: 18 03 30
+    LAST UPDATED: 18 04 18
     DASH ADMIN JAARGANG ADD/UPDATE
 -->
 
@@ -57,25 +57,35 @@
             </span>
         </div>
     </div>
+
+    <a href="#" id="aApply"> Apply </a>
 </form>
 
 <script type="text/javascript">
-    $('#inpBeginTijdstip').datetimepicker({
-        viewmode: 'years',
-        format: 'dd/MM/yyyy',
-    });
+    $(document).ready(function(){
+        $('#inpBeginTijdstip').datetimepicker({
+            viewmode: 'years',
+            format: 'dd/MM/yyyy',
+        });
 
-    $('#inpEindTijdstip').datetimepicker({
-        viewmode: 'years',
-        format: 'dd/MM/yyyy',
-        useCurrent: false //Important! See issue #1075
-    });
+        $('#inpEindTijdstip').datetimepicker({
+            viewmode: 'years',
+            format: 'dd/MM/yyyy',
+            useCurrent: false //Important! See issue #1075
+        });
 
-    $("#inpBeginTijdstip").on("dp.change", function (e) {
-        $('#inpEindTijdstip').data("DateTimePicker").minDate(e.date);
-    });
+        $("#inpBeginTijdstip").on("dp.change", function (e) {
+            $('#inpEindTijdstip').data("DateTimePicker").minDate(e.date);
+        });
 
-    $("#inpEindTijdstip").on("dp.change", function (e) {
-        $('#inpBeginTijdstip').data("DateTimePicker").maxDate(e.date);
+        $("#inpEindTijdstip").on("dp.change", function (e) {
+            $('#inpBeginTijdstip').data("DateTimePicker").maxDate(e.date);
+        });
+
+
+        $('#aApply').on("click", function(){
+            alert();
+        });
+
     });
 </script>
