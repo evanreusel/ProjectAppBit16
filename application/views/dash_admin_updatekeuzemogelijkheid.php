@@ -1,10 +1,10 @@
-<!-- 
-    TIM SWERTS
-    LAST UPDATED: 18 03 30
-    DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
--->
-
 <?php
+/* 
+TIM SWERTS
+LAST UPDATED: 18 03 30
+DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
+*/
+
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
     $arrayparameters['value'] = '0';
