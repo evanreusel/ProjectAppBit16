@@ -27,7 +27,7 @@ class Plaats extends CI_Controller {
         
     public function maakNieuwe() {
         $data['titel'] = 'Plaats toevoegen';
-        $data['plaats'] = $this->getEmptyPlaats();
+        $data['plaats'] = $this->getEmptyPlaats($id);
  
 
         $data['view'] = 'plaatsToevoegen';
