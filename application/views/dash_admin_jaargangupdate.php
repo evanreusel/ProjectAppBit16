@@ -85,9 +85,12 @@
 
 
         $('#aApply').on("click", function(){
+            alert('<?= site_url(); ?>/jaargang/update/<?php echo $forminputs["id"]; ?>/' + $('#inpName').val() + '/' + $('#inpThema').val() + '/' + $('#inpInfo').val()
+                + '/' + $('#inpBeginTijdstip').val() + '/' + $('#inpEindTijdstip').val());
+                
             $.ajax({
                 url: '<?= site_url(); ?>/jaargang/update/<?php echo $forminputs["id"]; ?>/' + $('#inpName').val() + '/' + $('#inpThema').val() + '/' + $('#inpInfo').val()
-                + '/' + $('#infpBeginTijdstip').val() + '/' + $('#inpEindTijdstip').val(),
+                + '/' + $('#inpBeginTijdstip').val() + '/' + $('#inpEindTijdstip').val(),
                 async: false,
                 type: "GET",
                 dataType:'json',
