@@ -37,7 +37,7 @@
         'class' => 'form-control',
         'required' => 'required'));
 
-        if(isset($plaats->id)){ echo form_hidden('id', $plaats->id);}
+        if(isset($huidigePlaats->id)){ echo form_hidden('id', $huidigePlaats->id);}
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();

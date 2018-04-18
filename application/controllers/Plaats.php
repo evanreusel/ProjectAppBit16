@@ -73,6 +73,7 @@ class Plaats extends CI_Controller {
         $this->load->model('plaats_model');
         $this->plaats_model->update($plaats);
 
+        $data['huidigePlaats'] = $plaats;
         redirect('admin/dash/plaatsToevoegen');
     }
 }
