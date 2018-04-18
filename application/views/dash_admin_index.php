@@ -1,1 +1,3 @@
-Hi <?php echo $user->naam; ?>, UR MOM GAY LOL
+<h1>
+    Hi <?php echo $user->username; ?>, What do you want to do??
+</h1>
