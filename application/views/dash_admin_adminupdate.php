@@ -31,15 +31,16 @@
                         return true;
                     } else {
                         $('#oudpasserror').show();
-                        return false;
                     }
                 }, error: function (xhr, status, error) {
-                    alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
+        }else{
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     function nieuwpassmatch(){  
@@ -60,11 +61,7 @@
             $('#nieuwpasscheckerror').show();
         }
 
-        if($passsame && $passnietleeg) {
-            return true;
-        } else {
-            return false;
-        }
+        return $passsame && $passnietleeg;
     }
 
     $(document).ready(function () {

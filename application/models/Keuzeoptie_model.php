@@ -5,7 +5,7 @@
 -->
 
 <?php
-class KeuzeOptie_Model extends CI_Model{
+class Keuzeoptie_Model extends CI_Model{
     
     
     function __construct() {
@@ -36,18 +36,21 @@ class KeuzeOptie_Model extends CI_Model{
 
     }
 
-    function insertKeuzeoptie($naam, $plaatsId, $min, $max,$beginTijdstip, $eindTijdstip) 
+    function update($keuzeoptie)
     {
-        $keuzeoptie = new stdClass();
-        $keuzeoptie->naam = $naam;
-        $keuzeoptie->beginTijdstip = $beginTijdstip;
-        $keuzeoptie->eindTijdstip = $eindTijdstip;
-        $keuzeoptie->min = $min;
-        $keuzeoptie->max =$max;
-        /*$keuzeoptie->plaatsId = $plaatsId;*/
-        
-        $this->db->insert('Keuzeoptie', $keuzeoptie);
+        $this->db->where('id', $keuzeoptie->id);
+        $this->db->update('KeuzeOptie', $keuzeoptie);
+    }
+
+    function add($keuzeoptie){
+        $this->db->insert('KeuzeOptie', $keuzeoptie);
         return $this->db->insert_id();
+    }
+    
+
+    function delete($id){
+        $this->db->where('id', $id);
+        $this->db->delete('KeuzeOptie');
     }
 }
 

@@ -1,10 +1,10 @@
-<!-- 
+<?php
+/*
     GREIF MATTHIAS 
 	LAST UPDATED: 18 03 30
 	ADMIN CONTROLLER
--->
+*/
 
-<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 // ADMIN CONTROLLER
@@ -129,6 +129,17 @@ class Admin extends CI_Controller {
 					$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->get_byId($extras);
 				}
 			break;
+			case "updatekeuzeoptie":
+
+				//plaatsen inladen voor dropdown list
+				$this->load->model('plaats_model');
+				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
+
+				if($extras != null) {
+					$this->load->model('keuzeoptie_model');
+					$data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
+				}
+			break;
 			// =================================================================================================== /TIM SWERTS
 			case 'jaargangbeheer';
 				$this->load->model('jaargang_model');
@@ -136,7 +147,7 @@ class Admin extends CI_Controller {
 			break;
 			// =================================================================================================== DAAN
 			case "plaatsToevoegen":
-				$this->load->model('plaats_model');
+			$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 			break;
 			// =================================================================================================== /DAAN

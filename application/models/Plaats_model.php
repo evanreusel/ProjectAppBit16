@@ -12,6 +12,12 @@ class Plaats_model extends CI_Model {
         $query = $this->db->get('Plaats');
         return $query->result();
     }
+
+    function getPlaatsById($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('Plaats');
+        return $query->row();
+    }
     
         function insert($plaats) {
         $this->db->insert('Plaats', $plaats);

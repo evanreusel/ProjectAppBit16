@@ -1,11 +1,11 @@
-<!-- 
-    GREIF MATTHIAS
-    LAST UPDATED: 18 03 30
-    DASH ADMIN JAARGANG ADD/UPDATE
--->
-
-<?php 
-    $forminputs = [
+<?php
+/* 
+GREIF MATTHIAS
+LAST UPDATED: 18 04 18
+DASH ADMIN JAARGANG ADD/UPDATE
+*/
+    $defaults = [
+        'id' => 0,
         'naam' => '',
         'thema' => '',
         'info' => '',
@@ -13,69 +13,45 @@
         'eindTijdstip' => ''
     ];
 
-    if(isset($data)){
-        $forminputs['naam'] = $data['jaargang']->naam;
-        $forminputs['thema'] = $data['jaargang']->thema;
-        $forminputs['info'] = $data['jaargang']->info;
-        $forminputs['beginTijdstip'] = $data['jaargang']->beginTijdstip;
-        $forminputs['eindTijstip'] = $data['jaargang']->eindTijdstip;
+    if(isset($data['jaargang'])){
+        $defaults['id'] = $data['jaargang']->id;
+        $defaults['naam'] = $data['jaargang']->naam;
+        $defaults['thema'] = $data['jaargang']->thema;
+        $defaults['info'] = $data['jaargang']->info;
+        $defaults['beginTijdstip'] = $data['jaargang']->beginTijdstip;
+        $defaults['eindTijdstip'] = $data['jaargang']->eindTijdstip;
     }
+
+    $arrayparameters = array();
+    $arrayparameters['id'] = 'send';
+    $arrayparameters['value'] = '0';
+    $arrayparameters['type'] = 'submit';
+    $arrayparameters['content'] = "Bevestig";
 ?>
 
-<form>
-    <div class="md-form">
-        <input type="text" id="inpName" class="form-control" value="<?php echo $forminputs['naam']; ?>">
-        <label for="inpName">Naam</label>
-    </div>
+<?php echo form_open('jaargang/update', array('name' => 'frmJaargang', 'id' => 'frmJaargang', 'role' => 'form'));  ?>
+<input name="id" type="hidden" value="<?php echo $defaults['id']; ?>">
+<label for="inpNaam">Naam:</label>
+<input id="inpNaam" name="naam" type="text" value="<?php echo $defaults['naam']; ?>">
+</br>
+<label for="inpThema">Thema:</label>
+<input id="inpThema" name="thema" type="text" value="<?php echo $defaults['thema']; ?>">
+</br>
+<label for="inpInfo">Info:</label>
+<textarea id="inpInfo" name="info" type="text" value="<?php echo $defaults['info']; ?>"></textarea>
+</br>
+<label for="begin">Begin datum en tijdstip:</label>
+<input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
+</br>
+<label for="einde">Eind datum en tijdstip:</label>
+<input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults['eindTijdstip']; ?>" readonly class="form_datetime">
+</br>
+<?php    
+    echo form_button($arrayparameters);
+    echo form_close();
+?>
 
-    <div class="md-form">
-        <input type="text" id="inpThema" class="form-control" value="<?php echo $forminputs['thema']; ?>">
-        <label for="inpThema">Thema</label>
-    </div>
-
-    <div class="md-form">
-        <label for="inpInfo">Info</label>
-        <textarea type="text" id="inpInfo" class="form-control md-textarea" rows="3">
-            <?php echo $forminputs['naam']; ?>
-        </textarea>
-    </div>
-
-    <div class="form-group">
-        <div class='input-group date' id='inpBeginTijdstip'>
-            <input type='text' class="form-control" placeholder="Begintijdstip van event" value="<?php echo $forminputs['beginTijdstip']; ?>"/>
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class='input-group date' id='inpEindTijdstip'>
-            <input type='text' class="form-control" placeholder="Eindtijdstip van event" value="<?php echo $forminputs['eindTijdstip']; ?>"/>
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-        </div>
-    </div>
-</form>
 
 <script type="text/javascript">
-    $('#inpBeginTijdstip').datetimepicker({
-        viewmode: 'years',
-        format: 'dd/MM/yyyy',
-    });
-
-    $('#inpEindTijdstip').datetimepicker({
-        viewmode: 'years',
-        format: 'dd/MM/yyyy',
-        useCurrent: false //Important! See issue #1075
-    });
-
-    $("#inpBeginTijdstip").on("dp.change", function (e) {
-        $('#inpEindTijdstip').data("DateTimePicker").minDate(e.date);
-    });
-
-    $("#inpEindTijdstip").on("dp.change", function (e) {
-        $('#inpBeginTijdstip').data("DateTimePicker").maxDate(e.date);
-    });
-</script>
+    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+</script>            

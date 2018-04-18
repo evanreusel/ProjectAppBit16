@@ -4,6 +4,7 @@
 	PLAATS CONTROLLER
 -->
 
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -27,7 +28,7 @@ class Plaats extends CI_Controller {
         
     public function maakNieuwe() {
         $data['titel'] = 'Plaats toevoegen';
-        $data['plaats'] = $this->getEmptyPlaats();
+        $data['plaats'] = $this->getEmptyPlaats($id);
  
 
         $data['view'] = 'plaatsToevoegen';
@@ -61,4 +62,26 @@ class Plaats extends CI_Controller {
 
         redirect('admin/dash/plaatsToevoegen');
     }
+
+    public function wijzig($id) {
+        redirect('admin/dash/plaatsToevoegen/' .$id, 'refresh');
+    }
+
+    public function ajaxplaats($id = null)
+	{		
+        // Check login vals
+        
+        
+			$this->load->model('plaats_model');
+				$plaats = new stdClass();
+		
+				$plaats = $this->plaats_model->getPlaatsById($id);
+                $data["huidigeplaats"] = $plaats;
+
+                $data['naam'] = $plaats->naam;
+                $data['locatie'] = $plaats->locatie;
+
+		// Print in default api output view
+		$this->load->view('req_output', $data);
+	}
 }

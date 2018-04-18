@@ -1,24 +1,19 @@
-<?php
-/* 
-TIM SWERTS
-LAST UPDATED: 18 03 30
-DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
-*/
+<!-- 
+    TIM SWERTS
+    LAST UPDATED: 18 03 30
+    DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
+-->
 
+<?php
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
     $arrayparameters['value'] = '0';
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
     
-    $jaren = array('');
-    $toevoegen = array('');
+
     $plaats = array('');
 
-    foreach ($jaargangen as $jaargang) {
-        $toevoegen[$jaargang->id]=$jaargang->naam;
-    }
-    array_push($jaren, $toevoegen);
 
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
@@ -27,25 +22,25 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     
 
 
-    <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
-    
-    <label for="jaar">Jaar:</label>
-    <?php echo form_dropdown("jaar", $jaren) ?>
+    <?php echo form_open('keuzeoptie/update', array('name' => 'keuzeoptieFrom', 'id' => 'keuzeoptieForm', 'role' => 'form'));  ?>
     </br>
-    <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
-    <input id="keuzemogelijkheid" name="naam" type="text" value="">
+    <label for="keuzeoptie">Naam keuzeoptie:</label>
+    <input id="keuzeoptie" name="naam" type="text" value="">
     </br>
     <label for="plaats">Plaats:</label>
     <?php echo form_dropdown("plaats", $plaats) ?>
+    </br>
+    <label for="minimum">Minimum aantal personen</label>
+    <input id="minimum" name="min" size="10" type="number">
+    </br>
+    <label for="maximum">Maximum aantal personen</label>
+    <input id="maximum" name="max" size="10" type="number">
     </br>
     <label for="begin">Begin datum en tijdstip:</label>
     <input id="begin" name="beginTijdstip" size="16" type="text" value="" readonly class="form_datetime">
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
     <input id="einde" name="eindTijdstip" size="16" type="text" value="" readonly class="form_datetime">
-    </br>
-    <label for="deadline">Datum en tijdstip voor deadline:</label>
-    <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="" readonly class="form_datetime">
     </br>
     <?php    
         echo form_button($arrayparameters);

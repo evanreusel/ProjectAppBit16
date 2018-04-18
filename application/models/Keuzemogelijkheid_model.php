@@ -30,10 +30,10 @@ class Keuzemogelijkheid_Model extends CI_Model {
     function getAllByNaamWithKeuzeOpties()
     {
         $keuzemogelijkheden = $this->getAllByNaam();
-        $this->load->model('keuzeoptie_model');
+        $this->load->model('Keuzeoptie_model');
 
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
-            $keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+            $keuzemogelijkheid->keuzeopties = $this->Keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
         }
 
         return $keuzemogelijkheden;
@@ -52,9 +52,9 @@ class Keuzemogelijkheid_Model extends CI_Model {
        $keuzemogelijkheden = $this->getAll_byJaargangId($id);
 
         // Get all opties voor keuzemogelijkheden
-        $this->load->model('keuzeoptie_model');
+        $this->load->model('Keuzeoptie_model');
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
-            $keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+            $keuzemogelijkheid->keuzeopties = $this->Keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
         }
 
         return $keuzemogelijkheden;
