@@ -12,7 +12,7 @@
     <thead><tr><th>Naam</th> <th>Plaats</th> </tr></thead><tbody>
         <?php
         foreach ($plaatsen as $plaats) {
-            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . 
+            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . anchor('Plaats/wijzig/' . $plaats->id,  '<button type="button" class="btn btn-danger btn-round">Wijzig</button>') . "</td><td>" .
             anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round">Remove</button>') .  '</td></tr>';
         }
         
@@ -25,7 +25,7 @@
     echo form_labelpro('Naam', 'naam');
     echo form_input(array('name' => 'naam',
         'id' => 'naam',
-        'value' => $plaats->naam,
+        // 'value' => $plaats->naam,
         'class' => 'form-control',
         'required' => 'required'));
         
@@ -33,11 +33,11 @@
     echo form_labelpro('Locatie', 'locatie');
     echo form_input(array('name' => 'locatie',
         'id' => 'locatie',
-        'value' => $plaats->locatie,
+        // 'value' => $plaats->locatie,
         'class' => 'form-control',
         'required' => 'required'));
 
-    // echo form_hidden('id', $plaats->id);
+        if(isset($plaats->id)){ echo form_hidden('id', $plaats->id);}
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();
