@@ -16,10 +16,10 @@ DASH ADMIN JAARGANG ADD/UPDATE
     if(isset($data['jaargang'])){
         $defaults->id = $data['jaargang']->id;
         $defaults->naam = $data['jaargang']->naam;
-        $defaults['thema'] = $data['jaargang']['thema'];
-        $defaults['info'] = $data['jaargang']['info'];
-        $defaults['beginTijdstip'] = $data['jaargang']['beginTijdstip'];
-        $defaults['eindTijdstip'] = $data['jaargang']['eindTijdstip'];
+        $defaults->thema = $data['jaargang']->thema;
+        $defaults->info = $data['jaargang']->info;
+        $defaults->beginTijdstip = $data['jaargang']->beginTijdstip;
+        $defaults->eindTijdstip = $data['jaargang']->eindTijdstip;
     }
 
     $arrayparameters = array();
@@ -32,19 +32,19 @@ DASH ADMIN JAARGANG ADD/UPDATE
 <?php echo form_open('jaargang/update', array('name' => 'frmJaargang', 'id' => 'frmJaargang', 'role' => 'form'));  ?>
 
 <label for="inpNaam">Naam:</label>
-<input id="inpNaam" name="naam" type="text" value="<?php echo $defaults['naam']; ?>">
+<input id="inpNaam" name="naam" type="text" value="<?php echo $defaults->naam; ?>">
 </br>
 <label for="inpThema">Thema:</label>
-<input id="inpThema" name="naam" type="text" value="<?php echo $defaults['thema']; ?>">
+<input id="inpThema" name="naam" type="text" value="<?php echo $defaults->thema; ?>">
 </br>
 <label for="inpInfo">Info:</label>
-<textarea id="inpInfo" name="naam" type="text" value="<?php echo $defaults['info']; ?>"></textarea>
+<textarea id="inpInfo" name="naam" type="text" value="<?php echo $defaults->info; ?>"></textarea>
 </br>
 <label for="begin">Begin datum en tijdstip:</label>
-<input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
+<input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults->beginTijdstip; ?>" readonly class="form_datetime">
 </br>
 <label for="einde">Eind datum en tijdstip:</label>
-<input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults['eindTijdstip']; ?>" readonly class="form_datetime">
+<input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults->eindTijstip; ?>" readonly class="form_datetime">
 </br>
 <?php    
     echo form_button($arrayparameters);
