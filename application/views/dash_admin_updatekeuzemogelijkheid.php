@@ -9,7 +9,8 @@
     $plaats = array('');
 
     foreach ($jaargangen as $jaargang) {
-        array_push($jaren, $jaargang->naam);
+        $toevoegen = $jaargang->id."=>".$jaargang->naam;
+        array_push($jaren, $toevoegen);
     }
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
