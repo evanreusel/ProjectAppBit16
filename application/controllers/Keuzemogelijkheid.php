@@ -70,6 +70,5 @@ class Keuzemogelijkheid extends CI_Controller{
 		
 		// Redirect to keuzemogelijkheidbeheer
         redirect('admin/dash/keuzemogelijkheidbeheer/'. $returndata->jaargangId);
-        .
 	}
 }
