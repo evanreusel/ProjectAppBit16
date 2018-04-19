@@ -20,6 +20,7 @@ class Mail extends CI_Controller {
     public function index()
     {
         $data['message'] = "Welcome admin | Login";
+        $data['css_files'] = array();
         $data['view'] = 'mail_overzicht';
         //$data['css_files'] = array("login.css");
         $data['clearscreen'] = true;
