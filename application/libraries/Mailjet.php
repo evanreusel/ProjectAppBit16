@@ -6,7 +6,7 @@
  * Date: 19/04/18
  * Time: 23:11
  */
-class MailJet
+class Mailjet
 {
     private $key = "953f6f7ade8e9dde2005d811eee8752b";
     private $secret = "cecefe743a41d7f6ba62444b39127d30";
