@@ -71,6 +71,6 @@ class Keuzemogelijkheid extends CI_Controller{
         // $returndata.log();
 
 		// Redirect to keuzemogelijkheidbeheer
-        redirect('admin/dash/keuzemogelijkheidbeheer/'.$returndata[1]);
+        redirect('admin/dash/keuzemogelijkheidbeheer/'.$returndata[0]);
 	}
 }
