@@ -17,7 +17,7 @@ class Keuzemogelijkheid_Model extends CI_Model {
     {
         $this->db->where($id);
         $query = $this->db->get('KeuzeMogelijkheid');
-        return $query->row();
+        return $query->result();
     }
     
     function getAllByNaam()
