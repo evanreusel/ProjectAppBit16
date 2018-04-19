@@ -17,4 +17,13 @@ class Mail extends CI_Controller {
         $this->load->library('mailjet');
         echo json_encode($this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html"));
     }
+    public function index()
+    {
+        $data['message'] = "Welcome admin | Login";
+        $data['view'] = 'mail_overzicht';
+        //$data['css_files'] = array("login.css");
+        $data['clearscreen'] = true;
+
+        $this->load->view('template/main', $data);
+    }
 }
