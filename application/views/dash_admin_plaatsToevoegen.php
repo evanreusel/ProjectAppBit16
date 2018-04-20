@@ -33,7 +33,6 @@ function ajaxplaats(){
                     console.log(data); 
                 }
             });
-);
 }
 
 </script>
