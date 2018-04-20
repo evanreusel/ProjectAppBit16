@@ -69,7 +69,7 @@ class Admin extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Jaargang',
-				'url' => base_url() . 'index.php/admin/dash/jaargangbeheer/'
+				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
 			],
 			[
 				'title' => 'Locaties',
@@ -103,6 +103,21 @@ class Admin extends CI_Controller {
 					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
 				}else{															// Can't load page without jaargang id => load indexpage
 					$view = 'index';
+				}
+			break;
+			case 'jaargangoverzicht':
+				$this->load->model('jaargang_model');
+				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
+			break;
+			case 'jaargangbeheer':
+				if($extras != null) {
+					$this->load->model('jaargang_model');
+					$data['data']['jaargang'] = $this->jaargang_model->get_byId($extras);
+				}
+
+				// Return to jaargangoverzicht if no jaargang found
+				if(!isset($data['data']['jaargang']) || $data['data']['jaargang'] == null){
+					redirect('admin/dash/jaargangoverzicht');
 				}
 			break;
 
@@ -141,10 +156,6 @@ class Admin extends CI_Controller {
 				}
 			break;
 			// =================================================================================================== /TIM SWERTS
-			case 'jaargangbeheer';
-				$this->load->model('jaargang_model');
-				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
-			break;
 			// =================================================================================================== DAAN
 			case "plaatsToevoegen":
 			$this->load->model('plaats_model');
