@@ -116,7 +116,7 @@ class Admin extends CI_Controller {
 				}
 
 				// Return to jaargangoverzicht if no jaargang found
-				if(isset($data['data']['jaargang']) && $data['data']['jaargang'] != null){
+				if(!isset($data['data']['jaargang']) || $data['data']['jaargang'] == null){
 					redirect('admin/dash/jaargangoverzicht');
 				}
 			break;
