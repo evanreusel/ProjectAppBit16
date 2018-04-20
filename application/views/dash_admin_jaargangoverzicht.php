@@ -52,7 +52,7 @@
     <?php } ?>
 </table>
 
-<?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i>', array('class' => 'btn btn-primary')); ?>
+<?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i>', array('class' => 'btn btn-primary fab')); ?>
 
 <script>
     $(document).ready(function () {

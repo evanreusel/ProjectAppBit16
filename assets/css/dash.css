@@ -8,12 +8,8 @@ tr.colored{
     background-color: #D1C4E9;
 }
 
-th{
-    font-weight: bold;
-}
-
 td{
-    vertical-align: middle;
+    vertical-align: middle !important;
 }
 
 .navbar{
