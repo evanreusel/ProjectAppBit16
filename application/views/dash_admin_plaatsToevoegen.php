@@ -6,12 +6,13 @@
 
 <script>
 
-function ajaxplaats(){
+$(".wijzig").click(function ajaxplaats(){
             
                 console.log("click");
+                console.log('site_url(); ?>/plaats/jsonplaats/' + $(this).val());
             
             $.ajax({
-                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
+                url: '<?= site_url(); ?>/plaats/jsonplaats/' + $(this).val(),
                 async: false,
                 type: "GET",
                 dataType:'json',
@@ -28,7 +29,7 @@ function ajaxplaats(){
                     console.log(data); 
                 }
             });
-}
+});
 
 </script>
 
@@ -40,7 +41,7 @@ function ajaxplaats(){
     <thead><tr><th>Naam</th> <th>Plaats</th> </tr></thead><tbody>
         <?php
         foreach ($plaatsen as $plaats) {
-            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . '<button onclick="ajaxplaats()" type="button" class="btn btn-danger btn-round wijzig" value="' . $plaats->id . '" >Wijzig</button>' . "</td><td>" .
+            echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . '<button' /*onclick="ajaxplaats()"*/ 'type="button" class="btn btn-danger btn-round wijzig" value="' . $plaats->id . '" >Wijzig</button>' . "</td><td>" .
             anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round">Remove</button>') .  '</td></tr>';
         }
         
