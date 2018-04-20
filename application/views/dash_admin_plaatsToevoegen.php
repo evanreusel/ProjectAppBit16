@@ -4,36 +4,6 @@
     DASH ADMIN PLAATS ADD/UPDATE
 -->
 
-<script>
-
-function ajaxplaats(){
-            $(".wijzig").click(function(){
-                console.log("click");
-            
-            $.ajax({
-                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
-                async: false,
-                type: "GET",
-                dataType:'json',
-                success: function(data){        
-                console.log("ok");     
-                    
-                    $('#naam').value(data['plaats']);
-                    $('#locatie').value(data['locatie']);
-                    
-                }, error: function (xhr, status, error) {
-                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
-                }
-            });
-});
-
-
-        $(document).ready(function () {
-                ajaxplaats();
-            })
-        }
-</script>
-
 <div class="form-group">
     <?php
     $attributes = array('name' => 'plaats');
@@ -78,3 +48,33 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
     echo form_close();
     ?>
 </div>
+
+<script>
+
+function ajaxplaats(){
+            $(".wijzig").click(function(){
+                console.log("click");
+            
+            $.ajax({
+                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
+                async: false,
+                type: "GET",
+                dataType:'json',
+                success: function(data){        
+                console.log("ok");     
+                    
+                    $('#naam').value(data['plaats']);
+                    $('#locatie').value(data['locatie']);
+                    
+                }, error: function (xhr, status, error) {
+                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                }
+            });
+});
+
+
+        $(document).ready(function () {
+                ajaxplaats();
+            })
+        }
+</script>
