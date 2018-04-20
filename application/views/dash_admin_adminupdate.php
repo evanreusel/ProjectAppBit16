@@ -81,15 +81,18 @@
     echo form_open('admin/update', array('name' => 'adminform', 'id' => 'adminform', 'role' => 'form'));
 
     if(isset($data['admin'])){
-    echo '<label for="oudpass">oude passwoord: </label>' . "\n" . 
-    '<br/>' . "\n" .
-    '<input id="oudpass" name="oudpass" type="password">'  . "\n" .
-    '<br/>' . "\n" .
-    '<div id="oudpasserror">'  . "\n" .
-    '<label for="oudpasscheck" style="color:red">Het passwoord komt niet overeen met het oude passwoord</label>' . "\n" .
-    '<br/></div>' . "\n";
+?>
+    <div class="md-form">
+        <input type="password" id="oudpass" class="form-control">
+        <label for="oudpass">Oud wachtwoord</label>
+    </div>
+
+    <div id="oudpasserror">
+    <label for="oudpasscheck" style="color:red">Het passwoord komt niet overeen met het oude passwoord</label>
+    </div>
+<?php
     }
-    ?>
+?>
 
     <!-- =================================================================================================== GREIF MATTHIAS -->
     <div class="md-form">
