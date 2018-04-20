@@ -35,7 +35,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
                     echo '<td>' . $keuzeoptie->$kolom . '</td>';
                 }
 
-                echo '<td>'.anchor('admin/dash/updatekeuzeoptie/'.$keuzeoptie->id.,'<button class="btn btn-round btn-warning"><i class="fa fa-cog"></i> Aanpassen</button>').'</td>';
+                echo '<td>'.anchor('admin/dash/updatekeuzeoptie/'.$keuzeoptie->id.'<button class="btn btn-round btn-warning"><i class="fa fa-cog"></i> Aanpassen</button>').'</td>';
                 echo '<td>'.anchor('keuzeoptie/delete/'.$keuzeoptie->id.,'<button class="btn btn-round btn-danger"><i class="fa fa-trash"></i> Verwijderen</button>').'</td>';
 
                    echo "</tr>"; 
