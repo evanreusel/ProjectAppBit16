@@ -1,10 +1,10 @@
-<!-- 
-    TIM
-	LAST UPDATED: 18 03 30
-	PERSOON MODEL
--->
-
 <?php
+/*
+TIM
+LAST UPDATED: 18 03 30
+PERSOON MODEL
+*/
+
 class Persoon_model extends CI_Model {
     function get_byId($id, $token)
     {
