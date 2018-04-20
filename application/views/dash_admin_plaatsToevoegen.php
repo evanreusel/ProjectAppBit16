@@ -24,9 +24,9 @@ function ajaxplaats(id){
                     $('#locatie').value(data['locatie']);
                     
                 }, error: function (xhr, status, error) {
-                    console.log(data); 
+
                     alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
-                    console.log(data); 
+
                 }
             });
 }
