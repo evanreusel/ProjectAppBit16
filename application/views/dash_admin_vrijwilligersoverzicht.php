@@ -95,6 +95,8 @@ sort();
 
 .sort:hover {cursor: pointer};
 
+);
+
 </style>
 
 <table class="table">
@@ -103,7 +105,8 @@ sort();
 <tr class="colored">
 <td id="naamsort" class="sort"><i></i>Naam</td>
 <td id="mailsort" class="sort"><i></i>Mail</td>
-<td id="activiteitsort" class="sort"><i></i>Activiteit</td>
+<td id="taaksort" class="sort"><i></i>Taak</td>
+<td id="shiftsort" class="sort"><i></i>Shift</td>
 <td id="tijdsort" class="sort"><i></i>Tijd</td>
 </tr>
 </tHead>
@@ -111,20 +114,23 @@ sort();
 <tr>
 <td><input type="text" id="naamsearch" class="search"></td>
 <td><input type="text" id="mailsearch" class="search"></td>
-<td><input type="text" id="activiteitsearch" class="search"></td>
+<td><input type="text" id="taaksearch" class="search"></td>
+<td><input type="text" id="shiftsearch" class="search"></td>
 <td><input type="text" id="tijdsearch" class="search"></td>
 </tr>
 
 <?php
 
-foreach($deelnemers as $deelnemer){
-    foreach($deelnemers[$deelnemer] as $keuzeoptie){
+foreach($vrijwilligers as $vrijwilliger){
+    foreach($vrijwilligers[$vrijwilliger] as $shift){
     echo "<tr>";
-    echo "<td class=\"naamitem sortable\"> $deelnemer->naam </td>";
-    echo "<td class=\"mailitem sortable\"> $deelnemer->mail </td>";
-    $naam = $keuzeoptie->naam;
-    echo "<td class=\"activiteititem sortable\"> $naam </td>";
-    $tijd = $keuzeoptie->keuzemogelijkheid->beginTijdstip;
+    echo "<td class=\"naamitem sortable\"> $vrijwilliger->naam </td>";
+    echo "<td class=\"mailitem sortable\"> $vrijwilliger->mail </td>";
+    $naam = $shift->taak->functie;
+    echo "<td class=\"taakititem sortable\"> $naam </td>";
+    $tijd = $shift->naam;
+    echo "<td class=\"shiftitem sortable\"> $tijd </td>";
+    $tijd = $shift->taak->keuzemogelijkheid->beginTijdstip;
     echo "<td class=\"tijditem sortable\"> $tijd </td>";
     echo "</tr>";
     }

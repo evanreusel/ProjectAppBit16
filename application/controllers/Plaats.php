@@ -67,20 +67,19 @@ class Plaats extends CI_Controller {
         redirect('admin/dash/plaatsToevoegen/' .$id, 'refresh');
     }
 
-    public function ajaxplaats($id = null)
-	{		
-        // Check login vals
-        
-        
-			$this->load->model('plaats_model');
-				$plaats = new stdClass();
+
+    	public function jsonplaats($id = null)
+	{
+		$data['return'] = '';
 		
-				$plaats = $this->plaats_model->getPlaatsById($id);
-                $data["huidigeplaats"] = $plaats;
+		// Haal plaats op
+		$this->load->model('plaats_model');
+			$plaats = new stdClass();		
+			$plaats = $this->plaats_model->getPlaatsById($id);
+            // Return data
+			$data['return'] = json_encode($plaats);
 
-                $data['naam'] = $plaats->naam;
-                $data['locatie'] = $plaats->locatie;
-
+		
 		// Print in default api output view
 		$this->load->view('req_output', $data);
 	}

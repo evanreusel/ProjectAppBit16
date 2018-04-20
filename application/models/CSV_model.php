@@ -6,15 +6,15 @@ class csv_model extends CI_Model
     }
 
     //lees een csv bestand in om een persoon toe te voegen aan de database met personen_model
-    function readpersonen()
+    function readpersonen($soort)
     {
         //lees de csv file
         $count=0;
         $fp = fopen($_FILES['userfile']['tmp_name'],'r') or die("can't open file");
-        echo "readpersonen";
+        $personen = array();
+
         while($csv_line = fgetcsv($fp,1024))
         {
-            echo "text";
             $count++;
             //pak de index van e headers van de csv file op de 1ste lijn
             if($count == 1)
@@ -52,18 +52,20 @@ class csv_model extends CI_Model
                 'nummer' => $data[$nummerindex],
                 'mail' => $data[$mailindex],
                 'adres' => $data[$adresindex],
-                'woonplaats' => $data[$woonplaatsindex]
+                'woonplaats' => $data[$woonplaatsindex],
+                'soort' => $soort
                );
 
             //voeg de gelezen persoon toe
             $this->load->model("Persoon_model");
        		$this->Persoon_model->insert($persoon);
 
+            $personen[] = $persoon;
+
             
         }
         //einde csv file, stop de functie
         fclose($fp) or die("can't close file");
-        $data['success']="success";
-        return $data;
+        return $personen;
     }
 }

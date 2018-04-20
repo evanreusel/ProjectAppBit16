@@ -8,28 +8,32 @@
 
 function ajaxplaats(){
             $(".wijzig").click(function(){
-            
+            var link = '<?= site_url(); ?>/plaats/jsonplaats/' + $(this).val();
+
             $.ajax({
-                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
-                async: false,
+                url: link,
                 type: "GET",
                 dataType:'json',
                 success: function(data){             
                     
-                    $('#naam').value(data['plaats']);
-                    $('#locatie').value(data['locatie']);
+                    plaats = JSON.parse(data);
+                    console.log(plaats);
+                    $('#naam').value(plaats[0].naam);
+                    $('#locatie').value(plaats[0].locatie);
                     
                 }, error: function (xhr, status, error) {
-                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                    alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                    console.log(link);
                 }
             });
-});
+        });
+        }
 
 
         $(document).ready(function () {
+            console.log("ready");
                 ajaxplaats();
-            })
-        }
+            });
 </script>
 
 <div class="form-group">

@@ -78,6 +78,10 @@ class Admin extends CI_Controller {
 			[
 				'title' => 'Deelnemers',
 				'url' => base_url() . 'index.php/admin/dash/deelnemersoverzicht/'
+			],
+			[
+				'title' => 'Vrijwilligers',
+				'url' => base_url() . 'index.php/admin/dash/vrijwilligersoverzicht/'
 			]
 		];
 		$data['actions'] = [
@@ -157,12 +161,27 @@ class Admin extends CI_Controller {
 					$data['data']['jaargang'] = $this->jaargang_model->get_byId($extras);
 				}
 			break;
+
 			case 'personeelimporteren':
 			break;
+
 			case 'deelnemersoverzicht':
 			$this->load->model('Persoon_model');
         	$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
 			break;
+
+			case 'vrijwilligersoverzicht':
+			$this->load->model('Persoon_model');
+        	$data["vrijwilligers"] = $this->Persoon_model->getallwithshift();
+			break;
+
+			case 'importsuccess':
+			$this->load->model('CSV_model');
+        	$soort = $this->input->post('soort', TRUE);
+        	$personen = $this->CSV_model->readpersonen($soort);
+			$data["personen"] = $personen;
+			break;
+
 			default:
 				$view = 'index';
 			$this->load->model('Persoon_model');
@@ -270,10 +289,7 @@ class Admin extends CI_Controller {
 	}
 
 	public function excel(){		
-			$this->load->model('CSV_model');
-        	$this->CSV_model->readpersonen();
-		echo "test";
-		//$this->load->view('dash_admin_upload.php');
+		$this->dash("importsuccess");
 	}
 
 	public function list(){

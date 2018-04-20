@@ -87,5 +87,52 @@ class Persoon_model extends CI_Model {
 
         return $deelnemers;
     }
+
+    function getallwithshift(){
+        //jaargang ophalen
+        $this->load->model("jaargang_model");
+        $jaar = $this->jaargang_model->getActief();
+
+        //tussenvariabele ophalen
+        $query = $this->db->where('jaarid', $jaar->id);
+        $query = $this->db->get('Persoon');
+        $personen = $query->result();
+
+        $vrijwilligers = new SplObjectStorage;
+
+        foreach($personen as $persoon){
+        //keuzeoptie ophalen
+        $query = $this->db->where('persoonid', $persoon->id);
+        $query = $this->db->get('vrijwilligersinshift');
+        $data = $query->result();
+
+        //keuzemogelijkheden per persoon ophalen
+        $shiften = array();
+
+        if($data != null){
+        foreach($data as $item){
+        $query = $this->db->where('id', $item->shiftId);
+        $query = $this->db->get('shift');
+        $shift = $query->row();
+
+        //keuzemogelijkheid koppelen aan keuzeoptie
+        $query = $this->db->where('id', $shift->taakId);
+        $query = $this->db->get('taak');
+        $shift->taak = $query->row();
+
+        //keuzemogelijkheid koppelen aan keuzeoptie
+        $query = $this->db->where('id', $shift->taak->keuzemogelijkheidId);
+        $query = $this->db->get('keuzemogelijkheid');
+        $shift->taak->keuzemogelijkheid = $query->row();
+
+        $shiften[] = $shift;
+        }
+        }
+
+        $vrijwilligers[$persoon] = $shiften;
+        }
+
+        return $vrijwilligers;
+    }
 }
 ?>
