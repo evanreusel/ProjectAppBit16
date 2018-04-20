@@ -9,6 +9,7 @@
 function ajaxplaats(){
             
                 console.log("click");
+                console.log('site_url(); ?>/plaats/jsonplaats/' + $(this).val());
             
             $.ajax({
                 url: '<?= site_url(); ?>/plaats/jsonplaats/' + $(this).val(),
