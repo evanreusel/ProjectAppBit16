@@ -69,7 +69,7 @@ class Admin extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Jaargang',
-				'url' => base_url() . 'index.php/admin/dash/jaargangbeheer/'
+				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
 			],
 			[
 				'title' => 'Locaties',
@@ -117,6 +117,21 @@ class Admin extends CI_Controller {
 					$view = 'index';
 				}
 			break;
+			case 'jaargangoverzicht':
+				$this->load->model('jaargang_model');
+				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
+			break;
+			case 'jaargangbeheer':
+				if($extras != null) {
+					$this->load->model('jaargang_model');
+					$data['data']['jaargang'] = $this->jaargang_model->get_byId($extras);
+				}
+
+				// Return to jaargangoverzicht if no jaargang found
+				if(!isset($data['data']['jaargang']) || $data['data']['jaargang'] == null){
+					redirect('admin/dash/jaargangoverzicht');
+				}
+			break;
 
 			// =================================================================================================== TIM SWERTS
 			case "updatekeuzemogelijkheid":
@@ -140,18 +155,29 @@ class Admin extends CI_Controller {
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 
 				if($extras != null) {
-					$this->load->model('keuzeoptie_model');
-					$data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
+					if(strpos($extras,"i")){
+						$data['jaargang'] = str_replace("i", "", $extras);
+					}
+					if(strpos($extras,"u")){
+						$data['keuzemogelijkheidId'] = str_replace("u", "", $extras);
+						$data['data']['jaargang'] = null;
+						$this->load->model('keuzeoptie_model');
+						$data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
+					}
+					// $this->load->model('keuzeoptie_model');
+					// $data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
 				}
 			break;
 			// =================================================================================================== /TIM SWERTS
-			case 'jaargangbeheer';
-				$this->load->model('jaargang_model');
-				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
-			break;
 			// =================================================================================================== DAAN
 			case "plaatsToevoegen":
 			$this->load->model('plaats_model');
+			if(isset($extras)){
+				$plaats = new stdClass();
+		
+				$plaats = $this->plaats_model->getPlaatsById($extras);
+				$data["huidigeplaats"] = $plaats;
+			}
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 			break;
 			// =================================================================================================== /DAAN

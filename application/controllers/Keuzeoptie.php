@@ -56,7 +56,7 @@ class Keuzeoptie extends CI_Controller{
         }
 
 		// Redirect naar keuzemogelijkheid pagina
-		redirect('admin/dash/jaargangbeheer/');
+		redirect('admin/dash/jaargangoverzicht/');
     }
     
     public function delete($id)
@@ -67,6 +67,6 @@ class Keuzeoptie extends CI_Controller{
         $this->Keuzeoptie_model->delete($id);
 		
 		// Redirect to keuzemogelijkheidbeheer
-		redirect('admin/dash/jaargangbeheer');
+		redirect('admin/dash/jaargangoverzicht');
 	}
 }

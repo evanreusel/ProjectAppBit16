@@ -14,6 +14,12 @@
 
     $plaats = array('');
 
+    if($jaargang != null){
+        $idData=form_hidden("KeuzemogelijkheidID", $jaargang);
+    }
+    else{
+        $idData=form_hidden("KeuzemogelijkheidID", $KeuzemogelijkheidId);
+    }
 
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
@@ -23,6 +29,7 @@
 
 
     <?php echo form_open('keuzeoptie/update', array('name' => 'keuzeoptieFrom', 'id' => 'keuzeoptieForm', 'role' => 'form'));  ?>
+    <?php echo $idData?>
     </br>
     <label for="keuzeoptie">Naam keuzeoptie:</label>
     <input id="keuzeoptie" name="naam" type="text" value="">
