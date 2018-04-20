@@ -67,14 +67,15 @@ class Plaats extends CI_Controller {
     }
 
 
-    	public function jsonplaats($id = null)
+    	public function jsonplaats($id)
 	{
 		$data['return'] = '';
 		
 		// Haal plaats op
 		$this->load->model('plaats_model');
 			$plaats = new stdClass();		
-			$plaats = $this->plaats_model->getPlaatsById($id);
+            $plaats = $this->plaats_model->getPlaatsById($id);
+            echo print_r($plaats);
             // Return data
 			$data['return'] = json_encode($plaats);
 
