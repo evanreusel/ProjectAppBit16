@@ -5,40 +5,39 @@
 -->
 
 <<<<<<< HEAD
+
+=======
+
+>>>>>>> cc72cc54433a88453828b8eba1a21b5067bfe3bf
 <script>
 
 function ajaxplaats(){
-            $(".wijzig").click(function(){
-            var link = '<?= site_url(); ?>/plaats/jsonplaats/' + $(this).val();
-
+            
+                console.log("click");
+            
             $.ajax({
-                url: link,
+                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
+                async: false,
                 type: "GET",
                 dataType:'json',
-                success: function(data){             
+                success: function(data){        
+                console.log("ok");         
+                console.log(data);   
                     
-                    plaats = JSON.parse(data);
-                    console.log(plaats);
-                    $('#naam').value(plaats[0].naam);
-                    $('#locatie').value(plaats[0].locatie);
+                    $('#naam').value(data['plaats']);
+                    $('#locatie').value(data['locatie']);
                     
                 }, error: function (xhr, status, error) {
-                    alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
-                    console.log(link);
+                    console.log(data); 
+                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                    console.log(data); 
                 }
             });
-        });
-        }
 
+}
 
-        $(document).ready(function () {
-            console.log("ready");
-                ajaxplaats();
-            });
 </script>
 
-=======
->>>>>>> cc72cc54433a88453828b8eba1a21b5067bfe3bf
 <div class="form-group">
     <?php
     $attributes = array('name' => 'plaats');
@@ -84,35 +83,3 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
     ?>
 </div>
 
-<script>
-
-function ajaxplaats(){
-            
-                console.log("click");
-            
-            $.ajax({
-                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
-                async: false,
-                type: "GET",
-                dataType:'json',
-                success: function(data){        
-                console.log("ok");         
-                console.log(data);   
-                    
-                    $('#naam').value(data['plaats']);
-                    $('#locatie').value(data['locatie']);
-                    
-                }, error: function (xhr, status, error) {
-                    console.log(data); 
-                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
-                    console.log(data); 
-                }
-            });
-);
-
-
-        $(document).ready(function () {
-                ajaxplaats();
-            })
-        }
-</script>
