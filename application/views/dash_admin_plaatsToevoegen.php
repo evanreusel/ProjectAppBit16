@@ -52,7 +52,7 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
 <script>
 
 function ajaxplaats(){
-            $(".wijzig").click(function(){
+            
                 console.log("click");
             
             $.ajax({
@@ -70,7 +70,7 @@ function ajaxplaats(){
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
-});
+);
 
 
         $(document).ready(function () {
