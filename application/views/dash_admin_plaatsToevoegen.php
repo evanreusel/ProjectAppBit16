@@ -11,7 +11,7 @@ function ajaxplaats(){
                 console.log("click");
             
             $.ajax({
-                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
+                url: '<?= site_url(); ?>/plaats/jsonplaats/' + $(this).val(),
                 async: false,
                 type: "GET",
                 dataType:'json',
