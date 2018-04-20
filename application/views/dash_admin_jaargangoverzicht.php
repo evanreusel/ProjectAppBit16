@@ -9,8 +9,7 @@
         <th>Naam</th>
         <th>Info</th>
         <th>Thema</th>
-        <th>BeginTijdstip</th>
-        <th>EindTijdstip</th>
+        <th>Datum range</th>
         <th>Actief</th>
         <td></td>
     </tr>
@@ -27,10 +26,7 @@
             <?php echo $jaargang->thema; ?>
         </td>
         <td>
-            <?php echo $jaargang->beginTijdstip; ?>
-        </td>
-        <td>
-            <?php echo $jaargang->eindTijdstip; ?>
+            <?php echo $jaargang->beginTijdstip; ?> -> <?php echo $jaargang->eindTijdstip; ?>
         </td>
         <td>
             <?php
