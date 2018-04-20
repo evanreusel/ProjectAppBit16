@@ -23,6 +23,8 @@ class Mail extends CI_Controller {
         $berichtobj = $this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html");
         $Messages = array($berichtobj);
         echo json_encode($Messages);
+        $mjobj = new stdClass();
+        $mjobj->Messages = $Messages;
         echo $this->mailjet->verstuur($Messages);
 
     }
