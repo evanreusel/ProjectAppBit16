@@ -4,11 +4,6 @@
     DASH ADMIN PLAATS ADD/UPDATE
 -->
 
-<<<<<<< HEAD
-
-=======
-
->>>>>>> cc72cc54433a88453828b8eba1a21b5067bfe3bf
 <script>
 
 function ajaxplaats(){
@@ -33,7 +28,6 @@ function ajaxplaats(){
                     console.log(data); 
                 }
             });
-
 }
 
 </script>
