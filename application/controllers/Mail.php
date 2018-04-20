@@ -20,7 +20,7 @@ class Mail extends CI_Controller {
     public function verstuur()
     {
         $this->load->library('mailjet');
-        $berichtobj = $this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html"));
+        $berichtobj = $this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html");
         echo $this->mailjet->verstuur($berichtobj);
 
     }
