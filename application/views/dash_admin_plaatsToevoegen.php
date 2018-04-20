@@ -5,37 +5,6 @@
 -->
 
 <<<<<<< HEAD
-<script>
-
-function ajaxplaats(){
-            $(".wijzig").click(function(){
-            var link = '<?= site_url(); ?>/plaats/jsonplaats/' + $(this).val();
-
-            $.ajax({
-                url: link,
-                type: "GET",
-                dataType:'json',
-                success: function(data){             
-                    
-                    plaats = JSON.parse(data);
-                    console.log(plaats);
-                    $('#naam').value(plaats[0].naam);
-                    $('#locatie').value(plaats[0].locatie);
-                    
-                }, error: function (xhr, status, error) {
-                    alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
-                    console.log(link);
-                }
-            });
-        });
-        }
-
-
-        $(document).ready(function () {
-            console.log("ready");
-                ajaxplaats();
-            });
-</script>
 
 =======
 >>>>>>> cc72cc54433a88453828b8eba1a21b5067bfe3bf
