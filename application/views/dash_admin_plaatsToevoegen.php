@@ -20,7 +20,7 @@ function ajaxplaats(id){
                 console.log("ok");         
                 console.log(data);   
                     
-                    $('#naam').val(data['plaats']);
+                    $('#naam').val(data['naam']);
                     $('#locatie').val(data['locatie']);
                     
                 }, error: function (xhr, status, error) {
