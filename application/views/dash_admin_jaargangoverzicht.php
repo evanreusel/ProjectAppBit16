@@ -12,7 +12,7 @@
         <th>BeginTijdstip</th>
         <th>EindTijdstip</th>
         <th>Actief</th>
-        <td class="tableaction_container"><?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i> Toevoegen</a>', array('class' => 'tableaction btn btn-primary')); ?></td>
+        <td></td>
     </tr>
 
     <?php foreach($data['jaargangen'] as $jaargang){ ?>
@@ -51,6 +51,8 @@
     </tr>
     <?php } ?>
 </table>
+
+<?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i> Toevoegen</a>', array('class' => 'btn-floating btn-lg purple-gradient')); ?>
 
 <script>
     $(document).ready(function () {
