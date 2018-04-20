@@ -1,10 +1,10 @@
-<!-- 
-    TIM
-	LAST UPDATED: 18 03 30
-	PERSOON MODEL
--->
-
 <?php
+/*
+TIM
+LAST UPDATED: 18 03 30
+PERSOON MODEL
+*/
+
 class Persoon_model extends CI_Model {
     function __construct()
     {
@@ -18,6 +18,7 @@ class Persoon_model extends CI_Model {
 
         return $query->result()[0];
     }
+<<<<<<< HEAD
 
 
     function insert($persoon){        
@@ -135,5 +136,16 @@ class Persoon_model extends CI_Model {
 
         return $vrijwilligers;
     }
+=======
+    
+    function getAll($id)
+    {
+
+        $query = $this->db->get('Persoon');
+
+        return $query->result();
+    }
+
+>>>>>>> 143df60fff6036d044a9649ca5f91fc3e9b42e04
 }
 ?>

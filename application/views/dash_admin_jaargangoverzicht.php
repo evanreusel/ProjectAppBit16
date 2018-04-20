@@ -26,7 +26,7 @@
             <?php echo $jaargang->thema; ?>
         </td>
         <td>
-            <?php echo $jaargang->beginTijdstip; ?> -> <?php echo $jaargang->eindTijdstip; ?>
+            <?php echo $jaargang->beginTijdstip; ?> > <?php echo $jaargang->eindTijdstip; ?>
         </td>
         <td>
             <?php
