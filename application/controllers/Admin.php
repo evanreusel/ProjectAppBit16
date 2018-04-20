@@ -156,10 +156,10 @@ class Admin extends CI_Controller {
 
 				if($extras != null) {
 					if(strpos($extras,"i")){
-						$data['keuzemogelijkheidId'] = str_replace("i", "", $extras);
+						$data['keuzeomogelijkheidId'] = str_replace("i", "", $extras);
 					}
 					if(strpos($extras,"u")){
-						$data['keuzemogelijkheidId'] = str_replace("u", "", $extras);
+						$data['keuzeoptieId'] = str_replace("u", "", $extras);
 						$data['jaargang'] = null;
 						$this->load->model('keuzeoptie_model');
 						$data['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
