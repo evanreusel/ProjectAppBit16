@@ -29,7 +29,7 @@
 						<br>
 
 						<div class="text-center mt-4 mb-2">
-							<button id="btnSend" class="btn btn-info">Send
+							<button id="btnSend" class="btn btn-info">Login
 								<i class="fa fa-send ml-2"></i>
 							</button>
 						</div>

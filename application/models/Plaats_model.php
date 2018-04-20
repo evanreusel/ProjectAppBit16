@@ -1,10 +1,10 @@
-<!-- 
-    DAAN
-    LAST UPDATED: 18 03 30
-    PLAATS MODEL
--->
-
 <?php
+/*
+DAAN
+LAST UPDATED: 18 03 30
+PLAATS MODEL
+*/
+
 class Plaats_model extends CI_Model {
 
     function getAllByPlaatsnaam() {

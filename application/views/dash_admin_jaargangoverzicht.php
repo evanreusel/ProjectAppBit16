@@ -45,7 +45,7 @@
                     }
                 }
 
-                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/jaargangbeheer/' . $jaargang->id . '"><i class="fa fa-edit"></i> Edit</a></td>';
+                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/jaargangbeheer/' . $jaargang->id . '"><i class="fa fa-folder-open-o"></i> Open</a></td>';
             ?>
         </td>
     </tr>
