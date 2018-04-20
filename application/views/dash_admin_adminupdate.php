@@ -90,36 +90,38 @@
     '<br/></div>' . "\n";
     }
     ?>
-    <label for="username">username: </label>    
-    <br/>
-    <input id="username" name="username" <?php if (isset($data['admin'])) echo 'value=' . $data['admin']->username; ?> >
-    <br/>
-    <label for="nieuwpass"><?php if (!isset($data['admin'])) echo 'nieuwe '; ?>passwoord: </label>
-    <br/>
-    <input id="nieuwpass" name="nieuwpass" type="password">
-    <br/>
+
+    <!-- =================================================================================================== GREIF MATTHIAS -->
+    <div class="md-form">
+        <input type="text" id="username" class="form-control" <?php if (isset($data['admin'])) echo 'value=' . $data['admin']->username; ?>>
+        <label for="username">Gebruikersnaam:</label>
+    </div>
+
+    <div class="md-form">
+        <input type="password" id="nieuwpass" class="form-control">
+        <label for="nieuwpass"><?php if (!isset($data['admin'])) echo 'nieuwe '; ?>Wachtwoord:</label>
+    </div>
+    
+    <div class="md-form">
+        <input type="password" id="nieuwpasscheck" class="form-control">
+        <label for="nieuwpasscheck">Bevestig <?php if (!isset($data['admin'])) echo 'nieuwe '; ?>wachtwoord:</label>
+    </div>
     <div id="nieuwpasserror">
-    <label for="nieuwpasscheck" style="color:red">Gelieve een passwoord in te vullen</label>
-    <br/></div>
-    <label for="nieuwpasscheck">bevestig <?php if (!isset($data['admin'])) echo 'nieuwe '; ?>passwoord: </label>
-    <br/>
-    <input id="nieuwpasscheck" name="nieuwpasscheck" type="password">
-    <br/>
+        <label for="nieuwpasscheck" style="color:red">Gelieve een wachtwoord in te vullen</label>
+    </div>
+
     <div id="nieuwpasscheckerror">
     <label for="nieuwpasscheck" style="color:red">Het passwoord is niet correct</label>
     <br/></div>
-    <input type="hidden" name="id" id="id" value="<?php echo (isset($data['admin'])) ? $data['admin']->id : '0';?>" />
-
-    <?php    
-        echo form_button($arrayparameters);
-    ?>
-
     
-<?php
-echo form_close(); 
+    <input type="hidden" name="id" id="id" value="<?php echo (isset($data['admin'])) ? $data['admin']->id : '0';?>" />
+    <!-- =================================================================================================== GREIF MATTHIAS -->
+    
+<?php    
+    echo form_button($arrayparameters);
+    echo form_close(); 
 
-/* =================================================================================================== GREIF MATTHIAS */
-echo anchor("admin/delete/" . $data['admin']->id,'<i class="fa fa-trash-o"></i> Verwijder', array('class' => 'btn btn-primary'));
-/* =================================================================================================== GREIF MATTHIAS */
-
+    /* =================================================================================================== GREIF MATTHIAS */
+    echo anchor("admin/delete/" . $data['admin']->id,'<i class="fa fa-trash-o"></i> Verwijder', array('class' => 'btn btn-danger'));
+    /* =================================================================================================== /GREIF MATTHIAS */
 ?>
