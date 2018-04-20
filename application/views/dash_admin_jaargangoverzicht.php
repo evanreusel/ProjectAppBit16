@@ -1,7 +1,7 @@
 <!-- 
     GREIF MATTHIAS
     LAST UPDATED: 18 03 30
-    DASH ADMIN JAARGANGBEHEER
+    DASH ADMIN JAARGANGOVERZICHT
 -->
 
 <table class="table">
@@ -59,7 +59,7 @@
 
             $.get('<?php echo base_url(); ?>index.php/jaargang/end/' + id, function (data) {
                 if (data) {
-                    window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/jaargangbeheer/';
+                    window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/jaargangoverzicht/';
                 }else{
                     alert('Something went wrong deactivating jaargang');
                 }

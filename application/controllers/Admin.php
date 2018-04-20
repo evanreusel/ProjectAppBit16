@@ -69,7 +69,7 @@ class Admin extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Jaargang',
-				'url' => base_url() . 'index.php/admin/dash/jaargangbeheer/'
+				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
 			],
 			[
 				'title' => 'Locaties',
@@ -133,7 +133,7 @@ class Admin extends CI_Controller {
 				}
 			break;
 			// =================================================================================================== /TIM SWERTS
-			case 'jaargangbeheer';
+			case 'jaargangoverzicht';
 				$this->load->model('jaargang_model');
 				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
 			break;
