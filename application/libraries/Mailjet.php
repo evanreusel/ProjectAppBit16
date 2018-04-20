@@ -41,7 +41,7 @@ class Mailjet
 
         curl_setopt($ch, CURLOPT_URL, "https://api.mailjet.com/v3.1/send");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $mailJetObject);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($mailJetObject));
 
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_USERPWD, $this->key . ":" . $this->secret);

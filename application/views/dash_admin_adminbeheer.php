@@ -37,8 +37,7 @@
 <!-- =================================================================================================== GREIF MATTHIAS -->
 <table class="table">
     <tr class="colored">
-        <td></td>
-        <td class="tableaction_container"><?php echo anchor("admin/dash/adminupdate/",'<i class="fa fa-plus"></i> Toevoegen</a>', array('class' => 'tableaction btn btn-primary')); ?></td>
+        <td>Naam</td>
     </tr>
 
     <?php
@@ -49,6 +48,8 @@
         };
     ?>
 </table>
+
+<?php echo anchor("admin/dash/adminupdate/",'<i class="fa fa-plus"></i>', array('class' => 'btn btn-primary fab')); ?>
 <!-- =================================================================================================== /GREIF MATTHIAS -->
 
 <div id="popup" title="Waarschuwing">
