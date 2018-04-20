@@ -148,6 +148,7 @@ class Admin extends CI_Controller {
 					}
 					if(strpos($extras,"u")){
 						$data['keuzemogelijkheidId'] = str_replace("u", "", $extras);
+						$data['jaargang'] = null;
 						$this->load->model('keuzeoptie_model');
 						$data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
 					}
