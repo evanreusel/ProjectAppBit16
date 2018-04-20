@@ -52,7 +52,7 @@
     <?php } ?>
 </table>
 
-<?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i> Toevoegen</a>', array('class' => 'btn-floating btn-lg purple-gradient')); ?>
+<?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i>', array('class' => 'btn btn-primary')); ?>
 
 <script>
     $(document).ready(function () {
