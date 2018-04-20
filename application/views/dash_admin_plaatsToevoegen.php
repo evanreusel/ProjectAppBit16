@@ -22,6 +22,7 @@ function ajaxplaats(id){
                     
                     $('#naam').val(data['naam']);
                     $('#locatie').val(data['locatie']);
+                    $('#id').val(id);
                     
                 }, error: function (xhr, status, error) {
 
@@ -71,7 +72,7 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
         'class' => 'form-control',
         'required' => 'required'));
 
-        if(isset($huidigePlaats)){ echo form_hidden('id', $huidigePlaats->id);}
+        echo form_hidden('id'=>"id", 'value' => 0, 'name'=>'id');
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();
