@@ -69,6 +69,7 @@ function ajaxplaats(){
                     
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                    console.log(data); 
                 }
             });
 );
