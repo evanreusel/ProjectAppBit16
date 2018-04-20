@@ -74,12 +74,24 @@ class Admin extends CI_Controller {
 			[
 				'title' => 'Locaties',
 				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
+			],
+			[
+				'title' => 'Deelnemers',
+				'url' => base_url() . 'index.php/admin/dash/deelnemersoverzicht/'
+			],
+			[
+				'title' => 'Vrijwilligers',
+				'url' => base_url() . 'index.php/admin/dash/vrijwilligersoverzicht/'
 			]
 		];
 		$data['actions'] = [
 			[
 				'title' => 'Administrators beheren',
 				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
+			],
+			[
+				'title' => 'Personeelslijst importeren',
+				'url' => base_url() . 'index.php/admin/dash/personeelimporteren'
 			],
 			[
 				'title' => 'Log out',
@@ -175,8 +187,32 @@ class Admin extends CI_Controller {
 					$data['data']['jaargang'] = $this->jaargang_model->get_byId($extras);
 				}
 			break;
+
+			case 'personeelimporteren':
+			break;
+
+			case 'deelnemersoverzicht':
+			$this->load->model('Persoon_model');
+        	$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
+			break;
+
+			case 'vrijwilligersoverzicht':
+			$this->load->model('Persoon_model');
+        	$data["vrijwilligers"] = $this->Persoon_model->getallwithshift();
+			break;
+
+			case 'importsuccess':
+			$this->load->model('CSV_model');
+        	$soort = $this->input->post('soort', TRUE);
+        	$personen = $this->CSV_model->readpersonen($soort);
+			$data["personen"] = $personen;
+			break;
+
 			default:
 				$view = 'index';
+			$this->load->model('Persoon_model');
+        	$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
+			$this->load->view('dash_admin_personeelsoverzicht.php',$data);
 			break;
 		}
 
@@ -278,16 +314,17 @@ class Admin extends CI_Controller {
 		redirect('admin/dash/adminbeheer');
 	}
 
-	// =================================================================================================== TIM
-	public function excel(){
-	/*$spreadsheet = new Spreadsheet();
-   $sheet = $spreadsheet->getActiveSheet();
-   $sheet->setCellValue('A1', 'Hello World !');
-
-   $writer = new Xlsx($spreadsheet);
-   $writer->save('hello world.xlsx');*/
+	public function excel(){		
+		$this->dash("importsuccess");
 	}
-	// =================================================================================================== /TIM
+
+	public function list(){
+			$this->load->model('Persoon_model');
+        	$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
+		$this->load->view('dash_admin_personeelsoverzicht.php',$data);
+
+	}
+	// =================================================================================================== TIM
 }
 
 ?>

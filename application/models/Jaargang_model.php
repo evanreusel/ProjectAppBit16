@@ -40,6 +40,13 @@ class Jaargang_model extends CI_Model {
     function end($jaargang){
         $this->db->where('id', $jaargang->id);
         $this->db->update('Jaargang', $jaargang);
+
+    }   
+
+    function getActief(){
+        $this->db->where('actief', 1);
+        $query = $this->db->get('jaargang');
+        return $query->row();
     }
 
     function update($jaargang){

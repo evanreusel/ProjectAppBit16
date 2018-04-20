@@ -1,6 +1,6 @@
 /*
     GREIF MATTHIAS
-    LAST UPDATED: 18 03 30
+    LAST UPDATED: 18 04 20
     GENERAL DASHBOARD STYLESHEET
 */
 
@@ -8,21 +8,12 @@ tr.colored{
     background-color: #D1C4E9;
 }
 
+td{
+    vertical-align: middle !important;
+}
+
 .navbar{
     box-shadow: none;
-}
-
-td .tableaction{
-    position: relative;
-    height: 100%;
-}
-
-td.tableaction_container{
-    width: 380px;
-}
-
-.tableaction_container .tableaction{
-    width: 100%;
 }
 
 tr p{
@@ -40,4 +31,25 @@ form{
 
 form .md-form{
     padding-bottom: 20px;
+}
+
+.fab{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 50px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fab i{
+    position: relative;
+    height: 17px;
+    margin-left: auto;
+    margin-right: auto;
 }
