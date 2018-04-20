@@ -7,7 +7,36 @@
 <<<<<<< HEAD
 
 =======
+
 >>>>>>> cc72cc54433a88453828b8eba1a21b5067bfe3bf
+<script>
+
+function ajaxplaats(){
+            
+                console.log("click");
+            
+            $.ajax({
+                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
+                async: false,
+                type: "GET",
+                dataType:'json',
+                success: function(data){        
+                console.log("ok");         
+                console.log(data);   
+                    
+                    $('#naam').value(data['plaats']);
+                    $('#locatie').value(data['locatie']);
+                    
+                }, error: function (xhr, status, error) {
+                    console.log(data); 
+                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                    console.log(data); 
+                }
+            });
+);
+
+</script>
+
 <div class="form-group">
     <?php
     $attributes = array('name' => 'plaats');
@@ -53,35 +82,3 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
     ?>
 </div>
 
-<script>
-
-function ajaxplaats(){
-            
-                console.log("click");
-            
-            $.ajax({
-                url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
-                async: false,
-                type: "GET",
-                dataType:'json',
-                success: function(data){        
-                console.log("ok");         
-                console.log(data);   
-                    
-                    $('#naam').value(data['plaats']);
-                    $('#locatie').value(data['locatie']);
-                    
-                }, error: function (xhr, status, error) {
-                    console.log(data); 
-                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
-                    console.log(data); 
-                }
-            });
-);
-
-
-        $(document).ready(function () {
-                ajaxplaats();
-            })
-        }
-</script>
