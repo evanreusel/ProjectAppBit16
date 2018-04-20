@@ -21,7 +21,9 @@ class Mail extends CI_Controller {
     {
         $this->load->library('mailjet');
         $berichtobj = $this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html");
-        echo $this->mailjet->verstuur($berichtobj);
+        $Messages = array($berichtobj);
+
+        echo $this->mailjet->verstuur($Messages);
 
     }
     public function voegtoe()
