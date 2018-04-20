@@ -96,13 +96,15 @@ function ajaxplaats(){
                 type: "GET",
                 dataType:'json',
                 success: function(data){        
-                console.log("ok");     
+                console.log("ok");         
+                console.log(data);   
                     
                     $('#naam').value(data['plaats']);
                     $('#locatie').value(data['locatie']);
                     
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                    console.log(data); 
                 }
             });
 );

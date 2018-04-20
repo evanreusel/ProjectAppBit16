@@ -45,7 +45,7 @@ class Jaargang_model extends CI_Model {
 
     function getActief(){
         $this->db->where('actief', 1);
-        $query = $this->db->get('jaargang');
+        $query = $this->db->get('Jaargang');
         return $query->row();
     }
 
