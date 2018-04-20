@@ -105,6 +105,21 @@ class Admin extends CI_Controller {
 					$view = 'index';
 				}
 			break;
+			case 'jaargangoverzicht':
+				$this->load->model('jaargang_model');
+				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
+			break;
+			case 'jaargangbeheer':
+				if($extras != null) {
+					$this->load->model('jaargang_model');
+					$data['data']['jaargang'] = $this->jaargang_model->get_byId($extras);
+				}
+
+				// Return to jaargangoverzicht if no jaargang found
+				if(isset($data['data']['jaargang']) && $data['data']['jaargang'] != null){
+					redirect('admin/dash/jaargangoverzicht');
+				}
+			break;
 
 			// =================================================================================================== TIM SWERTS
 			case "updatekeuzemogelijkheid":
@@ -133,10 +148,6 @@ class Admin extends CI_Controller {
 				}
 			break;
 			// =================================================================================================== /TIM SWERTS
-			case 'jaargangoverzicht';
-				$this->load->model('jaargang_model');
-				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
-			break;
 			// =================================================================================================== DAAN
 			case "plaatsToevoegen":
 			$this->load->model('plaats_model');
