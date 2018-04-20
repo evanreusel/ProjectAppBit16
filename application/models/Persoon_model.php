@@ -18,8 +18,6 @@ class Persoon_model extends CI_Model {
 
         return $query->result()[0];
     }
-<<<<<<< HEAD
-
 
     function insert($persoon){        
         //haal het huidige jaargangid op om later te koppelen aan de persoon
@@ -136,16 +134,5 @@ class Persoon_model extends CI_Model {
 
         return $vrijwilligers;
     }
-=======
-    
-    function getAll($id)
-    {
-
-        $query = $this->db->get('Persoon');
-
-        return $query->result();
-    }
-
->>>>>>> 143df60fff6036d044a9649ca5f91fc3e9b42e04
 }
 ?>
