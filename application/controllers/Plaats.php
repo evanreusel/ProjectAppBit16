@@ -67,7 +67,7 @@ class Plaats extends CI_Controller {
     }
 
 
-    	public function jsonplaats($id = null)
+    	public function ajaxplaats($id = null)
 	{
 		$data['return'] = '';
 		

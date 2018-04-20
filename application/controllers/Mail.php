@@ -17,6 +17,13 @@ class Mail extends CI_Controller {
         $this->load->library('mailjet');
         echo json_encode($this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html"));
     }
+    public function verstuur()
+    {
+        $this->load->library('mailjet');
+        $berichtobj = $this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html");
+        echo $this->mailjet->verstuur($berichtobj);
+
+    }
     public function voegtoe()
     {
         $data['message'] = "Welcome admin | Login";
