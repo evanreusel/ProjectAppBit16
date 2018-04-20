@@ -1,11 +1,10 @@
-<!-- 
-    DAAN
-	LAST UPDATED: 18 03 30
-	PLAATS CONTROLLER
--->
-
-
 <?php
+/*
+DAAN
+LAST UPDATED: 18 03 30
+PLAATS CONTROLLER
+*/
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Plaats extends CI_Controller {
