@@ -128,8 +128,16 @@ class Admin extends CI_Controller {
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 
 				if($extras != null) {
-					$this->load->model('keuzeoptie_model');
-					$data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
+					if(strpos($extras,"i")){
+						$data['jaargang'] = str_replace("i", "", $extras);
+					}
+					if(strpos($extras,"u")){
+						$data['keuzemogelijkheidId'] = str_replace("u", "", $extras);
+						$this->load->model('keuzeoptie_model');
+						$data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
+					}
+					// $this->load->model('keuzeoptie_model');
+					// $data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
 				}
 			break;
 			// =================================================================================================== /TIM SWERTS
@@ -140,6 +148,12 @@ class Admin extends CI_Controller {
 			// =================================================================================================== DAAN
 			case "plaatsToevoegen":
 			$this->load->model('plaats_model');
+			if(isset($extras)){
+				$plaats = new stdClass();
+		
+				$plaats = $this->plaats_model->getPlaatsById($extras);
+				$data["huidigeplaats"] = $plaats;
+			}
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 			break;
 			// =================================================================================================== /DAAN
