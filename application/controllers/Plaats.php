@@ -71,7 +71,8 @@ class Plaats extends CI_Controller {
 	{
 		$data['return'] = '';
 		
-		// Haal plaats op
+        // Haal plaats op
+        echo $id;
 		$this->load->model('plaats_model');
 			$plaats = new stdClass();		
             $plaats = $this->plaats_model->getPlaatsById($id);

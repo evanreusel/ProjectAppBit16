@@ -115,4 +115,11 @@
     ?>
 
     
-<?php echo form_close(); ?>
+<?php
+echo form_close(); 
+
+/* =================================================================================================== GREIF MATTHIAS */
+echo anchor("admin/delete/" . $data['admin']->id,'<i class="fa fa-trash-o"></i> Verwijder', array('class' => 'btn btn-primary'));
+/* =================================================================================================== GREIF MATTHIAS */
+
+?>
