@@ -1,6 +1,6 @@
 <!-- 
     DAAN
-    LAST UPDATED: 18 03 30
+    LAST UPDATED: 20 04 30
     DASH ADMIN PLAATS ADD/UPDATE
 -->
 
@@ -8,13 +8,15 @@
 
 function ajaxplaats(){
             $(".wijzig").click(function(){
+                console.log("click");
             
             $.ajax({
                 url: '<?= site_url(); ?>/plaats/ajaxplaats/' + $(this).val(),
                 async: false,
                 type: "GET",
                 dataType:'json',
-                success: function(data){             
+                success: function(data){        
+                console.log("ok");     
                     
                     $('#naam').value(data['plaats']);
                     $('#locatie').value(data['locatie']);
