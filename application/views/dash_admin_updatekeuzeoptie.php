@@ -14,7 +14,7 @@
 
     $plaats = array('');
 
-    if($jaargang != false){
+    if($jaargang != null){
         $idData=form_hidden("KeuzemogelijkheidID", $jaargang);
     }
     else{
