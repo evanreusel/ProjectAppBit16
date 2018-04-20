@@ -1,6 +1,25 @@
-<?php
-    echo $data['jaargang']->naam;
-?>
+<div>
+    <div class="row justify-content-md-center">
+        <div class="col-10">
+            <h1>
+                <?php
+                    echo $data['jaargang']->naam;
+                ?>
+            </h1>
+        </div>
+    </div>
 
-<?php echo anchor("admin/dash/jaargangupdate/" . $data['jaargang']->id,'<i class="fa fa-edit"></i> Edit', array('class' => 'btn btn-primary')); ?>
-<?php echo anchor("admin/dash/keuzemogelijkheidbeheer/" . $data['jaargang']->id,'<i class="fa fa-folder"></i>', array('class' => 'btn btn-primary')); ?>
+    <div class="row justify-content-md-center">
+        <div class="col-10">
+            <div class="col">
+                <?php echo anchor("admin/dash/jaargangupdate/" . $data['jaargang']->id,'<i class="fa fa-edit"></i> Edit', array('class' => 'btn btn-primary')); ?>
+            </div>
+            <div class="col">
+                <?php echo anchor("admin/dash/keuzemogelijkheidbeheer/" . $data['jaargang']->id,'<i class="fa fa-folder"></i> Keuzemogelijkheden', array('class' => 'btn btn-primary')); ?>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </div>
+</div>
