@@ -61,7 +61,8 @@ function ajaxplaats(){
                 type: "GET",
                 dataType:'json',
                 success: function(data){        
-                console.log("ok");     
+                console.log("ok");         
+                console.log(data);   
                     
                     $('#naam').value(data['plaats']);
                     $('#locatie').value(data['locatie']);
