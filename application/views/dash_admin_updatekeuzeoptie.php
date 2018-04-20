@@ -14,11 +14,11 @@
 
     $plaats = array('');
 
-    if($keuzeoptie != null){
-        $idData=form_hidden("KeuzemogelijkheidID", $keuzeoptie);
+    if($keuzeoptieId != null){
+        $idData=form_hidden("KeuzeoptieId", $keuzeoptieId);
     }
     else{
-        $idData=form_hidden("KeuzemogelijkheidID", $KeuzemogelijkheidId);
+        $idData=form_hidden("KeuzemogelijkheidId", $KeuzemogelijkheidId);
     }
 
     foreach ($plaatsen as $plek) {
