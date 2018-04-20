@@ -12,11 +12,23 @@
                     echo $data['jaargang']->naam;
                 ?>
             </h1>
+            <br/>
+            <p>
+                <?php
+                    echo $data['jaargang']->info;
+                ?>
+            </p>
+            <br/>
+            <p>
+                <?php
+                    echo $data['jaargang']->beginTijdstip . ' > ' . $data['jaargang']->eindTijdstip;
+                ?>
+            </p>
         </div>
     </div>
 
     <div class="row justify-content-md-center">
-        <div class="col-10">
+        <div class="row col-10">
             <div class="col">
                 <?php echo anchor("admin/dash/jaargangupdate/" . $data['jaargang']->id,'<i class="fa fa-edit"></i> Edit', array('class' => 'btn btn-primary')); ?>
             </div>
