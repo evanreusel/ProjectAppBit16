@@ -144,13 +144,13 @@ class Admin extends CI_Controller {
 
 				if($extras != null) {
 					if(strpos($extras,"i")){
-						$data['jaargang'] = str_replace("i", "", $extras);
+						$data['keuzemogelijkheidId'] = str_replace("i", "", $extras);
 					}
 					if(strpos($extras,"u")){
 						$data['keuzemogelijkheidId'] = str_replace("u", "", $extras);
-						$data['data']['jaargang'] = null;
+						$data['jaargang'] = null;
 						$this->load->model('keuzeoptie_model');
-						$data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
+						$data['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
 					}
 					// $this->load->model('keuzeoptie_model');
 					// $data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
