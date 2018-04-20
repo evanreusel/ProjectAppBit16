@@ -5,7 +5,7 @@
 -->
 
 <?php
-class Persoon_model extends CI_Model {
+class Soort_model extends CI_Model {
     function get_byId($id, $token)
     {
         $this->db->where(array('id' => $id, 'token' => $token));
