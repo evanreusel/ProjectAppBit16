@@ -37,7 +37,7 @@
                 if($jaargang->actief == 0){
                     echo "Afgesloten";
                 }else{
-                    if(new DateTIme($jaargang->beginTijdstip) < new DateTime())
+                    if(new DateTime($jaargang->beginTijdstip) < new DateTime() && new DateTime($jaargang->eindTijdstip) > new DateTime())
                     {
                         echo '<a class="deactivate btn btn-primary" data-id="' . $jaargang->id . '"><i class="fa fa-ban"></i> Afsluiten</a>';
                     }else{
