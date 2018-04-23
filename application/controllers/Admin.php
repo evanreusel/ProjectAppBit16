@@ -165,18 +165,14 @@ class Admin extends CI_Controller {
 						$this->load->model('keuzemogelijkheid_model');
 						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId(str_replace("i", "", $extras));
 						$data['keuzeoptieId'] = null;
-						$data['kaas']=strpos($extras,"i");
+						$data['keuzeoptie']=array('id'=>"", 'keuzemogelijkheidId'=>str_replace("i", "", $extras), 'naam'=>"", 'plaatsId'=>"",
+						'min'=>"",'max'=>"",'beginTijstip'=>"", 'eindTijdstip'=>"");
 					}
 					if(strpos($extras,"u")==1){
-						$data['keuzeoptieId'] = str_replace("u", "", $extras);
-						$data['jaargang'] = null;
-
 						$this->load->model('keuzeoptie_model');
 						$data['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
-						$data['kaas']=3;
+
 					}
-					// $this->load->model('keuzeoptie_model');
-					// $data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
 				}
 			break;
 			// =================================================================================================== /TIM SWERTS

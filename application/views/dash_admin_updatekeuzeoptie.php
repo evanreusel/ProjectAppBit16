@@ -15,7 +15,7 @@
     $plaats = array('');
 
     if($keuzeoptieId != null){
-        $idData=form_hidden("KeuzeoptieId", $keuzeoptieId);
+        $idData=form_hidden("id", $keuzeoptieId);
     }
     else{
         $idData=form_hidden("KeuzemogelijkheidId", $keuzemogelijkheid->id);
@@ -24,32 +24,44 @@
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
     }
+
+    $datumAttributen = array(
+        'size'  =>'16',
+        'type'  =>'text',
+        'readonly',
+        'class' =>'form_datetime'
+    );
+
+    $nummerAttributen = array(
+        'size'  =>'10',
+        'type'  =>'number'
+    );
 ?>
     
 
 
     <?php echo form_open('keuzeoptie/update', array('name' => 'keuzeoptieFrom', 'id' => 'keuzeoptieForm', 'role' => 'form'));  ?>
-    <?php echo $kaas?>
     </br>
     <label for="keuzeoptie">Naam keuzeoptie:</label>
-    <input id="keuzeoptie" name="naam" type="text" value="">
+    <?php echo form_input(array('id'=>'keuzeoptie', 'name'=>'naam'),$keuzeoptie->naam); ?>
     </br>
     <label for="plaats">Plaats:</label>
-    <?php echo form_dropdown("plaats", $plaats) ?>
+    <?php echo form_dropdown("plaats", $plaats, $keuzeoptie->plaatsId) ?>
     </br>
     <label for="minimum">Minimum aantal personen</label>
-    <input id="minimum" name="min" size="10" type="number">
+    <?php echo form_input(array('id'=>'minimum', 'name'=>'min'),$keuzeoptie->min,$nummerAttributen); ?>
     </br>
     <label for="maximum">Maximum aantal personen</label>
-    <input id="maximum" name="max" size="10" type="number">
+    <?php echo form_input(array('id'=>'maximum', 'name'=>'max'),$keuzeoptie->max,$nummerAttributen); ?>
     </br>
     <label for="begin">Begin datum en tijdstip:</label>
-    <input id="begin" name="beginTijdstip" size="16" type="text" value="" readonly class="form_datetime">
+    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
-    <input id="einde" name="eindTijdstip" size="16" type="text" value="" readonly class="form_datetime">
+    <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
     </br>
-    <?php    
+    <?php
+        echo $idData;    
         echo form_button($arrayparameters);
         echo form_close();
     ?>
