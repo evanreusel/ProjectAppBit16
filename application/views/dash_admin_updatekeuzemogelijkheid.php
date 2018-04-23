@@ -36,7 +36,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
     </br>
     <label for="begin">Begin datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
+    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
     <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
@@ -54,4 +54,5 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+
     </script>            
