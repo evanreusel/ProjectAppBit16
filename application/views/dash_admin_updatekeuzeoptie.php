@@ -1,6 +1,6 @@
 <!-- 
     TIM SWERTS
-    LAST UPDATED: 18 03 30
+    LAST UPDATED: 23 04 2018
     DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
 -->
 
@@ -57,7 +57,7 @@
     <?php echo form_input(array('id'=>'keuzeoptie', 'name'=>'naam'),$keuzeoptie->naam); ?>
     </br>
     <label for="plaats">Plaats:</label>
-    <?php echo form_dropdown("plaats", $plaats, $keuzeoptie->plaatsId) ?>
+    <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId) ?>
     </br>
     <label for="minimum">Minimum aantal personen</label>
     <?php echo form_input(array('id'=>'minimum', 'name'=>'min'),$keuzeoptie->min,$nummerAttributen); ?>
