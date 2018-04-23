@@ -12,6 +12,12 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['content'] = "Bevestig";
     
     $plaats = array('');
+    $datumAttributen = array(
+        'size'  =>'16',
+        'type'  =>'text',
+        'readonly',
+        'class' =>'form_datetime'4
+    );
 
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
@@ -25,6 +31,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
     <input id="keuzemogelijkheid" name="naam" type="text" value="<?php$keuzemogelijkheid->naam?>">
+    <?php echo form_input(array('id'=>'keuzemogelijkheid', 'name'=>'naam'),$keuzemogelijkheid->naam); ?>
     </br>
     <label for="plaats">Plaats:</label>
     <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
