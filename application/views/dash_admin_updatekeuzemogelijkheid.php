@@ -39,10 +39,10 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
+    <?php echo form_input(array('id'=>'begin', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
     </br>
     <label for="deadline">Datum en tijdstip voor deadline:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
+    <?php echo form_input(array('id'=>'begin', 'name'=>'deadlineTijdstip', 'readonly'=>TRUE),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
     </br>
     <?php
         echo form_hidden('jaar', $keuzemogelijkheid->jaargangId);
