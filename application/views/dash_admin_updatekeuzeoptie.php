@@ -19,7 +19,7 @@
         $taak="";
     }
     else{
-        $idData=form_hidden("KeuzemogelijkheidId", $keuzemogelijkheid->id);
+        $idData=form_hidden("keuzemogelijkheidId", $keuzemogelijkheid->id);
         $data = "";
         $keuzeoptie = new stdClass();
         $keuzeoptie->id=$data;
