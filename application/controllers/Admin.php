@@ -159,7 +159,7 @@ class Admin extends CI_Controller {
 				//plaatsen inladen voor dropdown list
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
-				$data['kaas']=str_replace("i", "", $extras);
+				$data['kaas']=strpos($extras,"i");
 
 				if($extras != null) {
 					if(strpos($extras,"i")==0){
