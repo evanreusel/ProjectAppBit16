@@ -36,14 +36,13 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
     </br>
     <label for="begin">Begin datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip'),$keuzemogelijkheid->naam,$datumAttributen); ?>
-    <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->beginTijdstip?>" readonly class="form_datetime">
+    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
-    <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->eindTijdstip?>" readonly class="form_datetime">
+    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
     </br>
     <label for="deadline">Datum en tijdstip voor deadline:</label>
-    <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->deadlineTijdstip?>" readonly class="form_datetime">
+    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
     </br>
     <?php
         echo form_hidden('jaar', $keuzemogelijkheid->jaargangId);
