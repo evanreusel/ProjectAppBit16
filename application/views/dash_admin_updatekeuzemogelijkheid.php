@@ -24,19 +24,19 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <h2><?php echo $keuzemogelijkheid->naam?> aanpassen:</h2>
     </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
-    <input id="keuzemogelijkheid" name="naam" type="text" value="<?php echo $keuzemogelijkheid->naam?>">
+    <input id="keuzemogelijkheid" name="naam" type="text" value="<?php$keuzemogelijkheid->naam?>">
     </br>
     <label for="plaats">Plaats:</label>
     <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
     </br>
     <label for="begin">Begin datum en tijdstip:</label>
-    <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $keuzemogelijkheid->beginTijdstip?>" readonly class="form_datetime">
+    <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->beginTijdstip?>" readonly class="form_datetime">
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
-    <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $keuzemogelijkheid->eindTijdstip?>" readonly class="form_datetime">
+    <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->eindTijdstip?>" readonly class="form_datetime">
     </br>
     <label for="deadline">Datum en tijdstip voor deadline:</label>
-    <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="<?php echo $keuzemogelijkheid->deadlineTijdstip?>" readonly class="form_datetime">
+    <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->deadlineTijdstip?>" readonly class="form_datetime">
     </br>
     <?php
         echo form_hidden('jaar', $keuzemogelijkheid->jaargangId);
