@@ -161,12 +161,12 @@ class Admin extends CI_Controller {
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 
 				if($extras != null) {
-					if(strpos($extras,"i")!=0){
+					if(strpos($extras,"i")==0){
 						$this->load->model('keuzemogelijkheid_model');
 						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId(str_replace("i", "", $extras));
 						$data['keuzeoptieId'] = null;
 					}
-					if(strpos($extras,"u")!=0){
+					if(strpos($extras,"u")==0){
 						$data['keuzeoptieId'] = str_replace("u", "", $extras);
 						$data['jaargang'] = null;
 
