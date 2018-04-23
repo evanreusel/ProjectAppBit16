@@ -16,16 +16,16 @@
 
     if($token != true){
         $idData=form_hidden("id", $keuzeoptie->id);
-    }
+    };
     else{
         $idData=form_hidden("KeuzemogelijkheidId", $keuzemogelijkheid->id);
-        $keuzeoptie=array('id'=>"", 'keuzemogelijkheidId'=>$keuzemogelijkheid->id, 'naam'=>"", 'plaatsId'=>"",
-        				'min'=>"",'max'=>"",'beginTijstip'=>"", 'eindTijdstip'=>"")
-    }
+        $keuzeoptie= array('id'=>"", 'keuzemogelijkheidId'=>$keuzemogelijkheid->id, 'naam'=>"", 'plaatsId'=>"",
+        				'min'=>"",'max'=>"",'beginTijstip'=>"", 'eindTijdstip'=>"");
+    };
 
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
-    }
+    };
 
     $datumAttributen = array(
         'size'  =>'16',
