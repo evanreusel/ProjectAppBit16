@@ -18,7 +18,7 @@
         $idData=form_hidden("KeuzeoptieId", $keuzeoptieId);
     }
     else{
-        $idData=form_hidden("KeuzemogelijkheidId", $KeuzemogelijkheidId);
+        $idData=form_hidden("KeuzemogelijkheidId", $Keuzemogelijkheid->id);
     }
 
     foreach ($plaatsen as $plek) {
