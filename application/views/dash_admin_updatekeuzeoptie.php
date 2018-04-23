@@ -15,7 +15,7 @@
     $plaats = array('');
 
     if($token != true){
-        $idData=form_hidden("id", $keuzeoptie->id);
+        $idData=form_hidden("id", $keuzeoptie->id).form_hidden("keuzemogelijkheidId", $keuzeoptie->keuzemogelijkheidId);
         $taak="";
     }
     else{
