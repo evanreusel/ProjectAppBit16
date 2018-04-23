@@ -15,10 +15,10 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $toevoegen = array('');
     $plaats = array('');
 
-    foreach ($jaargangen as $jaargang) {
-        $toevoegen[$jaargang->id]=$jaargang->naam;
-    }
-    array_push($jaren, $toevoegen);
+    // foreach ($jaargangen as $jaargang) {
+    //     $toevoegen[$jaargang->id]=$jaargang->naam;
+    // }
+    // array_push($jaren, $toevoegen);
 
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
