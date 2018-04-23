@@ -30,13 +30,13 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <h2><?php echo $keuzemogelijkheid->naam?> aanpassen:</h2>
     </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
-    <input id="keuzemogelijkheid" name="naam" type="text" value="<?php$keuzemogelijkheid->naam?>">
     <?php echo form_input(array('id'=>'keuzemogelijkheid', 'name'=>'naam'),$keuzemogelijkheid->naam); ?>
     </br>
     <label for="plaats">Plaats:</label>
     <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
     </br>
     <label for="begin">Begin datum en tijdstip:</label>
+    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip'),$keuzemogelijkheid->naam,$datumAttributen); ?>
     <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->beginTijdstip?>" readonly class="form_datetime">
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
