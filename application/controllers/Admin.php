@@ -136,6 +136,16 @@ class Admin extends CI_Controller {
 
 			// =================================================================================================== TIM SWERTS
 			case "updatekeuzemogelijkheid":
+
+				//plaatsen inladen voor dropdown list
+				$this->load->model('plaats_model');
+				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
+
+				$this->load->model('keuzemogelijkheid_model');
+				$data['data']['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($extras);
+			
+			break;
+			case "keuzemogelijkheidToevoegen":
 				//jaren inladen voor dropdown list
 				$this->load->model('jaargang_model');
 				$data['jaargang'] = $this->jaargang_model->get_byId($extras);
@@ -143,11 +153,6 @@ class Admin extends CI_Controller {
 				//plaatsen inladen voor dropdown list
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
-
-				if($extras != null) {
-					$this->load->model('keuzemogelijkheid_model');
-					$data['data']['keuzemogelijkheden'] = $this->keuzemogelijkheid_model->get_byId($extras);
-				}
 			break;
 			case "updatekeuzeoptie":
 
