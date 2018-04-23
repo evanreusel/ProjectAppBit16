@@ -159,13 +159,13 @@ class Admin extends CI_Controller {
 				//plaatsen inladen voor dropdown list
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
-				$data['kaas']=strpos($extras,"i");
 
 				if($extras != null) {
 					if(strpos($extras,"i")==0){
 						$this->load->model('keuzemogelijkheid_model');
 						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId(str_replace("i", "", $extras));
 						$data['keuzeoptieId'] = null;
+						$data['kaas']=strpos($extras,"i");
 					}
 					if(strpos($extras,"u")==0){
 						$data['keuzeoptieId'] = str_replace("u", "", $extras);
@@ -173,6 +173,7 @@ class Admin extends CI_Controller {
 
 						$this->load->model('keuzeoptie_model');
 						$data['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
+						$data['kaas']=3;
 					}
 					// $this->load->model('keuzeoptie_model');
 					// $data['data']['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
