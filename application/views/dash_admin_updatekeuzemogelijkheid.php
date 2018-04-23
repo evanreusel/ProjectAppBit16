@@ -29,7 +29,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
 
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     
-    <label for="jaar">Jaar:</label>
+    <label for="jaar"><?php echo $jaargang; ?></label>
     <?php echo form_dropdown("jaar", $jaren) ?>
     </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>

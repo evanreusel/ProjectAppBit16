@@ -113,6 +113,7 @@ class Admin extends CI_Controller {
 				if($extras != null) {											
 					$this->load->model('jaargang_model');
 					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
+					$data['jaargang']=$extras;
 				}else{															// Can't load page without jaargang id => load indexpage
 					$view = 'index';
 				}
@@ -137,7 +138,7 @@ class Admin extends CI_Controller {
 			case "updatekeuzemogelijkheid":
 				//jaren inladen voor dropdown list
 				$this->load->model('jaargang_model');
-				$data['jaargangen'] = $this->jaargang_model->getAllByJaargang();
+				$data['jaargang'] = $this->jaargang_model->get_byId($extras);
 
 				//plaatsen inladen voor dropdown list
 				$this->load->model('plaats_model');
