@@ -14,7 +14,7 @@ class Keuzeoptie_Model extends CI_Model{
 
     }
     
-    function get($id)
+    function get_byId($id)
     {
         $this->db->where('id', $id);
         $query = $this->db->get('KeuzeOptie');
