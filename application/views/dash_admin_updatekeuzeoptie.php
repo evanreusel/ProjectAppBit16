@@ -19,8 +19,6 @@
     }
     else{
         $idData=form_hidden("KeuzemogelijkheidId", $keuzemogelijkheid->id);
-        $keuzeoptie=array('id'=>"", 'keuzemogelijkheidId'=>str_replace("i", "", $extras), 'naam'=>"", 'plaatsId'=>"",
-        'min'=>"",'max'=>"",'beginTijstip'=>"", 'eindTijdstip'=>"");
     }
 
     foreach ($plaatsen as $plek) {
