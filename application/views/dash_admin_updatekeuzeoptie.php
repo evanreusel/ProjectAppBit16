@@ -14,7 +14,7 @@
 
     $plaats = array('');
 
-    if($keuzeoptie->id != ""){
+    if($token != true){
         $idData=form_hidden("id", $keuzeoptie->id);
     }
     else{
