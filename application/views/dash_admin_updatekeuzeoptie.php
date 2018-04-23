@@ -29,7 +29,7 @@
 
 
     <?php echo form_open('keuzeoptie/update', array('name' => 'keuzeoptieFrom', 'id' => 'keuzeoptieForm', 'role' => 'form'));  ?>
-    <?php echo $idData?>
+    <?php echo $kaas?>
     </br>
     <label for="keuzeoptie">Naam keuzeoptie:</label>
     <input id="keuzeoptie" name="naam" type="text" value="">
