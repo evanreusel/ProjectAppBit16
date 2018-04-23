@@ -164,7 +164,8 @@ class Admin extends CI_Controller {
 					if(strpos($extras,"i")==1){
 						$this->load->model('keuzemogelijkheid_model');
 						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId(str_replace("i", "", $extras));
-						$data['keuzeoptieId'] = null;
+						$data['keuzeoptie']=array('id'=>"", 'keuzemogelijkheidId'=>str_replace("i", "", $extras), 'naam'=>"", 'plaatsId'=>"",
+						'min'=>"",'max'=>"",'beginTijstip'=>"", 'eindTijdstip'=>"");
 					}
 					if(strpos($extras,"u")==1){
 						$this->load->model('keuzeoptie_model');
