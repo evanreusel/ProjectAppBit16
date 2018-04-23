@@ -11,14 +11,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
     
-    $jaren = array('');
-    $toevoegen = array('');
     $plaats = array('');
-
-    // foreach ($jaargangen as $jaargang) {
-    //     $toevoegen[$jaargang->id]=$jaargang->naam;
-    // }
-    // array_push($jaren, $toevoegen);
 
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
@@ -28,26 +21,26 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
 
 
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
-    
-    <label for="jaar"><?php echo $jaargang; ?></label>
-    <?php echo form_dropdown("jaar", $jaren) ?>
+    <h2><?php$keuzemogelijkheid->naam?> aanpassen:</h2>
     </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
-    <input id="keuzemogelijkheid" name="naam" type="text" value="">
+    <input id="keuzemogelijkheid" name="naam" type="text" value="<?php$keuzemogelijkheid->naam?>">
     </br>
     <label for="plaats">Plaats:</label>
-    <?php echo form_dropdown("plaats", $plaats) ?>
+    <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
     </br>
     <label for="begin">Begin datum en tijdstip:</label>
-    <input id="begin" name="beginTijdstip" size="16" type="text" value="" readonly class="form_datetime">
+    <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->beginTijdstip?>" readonly class="form_datetime">
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
-    <input id="einde" name="eindTijdstip" size="16" type="text" value="" readonly class="form_datetime">
+    <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->eindTijdstip?>" readonly class="form_datetime">
     </br>
     <label for="deadline">Datum en tijdstip voor deadline:</label>
-    <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="" readonly class="form_datetime">
+    <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="<?php$keuzemogelijkheid->deadlineTijdstip?>" readonly class="form_datetime">
     </br>
-    <?php    
+    <?php
+        echo form_hidden('jaar',$keuzemogelijkheid->jaargangId);
+        echo form_hidden('id', $keuzemogelijkheid->id);
         echo form_button($arrayparameters);
         echo form_close();
     ?>

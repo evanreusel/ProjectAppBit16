@@ -142,7 +142,7 @@ class Admin extends CI_Controller {
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 
 				$this->load->model('keuzemogelijkheid_model');
-				$data['data']['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($extras);
+				$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($extras);
 			
 			break;
 			case "keuzemogelijkheidToevoegen":
