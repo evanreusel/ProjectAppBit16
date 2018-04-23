@@ -11,7 +11,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
         echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary">'. $activiteit->naam .'</a></li>';
     }
 }?>
-    <li><?php echo anchor("admin/dash/updatekeuzemogelijkheid","+",'class="btn btn-primary"');?></li>
+    <li><?php echo anchor("admin/dash/updatekeuzemogelijkheid/".$jaargang->id,"+",'class="btn btn-primary"');?></li>
 </ul>
 
 <div class="tab-content">
