@@ -42,6 +42,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="" readonly class="form_datetime">
     </br>
     <?php    
+        echo form_hidden('jaar', $jaargang->id);
         echo form_button($arrayparameters);
         echo form_close();
     ?>
