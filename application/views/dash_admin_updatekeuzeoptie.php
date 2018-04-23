@@ -16,7 +16,7 @@
 
     if($token != true){
         $idData=form_hidden("id", $keuzeoptie->id);
-        $taak=""
+        $taak="";
     }
     else{
         $idData=form_hidden("KeuzemogelijkheidId", $keuzemogelijkheid->id);
