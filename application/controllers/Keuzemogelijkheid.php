@@ -69,6 +69,6 @@ class Keuzemogelijkheid extends CI_Controller{
         $this->keuzemogelijkheid_model->delete($id);
         
 		// Redirect to keuzemogelijkheidbeheer
-        redirect('admin/dash/keuzemogelijkheidbeheer/'.$returndata);
+        redirect('admin/dash/keuzemogelijkheidbeheer/'.$returndata->jaargangId);
 	}
 }
