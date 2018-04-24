@@ -40,6 +40,7 @@ class Keuzeoptie extends CI_Controller{
         $keuzeoptie->id = $this->input->post('id');
         $keuzeoptie->keuzemogelijkheidId = $this->input->post('keuzemogelijkheidId');
         $keuzeoptie->naam = $this->input->post('naam');
+        $keuzeoptie->plaatsId = $this->input->post('plaatsId');
         $keuzeoptie->min = $this->input->post('min');
         $keuzeoptie->max = $this->input->post('max');
         $keuzeoptie->eindTijdstip = $this->input->post('eindTijdstip');
