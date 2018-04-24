@@ -75,6 +75,7 @@
         echo $idData;    
         echo form_button($arrayparameters);
         echo form_close();
+        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId,'Annuleer','class="btn btn-primary"');
     ?>
 
     

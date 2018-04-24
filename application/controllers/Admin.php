@@ -169,6 +169,8 @@ class Admin extends CI_Controller {
 					if(strpos($extras,"u")==1){
 						$this->load->model('keuzeoptie_model');
 						$data['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
+						$this->load->model('keuzemogelijkheid_model');
+						$data['keuzemoglijkheid'] = $this->keuzemogelijkheid_model->get_byId($data['keuzeoptie']['keuzemogelijkheidId']);
 						$data['token']=false;
 
 					}
