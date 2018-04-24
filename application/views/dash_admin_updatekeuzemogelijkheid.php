@@ -49,8 +49,8 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         echo form_hidden('id', $keuzemogelijkheid->id);
         echo form_button($arrayparameters);
         echo form_close();
+        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargengId,'Annuleer','class="btn btn-primary"');
     ?>
-
     
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
