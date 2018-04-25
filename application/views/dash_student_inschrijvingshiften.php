@@ -4,7 +4,8 @@
     foreach ($activiteit->taken as $taak) {
         echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$taak->functie.':</b></p><ul class="list-group">';
         foreach ($taak->shiften as $shift ) {
-            echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam.'</li>';
+            echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
+            echo '<button class="btn btn-success" value="'.$shift->id.'">Inschrijven</button>'
         }
         echo "</ul></li>";
     };
