@@ -44,7 +44,7 @@ class Student extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Shiften',
-				'url' => base_url() . 'index.php/admin/dash/inschrijvingshiften'
+				'url' => base_url() . 'index.php/student/dash/inschrijvingshiften'
 			]
 		];
 		$data['actions'] = [
