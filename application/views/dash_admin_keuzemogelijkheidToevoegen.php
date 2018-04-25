@@ -25,7 +25,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
             $('.dropdown-toggle').dropdown();
 
             $('.dropdown-item.plaats').click(function(event) {
-                $('#btnPlaats').val($(event.target).data('item'));
+                $('#btnPlaats').text($(event.target).data('item'));
                 $('#inpPlaats').val($(event.target).data('item'));
             });
         });
