@@ -23,10 +23,10 @@ class Student extends CI_Controller {
 
 	public function dash($view = null, $extras = null){
 		// Load models
-		$this->load->model('beheer_model');
+		$this->load->model('persoon_model');
 
 		// Load logged in user
-		$data['user'] = $this->beheer_model->get_byId($this->session->userdata('id'));
+		$data['user'] = $this->persoon_model->get_byId($this->session->userdata('id'));
 
 		// Check if dashboard view is requested else default homeview
 		if(is_null($view) )
