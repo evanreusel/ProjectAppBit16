@@ -7,29 +7,27 @@
 <script>
 
 function ajaxplaats(id){
+    console.log(<? echo site_url(); ?>  '/plaats/jsonplaats/' + id);
+    
+    $.ajax({
+        url: '<? echo site_url(); ?>/plaats/jsonplaats/' + id,
+        async: false,
+        type: "GET",
+        dataType:'json',
+        success: function(data){        
+        console.log("ok");         
+        console.log(data);   
             
-                console.log("click");
-                console.log('/plaats/jsonplaats/' + id);
+            $('#naam').val(data['naam']);
+            $('#locatie').val(data['locatie']);
+            $('#pId').val(id.toString());
             
-            $.ajax({
-                url: '<? echo site_url(); ?>/plaats/jsonplaats/' + id,
-                async: false,
-                type: "GET",
-                dataType:'json',
-                success: function(data){        
-                console.log("ok");         
-                console.log(data);   
-                    
-                    $('#naam').val(data['naam']);
-                    $('#locatie').val(data['locatie']);
-                    $('#pId').val(id.toString());
-                    
-                }, error: function (xhr, status, error) {
+        }, error: function (xhr, status, error) {
 
-                    alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+            alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
 
-                }
-            });
+        }
+    });
 }
 
 </script>
