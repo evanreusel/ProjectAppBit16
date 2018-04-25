@@ -104,19 +104,19 @@ sort();
 <tHead>
 <tr class="colored">
 <td id="naamsort" class="sort"><i></i>Naam</td>
-<td id="mailsort" class="sort"><i></i>Mail</td>
-<td id="taaksort" class="sort"><i></i>Taak</td>
-<td id="shiftsort" class="sort"><i></i>Shift</td>
-<td id="tijdsort" class="sort"><i></i>Tijd</td>
+<td id="mailsort" class="sort" title="Druk her om te sortere op deze rij"><i></i>Mail</td>
+<td id="taaksort" class="sort" title="Druk her om te sortere op deze rij"><i></i>Taak</td>
+<td id="shiftsort" class="sort" title="Druk her om te sortere op deze rij"><i></i>Shift</td>
+<td id="tijdsort" class="sort" title="Druk her om te sortere op deze rij"><i></i>Tijd</td>
 </tr>
 </tHead>
 
 <tr>
-<td><input type="text" id="naamsearch" class="search"></td>
-<td><input type="text" id="mailsearch" class="search"></td>
-<td><input type="text" id="taaksearch" class="search"></td>
-<td><input type="text" id="shiftsearch" class="search"></td>
-<td><input type="text" id="tijdsearch" class="search"></td>
+<td><input type="text" id="naamsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
+<td><input type="text" id="mailsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
+<td><input type="text" id="taaksearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
+<td><input type="text" id="shiftsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
+<td><input type="text" id="tijdsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
 </tr>
 
 <?php

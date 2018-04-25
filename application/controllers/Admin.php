@@ -69,33 +69,40 @@ class Admin extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Jaargang',
-				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
+				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/',
+				'hulp' => "Toon een overzicht van alle vorige jaargangen. \n Je kan hier ook het huidige jaargang beëindigen"
 			],
 			[
 				'title' => 'Locaties',
-				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
+				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/',
+				'hulp' => "Toon een overzicht van alle locaties. \n Je kan hier ook nieuwe locaties aanmaken en oude bewerken of verwijderen"
 			],
 			[
 				'title' => 'Deelnemers',
-				'url' => base_url() . 'index.php/admin/dash/deelnemersoverzicht/'
+				'url' => base_url() . 'index.php/admin/dash/deelnemersoverzicht/',
+				'hulp' => "Toon een overzicht van alle deelnemers"
 			],
 			[
 				'title' => 'Vrijwilligers',
-				'url' => base_url() . 'index.php/admin/dash/vrijwilligersoverzicht/'
+				'url' => base_url() . 'index.php/admin/dash/vrijwilligersoverzicht/',
+				'hulp' => "Toon een overzicht van alle vrijwilligers"
 			]
 		];
 		$data['actions'] = [
 			[
 				'title' => 'Administrators beheren',
-				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
+				'url' => base_url() . 'index.php/admin/dash/adminbeheer/',
+				'hulp' => "Maak nieuwe admins aan, verwijder of bewerk oude admins"
 			],
 			[
 				'title' => 'Personeelslijst importeren',
-				'url' => base_url() . 'index.php/admin/dash/personeelimporteren'
+				'url' => base_url() . 'index.php/admin/dash/personeelimporteren',
+				'hulp' => "gebruik een CSV-bestand om personen toe te voegen aan het systeem"
 			],
 			[
 				'title' => 'Log out',
-				'url' => base_url() . 'index.php/admin/logout/'
+				'url' => base_url() . 'index.php/admin/logout/',
+				'hulp' => "Log uit"
 			]
 		];
 

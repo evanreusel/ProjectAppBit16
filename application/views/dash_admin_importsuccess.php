@@ -99,13 +99,13 @@ $first = true;
 echo "<tr class=\"colored\">";
 
 foreach($personen[0] as $onderdeel => $item){
-            echo  '<td id="' . $onderdeel . 'sort" class="sort"><i></i>' . $onderdeel . '</td>';
+            echo  '<td id="' . $onderdeel . 'sort" class="sort" title="Druk her om te sortere op deze rij"><i></i>' . $onderdeel . '</td>';
 }
 
 echo "</tr><tr>";
 
 foreach($personen[0] as $onderdeel => $item){
-    echo '<td><input type="text" id="' . $onderdeel  . 'search" class="search"></td>';
+    echo '<td><input type="text" id="' . $onderdeel  . 'search" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt"></td>';
 }
 
 

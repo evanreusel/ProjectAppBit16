@@ -54,7 +54,7 @@
 
             <?php foreach($nav_specs['links'] as $link){ ?>
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo $link['url']; ?>">
+                    <a class="nav-link" href="<?php echo $link['url'] . '"title="' . $link['hulp']; ?>">
                         <?php echo $link['title']; ?>
                     </a>
                 </li>
