@@ -52,8 +52,7 @@ class Plaats extends CI_Controller {
         }
         
         redirect('admin/dash/plaatsToevoegen');
-    
-        }
+    }
 
     public function verwijder($id) {
         $this->load->model('plaats_model');
