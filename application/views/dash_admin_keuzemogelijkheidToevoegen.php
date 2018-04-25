@@ -7,6 +7,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
 
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
+    $arrayparameters['class'] = 'btn btn-primary';
     $arrayparameters['value'] = '0';
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
@@ -73,4 +74,4 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         echo form_close();
     ?>
 
-    <?php echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$jaargang->id,'Annuleer','class="btn btn-primary"');?>    
+    <?php echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$jaargang->id,'Annuleer','class="btn btn-warning"');?>    
