@@ -23,6 +23,7 @@ class Mailreminder_model extends CI_Model {
     {
         $this->db->where(array('mailreminderId' => $reminderId));
         $query = $this->db->get('PersoonInReminder');
+        return $query->result();
     }
 
 }
