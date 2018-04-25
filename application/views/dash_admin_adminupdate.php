@@ -96,7 +96,7 @@
 
     <!-- =================================================================================================== GREIF MATTHIAS -->
     <div class="md-form">
-        <input type="text" id="username" class="form-control" <?php if (isset($data['admin'])) echo 'value=' . $data['admin']->username; ?>>
+        <input type="text" name="username" id="username" class="form-control" <?php if (isset($data['admin'])) echo 'value=' . $data['admin']->username; ?>>
         <label for="username">Gebruikersnaam:</label>
     </div>
 
