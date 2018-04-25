@@ -32,7 +32,7 @@ class Mail extends CI_Controller {
     {
         $this->load->model('mailreminder_model');
         $vandaag = date('Y-m-d');
-        $mailRemindersVandaag = $this->mailreminder->get_ReminderDag($vandaag);
+        $mailRemindersVandaag = $this->mailreminder_model->get_ReminderDag($vandaag);
         echo json_encode($mailRemindersVandaag);
     }
     public function voegtoe()
