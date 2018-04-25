@@ -6,11 +6,11 @@
 
 <script>
 
-function ajaxplaats(id){
-    console.log("<?php echo site_url(); ?>" + '/plaats/jsonplaats/' + id);
+function ajaxplaats(plaatsId){
+    console.log("<?php echo site_url(); ?>" + '/plaats/jsonplaats/' + plaatsId);
 
     $.ajax({
-        url: '<?php echo site_url(); ?>/plaats/jsonplaats/' + id,
+        url: '<?php echo site_url(); ?>/plaats/jsonplaats/' + plaatsId,
         async: false,
         type: "GET",
         dataType:'json',
@@ -20,7 +20,7 @@ function ajaxplaats(id){
             
             $('#naam').val(data['naam']);
             $('#locatie').val(data['locatie']);
-            $('#pId').val(id.toString());
+            $('#pId').val(plaatsId.toString());
             
         }, error: function (xhr, status, error) {
 
