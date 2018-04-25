@@ -2,9 +2,9 @@
 
     echo "<h2>".$activiteit->naam."</h2><ul>";
     foreach ($activiteit->taken as $taak) {
-        echo "<p>".$taak->functie."</p><ul>";
+        echo '<p><b>'.$taak->functie.':</b></p><ul class="list-group">';
         foreach ($taak->shiften as $shift ) {
-            echo "<li>".$shift->naam."</li>";
+            echo '<li class="list-group-item d-flex justify-content-between align-items-center">'.$shift->naam.'</li>';
         }
         echo "</ul></li>";
     };
