@@ -26,7 +26,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
             $('.dropdown-toggle').dropdown();
 
             $('.dropdown-item.plaats').click(function(event) {
-                var checkboxID = $(event.target).data('item');
+                $('#inpPlaats').val($(event.target).data('item'));
             });
         });
     </script>
@@ -71,7 +71,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <label for="deadline">Deadline datum en tijdstip:</label>
     </div>
 
-    <input type="hidden" name="jaar" value="<?php echo $plaats[0]; ?>">
+    <input id="inpPlaats" type="hidden" name="jaar" value="<?php echo $plaats[0]; ?>">
 <!-- =================================================================================================== /GREIF MATTHIAS -->
     <?php
         echo form_hidden('jaar', $jaargang->id);
