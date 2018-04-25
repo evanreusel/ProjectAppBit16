@@ -38,7 +38,7 @@ class Mail extends CI_Controller {
             $ontvangers = array();
             $persoonIds = $this->mailreminder_model->get_PersonenInReminder($mailReminder->id);
             foreach ($persoonIds as $persoonId) {
-                echo json_encode($this->persoon_model->get_byId($persoonIds->id));
+                echo json_encode($this->persoon_model->get_byId($persoonId->id));
 
             }
         }
