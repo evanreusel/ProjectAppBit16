@@ -11,7 +11,6 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
     
-    $toevoegen = array();
     $plaats = array();
 
     foreach ($plaatsen as $p) {
@@ -42,7 +41,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
 
     <div class="btn-group">
-        <button id="btnPlaats" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $plaats[0]; ?></button>
+        <button id="btnPlaats" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plaats</button>
 
         <div class="dropdown-menu">
             <?php foreach($plaats as $p){ ?>
