@@ -28,6 +28,13 @@ class Mail extends CI_Controller {
         echo $this->mailjet->verstuur($mjobj);
 
     }
+    public function remindervandaag()
+    {
+        $this->load->model('mailreminder_model');
+        $vandaag = date('Y-m-d');
+        $mailRemindersVandaag = $this->mailreminder->get_ReminderDag($vandaag);
+        echo json_encode($mailRemindersVandaag);
+    }
     public function voegtoe()
     {
         $data['message'] = "Welcome admin | Login";
