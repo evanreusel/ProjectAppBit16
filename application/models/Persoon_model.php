@@ -13,7 +13,8 @@ class Persoon_model extends CI_Model {
 
         return $query->result()[0];
     }
-    function get($id)
+
+    function get_byId($id)
     {
         $this->db->where(array('id' => $id));
         $query = $this->db->get('Persoon');
