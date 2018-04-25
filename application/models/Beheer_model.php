@@ -29,6 +29,8 @@ class Beheer_model extends CI_Model {
         if (password_verify($pass, $query->row()->pass)) {
             return $query->result()[0];
         }
+
+        return null;
     }
 
     function getAll()
