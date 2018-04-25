@@ -19,8 +19,14 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         array_push($plaats, $plek->naam);
     }
 ?>
-    
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     
@@ -68,10 +74,4 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         echo form_close();
     ?>
 
-    <?php echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$jaargang->id,'Annuleer','class="btn btn-primary"');?>
-
-    <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-
-        $('.dropdown-toggle').dropdown()
-    </script>            
+    <?php echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$jaargang->id,'Annuleer','class="btn btn-primary"');?>    
