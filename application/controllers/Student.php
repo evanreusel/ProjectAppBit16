@@ -59,7 +59,7 @@ class Student extends CI_Controller {
 			case "inschrijvingshiften":
 				//haal het actief jaar op.													
 				$this->load->model('jaargang_model');
-				$data['actiefJaar']=$this->beheer_model->getActief();
+				$data['actiefJaar']=$this->jaargang_model->getActief();
 				
 				//zoek keuzemogelijkheden
 				$this->load->model('keuzemogelijkheid_model');
