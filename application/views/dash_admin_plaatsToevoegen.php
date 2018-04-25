@@ -7,7 +7,7 @@
 <script>
 
 function ajaxplaats(id){
-    console.log(<?php echo site_url(); ?>  '/plaats/jsonplaats/' + id);
+    console.log("<?php echo site_url(); ?>" + '/plaats/jsonplaats/' + id);
 
     $.ajax({
         url: '<?php echo site_url(); ?>/plaats/jsonplaats/' + id,
