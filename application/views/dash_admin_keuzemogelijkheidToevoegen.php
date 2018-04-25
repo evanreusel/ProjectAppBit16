@@ -11,7 +11,6 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
     
-    $jaren = array('');
     $toevoegen = array('');
     $plaats = array('');
 
@@ -26,6 +25,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
             $('.dropdown-toggle').dropdown();
 
             $('.dropdown-item.plaats').click(function(event) {
+                $('#btnPlaats').val($(event.target).data('item'));
                 $('#inpPlaats').val($(event.target).data('item'));
             });
         });
@@ -47,7 +47,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div> -->
 
     <div class="btn-group">
-        <button id="plaats" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $plaats[0]; ?></button>
+        <button id="btnPlaats" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $plaats[0]; ?></button>
 
         <div class="dropdown-menu">
             <?php foreach($plaats as $p){ ?>
