@@ -7,8 +7,8 @@
             echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
             echo '<button class="btn btn-success float-right inschrijven" value="'.$shift->id.'">Inschrijven</button>';
         }
-        echo "</ul></li>";
+        echo "</li></ul></li>";
     };
-    echo "</ul></li></div></div>";
+    echo "</ul></div></div>";
 };
 ?>
