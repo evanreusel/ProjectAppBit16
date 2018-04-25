@@ -56,7 +56,9 @@ class Docent extends CI_Controller {
 
 		// Get data for view
 		switch($view){
-			
+			case "inschrijven":													
+						
+				break;
 		}
 
 		// Set view
