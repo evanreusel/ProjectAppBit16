@@ -56,7 +56,7 @@ class Docent extends CI_Controller {
 
 		// Get data for view
 		switch($view){
-			case "inschrijvingshiften":
+			case "personeelsinschrijvingen":
 				//haal het actief jaar op.													
 				$this->load->model('jaargang_model');
 				$data['actiefJaar']=$this->jaargang_model->getActief();
