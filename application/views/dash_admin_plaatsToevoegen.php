@@ -14,13 +14,10 @@ function ajaxplaats(plaatsId){
         async: false,
         type: "GET",
         dataType:'json',
-        success: function(data){        
-        console.log("ok");         
-        console.log(data);   
-            
+        success: function(data){            
             $('#naam').val(data['naam']);
             $('#locatie').val(data['locatie']);
-            $('#pId').val(plaatsId.toString());
+            $('#pId').val(data['id']);
             
         }, error: function (xhr, status, error) {
 
@@ -70,8 +67,9 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
         'value' =>$locatieTest,
         'class' => 'form-control',
         'required' => 'required'));
-
-        echo form_hidden(array('id'=>'pId', 'value' => $locatieId, 'name'=>'id'));
+    ?>
+        <input type="hidden" value="<?php echo $locatieId; ?>" name="id" id="pId">
+    <?php
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();
