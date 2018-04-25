@@ -56,7 +56,7 @@ function ajaxplaats(id){
 $plaatsTest='';
 $locatieTest='';
 
-if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $huidigePlaats->locatie;} 
+if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $huidigePlaats->locatie; $locatieId = $huidigePlaats->id;} 
     echo form_labelpro('Naam', 'naam');
     echo form_input(array('name' => 'naam',
         'id' => 'naam',
@@ -72,7 +72,7 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
         'class' => 'form-control',
         'required' => 'required'));
 
-        echo form_hidden(array('id'=>'id', 'value' => $huidigePlaats->id, 'name'=>'id'));
+        echo form_hidden(array('id'=>'id', 'value' => $locatieId, 'name'=>'id'));
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();
