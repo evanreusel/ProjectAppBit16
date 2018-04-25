@@ -20,6 +20,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     }
 ?>
 
+    <script type="text/javascript" src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
@@ -44,7 +45,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div> -->
 
     <div class="btn-group">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Basic dropdown</button>
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plaats</button>
 
         <div class="dropdown-menu">
             <?php foreach($plaats as $p){ ?>
