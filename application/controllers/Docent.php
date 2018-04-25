@@ -42,10 +42,10 @@ class Docent extends CI_Controller {
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/docent/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
-			// [
-			// 	'title' => 'Jaargang',
-			// 	'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
-			// ]
+
+				'title' => 'Inschrijven',
+				'url' => base_url() . 'index.php/docent/dash/personeelsinschrijvingen/'
+			]
 		];
 		$data['actions'] = [
 			// [
