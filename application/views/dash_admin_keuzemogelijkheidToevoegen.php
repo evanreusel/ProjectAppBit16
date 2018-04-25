@@ -11,12 +11,6 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['value'] = '0';
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
-    
-    $plaats = array();
-
-    foreach ($plaatsen as $p) {
-        array_push($plaats, $p->naam);
-    }
 ?>
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     
@@ -30,8 +24,8 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
             $('.dropdown-toggle').dropdown();
 
             $('.dropdown-item.plaats').click(function(event) {
-                $('#btnPlaats').text($(event.target).data('item'));
-                $('#inpPlaats').val($(event.target).data('item'));
+                $('#btnPlaats').text($(event.target).data('naam'));
+                $('#inpPlaats').val($(event.target).data('id'));
             });
         });
     </script>
@@ -45,8 +39,8 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <button id="btnPlaats" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plaats</button>
 
         <div class="dropdown-menu">
-            <?php foreach($plaats as $p){ ?>
-            <a class="dropdown-item plaats" href="#" data-item="<?php echo $p; ?>"><?php echo $p; ?></a>
+            <?php foreach($plaatsen as $p){ ?>
+            <a class="dropdown-item plaats" href="#" data-naam="<?php echo $p->naam; ?>" data-id="<?php echo $p->id; ?>"><?php echo $p->naam; ?></a>
             <?php } ?>
         </div>
     </div>
@@ -66,7 +60,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <label for="deadline">Deadline datum en tijdstip:</label>
     </div>
 
-    <input id="inpPlaats" type="hidden" name="jaar" value="<?php echo $plaats[0]; ?>">
+    <input id="inpPlaats" type="hidden" name="jaar" value="<?php echo $plaats[0]->id; ?>">
 <!-- =================================================================================================== /GREIF MATTHIAS -->
     <?php
         echo form_hidden('jaar', $jaargang->id);
