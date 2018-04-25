@@ -31,6 +31,9 @@ class Jaargang extends CI_Controller{
 
         $id = $this->input->post('id', TRUE);
 
+        echo $id;
+        print_r($this->jaargang_model->get_byId($id));
+
         if($this->jaargang_model->get_byId($id) != null){
             // Get from db
             $jaargang = $this->jaargang_model->get_byId($id);
@@ -73,7 +76,7 @@ class Jaargang extends CI_Controller{
         }
 
         // Redir
-        redirect('admin/jaargangoverzicht');
+        // redirect('admin/jaargangoverzicht');
     }
     
     // API
