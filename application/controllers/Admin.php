@@ -25,7 +25,8 @@ class Admin extends CI_Controller {
 		$is_api_login = ($this->router->class === 'admin' && $this->router->method === 'login') ? true : false;
 
 		// Homepage check
-		if(!$is_home && !$is_api_login){
+		$this->load->model('beheer_model');
+		if(!$is_home && !$is_api_login || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
 			// Redirect to home if no session started
 			if(!$this->session->has_userdata('id')){
 				redirect('/admin/index', 'location');
