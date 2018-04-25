@@ -67,6 +67,10 @@ class Student extends CI_Controller {
 				foreach ($data['keuzemogelijkheden'] as $keuzemogelijkheid) {
 					$this->load->model('taken_model');
 					$keuzemogelijkheid->taken = $this->taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+					foreach ($keuzemogelijkheid->taken as $taak) {
+						$this->load->model('Shiften_model');
+						$taak->shiften=$this->Shiften_model->getAllByNaamWhereTaakId($taak->id);
+					}
 				}
 			break;
 			

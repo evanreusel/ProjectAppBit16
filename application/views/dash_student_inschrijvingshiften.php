@@ -2,7 +2,10 @@
 
     echo "<h2>".$activiteit->naam."</h2>";
     foreach ($activiteit->taken as $taak) {
-        echo "<p>".$taak->functie."</p>";
+        echo "<h3>".$taak->functie."</h3>";
+        foreach ($taak->shiften as $shift ) {
+            echo "<p>".$shift->naam."</p>";
+        }
     };
 
 };
