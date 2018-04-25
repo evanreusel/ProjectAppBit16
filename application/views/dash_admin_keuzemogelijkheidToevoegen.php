@@ -36,6 +36,18 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <label for="plaats">Plaats:</label>
     </div>
 
+    <div class="btn-group">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Basic dropdown</button>
+
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+    </div>
+
     <div class="md-form">
         <input id="begin" name="beginTijdstip" size="16" type="text" readonly class="form_datetime">
         <label for="begin">Begin datum en tijdstip:</label>
