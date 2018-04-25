@@ -15,6 +15,18 @@ class Mailjet
     private $afzenderEmail = "r0581776@student.thomasmore.be";
     private $afzenderNaam = "Thomas More Events";
 
+    private $Messages = array();
+
+    public function voegBerichtObjectToe($berichtObject)
+    {
+        array_push($this->Messages, $berichtObject);
+        return count($this->Messages);
+    }
+    public function toonBerichtObject()
+    {
+
+        return $this->Messages;
+    }
     public function maakBerichtObject($ontvangerEmail, $ontvangerNaam, $onderwerp, $inhoud, $inhoudHtml)
     {
         $mail = new stdClass();
