@@ -55,6 +55,7 @@ function ajaxplaats(id){
 // testen of plaats leeg is
 $plaatsTest='';
 $locatieTest='';
+$locatieId = 0;
 
 if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $huidigePlaats->locatie; $locatieId = $huidigePlaats->id;} 
     echo form_labelpro('Naam', 'naam');
