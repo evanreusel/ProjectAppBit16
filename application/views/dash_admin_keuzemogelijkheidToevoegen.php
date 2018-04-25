@@ -11,16 +11,21 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
     
-    $toevoegen = array('');
-    $plaats = array('');
+    $toevoegen = array();
+    $plaats = array();
 
-    foreach ($plaatsen as $plek) {
-        array_push($plaats, $plek->naam);
+    foreach ($plaatsen as $p) {
+        array_push($plaats, $p->naam);
     }
 ?>
+    <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
+    
+    <h2>Keuzemogelijkheid toevoegen voor jaar <?php echo $jaargang->naam; ?>:</h2>
+
+<!-- =================================================================================================== GREIF MATTHIAS -->
     <script type="text/javascript">
         $(document).ready(function(){
-            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
 
             $('.dropdown-toggle').dropdown();
 
@@ -31,20 +36,10 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         });
     </script>
 
-    <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
-    
-    <h2>Keuzemogelijkheid toevoegen voor jaar <?php echo $jaargang->naam; ?>:</h2>
-
-<!-- =================================================================================================== GREIF MATTHIAS -->
     <div class="md-form">
         <input type="text" name="naam" id="keuzemogelijkheid" class="form-control">
         <label for="keuzemogelijkheid">Naam:</label>
     </div>
-
-    <!-- <div class="md-form">
-        <?php echo form_dropdown("plaats", $plaats) ?>
-        <label for="plaats">Plaats:</label>
-    </div> -->
 
     <div class="btn-group">
         <button id="btnPlaats" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $plaats[0]; ?></button>
