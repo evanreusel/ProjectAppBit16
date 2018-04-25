@@ -1,7 +1,7 @@
 <?php
 /* 
 GREIF MATTHIAS
-LAST UPDATED: 18 04 18
+LAST UPDATED: 18 04 25
 DASH ADMIN JAARGANG ADD/UPDATE
 */
     $defaults = [
@@ -31,21 +31,31 @@ DASH ADMIN JAARGANG ADD/UPDATE
 
 <?php echo form_open('jaargang/update', array('name' => 'frmJaargang', 'id' => 'frmJaargang', 'role' => 'form'));  ?>
 <input name="id" type="hidden" value="<?php echo $defaults['id']; ?>">
-<label for="inpNaam">Naam:</label>
-<input id="inpNaam" name="naam" type="text" value="<?php echo $defaults['naam']; ?>">
-</br>
-<label for="inpThema">Thema:</label>
-<input id="inpThema" name="thema" type="text" value="<?php echo $defaults['thema']; ?>">
-</br>
-<label for="inpInfo">Info:</label>
-<textarea id="inpInfo" name="info" type="text" value="<?php echo $defaults['info']; ?>"></textarea>
-</br>
-<label for="begin">Begin datum en tijdstip:</label>
-<input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
-</br>
-<label for="einde">Eind datum en tijdstip:</label>
-<input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults['eindTijdstip']; ?>" readonly class="form_datetime">
-</br>
+
+<div class="md-form">
+    <input type="text" name="naam" id="inpNaam" class="form-control" value="<?php echo $defaults['naam']; ?>">
+    <label for="inpNaam">Naam:</label>
+</div>
+
+<div class="md-form">
+    <input type="text" name="thema" id="inpThema" class="form-control" value="<?php echo $defaults['thema']; ?>">
+    <label for="inpThema">Thema:</label>
+</div>
+
+<div class="md-form">
+    <input type="text" name="naam" id="inpInfo" class="form-control" value="<?php echo $defaults['info']; ?>">
+    <label for="inpInfo">Info:</label>
+</div>
+
+<div class="md-form">
+    <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
+    <label for="begin">Begin datum en tijdstip:</label>
+</div>
+
+<div class="md-form">
+    <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
+    <label for="einde">Eind datum en tijdstip:</label>
+</div>
 <?php    
     echo form_button($arrayparameters);
     echo form_close();
