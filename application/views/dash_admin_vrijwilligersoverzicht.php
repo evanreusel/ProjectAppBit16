@@ -112,11 +112,11 @@ sort();
 </tHead>
 
 <tr>
-<td><input type="text" id="naamsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
-<td><input type="text" id="mailsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
-<td><input type="text" id="taaksearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
-<td><input type="text" id="shiftsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
-<td><input type="text" id="tijdsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt">></td>
+<td><input type="text" id="naamsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt"></td>
+<td><input type="text" id="mailsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt"></td>
+<td><input type="text" id="taaksearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt"></td>
+<td><input type="text" id="shiftsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt"></td>
+<td><input type="text" id="tijdsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt"></td>
 </tr>
 
 <?php
