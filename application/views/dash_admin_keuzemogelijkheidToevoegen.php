@@ -19,8 +19,6 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         array_push($plaats, $plek->naam);
     }
 ?>
-
-    <script type="text/javascript" src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
