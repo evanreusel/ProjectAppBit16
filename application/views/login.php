@@ -45,10 +45,10 @@
 <script>
 	$('#btnSend').click(function () {
 		console.log('<?php echo base_url(); ?>index.php/admin/login/' + $('#inpUsername').val() + '/' + $('#inpPass').val());
-		
+
 		$.get('<?php echo base_url(); ?>index.php/admin/login/' + $('#inpUsername').val() + '/' + $('#inpPass').val(), function (data) {
 			if(data != ''){
-				window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/';
+				// window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/';
 			}
 		});
 	});
