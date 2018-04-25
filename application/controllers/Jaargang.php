@@ -34,8 +34,6 @@ class Jaargang extends CI_Controller{
         if($this->jaargang_model->get_byId($id) != null){
             // Get from db
             $jaargang = $this->jaargang_model->get_byId($id);
-
-            print_r($jaargang);
         }else{
             // Set defaults
             $jaargang->naam = '';
@@ -65,6 +63,9 @@ class Jaargang extends CI_Controller{
         if($this->input->post('eindTijdstip', TRUE) != null){
             $jaargang->eindTijdstip = $this->input->post('eindTijdstip', TRUE);
         }
+        
+
+        print_r($jaargang);
         
         if(isset($jaargang->$id)){
             // Update db
