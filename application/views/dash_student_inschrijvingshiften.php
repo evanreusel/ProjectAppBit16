@@ -8,6 +8,6 @@
         }
         echo "</ul></li>";
     };
-    echo "</ul>"
+    echo "</ul>";
 };
 ?>
