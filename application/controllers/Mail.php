@@ -48,8 +48,11 @@ class Mail extends CI_Controller {
 
                 $mailObject = $this->mailjet->maakBerichtObject($persoon->mail, $persoon->naam, $mailsjabloon->naam, $mailsjabloon->inhoud, $mailsjabloon->inhoud);
                 $this->mailjet->voegBerichtObjectToe($mailObject);
+
             }
         echo json_encode($this->mailjet->toonBerichtObject());
+            echo PHP_EOL;
+            echo $this->mailjet->verstuur();
         }
         //echo json_encode($mailRemindersVandaag);
         //{"id":"1","naam":"Greif Matthias","adres":"","woonplaats":"","nummer":"R0656559","mail":"r0656559@student.thomasmore.be","soort":"STUDENT","token":"0prol2vZH3IgYBMapBI2","jaarId":"1"}
