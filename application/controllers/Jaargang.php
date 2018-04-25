@@ -73,7 +73,7 @@ class Jaargang extends CI_Controller{
         }
 
         // Redir
-        // redirect('admin/jaargangoverzicht');
+        redirect('admin/jaargangoverzicht');
     }
     
     // API
