@@ -1,12 +1,13 @@
 <?php foreach($keuzemogelijkheden as $activiteit) {
 
-    echo "<h2>".$activiteit->naam."</h2>";
+    echo "<h2>".$activiteit->naam."</h2><ul>";
     foreach ($activiteit->taken as $taak) {
-        echo "<h3>".$taak->functie."</h3>";
+        echo "<p>".$taak->functie."</p><ul>";
         foreach ($taak->shiften as $shift ) {
-            echo "<p>".$shift->naam."</p>";
+            echo "<li>".$shift->naam."</li>";
         }
+        echo "</ul></li>";
     };
-
+    echo "</ul>"
 };
 ?>
