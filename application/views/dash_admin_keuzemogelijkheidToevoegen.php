@@ -26,25 +26,24 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     
     <h2>Keuzemogelijkheid toevoegen voor jaar <?php echo $jaargang->naam; ?>:</h2>
 
+<!-- =================================================================================================== GREIF MATTHIAS -->
     <div class="md-form">
         <input type="text" name="naam" id="keuzemogelijkheid" class="form-control">
         <label for="keuzemogelijkheid">Naam:</label>
     </div>
 
-    <div class="md-form">
+    <!-- <div class="md-form">
         <?php echo form_dropdown("plaats", $plaats) ?>
         <label for="plaats">Plaats:</label>
-    </div>
+    </div> -->
 
     <div class="btn-group">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Basic dropdown</button>
 
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+            <?php foreach($plaats as $p){ ?>
+            <a class="dropdown-item" href="#" data-item="<?php echo $p; ?>"><?php echo $p; ?></a>
+            <?php } ?>
         </div>
     </div>
 
@@ -62,7 +61,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <input id="deadline" name="deadlineTijdstip" size="16" type="text" readonly class="form_datetime">
         <label for="deadline">Deadline datum en tijdstip:</label>
     </div>
-
+<!-- =================================================================================================== /GREIF MATTHIAS -->
     <?php    
         echo form_hidden('jaar', $jaargang->id);
         echo form_button($arrayparameters);
@@ -73,4 +72,6 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
 
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+
+        $('.dropdown-toggle').dropdown()
     </script>            
