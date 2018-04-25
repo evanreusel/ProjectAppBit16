@@ -63,11 +63,8 @@ class Jaargang extends CI_Controller{
         if($this->input->post('eindTijdstip', TRUE) != null){
             $jaargang->eindTijdstip = $this->input->post('eindTijdstip', TRUE);
         }
-        
 
-        print_r($jaargang);
-        
-        if(isset($jaargang->$id)){
+        if(isset($jaargang->id)){
             // Update db
             $this->jaargang_model->update($jaargang);
         }else{
