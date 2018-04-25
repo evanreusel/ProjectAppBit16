@@ -35,20 +35,20 @@
                 }else{
                     if(new DateTime($jaargang->beginTijdstip) < new DateTime() && new DateTime($jaargang->eindTijdstip) < new DateTime())
                     {
-                        echo '<a class="deactivate btn btn-primary" data-id="' . $jaargang->id . '"><i class="fa fa-ban"></i> Afsluiten</a>';
+                        echo '<a class="deactivate btn btn-primary" data-id="' . $jaargang->id . '" title="Druk hier om het huidige jaargang af te sluiten"><i class="fa fa-ban"></i> Afsluiten</a>';
                     }else{
                         echo 'Deze editie is nog bezig';
                     }
                 }
 
-                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/jaargangbeheer/' . $jaargang->id . '"><i class="fa fa-folder-open-o"></i> Open</a></td>';
+                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/jaargangbeheer/' . $jaargang->id . '" title="Druk hier om alle informatie over dit jaargang te bekijken"><i class="fa fa-folder-open-o"></i> Open</a></td>';
             ?>
         </td>
     </tr>
     <?php } ?>
 </table>
 
-<?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i>', array('class' => 'btn btn-primary fab')); ?>
+<?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i>', array('class' => 'btn btn-primary fab', 'title' => 'Druk hier om een nieuw jaargang te starten')); ?>
 
 <script>
     $(document).ready(function () {
