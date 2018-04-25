@@ -22,7 +22,7 @@ function ajaxplaats(id){
                     
                     $('#naam').val(data['naam']);
                     $('#locatie').val(data['locatie']);
-                    $('#id').val(id);
+                    $('#id').val(data['id']);
                     
                 }, error: function (xhr, status, error) {
 
