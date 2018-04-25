@@ -43,7 +43,7 @@ class Mail extends CI_Controller {
             $persoonIds = $this->mailreminder_model->get_PersonenInReminder($mailReminder->id);
             foreach ($persoonIds as $persoonId)
             {
-                $persoon = $this->persoon_model->get($persoonId->persoonId);
+                $persoon = $this->persoon_model->get_byId($persoonId->persoonId);
                 //TODO: Maak vulsjabloon()
 
                 $mailObject = $this->mailjet->maakBerichtObject($persoon->mail, $persoon->naam, $mailsjabloon->naam, $mailsjabloon->inhoud, $mailsjabloon->inhoud);
