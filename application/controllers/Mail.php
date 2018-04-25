@@ -31,8 +31,17 @@ class Mail extends CI_Controller {
     public function remindervandaag()
     {
         $this->load->model('mailreminder_model');
+        $this->load->model('persoon_model');
         $vandaag = date('Y-m-d');
         $mailRemindersVandaag = $this->mailreminder_model->get_HerinneringDag($vandaag);
+        foreach ($mailRemindersVandaag as $mailReminder) {
+            $ontvangers = array();
+            $persoonIds = $this->mailreminder_model->get_PersonenInReminder($mailReminder->id);
+            foreach ($persoonIds as $persoonId) {
+                echo json_encode($this->persoon_model->get_byId($persoonIds->id));
+
+            }
+        }
         echo json_encode($mailRemindersVandaag);
     }
     public function voegtoe()
