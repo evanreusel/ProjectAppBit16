@@ -56,9 +56,15 @@ class Docent extends CI_Controller {
 
 		// Get data for view
 		switch($view){
-			case "inschrijven":													
-						
-				break;
+			case "inschrijvingshiften":
+				//haal het actief jaar op.													
+				$this->load->model('jaargang_model');
+				$data['actiefJaar']=$this->jaargang_model->getActief();
+				
+				//zoek keuzemogelijkheden
+				$this->load->model('keuzemogelijkheid_model');
+				$data['keuzemogelijkheden']=$this->keuzemogelijkheid_model->getAll_byJaargangId($data['actiefJaar']->id);
+			break;
 		}
 
 		// Set view
