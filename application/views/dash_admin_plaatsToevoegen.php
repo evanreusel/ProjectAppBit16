@@ -9,10 +9,10 @@
 function ajaxplaats(id){
             
                 console.log("click");
-                console.log('site_url(); ?>/plaats/jsonplaats/' + id);
+                console.log('/plaats/jsonplaats/' + id);
             
             $.ajax({
-                url: '<?= site_url(); ?>/plaats/jsonplaats/' + id,
+                url: '<? echo site_url(); ?>/plaats/jsonplaats/' + id,
                 async: false,
                 type: "GET",
                 dataType:'json',
@@ -22,7 +22,7 @@ function ajaxplaats(id){
                     
                     $('#naam').val(data['naam']);
                     $('#locatie').val(data['locatie']);
-                    $('#id').val(data['id']);
+                    $('#pId').val(id.toString());
                     
                 }, error: function (xhr, status, error) {
 
@@ -73,7 +73,7 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
         'class' => 'form-control',
         'required' => 'required'));
 
-        echo form_hidden(array('id'=>'id', 'value' => $locatieId, 'name'=>'id'));
+        echo form_hidden(array('id'=>'pId', 'value' => $locatieId, 'name'=>'id'));
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();
