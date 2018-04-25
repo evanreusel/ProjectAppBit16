@@ -45,7 +45,7 @@ class Plaats extends CI_Controller {
         $data['view'] = 'plaatsToevoegen';
         $this->load->model('plaats_model');
         
-        if ($plaats->id == 0) {
+        if ($plaats->id > 0) {
             $this->plaats_model->insert($plaats);
         } else {
             $this->plaats_model->update($plaats);
