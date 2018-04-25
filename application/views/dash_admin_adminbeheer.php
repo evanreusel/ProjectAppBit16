@@ -12,7 +12,7 @@
     <?php
         foreach($data['admins'] as $admin){
             echo "<tr><td><p>" . $admin->username . '</p></td>
-            <td colspan="2">' . anchor("admin/dash/adminupdate/$admin->id",'<i class="fa fa-cog mr-1"></i> Edit', array('class' => 'btn btn-round btn-warning')) . "</td>
+            <td colspan="2">' . anchor("admin/dash/adminupdate/$admin->id",'<i class="fa fa-edit mr-1"></i> Edit', array('class' => 'btn btn-round btn-warning')) . "</td>
             </tr>";
         };
     ?>
