@@ -32,17 +32,27 @@ class Mail extends CI_Controller {
     {
         $this->load->model('mailreminder_model');
         $this->load->model('persoon_model');
+        $this->load->model('mailsjabloon_model');
+        $this->load->library('mailjet');
         $vandaag = date('Y-m-d');
         $mailRemindersVandaag = $this->mailreminder_model->get_HerinneringDag($vandaag);
-        foreach ($mailRemindersVandaag as $mailReminder) {
+        foreach ($mailRemindersVandaag as $mailReminder)
+        {
+            $mailsjabloon = $this->mailsjabloon_model->get($mailReminder->sjabloonId);
             $ontvangers = array();
             $persoonIds = $this->mailreminder_model->get_PersonenInReminder($mailReminder->id);
-            foreach ($persoonIds as $persoonId) {
-                echo json_encode($this->persoon_model->get($persoonId->persoonId));
+            foreach ($persoonIds as $persoonId)
+            {
+                $persoon = $this->persoon_model->get($persoonId->persoonId);
+                //TODO: Maak vulsjabloon()
 
+                $mailObject = $this->mailjet->maakBerichtObject($persoon->mail, $persoon->naam, $mailsjabloon->naam, $mailsjabloon->inhoud, $mailsjabloon->inhoud);
+                $this->mailjet->voegBerichtObjectToe($mailObject);
             }
+        echo json_encode($this->mailjet->toonBerichtObject());
         }
-        echo json_encode($mailRemindersVandaag);
+        //echo json_encode($mailRemindersVandaag);
+        //{"id":"1","naam":"Greif Matthias","adres":"","woonplaats":"","nummer":"R0656559","mail":"r0656559@student.thomasmore.be","soort":"STUDENT","token":"0prol2vZH3IgYBMapBI2","jaarId":"1"}
     }
     public function voegtoe()
     {
