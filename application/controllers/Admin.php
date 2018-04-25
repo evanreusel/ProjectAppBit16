@@ -294,8 +294,6 @@ class Admin extends CI_Controller {
         $admin->id = $this->input->post('id', TRUE);
         $admin->username = $this->input->post('username', TRUE);
 		$admin->pass =  password_hash($this->input->post('nieuwpass', TRUE), PASSWORD_DEFAULT);
-		
-		print_r($admin);
 
 		// Check data
         $this->load->model('beheer_model');
