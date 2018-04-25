@@ -25,22 +25,32 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     
     <h2>Keuzemogelijkheid toevoegen voor jaar <?php echo $jaargang->naam; ?>:</h2>
-    </br>
-    <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
-    <input id="keuzemogelijkheid" name="naam" type="text" value="">
-    </br>
-    <label for="plaats">Plaats:</label>
-    <?php echo form_dropdown("plaats", $plaats) ?>
-    </br>
-    <label for="begin">Begin datum en tijdstip:</label>
-    <input id="begin" name="beginTijdstip" size="16" type="text" value="" readonly class="form_datetime">
-    </br>
-    <label for="einde">Eind datum en tijdstip:</label>
-    <input id="einde" name="eindTijdstip" size="16" type="text" value="" readonly class="form_datetime">
-    </br>
-    <label for="deadline">Datum en tijdstip voor deadline:</label>
-    <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="" readonly class="form_datetime">
-    </br>
+
+    <div class="md-form">
+        <input type="text" name="naam" id="keuzemogelijkheid" class="form-control">
+        <label for="keuzemogelijkheid">Naam:</label>
+    </div>
+
+    <div class="md-form">
+        <?php echo form_dropdown("plaats", $plaats) ?>
+        <label for="plaats">Plaats:</label>
+    </div>
+
+    <div class="md-form">
+        <input id="begin" name="beginTijdstip" size="16" type="text" readonly class="form_datetime">
+        <label for="begin">Begin datum en tijdstip:</label>
+    </div>
+
+    <div class="md-form">
+        <input id="einde" name="eindTijdstip" size="16" type="text" readonly class="form_datetime">
+        <label for="einde">Eind datum en tijdstip:</label>
+    </div>
+
+    <div class="md-form">
+        <input id="deadline" name="deadlineTijdstip" size="16" type="text" readonly class="form_datetime">
+        <label for="deadline">Deadline datum en tijdstip:</label>
+    </div>
+
     <?php    
         echo form_hidden('jaar', $jaargang->id);
         echo form_button($arrayparameters);
