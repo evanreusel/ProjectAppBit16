@@ -41,7 +41,7 @@ class Main extends CI_Controller {
                 $this->session->set_userdata('role', $login_return->soort);
 
 				// Redir to specific controller
-                redirect('/' . strtolower($login_return->soort) . '/index', 'location');
+                redirect('/' . strtolower($login_return->soort) . '/dash', 'location');
 			}
         }
 

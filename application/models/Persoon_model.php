@@ -5,12 +5,7 @@ LAST UPDATED: 18 03 30
 PERSOON MODEL
 */
 
-class Persoon_model extends CI_Model {
-    function __construct()
-    {
- 		$this->load->database();
-    }
-    
+class Persoon_model extends CI_Model {    
     function get_byIdAndToken($id, $token)
     {
         $this->db->where(array('id' => $id, 'token' => $token));
@@ -18,7 +13,8 @@ class Persoon_model extends CI_Model {
 
         return $query->result()[0];
     }
-    function get($id)
+
+    function get_byId($id)
     {
         $this->db->where(array('id' => $id));
         $query = $this->db->get('Persoon');

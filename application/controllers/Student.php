@@ -20,14 +20,48 @@ class Student extends CI_Controller {
 			redirect('/main/index', 'location');
 		}
 	}
-	
-	// DEFAULT
-	public function index()
-	{
-		// Load dash view
-		$data['message'] = "Welcome Student";
-	    $data['view'] = 'dash_student';
-		$data['css_files'] = array("dash_student.css");
+
+	public function dash($view = null, $extras = null){
+		// Load models
+		$this->load->model('persoon_model');
+
+		// Load logged in user
+		$data['user'] = $this->persoon_model->get_byId($this->session->userdata('id'));
+
+		// Check if dashboard view is requested else default homeview
+		if(is_null($view) )
+		{
+			$view = 'index';
+		}
+
+		// Load view
+		$data['message'] = 'Hello there ' . $data['user']->username . ' | Dash';// Title
+		$data['css_files'] = array("dash.css");									// Default dash style
+
+		$data['primaryColor'] = 'blue';											// Primary color (purple for admin, blue for others??)
+		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
+		$data['homelink'] = base_url() . 'index.php/student/dash/';				// Dash homepage
+		$data['links'] = [														// Available links for navbar
+			// [
+			// 	'title' => 'Jaargang',
+			// 	'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
+			// ]
+		];
+		$data['actions'] = [
+			// [
+			// 	'title' => 'Administrators beheren',
+			// 	'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
+			// ]
+		];
+
+		// Get data for view
+		switch($view){
+			
+		}
+
+		// Set view
+		$data['view'] = 'dash_student_' . $view;
+
 		$this->load->view('template/main', $data);
 	}
 }
