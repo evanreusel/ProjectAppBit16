@@ -48,6 +48,7 @@
 
 		$.get('<?php echo base_url(); ?>index.php/admin/login/' + $('#inpUsername').val() + '/' + $('#inpPass').val(), function (data) {
 			if(data != ''){
+				console.log(data);
 				// window.location.href = '<?php echo base_url(); ?>index.php/admin/dash/';
 			}
 		});
