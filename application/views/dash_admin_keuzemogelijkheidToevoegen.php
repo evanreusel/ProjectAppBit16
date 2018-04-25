@@ -60,7 +60,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <label for="deadline">Deadline datum en tijdstip:</label>
     </div>
 
-    <input id="inpPlaats" type="hidden" name="jaar" value="<?php echo $plaatsen[0]->id; ?>">
+    <input id="inpPlaats" type="hidden" name="plaats" value="<?php echo $plaatsen[0]->id; ?>">
 <!-- =================================================================================================== /GREIF MATTHIAS -->
     <?php
         echo form_hidden('jaar', $jaargang->id);
