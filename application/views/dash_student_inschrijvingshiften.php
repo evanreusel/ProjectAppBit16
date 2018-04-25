@@ -1,6 +1,6 @@
 <?php foreach($keuzemogelijkheden as $activiteit) {
 
-    echo '<div class="shiften panel panel-primary"><div class="panel-heading">'.$activiteit->naam.'</div><div class="panel-body"><ul class="list-group">';
+    echo '<div class="shiften card card-primary"><div class="card-heading">'.$activiteit->naam.'</div><div class="card-body"><ul class="list-group">';
     foreach ($activiteit->taken as $taak) {
         echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$taak->functie.':</b></p><ul class="list-group">';
         foreach ($taak->shiften as $shift ) {
