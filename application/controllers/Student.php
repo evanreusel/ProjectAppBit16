@@ -42,10 +42,10 @@ class Student extends CI_Controller {
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/student/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
-			// [
-			// 	'title' => 'Jaargang',
-			// 	'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
-			// ]
+			[
+				'title' => 'Shiften',
+				'url' => base_url() . 'index.php/admin/dash/inschrijvingshiften'
+			]
 		];
 		$data['actions'] = [
 			// [
@@ -56,6 +56,9 @@ class Student extends CI_Controller {
 
 		// Get data for view
 		switch($view){
+			case "inschrijvingshiften":													
+						
+			break;
 			
 		}
 
