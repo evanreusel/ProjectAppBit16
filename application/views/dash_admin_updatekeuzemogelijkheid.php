@@ -49,7 +49,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         echo form_hidden('id', $keuzemogelijkheid->id);
         echo form_button($arrayparameters);
         echo form_close();
-        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargengId,'Annuleer','class="btn btn-primary"');
+        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId,'Annuleer','class="btn btn-primary"');
     ?>
     
     <script type="text/javascript">
