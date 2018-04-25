@@ -47,14 +47,27 @@ class csv_model extends CI_Model
             
             $persoon = new stdClass();
             
-            $persoon = array(
-                'naam' => $data[$naamindex],
-                'nummer' => $data[$nummerindex],
-                'mail' => $data[$mailindex],
-                'adres' => $data[$adresindex],
-                'woonplaats' => $data[$woonplaatsindex],
-                'soort' => $soort
-               );
+             if($naamindex != null){
+            $persoon->naam = $data[$naamindex];
+            };
+
+            if($nummerindex != null){
+            $persoon->nummer = $data[$nummerindex];
+            };
+
+             if($mailindex != null){
+            $persoon->mail = $data[$mailindex];
+            };
+
+             if($adresindex != null){
+            $persoon->adres = $data[$adresindex];
+            };
+
+             if($woonplaatsindex != null){
+            $persoon->woonplaats = $data[$nummerindex];
+            };
+
+            $persoon->soort = $soort;
 
             //voeg de gelezen persoon toe
             $this->load->model("Persoon_model");

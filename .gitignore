@@ -12,3 +12,5 @@ application/routes.php
 application/autoload.php
 application/config/database.php
 /nbproject/private/
+application/config/config.php
+application/config/routes.php

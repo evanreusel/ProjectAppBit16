@@ -26,9 +26,9 @@ class Persoon_model extends CI_Model {
         //haal het huidige jaargangid op om later te koppelen aan de persoon
         $this->load->model("Jaargang_model");
         $jaargang = $this->Jaargang_model->getActief();
-        $persoon['jaarid'] = $jaargang->id;
+        $persoon->jaarid = $jaargang->id;
 
-        $persoon['token'] = $this->generatetoken();
+        $persoon->token = $this->generatetoken();
 
         $this->db->insert('persoon', $persoon);
     }
@@ -136,6 +136,14 @@ class Persoon_model extends CI_Model {
         }
 
         return $vrijwilligers;
+    }
+    
+    function getAll($id)
+    {
+
+        $query = $this->db->get('Persoon');
+
+        return $query->result();
     }
 }
 ?>
