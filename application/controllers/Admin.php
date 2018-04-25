@@ -242,8 +242,6 @@ class Admin extends CI_Controller {
 			$this->load->model('beheer_model');
 			$login_return = $this->beheer_model->login($username, $pass);
 
-			echo $login_return;
-
 			// Set session vars if succeeded
 			if($login_return != ''){
 				$this->session->set_userdata('id', $login_return->id);
