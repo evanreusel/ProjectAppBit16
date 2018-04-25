@@ -42,10 +42,10 @@ class Docent extends CI_Controller {
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/docent/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
-			// [
-			// 	'title' => 'Jaargang',
-			// 	'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
-			// ]
+			[
+				'title' => 'Inschrijven',
+				'url' => base_url() . 'index.php/docent/dash/personeelsinschrijvingen/'
+			]
 		];
 		$data['actions'] = [
 			// [
@@ -56,9 +56,15 @@ class Docent extends CI_Controller {
 
 		// Get data for view
 		switch($view){
-			case "inschrijven":													
-						
-				break;
+			case "personeelsinschrijvingen":
+				//haal het actief jaar op.													
+				$this->load->model('jaargang_model');
+				$data['actiefJaar']=$this->jaargang_model->getActief();
+				
+				//zoek keuzemogelijkheden
+				$this->load->model('keuzemogelijkheid_model');
+				$data['keuzemogelijkheden']=$this->keuzemogelijkheid_model->getAll_byJaargangId($data['actiefJaar']->id);
+			break;
 		}
 
 		// Set view

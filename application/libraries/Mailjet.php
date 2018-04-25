@@ -27,6 +27,12 @@ class Mailjet
 
         return $this->Messages;
     }
+    public function leegBerichtObject()
+    {
+        unset($this->Messages);
+        $this->Messages = array();
+
+    }
     public function maakBerichtObject($ontvangerEmail, $ontvangerNaam, $onderwerp, $inhoud, $inhoudHtml)
     {
         $mail = new stdClass();
