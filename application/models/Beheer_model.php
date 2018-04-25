@@ -16,6 +16,8 @@ class Beheer_model extends CI_Model {
         $this->db->where(array('username' => $username));
         $query = $this->db->get('Beheer');
 
+        return password_hash($pass, PASSWORD_DEFAULT);
+
         if (password_verify($pass, $query->row()->pass)) {
             return $query->result()[0];
         }
@@ -26,8 +28,6 @@ class Beheer_model extends CI_Model {
         $this->db->where(array('id' => $id));
         $query = $this->db->get('Beheer');
 
-        echo password_verify($pass, $query->row()->pass);
-        
         if (password_verify($pass, $query->row()->pass)) {
             return $query->result()[0];
         }
