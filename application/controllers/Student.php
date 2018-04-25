@@ -1,6 +1,6 @@
 <!-- 
     GREIF MATTHIAS
-	LAST UPDATED: 18 03 30
+	LAST UPDATED: 18 04 25
 	STUDENT CONTROLLER
 -->
 
@@ -35,7 +35,7 @@ class Student extends CI_Controller {
 		}
 
 		// Load view
-		$data['message'] = 'Hello there ' . $data['user']->username . ' | Dash';// Title
+		$data['message'] = 'Hello there ' . $data['user']->naam . ' | Dash';// Title
 		$data['css_files'] = array("dash.css");									// Default dash style
 
 		$data['primaryColor'] = 'blue';											// Primary color (purple for admin, blue for others??)

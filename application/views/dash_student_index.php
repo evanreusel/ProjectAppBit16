@@ -5,5 +5,5 @@
 -->
 
 <h1>
-    Hi <?php echo $user->username; ?>, What do you want to do??
+    Hi <?php echo $user->naam; ?>, What do you want to do??
 </h1>
