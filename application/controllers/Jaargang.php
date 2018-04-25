@@ -44,6 +44,7 @@ class Jaargang extends CI_Controller{
             $jaargang->actief = 1;
         }
         
+        // Check vals
         if($this->input->post('naam', TRUE) != null){
             $jaargang->naam = $this->input->post('naam', TRUE);
         }
@@ -73,7 +74,7 @@ class Jaargang extends CI_Controller{
         }
 
         // Redir
-        redirect('admin/jaargangoverzicht');
+        redirect('admin/dash/jaargangoverzicht');
     }
     
     // API
