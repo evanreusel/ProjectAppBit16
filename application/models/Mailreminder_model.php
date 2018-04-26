@@ -15,7 +15,7 @@ class Mailreminder_model extends CI_Model {
     }
     function getAll() {
         $this->db->order_by('timer', 'asc');
-        $query = $this->db->get('Mailreminder');
+        $query = $this->db->get('MailReminder');
         return $query->result();
 
     }
