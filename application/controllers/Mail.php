@@ -64,6 +64,15 @@ class Mail extends CI_Controller {
         $data['message'] = "Welcome admin | Login";
         $data['css_files'] = array();
         $data['view'] = 'mail_overzicht';
+        $this->load->model('mailreminder_model');
+        $this->load->model('mailsjabloon_model');
+        $reminders = $this->mailreminder_model->getAll();
+        foreach ($reminders as $reminder) {
+            $reminder->ontvangers =  $this->mailreminder_model->getPersonenInReminder($reminder->id);
+            $reminder->sjabloon = $this->mailsjabloon_model->get($reminder->sjabloonId);
+
+        }
+        $data['reminders'] = $reminders;
         //$data['css_files'] = array("login.css");
         $data['clearscreen'] = true;
 
