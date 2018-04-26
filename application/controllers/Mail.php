@@ -68,7 +68,7 @@ class Mail extends CI_Controller {
         $this->load->model('mailsjabloon_model');
         $reminders = $this->mailreminder_model->getAll();
         foreach ($reminders as $reminder) {
-            $reminder->ontvangers =  $this->mailreminder_model->getPersonenInReminder($reminder->id);
+            $reminder->ontvangers =  $this->mailreminder_model->get_PersonenInReminder($reminder->id);
             $reminder->sjabloon = $this->mailsjabloon_model->get($reminder->sjabloonId);
 
         }
