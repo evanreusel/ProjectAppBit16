@@ -58,18 +58,12 @@ class Mail extends CI_Controller {
 
             //echo $this->mailjet->verstuur();
         }
-
-        //echo json_encode($mailRemindersVandaag);
-        //{"id":"1","naam":"Greif Matthias","adres":"","woonplaats":"","nummer":"R0656559","mail":"r0656559@student.thomasmore.be","soort":"STUDENT","token":"0prol2vZH3IgYBMapBI2","jaarId":"1"}
-    }
-    public function voegtoe()
+}
+    public function overzicht()
     {
         $data['message'] = "Welcome admin | Login";
         $data['css_files'] = array();
-        $data['view'] = 'mail_voegtoe';
-        $this->load->model('mailsjabloon_model');
-        $data['sjablonen'] = $this->mailsjabloon_model->getAll();
-        $data['ontvangers'] = array("STUDENT", "DOCENTEN");
+        $data['view'] = 'mail_overzicht';
         //$data['css_files'] = array("login.css");
         $data['clearscreen'] = true;
 
