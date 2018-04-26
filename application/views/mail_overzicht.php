@@ -15,13 +15,14 @@
         <tbody>
         <?php foreach ($reminders as $reminder) {
         ?>
-
+            <tr>
             <td><?php echo $reminder->timer?></td>
             <td><?php echo count($reminder->ontvangers)?> ontvangers</td>
             <td><?php echo $reminder->sjabloon->naam?></td>
             <td><?php echo $reminder->sjabloon->naam?></td>
             <td><?php echo $reminder->status?></td>
             <td></td>
+            </tr>
         <?php }?>
         </tbody>
     </table>
