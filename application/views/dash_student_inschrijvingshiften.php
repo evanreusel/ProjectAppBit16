@@ -17,11 +17,12 @@
 <script>
 $(document).ready(function(){
     $(".btn").click(function(){
+        var shiftId = $(this).val();
         $.ajax({
-                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ $(this).val() +'/' + <?= echo $user->id; ?>,
+                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        $('#test').text(data);
+                        $('#test').text("succes");
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
