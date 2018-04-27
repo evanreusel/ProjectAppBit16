@@ -33,6 +33,7 @@
                 if($jaargang->actief == 0){
                     echo "Afgesloten";
                 }else{
+                    $isnotcompleted = true;
                     if(new DateTime($jaargang->beginTijdstip) < new DateTime() && new DateTime($jaargang->eindTijdstip) < new DateTime())
                     {
                         echo '<a class="deactivate btn btn-primary" data-id="' . $jaargang->id . '" title="Druk hier om het huidige jaargang af te sluiten"><i class="fa fa-ban"></i> Afsluiten</a>';
@@ -48,7 +49,11 @@
     <?php } ?>
 </table>
 
-<?php echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i>', array('class' => 'btn btn-primary fab', 'title' => 'Druk hier om een nieuw jaargang te starten')); ?>
+<?php
+    if(!isset($isnotcompleted)){
+        echo anchor("admin/dash/jaargangupdate/",'<i class="fa fa-plus"></i>', array('class' => 'btn btn-primary fab', 'title' => 'Druk hier om een nieuw jaargang te starten'));
+    }
+?>
 
 <script>
     $(document).ready(function () {

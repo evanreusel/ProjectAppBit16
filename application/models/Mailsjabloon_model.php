@@ -7,8 +7,15 @@
 <?php
 class Mailsjabloon_model extends CI_Model {
 
+    function get($id)
+    {
+        $this->db->where(array('id' => $id));
+        $query = $this->db->get('Mailsjabloon');
+
+        return $query->result()[0];
+    }
     function getAll() {
-        $this->db->order_by('naam', 'asc');
+        $this->db->order_by('timer', 'asc');
         $query = $this->db->get('Mailsjabloon');
         return $query->result();
     }

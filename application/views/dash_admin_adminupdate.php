@@ -96,18 +96,18 @@
 
     <!-- =================================================================================================== GREIF MATTHIAS -->
     <div class="md-form">
-        <input type="text" id="username" class="form-control" <?php if (isset($data['admin'])) echo 'value=' . $data['admin']->username; ?>>
+        <input type="text" name="username" id="username" class="form-control" <?php if (isset($data['admin'])) echo 'value=' . $data['admin']->username; ?>>
         <label for="username">Gebruikersnaam:</label>
     </div>
 
     <div class="md-form">
-        <input type="password" id="nieuwpass" class="form-control">
-        <label for="nieuwpass"><?php if (!isset($data['admin'])) echo 'nieuwe '; ?>Wachtwoord:</label>
+        <input type="password" id="nieuwpass" name="nieuwpass" class="form-control">
+        <label for="nieuwpass"><?php if (!isset($data['admin'])){ echo 'Nieuw wachtwoord:'; }else{ echo 'Wachtwoord:'; }?></label>
     </div>
     
     <div class="md-form">
         <input type="password" id="nieuwpasscheck" class="form-control">
-        <label for="nieuwpasscheck">Bevestig <?php if (!isset($data['admin'])) echo 'nieuwe '; ?>wachtwoord:</label>
+        <label for="nieuwpasscheck">Bevestig <?php if (!isset($data['admin'])) echo 'nieuw '; ?>wachtwoord:</label>
     </div>
     <div id="nieuwpasserror">
         <label for="nieuwpasscheck" style="color:red">Gelieve een wachtwoord in te vullen</label>

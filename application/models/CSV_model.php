@@ -20,23 +20,19 @@ class csv_model extends CI_Model
             if($count == 1)
             {
                 //lees de 1ste lijn van de file
-                $csvheaders = "dummy\t";
+                $csvheaders = "ring\t";
                 $csvheaders .= $csv_line[0];
                 //klaarmaken om de headers te splitsen
                 $csvheaders = str_replace(";","\t",$csvheaders);
                 $csvheaders = str_replace(" ","",$csvheaders);
-                echo $csvheaders;
                 //splits de headers
                 $headers = explode("\t",$csvheaders);
-                echo "<br/>" . print_r($headers);
-                echo "<br/>" . $headers[1];
                 //slaag de index van de headers op voor later
                 $naamindex = array_search("naam",$headers);
                 $nummerindex = array_search("nummer",$headers);
                 $mailindex = array_search("mail",$headers);
                 $adresindex = array_search("adres",$headers);
                 $woonplaatsindex = array_search("woonplaats",$headers);
-                echo "<br/>" . array_search("woonplaats",$headers);
                 continue;
 
             }

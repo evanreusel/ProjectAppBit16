@@ -6,30 +6,25 @@
 
 <script>
 
-function ajaxplaats(id){
-            
-                console.log("click");
-                console.log('/plaats/jsonplaats/' + id);
-            
-            $.ajax({
-                url: '<? echo site_url(); ?>/plaats/jsonplaats/' + id,
-                async: false,
-                type: "GET",
-                dataType:'json',
-                success: function(data){        
-                console.log("ok");         
-                console.log(data);   
-                    
-                    $('#naam').val(data['naam']);
-                    $('#locatie').val(data['locatie']);
-                    $('#pId').val(id.toString());
-                    
-                }, error: function (xhr, status, error) {
+function ajaxplaats(plaatsId){
+    console.log("<?php echo site_url(); ?>" + '/plaats/jsonplaats/' + plaatsId);
 
-                    alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+    $.ajax({
+        url: '<?php echo site_url(); ?>/plaats/jsonplaats/' + plaatsId,
+        async: false,
+        type: "GET",
+        dataType:'json',
+        success: function(data){            
+            $('#naam').val(data['naam']);
+            $('#locatie').val(data['locatie']);
+            $('#pId').val(data['id']);
+            
+        }, error: function (xhr, status, error) {
 
-                }
-            });
+            alert("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+
+        }
+    });
 }
 
 </script>
@@ -72,8 +67,9 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
         'value' =>$locatieTest,
         'class' => 'form-control',
         'required' => 'required'));
-
-        echo form_hidden(array('id'=>'pId', 'value' => $locatieId, 'name'=>'id'));
+    ?>
+        <input type="hidden" value="<?php echo $locatieId; ?>" name="id" id="pId">
+    <?php
 
     echo form_submit('knop', 'Verzenden');
     echo form_close();

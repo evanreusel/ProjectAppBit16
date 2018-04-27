@@ -44,6 +44,7 @@ class Jaargang extends CI_Controller{
             $jaargang->actief = 1;
         }
         
+        // Check vals
         if($this->input->post('naam', TRUE) != null){
             $jaargang->naam = $this->input->post('naam', TRUE);
         }
@@ -63,8 +64,8 @@ class Jaargang extends CI_Controller{
         if($this->input->post('eindTijdstip', TRUE) != null){
             $jaargang->eindTijdstip = $this->input->post('eindTijdstip', TRUE);
         }
-        
-        if(isset($jaargang->$id)){
+
+        if(isset($jaargang->id)){
             // Update db
             $this->jaargang_model->update($jaargang);
         }else{
@@ -73,7 +74,7 @@ class Jaargang extends CI_Controller{
         }
 
         // Redir
-        redirect('admin/jaargangoverzicht');
+        redirect('admin/dash/jaargangoverzicht');
     }
     
     // API

@@ -2,6 +2,7 @@
 laatstgesorteerd = "";
 asc = true;
 
+//hide alle elementen met een hidden class
 function hide(){
 $("tr").each(function(){
     if($(this).is('[class*="hidden"]')){
@@ -12,6 +13,7 @@ $("tr").each(function(){
 });
 }
 
+//zoek een element in de table
 function search(){
 $(".search").keyup(function(){
     waarde = $(this).val().toLowerCase();

@@ -42,10 +42,10 @@ class Student extends CI_Controller {
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/student/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
-			// [
-			// 	'title' => 'Jaargang',
-			// 	'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
-			// ]
+			[
+				'title' => 'Shiften',
+				'url' => base_url() . 'index.php/student/dash/inschrijvingshiften'
+			]
 		];
 		$data['actions'] = [
 			// [
@@ -56,7 +56,25 @@ class Student extends CI_Controller {
 
 		// Get data for view
 		switch($view){
-			
+			case "inschrijvingshiften":
+				//haal het actief jaar op.													
+				$this->load->model('jaargang_model');
+				$data['actiefJaar']=$this->jaargang_model->getActief();
+				
+				//zoek keuzemogelijkheden
+				$this->load->model('keuzemogelijkheid_model');
+				$data['keuzemogelijkheden']=$this->keuzemogelijkheid_model->getAll_byJaargangId($data['actiefJaar']->id);
+				foreach ($data['keuzemogelijkheden'] as $keuzemogelijkheid) {
+					$this->load->model('taken_model');
+					$keuzemogelijkheid->taken = $this->taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+					foreach ($keuzemogelijkheid->taken as $taak) {
+						$this->load->model('Shiften_model');
+						$taak->shiften=$this->Shiften_model->getAllByNaamWhereTaakId($taak->id);
+					}
+				}
+				$this->load->model('VrijwilligersInShift_model');
+				$data['ingeschreven']= $this->VrijwilligersInShift_model->get_byPersoonId($data['user']->id);
+			break;
 		}
 
 		// Set view

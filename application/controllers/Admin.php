@@ -26,8 +26,9 @@ class Admin extends CI_Controller {
 
 		// Homepage check
 		if(!$is_home && !$is_api_login){
+			$this->load->model('beheer_model');
 			// Redirect to home if no session started
-			if(!$this->session->has_userdata('id')){
+			if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
 				redirect('/admin/index', 'location');
 			}
 		}
@@ -300,7 +301,7 @@ class Admin extends CI_Controller {
 
         $admin->id = $this->input->post('id', TRUE);
         $admin->username = $this->input->post('username', TRUE);
-        $admin->pass =  password_hash($this->input->post('nieuwpass', TRUE), PASSWORD_DEFAULT);
+		$admin->pass =  password_hash($this->input->post('nieuwpass', TRUE), PASSWORD_DEFAULT);
 
 		// Check data
         $this->load->model('beheer_model');

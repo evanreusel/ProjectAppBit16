@@ -1,6 +1,6 @@
 <!-- 
     GREIF MATTHIAS 
-	LAST UPDATED: 18 03 30
+	LAST UPDATED: 18 04 25
 	DOCENT CONTROLLER
 -->
 
@@ -21,13 +21,55 @@ class Docent extends CI_Controller {
 		}
 	}
 	
-	// DEFAULT
-	public function index()
-	{
-		// Load dash view
-		$data['message'] = "Welcome Docent";
-	    $data['view'] = 'dash_docent';
-		$data['css_files'] = array("dash_docent.css");
+	public function dash($view = null, $extras = null){
+		// Load models
+		$this->load->model('persoon_model');
+
+		// Load logged in user
+		$data['user'] = $this->persoon_model->get_byId($this->session->userdata('id'));
+
+		// Check if dashboard view is requested else default homeview
+		if(is_null($view) )
+		{
+			$view = 'index';
+		}
+
+		// Load view
+		$data['message'] = 'Hello there ' . $data['user']->naam . ' | Dash';	// Title
+		$data['css_files'] = array("dash.css");									// Default dash style
+
+		$data['primaryColor'] = 'blue';											// Primary color (purple for admin, blue for others??)
+		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
+		$data['homelink'] = base_url() . 'index.php/docent/dash/';				// Dash homepage
+		$data['links'] = [														// Available links for navbar
+			[
+				'title' => 'Inschrijven',
+				'url' => base_url() . 'index.php/docent/dash/personeelsinschrijvingen/'
+			]
+		];
+		$data['actions'] = [
+			// [
+			// 	'title' => 'Administrators beheren',
+			// 	'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
+			// ]
+		];
+
+		// Get data for view
+		switch($view){
+			case "personeelsinschrijvingen":
+				//haal het actief jaar op.													
+				$this->load->model('jaargang_model');
+				$data['actiefJaar']=$this->jaargang_model->getActief();
+				
+				//zoek keuzemogelijkheden
+				$this->load->model('keuzemogelijkheid_model');
+				$data['keuzemogelijkheden']=$this->keuzemogelijkheid_model->getAll_byJaargangId($data['actiefJaar']->id);
+			break;
+		}
+
+		// Set view
+		$data['view'] = 'dash_docent_' . $view;
+
 		$this->load->view('template/main', $data);
 	}
 }
