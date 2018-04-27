@@ -1,7 +1,7 @@
 <?php
 /* 
 TIM SWERTS
-LAST UPDATED: 18 03 30
+LAST UPDATED: 27 04 2018 
 DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
 */
 
@@ -30,19 +30,19 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <h2><?php echo $keuzemogelijkheid->naam?> aanpassen:</h2>
     </br>
     <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
-    <?php echo form_input(array('id'=>'keuzemogelijkheid', 'name'=>'naam'),$keuzemogelijkheid->naam); ?>
+    <?php echo form_input(array('id'=>'keuzemogelijkheid', 'name'=>'naam', 'title'=>'Vul hier de naam in die je aan de keuzemogelijkheid wil geven.'),$keuzemogelijkheid->naam); ?>
     </br>
     <label for="plaats">Plaats:</label>
     <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
     </br>
     <label for="begin">Begin datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
+    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE,'title'=>'Vul hier de begin datum in.'),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
     </br>
     <label for="einde">Eind datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
+    <?php echo form_input(array('id'=>'begin', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de eind datum in.'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
     </br>
     <label for="deadline">Datum en tijdstip voor deadline:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'deadlineTijdstip', 'readonly'=>TRUE),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
+    <?php echo form_input(array('id'=>'begin', 'name'=>'deadlineTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de datum in waarop ze ten laatste kunnen inschrijven.'),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
     </br>
     <?php
         echo form_hidden('jaar', $keuzemogelijkheid->jaargangId);

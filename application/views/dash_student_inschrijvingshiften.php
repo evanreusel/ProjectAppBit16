@@ -16,19 +16,12 @@ foreach($keuzemogelijkheden as $activiteit) {
                     if (!isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }
-                    echo '" id="uitschrijven" value="'.$shift->id.'" >Uitschrijven</button>';
-                    echo print_r($ingeschreven);
+                    echo '" id="uitschrijven" value="'.$shift->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
                     echo '<button class="btn btn-primary float-right ';
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
-                    }echo '" id="inschrijven" value="'.$shift->id.'">Inschrijven</button>';
-                    foreach($ingeschreven as $shiftId){
-                        if($shiftId->shiftId == $shift->id){
-                            
-                        }else{
-
-                        }
-                    }
+                    }echo '" id="inschrijven" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
+                    echo '<button id="vrijwilligers" class"btn btn-primary float-right" value="'.$shift->id.'" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
         }     
         echo "</li></ul></li>";
     };
@@ -66,6 +59,20 @@ $(document).ready(function(){
                 success: function(data){                    
                         $('#uitschrijven').hide();
                         $('#inschrijven').show();
+                }, error: function (xhr, status, error) {
+                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                }
+            });
+    });
+
+    $("#vrijwilligers").click(function(){
+        var shiftId = $(this).val();
+        $.ajax({
+                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftWeergeven/'+ shiftId ,
+                type: "GET",
+                async: false,
+                success: function(data){                    
+                        $('#val').html(data);
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }

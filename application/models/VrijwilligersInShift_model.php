@@ -7,6 +7,13 @@ class VrijwilligersInShift_Model extends CI_Model{
         $this->load->database();
 
     }
+
+    function get_byShiftId($id)
+    {
+        $this->db->where('shiftId', $id);
+        $query = $this->db->get('VrijwilligersInShift');
+        return $query->result();
+    }
     
     function get_byPersoonId($id)
     {
@@ -14,6 +21,7 @@ class VrijwilligersInShift_Model extends CI_Model{
         $query = $this->db->get('VrijwilligersInShift');
         return $query->result();
     }
+
     function add($VrijwilligerInShift){
         $this->db->insert('VrijwilligersInShift', $VrijwilligerInShift);
         // return $this->db->insert_id();
