@@ -12,16 +12,16 @@ foreach($keuzemogelijkheden as $activiteit) {
         foreach ($taak->shiften as $shift ) {
                     $id = $shift->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-warning float-right" id="uitschrijven" value="'.$shift->id.'" ';
+                    echo '<button class="btn btn-warning float-right ';
                     if (!isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }
-                    echo '>Uitschrijven</button>';
+                    echo '" id="uitschrijven" value="'.$shift->id.'" >Uitschrijven</button>';
                     echo print_r($ingeschreven);
-                    echo '<button class="btn btn-primary float-right" id="inschrijven" value="'.$shift->id.'" ';
+                    echo '<button class="btn btn-primary float-right ';
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
-                    }echo '>Inschrijven</button>';
+                    }echo '" id="inschrijven" value="'.$shift->id.'">Inschrijven</button>';
                     foreach($ingeschreven as $shiftId){
                         if($shiftId->shiftId == $shift->id){
                             
@@ -39,6 +39,9 @@ foreach($keuzemogelijkheden as $activiteit) {
 <p id="test"></p>
 <script>
 $(document).ready(function(){
+    $('.hidden').each(function(){
+        $(this).hide();
+    })
     $("#inschrijven").click(function(){
         var shiftId = $(this).val();
         $.ajax({
