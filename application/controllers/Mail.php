@@ -58,19 +58,36 @@ class Mail extends CI_Controller {
 
             //echo $this->mailjet->verstuur();
         }
+}
+    public function overzicht()
+    {
+        $data['message'] = "Mail Reminder Overzicht";
+        $data['css_files'] = array();
+        $data['view'] = 'mail_overzicht';
+        $this->load->model('mailreminder_model');
+        $this->load->model('mailsjabloon_model');
+        $reminders = $this->mailreminder_model->getAll();
+        foreach ($reminders as $reminder) {
+            $reminder->ontvangers =  $this->mailreminder_model->get_PersonenInReminder($reminder->id);
+            $reminder->sjabloon = $this->mailsjabloon_model->get($reminder->sjabloonId);
 
-        //echo json_encode($mailRemindersVandaag);
-        //{"id":"1","naam":"Greif Matthias","adres":"","woonplaats":"","nummer":"R0656559","mail":"r0656559@student.thomasmore.be","soort":"STUDENT","token":"0prol2vZH3IgYBMapBI2","jaarId":"1"}
+        }
+        $data['reminders'] = $reminders;
+        //$data['css_files'] = array("login.css");
+        $data['clearscreen'] = true;
+
+        $this->load->view('template/main', $data);
+
     }
     public function voegtoe()
     {
-        $data['message'] = "Welcome admin | Login";
+        $this->load->model('persoon_model');
+        $ontvangers = $this->persoon_model->get_All();
+        $data['ontvangers'] = $ontvangers;
+//        print_r($ontvangers);
+        $data['message'] = "Mail Reminder Toevoegen";
         $data['css_files'] = array();
         $data['view'] = 'mail_voegtoe';
-        $this->load->model('mailsjabloon_model');
-        $data['sjablonen'] = $this->mailsjabloon_model->getAll();
-        $data['ontvangers'] = array("STUDENT", "DOCENTEN");
-        //$data['css_files'] = array("login.css");
         $data['clearscreen'] = true;
 
         $this->load->view('template/main', $data);

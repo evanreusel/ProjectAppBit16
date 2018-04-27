@@ -15,7 +15,7 @@ class Mailsjabloon_model extends CI_Model {
         return $query->result()[0];
     }
     function getAll() {
-        $this->db->order_by('naam', 'asc');
+        $this->db->order_by('timer', 'asc');
         $query = $this->db->get('Mailsjabloon');
         return $query->result();
     }
