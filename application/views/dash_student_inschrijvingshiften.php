@@ -7,8 +7,8 @@ foreach($keuzemogelijkheden as $activiteit) {
             
 
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-warning float-right inschrijven" id="'.$shift->id.'">Uitschrijven</button>';
-                    echo '<button class="btn btn-primary float-right inschrijven" id="'.$shift->id.'">Inschrijven</button>';
+                    echo '<button class="btn btn-warning float-right" id="'.$shift->id.'">Uitschrijven</button>';
+                    echo '<button class="btn btn-primary float-right" id="'.$shift->id.'">Inschrijven</button>';
         }     
         echo "</li></ul></li>";
     };
