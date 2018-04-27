@@ -133,7 +133,7 @@
 </p>
 <p>Hier krijgt de administrator een lijst te zien met alle mails die zullen worden verzonden. Per mail kan de administrator zien wanneer hij zal worden verzonden, het aantal ontvangers (waarop hij/zij kan klikken om te kijken wie die ontvangers zijn), het onderwerp van de mail, het sjabloon dat werd gebruikt om de mail op te stellen en de status (verstuurd of niet verstuurd). Rechts kan de administrator per mail op de knop ‘wijzig’ klikken om al deze variabelen aan te passen. Hij kan ook klikken op ‘verwijder’ als hij een mail uit de lijst wenst te verwijderen.
 </p>
-<h4>1.5	Sessie beëndigen0/<h4>
+<h4>1.5	Sessie beëndigen</h4>
 <p>De administrator kan – wanneer hij klaar is met werken aan het personeelsfeest – zijn/haar sessie beëindigen. Dit doet hij/zij door op het pijltje te klikken in de navigatiebalk:
 </p>
 <p>Hier klikt de administrator op ‘afmelden’. De sessie wordt beëindigd en de administrator wordt weer naar de startpagina gestuurd.
