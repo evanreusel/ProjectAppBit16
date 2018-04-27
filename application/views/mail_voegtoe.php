@@ -8,6 +8,7 @@
         <div class="card-body">
             <table class="table">
                 <thead>
+                <th></th>
                 <th>Naam</th>
                 <th>Email</th>
                 <th>Soort</th>
@@ -20,10 +21,11 @@
             {
                 ?>
                     <tr>
-                        <td><?php echo $ontvanger->naam?></td>
-                        <td><?php echo $ontvanger->mail?></td>
-                        <td><?php echo $ontvanger->soort?></td>
-                        <td><?php echo $ontvanger->nummer?></td>
+                        <td><input type="checkbox"> </td>
+                        <td class="naam"><?php echo $ontvanger->naam?></td>
+                        <td class="mail"><?php echo $ontvanger->mail?></td>
+                        <td class="soort"><?php echo $ontvanger->soort?></td>
+                        <td class="nummer"><?php echo $ontvanger->nummer?></td>
                     </tr>
                 <?php
             }
