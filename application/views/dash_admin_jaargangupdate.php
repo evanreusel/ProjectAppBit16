@@ -47,6 +47,7 @@ DASH ADMIN JAARGANG ADD/UPDATE
 </div>
 
 <div class="md-form">
+    <input type="date">
     <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults['eindTijdstip']; ?>" readonly class="form_datetime">
     <label for="einde">Eind datum en tijdstip:</label>
 </div>
