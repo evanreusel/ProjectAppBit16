@@ -22,13 +22,7 @@ foreach($keuzemogelijkheden as $activiteit) {
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }echo '" id="inschrijven" value="'.$shift->id.'">Inschrijven</button>';
-                    foreach($ingeschreven as $shiftId){
-                        if($shiftId->shiftId == $shift->id){
-                            
-                        }else{
-
-                        }
-                    }
+                    echo '<button class"btn btn-primary float-right" value="'.$shift->id.'">Vrijwilligers</button>';
         }     
         echo "</li></ul></li>";
     };
