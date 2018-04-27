@@ -4,11 +4,17 @@ foreach($keuzemogelijkheden as $activiteit) {
     foreach ($activiteit->taken as $taak) {
         echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$taak->functie.':</b></p><ul class="list-group">';
         foreach ($taak->shiften as $shift ) {
-            
-
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
                     echo '<button class="btn btn-warning float-right" id="uitschrijven" value="'.$shift->id.'">Uitschrijven</button>';
+                    echo print_r($ingeschreven);
                     echo '<button class="btn btn-primary float-right" id="inschrijven" value="'.$shift->id.'">Inschrijven</button>';
+                    foreach($ingeschreven as $shiftId){
+                        if($shiftId->id == $shift->id){
+                            
+                        }else{
+
+                        }
+                    }
         }     
         echo "</li></ul></li>";
     };
