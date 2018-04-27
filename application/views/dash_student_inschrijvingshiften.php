@@ -29,6 +29,7 @@ $(document).ready(function(){
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
+                async: false,
                 success: function(data){                    
                         $('#'+shiftId).removeClass('btn-primary');
                         $('#'+shiftId).addClass('btn-warning');
@@ -44,6 +45,7 @@ $(document).ready(function(){
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
+                async: false,
                 success: function(data){                    
                         $('#'+shiftId).removeClass('btn-warning');
                         $('#'+shiftId).addClass('btn-primary');
