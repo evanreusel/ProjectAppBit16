@@ -77,8 +77,8 @@ class Admin extends CI_Controller {
 				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
 			],
 			[
-				'title' => 'Mails beheren',
-				'url' => base_url() . 'index.php/admin/mail/overzicht/'
+				'title' => 'Mails',
+				'url' => base_url() . 'index.php/mail/overzicht/'
 			]
 		];
 		$data['actions'] = [
