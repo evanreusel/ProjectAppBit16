@@ -16,7 +16,7 @@
 <script>
 $(document).ready(function(){
     $(".btn").click(function(){
-        $.ajax({url: "Shiften/vrijwilligerInShiftToevoegen", success: function(result){
+        $.ajax({type:"GET",url: site_url + "shiften/vrijwilligerInShiftToevoegen", success: function(result){
             $("#test").text(result);
         }
         ,error: function(){
