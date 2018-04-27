@@ -21,7 +21,7 @@ $(document).ready(function(){
             $("#test").text("succes");
         }
         ,error: function(xhr, status, error){
-            $("#test").text(xhr.responseText);
+            $("#test").alert(xhr.responseText);
         }});
     });
 });
