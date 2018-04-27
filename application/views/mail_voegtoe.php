@@ -21,7 +21,7 @@
                 ?>
                     <tr>
                         <td><?php echo $ontvanger->naam?></td>
-                        <td><?php echo $ontvanger->email?></td>
+                        <td><?php echo $ontvanger->mail?></td>
                         <td><?php echo $ontvanger->soort?></td>
                         <td><?php echo $ontvanger->nummer?></td>
                     </tr>
