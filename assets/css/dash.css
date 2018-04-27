@@ -56,8 +56,9 @@ form .md-form{
 
 .items{
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     position: relative;
 }
 
@@ -65,7 +66,7 @@ form .md-form{
     width: 100%;
 }
 
-.btn .fa{
+.item .btn .fa{
     font-size: 20px;
     width: 100%;
 }
