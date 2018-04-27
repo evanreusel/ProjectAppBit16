@@ -47,8 +47,9 @@ class Shiften extends CI_Controller{
 
     public function vrijwilligerInShiftToevoegen()
     {
-        $kaas = "pamper";
-        return $kaas;
+        $data['return'] = "pamper";
+
+        $this->load->view('req_output', $data);
     }
     
     public function delete($id)
