@@ -21,12 +21,6 @@ DASH ADMIN JAARGANG ADD/UPDATE
         $defaults['beginTijdstip'] = $data['jaargang']->beginTijdstip;
         $defaults['eindTijdstip'] = $data['jaargang']->eindTijdstip;
     }
-
-    $arrayparameters = array();
-    $arrayparameters['id'] = 'send';
-    $arrayparameters['value'] = '0';
-    $arrayparameters['type'] = 'submit';
-    $arrayparameters['content'] = "Bevestig";
 ?>
 
 <?php echo form_open('jaargang/update', array('name' => 'frmJaargang', 'id' => 'frmJaargang', 'role' => 'form'));  ?>
@@ -48,20 +42,16 @@ DASH ADMIN JAARGANG ADD/UPDATE
 </div>
 
 <div class="md-form">
-    <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
+    <input type="date" name="beginTijdstip" value="<?php echo $defaults['eindTijdstip']; ?>">
     <label for="begin">Begin datum en tijdstip:</label>
 </div>
 
 <div class="md-form">
-    <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
+    <input type="date" name="eindTijdstip" value="<?php echo $defaults['eindTijdstip']; ?>">
     <label for="einde">Eind datum en tijdstip:</label>
 </div>
-<?php    
-    echo form_button($arrayparameters);
+
+<input type="submit" value="Bevestig" class="btn btn-primary">
+<?php
     echo form_close();
-?>
-
-
-<script type="text/javascript">
-    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
-</script>            
+?>   

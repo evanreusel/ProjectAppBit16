@@ -53,3 +53,29 @@ form .md-form{
     margin-left: auto;
     margin-right: auto;
 }
+
+.items{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    position: relative;
+}
+
+.items .item{
+    padding-top: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.items .item a div{
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}

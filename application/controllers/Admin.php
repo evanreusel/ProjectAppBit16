@@ -69,7 +69,7 @@ class Admin extends CI_Controller {
 		$data['homelink'] = base_url() . 'index.php/admin/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
 			[
-				'title' => 'Jaargang',
+				'title' => 'Editiebeheer',
 				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
 			],
 			[
@@ -77,22 +77,14 @@ class Admin extends CI_Controller {
 				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
 			],
 			[
-				'title' => 'Deelnemers',
-				'url' => base_url() . 'index.php/admin/dash/deelnemersoverzicht/'
-			],
-			[
-				'title' => 'Vrijwilligers',
-				'url' => base_url() . 'index.php/admin/dash/vrijwilligersoverzicht/'
+				'title' => 'Mails',
+				'url' => base_url() . 'index.php/mail/overzicht/'
 			]
 		];
 		$data['actions'] = [
 			[
 				'title' => 'Administrators beheren',
 				'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
-			],
-			[
-				'title' => 'Personeelslijst importeren',
-				'url' => base_url() . 'index.php/admin/dash/personeelimporteren'
 			],
 			[
 				'title' => 'Log out',
