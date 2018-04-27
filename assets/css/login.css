@@ -19,6 +19,8 @@ html{
     position: absolute;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
 }
 
 .content_container .row{

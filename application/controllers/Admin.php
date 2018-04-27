@@ -69,14 +69,12 @@ class Admin extends CI_Controller {
 		$data['homelink'] = base_url() . 'index.php/admin/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
 			[
-				'title' => 'Jaargang',
-				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/',
-				'hulp' => "Toon een overzicht van alle vorige jaargangen. \n Je kan hier ook het huidige jaargang beëindigen"
+			'title' => 'Editiebeheer',
+				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
 			],
 			[
 				'title' => 'Locaties',
-				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/',
-				'hulp' => "Toon een overzicht van alle locaties. \n Je kan hier ook nieuwe locaties aanmaken en oude bewerken of verwijderen"
+				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
 			],
 			[
 				'title' => 'Deelnemers',
@@ -87,7 +85,7 @@ class Admin extends CI_Controller {
 				'title' => 'Vrijwilligers',
 				'url' => base_url() . 'index.php/admin/dash/vrijwilligersoverzicht/',
 				'hulp' => "Toon een overzicht van alle vrijwilligers"
-			]
+			]			
 		];
 		$data['actions'] = [
 			[

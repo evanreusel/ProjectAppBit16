@@ -1,20 +1,15 @@
 <?php 
-$teller = 0;
 foreach($keuzemogelijkheden as $activiteit) {
     echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$activiteit->naam.'</div><div class="card-body"><ul class="list-group">';
     foreach ($activiteit->taken as $taak) {
         echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$taak->functie.':</b></p><ul class="list-group">';
         foreach ($taak->shiften as $shift ) {
             
-                if ($ingeschreven[$teller]->shiftId == $shift->id) {
+
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-warning float-right inschrijven" id="'.$shift->id.'">Uitschrijven</button>';
-                }else {
-                    echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-primary float-right inschrijven" id="'.$shift->id.'">Inschrijven</button>';
-                }
-            $teller++;
-        }
+                    echo '<button class="btn btn-warning float-right" id="uitschrijven" value="'.$shift->id.'">Uitschrijven</button>';
+                    echo '<button class="btn btn-primary float-right" id="inschrijven" value="'.$shift->id.'">Inschrijven</button>';
+        }     
         echo "</li></ul></li>";
     };
     echo "</ul></div></div>";
@@ -24,30 +19,30 @@ foreach($keuzemogelijkheden as $activiteit) {
 <p id="test"></p>
 <script>
 $(document).ready(function(){
-    $(".btn-primary").click(function(){
-        var shiftId = $(this).attr('id');
+    $("#inschrijven").click(function(){
+        var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
+                async: false,
                 success: function(data){                    
-                        $('#'+shiftId).removeClass('btn-primary');
-                        $('#'+shiftId).addClass('btn-warning');
-                        $('#'+shiftId).text('uitschrijven');
+                        $('#inschrijven').hide();
+                        $('#uitschrijven').show();
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
     });
 
-    $(".btn-warning").click(function(){
-        var shiftId = $(this).attr('id');
+    $("#uitschrijven").click(function(){
+        var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
+                async: false,
                 success: function(data){                    
-                        $('#'+shiftId).removeClass('btn-warning');
-                        $('#'+shiftId).addClass('btn-primary');
-                        $('#'+shiftId).text('inschrijven');
+                        $('#uitschrijven').hide();
+                        $('#inschrijven').show();
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
