@@ -13,11 +13,11 @@ class Mailreminder_model extends CI_Model {
 
         return $query->result();
     }
-    function getAll($id)
-    {
+    function getAll() {
+        $this->db->order_by('timer', 'asc');
         $query = $this->db->get('MailReminder');
-
         return $query->result();
+
     }
     function get_PersonenInReminder($reminderId)
     {
