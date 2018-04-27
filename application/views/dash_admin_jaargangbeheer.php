@@ -30,7 +30,7 @@
     <div class="items">
         
         <div class="item">
-            <a href="admin/dash/jaargangupdate/<?php $data['jaargang']->id; ?>">
+            <a href="/index.php/admin/dash/jaargangupdate/<?php $data['jaargang']->id; ?>">
                 <div class="content">
                     <div>
                         <i class="fa fa-edit"></i>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="item">
-            <a href="admin/dash/keuzemogelijkheidbeheer/<?php $data['jaargang']->id; ?>">
+            <a href="/index.php/admin/dash/keuzemogelijkheidbeheer/<?php $data['jaargang']->id; ?>">
                 <div class="content">
                     <div>
                         <i class="fa fa-folder"></i>
@@ -69,7 +69,7 @@
         </div>
 
         <div class="item">
-            <a href="admin/dash/deelnemersoverzicht/<?php $data['jaargang']->id; ?>">
+            <a href="/index.php/admin/dash/deelnemersoverzicht/<?php $data['jaargang']->id; ?>">
                 <div class="content">
                     <div>
                         <i class="fa fa-edit"></i>
@@ -82,7 +82,7 @@
         </div>
 
         <div class="item">
-            <a href="admin/dash/personeelimporteren/<?php $data['jaargang']->id; ?>">
+            <a href="/index.php/admin/dash/personeelimporteren/<?php $data['jaargang']->id; ?>">
                 <div class="content">
                     <div>
                         <i class="fa fa-edit"></i>

@@ -58,5 +58,24 @@ form .md-form{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    position: relative;
+    padding-top: 100%;
 }
 
+.items .item{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.items .item a{
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
