@@ -1,6 +1,6 @@
 /*
     GREIF MATTHIAS
-    LAST UPDATED: 18 04 20
+    LAST UPDATED: 18 04 27
     GENERAL DASHBOARD STYLESHEET
 */
 
@@ -54,23 +54,19 @@ form .md-form{
     margin-right: auto;
 }
 
-.col > .btn{
-    padding-top: 100%;
+.items{
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     position: relative;
-    left: 0;
 }
 
-.col > .btn > .content{
-    position: absolute;
-    top: calc(50% - 20px);
-    left: 0;
-    align-content: center;
+.item .btn{
     width: 100%;
-    padding: 10px;
 }
 
-.col > .btn .fa{
+.item .btn .fa{
     font-size: 20px;
-    margin: 10px;
+    width: 100%;
 }

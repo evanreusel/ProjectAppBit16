@@ -77,7 +77,7 @@ class Admin extends CI_Controller {
 				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
 			],
 			[
-				'title' => 'Deelnemers',
+				/*'title' => 'Deelnemers',
 				'url' => base_url() . 'index.php/admin/dash/deelnemersoverzicht/',
 				'hulp' => "Toon een overzicht van alle deelnemers"
 			],
@@ -85,7 +85,10 @@ class Admin extends CI_Controller {
 				'title' => 'Vrijwilligers',
 				'url' => base_url() . 'index.php/admin/dash/vrijwilligersoverzicht/',
 				'hulp' => "Toon een overzicht van alle vrijwilligers"
-			]			
+			],*/
+				'title' => 'Mails',
+				'url' => base_url() . 'index.php/mail/overzicht/'
+			]
 		];
 		$data['actions'] = [
 			[
