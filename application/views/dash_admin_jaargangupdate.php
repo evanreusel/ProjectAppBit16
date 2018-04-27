@@ -42,22 +42,16 @@ DASH ADMIN JAARGANG ADD/UPDATE
 </div>
 
 <div class="md-form">
-    <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo $defaults['beginTijdstip']; ?>" readonly class="form_datetime">
+    <input type="date" name="beginTijdstip" value="<?php echo $defaults['eindTijdstip']; ?>" readonly>
     <label for="begin">Begin datum en tijdstip:</label>
 </div>
 
 <div class="md-form">
-    <input type="date">
-    <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo $defaults['eindTijdstip']; ?>" readonly class="form_datetime">
+    <input type="date" name="eindTijdstip" value="<?php echo $defaults['eindTijdstip']; ?>" readonly>
     <label for="einde">Eind datum en tijdstip:</label>
 </div>
 
 <input type="submit" value="Bevestig" class="btn btn-primary">
 <?php
     echo form_close();
-?>
-
-
-<script type="text/javascript">
-    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
-</script>            
+?>   
