@@ -77,15 +77,6 @@ class Admin extends CI_Controller {
 				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
 			],
 			[
-				/*'title' => 'Deelnemers',
-				'url' => base_url() . 'index.php/admin/dash/deelnemersoverzicht/',
-				'hulp' => "Toon een overzicht van alle deelnemers"
-			],
-			[
-				'title' => 'Vrijwilligers',
-				'url' => base_url() . 'index.php/admin/dash/vrijwilligersoverzicht/',
-				'hulp' => "Toon een overzicht van alle vrijwilligers"
-			],*/
 				'title' => 'Mails',
 				'url' => base_url() . 'index.php/mail/overzicht/'
 			]
@@ -95,11 +86,6 @@ class Admin extends CI_Controller {
 				'title' => 'Administrators beheren',
 				'url' => base_url() . 'index.php/admin/dash/adminbeheer/',
 				'hulp' => "Maak nieuwe admins aan, verwijder of bewerk oude admins"
-			],
-			[
-				'title' => 'Personeelslijst importeren',
-				'url' => base_url() . 'index.php/admin/dash/personeelimporteren',
-				'hulp' => "gebruik een CSV-bestand om personen toe te voegen aan het systeem"
 			],
 			[
 				'title' => 'Log out',

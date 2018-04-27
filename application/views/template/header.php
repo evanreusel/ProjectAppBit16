@@ -53,10 +53,18 @@
                 <!-- Links for contents -->
                 <ul class="navbar-nav mr-auto">
 
-            <?php foreach($nav_specs['links'] as $link){ ?>
+            <!-- <?php foreach($nav_specs['links'] as $link){ ?>
                 <li class="nav-item active">
                     <a class="nav-link" href="<?php echo $link['url'] . '"title="' . $link['hulp']; ?>">
                         <?php echo $link['title']; ?>
+                    </a>
+                </li>
+            <?php } ?> -->
+
+            <?php foreach($nav_specs['links'] as $link){ ?>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo $link['url']; ?>">
+                         <?php echo $link['title']; ?>
                     </a>
                 </li>
             <?php } ?>
