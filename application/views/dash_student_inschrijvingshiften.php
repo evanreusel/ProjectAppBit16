@@ -30,9 +30,9 @@ $(document).ready(function(){
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        // $('#'+shiftId).removeClass('btn-primary');
-                        // $('#'+shiftId).addClass('btn-warning');
-                        // $('#'+shiftId).text('uitschrijven');
+                        $('#'+shiftId).removeClass('btn-primary');
+                        $('#'+shiftId).addClass('btn-warning');
+                        $('#'+shiftId).text('uitschrijven');
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
