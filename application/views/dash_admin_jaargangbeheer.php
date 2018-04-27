@@ -55,7 +55,7 @@
 
         <div class="item">
             <a href="/index.php/admin/dash/personeelimporteren/<?php $data['jaargang']->id; ?>" class="btn btn-primary">
-                <i class="fa fa-edit"></i> Personeel importeren
+                <i class="fa fa-edit"></i> Importeren
             </a>
         </div>
     </div>
