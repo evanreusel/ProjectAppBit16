@@ -59,6 +59,8 @@ form .md-form{
     width: 100%;
 }
 
-.col > .btn div{
-    
+.col > .btn > .content{
+    position: absolute;
+    top: 50%;
+    width: calc(100% - 60px);
 }

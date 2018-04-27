@@ -28,8 +28,8 @@
 
 <div class="row justify-content-md-center">
     <div class="row col-10">
-        <div class="col">
-            <a href="admin/dash/jaargangupdate/<?php $data['jaargang']->id; ?>" href="btn btn-primary">
+    <div class="col">
+            <a href="admin/dash/jaargangupdate/<?php $data['jaargang']->id; ?>" class="btn btn-primary">
                 <div class="content">
                     <i class="fa fa-edit"></i>
                     <p>
@@ -40,16 +40,47 @@
         </div>
 
         <div class="col">
-            <?php echo anchor("admin/dash/keuzemogelijkheidbeheer/" . $data['jaargang']->id,'<i class="fa fa-folder"></i> Keuzemogelijkheden', array('class' => 'btn btn-primary')); ?>
+            <a href="admin/dash/keuzemogelijkheidbeheer/<?php $data['jaargang']->id; ?>" class="btn btn-primary">
+                <div class="content">
+                    <i class="fa fa-folder"></i>
+                    <p>
+                        Keuzemogelijkheden
+                    </p>
+                </div>
+            </a>
         </div>
+
         <div class="col">
-            <?php echo anchor("admin/dash/vrijwilligersoverzicht/" . $data['jaargang']->id,'<i class="fa fa-folder"></i> Vrijwilligers', array('class' => 'btn btn-primary')); ?>
+            <a href="admin/dash/vrijwilligersoverzicht/<?php $data['jaargang']->id; ?>" class="btn btn-primary">
+                <div class="content">
+                    <i class="fa fa-edit"></i>
+                    <p>
+                        Vrijwilligers
+                    </p>
+                </div>
+            </a>
         </div>
+
         <div class="col">
-            <?php echo anchor("admin/dash/deelnemersoverzicht/" . $data['jaargang']->id,'<i class="fa fa-folder"></i> Deelnemers', array('class' => 'btn btn-primary')); ?>
+            <a href="admin/dash/deelnemersoverzicht/<?php $data['jaargang']->id; ?>" class="btn btn-primary">
+                <div class="content">
+                    <i class="fa fa-edit"></i>
+                    <p>
+                        Deelnemers
+                    </p>
+                </div>
+            </a>
         </div>
+
         <div class="col">
-            <?php echo anchor("admin/dash/personeelimporteren/" . $data['jaargang']->id,'<i class="fa fa-folder"></i> Deelnemers', array('class' => 'btn btn-primary')); ?>
+            <a href="admin/dash/personeelimporteren/<?php $data['jaargang']->id; ?>" class="btn btn-primary">
+                <div class="content">
+                    <i class="fa fa-edit"></i>
+                    <p>
+                        Personeel importeren
+                    </p>
+                </div>
+            </a>
         </div>
     </div>
 </div>
