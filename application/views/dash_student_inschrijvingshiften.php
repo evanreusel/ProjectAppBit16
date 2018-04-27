@@ -15,9 +15,9 @@
 <p id="test"></p>
 <script>
 $(document).ready(function(){
-    $("button").click(function(){
+    $(".btn").click(function(){
         $.ajax({url: "student/dash/shiften/vrijwilligerInShiftToevoegen", success: function(result){
-            $("#test").html(result);
+            $("#test").text(result);
         }});
     });
 });
