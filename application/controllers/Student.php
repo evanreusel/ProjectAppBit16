@@ -72,6 +72,8 @@ class Student extends CI_Controller {
 						$taak->shiften=$this->Shiften_model->getAllByNaamWhereTaakId($taak->id);
 					}
 				}
+				$this->load->model('VrijwilligersInShift_model');
+				$data['ingeschreven']= $this->VrijwilligersInShift_model->get_byPersoonId($data['user']->id);
 			break;
 		}
 
