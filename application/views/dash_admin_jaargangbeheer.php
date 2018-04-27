@@ -43,6 +43,7 @@
 
         <div class="item">
             <a href="admin/dash/keuzemogelijkheidbeheer/<?php $data['jaargang']->id; ?>">
+                <div class="content">
                     <div>
                         <i class="fa fa-folder"></i>
                         <p>
@@ -55,6 +56,7 @@
 
         <div class="item">
             <a href="admin/dash/vrijwilligersoverzicht/<?php $data['jaargang']->id; ?>">
+                <div class="content">
                     <div>
                         <i class="fa fa-edit"></i>
                         <p>
