@@ -16,13 +16,15 @@
 <script>
 $(document).ready(function(){
     $(".btn").click(function(){
-        $.ajax({type:"GET",
-        url: url: '<?=site_url();?>/student/vrijwilligerInShiftToevoegen', success: function(result){
-            $("#test").text("succes");
-        }
-        ,error: function(xhr, status, error){
-            alert(xhr.responseText);
-        }});
+        $.ajax({
+                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen',
+                type: "GET",
+                success: function(data){                    
+                        $('#test').text("succes");
+                }, error: function (xhr, status, error) {
+                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                }
+            });
     });
 });
 </script>
