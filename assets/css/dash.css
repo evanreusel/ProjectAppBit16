@@ -61,27 +61,6 @@ form .md-form{
     position: relative;
 }
 
-.items .item{
-    position: relative;
-}
-
-.items .item a{
-    padding-top: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.items .item a div{
-    position: absolute;
-    width: 100%;
-}
-
 .content .fa{
     font-size: 20px;
 }
