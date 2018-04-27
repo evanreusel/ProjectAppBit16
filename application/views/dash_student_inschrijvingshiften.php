@@ -32,6 +32,7 @@ $(document).ready(function(){
                 success: function(data){                    
                         $('#'+shiftId).removeClass('btn-primary');
                         $('#'+shiftId).addClass('btn-warning');
+                        $('#'+shiftId).text('uitschrijven');
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
@@ -46,6 +47,7 @@ $(document).ready(function(){
                 success: function(data){                    
                         $('#'+shiftId).removeClass('btn-warning');
                         $('#'+shiftId).addClass('btn-primary');
+                        $('#'+shiftId).text('inschrijven');
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
