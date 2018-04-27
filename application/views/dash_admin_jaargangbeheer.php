@@ -56,7 +56,7 @@
         </div>
 
         <div class="item">
-            <a href="admin/dash/vrijwilligersoverzicht/<?php $data['jaargang']->id; ?>">
+            <a href="/index.php/admin/dash/vrijwilligersoverzicht/<?php $data['jaargang']->id; ?>">
                 <div class="content">
                     <div>
                         <i class="fa fa-edit"></i>
