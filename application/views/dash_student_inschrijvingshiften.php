@@ -7,10 +7,10 @@
             foreach ($ingeschreven as $inschrijving) {
                 if ($inschrijving->shiftId == $shift->id) {
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-warning float-right inschrijven" value="'.$shift->id.'">Uitschrijven</button>';
+                    echo '<button class="btn btn-warning float-right inschrijven" id="'.$shift->id.'">Uitschrijven</button>';
                 }else {
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-primary float-right inschrijven" value="'.$shift->id.'">Inschrijven</button>';
+                    echo '<button class="btn btn-primary float-right inschrijven" id="'.$shift->id.'">Inschrijven</button>';
                 }
             }
             
@@ -25,13 +25,13 @@
 <script>
 $(document).ready(function(){
     $(".btn-primary").click(function(){
-        var shiftId = $(this).val();
+        var shiftId = $(this).attr('id');
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        $(this).removeClass('btn-primary');
-                        $(this).addClass('btn-warning');
+                        $('#'+shiftId).removeClass('btn-primary');
+                        $('#'+shiftId).addClass('btn-warning');
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
@@ -39,13 +39,13 @@ $(document).ready(function(){
     });
 
     $(".btn-warning").click(function(){
-        var shiftId = $(this).val();
+        var shiftId = $(this).attr('id');
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        $(this).removeClass('btn-warning');
-                        $(this).addClass('btn-primary');
+                        $('#'+shiftId).removeClass('btn-warning');
+                        $('#'+shiftId).addClass('btn-primary');
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }

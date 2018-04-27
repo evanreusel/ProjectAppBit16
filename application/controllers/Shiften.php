@@ -60,8 +60,8 @@ class Shiften extends CI_Controller{
     
     public function vrijwilligerInShiftVerwijderen($shiftId, $persoonId)
 	{
-        $this->load->model('Keuzeoptie_model');
-        $this->Keuzeoptie_model->delete($shiftId, $persoonId);
+        $this->load->model('VrijwilligerInShift_model');
+        $this->VrijwilligerInShift_model->delete($shiftId, $persoonId);
 
 		$this->load->view('ajax_vrijwilligerinshift', $data);
 	}
