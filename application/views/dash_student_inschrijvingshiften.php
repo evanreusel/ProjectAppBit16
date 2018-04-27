@@ -24,8 +24,8 @@
 <p id="test"></p>
 <script>
 $(document).ready(function(){
-    var shiftId = $(this).val();
     $(".btn-primary").click(function(){
+        var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
@@ -37,8 +37,9 @@ $(document).ready(function(){
                 }
             });
     });
-    
+
     $(".btn-warning").click(function(){
+        var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
