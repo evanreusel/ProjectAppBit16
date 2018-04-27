@@ -57,10 +57,11 @@ form .md-form{
 .col > .btn{
     padding-top: 100%;
     width: 100%;
+    position: relative;
 }
 
 .col > .btn > .content{
     position: absolute;
     top: 50%;
-    width: calc(100% - 60px);
+    padding: 20px;
 }
