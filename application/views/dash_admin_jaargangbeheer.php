@@ -29,8 +29,16 @@
 <div class="row justify-content-md-center">
     <div class="row col-10">
         <div class="col">
-            <?php echo anchor("admin/dash/jaargangupdate/" . $data['jaargang']->id,'<i class="fa fa-edit"></i> Edit', array('class' => 'btn btn-primary')); ?>
+            <a href="admin/dash/jaargangupdate/<?php $data['jaargang']->id; ?>" href="btn btn-primary">
+                <div class="content">
+                    <i class="fa fa-edit"></i>
+                    <p>
+                        Edit
+                    </p>
+                </div>
+            </a>
         </div>
+
         <div class="col">
             <?php echo anchor("admin/dash/keuzemogelijkheidbeheer/" . $data['jaargang']->id,'<i class="fa fa-folder"></i> Keuzemogelijkheden', array('class' => 'btn btn-primary')); ?>
         </div>
