@@ -49,7 +49,7 @@ class Shiften extends CI_Controller{
     {
         $data['return'] = "pamper";
 
-        $this->load->view('req_output', $data);
+        $this->load->view('ajax_vrijwilligerinshift', $data);
     }
     
     public function delete($id)

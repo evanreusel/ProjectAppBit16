@@ -18,6 +18,9 @@ $(document).ready(function(){
     $(".btn").click(function(){
         $.ajax({url: "student/dash/shiften/vrijwilligerInShiftToevoegen", success: function(result){
             $("#test").text(result);
+        }
+        ,error: function(){
+            $("#test").text("error");
         }});
     });
 });
