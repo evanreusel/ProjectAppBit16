@@ -14,8 +14,8 @@ class VrijwilligersInShift_Model extends CI_Model{
         $query = $this->db->get('VrijwilligersInShift');
         return $query->result();
     }
-    function add($taak){
-        $this->db->insert('VrijwilligersInShift', $taak);
+    function add($VrijwilligerInShift){
+        $this->db->insert('VrijwilligersInShift', $VrijwilligerInShift);
         // return $this->db->insert_id();
     }
     

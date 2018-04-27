@@ -45,9 +45,15 @@ class Shiften extends CI_Controller{
 		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
     }
 
-    public function vrijwilligerInShiftToevoegen()
+    public function vrijwilligerInShiftToevoegen($shiftId, $persoonId)
     {
-        $data['return'] = "pamper";
+        $vrijwilligerInShift = new stdClass();
+
+        $vrijwilligerInShift->persoonId = $persoonId;
+        $vrijwilligerInShift->shiftId = $shiftId;
+
+        $this->load->model('VrijwilligersInShift_model');
+        $this->VrijwilligerInShift_model->add($vrijwilligerInShift);
 
         $this->load->view('ajax_vrijwilligerinshift', $data);
     }
