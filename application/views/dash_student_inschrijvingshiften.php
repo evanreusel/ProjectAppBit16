@@ -12,7 +12,11 @@ foreach($keuzemogelijkheden as $activiteit) {
         foreach ($taak->shiften as $shift ) {
                     $id = $shift->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-warning float-right" id="uitschrijven" value="'.$shift->id.'">Uitschrijven</button>';
+                    echo '<button class="btn btn-warning float-right" id="uitschrijven" value="'.$shift->id.'" ';
+                    if (!isset($ingeschrevenshiften->$id)) {
+                        echo 'hidden';
+                    }
+                    echo '>Uitschrijven</button>';
                     echo print_r($ingeschreven);
                     echo '<button class="btn btn-primary float-right" id="inschrijven" value="'.$shift->id.'" ';
                     if (isset($ingeschrevenshiften->$id)) {
