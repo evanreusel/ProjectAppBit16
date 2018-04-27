@@ -73,7 +73,6 @@ class Student extends CI_Controller {
 					}
 				}
 			break;
-			
 		}
 
 		// Set view

@@ -12,3 +12,12 @@
     echo "</ul></div></div>";
 };
 ?>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+        $.ajax({url: "shiften/vrijwilligerInShiftToevoegen", success: function(result){
+            $(".card").html(result);
+        }});
+    });
+});
+</script>
