@@ -20,7 +20,7 @@ $(document).ready(function(){
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen',
                 type: "GET",
                 success: function(data){                    
-                        $('#test').text("succes");
+                        $('#test').text(data);
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
