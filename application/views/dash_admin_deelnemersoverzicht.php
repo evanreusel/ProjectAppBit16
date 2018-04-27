@@ -1,7 +1,18 @@
+<?php
+/**
+ * @brief overzicht van alle deelnemers
+ *
+ * Dit document toont een lijst van alle deelnemers 
+ */
+?>
+
 <script>
 laatstgesorteerd = "";
 asc = true;
 
+/*
+*De hide functie gaat alle elementen verbergen met de class 'hidden'
+*/
 function hide(){
 $("tr").each(function(){
     if($(this).is('[class*="hidden"]')){
@@ -12,6 +23,14 @@ $("tr").each(function(){
 });
 }
 
+/*
+*
+*De search functie zorgt ervoor dat als je op een veld met een 'search' class drukt alle onderliggende elementen alphabetisch gesorteerd worden
+*Een vereiste hiervoor is dat de header de class 'search' en het id 'Xsearch' heeft
+*Alle onderliggende elementen moeten de class 'X' hebben waarbij X de naam van de header is.
+*De functie
+*
+*/
 function search(){
 $(".search").keyup(function(){
     waarde = $(this).val().toLowerCase();
@@ -31,7 +50,14 @@ $(".search").keyup(function(){
 hide();
 });
 }
-
+/*
+*
+*De search functie zorgt ervoor dat als je op een veld met een 'search' class drukt alle onderliggende elementen alphabetisch gesorteerd worden
+*Een vereiste hiervoor is dat de header de class 'Xsort' en het id 'sort' heeft
+*Alle onderliggende elementen moeten de class 'X' en de class 'sortable' hebben waarbij X de naam van de header is.
+*De functie
+*
+*/
 function sort(){
     $(".sort").click(function(){
 
@@ -99,6 +125,16 @@ sort();
 
 <table class="table">
 
+<?php
+/**
+ *
+ * Hier is een lijst met de namen van alle velden die getoond worden.
+ * Het is belangrijk voor de sort functie in jquery dat alle headers
+ * een class 'sort' hebben en een id 'Xsort' waarbij X de naam van het veld is 
+ *
+ */
+?>
+
 <tHead>
 <tr class="colored">
 <td id="naamsort" class="sort" title="Druk her om te sortere op deze rij"><i></i> Naam</td>
@@ -107,6 +143,16 @@ sort();
 <td id="tijdsort" class="sort" title="Druk her om te sortere op deze rij"><i></i> Tijd</td>
 </tr>
 </tHead>
+
+<?php
+/**
+ *
+ * Hier is een lijst met de namen van alle zoekvelden.
+ * Het is belangrijk voor de search functie in jquery dat alle inputs
+ * een class 'search' hebben en een id 'Xsearch' waarbij X de naam van het veld is 
+ *
+ */
+?>
 
 <tr>
 <td><input type="text" id="naamsearch" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt"></td>
@@ -117,6 +163,14 @@ sort();
 
 <?php
 
+/**
+ *
+ * Hier worden alle velden ingevuld met de bijhorende gegevens van de database
+ * voor de search en de sort functie is het belangrijk dat de velden de class 'Xitem' hebben
+ * waarbij X de naam van de rowheader is
+ * Voor de sort functie moeten de velden de class sortable hebben
+ *
+ */
 foreach($deelnemers as $deelnemer){
     foreach($deelnemers[$deelnemer] as $keuzeoptie){
     echo "<tr>";
