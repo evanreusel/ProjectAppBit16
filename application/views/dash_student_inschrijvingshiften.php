@@ -6,7 +6,7 @@ foreach($keuzemogelijkheden as $activiteit) {
         echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$taak->functie.':</b></p><ul class="list-group">';
         foreach ($taak->shiften as $shift ) {
             
-                if ($inschrijving[$teller]->shiftId == $shift->id) {
+                if ($inschrijvingen[$teller]->shiftId == $shift->id) {
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
                     echo '<button class="btn btn-warning float-right inschrijven" id="'.$shift->id.'">Uitschrijven</button>';
                 }else {
