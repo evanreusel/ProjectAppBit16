@@ -28,6 +28,7 @@
 
 <div class="row justify-content-md-center">
     <div class="items">
+        
         <div class="item">
             <a href="admin/dash/jaargangupdate/<?php $data['jaargang']->id; ?>">
                 <div class="content">
