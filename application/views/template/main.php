@@ -35,19 +35,20 @@
     <script src="<?php echo base_url(); ?>assets/js/mdb.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap-datetimepicker.js"></script>
 
-    <?php
-    // =================================================================================================== GREIF MATTHIAS
-        if(!isset($clearscreen)){
-            $this->load->view('template/header');
-        }
-
-    ?>
-
     <div class="container">
-    <?php
-        $this->load->view($view);
-    // =================================================================================================== /GREIF MATTHIAS
-    ?>
+        <?php
+        // =================================================================================================== GREIF MATTHIAS
+            if(!isset($clearscreen)){
+                $this->load->view('template/header');
+            }
+
+        ?>
+
+        
+        <?php
+            $this->load->view($view);
+        // =================================================================================================== /GREIF MATTHIAS
+        ?>
     </div>
 </body>
 
