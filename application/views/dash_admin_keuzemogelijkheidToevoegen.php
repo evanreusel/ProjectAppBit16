@@ -46,17 +46,17 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
 
     <div class="md-form">
-        <input id="begin" name="beginTijdstip" size="16" type="text" value="<?php echo date('Y-m-d'); ?>" readonly class="form_datetime">
+    <input id="begin" type="date" name="beginTijdstip" value="<?php echo date('Y-m-d'); ?>">
         <label for="begin">Begin datum en tijdstip:</label>
     </div>
 
     <div class="md-form">
-        <input id="einde" name="eindTijdstip" size="16" type="text" value="<?php echo date('Y-m-d'); ?>" readonly class="form_datetime">
+    <input id="einde" type="date" name="eindTijdstip" value="<?php echo date('Y-m-d'); ?>">
         <label for="einde">Eind datum en tijdstip:</label>
     </div>
 
     <div class="md-form">
-        <input id="deadline" name="deadlineTijdstip" size="16" type="text" value="<?php echo date('Y-m-d'); ?>" readonly class="form_datetime">
+        <input type="date" name="deadlineTijdstip" value="<?php echo date('Y-m-d'); ?>">
         <label for="deadline">Deadline datum en tijdstip:</label>
     </div>
 
