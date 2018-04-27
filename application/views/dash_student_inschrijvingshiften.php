@@ -12,11 +12,12 @@
     echo "</ul></div></div>";
 };
 ?>
+<p id="test"></p>
 <script>
 $(document).ready(function(){
     $("button").click(function(){
-        $.ajax({url: "shiften/vrijwilligerInShiftToevoegen", success: function(result){
-            $(".card").html(result);
+        $.ajax({url: "student/dash/shiften/vrijwilligerInShiftToevoegen", success: function(result){
+            $("#test").html(result);
         }});
     });
 });
