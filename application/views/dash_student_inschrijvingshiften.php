@@ -1,15 +1,25 @@
 <?php 
+$ingeschrevenshiften = new stdClass();
+foreach ($ingeschreven as $key) {
+    $id=$key->shiftId;
+    $ingeschrevenshiften->$id=0; 
+}
+
 foreach($keuzemogelijkheden as $activiteit) {
     echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$activiteit->naam.'</div><div class="card-body"><ul class="list-group">';
     foreach ($activiteit->taken as $taak) {
         echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$taak->functie.':</b></p><ul class="list-group">';
         foreach ($taak->shiften as $shift ) {
+                    $id = $shift->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
                     echo '<button class="btn btn-warning float-right" id="uitschrijven" value="'.$shift->id.'">Uitschrijven</button>';
                     echo print_r($ingeschreven);
-                    echo '<button class="btn btn-primary float-right" id="inschrijven" value="'.$shift->id.'">Inschrijven</button>';
+                    echo '<button class="btn btn-primary float-right" id="inschrijven" value="'.$shift->id.'" ';
+                    if (isset($ingeschrevenshiften->$id)) {
+                        echo 'hidden';
+                    }echo '>Inschrijven</button>';
                     foreach($ingeschreven as $shiftId){
-                        if($shiftId->id == $shift->id){
+                        if($shiftId->shiftId == $shift->id){
                             
                         }else{
 
