@@ -150,7 +150,7 @@
 <h2>3.	Helper</h2>
 <p>Ook de helpers zullen de webapplicatie gebruiken. Zij hebben deze nodig omdat ze online kunnen aanduiden wanneer ze kunnen en willen helpen alsook welke functie ze wensen uit te voeren.
 </p>
-<h4>3.1	Inschrijven voor shift<h4/>
+<h4>3.1	Inschrijven voor shift</h4>
 <p>De helper klikt in de navigatiebalk op ‘inschrijven’. Hij/zij krijgt dan een pagina te zien waar alle activiteiten waarvoor men helpers nodig heeft, staan opgelijst. Ook voor het eten heeft men hulp nodig. Dit wordt ook op deze pagina weergegeven, onder de activiteiten. Analoog aan de docenten, kan de helper op ‘inschrijven’ klikken. Als hij dit doet, wordt de knop oranje en staat er ‘uitschrijven’ op vermeld. Hij/zij kan zich dus ook weer uitschrijven door hierop te klikken. 
 </p>
 <p>Wellicht is het voor de helper leuker om een shift te werken wanneer iemand bekend op dezelfde plek op hetzelfde uur werkt. Om die reden hebben we een knop geïmplementeerd ‘vrijwilligers’. Als hij/zij hierop klikt, kan hij kijken welke helpers allemaal ingeschreven zijn voor die bepaalde activiteit. 
