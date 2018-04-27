@@ -11,7 +11,9 @@
     };
     echo "</ul></div></div>";
 };
+echo $user->id;
 ?>
+
 <p id="test"></p>
 <script>
 $(document).ready(function(){
