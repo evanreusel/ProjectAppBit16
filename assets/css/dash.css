@@ -56,8 +56,9 @@ form .md-form{
 
 .items{
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     position: relative;
 }
 
