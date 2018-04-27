@@ -62,6 +62,10 @@ form .md-form{
 }
 
 .items .item{
+    position: relative;
+}
+
+.items .item a{
     padding-top: 100%;
     position: absolute;
     top: 0;
