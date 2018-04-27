@@ -80,4 +80,11 @@ class Student extends CI_Controller {
 
 		$this->load->view('template/main', $data);
 	}
+	
+	public function vrijwilligerInShiftToevoegen()
+    {
+        $data['return'] = "pamper";
+
+        $this->load->view('ajax_vrijwilligerinshift', $data);
+    }
 }
