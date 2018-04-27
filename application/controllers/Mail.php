@@ -84,6 +84,7 @@ class Mail extends CI_Controller {
         $this->load->model('persoon_model');
         $ontvangers = $this->persoon_model->get_All();
         $data['ontvangers'] = $ontvangers;
+        print_r($ontvangers);
         $data['message'] = "Mail Reminder Toevoegen";
         $data['css_files'] = array();
         $data['view'] = 'mail_voegtoe';
