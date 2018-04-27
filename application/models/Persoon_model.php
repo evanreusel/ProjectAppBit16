@@ -25,7 +25,17 @@ class Persoon_model extends CI_Model {
         
         return null;
     }
+    function get_All()
+    {
+        //$this->db->where(array('id' => $id));
+        $query = $this->db->get('Persoon');
 
+        if($query->result() != null){
+            return $query->result()[0];
+        }
+
+        return null;
+    }
     function insert($persoon){        
         //haal het huidige jaargangid op om later te koppelen aan de persoon
         $this->load->model("Jaargang_model");

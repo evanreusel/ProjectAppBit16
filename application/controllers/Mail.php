@@ -61,7 +61,7 @@ class Mail extends CI_Controller {
 }
     public function overzicht()
     {
-        $data['message'] = "Welcome admin | Login";
+        $data['message'] = "Mail Reminder Overzicht";
         $data['css_files'] = array();
         $data['view'] = 'mail_overzicht';
         $this->load->model('mailreminder_model');
@@ -74,6 +74,19 @@ class Mail extends CI_Controller {
         }
         $data['reminders'] = $reminders;
         //$data['css_files'] = array("login.css");
+        $data['clearscreen'] = true;
+
+        $this->load->view('template/main', $data);
+
+    }
+    public function voegtoe()
+    {
+        $this->load->model('persoon_model');
+        $ontvangers = $this->persoon_model->get_All();
+        $data['ontvangers'] = $ontvangers;
+        $data['message'] = "Mail Reminder Toevoegen";
+        $data['css_files'] = array();
+        $data['view'] = 'mail_voegtoe';
         $data['clearscreen'] = true;
 
         $this->load->view('template/main', $data);
