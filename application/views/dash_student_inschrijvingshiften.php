@@ -10,7 +10,7 @@
                     echo '<button class="btn btn-warning float-right inschrijven" value="'.$shift->id.'">Uitschrijven</button>';
                 }else {
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-success float-right inschrijven" value="'.$shift->id.'">Inschrijven</button>';
+                    echo '<button class="btn btn-primary float-right inschrijven" value="'.$shift->id.'">Inschrijven</button>';
                 }
             }
             
@@ -24,13 +24,27 @@
 <p id="test"></p>
 <script>
 $(document).ready(function(){
-    $(".btn").click(function(){
-        var shiftId = $(this).val();
+    var shiftId = $(this).val();
+    $(".btn-primary").click(function(){
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        $('#test').text("succes");
+                        $(this).removeClass('btn-primary');
+                        $(this).addClass('btn-warning');
+                }, error: function (xhr, status, error) {
+                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
+                }
+            });
+    });
+    
+    $(".btn-warning").click(function(){
+        $.ajax({
+                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ shiftId +'/' + <?= $user->id; ?>,
+                type: "GET",
+                success: function(data){                    
+                        $(this).removeClass('btn-warning');
+                        $(this).addClass('btn-primary');
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }

@@ -20,7 +20,7 @@ class VrijwilligersInShift_Model extends CI_Model{
     }
     
 
-    function delete($persoonId, $shiftId){
+    function delete($shiftId, $persoonId){
         $this->db->where('persoonId', $persoonId);
         $this->db->where('shiftId',$shiftId);
         $this->db->delete('VrijwilligersInShift');
