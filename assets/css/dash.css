@@ -59,10 +59,10 @@ form .md-form{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
     position: relative;
-    padding-top: 100%;
 }
 
-.items .item a{
+.items .item{
+    padding-top: 100%;
     position: absolute;
     top: 0;
     left: 0;
