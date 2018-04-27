@@ -31,7 +31,7 @@ class Persoon_model extends CI_Model {
         $query = $this->db->get('Persoon');
 
         if($query->result() != null){
-            return $query->result()[0];
+            return $query->result();
         }
 
         return null;
