@@ -41,10 +41,14 @@
             $this->load->view('template/header');
         }
 
+    ?>
+
+    <div class="container">
+    <?php
         $this->load->view($view);
     // =================================================================================================== /GREIF MATTHIAS
     ?>
-
+    </div>
 </body>
 
 </html>
