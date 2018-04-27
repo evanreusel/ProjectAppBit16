@@ -11,13 +11,14 @@
     };
     echo "</ul></div></div>";
 };
-echo $user->id;
 ?>
-
+<p id="val"></p>
 <p id="test"></p>
 <script>
 $(document).ready(function(){
     $(".btn").click(function(){
+        var shiftId = $this.val();
+        $('#val').text(shiftId);
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen',
                 type: "GET",
