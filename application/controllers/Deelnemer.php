@@ -40,11 +40,11 @@ class Deelnemer extends CI_Controller {
 
 		$data['primaryColor'] = 'blue';											// Primary color (purple for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
-		$data['homelink'] = base_url() . 'index.php/docent/dash/';				// Dash homepage
+		$data['homelink'] = base_url() . 'index.php/deelnemer/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Inschrijven',
-				'url' => base_url() . 'index.php/docent/dash/personeelsinschrijvingen/'
+				'url' => base_url() . 'index.php/deelnemer/dash/personeelsinschrijvingen/'
 			]
 		];
 		$data['actions'] = [
@@ -68,7 +68,7 @@ class Deelnemer extends CI_Controller {
 		}
 
 		// Set view
-		$data['view'] = 'dash_docent_' . $view;
+		$data['view'] = 'dash_deelnemer_' . $view;
 
 		$this->load->view('template/main', $data);
 	}
