@@ -22,7 +22,7 @@ class csv_model extends CI_Model
                 //lees de 1ste lijn van de file
                 $csvheaders = $csv_line[0];
                 //slaag de index van de headers op voor later
-                if($csvheaders != "naam;nummer;mail;woonplaats;adres"){
+                if($csvheaders != "naam\tnummer\tmail\twoonplaats\tadres"){
                     return null;
                 }
                 continue;
@@ -35,7 +35,7 @@ class csv_model extends CI_Model
                 $csvdata = $csv_line[0];
             }
             $i++;
-            $data = explode(";",$csvdata);
+            $data = explode("\t",$csvdata);
             $persoon = new stdClass();
             
              if($data[0] != null){
