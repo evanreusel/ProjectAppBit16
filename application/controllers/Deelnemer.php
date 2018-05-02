@@ -45,6 +45,10 @@ class Deelnemer extends CI_Controller {
 			[
 				'title' => 'Inschrijven',
 				'url' => base_url() . 'index.php/deelnemer/dash/personeelsinschrijvingen/'
+			],													// Available links for navbar
+			[
+				'title' => 'Vrijwilliger toevoegen',
+				'url' => base_url() . 'index.php/deelnemer/dash/vrijwilligertoevoegen/'
 			]
 		];
 		$data['actions'] = [

@@ -8,7 +8,7 @@
         if($data['jaargang']->actief){
     ?>
     <div class="item">
-        <a href="/index.php/admin/dash/jaargangupdate/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
+        <a href="<?= base_url()?>index.php/admin/dash/jaargangupdate/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
             <i class="fa fa-edit"></i> Edit
         </a>
     </div>
@@ -17,25 +17,25 @@
     ?>
 
     <div class="item">
-        <a href="/index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
+        <a href="<?= base_url()?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
             <i class="fa fa-folder"></i> Keuzemogelijkheden
         </a>
     </div>
 
     <div class="item">
-        <a href="/index.php/admin/dash/vrijwilligersoverzicht/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
+        <a href="<?= base_url()?>index.php/admin/dash/vrijwilligersoverzicht/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
             <i class="fa fa-edit"></i> Vrijwilligers
         </a>
     </div>
 
     <div class="item">
-        <a href="/index.php/admin/dash/deelnemersoverzicht/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
+        <a href="<?= base_url()?>index.php/admin/dash/deelnemersoverzicht/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
             <i class="fa fa-edit"></i> Deelnemers
         </a>
     </div>
 
     <div class="item">
-        <a href="/index.php/admin/dash/personeelimporteren/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
+        <a href="<?= base_url()?>index.php/admin/dash/personeelimporteren/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
             <i class="fa fa-edit"></i> Importeren
         </a>
     </div>
