@@ -19,6 +19,8 @@ class Deelnemer extends CI_Controller {
 		if(!$this->session->has_userdata('id')){
 			redirect('/main/index', 'location');
 		}
+
+		
 	}
 	
 	public function dash($view = null, $extras = null){
@@ -44,7 +46,8 @@ class Deelnemer extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Inschrijven',
-				'url' => base_url() . 'index.php/deelnemer/dash/personeelsinschrijvingen/'
+				'url' => base_url() . 'index.php/deelnemer/dash/personeelsinschrijvingen/',
+				'hulp' => 'schrijf je in of uit voor aanstaande evenementen'
 			],													// Available links for navbar
 			[
 				'title' => 'Vrijwilliger toevoegen',
@@ -97,7 +100,7 @@ class Deelnemer extends CI_Controller {
 		// Redirect to adminbeheer
 		redirect('/');
 		}
-		
+
 	public function vrijwilligertoevoegen(){
             $persoon = new stdClass();
 
