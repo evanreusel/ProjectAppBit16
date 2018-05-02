@@ -91,13 +91,13 @@ class Deelnemer extends CI_Controller {
 		$this->load->view('template/main', $data);
 	}
 
-<<<<<<< HEAD
 	public function logout(){
 		$this->session->unset_userdata('id');
 
 		// Redirect to adminbeheer
 		redirect('/');
-=======
+		}
+		
 	public function vrijwilligertoevoegen(){
             $persoon = new stdClass();
 
@@ -111,6 +111,5 @@ class Deelnemer extends CI_Controller {
        		$this->Persoon_model->insert($persoon);
 
 			$this->dash('vrijwilligersucces',$persoon);
->>>>>>> a4306400ffb69a48a4f87ccb0a2cd5eab37262ce
 	}
 }
