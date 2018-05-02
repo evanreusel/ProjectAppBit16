@@ -3,7 +3,7 @@ $teller = 0;
 foreach($keuzemogelijkheden as $keuzemogelijkheid) {
     echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
     foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
-        echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$taak->functie.':</b></p><ul class="list-group">';
+        echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$keuzemogelijkheid->functie.':</b></p><ul class="list-group">';
             
                 if ($ingeschreven[$teller]->keuzeoptieId == $keuzeoptie->id) {
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
