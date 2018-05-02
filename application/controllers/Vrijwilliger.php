@@ -1,13 +1,13 @@
 <!-- 
     GREIF MATTHIAS
 	LAST UPDATED: 18 04 25
-	STUDENT CONTROLLER
+	VRIJWILLIGER CONTROLLER
 -->
 
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Student extends CI_Controller {
+class Vrijwilliger extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
@@ -40,11 +40,11 @@ class Student extends CI_Controller {
 
 		$data['primaryColor'] = 'blue';											// Primary color (purple for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
-		$data['homelink'] = base_url() . 'index.php/student/dash/';				// Dash homepage
+		$data['homelink'] = base_url() . 'index.php/vrijwilliger/dash/';				// Dash homepage
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Shiften',
-				'url' => base_url() . 'index.php/student/dash/inschrijvingshiften'
+				'url' => base_url() . 'index.php/vrijwilliger/dash/inschrijvingshiften'
 			]
 		];
 		$data['actions'] = [
@@ -78,7 +78,7 @@ class Student extends CI_Controller {
 		}
 
 		// Set view
-		$data['view'] = 'dash_student_' . $view;
+		$data['view'] = 'dash_vrijwilliger_' . $view;
 
 		$this->load->view('template/main', $data);
 	}
