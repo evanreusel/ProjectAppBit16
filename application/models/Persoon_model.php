@@ -114,7 +114,7 @@ class Persoon_model extends CI_Model {
 
     // =================================================================================================== MATTHIAS
     function getAll_ofJaargang($jaargangId){
-        $query = $this->db->where('jaarid', $jaar->id);
+        $query = $this->db->where('jaarid', $jaargangId);
         $query = $this->db->get('Persoon');
 
         return $query->result();
