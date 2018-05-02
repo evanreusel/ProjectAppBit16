@@ -115,6 +115,16 @@ class Admin extends CI_Controller {
 					$view = 'index';
 				}
 			break;
+			case "personeelsinschrijvingen":
+				if($extras != null) {											
+					$this->load->model('jaargang_model');
+					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
+					$data['jaargang']=$this->jaargang_model->get_byId($extras);
+				}else{															// Can't load page without jaargang id => load indexpage
+					$view = 'index';
+				}
+
+			break;
 			case 'jaargangoverzicht':
 				$this->load->model('jaargang_model');
 				$data['data']['jaargangen'] = $this->jaargang_model->getAllbyBeginTijdstip();
