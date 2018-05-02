@@ -96,8 +96,8 @@ function soortselect(){
 </div>
 
 <div id="soortselect">
-    <button value="Docent" class="soortbutton btn btn-secondary">Docenten</button>
-    <button value="student" class="soortbutton btn btn-secondary">Leerlingen</button>
+    <button value="deelnemer" class="soortbutton btn btn-secondary">Deelnemers</button>
+    <button value="vrijwilliger" class="soortbutton btn btn-secondary">Vrijwilligers</button>
 </div>
 
 <?php echo form_open('admin/excel', array('name' => 'fileform', 'id' => 'fileform', 'role' => 'form', 'enctype' => 'multipart/form-data'));?>
