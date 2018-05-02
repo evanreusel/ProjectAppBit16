@@ -40,7 +40,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     if (isset($ingeschrevenActiviteiten->$id)) {
                         echo 'hidden';
                     }echo '" id="inschrijven" value="'.$keuzeoptie->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
-                    echo '<button id="vrijwilligers" class"btn btn-primary float-right" value="'.$keuzeoptie->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
+                    
         }     
         echo "</li></ul></li>";
     ;
