@@ -70,11 +70,13 @@ class Admin extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 			'title' => 'Editiebeheer',
-				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
+				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/',
+				'hulp' => "Beheer het huidige jaargang en bekijk informatie over de vorige jaargangen"
 			],
 			[
 				'title' => 'Locaties',
-				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
+				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/',
+				'hulp' => "Voeg nieuwe plaatsen toe of pas bestaande plaatsen aan"
 			],
 			[
 				'title' => 'Mails',
@@ -215,10 +217,10 @@ class Admin extends CI_Controller {
 			break;
 
 			case 'importsuccess':
-			$this->load->model('CSV_model');
-        	$soort = $this->input->post('soort', TRUE);
-        	$personen = $this->CSV_model->readpersonen($soort);
-			$data["personen"] = $personen;
+			$data["personen"] = $extras;
+			break;
+
+			case 'importfout':
 			break;
 
 			default:
@@ -326,7 +328,14 @@ class Admin extends CI_Controller {
 	}
 
 	public function excel(){		
-		$this->dash("importsuccess");
+		$this->load->model('CSV_model');
+        $soort = $this->input->post('soort', TRUE);
+        $personen = $this->CSV_model->readpersonen($soort);
+		if($personen != null){
+		$this->dash("importsuccess",$personen);
+		} else {
+		$this->dash("importfout");
+		}
 	}
 
 	public function list(){
