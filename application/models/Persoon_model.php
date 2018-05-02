@@ -30,12 +30,7 @@ class Persoon_model extends CI_Model {
     {
         $this->db->where("id", $id);
         $query = $this->db->get('Persoon');
-
-        if($query->result() != null){
-            return $query->result();
-        }
-        
-        return null;
+        return $query->row(); 
     }
     function get_All()
     {
