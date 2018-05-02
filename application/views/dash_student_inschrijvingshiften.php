@@ -88,7 +88,8 @@ $(document).ready(function(){
                 type: "GET",
                 async: false,
                 success: function(data){                    
-                        $('#dialoogvenster').html(data);
+                        $('#dialoogvenster').text(data);
+                        $('#val').text(data);
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }

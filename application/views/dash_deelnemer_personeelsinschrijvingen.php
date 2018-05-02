@@ -1,23 +1,52 @@
 <?php 
-$teller = 0;
-foreach($keuzemogelijkheden as $keuzemogelijkheid) {
-    echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
-    foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
+$ingeschrevenActiviteiten = new stdClass();
+foreach ($ingeschreven as $key) {
+    $id=$key->keuzeoptieId;
+    $ingeschrevenActiviteiten->$id=0; 
+}
+
+
+// foreach($keuzemogelijkheden as $keuzemogelijkheid) {
+//     echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
+//     foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
         
             
-                if ($ingeschreven[$teller]->keuzeoptieId == $keuzeoptie->id) {
-                    echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
-                    echo '<button class="btn btn-warning float-right inschrijven" id="'.$keuzeoptie->id.'">Uitschrijven</button>';
-                }else {
-                    echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
-                    echo '<button class="btn btn-primary float-right inschrijven" id="'.$keuzeoptie->id.'">Inschrijven</button>';
-                }
-            $teller++;
+//                 if ($ingeschreven[$teller]->keuzeoptieId == $keuzeoptie->id) {
+//                     echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
+//                     echo '<button class="btn btn-warning float-right inschrijven" id="'.$keuzeoptie->id.'">Uitschrijven</button>';
+//                 }else {
+//                     echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
+//                     echo '<button class="btn btn-primary float-right inschrijven" id="'.$keuzeoptie->id.'">Inschrijven</button>';
+//                 }
+//             $teller++;
         
+//         echo "</li></ul></li>";
+//     };
+//     echo "</ul></div></div>";
+// };
+
+foreach($keuzemogelijkheden as $keuzemogelijkheid) {
+    echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$activiteit->naam.'</div><div class="card-body"><ul class="list-group">';
+
+        foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie ) {
+                    $id = $keuzeoptie->id;
+                    echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
+                    echo '<button class="btn btn-warning float-right ';
+                    if (!isset($ingeschrevenActiviteiten->$id)) {
+                        echo 'hidden';
+                    }
+                    echo '" id="uitschrijven" value="'.$keuzeoptie->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
+                    echo '<button class="btn btn-primary float-right ';
+                    if (isset($ingeschrevenActiviteiten->$id)) {
+                        echo 'hidden';
+                    }echo '" id="inschrijven" value="'.$keuzeoptie->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
+                    echo '<button id="vrijwilligers" class"btn btn-primary float-right" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
+        }     
         echo "</li></ul></li>";
-    };
+    ;
     echo "</ul></div></div>";
 };
+
 ?>
 <p id="val"></p>
 <p id="test"></p>
