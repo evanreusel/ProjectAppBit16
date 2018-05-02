@@ -77,11 +77,31 @@ class Deelnemer extends CI_Controller {
 				$data['ingeschreven']= $this->KeuzeoptieVanDeelnemer_model->get_byPersoonId($data['user']->id);
 			
 				break;
+		
+			case "vrijwilligersucces":
+			$data['persoon'] = $extras;
+
+			break;
 		}
 
 		// Set view
 		$data['view'] = 'dash_deelnemer_' . $view;
 
 		$this->load->view('template/main', $data);
+	}
+
+	public function vrijwilligertoevoegen(){
+            $persoon = new stdClass();
+
+			$persoon->naam = $this->input->post('naam', TRUE);
+			$persoon->mail = $this->input->post('mail', TRUE);
+			$persoon->woonplaats = $this->input->post('woonplaats', TRUE);
+			$persoon->adres = $this->input->post('adres', TRUE);
+			$persoon->soort = "vrijwilleger";
+
+            $this->load->model("Persoon_model");
+       		$this->Persoon_model->insert($persoon);
+
+			$this->dash('vrijwilligersucces',$persoon);
 	}
 }
