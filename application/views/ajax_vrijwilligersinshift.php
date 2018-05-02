@@ -5,6 +5,7 @@
 </tr>
 <?php
 foreach ($shiften as $shift) {
+    echo $shit->persoonId;
     foreach ($shift->personen as $persoon) {
         echo "<tr><td>".$persoon->naam."</td><td>".$persoon->mail."</td></tr>";
     }
