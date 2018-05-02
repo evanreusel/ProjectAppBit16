@@ -200,12 +200,12 @@ class Admin extends CI_Controller {
 			$this->load->model('Persoon_model');
         	$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
 			break;
-
+			// =================================================================================================== MATTHIAS
 			case 'vrijwilligersoverzicht':
-			$this->load->model('Persoon_model');
-        	$data["vrijwilligers"] = $this->Persoon_model->getallwithshift();
+				$this->load->model('Persoon_model');
+				$data['data']["vrijwilligers"] = $this->Persoon_model->getAll_ofJaargang_withShift($jaargangId);
 			break;
-
+			// =================================================================================================== /MATTHIAS
 			case 'importsuccess':
 			$this->load->model('CSV_model');
         	$soort = $this->input->post('soort', TRUE);
