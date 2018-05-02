@@ -25,6 +25,18 @@ class Persoon_model extends CI_Model {
         
         return null;
     }
+
+    function get_Id($id)
+    {
+        $this->db->where("id", $id);
+        $query = $this->db->get('Persoon');
+
+        if($query->result() != null){
+            return $query->result();
+        }
+        
+        return null;
+    }
     function get_All()
     {
         //$this->db->where(array('id' => $id));

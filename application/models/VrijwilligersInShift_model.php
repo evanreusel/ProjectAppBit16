@@ -22,7 +22,7 @@ class VrijwilligersInShift_Model extends CI_Model{
 
         $this->load->model('Persoon_model');
         foreach ($shiften as $shift) {
-            $shift->personen = $this->Persoon_model->get_byId($shift->persoonId);
+            $shift->persoon = $this->Persoon_model->get_Id($shift->persoonId);
         }
 
         return $shiften; 
