@@ -213,7 +213,7 @@ class Admin extends CI_Controller {
 			// =================================================================================================== MATTHIAS
 			case 'vrijwilligersoverzicht':
 				$this->load->model('Persoon_model');
-				$data['data']["vrijwilligers"] = $this->Persoon_model->getAll_ofJaargang_withShift($jaargangId);
+				$data['data']["vrijwilligers"] = $this->Persoon_model->getAll_ofJaargang_withShift($extras);
 			break;
 			// =================================================================================================== /MATTHIAS
 			case 'importsuccess':
