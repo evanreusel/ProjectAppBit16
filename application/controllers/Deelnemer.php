@@ -1,13 +1,13 @@
 <!-- 
     GREIF MATTHIAS 
-	LAST UPDATED: 18 04 25
-	DOCENT CONTROLLER
+	LAST UPDATED: 18 05 02
+	DEELNEMER CONTROLLER
 -->
 
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Docent extends CI_Controller {
+class Deelnemer extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
