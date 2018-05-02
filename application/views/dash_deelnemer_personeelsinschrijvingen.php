@@ -1,16 +1,16 @@
 <?php 
 $teller = 0;
 foreach($keuzemogelijkheden as $keuzemogelijkheid) {
-    echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$activiteit->naam.'</div><div class="card-body"><ul class="list-group">';
+    echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
     foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
         echo '<li class="list-group-item justify-content-between align-items-center"><p><b>'.$taak->functie.':</b></p><ul class="list-group">';
             
-                if ($ingeschreven[$teller]->shiftId == $shift->id) {
-                    echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-warning float-right inschrijven" id="'.$shift->id.'">Uitschrijven</button>';
+                if ($ingeschreven[$teller]->keuzeoptieId == $keuzeoptie->id) {
+                    echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
+                    echo '<button class="btn btn-warning float-right inschrijven" id="'.$keuzeoptie->id.'">Uitschrijven</button>';
                 }else {
-                    echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-primary float-right inschrijven" id="'.$shift->id.'">Inschrijven</button>';
+                    echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
+                    echo '<button class="btn btn-primary float-right inschrijven" id="'.$keuzeoptie->id.'">Inschrijven</button>';
                 }
             $teller++;
         
@@ -26,7 +26,7 @@ $(document).ready(function(){
     $(".btn-primary").click(function(){
         var shiftId = $(this).attr('id');
         $.ajax({
-                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
+                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ keuzeoptieId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
                         $('#'+shiftId).removeClass('btn-primary');
@@ -41,12 +41,12 @@ $(document).ready(function(){
     $(".btn-warning").click(function(){
         var shiftId = $(this).attr('id');
         $.ajax({
-                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ shiftId +'/' + <?= $user->id; ?>,
+                url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ keuzeoptieId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        $('#'+shiftId).removeClass('btn-warning');
-                        $('#'+shiftId).addClass('btn-primary');
-                        $('#'+shiftId).text('inschrijven');
+                        $('#'+keuzeoptieId).removeClass('btn-warning');
+                        $('#'+shkeuzeoptieId).addClass('btn-primary');
+                        $('#'+keuzeoptieId).text('inschrijven');
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
