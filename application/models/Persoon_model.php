@@ -126,11 +126,9 @@ class Persoon_model extends CI_Model {
         $jaargang = $this->Jaargang_model->get_byId($jaargangId);
 
         // Get all Personen of Jaargang
-        $personen = $this->getAll_ofJaargang($jaargang);
-        
+        $personen = $this->getAll_ofJaargang($jaargang->id);
 
         $vrijwilligers = array();
-
         foreach($personen as $persoon){
             // Get Shifts
             $query = $this->db->where('persoonid', $persoon->id);
