@@ -45,6 +45,10 @@ class Deelnemer extends CI_Controller {
 			[
 				'title' => 'Inschrijven',
 				'url' => base_url() . 'index.php/deelnemer/dash/personeelsinschrijvingen/'
+			],													// Available links for navbar
+			[
+				'title' => 'Vrijwilliger toevoegen',
+				'url' => base_url() . 'index.php/deelnemer/dash/vrijwilligertoevoegen/'
 			]
 		];
 		$data['actions'] = [
@@ -65,6 +69,19 @@ class Deelnemer extends CI_Controller {
 				//zoek keuzemogelijkheden
 				$this->load->model('keuzemogelijkheid_model');
 				$data['keuzemogelijkheden']=$this->keuzemogelijkheid_model->getAll_byJaargangId($data['actiefJaar']->id);
+				foreach ($data['keuzemogelijkheden'] as $keuzemogelijkheid) {
+					$this->load->model('keuzeoptie_model');
+					$keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+
+				}
+				$this->load->model('KeuzeoptieVanDeelnemer_model');
+				$data['ingeschreven']= $this->KeuzeoptieVanDeelnemer_model->get_byPersoonId($data['user']->id);
+			
+				break;
+		
+			case "vrijwilligersucces":
+			$data['persoon'] = $extras;
+
 			break;
 		}
 
@@ -74,10 +91,26 @@ class Deelnemer extends CI_Controller {
 		$this->load->view('template/main', $data);
 	}
 
+<<<<<<< HEAD
 	public function logout(){
 		$this->session->unset_userdata('id');
 
 		// Redirect to adminbeheer
 		redirect('/');
+=======
+	public function vrijwilligertoevoegen(){
+            $persoon = new stdClass();
+
+			$persoon->naam = $this->input->post('naam', TRUE);
+			$persoon->mail = $this->input->post('mail', TRUE);
+			$persoon->woonplaats = $this->input->post('woonplaats', TRUE);
+			$persoon->adres = $this->input->post('adres', TRUE);
+			$persoon->soort = "vrijwilleger";
+
+            $this->load->model("Persoon_model");
+       		$this->Persoon_model->insert($persoon);
+
+			$this->dash('vrijwilligersucces',$persoon);
+>>>>>>> a4306400ffb69a48a4f87ccb0a2cd5eab37262ce
 	}
 }
