@@ -98,11 +98,12 @@ function soortselect(){
 <div id="soortselect">
     <button value="Docent" class="soortbutton btn btn-secondary">Docenten</button>
     <button value="student" class="soortbutton btn btn-secondary">Leerlingen</button>
-    <button value="overige" class="soortbutton btn btn-secondary">overige</button>
 </div>
 
 <?php echo form_open('admin/excel', array('name' => 'fileform', 'id' => 'fileform', 'role' => 'form', 'enctype' => 'multipart/form-data'));?>
 
+<a href="<?=base_url('assets/bestanden/template.csv');?>">template downloaden</a>
+<br/>
 <input type="hidden" id="soort" name="soort" class="soort">
 <label for="userfile">Kies een CSV-bestand om te importeren</label>
 </br>

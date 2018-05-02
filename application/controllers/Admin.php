@@ -207,10 +207,10 @@ class Admin extends CI_Controller {
 			break;
 
 			case 'importsuccess':
-			$this->load->model('CSV_model');
-        	$soort = $this->input->post('soort', TRUE);
-        	$personen = $this->CSV_model->readpersonen($soort);
-			$data["personen"] = $personen;
+			$data["personen"] = $extras;
+			break;
+
+			case 'importfout':
 			break;
 
 			default:
@@ -318,7 +318,14 @@ class Admin extends CI_Controller {
 	}
 
 	public function excel(){		
-		$this->dash("importsuccess");
+		$this->load->model('CSV_model');
+        $soort = $this->input->post('soort', TRUE);
+        $personen = $this->CSV_model->readpersonen($soort);
+		if($personen != null){
+		$this->dash("importsuccess",$personen);
+		} else {
+		$this->dash("importfout");
+		}
 	}
 
 	public function list(){
