@@ -112,45 +112,52 @@ class Persoon_model extends CI_Model {
         return $deelnemers;
     }
 
-    function getallwithshift(){
-        //jaargang ophalen
-        $this->load->model("jaargang_model");
-        $jaar = $this->jaargang_model->getActief();
-
-        //tussenvariabele ophalen
+    // =================================================================================================== MATTHIAS
+    function getAll_ofJaargang($jaargangId){
         $query = $this->db->where('jaarid', $jaar->id);
         $query = $this->db->get('Persoon');
-        $personen = $query->result();
 
-        $vrijwilligers = new SplObjectStorage;
+        return $query->result();
+    }
+
+    function getAll_ofJaargang_withShift($jaargangId){
+        // Get Jaargang information
+        $this->load->model("Jaargang_model");
+        $jaargang = $this->Jaargang_model->get_byId($jaargangId);
+
+        // Get all Personen of Jaargang
+        $personen = $this->getAll_ofJaargang($jaargang);
+        
+
+        $vrijwilligers = array();
 
         foreach($personen as $persoon){
-        //keuzeoptie ophalen
-        $query = $this->db->where('persoonid', $persoon->id);
-        $query = $this->db->get('vrijwilligersinshift');
-        $data = $query->result();
+            // Get Shifts
+            $query = $this->db->where('persoonid', $persoon->id);
+            $query = $this->db->get('vrijwilligersinshift');
+            $data = $query->result();
 
-        //keuzemogelijkheden per persoon ophalen
-        $shiften = array();
+            //keuzemogelijkheden per persoon ophalen
+            $shiften = array();
 
-        if($data != null){
-        foreach($data as $item){
-        $query = $this->db->where('id', $item->shiftId);
-        $query = $this->db->get('shift');
-        $shift = $query->row();
+            if($data != null){
+            foreach($data as $item){
+            $query = $this->db->where('id', $item->shiftId);
+            $query = $this->db->get('shift');
+            $shift = $query->row();
 
-        //keuzemogelijkheid koppelen aan keuzeoptie
-        $query = $this->db->where('id', $shift->taakId);
-        $query = $this->db->get('taak');
-        $shift->taak = $query->row();
+            //keuzemogelijkheid koppelen aan keuzeoptie
+            $query = $this->db->where('id', $shift->taakId);
+            $query = $this->db->get('taak');
+            $shift->taak = $query->row();
 
-        //keuzemogelijkheid koppelen aan keuzeoptie
-        $query = $this->db->where('id', $shift->taak->keuzemogelijkheidId);
-        $query = $this->db->get('keuzemogelijkheid');
-        $shift->taak->keuzemogelijkheid = $query->row();
+            //keuzemogelijkheid koppelen aan keuzeoptie
+            $query = $this->db->where('id', $shift->taak->keuzemogelijkheidId);
+            $query = $this->db->get('keuzemogelijkheid');
+            $shift->taak->keuzemogelijkheid = $query->row();
 
-        $shiften[] = $shift;
-        }
+            $shiften[] = $shift;
+            }
         }
 
         $vrijwilligers[$persoon] = $shiften;
@@ -158,6 +165,7 @@ class Persoon_model extends CI_Model {
 
         return $vrijwilligers;
     }
+    // =================================================================================================== /MATTHIAS
     
     function getAll($id)
     {
