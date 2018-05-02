@@ -70,11 +70,13 @@ class Admin extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 			'title' => 'Editiebeheer',
-				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
+				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/',
+				'hulp' => "Beheer het huidige jaargang en bekijk informatie over de vorige jaargangen"
 			],
 			[
 				'title' => 'Locaties',
-				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
+				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/',
+				'hulp' => "Voeg nieuwe plaatsen toe of pas bestaande plaatsen aan"
 			],
 			[
 				'title' => 'Mails',
