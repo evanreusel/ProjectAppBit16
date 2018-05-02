@@ -64,7 +64,15 @@ class Docent extends CI_Controller {
 				//zoek keuzemogelijkheden
 				$this->load->model('keuzemogelijkheid_model');
 				$data['keuzemogelijkheden']=$this->keuzemogelijkheid_model->getAll_byJaargangId($data['actiefJaar']->id);
-			break;
+				foreach ($data['keuzemogelijkheden'] as $keuzemogelijkheid) {
+					$this->load->model('keuzeoptie_model');
+					$keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+
+				}
+				$this->load->model('KeuzeoptieVanDeelnemer_model');
+				$data['ingeschreven']= $this->KeuzeoptieVanDeelnemer_model->get_byPersoonId($data['user']->id);
+			
+				break;
 		}
 
 		// Set view
