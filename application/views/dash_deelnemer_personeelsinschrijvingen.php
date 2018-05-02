@@ -26,7 +26,7 @@ foreach ($ingeschreven as $key) {
 // };
 
 foreach($keuzemogelijkheden as $keuzemogelijkheid) {
-    echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$activiteit->naam.'</div><div class="card-body"><ul class="list-group">';
+    echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
 
         foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie ) {
                     $id = $keuzeoptie->id;
