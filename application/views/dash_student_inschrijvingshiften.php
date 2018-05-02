@@ -21,13 +21,29 @@ foreach($keuzemogelijkheden as $activiteit) {
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }echo '" id="inschrijven" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
-                    echo '<button id="vrijwilligers" class"btn btn-primary float-right" value="'.$shift->id.'" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
+                    echo '<button id="vrijwilligers" class"btn btn-primary float-right" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
         }     
         echo "</li></ul></li>";
     };
     echo "</ul></div></div>";
 };
 ?>
+<div class="modal fade" id="dialoogvrijwilligers" tabindex="-1" role="dialog" aria-labelledby="dialoogVrijwilligersLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dialoogVrijwilligersLabel">Shift title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="dialoogvenster"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <p id="val"></p>
 <p id="test"></p>
 <script>
@@ -72,7 +88,7 @@ $(document).ready(function(){
                 type: "GET",
                 async: false,
                 success: function(data){                    
-                        $('#val').html(data);
+                        $('#dialoogvenster').html(data);
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
