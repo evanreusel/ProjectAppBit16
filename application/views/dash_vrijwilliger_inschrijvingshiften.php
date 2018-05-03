@@ -37,7 +37,9 @@ foreach($keuzemogelijkheden as $activiteit) {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" id="dialoogvenster"></div>
+      <div class="modal-body" id="dialoogvenster">
+      <h1>hallo</h1>
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
@@ -86,7 +88,6 @@ $(document).ready(function(){
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftWeergeven/'+ shiftId ,
                 type: "GET",
-                async: true,
                 success: function(data){                    
                         $('#dialoogvenster').text(data);
                         $('#val').html(data);
