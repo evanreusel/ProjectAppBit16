@@ -70,7 +70,7 @@ class Shiften extends CI_Controller{
     {
 
         $this->load->model('VrijwilligersInShift_model');
-        $data['shiften']=$this->VrijwilligersInShift_model->get_byAllShiftId($shiftId);
+        $data['shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
 
         $this->load->view('ajax_vrijwilligersinshift', $data);
 
