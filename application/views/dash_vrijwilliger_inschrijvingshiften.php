@@ -12,7 +12,7 @@ foreach($keuzemogelijkheden as $activiteit) {
         foreach ($taak->shiften as $shift ) {
                     $id = $shift->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button id="vrijwilligers" class="btn btn-primary" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
+                    echo '<button class="btn btn-primary vrijwilligers" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
                     echo '<button class="btn btn-warning uitschrijven ';
                     if (!isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
@@ -84,7 +84,7 @@ $(document).ready(function(){
             });
     });
 
-    $("#vrijwilligers").click(function(){
+    $(".vrijwilligers").click(function(){
         var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftWeergeven/'+ shiftId ,
