@@ -1,10 +1,8 @@
-<!-- 
-    TIM SWERTS
-	LAST UPDATED: 18 03 30
-	KEUZEOPTIE CONTROLLER
--->
-
 <?php
+
+// Tim Swerts
+// last updated: 3/05/2018
+// shiften controller
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');

@@ -20,10 +20,10 @@ class VrijwilligersInShift_Model extends CI_Model{
         $this->db->where('shiftId', $shiftId);
         $shiften = $this->db->get('VrijwilligersInShift');
 
-        // $this->load->model('Persoon_model');
-        // foreach ($shiften as $shift) {
-        //     $shift->persoon = $this->Persoon_model->get_Id();
-        // }
+        $this->load->model('Persoon_model');
+        foreach ($shiften as $shift) {
+            $shift->persoon = $this->Persoon_model->get_Id();
+        }
 
         return $shiften->result(); 
     }
