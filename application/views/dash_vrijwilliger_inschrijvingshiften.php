@@ -21,7 +21,7 @@ foreach($keuzemogelijkheden as $activiteit) {
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }echo '" id="inschrijven" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
-                    echo '<button id="vrijwilligers" class"btn btn-primary float-right" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
+                    echo '<button id="vrijwilligers" class="btn btn-primary float-right" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
         }     
         echo "</li></ul></li>";
     };
