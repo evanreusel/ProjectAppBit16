@@ -1,5 +1,5 @@
 <?php print_r($shiften);?>
-<table>
+<!-- <table>
 <tr>
 <th>Naam</th>
 <th>e-mailadres</th>
@@ -12,4 +12,4 @@ foreach ($shiften as $shift) {
 }
 ?>
 </table>
-<?php print_r($shiften);?>
+<?php print_r($shiften);?> -->
