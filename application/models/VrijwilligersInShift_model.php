@@ -25,7 +25,7 @@ class VrijwilligersInShift_Model extends CI_Model{
         //     $shift->persoon = $this->Persoon_model->get_Id();
         // }
 
-        return $shiften; 
+        return $shiften->result(); 
     }
     
     function get_byPersoonId($id)
