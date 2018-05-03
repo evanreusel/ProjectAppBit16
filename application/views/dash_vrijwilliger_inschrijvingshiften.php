@@ -89,8 +89,7 @@ $(document).ready(function(){
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftWeergeven/'+ shiftId ,
                 type: "GET",
                 success: function(data){                    
-                        $('#dialoogvenster').text(data);
-                        $('#val').html(data);
+                        $('#dialoogvenster').html(data);
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }

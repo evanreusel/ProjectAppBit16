@@ -1,9 +1,12 @@
 
-<table>
+<table class="table">
+<thead class="thead-light">
 <tr>
 <th>Naam</th>
 <th>e-mailadres</th>
 </tr>
+</thead>
+<tbody>
 <?php
 foreach ($shiften as $shift) {
     
@@ -11,4 +14,5 @@ foreach ($shiften as $shift) {
     
 }
 ?>
+</tbody>
 </table>
