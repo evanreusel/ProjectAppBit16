@@ -18,7 +18,7 @@ foreach($keuzemogelijkheden as $activiteit) {
                         echo 'hidden';
                     }
                     echo '" id="uitschrijven'.$shift->id.'" value="'.$shift->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
-                    echo '<button class="btn btn-primary blue inschrijven ';
+                    echo '<button class="btn btn-primary inschrijven ';
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }echo '" id="inschrijven'.$shift->id.'" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
@@ -34,7 +34,7 @@ foreach($keuzemogelijkheden as $activiteit) {
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="dialoogVrijwilligersLabel">Shift title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button button-warning" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
