@@ -12,6 +12,7 @@ foreach($keuzemogelijkheden as $activiteit) {
         foreach ($taak->shiften as $shift ) {
                     $id = $shift->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
+                    echo '<button id="vrijwilligers" class="btn btn-primary float-right" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
                     echo '<button class="btn btn-warning float-right ';
                     if (!isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
@@ -21,7 +22,7 @@ foreach($keuzemogelijkheden as $activiteit) {
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }echo '" id="inschrijven" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
-                    echo '<button id="vrijwilligers" class="btn btn-primary float-right" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
+                    
         }     
         echo "</li></ul></li>";
     };
