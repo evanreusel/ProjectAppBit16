@@ -12,4 +12,3 @@ foreach ($shiften as $shift) {
 }
 ?>
 </table>
-<?php print_r($shiften);?>
