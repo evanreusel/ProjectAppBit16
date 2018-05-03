@@ -44,7 +44,7 @@ foreach($keuzemogelijkheden as $activiteit) {
     </div>
   </div>
 </div>
-<p id="val"></p>
+<div id="val"></div>
 <p id="test"></p>
 <script>
 $(document).ready(function(){
@@ -89,7 +89,7 @@ $(document).ready(function(){
                 async: false,
                 success: function(data){                    
                         $('#dialoogvenster').text(data);
-                        $('#val').text(data);
+                        $('#val').html(data);
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
