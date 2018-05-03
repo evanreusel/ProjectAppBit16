@@ -34,7 +34,7 @@ foreach($keuzemogelijkheden as $activiteit) {
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="dialoogVrijwilligersLabel">Shift title</h5>
-        <button type="button button-warning" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button btn-warning" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
