@@ -13,15 +13,15 @@ foreach($keuzemogelijkheden as $activiteit) {
                     $id = $shift->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
                     echo '<button id="vrijwilligers" class="btn btn-primary" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
-                    echo '<button class="btn btn-warning  ';
+                    echo '<button class="btn btn-warning uitschrijven ';
                     if (!isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }
-                    echo '" id="uitschrijven" value="'.$shift->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
-                    echo '<button class="btn btn-primary  ';
+                    echo '" id="" value="'.$shift->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
+                    echo '<button class="btn btn-primary inschrijven ';
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
-                    }echo '" id="inschrijven" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
+                    }echo '" id="" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
                     
         }     
         echo "</li></ul></li>";
@@ -54,7 +54,7 @@ $(document).ready(function(){
     $('.hidden').each(function(){
         $(this).hide();
     })
-    $("#inschrijven").click(function(){
+    $(".inschrijven").click(function(){
         var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
@@ -69,7 +69,7 @@ $(document).ready(function(){
             });
     });
 
-    $("#uitschrijven").click(function(){
+    $(".uitschrijven").click(function(){
         var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ shiftId +'/' + <?= $user->id; ?>,
