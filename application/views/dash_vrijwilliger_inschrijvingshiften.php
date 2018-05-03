@@ -17,11 +17,11 @@ foreach($keuzemogelijkheden as $activiteit) {
                     if (!isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }
-                    echo '" id="" value="'.$shift->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
+                    echo '" id="uitschrijven'.$shift->id.'" value="'.$shift->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
                     echo '<button class="btn btn-primary inschrijven ';
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
-                    }echo '" id="" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
+                    }echo '" id="inschrijven'.$shift->id.'" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
                     
         }     
         echo "</li></ul></li>";
@@ -61,8 +61,8 @@ $(document).ready(function(){
                 type: "GET",
                 async: false,
                 success: function(data){                    
-                        $('#inschrijven').hide();
-                        $('#uitschrijven').show();
+                        $('#inschrijven'+shiftId).hide();
+                        $('#uitschrijven'+shiftId).show();
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
@@ -76,8 +76,8 @@ $(document).ready(function(){
                 type: "GET",
                 async: false,
                 success: function(data){                    
-                        $('#uitschrijven').hide();
-                        $('#inschrijven').show();
+                        $('#uitschrijven'+shiftId).hide();
+                        $('#inschrijven'+shiftId).show();
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
