@@ -54,19 +54,6 @@ form .md-form{
     margin-right: auto;
 }
 
-.items{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-.item .btn{
-    width: 100%;
-}
-
-.item .btn .fa{
-    font-size: 20px;
-    width: 100%;
+.nav-item:hover{
+    background-color: #F3E5F5;
 }
