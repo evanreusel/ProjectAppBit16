@@ -6,7 +6,7 @@
 
 <p class="tooling">
     Hier kan u de verschillende edities voor uw evenement beheren. <br/>
-    <b>LET OP:</b> Er kan maar 1 editie tegelijkertijd actief zijn, eenmaal een editie afgesloten te hebben is er geen mogelijkheid meer deze terug te activeren.
+    LET OP: Er kan maar 1 editie tegelijkertijd actief zijn, eenmaal een editie afgesloten te hebben is er geen mogelijkheid meer deze terug te activeren.
 </p>
 
 <table class="table">
@@ -31,7 +31,7 @@
             <?php echo $jaargang->thema; ?>
         </td>
         <td>
-            <?php echo date("d-m-Y", strtotime($jaargang->beginTijdstip)); ?> > <?php echo date("d-m-Y", strtotime($jaargang->eindTijdstip)); ?>
+            van <?php echo date("d-m-Y", strtotime($jaargang->beginTijdstip)); ?> tot <?php echo date("d-m-Y", strtotime($jaargang->eindTijdstip)); ?>
         </td>
         <td>
             <?php
