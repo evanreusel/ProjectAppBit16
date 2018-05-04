@@ -1,31 +1,55 @@
 <div class="container">
-    <table class="table table-bordered">
-        <thead>
-        <tr class="table-info">
-            <th>Verzenden op</th>
-            <th>Ontvangers</th>
-            <th>Onderwerp</th>
-            <th>Sjabloon</th>
-            <th>Status</th>
-            <th>Bewerken</th>
+    <div class="card">
+        <div class="card-header">
+            Mailherinneringen
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                <tr class="table-info">
+                    <th>Verzenden op</th>
+                    <th>Ontvangers</th>
+                    <th>Onderwerp</th>
+                    <th>Sjabloon</th>
+                    <th>Status</th>
+                    <th>Bewerken</th>
 
-        </tr>
-        </thead>
+                </tr>
+                </thead>
 
-        <tbody>
-        <?php foreach ($reminders as $reminder) {
-        ?>
-            <tr>
-            <td><?php echo $reminder->timer?></td>
-            <td><?php echo count($reminder->ontvangers)?> ontvangers</td>
-            <td><?php echo $reminder->sjabloon->naam?></td>
-            <td><?php echo $reminder->sjabloon->naam?></td>
-            <td><?php echo $reminder->status?></td>
-            <td></td>
-            </tr>
-        <?php }?>
-        </tbody>
-    </table>
+                <tbody>
+                <?php foreach ($reminders as $reminder) {
+                    ?>
+                    <tr>
+                        <td><?php echo $reminder->timer?></td>
+                        <td><?php echo count($reminder->ontvangers)?> ontvangers</td>
+                        <td><?php echo $reminder->sjabloon->naam?></td>
+                        <td><?php echo $reminder->sjabloon->naam?></td>
+                        <td><?php echo $reminder->status?></td>
+                        <td></td>
+                    </tr>
+                <?php }?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">Mailsjablonen</div>
+        <div class="card-body">
+            <div class="card">
+                <div class="card-header">Onderwerp</div>
+                <div class="card-body">
+                    Mail text blabla
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-success btn-block">Aanpassen</a>
+                    <a href="#" class="btn btn-danger btn-block">Verwijderen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <
+
 
 
 </div>
