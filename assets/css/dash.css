@@ -54,6 +54,7 @@ form .md-form{
     margin-right: auto;
 }
 
-.nav-item:hover{
-    background-color: #F3E5F5;
+p{
+    margin: 0;
+    padding: 10px;
 }
