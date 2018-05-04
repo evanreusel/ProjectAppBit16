@@ -3,6 +3,37 @@
     LAST UPDATED: 18 05 02
     DASH ADMIN JAARGANGBEHEER
 -->
+<ul class="navbar-nav mr-auto">
+
+<li class="nav-item active">
+<a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/jaargangoverzicht/"title="Beheer het huidige jaargang en bekijk informatie over de vorige jaargangen">
+Editiebeheer                    </a>
+</li>
+<li class="nav-item active">
+<a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/plaatsToevoegen/"title="Voeg nieuwe plaatsen toe of pas bestaande plaatsen aan">
+Locaties                    </a>
+</li>
+<li class="nav-item active">
+<a class="nav-link" href="http://projectab16.ddns.net/index.php/mail/overzicht/">
+Mails                    </a>
+</li>
+
+
+<!-- Dropdown for actions -->
+        <li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+TM                        </a>
+
+<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="http://projectab16.ddns.net/index.php/admin/dash/adminbeheer/">
+        Administrators beheren                                </a>
+                                <a class="dropdown-item" href="http://projectab16.ddns.net/index.php/admin/logout/">
+        Log out                                </a>
+                        </div>
+</li>
+
+</ul>
+
 <div class="items">
     <?php
         if($data['jaargang']->actief){
