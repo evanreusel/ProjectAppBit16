@@ -14,18 +14,6 @@ class Main extends CI_Controller {
 		$this->load->library('session');
 	}
 
-	
-	// Default page
-	public function index()
-	{
-	    $data['message'] = "Hi there";
-	    $data['view'] = 'home';
-		$data['css_files'] = array("home.css");
-		$data['clearscreen'] = true;
-		
-		$this->load->view('template/main', $data);
-	}
-
 	// Mail signin entrypoint
 	public function signin($id = null, $token = null)
 	{
