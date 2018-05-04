@@ -42,7 +42,7 @@ DASH ADMIN JAARGANG ADD/UPDATE
 </div>
 
 <div class="md-form">
-    <input type="date" name="beginTijdstip" value="<?php echo $defaults['eindTijdstip']; ?>">
+    <input type="date" name="beginTijdstip" value="<?php echo $defaults['beginTijdstip']; ?>">
     <label for="begin">Begin datum en tijdstip:</label>
 </div>
 
