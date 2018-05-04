@@ -29,6 +29,10 @@ function ajaxplaats(plaatsId){
 
 </script>
 
+<p class="tooling">
+    Beheer hier de verschillende locaties die u wilt kunnen gebruiken doorheen de applicatie.
+</p>
+
 <div class="form-group">
     <?php
     $attributes = array('name' => 'plaats');
