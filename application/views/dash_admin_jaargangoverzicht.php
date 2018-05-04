@@ -1,12 +1,12 @@
 <!-- 
     GREIF MATTHIAS
-    LAST UPDATED: 18 03 30
+    LAST UPDATED: 18 04 05
     DASH ADMIN JAARGANGOVERZICHT
 -->
 
 <p class="tooling">
     Hier kan u de verschillende edities voor uw evenement beheren. <br/>
-    LET OP: Er kan maar 1 editie tegelijkertijd actief zijn, eenmaal een editie afgesloten te hebben is er geen mogelijkheid meer deze terug te activeren.
+    LET OP: Er kan maar 1 editie tegelijkertijd actief zijn, om een nieuwe editie te kunnen starten moeten alle andere edities reeds afgesloten zijn. Eenmaal een editie afgesloten te hebben is er geen mogelijkheid meer deze terug te activeren.
 </p>
 
 <table class="table">
@@ -43,7 +43,7 @@
                     {
                         echo '<a class="deactivate btn btn-primary" data-id="' . $jaargang->id . '" title="Druk hier om het huidige jaargang af te sluiten"><i class="fa fa-ban"></i> Afsluiten</a>';
                     }else{
-                        echo 'Deze editie is nog bezig';
+                        echo 'Deze editie is bezig';
                     }
                 }
 

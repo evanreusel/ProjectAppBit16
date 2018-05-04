@@ -4,33 +4,27 @@
             Mailherinneringen
         </div>
         <div class="card-body">
-            <table class="table table-bordered">
-                <thead>
-                <tr class="table-info">
-                    <th>Verzenden op</th>
-                    <th>Ontvangers</th>
-                    <th>Onderwerp</th>
-                    <th>Sjabloon</th>
-                    <th>Status</th>
-                    <th>Bewerken</th>
 
-                </tr>
-                </thead>
-
-                <tbody>
                 <?php foreach ($reminders as $reminder) {
                     ?>
-                    <tr>
-                        <td><?php echo $reminder->timer ?></td>
-                        <td><?php echo count($reminder->ontvangers) ?> ontvangers</td>
-                        <td><?php echo $reminder->sjabloon->naam ?></td>
-                        <td><?php echo $reminder->sjabloon->naam ?></td>
-                        <td><?php echo $reminder->status ?></td>
-                        <td></td>
-                    </tr>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <?php echo $reminder->sjabloon->naam ?>" op <?php echo $reminder->timer ?>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <p><?php echo $reminder->timer ?></p>
+                                <p><?php echo count($reminder->ontvangers) ?> ontvangers</p>
+                                <p><?php echo $reminder->sjabloon->naam ?></p>
+                                <p><?php echo $reminder->status ?></p>
+                            </div>
+                        </div>
+                    </div>
                 <?php } ?>
-                </tbody>
-            </table>
         </div>
     </div>
 
