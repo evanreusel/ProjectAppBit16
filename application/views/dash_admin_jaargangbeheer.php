@@ -6,7 +6,7 @@
 
 <?php if($data['jaargang']->actief){ ?>
     <p class="tooling">
-        Hier kan u de editie "<?php echo $data['jaargang']->naam; ?>" van <?php echo date("d-m-Y", strtotime($jaargang->beginTijdstip)); ?> tot <?php echo date("d-m-Y", strtotime($jaargang->eindTijdstip)); ?> bewerken. <br/>
+        Hier kan u de editie "<?php echo $data['jaargang']->naam; ?>" van <?php echo date("d-m-Y", strtotime($data['jaargang']->beginTijdstip)); ?> tot <?php echo date("d-m-Y", strtotime($data['jaargang']->eindTijdstip)); ?> bewerken. <br/>
     </p>
 <?php } else { ?>
     <p class="tooling">
