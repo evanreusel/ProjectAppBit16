@@ -126,7 +126,31 @@
 
     /* =================================================================================================== GREIF MATTHIAS */
     if(isset($data['admin'])){
-        echo anchor("admin/delete/" . $data['admin']->id,'<i class="fa fa-trash-o"></i> Verwijder', array('class' => 'btn btn-danger'));
+        echo '<a class="btn btn-danger" data-toggle="modal" data-target="#DeleteModal">
+                <i class="fa fa-trash-o"></i> Verwijder
+        </a>';
     }
     /* =================================================================================================== /GREIF MATTHIAS */
+    
 ?>
+
+
+<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Waarschuwing</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      Bent u zeker dat u a wilt verwijderen? 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-Light btn-outline-danger" data-dismiss="modal">Annuleer</button>
+        <?php echo anchor("admin/delete/" . $data['admin']->id,'<i class="fa fa-trash-o"></i> Verwijder', array('class' => 'btn btn-success'));?>
+      </div>
+    </div>
+  </div>
+</div>   
