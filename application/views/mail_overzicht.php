@@ -7,19 +7,23 @@
 
                 <?php foreach ($reminders as $reminder) {
                     ?>
-
-            <div class="card">
-                <div class="card-header">
-                    <i class="fa fa-check-circle"></i> <span class="pull-left">"<?php echo $reminder->timer ?>" op <?php echo $reminder->timer ?></span>
-                </div>
-                <div class="card-body">
-                    <p><?php echo $reminder->timer ?></p>
-                    <p><?php echo count($reminder->ontvangers) ?> ontvangers</p>
-                    <p><?php echo $reminder->sjabloon->naam ?></p>
-                    <p><?php echo $reminder->status ?></p>
-                </div>
-
-            </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <?php echo $reminder->sjabloon->naam ?>" op <?php echo $reminder->timer ?>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <p><?php echo $reminder->timer ?></p>
+                                <p><?php echo count($reminder->ontvangers) ?> ontvangers</p>
+                                <p><?php echo $reminder->sjabloon->naam ?></p>
+                                <p><?php echo $reminder->status ?></p>
+                            </div>
+                        </div>
+                    </div>
                 <?php } ?>
         </div>
     </div>
