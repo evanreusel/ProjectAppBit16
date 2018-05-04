@@ -4,66 +4,55 @@
     DASH ADMIN JAARGANGBEHEER
 -->
 <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <div class="navbar">
-                <!-- Links for contents -->
-                <ul class="navbar-nav mr-auto">
+    <div class="container">
+        <div class="navbar">
+            <!-- Links for contents -->
+            <ul class="navbar-nav mr-auto">
+            
+            <?php
+                if($data['jaargang']->actief){
+            ?>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/jaargangupdate/<?php echo $data['jaargang']->id; ?>">
+                    Wijzig jaargang
+                </a>
+            </li>
+            <?php
+                }
+            ?>
 
-                            <li class="nav-item">
-                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/jaargangoverzicht/"title="Beheer het huidige jaargang en bekijk informatie over de vorige jaargangen">
-                        Editiebeheer                    </a>
-                </li>
-                            <li class="nav-item">
-                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/plaatsToevoegen/"title="Voeg nieuwe plaatsen toe of pas bestaande plaatsen aan">
-                        Locaties                    </a>
-                </li>
-                            <li class="nav-item">
-                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/mail/overzicht/">
-                        Mails                    </a>
-                </li>
-                
-            </ul>
-        </div>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $data['jaargang']->id; ?>">
+                    Keuzemogelijkheden
+                </a>
+            </li>
 
-    </nav>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/vrijwilligersoverzicht/<?php echo $data['jaargang']->id; ?>">
+                    Vrijwilligers
+                </a>
+            </li>
 
-<div class="items">
-    <?php
-        if($data['jaargang']->actief){
-    ?>
-    <div class="item">
-        <a href="<?= base_url()?>index.php/admin/dash/jaargangupdate/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
-            <i class="fa fa-edit"></i> Edit
-        </a>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/deelnemersoverzicht/<?php echo $data['jaargang']->id; ?>">
+                    Deelnemers
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/personeelimporteren/<?php echo $data['jaargang']->id; ?>">
+                    Personen
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/personeelimporteren/<?php echo $data['jaargang']->id; ?>">
+                    Importeren
+                </a>
+            </li>
+        </ul>
     </div>
-    <?php
-        }
-    ?>
-
-    <div class="item">
-        <a href="<?= base_url()?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
-            <i class="fa fa-folder"></i> Keuzemogelijkheden
-        </a>
-    </div>
-
-    <div class="item">
-        <a href="<?= base_url()?>index.php/admin/dash/vrijwilligersoverzicht/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
-            <i class="fa fa-edit"></i> Vrijwilligers
-        </a>
-    </div>
-
-    <div class="item">
-        <a href="<?= base_url()?>index.php/admin/dash/deelnemersoverzicht/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
-            <i class="fa fa-edit"></i> Deelnemers
-        </a>
-    </div>
-
-    <div class="item">
-        <a href="<?= base_url()?>index.php/admin/dash/personeelimporteren/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary">
-            <i class="fa fa-edit"></i> Importeren
-        </a>
-    </div>
-</div>
+</nav>
 
 <div id="dHeader" class="row justify-content-md-center">
     <div class="col-10">
