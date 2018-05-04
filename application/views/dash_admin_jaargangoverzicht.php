@@ -6,7 +6,7 @@
 
 <p class="tooling">
     Hier kan u de verschillende edities voor uw evenement beheren. <br/>
-    <br>LET OP:</b> Er kan maar 1 editie tegelijkertijd actief zijn, eenmaal een editie afgesloten te hebben is er geen mogelijkheid meer deze terug te activeren.
+    <b>LET OP:</b> Er kan maar 1 editie tegelijkertijd actief zijn, eenmaal een editie afgesloten te hebben is er geen mogelijkheid meer deze terug te activeren.
 </p>
 
 <table class="table">
