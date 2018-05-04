@@ -22,43 +22,43 @@ USE Team_16
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Beheer`
+-- Tabelstructuur voor tabel 'Beheer'
 --
 
-CREATE TABLE `Beheer` (
-  `id` int(11) NOT NULL,
-  `username` text NOT NULL,
-  `pass` text NOT NULL
+CREATE TABLE 'Beheer' (
+  'id' int(11) NOT NULL,
+  'username' text NOT NULL,
+  'pass' text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `Beheer`
+-- Gegevens worden geëxporteerd voor tabel 'Beheer'
 --
 
-INSERT INTO `Beheer` (`id`, `username`, `pass`) VALUES
+INSERT INTO 'Beheer' ('id', 'username', 'pass') VALUES
 (28, 'TM', '$2y$10$ql/Zjlv/V4fn0v34//5n..8LUTW2vAm4QrHQ0C4xiFoBWDe4qmjMe');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Jaargang`
+-- Tabelstructuur voor tabel 'Jaargang'
 --
 
-CREATE TABLE `Jaargang` (
-  `id` int(11) NOT NULL,
-  `beginTijdstip` date NOT NULL,
-  `eindTijdstip` date NOT NULL,
-  `info` text NOT NULL,
-  `naam` text NOT NULL,
-  `thema` text NOT NULL,
-  `actief` int(11) NOT NULL
+CREATE TABLE 'Jaargang' (
+  'id' int(11) NOT NULL,
+  'beginTijdstip' date NOT NULL,
+  'eindTijdstip' date NOT NULL,
+  'info' text NOT NULL,
+  'naam' text NOT NULL,
+  'thema' text NOT NULL,
+  'actief' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `Jaargang`
+-- Gegevens worden geëxporteerd voor tabel 'Jaargang'
 --
 
-INSERT INTO `Jaargang` (`id`, `beginTijdstip`, `eindTijdstip`, `info`, `naam`, `thema`, `actief`) VALUES
+INSERT INTO 'Jaargang' ('id', 'beginTijdstip', 'eindTijdstip', 'info', 'naam', 'thema', 'actief') VALUES
 (1, '2017-03-09', '2017-03-23', '', '2016-2017', '', 0),
 (2, '2016-03-09', '2016-03-20', '', '2015-2016', '', 0),
 (3, '2018-03-02', '2018-03-23', '', '2017-2018', '', 0),
@@ -69,24 +69,24 @@ INSERT INTO `Jaargang` (`id`, `beginTijdstip`, `eindTijdstip`, `info`, `naam`, `
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `KeuzeMogelijkheid`
+-- Tabelstructuur voor tabel 'KeuzeMogelijkheid'
 --
 
-CREATE TABLE `KeuzeMogelijkheid` (
-  `id` int(11) NOT NULL,
-  `jaargangId` int(11) NOT NULL,
-  `naam` text NOT NULL,
-  `plaatsId` int(11) NOT NULL,
-  `beginTijdstip` datetime DEFAULT NULL,
-  `eindTijdstip` datetime DEFAULT NULL,
-  `deadlineTijdstip` datetime DEFAULT NULL
+CREATE TABLE 'KeuzeMogelijkheid' (
+  'id' int(11) NOT NULL,
+  'jaargangId' int(11) NOT NULL,
+  'naam' text NOT NULL,
+  'plaatsId' int(11) NOT NULL,
+  'beginTijdstip' datetime DEFAULT NULL,
+  'eindTijdstip' datetime DEFAULT NULL,
+  'deadlineTijdstip' datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `KeuzeMogelijkheid`
+-- Gegevens worden geëxporteerd voor tabel 'KeuzeMogelijkheid'
 --
 
-INSERT INTO `KeuzeMogelijkheid` (`id`, `jaargangId`, `naam`, `plaatsId`, `beginTijdstip`, `eindTijdstip`, `deadlineTijdstip`) VALUES
+INSERT INTO 'KeuzeMogelijkheid' ('id', 'jaargangId', 'naam', 'plaatsId', 'beginTijdstip', 'eindTijdstip', 'deadlineTijdstip') VALUES
 (1, 1, 'Eten', 1, '2018-03-12 12:00:00', '2018-03-12 13:00:00', '2018-03-01 00:00:00'),
 (2, 1, 'After-Party', 1, '2018-03-01 00:00:00', NULL, NULL),
 (3, 1, 'Activiteiten', 2, '2018-04-23 18:30:00', '2018-04-23 23:30:00', '2018-04-24 22:25:00'),
@@ -101,25 +101,25 @@ INSERT INTO `KeuzeMogelijkheid` (`id`, `jaargangId`, `naam`, `plaatsId`, `beginT
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `KeuzeOptie`
+-- Tabelstructuur voor tabel 'KeuzeOptie'
 --
 
-CREATE TABLE `KeuzeOptie` (
-  `id` int(11) NOT NULL,
-  `keuzemogelijkheidId` int(11) NOT NULL,
-  `naam` text NOT NULL,
-  `plaatsId` int(11) NOT NULL,
-  `min` int(11) NOT NULL,
-  `max` int(11) NOT NULL,
-  `beginTijdstip` datetime DEFAULT NULL,
-  `eindTijdstip` datetime DEFAULT NULL
+CREATE TABLE 'KeuzeOptie' (
+  'id' int(11) NOT NULL,
+  'keuzemogelijkheidId' int(11) NOT NULL,
+  'naam' text NOT NULL,
+  'plaatsId' int(11) NOT NULL,
+  'min' int(11) NOT NULL,
+  'max' int(11) NOT NULL,
+  'beginTijdstip' datetime DEFAULT NULL,
+  'eindTijdstip' datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `KeuzeOptie`
+-- Gegevens worden geëxporteerd voor tabel 'KeuzeOptie'
 --
 
-INSERT INTO `KeuzeOptie` (`id`, `keuzemogelijkheidId`, `naam`, `plaatsId`, `min`, `max`, `beginTijdstip`, `eindTijdstip`) VALUES
+INSERT INTO 'KeuzeOptie' ('id', 'keuzemogelijkheidId', 'naam', 'plaatsId', 'min', 'max', 'beginTijdstip', 'eindTijdstip') VALUES
 (1, 1, 'Visschotel', 1, 2, 5, NULL, NULL),
 (2, 0, 'Ik feest meer', 2, 20, 500, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 2, 'Ik feest niet mee', 2, 10, 50, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -134,20 +134,20 @@ INSERT INTO `KeuzeOptie` (`id`, `keuzemogelijkheidId`, `naam`, `plaatsId`, `min`
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `KeuzeoptieVanDeelnemer`
+-- Tabelstructuur voor tabel 'KeuzeoptieVanDeelnemer'
 --
 
-CREATE TABLE `KeuzeoptieVanDeelnemer` (
-  `keuzeoptieId` int(11) NOT NULL,
-  `persoonId` int(11) NOT NULL,
-  `commentaar` text NOT NULL
+CREATE TABLE 'KeuzeoptieVanDeelnemer' (
+  'keuzeoptieId' int(11) NOT NULL,
+  'persoonId' int(11) NOT NULL,
+  'commentaar' text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `KeuzeoptieVanDeelnemer`
+-- Gegevens worden geëxporteerd voor tabel 'KeuzeoptieVanDeelnemer'
 --
 
-INSERT INTO `KeuzeoptieVanDeelnemer` (`keuzeoptieId`, `persoonId`, `commentaar`) VALUES
+INSERT INTO 'KeuzeoptieVanDeelnemer' ('keuzeoptieId', 'persoonId', 'commentaar') VALUES
 (1, 6, ''),
 (1, 7, ''),
 (2, 6, ''),
@@ -156,22 +156,22 @@ INSERT INTO `KeuzeoptieVanDeelnemer` (`keuzeoptieId`, `persoonId`, `commentaar`)
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `MailHerinnering`
+-- Tabelstructuur voor tabel 'MailHerinnering'
 --
 
-CREATE TABLE `MailHerinnering` (
-  `id` int(11) NOT NULL,
-  `timer` date NOT NULL,
-  `sjabloonId` int(11) NOT NULL,
-  `actief` int(11) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '0'
+CREATE TABLE 'MailHerinnering' (
+  'id' int(11) NOT NULL,
+  'timer' date NOT NULL,
+  'sjabloonId' int(11) NOT NULL,
+  'actief' int(11) NOT NULL,
+  'status' int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `MailHerinnering`
+-- Gegevens worden geëxporteerd voor tabel 'MailHerinnering'
 --
 
-INSERT INTO `MailHerinnering` (`id`, `timer`, `sjabloonId`, `actief`, `status`) VALUES
+INSERT INTO 'MailHerinnering' ('id', 'timer', 'sjabloonId', 'actief', 'status') VALUES
 (1, '2018-03-31', 1, 1, 0),
 (2, '2018-04-18', 3, 0, 0),
 (3, '2018-04-30', 2, 1, 0),
@@ -182,20 +182,20 @@ INSERT INTO `MailHerinnering` (`id`, `timer`, `sjabloonId`, `actief`, `status`) 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Mailsjabloon`
+-- Tabelstructuur voor tabel 'Mailsjabloon'
 --
 
-CREATE TABLE `Mailsjabloon` (
-  `id` int(11) NOT NULL,
-  `naam` text NOT NULL,
-  `inhoud` text NOT NULL
+CREATE TABLE 'Mailsjabloon' (
+  'id' int(11) NOT NULL,
+  'naam' text NOT NULL,
+  'inhoud' text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `Mailsjabloon`
+-- Gegevens worden geëxporteerd voor tabel 'Mailsjabloon'
 --
 
-INSERT INTO `Mailsjabloon` (`id`, `naam`, `inhoud`) VALUES
+INSERT INTO 'Mailsjabloon' ('id', 'naam', 'inhoud') VALUES
 (1, 'welkomst mail', 'Welkom bij de webapplicatie van het personeelsfeest van Thomas More.'),
 (2, 'bevestigingsmail ', 'U inschrijving is bevestigd.'),
 (3, 'annulatie', 'U inschrijving is geannuleerd.');
@@ -203,26 +203,26 @@ INSERT INTO `Mailsjabloon` (`id`, `naam`, `inhoud`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Persoon`
+-- Tabelstructuur voor tabel 'Persoon'
 --
 
-CREATE TABLE `Persoon` (
-  `id` int(11) NOT NULL,
-  `naam` text NOT NULL,
-  `adres` text NOT NULL,
-  `woonplaats` text NOT NULL,
-  `nummer` text NOT NULL,
-  `mail` text NOT NULL,
-  `soort` text NOT NULL,
-  `token` text NOT NULL,
-  `jaarId` int(11) NOT NULL
+CREATE TABLE 'Persoon' (
+  'id' int(11) NOT NULL,
+  'naam' text NOT NULL,
+  'adres' text NOT NULL,
+  'woonplaats' text NOT NULL,
+  'nummer' text NOT NULL,
+  'mail' text NOT NULL,
+  'soort' text NOT NULL,
+  'token' text NOT NULL,
+  'jaarId' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `Persoon`
+-- Gegevens worden geëxporteerd voor tabel 'Persoon'
 --
 
-INSERT INTO `Persoon` (`id`, `naam`, `adres`, `woonplaats`, `nummer`, `mail`, `soort`, `token`, `jaarId`) VALUES
+INSERT INTO 'Persoon' ('id', 'naam', 'adres', 'woonplaats', 'nummer', 'mail', 'soort', 'token', 'jaarId') VALUES
 (1, 'Greif Matthias', '', '', 'R0656559', 'r0656559@student.thomasmore.be', 'STUDENT', '0prol2vZH3IgYBMapBI2', 1),
 (2, 'Greif Matthias', '', '', 'R0656559', 'r0656559@student.thomasmore.be', 'STUDENT', 'ltZTW4up2Vat3DtfVO3D', 2),
 (3, 'Greif Matthias', '', '', 'R0656559', 'r0656559@student.thomasmore.be', 'STUDENT', 'qA3Izfhv6odMt9EW2wqb', 3),
@@ -234,19 +234,19 @@ INSERT INTO `Persoon` (`id`, `naam`, `adres`, `woonplaats`, `nummer`, `mail`, `s
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `PersoonInHerinnering`
+-- Tabelstructuur voor tabel 'PersoonInHerinnering'
 --
 
-CREATE TABLE `PersoonInHerinnering` (
-  `mailherinneringId` int(11) NOT NULL,
-  `persoonId` int(11) NOT NULL
+CREATE TABLE 'PersoonInHerinnering' (
+  'mailherinneringId' int(11) NOT NULL,
+  'persoonId' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `PersoonInHerinnering`
+-- Gegevens worden geëxporteerd voor tabel 'PersoonInHerinnering'
 --
 
-INSERT INTO `PersoonInHerinnering` (`mailherinneringId`, `persoonId`) VALUES
+INSERT INTO 'PersoonInHerinnering' ('mailherinneringId', 'persoonId') VALUES
 (1, 1),
 (2, 3),
 (1, 2),
@@ -259,20 +259,20 @@ INSERT INTO `PersoonInHerinnering` (`mailherinneringId`, `persoonId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Plaats`
+-- Tabelstructuur voor tabel 'Plaats'
 --
 
-CREATE TABLE `Plaats` (
-  `id` int(11) NOT NULL,
-  `naam` text NOT NULL,
-  `locatie` text NOT NULL
+CREATE TABLE 'Plaats' (
+  'id' int(11) NOT NULL,
+  'naam' text NOT NULL,
+  'locatie' text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `Plaats`
+-- Gegevens worden geëxporteerd voor tabel 'Plaats'
 --
 
-INSERT INTO `Plaats` (`id`, `naam`, `locatie`) VALUES
+INSERT INTO 'Plaats' ('id', 'naam', 'locatie') VALUES
 (28, 'B207', '0,0'),
 (35, 'B218', '1,2'),
 (36, 'D202', 'boven '),
@@ -281,20 +281,20 @@ INSERT INTO `Plaats` (`id`, `naam`, `locatie`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Shift`
+-- Tabelstructuur voor tabel 'Shift'
 --
 
-CREATE TABLE `Shift` (
-  `id` int(11) NOT NULL,
-  `naam` text NOT NULL,
-  `taakId` int(11) NOT NULL
+CREATE TABLE 'Shift' (
+  'id' int(11) NOT NULL,
+  'naam' text NOT NULL,
+  'taakId' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `Shift`
+-- Gegevens worden geëxporteerd voor tabel 'Shift'
 --
 
-INSERT INTO `Shift` (`id`, `naam`, `taakId`) VALUES
+INSERT INTO 'Shift' ('id', 'naam', 'taakId') VALUES
 (1, 'Eerste shift', 1),
 (2, 'Tweede shift', 1),
 (3, 'Eerste shift', 2),
@@ -305,21 +305,21 @@ INSERT INTO `Shift` (`id`, `naam`, `taakId`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `Taak`
+-- Tabelstructuur voor tabel 'Taak'
 --
 
-CREATE TABLE `Taak` (
-  `id` int(11) NOT NULL,
-  `functie` text NOT NULL,
-  `beschrijving` text NOT NULL,
-  `keuzemogelijkheidId` int(11) NOT NULL
+CREATE TABLE 'Taak' (
+  'id' int(11) NOT NULL,
+  'functie' text NOT NULL,
+  'beschrijving' text NOT NULL,
+  'keuzemogelijkheidId' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `Taak`
+-- Gegevens worden geëxporteerd voor tabel 'Taak'
 --
 
-INSERT INTO `Taak` (`id`, `functie`, `beschrijving`, `keuzemogelijkheidId`) VALUES
+INSERT INTO 'Taak' ('id', 'functie', 'beschrijving', 'keuzemogelijkheidId') VALUES
 (1, 'Afruimen', 'Afruimen van de tafels', 1),
 (2, 'Afwassen', 'Afwassen van alle borden en glazen.', 1),
 (5, 'shift 1', '', 31),
@@ -328,19 +328,19 @@ INSERT INTO `Taak` (`id`, `functie`, `beschrijving`, `keuzemogelijkheidId`) VALU
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `VrijwilligersInShift`
+-- Tabelstructuur voor tabel 'VrijwilligersInShift'
 --
 
-CREATE TABLE `VrijwilligersInShift` (
-  `persoonId` int(11) NOT NULL,
-  `shiftId` int(11) NOT NULL
+CREATE TABLE 'VrijwilligersInShift' (
+  'persoonId' int(11) NOT NULL,
+  'shiftId' int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Gegevens worden geëxporteerd voor tabel `VrijwilligersInShift`
+-- Gegevens worden geëxporteerd voor tabel 'VrijwilligersInShift'
 --
 
-INSERT INTO `VrijwilligersInShift` (`persoonId`, `shiftId`) VALUES
+INSERT INTO 'VrijwilligersInShift' ('persoonId', 'shiftId') VALUES
 (3, 1),
 (3, 2),
 (4, 1),
@@ -351,169 +351,169 @@ INSERT INTO `VrijwilligersInShift` (`persoonId`, `shiftId`) VALUES
 --
 
 --
--- Indexen voor tabel `Beheer`
+-- Indexen voor tabel 'Beheer'
 --
-ALTER TABLE `Beheer`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE 'Beheer'
+  ADD PRIMARY KEY ('id');
 
 --
--- Indexen voor tabel `Jaargang`
+-- Indexen voor tabel 'Jaargang'
 --
-ALTER TABLE `Jaargang`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE 'Jaargang'
+  ADD PRIMARY KEY ('id');
 
 --
--- Indexen voor tabel `KeuzeMogelijkheid`
+-- Indexen voor tabel 'KeuzeMogelijkheid'
 --
-ALTER TABLE `KeuzeMogelijkheid`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `jaargangId` (`jaargangId`) USING BTREE,
-  ADD KEY `plaatsId` (`plaatsId`);
+ALTER TABLE 'KeuzeMogelijkheid'
+  ADD PRIMARY KEY ('id'),
+  ADD KEY 'jaargangId' ('jaargangId') USING BTREE,
+  ADD KEY 'plaatsId' ('plaatsId');
 
 --
--- Indexen voor tabel `KeuzeOptie`
+-- Indexen voor tabel 'KeuzeOptie'
 --
-ALTER TABLE `KeuzeOptie`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `keuzemogelijkheidId` (`keuzemogelijkheidId`),
-  ADD KEY `plaatsId` (`plaatsId`);
+ALTER TABLE 'KeuzeOptie'
+  ADD PRIMARY KEY ('id'),
+  ADD KEY 'keuzemogelijkheidId' ('keuzemogelijkheidId'),
+  ADD KEY 'plaatsId' ('plaatsId');
 
 --
--- Indexen voor tabel `KeuzeoptieVanDeelnemer`
+-- Indexen voor tabel 'KeuzeoptieVanDeelnemer'
 --
-ALTER TABLE `KeuzeoptieVanDeelnemer`
-  ADD KEY `persoonId` (`persoonId`),
-  ADD KEY `keuzeoptieId` (`keuzeoptieId`);
+ALTER TABLE 'KeuzeoptieVanDeelnemer'
+  ADD KEY 'persoonId' ('persoonId'),
+  ADD KEY 'keuzeoptieId' ('keuzeoptieId');
 
 --
--- Indexen voor tabel `MailHerinnering`
+-- Indexen voor tabel 'MailHerinnering'
 --
-ALTER TABLE `MailHerinnering`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `sjabloonId` (`sjabloonId`);
+ALTER TABLE 'MailHerinnering'
+  ADD PRIMARY KEY ('id'),
+  ADD KEY 'sjabloonId' ('sjabloonId');
 
 --
--- Indexen voor tabel `Mailsjabloon`
+-- Indexen voor tabel 'Mailsjabloon'
 --
-ALTER TABLE `Mailsjabloon`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE 'Mailsjabloon'
+  ADD PRIMARY KEY ('id');
 
 --
--- Indexen voor tabel `Persoon`
+-- Indexen voor tabel 'Persoon'
 --
-ALTER TABLE `Persoon`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `jaarId` (`jaarId`);
+ALTER TABLE 'Persoon'
+  ADD PRIMARY KEY ('id'),
+  ADD KEY 'jaarId' ('jaarId');
 
 --
--- Indexen voor tabel `PersoonInHerinnering`
+-- Indexen voor tabel 'PersoonInHerinnering'
 --
-ALTER TABLE `PersoonInHerinnering`
-  ADD KEY `mailreminderId` (`mailherinneringId`),
-  ADD KEY `persoonId` (`persoonId`);
+ALTER TABLE 'PersoonInHerinnering'
+  ADD KEY 'mailreminderId' ('mailherinneringId'),
+  ADD KEY 'persoonId' ('persoonId');
 
 --
--- Indexen voor tabel `Plaats`
+-- Indexen voor tabel 'Plaats'
 --
-ALTER TABLE `Plaats`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE 'Plaats'
+  ADD PRIMARY KEY ('id');
 
 --
--- Indexen voor tabel `Shift`
+-- Indexen voor tabel 'Shift'
 --
-ALTER TABLE `Shift`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `taakId` (`taakId`);
+ALTER TABLE 'Shift'
+  ADD PRIMARY KEY ('id'),
+  ADD KEY 'taakId' ('taakId');
 
 --
--- Indexen voor tabel `Taak`
+-- Indexen voor tabel 'Taak'
 --
-ALTER TABLE `Taak`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `keuzemogelijkheidId` (`keuzemogelijkheidId`);
+ALTER TABLE 'Taak'
+  ADD PRIMARY KEY ('id'),
+  ADD KEY 'keuzemogelijkheidId' ('keuzemogelijkheidId');
 
 --
--- Indexen voor tabel `VrijwilligersInShift`
+-- Indexen voor tabel 'VrijwilligersInShift'
 --
-ALTER TABLE `VrijwilligersInShift`
-  ADD KEY `shiftId` (`shiftId`),
-  ADD KEY `persoonId` (`persoonId`);
+ALTER TABLE 'VrijwilligersInShift'
+  ADD KEY 'shiftId' ('shiftId'),
+  ADD KEY 'persoonId' ('persoonId');
 
 --
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
 --
--- AUTO_INCREMENT voor een tabel `Beheer`
+-- AUTO_INCREMENT voor een tabel 'Beheer'
 --
-ALTER TABLE `Beheer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+ALTER TABLE 'Beheer'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
--- AUTO_INCREMENT voor een tabel `Jaargang`
+-- AUTO_INCREMENT voor een tabel 'Jaargang'
 --
-ALTER TABLE `Jaargang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE 'Jaargang'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT voor een tabel `KeuzeMogelijkheid`
+-- AUTO_INCREMENT voor een tabel 'KeuzeMogelijkheid'
 --
-ALTER TABLE `KeuzeMogelijkheid`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+ALTER TABLE 'KeuzeMogelijkheid'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
--- AUTO_INCREMENT voor een tabel `KeuzeOptie`
+-- AUTO_INCREMENT voor een tabel 'KeuzeOptie'
 --
-ALTER TABLE `KeuzeOptie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE 'KeuzeOptie'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
--- AUTO_INCREMENT voor een tabel `MailHerinnering`
+-- AUTO_INCREMENT voor een tabel 'MailHerinnering'
 --
-ALTER TABLE `MailHerinnering`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE 'MailHerinnering'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT voor een tabel `Mailsjabloon`
+-- AUTO_INCREMENT voor een tabel 'Mailsjabloon'
 --
-ALTER TABLE `Mailsjabloon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE 'Mailsjabloon'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT voor een tabel `Persoon`
+-- AUTO_INCREMENT voor een tabel 'Persoon'
 --
-ALTER TABLE `Persoon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE 'Persoon'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
--- AUTO_INCREMENT voor een tabel `Plaats`
+-- AUTO_INCREMENT voor een tabel 'Plaats'
 --
-ALTER TABLE `Plaats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+ALTER TABLE 'Plaats'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
--- AUTO_INCREMENT voor een tabel `Shift`
+-- AUTO_INCREMENT voor een tabel 'Shift'
 --
-ALTER TABLE `Shift`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE 'Shift'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
--- AUTO_INCREMENT voor een tabel `Taak`
+-- AUTO_INCREMENT voor een tabel 'Taak'
 --
-ALTER TABLE `Taak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE 'Taak'
+  MODIFY 'id' int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
 
 --
--- Beperkingen voor tabel `Persoon`
+-- Beperkingen voor tabel 'Persoon'
 --
-ALTER TABLE `Persoon`
-  ADD CONSTRAINT `Persoon_ibfk_1` FOREIGN KEY (`jaarId`) REFERENCES `Jaargang` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE 'Persoon'
+  ADD CONSTRAINT 'Persoon_ibfk_1' FOREIGN KEY ('jaarId') REFERENCES 'Jaargang' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Beperkingen voor tabel `Shift`
+-- Beperkingen voor tabel 'Shift'
 --
-ALTER TABLE `Shift`
-  ADD CONSTRAINT `Shift_ibfk_1` FOREIGN KEY (`taakId`) REFERENCES `Taak` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE 'Shift'
+  ADD CONSTRAINT 'Shift_ibfk_1' FOREIGN KEY ('taakId') REFERENCES 'Taak' ('id') ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Beperkingen voor tabel `VrijwilligersInShift`
+-- Beperkingen voor tabel 'VrijwilligersInShift'
 --
-ALTER TABLE `VrijwilligersInShift`
-  ADD CONSTRAINT `VrijwilligersInShift_ibfk_1` FOREIGN KEY (`persoonId`) REFERENCES `Persoon` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE 'VrijwilligersInShift'
+  ADD CONSTRAINT 'VrijwilligersInShift_ibfk_1' FOREIGN KEY ('persoonId') REFERENCES 'Persoon' ('id') ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
