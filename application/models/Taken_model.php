@@ -38,7 +38,7 @@ class Taken_Model extends CI_Model{
 
     function getAllWithShiften_byKeuzemogelijkheidId($id){
         // Ga alle taken ophalen onder een bepaalde keuzemgelijkheid
-       $taken = $this->getAllbyNaamWhereKeuzemogelijkheidId($id);
+       $taken = $this->getAllbyNaamWhereKeuzemogelijkheid($id);
 
         // Ga alle shiften ophalen onder een bepaalde taak
         $this->load->model('Shiften_model');
