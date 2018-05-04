@@ -28,6 +28,7 @@ class Shiften_Model extends CI_Model{
         return $query->result();
     }
 
+
     function getAllByNaamWhereTaakId($id)
     {
         $this->db->where('taakId', $id);

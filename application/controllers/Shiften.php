@@ -1,10 +1,8 @@
-<!-- 
-    TIM SWERTS
-	LAST UPDATED: 18 03 30
-	KEUZEOPTIE CONTROLLER
--->
-
 <?php
+
+// Tim Swerts
+// last updated: 3/05/2018
+// shiften controller
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -70,9 +68,9 @@ class Shiften extends CI_Controller{
     {
 
         $this->load->model('VrijwilligersInShift_model');
-        $this->VrijwilligersInShift_model->get_byShiftId($shiftId);
+        $data['shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
 
-        $this->load->view('ajax_vrijwilligerinshift', $data);
+        $this->load->view('ajax_vrijwilligersinshift', $data);
 
     }
 }

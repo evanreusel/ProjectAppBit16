@@ -20,52 +20,42 @@ class csv_model extends CI_Model
             if($count == 1)
             {
                 //lees de 1ste lijn van de file
-                $csvheaders = "ring\t";
-                $csvheaders .= $csv_line[0];
-                //klaarmaken om de headers te splitsen
-                $csvheaders = str_replace(";","\t",$csvheaders);
-                $csvheaders = str_replace(" ","",$csvheaders);
-                //splits de headers
-                $headers = explode("\t",$csvheaders);
+                $csvheaders = $csv_line[0];
                 //slaag de index van de headers op voor later
-                $naamindex = array_search("naam",$headers);
-                $nummerindex = array_search("nummer",$headers);
-                $mailindex = array_search("mail",$headers);
-                $adresindex = array_search("adres",$headers);
-                $woonplaatsindex = array_search("woonplaats",$headers);
+                if($csvheaders != "naam\tnummer\tmail\twoonplaats\tadres"){
+                    return null;
+                }
                 continue;
 
             }
 
             //lees lijn per lijn de personen uit 
-            $csvdata = "dummy\t";
             for($i = 0, $j = count($csv_line); $i < $j; $i++)
             {
-                $csvdata .= $csv_line[0];
+                $csvdata = $csv_line[0];
             }
             $i++;
-            $csvdata = str_replace(";","\t",$csvdata);
             $data = explode("\t",$csvdata);
             $persoon = new stdClass();
             
-             if($naamindex != null){
-            $persoon->naam = $data[$naamindex];
+             if($data[0] != null){
+            $persoon->naam = $data[0];
             };
 
-            if($nummerindex != null){
-            $persoon->nummer = $data[$nummerindex];
+            if($data[1] != null){
+            $persoon->nummer = $data[1];
             };
 
-             if($mailindex != null){
-            $persoon->mail = $data[$mailindex];
+             if($data[2] != null){
+            $persoon->mail = $data[2];
             };
 
-             if($adresindex != null){
-            $persoon->adres = $data[$adresindex];
+             if($data[3] != null){
+            $persoon->adres = $data[3];
             };
 
-             if($woonplaatsindex != null){
-            $persoon->woonplaats = $data[$woonplaatsindex];
+             if($data[4] != null){
+            $persoon->woonplaats = $data[4];
             };
 
             $persoon->soort = $soort;

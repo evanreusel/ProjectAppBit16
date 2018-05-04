@@ -70,11 +70,13 @@ class Admin extends CI_Controller {
 		$data['links'] = [														// Available links for navbar
 			[
 			'title' => 'Editiebeheer',
-				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/'
+				'url' => base_url() . 'index.php/admin/dash/jaargangoverzicht/',
+				'hulp' => "Beheer het huidige jaargang en bekijk informatie over de vorige jaargangen"
 			],
 			[
 				'title' => 'Locaties',
-				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/'
+				'url' => base_url() . 'index.php/admin/dash/plaatsToevoegen/',
+				'hulp' => "Voeg nieuwe plaatsen toe of pas bestaande plaatsen aan"
 			],
 			[
 				'title' => 'Mails',
@@ -112,6 +114,16 @@ class Admin extends CI_Controller {
 				}else{															// Can't load page without jaargang id => load indexpage
 					$view = 'index';
 				}
+			break;
+			case "personeelsinschrijvingen":
+				if($extras != null) {											
+					$this->load->model('jaargang_model');
+					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
+					$data['jaargang']=$this->jaargang_model->get_byId($extras);
+				}else{															// Can't load page without jaargang id => load indexpage
+					$view = 'index';
+				}
+
 			break;
 			case 'jaargangoverzicht':
 				$this->load->model('jaargang_model');
@@ -198,17 +210,19 @@ class Admin extends CI_Controller {
 			$this->load->model('Persoon_model');
         	$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
 			break;
-
+			// =================================================================================================== MATTHIAS
 			case 'vrijwilligersoverzicht':
-			$this->load->model('Persoon_model');
-        	$data["vrijwilligers"] = $this->Persoon_model->getallwithshift();
+				if($extras != null) {
+					$this->load->model('Persoon_model');
+					$data['data']["vrijwilligers"] = $this->Persoon_model->getAll_ofJaargang_withShift($extras);
+				}
+			break;
+			// =================================================================================================== /MATTHIAS
+			case 'importsuccess':
+			$data["personen"] = $extras;
 			break;
 
-			case 'importsuccess':
-			$this->load->model('CSV_model');
-        	$soort = $this->input->post('soort', TRUE);
-        	$personen = $this->CSV_model->readpersonen($soort);
-			$data["personen"] = $personen;
+			case 'importfout':
 			break;
 
 			default:
@@ -316,7 +330,14 @@ class Admin extends CI_Controller {
 	}
 
 	public function excel(){		
-		$this->dash("importsuccess");
+		$this->load->model('CSV_model');
+        $soort = $this->input->post('soort', TRUE);
+        $personen = $this->CSV_model->readpersonen($soort);
+		if($personen != null){
+		$this->dash("importsuccess",$personen);
+		} else {
+		$this->dash("importfout");
+		}
 	}
 
 	public function list(){
