@@ -85,7 +85,7 @@ class Persoon_model extends CI_Model {
         foreach($personen as $persoon){
         //keuzeoptie ophalen
         $query = $this->db->where('persoonid', $persoon->id);
-        $query = $this->db->get('keuzeoptievandeelnemer');
+        $query = $this->db->get('KeuzeoptieVanDeelnemer');
         $data = $query->result();
 
         //keuzemogelijkheden per persoon ophalen
@@ -94,12 +94,12 @@ class Persoon_model extends CI_Model {
         if($data != null){
         foreach($data as $item){
         $query = $this->db->where('id', $item->keuzeoptieId);
-        $query = $this->db->get('keuzeoptie');
+        $query = $this->db->get('KeuzeOptie');
         $keuzeoptie = $query->row();
 
         //keuzemogelijkheid koppelen aan keuzeoptie
         $query = $this->db->where('id', $keuzeoptie->keuzemogelijkheidId);
-        $query = $this->db->get('keuzemogelijkheid');
+        $query = $this->db->get('KeuzeMogelijkheid');
         $keuzeoptie->keuzemogelijkheid = $query->row();
 
         $keuzeopties[] = $keuzeoptie;
@@ -128,7 +128,7 @@ class Persoon_model extends CI_Model {
         // Get all Personen of Jaargang
         $personen = $this->getAll_ofJaargang($jaargang->id);
 
-        $vrijwilligers = array();
+        $vrijwilligers = new SplObjectStorage;
         foreach($personen as $persoon){
             // Get Shifts
             $query = $this->db->where('persoonid', $persoon->id);

@@ -42,9 +42,9 @@
                     Mail text blabla
                 </div>
                 <div class="card-footer">
-                    <div class="row">
-                        <a href="#" class="btn btn-success btn-block  col-lg-6">Aanpassen</a>
-                        <a href="#" class="btn btn-danger  btn-block  col-lg-6">Verwijderen</a>
+                    <div class="btn-group align-content-center">
+                        <a href="#" class="btn btn-success btn-block">Aanpassen</a>
+                        <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
                     </div>
                 </div>
             </div>

@@ -100,7 +100,7 @@ class Deelnemer extends CI_Controller {
 
 		// Redirect to adminbeheer
 		redirect('/');
-		}
+	}
 
 	public function vrijwilligertoevoegen(){
             $persoon = new stdClass();

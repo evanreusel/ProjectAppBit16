@@ -54,10 +54,10 @@ class Admin extends CI_Controller {
 		// Load logged in user
 		$data['user'] = $this->beheer_model->get_byId($this->session->userdata('id'));
 
-		// Check if dashboard view is requested else default homeview
+		// Check if dashboard view is requested else default view
 		if(is_null($view) )
 		{
-			$view = 'index';
+			$view = 'jaargangoverzicht';
 		}
 
 		// Load view
