@@ -21,30 +21,53 @@
                 <?php foreach ($reminders as $reminder) {
                     ?>
                     <tr>
-                        <td><?php echo $reminder->timer?></td>
-                        <td><?php echo count($reminder->ontvangers)?> ontvangers</td>
-                        <td><?php echo $reminder->sjabloon->naam?></td>
-                        <td><?php echo $reminder->sjabloon->naam?></td>
-                        <td><?php echo $reminder->status?></td>
+                        <td><?php echo $reminder->timer ?></td>
+                        <td><?php echo count($reminder->ontvangers) ?> ontvangers</td>
+                        <td><?php echo $reminder->sjabloon->naam ?></td>
+                        <td><?php echo $reminder->sjabloon->naam ?></td>
+                        <td><?php echo $reminder->status ?></td>
                         <td></td>
                     </tr>
-                <?php }?>
+                <?php } ?>
                 </tbody>
             </table>
         </div>
     </div>
+
     <div class="card">
         <div class="card-header">Mailsjablonen</div>
         <div class="card-body">
-            <div class="card">
-                <div class="card-header">Onderwerp</div>
-                <div class="card-body">
-                    Mail text blabla
+            <div class="row row-eq-height">
+                <div class="col-lg-6">
+
+
+                    <div class="card">
+                        <div class="card-header">Onderwerp</div>
+                        <div class="card-body">
+                            Mail text blabla
+                        </div>
+                        <div class="card-footer">
+                            <div class="btn-group align-content-center btn-block">
+                                <a href="#" class="btn btn-success btn-block">Aanpassen</a>
+                                <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <div class="btn-group align-content-center">
-                        <a href="#" class="btn btn-success btn-block">Aanpassen</a>
-                        <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
+                <div class="col-lg-6">
+
+
+                    <div class="card">
+                        <div class="card-header">Onderwerp</div>
+                        <div class="card-body">
+                            Mail text blabla 2
+                        </div>
+                        <div class="card-footer">
+                            <div class="btn-group align-content-center btn-block">
+                                <a href="#" class="btn btn-success btn-block">Aanpassen</a>
+                                <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,7 +75,7 @@
     </div>
 
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"  aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
