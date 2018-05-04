@@ -54,19 +54,9 @@ form .md-form{
     margin-right: auto;
 }
 
-.items{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-}
-
-.item .btn{
-    width: 100%;
-}
-
-.item .btn .fa{
-    font-size: 20px;
-    width: 100%;
+p.tooling{
+    margin: 0;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
