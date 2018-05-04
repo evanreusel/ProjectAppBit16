@@ -121,8 +121,8 @@ sort();
 
 <?php
 
-foreach($data['vrijwilligers'] as $vrijwilliger){
-    foreach($vrijwilliger as $shift){
+foreach($vrijwilligers as $vrijwilliger){
+    foreach($vrijwilligers[$vrijwilliger] as $shift){
     echo "<tr>";
     echo "<td class=\"naamitem sortable\"> $vrijwilliger->naam </td>";
     echo "<td class=\"mailitem sortable\"> $vrijwilliger->mail </td>";

@@ -37,18 +37,18 @@ DASH ADMIN JAARGANG ADD/UPDATE
 </div>
 
 <div class="md-form">
-    <input type="text" name="naam" id="inpInfo" class="form-control" value="<?php echo $defaults['info']; ?>">
+    <input type="text" name="info" id="inpInfo" class="form-control" value="<?php echo $defaults['info']; ?>">
     <label for="inpInfo">Info:</label>
 </div>
 
 <div class="md-form">
-    <input type="date" name="beginTijdstip" value="<?php echo $defaults['eindTijdstip']; ?>">
-    <label for="begin">Begin datum en tijdstip:</label>
+    <p>Begin datum:</p><br/>
+    <input type="date" name="beginTijdstip" value="<?php echo $defaults['beginTijdstip']; ?>">
 </div>
 
 <div class="md-form">
+    <p>Eind datum:</p><br/>
     <input type="date" name="eindTijdstip" value="<?php echo $defaults['eindTijdstip']; ?>">
-    <label for="einde">Eind datum en tijdstip:</label>
 </div>
 
 <input type="submit" value="Bevestig" class="btn btn-primary">
