@@ -1,6 +1,6 @@
 <!--
     GREIF MATTHIAS
-    LAST UPDATED: 18 05 02
+    LAST UPDATED: 18 05 04
     DASH ADMIN JAARGANGBEHEER
 -->
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -54,7 +54,7 @@
     </div>
 </nav>
 
-<div id="dHeader" class="row justify-content-md-center">
+<!-- <div id="dHeader" class="row justify-content-md-center">
     <div class="col-10">
         <h1>
             <?php
@@ -74,4 +74,4 @@
             ?>
         </p>
     </div>
-</div>
+</div> -->

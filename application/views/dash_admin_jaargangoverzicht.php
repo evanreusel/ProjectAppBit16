@@ -42,7 +42,7 @@
                     }
                 }
 
-                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/jaargangbeheer/' . $jaargang->id . '" title="Druk hier om alle informatie over dit jaargang te bekijken"><i class="fa fa-folder-open-o"></i> Open</a></td>';
+                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/jaargangbeheer/' . $jaargang->id . '" title="Druk hier om alle informatie over dit jaargang te bekijken">Bekijk</a></td>';
             ?>
         </td>
     </tr>
