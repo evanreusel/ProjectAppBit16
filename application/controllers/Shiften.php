@@ -43,6 +43,7 @@ class Shiften extends CI_Controller{
 		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
     }
 
+
     public function vrijwilligerInShiftToevoegen($shiftId, $persoonId)
     {
         $vrijwilligerInShift = new stdClass();

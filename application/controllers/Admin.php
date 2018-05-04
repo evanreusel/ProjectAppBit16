@@ -115,6 +115,15 @@ class Admin extends CI_Controller {
 					$view = 'index';
 				}
 			break;
+			case "takenbeheer":										// Keuzemogelijkheid screen for jaargang
+				if($extras != null) {											
+					$this->load->model('Taken_model');
+					$data['taken'] = $this->Taken_model->getAllWithShiften_byKeuzemogelijkheidId($extras);
+					$data['keuzemogelijkheidId'] = $extras;
+				}else{															// Can't load page without jaargang id => load indexpage
+					$view = 'index';
+				}
+			break;
 			case "personeelsinschrijvingen":
 				if($extras != null) {											
 					$this->load->model('jaargang_model');
