@@ -34,8 +34,13 @@ function ajaxplaats(plaatsId){
     $attributes = array('name' => 'plaats');
 ?>
     <table class="table">
-    <tr class="colored">
-    <th>Naam</th> <th>Plaats</th> </tr>
+        <tr class="colored">
+            <th>Naam</th>
+            <th>Plaats</th>
+            <td></td>
+            <td></td>
+        </tr>
+        
         <?php
         foreach ($plaatsen as $plaats) {
             echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . '<button onclick="ajaxplaats(' . $plaats->id . ')" type="button" class="btn btn-danger btn-round wijzig" value="' . $plaats->id . '" title="Druk hier om deze locatie te wijzigen" >Wijzig</button>' . "</td><td>" .
