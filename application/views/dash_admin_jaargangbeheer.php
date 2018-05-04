@@ -3,6 +3,30 @@
     LAST UPDATED: 18 05 02
     DASH ADMIN JAARGANGBEHEER
 -->
+<nav class="navbar navbar-expand-lg navbar-dark deep-purple">
+        <div class="container">
+            <div class="navbar">
+                <!-- Links for contents -->
+                <ul class="navbar-nav mr-auto">
+
+                            <li class="nav-item active">
+                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/jaargangoverzicht/"title="Beheer het huidige jaargang en bekijk informatie over de vorige jaargangen">
+                        Editiebeheer                    </a>
+                </li>
+                            <li class="nav-item active">
+                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/plaatsToevoegen/"title="Voeg nieuwe plaatsen toe of pas bestaande plaatsen aan">
+                        Locaties                    </a>
+                </li>
+                            <li class="nav-item active">
+                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/mail/overzicht/">
+                        Mails                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+    </nav>
+
 <div class="items">
     <?php
         if($data['jaargang']->actief){
