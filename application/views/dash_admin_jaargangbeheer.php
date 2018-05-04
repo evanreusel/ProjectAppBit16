@@ -1,8 +1,19 @@
 <!--
     GREIF MATTHIAS
-    LAST UPDATED: 18 05 02
+    LAST UPDATED: 18 05 04
     DASH ADMIN JAARGANGBEHEER
 -->
+
+<?php if($data['jaargang']->actief){ ?>
+    <p class="tooling">
+        Hier kan u de editie "<?php echo $data['jaargang']->naam; ?>" van <?php echo date("d-m-Y", strtotime($data['jaargang']->beginTijdstip)); ?> tot <?php echo date("d-m-Y", strtotime($data['jaargang']->eindTijdstip)); ?> bewerken. <br/>
+    </p>
+<?php } else { ?>
+    <p class="tooling">
+        Hier kan u de afgesloten editie <?php echo $data['jaargang']->naam; ?> bekijken. <br/>
+    </p>
+<?php } ?>
+
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
         <div class="navbar">
@@ -54,7 +65,7 @@
     </div>
 </nav>
 
-<div id="dHeader" class="row justify-content-md-center">
+<!-- <div id="dHeader" class="row justify-content-md-center">
     <div class="col-10">
         <h1>
             <?php
@@ -74,4 +85,4 @@
             ?>
         </p>
     </div>
-</div>
+</div> -->

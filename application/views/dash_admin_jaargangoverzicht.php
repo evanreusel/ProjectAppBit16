@@ -4,6 +4,11 @@
     DASH ADMIN JAARGANGOVERZICHT
 -->
 
+<p class="tooling">
+    Hier kan u de verschillende edities voor uw evenement beheren. <br/>
+    LET OP: Er kan maar 1 editie tegelijkertijd actief zijn, eenmaal een editie afgesloten te hebben is er geen mogelijkheid meer deze terug te activeren.
+</p>
+
 <table class="table">
     <tr class="colored">
         <th>Naam</th>
@@ -26,7 +31,7 @@
             <?php echo $jaargang->thema; ?>
         </td>
         <td>
-            <?php echo $jaargang->beginTijdstip; ?> > <?php echo $jaargang->eindTijdstip; ?>
+            van <?php echo date("d-m-Y", strtotime($jaargang->beginTijdstip)); ?> tot <?php echo date("d-m-Y", strtotime($jaargang->eindTijdstip)); ?>
         </td>
         <td>
             <?php
@@ -42,7 +47,7 @@
                     }
                 }
 
-                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/jaargangbeheer/' . $jaargang->id . '" title="Druk hier om alle informatie over dit jaargang te bekijken"><i class="fa fa-folder-open-o"></i> Open</a></td>';
+                echo '<td><a class="btn btn-warning" href="' . base_url() . 'index.php/admin/dash/jaargangbeheer/' . $jaargang->id . '" title="Druk hier om alle informatie over dit jaargang te bekijken">Bekijk</a></td>';
             ?>
         </td>
     </tr>

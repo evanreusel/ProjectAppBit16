@@ -54,10 +54,10 @@ class Admin extends CI_Controller {
 		// Load logged in user
 		$data['user'] = $this->beheer_model->get_byId($this->session->userdata('id'));
 
-		// Check if dashboard view is requested else default homeview
+		// Check if dashboard view is requested else default view
 		if(is_null($view) )
 		{
-			$view = 'index';
+			$view = 'jaargangoverzicht';
 		}
 
 		// Load view
@@ -111,6 +111,15 @@ class Admin extends CI_Controller {
 					$this->load->model('jaargang_model');
 					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
 					$data['jaargang']=$this->jaargang_model->get_byId($extras);
+				}else{															// Can't load page without jaargang id => load indexpage
+					$view = 'index';
+				}
+			break;
+			case "takenbeheer":										// Keuzemogelijkheid screen for jaargang
+				if($extras != null) {											
+					$this->load->model('Taken_model');
+					$data['taken'] = $this->Taken_model->getAllWithShiften_byKeuzemogelijkheidId($extras);
+					$data['keuzemogelijkheidId'] = $extras;
 				}else{															// Can't load page without jaargang id => load indexpage
 					$view = 'index';
 				}
