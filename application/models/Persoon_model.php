@@ -113,6 +113,8 @@ class Persoon_model extends CI_Model {
     }
 
     // =================================================================================================== MATTHIAS
+    
+    
     function getAll_ofJaargang($jaargangId){
         $query = $this->db->where('jaarid', $jaargangId);
         $query = $this->db->get('Persoon');
@@ -121,24 +123,20 @@ class Persoon_model extends CI_Model {
     }
 
     function getAll_ofJaargang_withShift($jaargangId){
-        // Get Jaargang information
-        $this->load->model("Jaargang_model");
-        $jaargang = $this->Jaargang_model->get_byId($jaargangId);
-
         // Get all Personen of Jaargang
-        $personen = $this->getAll_ofJaargang($jaargang->id);
+        $personen = $this->getAll_ofJaargang($jaargangId);
 
         $vrijwilligers = new SplObjectStorage;
-        foreach($personen as $persoon){
+        foreach($personen as $persoon){            
             // Get Shifts
             $query = $this->db->where('persoonid', $persoon->id);
             $query = $this->db->get('vrijwilligersinshift');
             $data = $query->result();
 
-            //keuzemogelijkheden per persoon ophalen
             $shiften = array();
 
-            if($data != null){
+            //keuzemogelijkheden per persoon ophalen
+            if(!empty($data)){
             foreach($data as $item){
             $query = $this->db->where('id', $item->shiftId);
             $query = $this->db->get('shift');
@@ -156,9 +154,9 @@ class Persoon_model extends CI_Model {
 
             $shiften[] = $shift;
             }
+        $vrijwilligers[$persoon] = $shiften;
         }
 
-        $vrijwilligers[$persoon] = $shiften;
         }
 
         return $vrijwilligers;

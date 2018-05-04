@@ -214,7 +214,7 @@ class Admin extends CI_Controller {
 			case 'vrijwilligersoverzicht':
 				if($extras != null) {
 					$this->load->model('Persoon_model');
-					$data['data']["vrijwilligers"] = $this->Persoon_model->getAll_ofJaargang_withShift($extras);
+					$data["vrijwilligers"] = $this->Persoon_model->getAll_ofJaargang_withShift($extras);
 				}
 			break;
 			// =================================================================================================== /MATTHIAS
