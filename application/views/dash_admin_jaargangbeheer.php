@@ -3,36 +3,58 @@
     LAST UPDATED: 18 05 02
     DASH ADMIN JAARGANGBEHEER
 -->
-<ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-lg navbar-dark deep-purple">
+        <a href="http://projectab16.ddns.net/index.php/admin/dash/">
+            <img src="http://projectab16.ddns.net/assets/img/svg/logo.svg">
+        </a>
 
-<li class="nav-item active">
-<a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/jaargangoverzicht/"title="Beheer het huidige jaargang en bekijk informatie over de vorige jaargangen">
-Editiebeheer                    </a>
-</li>
-<li class="nav-item active">
-<a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/plaatsToevoegen/"title="Voeg nieuwe plaatsen toe of pas bestaande plaatsen aan">
-Locaties                    </a>
-</li>
-<li class="nav-item active">
-<a class="nav-link" href="http://projectab16.ddns.net/index.php/mail/overzicht/">
-Mails                    </a>
-</li>
+        <div class="container">
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="nav">
+                <!-- Links for contents -->
+                <ul class="navbar-nav mr-auto">
 
-<!-- Dropdown for actions -->
-        <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-TM                        </a>
+                            <li class="nav-item active">
+                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/jaargangoverzicht/"title="Beheer het huidige jaargang en bekijk informatie over de vorige jaargangen">
+                        Editiebeheer                    </a>
+                </li>
+                            <li class="nav-item active">
+                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/admin/dash/plaatsToevoegen/"title="Voeg nieuwe plaatsen toe of pas bestaande plaatsen aan">
+                        Locaties                    </a>
+                </li>
+                            <li class="nav-item active">
+                    <a class="nav-link" href="http://projectab16.ddns.net/index.php/mail/overzicht/">
+                        Mails                    </a>
+                </li>
+             
 
-<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="http://projectab16.ddns.net/index.php/admin/dash/adminbeheer/">
-        Administrators beheren                                </a>
-                                <a class="dropdown-item" href="http://projectab16.ddns.net/index.php/admin/logout/">
-        Log out                                </a>
-                        </div>
-</li>
+                <!-- Dropdown for actions -->
+                                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            TM                        </a>
+                        
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                                            <a class="dropdown-item" href="http://projectab16.ddns.net/index.php/admin/dash/adminbeheer/">
+                                    Administrators beheren                                </a>
+                                                            <a class="dropdown-item" href="http://projectab16.ddns.net/index.php/admin/logout/">
+                                    Log out                                </a>
+                                                    </div>
+                    </li>
+                
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item active">
+                <a class="nav-link" data-toggle="modal" data-target="#helpModal">?</a>
+                </li>
+            </ul>
+        </div>
 
-</ul>
+    </nav>
 
 <div class="items">
     <?php
