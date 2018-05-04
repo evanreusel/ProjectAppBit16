@@ -42,15 +42,14 @@
                     Mail text blabla
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-success btn-block">Aanpassen</a>
-                    <a href="#" class="btn btn-danger btn-block">Verwijderen</a>
+                    <div class="row">
+                        <a href="#" class="btn btn-success btn-block  col-lg-6">Aanpassen</a>
+                        <a href="#" class="btn btn-danger  btn-block  col-lg-6">Verwijderen</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <
-
-
 
 </div>
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"  aria-hidden="true">
