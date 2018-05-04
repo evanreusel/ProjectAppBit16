@@ -4,6 +4,14 @@
     DASH ADMIN JAARGANGOVERZICHT
 -->
 
+<p>
+    Hier kan u de verschillende edities voor uw evenement beheren.
+</p>
+
+<p>
+    LET OP: Er kan maar 1 editie tegelijkertijd actief zijn, eenmaal een editie afgesloten te hebben is er geen mogelijkheid meer deze terug te activeren.
+</p>
+
 <table class="table">
     <tr class="colored">
         <th>Naam</th>
