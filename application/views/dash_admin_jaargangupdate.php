@@ -37,7 +37,7 @@ DASH ADMIN JAARGANG ADD/UPDATE
 </div>
 
 <div class="md-form">
-    <input type="text" name="naam" id="inpInfo" class="form-control" value="<?php echo $defaults['info']; ?>">
+    <input type="text" name="info" id="inpInfo" class="form-control" value="<?php echo $defaults['info']; ?>">
     <label for="inpInfo">Info:</label>
 </div>
 
