@@ -42,10 +42,8 @@
                     Mail text blabla
                 </div>
                 <div class="card-footer">
-
-                        <a href="#" class="btn btn-success btn-block w-50">Aanpassen</a>
-                        <a href="#" class="btn btn-danger  btn-block w-50">Verwijderen</a>
-
+                        <a href="#" class="btn btn-success btn-block w-25">Aanpassen</a>
+                        <a href="#" class="btn btn-danger  btn-block w-25">Verwijderen</a>
                 </div>
             </div>
         </div>
