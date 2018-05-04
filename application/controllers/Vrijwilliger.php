@@ -48,10 +48,11 @@ class Vrijwilliger extends CI_Controller {
 			]
 		];
 		$data['actions'] = [
-			// [
-			// 	'title' => 'Administrators beheren',
-			// 	'url' => base_url() . 'index.php/admin/dash/adminbeheer/'
-			// ]
+			[
+				'title' => 'Log out',
+				'url' => base_url() . 'index.php/vrijwilliger/logout/',
+				'hulp' => "Log uit"
+			]
 		];
 
 		// Get data for view
@@ -81,5 +82,12 @@ class Vrijwilliger extends CI_Controller {
 		$data['view'] = 'dash_vrijwilliger_' . $view;
 
 		$this->load->view('template/main', $data);
+	}
+
+	public function logout(){
+		$this->session->unset_userdata('id');
+
+		// Redirect to adminbeheer
+		redirect('/');
 	}
 }
