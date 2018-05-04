@@ -17,8 +17,8 @@ class VrijwilligersInShift_Model extends CI_Model{
 
     function getAllByShiftId($shiftId)
     {
-        $this->db->where('shiftId', $shiftId);
-        $shiften = $this->db->get('VrijwilligersInShift');
+        
+        $shiften = $this->get_byShiftId($shiftId);
 
         $this->load->model('Persoon_model');
         foreach ($shiften as $shift) {

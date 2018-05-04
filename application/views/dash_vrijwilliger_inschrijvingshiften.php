@@ -12,16 +12,17 @@ foreach($keuzemogelijkheden as $activiteit) {
         foreach ($taak->shiften as $shift ) {
                     $id = $shift->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$shift->naam;
-                    echo '<button class="btn btn-warning float-right ';
+                    echo '<div class="float-right"><button class="btn btn-primary vrijwilligers" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
+                    echo '<button class="btn btn-warning uitschrijven ';
                     if (!isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
                     }
-                    echo '" id="uitschrijven" value="'.$shift->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
-                    echo '<button class="btn btn-primary float-right ';
+                    echo '" id="uitschrijven'.$shift->id.'" value="'.$shift->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
+                    echo '<button class="btn btn-primary inschrijven ';
                     if (isset($ingeschrevenshiften->$id)) {
                         echo 'hidden';
-                    }echo '" id="inschrijven" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
-                    echo '<button id="vrijwilligers" class"btn btn-primary float-right" value="'.$shift->id.'" data-toggle="modal" data-target="#dialoogvrijwilligers" title="vrijwilligers weergeven die deelnemen">Vrijwilligers</button>';
+                    }echo '" id="inschrijven'.$shift->id.'" value="'.$shift->id.'" title="inschrijven voor deze taak">Inschrijven</button></div>';
+                    
         }     
         echo "</li></ul></li>";
     };
@@ -37,59 +38,60 @@ foreach($keuzemogelijkheden as $activiteit) {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" id="dialoogvenster"></div>
+      <div class="modal-body" id="dialoogvenster">
+      <h1>hallo</h1>
+      </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-<p id="val"></p>
+<div id="val"></div>
 <p id="test"></p>
 <script>
 $(document).ready(function(){
     $('.hidden').each(function(){
         $(this).hide();
     })
-    $("#inschrijven").click(function(){
+    $(".inschrijven").click(function(){
         var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftToevoegen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 async: false,
                 success: function(data){                    
-                        $('#inschrijven').hide();
-                        $('#uitschrijven').show();
+                        $('#inschrijven'+shiftId).hide();
+                        $('#uitschrijven'+shiftId).show();
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
     });
 
-    $("#uitschrijven").click(function(){
+    $(".uitschrijven").click(function(){
         var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftVerwijderen/'+ shiftId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 async: false,
                 success: function(data){                    
-                        $('#uitschrijven').hide();
-                        $('#inschrijven').show();
+                        $('#uitschrijven'+shiftId).hide();
+                        $('#inschrijven'+shiftId).show();
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
     });
 
-    $("#vrijwilligers").click(function(){
+    $(".vrijwilligers").click(function(){
         var shiftId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/shiften/vrijwilligerInShiftWeergeven/'+ shiftId ,
                 type: "GET",
                 async: false,
                 success: function(data){                    
-                        $('#dialoogvenster').text(data);
-                        $('#val').text(data);
+                        $('#dialoogvenster').html(data);
                 }, error: function (xhr, status, error) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
