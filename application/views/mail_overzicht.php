@@ -22,9 +22,12 @@
                                 <p><?php echo $reminder->sjabloon->naam ?></p>
                                 <p><?php echo $reminder->status ?></p>
                             </div>
-                            <div class="btn-group align-content-center btn-block">
-                                <a href="#" class="btn btn-success btn-block">Aanpassen</a>
-                                <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
+                            <div class="card-footer">
+
+                                <div class="btn-group align-content-center btn-block">
+                                    <a href="#" class="btn btn-success btn-block">Aanpassen</a>
+                                    <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
+                                </div>
                             </div>
                         </div>
                     </div>
