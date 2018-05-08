@@ -8,14 +8,14 @@
                 <?php foreach ($reminders as $reminder) {
                     ?>
                     <div class="card">
-                        <div class="card-header" id="headingTwo">
+                        <div class="card-header" id="reminderHoofding<?php echo $reminder->id?>">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#reminderInhoud<?php echo $reminder->id?>" aria-expanded="false" aria-controls="reminderInhoud<?php echo $reminder->id?>">
                                     <?php echo $reminder->sjabloon->naam ?>" op <?php echo $reminder->timer ?>
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div id="reminderInhoud<?php echo $reminder->id?>" class="collapse" aria-labelledby="reminderHoofding<?php echo $reminder->id?>" data-parent="#accordion">
                             <div class="card-body">
                                 <p><?php echo $reminder->timer ?></p>
                                 <p><?php echo count($reminder->ontvangers) ?> ontvangers</p>
