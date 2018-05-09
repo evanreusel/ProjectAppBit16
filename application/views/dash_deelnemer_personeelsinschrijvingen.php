@@ -56,10 +56,14 @@ $(document).ready(function(){
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
-                success: function(data){                    
+                success: function(data){                
+                    console.log('3');    
+                        console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
                         $('#'+keuzemogelijkheidId).removeClass('btn-primary');
                         $('#'+keuzemogelijkheidId).addClass('btn-warning');
+                        console.log('1');
                         $('#'+keuzemogelijkheidId).text('uitschrijven');
+                        console.log('2');
                 }, error: function (xhr, status, error) {
                     console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
