@@ -50,7 +50,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
         echo 'Er is geen data beschikbaar maak nieuwe keuzemogelijkheden aan door op de plus-knop te klikken';   
     }?>
 </div>
-
+<?php print_r($data['keuzemogelijkheden'])?>
 <div class="modal fade" id="keuzeModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
