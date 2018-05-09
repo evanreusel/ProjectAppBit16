@@ -69,8 +69,6 @@
         $('#nieuwpasserror').hide();
         $('#nieuwpasscheckerror').hide();
     
-        $("#DeleteModal").draggable(); 
-
         $("#send").click(function(){
             if(passcheck() && nieuwpassmatch()){    
                 $('#adminform').submit();
@@ -78,19 +76,6 @@
         });
     });
 </script>
-
-<style>
-#myModal {
-  position: relative;
-}
-
-.modal-dialog {
-  position: fixed;
-  width: 100%;
-  margin: 0;
-  padding: 10px;
-}
-</style>
 
 <?php
     echo form_open('admin/update', array('name' => 'adminform', 'id' => 'adminform', 'role' => 'form'));
