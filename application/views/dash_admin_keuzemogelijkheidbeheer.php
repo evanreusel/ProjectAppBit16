@@ -76,7 +76,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
 $(document).ready(function(){
     $('.deleteKeuzeoptie').click(function(){
         keuzeoptieId=$(this).val();
-        $('#verwijderenKeuzeoptie').attr("href", "keuzeoptie/delete/"+keuzeoptieId);
+        $('#verwijderenKeuzeoptie').attr("href", "http://projectab16.ddns.net/index.php/keuzeoptie/delete/"+keuzeoptieId);
     });
 
 
