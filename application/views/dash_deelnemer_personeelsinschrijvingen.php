@@ -57,7 +57,7 @@ $(document).ready(function(){
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        $('#'+keuzemogelijkheidId).toggleClass('btn-primary' 'btn-warning');
+                        $('#'+keuzemogelijkheidId).toggleClass('btn-primary btn-warning');
                         $('#'+keuzemogelijkheidId).text('uitschrijven');
                 }, error: function (xhr, status, error) {
                     console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
