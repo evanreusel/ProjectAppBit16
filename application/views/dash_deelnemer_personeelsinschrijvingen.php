@@ -25,7 +25,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     }echo '" id="inschrijven" value="'.$keuzeoptie->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
                     */
 
-                    echo '<button class="btn float-right ';
+                    echo '<button class="btn keuzeoptie float-right ';
                     if (!isset($ingeschrevenActiviteiten->$id)) {
                         echo 'btn-primary" title="inschrijven voor deze taak';
                     } else {
@@ -50,8 +50,10 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
 <p id="val"></p>
 <p id="test"></p>
 <script>
-    $(".btn-primary").click(function(){
+$(document).ready(function(){
+    $(".keuzeoptie").click(function(){        
         var keuzemogelijkheidId = $(this).val();
+        if($(this).hasClass('btn-primary')){
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
@@ -68,10 +70,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
-    });
-
-    $(".btn-warning").click(function(){
-        var keuzemogelijkheidId = $(this).val();
+    } else {
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerVanKeuzeoptieVerwijderen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
@@ -83,6 +82,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
-    });
+    }
+});   
 
 </script>
