@@ -28,16 +28,14 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     echo '<button class="btn float-right ';
                     if (isset($ingeschrevenActiviteiten->$id)) {
                         echo 'btn-primary" title="inschrijven voor deze taak';
-                        else {
+                    }else {
                         echo 'btn-warning title="uitschrijven voor deze taak';
-                        }
                     }echo '" id="'. $ingeschrevenActiviteiten->$id .'" value="'.$keuzeoptie->id.'">';
 
                     if (isset($ingeschrevenActiviteiten->$id)) {
                         echo 'inschrijven';
-                        else {
+                    }else {
                         echo 'uitschrijven';
-                        }
                     }
                     
                     echo '</button>';
