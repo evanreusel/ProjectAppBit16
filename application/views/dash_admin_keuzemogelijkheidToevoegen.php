@@ -51,12 +51,12 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
 
     <div class="md-form">
-        <label for="einde" class="labelKeuze">Eind datum en tijdstip:</label>
+        <label for="einde" class="labelKeuze">Eind datum en tijdstip:</label></br>
         <input id="einde" type="date" name="eindTijdstip" value="<?php echo date('Y-m-d'); ?>">
     </div>
 
     <div class="md-form">
-        <label for="deadline" class="labelKeuze">Deadline datum en tijdstip:</label>
+        <label for="deadline" class="labelKeuze">Deadline datum en tijdstip:</label></br>
         <input type="date" name="deadlineTijdstip" value="<?php echo date('Y-m-d'); ?>">
     </div>
 
