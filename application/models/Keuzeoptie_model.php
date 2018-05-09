@@ -36,7 +36,8 @@ class Keuzeoptie_Model extends CI_Model{
 
         $this->load->model('Plaats_model');
 
-        $keuzeoptie->plaats = $this->Plaats_model->getPlaatsById($keuzeoptie->plaatsId);
+        $plaats = $this->Plaats_model->getPlaatsById($keuzeoptie->plaatsId);
+
         return $keuzeoptie;
     }
 
