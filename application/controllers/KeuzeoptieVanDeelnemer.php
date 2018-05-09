@@ -7,7 +7,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Shiften extends CI_Controller{
+class KeuzeOptieVanDeelnemer extends CI_Controller{
     
      public function __construct() {
         parent::__construct();
@@ -22,7 +22,7 @@ class Shiften extends CI_Controller{
             redirect('/admin/index', 'location');
         // =================================================================================================== /GREIF MATTHIAS
     }
-}
+
 
     public function update()
 	{
