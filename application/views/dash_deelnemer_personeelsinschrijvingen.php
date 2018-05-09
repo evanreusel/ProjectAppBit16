@@ -50,7 +50,6 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
 <p id="val"></p>
 <p id="test"></p>
 <script>
-$(document).ready(function(){
     $(".btn-primary").click(function(){
         var keuzemogelijkheidId = $(this).val();
         $.ajax({
@@ -85,8 +84,5 @@ $(document).ready(function(){
                 }
             });
     });
-
-    $('.hidden').hide();
-});   
 
 </script>
