@@ -36,6 +36,6 @@
 
 /* label positionering op keuzemogelijkheid toevoegen */
 
-.labelKeuze{
+.md-form label.labelKeuze{
     top:0;
 }
