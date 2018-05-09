@@ -112,8 +112,8 @@ class Admin extends CI_Controller {
 					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
 					$data['jaargang']=$this->jaargang_model->get_byId($extras);
 					$this->load->model('plaats_model');
-					foreach ($data['data']->keuzemogelijkheden as $keuzemogelijkheid) {
-						$keuzemogelijkheid->plaats=$this->plaats_model->getPlaatsById($keuzemogelijkheid->plaatsId);
+					foreach ($data['data']->keuzemogelijkheden->keuzeopties as $keuzeoptie) {
+						$keuzeoptie->plaats=$this->plaats_model->getPlaatsById($keuzeoptie->plaatsId);
 					}
 					
 				}else{															// Can't load page without jaargang id => load indexpage

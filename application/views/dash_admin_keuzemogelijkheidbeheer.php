@@ -13,7 +13,6 @@ if(count($data['keuzemogelijkheden']) > 0) {
 }?>
     <li><?php echo anchor("admin/dash/keuzemogelijkheidToevoegen/".$jaargang->id,"+",'class="btn btn-primary" title = "Druk hier om een nieuwe keuzemogelijkheid aan te maken"');?></li>
 </ul>
-<?php print_r($data['keuzemogelijkheden']);?>
 <div class="tab-content">
     <?php
         if(count($data['keuzemogelijkheden']) > 0) {
