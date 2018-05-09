@@ -17,7 +17,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
     <?php
         if(count($data['keuzemogelijkheden']) > 0) {
             foreach ($data['keuzemogelijkheden'] as $activiteit) {
-            $kolommen= array("naam", "plaats", "min", "max", "beginTijdstip","eindTijdstip");
+            $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
             echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';
             
                 foreach ($kolommen as $kolom) {
