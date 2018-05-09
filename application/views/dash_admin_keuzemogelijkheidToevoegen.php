@@ -31,8 +31,8 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </script>
 
     <div class="md-form">
+        <label for="keuzemogelijkheid" class="labelKeuze">Naam:</label>
         <input type="text" name="naam" id="keuzemogelijkheid" class="form-control">
-        <label for="keuzemogelijkheid">Naam:</label>
     </div>
 
     <div class="btn-group">
@@ -46,19 +46,18 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
 
     <div class="md-form">
-    <label for="begin">Begin datum en tijdstip:</label>
-    <input id="begin" type="date" name="beginTijdstip" value="<?php echo date('Y-m-d'); ?>">
-        
+        <label for="begin" class="labelkeuze">Begin datum en tijdstip:</label></br>
+        <input id="begin" type="date" name="beginTijdstip" value="<?php echo date('Y-m-d'); ?>">
     </div>
 
     <div class="md-form">
-    <input id="einde" type="date" name="eindTijdstip" value="<?php echo date('Y-m-d'); ?>">
-        <label for="einde">Eind datum en tijdstip:</label>
+        <label for="einde" class="labelkeuze">Eind datum en tijdstip:</label></br>
+        <input id="einde" type="date" name="eindTijdstip" value="<?php echo date('Y-m-d'); ?>">
     </div>
 
     <div class="md-form">
+        <label for="deadline" class="labelkeuze">Deadline datum en tijdstip:</label></br>
         <input type="date" name="deadlineTijdstip" value="<?php echo date('Y-m-d'); ?>">
-        <label for="deadline">Deadline datum en tijdstip:</label>
     </div>
 
     <input id="inpPlaats" type="hidden" name="plaats" value="<?php echo $plaatsen[0]->id; ?>">
@@ -66,7 +65,8 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <?php
         echo form_hidden('jaar', $jaargang->id);
         echo form_button($arrayparameters);
+        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$jaargang->id,'Annuleer','class="btn btn-warning"');
         echo form_close();
     ?>
 
-    <?php echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$jaargang->id,'Annuleer','class="btn btn-warning"');?>    
+      

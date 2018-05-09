@@ -51,6 +51,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
         echo 'Er is geen data beschikbaar maak nieuwe keuzemogelijkheden aan door op de plus-knop te klikken';   
     }?>
 </div>
+
 <div class="modal fade" id="keuzeModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -71,21 +72,21 @@ if(count($data['keuzemogelijkheden']) > 0) {
   </div>
 </div>
 <script>
-$(document).ready(function(){
-    $('.deleteKeuzeoptie').click(function(){
-        $('#modaltitel').text('Keuzeoptie verwijderen?')
-        $('#modaltekst').text('Weet u zeker dat u deze keuzeoptie wil verwijderen?')
+    $(document).ready(function(){
+        $('.deleteKeuzeoptie').click(function(){
+            $('#modaltitel').text('Keuzeoptie verwijderen?')
+            $('#modaltekst').text('Weet u zeker dat u deze keuzeoptie wil verwijderen?')
 
-        keuzeoptieId=$(this).val();
-        $('#verwijderenKeuze').attr("href", "http://projectab16.ddns.net/index.php/keuzeoptie/delete/"+keuzeoptieId);
-    });
-    $('.deleteKeuzemogelijkheid').click(function(){
-        $('#modaltitel').text('Keuzemogelijkheid verwijderen?')
-        $('#modaltekst').text('Weet u zeker dat u deze keuzemogelijkheid wil verwijderen?')
-        
-        keuzemogelijkheidId=$(this).val();
-        $('#verwijderenKeuze').attr("href", "http://projectab16.ddns.net/index.php/keuzemogelijkheid/delete/"+keuzemogelijkheidId);
-    });
+            keuzeoptieId=$(this).val();
+            $('#verwijderenKeuze').attr("href", "http://projectab16.ddns.net/index.php/keuzeoptie/delete/"+keuzeoptieId);
+        });
+        $('.deleteKeuzemogelijkheid').click(function(){
+            $('#modaltitel').text('Keuzemogelijkheid verwijderen?')
+            $('#modaltekst').text('Weet u zeker dat u deze keuzemogelijkheid wil verwijderen?')
+            
+            keuzemogelijkheidId=$(this).val();
+            $('#verwijderenKeuze').attr("href", "http://projectab16.ddns.net/index.php/keuzemogelijkheid/delete/"+keuzemogelijkheidId);
+        });
 
-});
+    });
 </script>
