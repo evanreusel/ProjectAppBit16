@@ -56,10 +56,6 @@ class Keuzemogelijkheid_Model extends CI_Model {
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
             $keuzemogelijkheid->keuzeopties = $this->Keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
         }
-        $this->load->model('Plaats_model');
-        foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
-            $keuzemogelijkheid->keuzeopties->plaats = $this->Plaats_model->getPlaatsById($keuzemogelijkheid->keuzeopties->plaatsId);
-        }
 
         return $keuzemogelijkheden;
     }
