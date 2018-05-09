@@ -31,7 +31,16 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                         else {
                         echo 'btn-warning title="uitschrijven voor deze taak';
                         }
-                    })echo '" id="'. $ingeschrevenActiviteiten->$id .'" value="'.$keuzeoptie->id.'">Inschrijven</button>';
+                    })echo '" id="'. $ingeschrevenActiviteiten->$id .'" value="'.$keuzeoptie->id.'">';
+
+                    (if (isset($ingeschrevenActiviteiten->$id)) {
+                        echo 'inschrijven';
+                        else {
+                        echo 'uitschrijven';
+                        }
+                    })
+                    
+                    echo '</button>';
                     
         }     
         echo "</li></ul></li>";
@@ -50,8 +59,7 @@ $(document).ready(function(){
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        $('#'+keuzemogelijkheidId).removeClass('btn-primary');
-                        $('#'+keuzemogelijkheidId).addClass('btn-warning');
+                        $('#'+keuzemogelijkheidId).toggleClass('btn-primary' 'btn-warning');
                         $('#'+keuzemogelijkheidId).text('uitschrijven');
                 }, error: function (xhr, status, error) {
                     console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
