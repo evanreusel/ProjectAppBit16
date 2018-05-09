@@ -23,6 +23,7 @@ class Keuzemogelijkheid extends CI_Controller{
         if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
             redirect('/admin/index', 'location');
         }
+        // =================================================================================================== /GREIF MATTHIAS
     }
 
     // Get Keuzemogelijkheid by Id
