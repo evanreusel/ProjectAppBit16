@@ -36,7 +36,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
 <script>
 $(document).ready(function(){
     $(".btn-primary").click(function(){
-        var keuzemogelijkheidId = $(this).attr('id');
+        var keuzemogelijkheidId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
@@ -52,7 +52,7 @@ $(document).ready(function(){
     });
 
     $(".btn-warning").click(function(){
-        var keuzemogelijkheidId = $(this).attr('id');
+        var keuzemogelijkheidId = $(this).val();
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerVanKeuzeoptieVerwijderen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
