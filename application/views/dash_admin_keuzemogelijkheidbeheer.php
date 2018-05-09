@@ -37,7 +37,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
 
                 echo '<td>'.anchor('admin/dash/updatekeuzeoptie/'.$keuzeoptie->id.'u','<button class="btn btn-round btn-warning" title="Druk hier om deze keuzeoptie aan te passen"><i class="fa fa-cog"></i> Aanpassen</button>').'</td>';
                 // echo '<td>'.anchor('keuzeoptie/delete/'.$keuzeoptie->id,'<button class="btn btn-round btn-danger" title="Druk hier om deze keuzeoptie te verwijderen"><i class="fa fa-trash"></i> Verwijderen</button>').'</td>';
-                echo '<td><button class="deleteKeuzeptie btn btn-round btn-warning" title="Druk hier om deze keuzeoptie aan te passen" data-toggle="modal" data-target="#keuzeoptieModal" value="'.$keuzeoptie->id.'"><i class="fa fa-cog"></i> Aanpassen</button></td>';
+                echo '<td><button class="deleteKeuzeoptie btn btn-round btn-danger" title="Druk hier om deze keuzeoptie te verwijderen" data-toggle="modal" data-target="#keuzeoptieModal" value="'.$keuzeoptie->id.'"><i class="fa fa-trash"></i> Verwijderen</button></td>';
                    echo "</tr>"; 
             }
 
