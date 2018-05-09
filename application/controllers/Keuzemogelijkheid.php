@@ -13,6 +13,11 @@ class Keuzemogelijkheid extends CI_Controller{
     
      public function __construct() {
         parent::__construct();
+
+        // Redirect to home if no session started
+        if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
+            redirect('/admin/index', 'location');
+        }
     }
 
     // =================================================================================================== GREIF MATTHIAS

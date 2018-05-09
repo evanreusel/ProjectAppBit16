@@ -17,7 +17,6 @@
     }
 ?>
 
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script> 
     function passcheck(){
         if($('#id').val() != 0){
@@ -33,8 +32,6 @@
                     } else {
                         $('#oudpasserror').show();
                     }
-                }, error: function (xhr, status, error) {
-                    console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
         }else{
@@ -45,8 +42,8 @@
     }
 
     function nieuwpassmatch(){  
-        var $passnietleeg;
-        var $passsame;
+        var $passnietleeg = false;
+        var $passsame = false;
 
         if($('#nieuwpass').val() != "") {
             $('#nieuwpasserror').hide();
