@@ -13,12 +13,11 @@ if(count($data['keuzemogelijkheden']) > 0) {
 }?>
     <li><?php echo anchor("admin/dash/keuzemogelijkheidToevoegen/".$jaargang->id,"+",'class="btn btn-primary" title = "Druk hier om een nieuwe keuzemogelijkheid aan te maken"');?></li>
 </ul>
-
 <div class="tab-content">
     <?php
         if(count($data['keuzemogelijkheden']) > 0) {
             foreach ($data['keuzemogelijkheden'] as $activiteit) {
-            $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
+            $kolommen= array("naam", "plaats", "min", "max", "beginTijdstip","eindTijdstip");
             echo '<div id="'. $activiteit->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';
             
                 foreach ($kolommen as $kolom) {
@@ -51,7 +50,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
         echo 'Er is geen data beschikbaar maak nieuwe keuzemogelijkheden aan door op de plus-knop te klikken';   
     }?>
 </div>
-
+<?php print_r($data['keuzemogelijkheden'])?>
 <div class="modal fade" id="keuzeModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

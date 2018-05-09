@@ -14,7 +14,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
         foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie ) {
                     $id = $keuzeoptie->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
-                    echo '<button class="btn btn-warning float-right ';
+                    /*echo '<button class="btn btn-warning float-right ';
                     if (!isset($ingeschrevenActiviteiten->$id)) {
                         echo 'hidden';
                     }
@@ -23,6 +23,22 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     if (isset($ingeschrevenActiviteiten->$id)) {
                         echo 'hidden';
                     }echo '" id="inschrijven" value="'.$keuzeoptie->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
+                    */
+
+                    echo '<button class="btn keuzeoptie float-right ';
+                    if (!isset($ingeschrevenActiviteiten->$id)) {
+                        echo 'btn-primary" title="inschrijven voor deze taak';
+                    } else {
+                        echo 'btn-warning title="uitschrijven voor deze taak';
+                    }echo '" id="'. $keuzeoptie->id .'" value="'.$keuzeoptie->id.'">';
+
+                    if (!isset($ingeschrevenActiviteiten->$id)) {
+                        echo 'inschrijven';
+                    } else {
+                        echo 'uitschrijven';
+                    }
+                    
+                    echo '</button>';
                     
         }     
         echo "</li></ul></li>";
@@ -35,25 +51,28 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
 <p id="test"></p>
 <script>
 $(document).ready(function(){
-    $(".btn-primary").click(function(){
-        var keuzemogelijkheidId = $(this).attr('id');
+    $(".keuzeoptie").click(function(){        
+        var keuzemogelijkheidId = $(this).val();
+        if($(this).hasClass('btn-primary')){
         $.ajax({
-                url: '<?= site_url(); ?>/keuzeoptievandeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
+                url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
-                success: function(data){                    
+                success: function(data){                
+                    console.log('3');    
+                        console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
                         $('#'+keuzemogelijkheidId).removeClass('btn-primary');
                         $('#'+keuzemogelijkheidId).addClass('btn-warning');
+                        console.log('1');
                         $('#'+keuzemogelijkheidId).text('uitschrijven');
+                        console.log('2');
                 }, error: function (xhr, status, error) {
+                    console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
-    });
-
-    $(".btn-warning").click(function(){
-        var keuzemogelijkheidId = $(this).attr('id');
+    } else {
         $.ajax({
-                url: '<?= site_url(); ?>/keuzeoptievandeelnemer/deelnemerVanKeuzeoptieVerwijderen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
+                url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerVanKeuzeoptieVerwijderen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
                         $('#'+keuzemogelijkheidId).removeClass('btn-warning');
@@ -63,11 +82,7 @@ $(document).ready(function(){
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
-    });
+    }
+});   
 });
-
-
-$('.hidden').each(function({
-    $(this).hide();
-}));
 </script>
