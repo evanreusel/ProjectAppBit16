@@ -87,12 +87,11 @@
             <div class="modal-body">
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
-                <label>Ontvangers</label>
-                <label>Geactiveerd</label>
+                <h6>Ontvangers</h6>
                 <label><input type="radio" name="geactiveerd" value="0">Geactiveerd</label><br>
                 <label><input type="radio" name="geactiveerd" value="1">Niet geactiveerd</label><br>
                 <label><input type="radio" name="geactiveerd" value="-1">Alle</label><br>
-                <label>Type ontvanger</label>
+                <h6>Type ontvanger</h6>
                 <label><input type="radio" name="typeOntvanger" value="0">Vrijwilliger</label><br>
                 <label><input type="radio" name="typeOntvanger" value="1">Deelnemer</label><br>
                 <label><input type="radio" name="typeOntvanger" value="-1">Alle Types</label><br>
