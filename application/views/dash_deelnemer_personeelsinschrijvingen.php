@@ -45,6 +45,7 @@ $(document).ready(function(){
                         $('#'+keuzemogelijkheidId).addClass('btn-warning');
                         $('#'+keuzemogelijkheidId).text('uitschrijven');
                 }, error: function (xhr, status, error) {
+                    console.log('<?= site_url(); ?>/keuzeoptievandeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
