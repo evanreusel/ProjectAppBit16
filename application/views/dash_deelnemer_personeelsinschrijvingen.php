@@ -25,7 +25,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     }echo '" id="inschrijven" value="'.$keuzeoptie->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
                     */
 
-                    echo '<button class="btn float-right ';
+                    echo '<button class="btn keuzeoptie float-right ';
                     if (!isset($ingeschrevenActiviteiten->$id)) {
                         echo 'btn-primary" title="inschrijven voor deze taak';
                     } else {
@@ -51,24 +51,26 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
 <p id="test"></p>
 <script>
 $(document).ready(function(){
-    $(".btn-primary").click(function(){
+    $(".keuzeoptie").click(function(){        
         var keuzemogelijkheidId = $(this).val();
+        if($(this).hasClass('btn-primary')){
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
-                success: function(data){                    
+                success: function(data){                
+                    console.log('3');    
+                        console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
                         $('#'+keuzemogelijkheidId).removeClass('btn-primary');
                         $('#'+keuzemogelijkheidId).addClass('btn-warning');
+                        console.log('1');
                         $('#'+keuzemogelijkheidId).text('uitschrijven');
+                        console.log('2');
                 }, error: function (xhr, status, error) {
                     console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
-    });
-
-    $(".btn-warning").click(function(){
-        var keuzemogelijkheidId = $(this).val();
+    } else {
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerVanKeuzeoptieVerwijderen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
@@ -80,9 +82,7 @@ $(document).ready(function(){
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
-    });
-
-    $('.hidden').hide();
+    }
 });   
-
+});
 </script>
