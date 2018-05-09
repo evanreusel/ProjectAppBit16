@@ -32,8 +32,12 @@ class Keuzeoptie_Model extends CI_Model{
     {
         $this->db->where('keuzemogelijkheidId', $id);
         $query = $this->db->get('KeuzeOptie');
-        return $query->result();
+        $keuzeoptie = $query->result();
 
+        $this->load->model('Plaats_model');
+
+        $keuzeoptie->plaats = $this->Plaats_model->getPlaatsById($keuzeoptie->plaatsId);
+        return $keuzeoptie;
     }
 
     function update($keuzeoptie)
