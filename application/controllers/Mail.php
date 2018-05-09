@@ -84,7 +84,7 @@ class Mail extends CI_Controller {
             $reminder->sjabloon = $this->mailsjabloon_model->get($reminder->sjabloonId);
 
         }
-        $data['$mailsjablonen'] = $this->mailsjabloon_model->getAll();
+        $data['mailsjablonen'] = $this->mailsjabloon_model->getAll();
         $data['reminders'] = $reminders;
         //$data['css_files'] = array("login.css");
         $data['clearscreen'] = true;
