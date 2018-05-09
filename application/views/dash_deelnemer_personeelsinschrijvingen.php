@@ -64,10 +64,8 @@ $(document).ready(function(){
                 }
             });
     });
-});
 
+    $('.hidden').hide();
+});   
 
-$('.hidden').each(function({
-    $(this).hide();
-}));
 </script>
