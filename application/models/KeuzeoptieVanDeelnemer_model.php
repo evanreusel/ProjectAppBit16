@@ -14,6 +14,13 @@ class KeuzeoptieVanDeelnemer_Model extends CI_Model{
         $query = $this->db->get('KeuzeoptieVanDeelnemer');
         return $query->result();
     }
+
+    function getAllByKeuzemogelijkheidId($id)
+    {
+        $this->db->where('keuzemogelijkheidId', $id);
+        $query = $this->db->get('KeuzeMogelijkheid');
+        return $query->result(); 
+    }
     
     function get_byPersoonId($id)
     {
@@ -23,6 +30,11 @@ class KeuzeoptieVanDeelnemer_Model extends CI_Model{
     }
 
     function add($VrijwilligerInShift){
+        $this->db->insert('KeuzeoptieVanDeelnemer', $VrijwilligerInShift);
+        // return $this->db->insert_id();
+    }
+
+    function addKeuzeoptieVanDeelnemer($KeuzeoptieVanDeelnemer){
         $this->db->insert('KeuzeoptieVanDeelnemer', $KeuzeoptieVanDeelnemer);
         // return $this->db->insert_id();
     }
