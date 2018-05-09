@@ -14,7 +14,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
         foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie ) {
                     $id = $keuzeoptie->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
-                    echo '<button class="btn btn-warning float-right ';
+                    /*echo '<button class="btn btn-warning float-right ';
                     if (!isset($ingeschrevenActiviteiten->$id)) {
                         echo 'hidden';
                     }
@@ -23,6 +23,15 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     if (isset($ingeschrevenActiviteiten->$id)) {
                         echo 'hidden';
                     }echo '" id="inschrijven" value="'.$keuzeoptie->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
+                    */
+
+                    echo '<button class="btn float-right ';
+                    (if (isset($ingeschrevenActiviteiten->$id)) {
+                        echo 'btn-primary" title="inschrijven voor deze taak';
+                        else {
+                        echo 'btn-warning title="uitschrijven voor deze taak';
+                        }
+                    })echo '" id="'. $ingeschrevenActiviteiten->$id .'" value="'.$keuzeoptie->id.'">Inschrijven</button>';
                     
         }     
         echo "</li></ul></li>";
