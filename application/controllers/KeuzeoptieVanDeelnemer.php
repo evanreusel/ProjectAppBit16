@@ -22,7 +22,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
             redirect('/admin/index', 'location');
         // =================================================================================================== /GREIF MATTHIAS
     }
-
+}
 
     public function update()
 	{
