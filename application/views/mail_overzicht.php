@@ -85,7 +85,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                <p>Modal body text goes here.</p>
+                <label for="modalReminderDatum">Datum:</label>
+                <input type="date" id="modalReminderDatum">
+                <label>Ontvangers</label>
+                <label>Geactiveerd</label>
+                <label><input type="radio" name="geactiveerd" value="0">Geactiveerd</label><br>
+                <label><input type="radio" name="geactiveerd" value="1">Niet geactiveerd</label><br>
+                <label><input type="radio" name="geactiveerd" value="-1">Alle</label><br>
+                <label>Type ontvanger</label>
+                <label><input type="radio" name="typeOntvanger" value="0">Vrijwilliger</label><br>
+                <label><input type="radio" name="typeOntvanger" value="1">Deelnemer</label><br>
+                <label><input type="radio" name="typeOntvanger" value="-1">Alle Types</label><br>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Save changes</button>
