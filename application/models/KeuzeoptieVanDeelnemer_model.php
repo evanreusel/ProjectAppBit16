@@ -30,7 +30,7 @@ class KeuzeoptieVanDeelnemer_Model extends CI_Model{
     }
 
     function add($VrijwilligerInShift){
-        $this->db->insert('KeuzeoptieVanDeelnemer', $VrijwilligerInShift);
+        $this->db->insert('VrijwilligerInShift', $VrijwilligerInShift);
         // return $this->db->insert_id();
     }
 
