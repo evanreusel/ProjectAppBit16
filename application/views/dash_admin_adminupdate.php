@@ -7,6 +7,7 @@
 <?php
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
+    $arrayparameters['class'] = 'btn btn-primary';
     $arrayparameters['value'] = (isset($data['admin'])) ? $data['admin']->id : '0';
     
     if(isset($data['admin'])){
@@ -122,14 +123,12 @@
     
 <?php    
     echo form_button($arrayparameters);
-    echo form_close(); 
-
-    /* =================================================================================================== GREIF MATTHIAS */
     if(isset($data['admin'])){
         echo '<a class="btn btn-danger" data-toggle="modal" data-target="#keuzeModal">
                 <i class="fa fa-trash-o"></i> Verwijder
         </a>';
     }
+    echo form_close();
 ?>
 
 <div class="modal fade" id="keuzeModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
