@@ -22,6 +22,7 @@ class Taken extends CI_Controller{
         $this->load->model('beheer_model');
         if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
             redirect('/admin/index', 'location');
+        }
         // =================================================================================================== /GREIF MATTHIAS
     }
 
