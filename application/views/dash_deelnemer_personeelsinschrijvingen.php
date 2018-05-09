@@ -5,8 +5,8 @@ foreach ($ingeschreven as $key) {
     $ingeschrevenActiviteiten->$id=0; 
 }
 
-//print_r($keuzemogelijkheden);
-//echo '</br></br>';
+print_r($keuzemogelijkheden);
+echo '</br></br>';
 print_r($ingeschreven);
 foreach($keuzemogelijkheden as $keuzemogelijkheid) {
     echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
