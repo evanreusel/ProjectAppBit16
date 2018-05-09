@@ -15,12 +15,12 @@ class Mail extends CI_Controller {
     public function maakbericht()
     {
         $this->load->library('mailjet');
-        echo json_encode($this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html"));
+        echo json_encode($this->mailjet->maakBerichtObject( "evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html"));
     }
     public function verstuur()
     {
         $this->load->library('mailjet');
-        $berichtobj = $this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html");
+        $berichtobj = $this->mailjet->maakBerichtObject(    "evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html");
         $Messages = array($berichtobj);
         echo json_encode($Messages);
         $mjobj = new stdClass();
