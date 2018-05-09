@@ -44,7 +44,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
             echo anchor('admin/dash/updatekeuzeoptie/'.$activiteit->id.'i',"Keuzeoptie toevoegen",'class="btn btn-primary" title="Druk hier om een keuzeoptie toe te voegen"');
             echo anchor('admin/dash/takenbeheer/'.$activiteit->id,'<button class="btn btn-round btn-warning" title="Druk hier om taken te beheren bij deze keuzemogelijkheid"><i class="fa fa-cog"></i> ' .$activiteit->naam. ' vrijwilliger taken</button>').'</td>';
             echo anchor('admin/dash/updatekeuzemogelijkheid/'.$activiteit->id,'<button class="btn btn-round btn-warning" title="Druk hier om de keuzemogelijkheid aan te passen"><i class="fa fa-cog"></i> ' .$activiteit->naam. ' aanpassen</button>').'</td>';
-            echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round" title="Druk hier om de keuzemogelijkheid te verwijderen"><i class="fa fa-trash"></i> '. $activiteit->naam . ' Verwijderen</button></div>');
+            // echo anchor('Keuzemogelijkheid/delete/' . $activiteit->id, '<button type="button" class="btn btn-danger btn-round" title="Druk hier om de keuzemogelijkheid te verwijderen"><i class="fa fa-trash"></i> '. $activiteit->naam . ' Verwijderen</button></div>');
             echo '<button class="deleteKeuzemogelijkheid btn btn-round btn-danger" title="Druk hier om deze keuzemogelijkheid te verwijderen" data-toggle="modal" data-target="#keuzeModal" value="'.$activiteit->id.'"><i class="fa fa-trash"></i> '. $activiteit->naam . ' Verwijderen</button></div>';
         }
     }
