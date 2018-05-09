@@ -12,6 +12,7 @@ class Deelnemer extends CI_Controller {
 	{
 		parent::__construct();
 
+		// =================================================================================================== GREIF MATTHIAS
 		// Autoload
 		$this->load->library('session');
 
@@ -19,8 +20,7 @@ class Deelnemer extends CI_Controller {
 		if(!$this->session->has_userdata('id')){
 			redirect('/main/index', 'location');
 		}
-
-		
+		// =================================================================================================== /GREIF MATTHIAS		
 	}
 	
 	public function dash($view = null, $extras = null){

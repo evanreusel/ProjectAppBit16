@@ -14,6 +14,10 @@ class Keuzemogelijkheid extends CI_Controller{
      public function __construct() {
         parent::__construct();
 
+        // =================================================================================================== GREIF MATTHIAS
+        // Autoload
+        $this->load->library('session');
+        
         // Redirect to home if no session started
         $this->load->model('beheer_model');
         if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
@@ -21,7 +25,6 @@ class Keuzemogelijkheid extends CI_Controller{
         }
     }
 
-    // =================================================================================================== GREIF MATTHIAS
     // Get Keuzemogelijkheid by Id
     public function get($id){
         $data['return'] = '';
