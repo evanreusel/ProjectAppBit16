@@ -18,7 +18,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                     }
                     echo '" id="uitschrijven" value="'.$keuzeoptie->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
                     echo '<button class="btn btn-primary float-right ';
-                    if (isset($ingeschrevenActiviteiten->$id)) {
+                    else {
                         echo 'hidden';
                     }echo '" id="inschrijven" value="'.$keuzeoptie->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
                     
