@@ -38,14 +38,14 @@ $(document).ready(function(){
     $(".btn-primary").click(function(){
         var keuzemogelijkheidId = $(this).attr('id');
         $.ajax({
-                url: '<?= site_url(); ?>/keuzeoptievandeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
+                url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
                         $('#'+keuzemogelijkheidId).removeClass('btn-primary');
                         $('#'+keuzemogelijkheidId).addClass('btn-warning');
                         $('#'+keuzemogelijkheidId).text('uitschrijven');
                 }, error: function (xhr, status, error) {
-                    console.log('<?= site_url(); ?>/keuzeoptievandeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
+                    console.log('<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>);
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
@@ -54,7 +54,7 @@ $(document).ready(function(){
     $(".btn-warning").click(function(){
         var keuzemogelijkheidId = $(this).attr('id');
         $.ajax({
-                url: '<?= site_url(); ?>/keuzeoptievandeelnemer/deelnemerVanKeuzeoptieVerwijderen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
+                url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerVanKeuzeoptieVerwijderen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
                         $('#'+keuzemogelijkheidId).removeClass('btn-warning');
