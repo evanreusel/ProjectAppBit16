@@ -8,19 +8,25 @@
                 <?php foreach ($reminders as $reminder) {
                     ?>
                     <div class="card">
-                        <div class="card-header" id="headingTwo">
+                        <div class="card-header" id="reminderHoofding<?php echo $reminder->id?>">
                             <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#reminderInhoud<?php echo $reminder->id?>" aria-expanded="false" aria-controls="reminderInhoud<?php echo $reminder->id?>">
                                     <?php echo $reminder->sjabloon->naam ?>" op <?php echo $reminder->timer ?>
                                 </button>
                             </h5>
                         </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div id="reminderInhoud<?php echo $reminder->id?>" class="collapse" aria-labelledby="reminderHoofding<?php echo $reminder->id?>" data-parent="#accordion">
                             <div class="card-body">
                                 <p><?php echo $reminder->timer ?></p>
                                 <p><?php echo count($reminder->ontvangers) ?> ontvangers</p>
                                 <p><?php echo $reminder->sjabloon->naam ?></p>
                                 <p><?php echo $reminder->status ?></p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="btn-group align-content-center btn-block">
+                                    <a href="#modalReminder" class="btn btn-success btn-block" data-toggle="modal" data-target="#modalReminder">Aanpassen</a>
+                                    <button class="btn btn-danger  btn-block">Verwijderen</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,21 +75,21 @@
     </div>
 
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal" tabindex="-1" role="dialog" id="modalReminder">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ontvangers</h5>
+                <h5 class="modal-title">Wijzig Reminder</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body" id="ontvangers_content">
-
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
