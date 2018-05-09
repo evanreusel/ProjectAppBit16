@@ -33,3 +33,9 @@
     display: -ms-flexbox;
     display:         flex;
 }
+
+/* label positionering op keuzemogelijkheid toevoegen */
+
+.labelKeuze{
+    top:0;
+}
