@@ -61,7 +61,6 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         $deelnemerInKeuzeoptie->persoonId = $persoonId;
         $deelnemerInKeuzeoptie->keuzeoptieId = $keuzeoptieId;
 
-        echo print_r($deelnemerInKeuzeoptie);
         $this->load->model('KeuzeoptieVanDeelnemer_model');
         $this->KeuzeoptieVanDeelnemer_model->addKeuzeoptieVanDeelnemer($deelnemerInKeuzeoptie);
 

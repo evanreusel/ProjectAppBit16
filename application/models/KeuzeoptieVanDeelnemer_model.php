@@ -35,6 +35,7 @@ class KeuzeoptieVanDeelnemer_Model extends CI_Model{
     }
 
     function addKeuzeoptieVanDeelnemer($KeuzeoptieVanDeelnemer){
+        echo print_r($KeuzeoptieVanDeelnemer);
         $this->db->insert('KeuzeoptieVanDeelnemer', $KeuzeoptieVanDeelnemer);
         // return $this->db->insert_id();
     }
