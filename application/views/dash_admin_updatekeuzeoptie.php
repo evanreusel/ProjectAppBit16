@@ -10,6 +10,7 @@
     $arrayparameters['value'] = '0';
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
+    $arrayparameters['class'] = "btn btn-primary";
     
 
     $plaats = array('');
@@ -74,8 +75,8 @@
     <?php
         echo $idData;    
         echo form_button($arrayparameters);
-        echo form_close();
         echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId,'Annuleer','class="btn btn-primary"');
+        echo form_close();
     ?>
 
     
