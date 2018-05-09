@@ -157,7 +157,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <p id="modaltekst">Weet u zeker dat u de administrator "<?php echo $data['admin']->naam; ?>" wilt verwijderen?</p>
+        <p id="modaltekst">Weet u zeker dat u de administrator "<?php echo $data['admin']->username; ?>" wilt verwijderen?</p>
       </div>
       <div class="modal-footer">
         <a href="http://projectab16.ddns.net/index.php/admin/delete/<?php echo $data['admin']->id; ?>" id="verwijderenKeuze" class="btn btn-danger btn-round">Verwijderen</a>
