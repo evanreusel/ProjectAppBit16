@@ -10,6 +10,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['value'] = '0';
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
+    $arrayparameters['class'] = "btn btn-primary";
     
     $plaats = array('');
     $datumAttributen = array(
