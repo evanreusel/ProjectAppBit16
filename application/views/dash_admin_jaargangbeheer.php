@@ -1,6 +1,6 @@
 <!--
     GREIF MATTHIAS
-    LAST UPDATED: 18 05 04
+    LAST UPDATED: 18 05 09
     DASH ADMIN JAARGANGBEHEER
 -->
 
@@ -10,7 +10,7 @@
     </p>
 <?php } else { ?>
     <p class="tooling">
-        Hier kan u de afgesloten editie <?php echo $data['jaargang']->naam; ?> bekijken. <br/>
+        Hier kan u de afgesloten editie "<?php echo $data['jaargang']->naam; ?>" bekijken. <br/>
     </p>
 <?php } ?>
 

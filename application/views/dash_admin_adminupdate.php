@@ -7,6 +7,7 @@
 <?php
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
+    $arrayparameters['class'] = 'btn btn-primary';
     $arrayparameters['value'] = (isset($data['admin'])) ? $data['admin']->id : '0';
     
     if(isset($data['admin'])){
@@ -122,35 +123,34 @@
     
 <?php    
     echo form_button($arrayparameters);
-    echo form_close(); 
-
-    /* =================================================================================================== GREIF MATTHIAS */
     if(isset($data['admin'])){
-        echo '<a class="btn btn-danger" data-toggle="modal" data-target="#DeleteModal">
+        echo '<a class="btn btn-danger" data-toggle="modal" data-target="#keuzeModal">
                 <i class="fa fa-trash-o"></i> Verwijder
         </a>';
     }
-    /* =================================================================================================== /GREIF MATTHIAS */
-    
+    echo form_close();
 ?>
 
-
-<div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="DeleteModal" aria-hidden="true">
+<div class="modal fade" id="keuzeModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Waarschuwing</h5>
+        <h5 class="modal-title" id="modaltitel">Administrator verwijderen?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-      Bent u zeker dat u a wilt verwijderen? 
+        <p id="modaltekst">Weet u zeker dat u de administrator "<?php echo $data['admin']->username; ?>" wilt verwijderen?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-Light btn-outline-danger" data-dismiss="modal">Annuleer</button>
-        <?php echo anchor("admin/delete/" . $data['admin']->id,'<i class="fa fa-trash-o"></i> Verwijder', array('class' => 'btn btn-success'));?>
+        <a href="http://projectab16.ddns.net/index.php/admin/delete/<?php echo $data['admin']->id; ?>" id="verwijderenKeuze" class="btn btn-danger btn-round">Verwijderen</a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
       </div>
     </div>
   </div>
-</div>   
+</div>
+
+<?php
+    /* =================================================================================================== /GREIF MATTHIAS */
+?>
