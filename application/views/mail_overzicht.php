@@ -38,13 +38,14 @@
         <div class="card-header">Mailsjablonen</div>
         <div class="card-body">
             <div class="row row-eq-height">
+                <?php foreach ($mailsjablonen as $sjabloon) {
+                ?>
                 <div class="col-lg-6">
 
-
                     <div class="card">
-                        <div class="card-header">Onderwerp</div>
+                        <div class="card-header"><?php echo $sjabloon->naam?></div>
                         <div class="card-body">
-                            Mail text blabla
+                            <?php echo $sjabloon->inhoud?>
                         </div>
                         <div class="card-footer">
                             <div class="btn-group align-content-center btn-block">
@@ -54,22 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-
-
-                    <div class="card">
-                        <div class="card-header">Onderwerp</div>
-                        <div class="card-body">
-                            Mail text blabla 2
-                        </div>
-                        <div class="card-footer">
-                            <div class="btn-group align-content-center btn-block">
-                                <a href="#" class="btn btn-success btn-block">Aanpassen</a>
-                                <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -87,11 +73,11 @@
             <div class="modal-body">
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
-                <h6>Ontvangers</h6>
+                <h5>Ontvangers</h5>
                 <label><input type="radio" name="geactiveerd" value="0">Geactiveerd</label><br>
                 <label><input type="radio" name="geactiveerd" value="1">Niet geactiveerd</label><br>
                 <label><input type="radio" name="geactiveerd" value="-1">Alle</label><br>
-                <h6>Type ontvanger</h6>
+                <h5>Type ontvanger</h5>
                 <label><input type="radio" name="typeOntvanger" value="0">Vrijwilliger</label><br>
                 <label><input type="radio" name="typeOntvanger" value="1">Deelnemer</label><br>
                 <label><input type="radio" name="typeOntvanger" value="-1">Alle Types</label><br>
