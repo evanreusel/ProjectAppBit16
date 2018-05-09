@@ -57,7 +57,7 @@ $(document).ready(function(){
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
                 type: "GET",
                 success: function(data){                    
-                        $('#'+keuzemogelijkheidId).addClass('btn-primary');
+                        $('#'+keuzemogelijkheidId).removeClass('btn-primary');
                         $('#'+keuzemogelijkheidId).addClass('btn-warning');
                         $('#'+keuzemogelijkheidId).text('uitschrijven');
                 }, error: function (xhr, status, error) {
