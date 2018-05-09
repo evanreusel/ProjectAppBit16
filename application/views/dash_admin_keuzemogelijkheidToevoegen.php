@@ -46,7 +46,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
 
     <div class="md-form">
-    <label for="begin">Begin datum en tijdstip:</label>
+    <label for="begin">Begin datum en tijdstip:</label></br>
     <input id="begin" type="date" name="beginTijdstip" value="<?php echo date('Y-m-d'); ?>">
         
     </div>
