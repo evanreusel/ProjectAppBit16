@@ -112,7 +112,7 @@ class Admin extends CI_Controller {
 					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
 					$data['jaargang']=$this->jaargang_model->get_byId($extras);
 					$this->load->model('plaats_model');
-					foreach ($data['data']['keuzemogelijkheden'] as $keuzemogelijkheid) {
+					foreach ($data['data']->keuzemogelijkheden as $keuzemogelijkheid) {
 						$keuzemogelijkheid->plaats=$this->plaats_model->getPlaatsById($keuzemogelijkheid->plaatsId);
 					}
 					
