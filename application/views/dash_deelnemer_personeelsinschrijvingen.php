@@ -30,7 +30,7 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
                         echo 'btn-primary" title="inschrijven voor deze taak';
                     } else {
                         echo 'btn-warning title="uitschrijven voor deze taak';
-                    }echo '" id="'. $ingeschrevenActiviteiten->$id .'" value="'.$keuzeoptie->id.'">';
+                    }echo '" id="'. $keuzeoptie->id .'" value="'.$keuzeoptie->id.'">';
 
                     if (isset($ingeschrevenActiviteiten->$id)) {
                         echo 'inschrijven';
