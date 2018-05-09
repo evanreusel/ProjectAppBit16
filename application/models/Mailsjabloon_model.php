@@ -15,15 +15,22 @@ class Mailsjabloon_model extends CI_Model {
         return $query->result()[0];
     }
     function getAll() {
-        $this->db->order_by('timer', 'asc');
+        //$this->db->order_by('timer', 'asc');
         $query = $this->db->get('Mailsjabloon');
         return $query->result();
     }
 
-    function insert($sjabloon) {
-        $this->db->insert('Sjabloon', $sjabloon);
+
+    function update($mailsjabloon){
+        $this->db->where('id', $mailsjabloon->id);
+        $this->db->update('Mailsjabloon', $mailsjabloon);
+    }
+
+    function add($mailsjabloon){
+        $this->db->insert('Mailsjabloon', $mailsjabloon);
         return $this->db->insert_id();
     }
+
 
 //    function update($plaats) {
 //        $this->db->where('id', $plaats->id);
