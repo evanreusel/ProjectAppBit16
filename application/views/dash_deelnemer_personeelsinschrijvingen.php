@@ -69,5 +69,5 @@ $(document).ready(function(){
 
 $('.hidden').each(function({
     $(this).hide();
-}))
+}));
 </script>
