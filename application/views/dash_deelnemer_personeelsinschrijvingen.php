@@ -65,9 +65,7 @@ $(document).ready(function(){
             });
     });
 
-    $('.hidden').each(function(){
-        $(this).hide();
-    })
+    $('.hidden').hide();
 });   
 
 </script>
