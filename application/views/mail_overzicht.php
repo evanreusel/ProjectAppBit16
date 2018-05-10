@@ -49,7 +49,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="btn-group align-content-center btn-block">
-                                <a href="#modalSjabloon" class="btn btn-success btn-block open-sjabloonvenster" data-toggle="modal" data-target="#modalSjabloon" data-naam="<?php echo $sjabloon->naam?>" data-inhoud="<?php echo $sjabloon->inhoud?>" data-id="<?php echo $sjabloon->id?>">Aanpassen</a>
+                                <a href="#modalSjabloon" class="btn btn-success btn-block open-sjabloonvenster" data-toggle="modal" data-target="#modalSjabloon" data-sjabloon-naam="<?php echo $sjabloon->naam?>" data-sjabloon-inhoud="<?php echo $sjabloon->inhoud?>" data-sjabloon-id="<?php echo $sjabloon->id?>">Aanpassen</a>
                                 <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
             console.log("SJABLOON");
             var sjabloonId = $(this).data('sjabloon-id');
             $("#sjabloon-id").val(sjabloonId);
-            if(sjabloonId !=0)
+            if(sjabloonId != 0)
             {
                 // sjabloon bewerken
                 $("#sjabloon-naam").val($(this).data('sjabloon-naam'));
