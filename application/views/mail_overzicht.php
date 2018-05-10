@@ -40,7 +40,7 @@
             <div class="row row-eq-height">
                 <?php foreach ($mailsjablonen as $sjabloon) {
                 ?>
-                <div class="col-lg-6">
+                <div class="col-lg-12">
 
                     <div class="card">
                         <div class="card-header"><?php echo $sjabloon->naam?></div>
@@ -74,13 +74,23 @@
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
                 <h5>Ontvangers</h5>
-                <label><input type="radio" name="geactiveerd" value="0">Geactiveerd</label><br>
-                <label><input type="radio" name="geactiveerd" value="1">Niet geactiveerd</label><br>
-                <label><input type="radio" name="geactiveerd" value="-1">Alle</label><br>
+                <label><input type="radio" name="geactiveerd" value="0"> Geregistreerd voor shift/event</label><br>
+                <label><input type="radio" name="geactiveerd" value="1"> Niet geregistreerd voor shift/event</label><br>
+                <label><input type="radio" name="geactiveerd" value="-1"> Alle</label><br>
                 <h5>Type ontvanger</h5>
-                <label><input type="radio" name="typeOntvanger" value="0">Vrijwilliger</label><br>
-                <label><input type="radio" name="typeOntvanger" value="1">Deelnemer</label><br>
-                <label><input type="radio" name="typeOntvanger" value="-1">Alle Types</label><br>
+                <label><input type="radio" name="typeOntvanger" value="0"> Vrijwilligers</label><br>
+                <label><input type="radio" name="typeOntvanger" value="1"> Deelnemers</label><br>
+                <label><input type="radio" name="typeOntvanger" value="-1"> Iedereen</label><br>
+                <label>Mailsjabloon</label>
+                <select id="form_mailsjabloon">
+                    <?php foreach ($mailsjablonen as $sjabloon) {
+                        ?>
+                        <option value="<?php echo $sjabloon->id?>">
+                            <?php echo $sjabloon->naam?>
+                        </option>
+                    <?php } ?>
+                </select>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Save changes</button>
