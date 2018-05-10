@@ -99,6 +99,36 @@
         </div>
     </div>
 </div>
+<div class="modal" tabindex="-1" role="dialog" id="modalSjabloon">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Wijzig Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label for="modalReminderDatum">Onderwerp:</label>
+                <input type="date" id="modalReminderDatum">
+                <h5>Tekst</h5>
+                <i>Tip: je kan hier ook variablen gebruiken.</i>
+                <ul>
+                    <li><i>$naam</i> voor de naam van de ontvanger;</li>
+                    <li><i>$token</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
+                    <li><i>$token</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
+                    <li><i>$soort</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
+                </ul>
+                <textarea placeholder="Beste $naam,&#10; Welkom! U kunt via deze link naar onze pagina gaan: $token"></textarea>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Opslaan</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleer</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
 
 </script>
