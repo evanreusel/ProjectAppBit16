@@ -49,7 +49,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="btn-group align-content-center btn-block">
-                                <a href="#" class="btn btn-success btn-block">Aanpassen</a>
+                                <a href="#modalSjabloon" class="btn btn-success btn-block open-sjabloonvenster" data-toggle="modal" data-target="#modalSjabloon" data-naam="<?php echo $sjabloon->naam?>" data-inhoud="<?php echo $sjabloon->inhoud?>" data-id="<?php echo $sjabloon->id?>">Aanpassen</a>
                                 <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
                             </div>
                         </div>
@@ -109,17 +109,18 @@
                 </button>
             </div>
             <div class="modal-body">
+                <input type="hidden" id="sjabloon-id"/>
                 <label for="modalReminderDatum">Onderwerp:</label>
-                <input type="date" id="modalReminderDatum">
+                <input type="text" id="sjabloon-naam">
                 <h5>Tekst</h5>
-                <i>Tip: je kan hier ook variablen gebruiken.</i>
+                <i>Tip: je kan hier ook variabelen gebruiken.</i>
                 <ul>
                     <li><i>$naam</i> voor de naam van de ontvanger;</li>
                     <li><i>$token</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
                     <li><i>$token</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
                     <li><i>$soort</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
                 </ul>
-                <textarea placeholder="Beste $naam,&#10; Welkom! U kunt via deze link naar onze pagina gaan: $token"></textarea>
+                <textarea id="sjabloon-inhoud" class="form-control" placeholder="Beste $naam,&#10;Welkom! U kunt via deze link naar onze pagina gaan: $token"></textarea>
 
             </div>
             <div class="modal-footer">
@@ -130,5 +131,16 @@
     </div>
 </div>
 <script>
+    $(document).on("click", ".open-sjabloonvenster", function () {
+        var sjabloonId = $(this).data('sjabloon-id');
+        $("#sjabloon-id").val(sjabloonId);
+        if(sjabloonId !=0)
+        {
+            // sjabloon bewerken
+            $("#sjabloon-naam").val($(this).data('sjabloon-naam'));
+            $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
+        }
 
+
+    });
 </script>
