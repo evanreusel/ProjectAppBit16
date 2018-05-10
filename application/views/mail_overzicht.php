@@ -131,16 +131,17 @@
     </div>
 </div>
 <script>
-    $(document).on("click", ".open-sjabloonvenster", function () {
-        var sjabloonId = $(this).data('sjabloon-id');
-        $("#sjabloon-id").val(sjabloonId);
-        if(sjabloonId !=0)
-        {
-            // sjabloon bewerken
-            $("#sjabloon-naam").val($(this).data('sjabloon-naam'));
-            $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
-        }
-
-
+    $( document ).ready(function() {
+        $(document).on("click", ".open-sjabloonvenster", function () {
+            var sjabloonId = $(this).data('sjabloon-id');
+            $("#sjabloon-id").val(sjabloonId);
+            if(sjabloonId !=0)
+            {
+                // sjabloon bewerken
+                $("#sjabloon-naam").val($(this).data('sjabloon-naam'));
+                $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
+            }
+        });
     });
+
 </script>
