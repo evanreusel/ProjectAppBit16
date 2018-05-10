@@ -131,8 +131,9 @@
     </div>
 </div>
 <script>
+
     $( document ).ready(function() {
-        $(document).on("click", ".open-sjabloonvenster", function () {
+        $( ".open-sjabloonvenster" ).click(function() {
             var sjabloonId = $(this).data('sjabloon-id');
             $("#sjabloon-id").val(sjabloonId);
             if(sjabloonId !=0)
@@ -142,6 +143,7 @@
                 $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
             }
         });
+       
     });
 
 </script>
