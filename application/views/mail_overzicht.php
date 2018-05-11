@@ -82,11 +82,12 @@
                         <div class='card-header'>Keuzemogelijkheid <?php echo $keuzemogelijkheid->naam ?>: </div>
                         <div class='card-body'>
                         <?php
+
                         foreach ($keuzemogelijkheid->taken as $taak)
                         {
                             if (!$taak->verbergen)
                             {?>
-                                <h5>Taak <?php echo $taak->functie ?></h5>
+                                <h5>Vrijwilligers <?php echo $taak->functie ?></h5>
                                 <?php
                                 foreach ($taak->shiften as $shift)
                                 {
@@ -105,7 +106,7 @@
                         {
                             if (!$keuzeoptie->verbergen)
                             {
-                                echo "<h5>Keuzeoptie " . $keuzeoptie->naam . "</h5>";
+                                echo "<h5>Deelnemers " . $keuzeoptie->naam . "</h5>";
                                 foreach ($keuzeoptie->personen as $persoon)
                                 {?>
                                     <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
