@@ -108,9 +108,41 @@ class Mail extends CI_Controller {
     }
     public function get_personen()
     {
-        $this->load->model('persoon_model');
-        // haal alle vrijwilligers op
-        echo json_encode($this->persoon_model->get_AllVrijwilligers());
+        // get keuzemogelijkheden
+        $this->load->model('Keuzemogelijkheid_model');
+        $this->load->model('Taken_model');
+        $this->load->model('Shiften_model');
+        $this->load->model('Shiften_model');
+        $this->load->model("VrijwilligersInShift_model");
+
+        $keuzemogelijkheden = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
+        foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
+            //get taken
+            $taken = $this->Taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid);
+            $keuzemogelijkheden->taken = $taken;
+            // get shiften
+            foreach ($keuzemogelijkheden->taken as $taak) {
+                $shiften = $this->model->Shiften_model->getAllByNaamWhereTaakId($taak->id);
+                $taak->shiften = $shiften;
+                foreach ($taak->shiften as $shift) {
+                    //get personen in shift
+                    $vrijwilligersInshiftObject  = $this->VrijwilligersInShift_model->get_byShiftId($shift->id);
+                    $vrijwilligers = array_map(create_function('$o', 'return $o->persoon;'), $vrijwilligersInshiftObject);
+                    $shift->vrijwilligers = $vrijwilligers;
+
+                }
+            }
+
+        }
+        print_r($keuzemogelijkheden);
+        // get vrijwilligers zonder shiften
+
+
+        //get keuzemogelijkheden (hierboven)
+        //get keuzeopties
+        //get deelnemers by keuzeopties
+        //get deelnemers zonder keuzeopties
+
     }
 
 }
