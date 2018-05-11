@@ -117,13 +117,19 @@
                 <?php
                 foreach ($keuzemogelijkheden as $keuzemogelijkheid)
                 {
-                    foreach ($keuzemogelijkheid->taken as $taak) {
-                        foreach ($taak->shiften as $shift) {
-                            foreach ($shift->vrijwilligers as $vrijwilliger) {
-                                echo($vrijwilliger->naam . "<br>");
+                    if (!$keuzemogelijkheid->verbergen)
+                    {
+                        echo($keuzemogelijkheid->naam . ":<br>");
+                        foreach ($keuzemogelijkheid->taken as $taak) {
+                            foreach ($taak->shiften as $shift) {
+
+                                foreach ($shift->vrijwilligers as $vrijwilliger) {
+                                    echo($vrijwilliger->naam . "<br>");
+                                }
                             }
                         }
                     }
+
                 }
                 ?>
             </div>

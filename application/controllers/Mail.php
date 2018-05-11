@@ -120,6 +120,7 @@ class Mail extends CI_Controller {
         $keuzemogelijkheden = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
         //print_r($keuzemogelijkheden);
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
+            $keuzemogelijkheid->verbergen = true;
             //get taken
             $taken = $this->Taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
             //echo ("AANTAL TAKEN VOOR " . $keuzemogelijkheid->naam . ": " . count($taken));
@@ -129,11 +130,17 @@ class Mail extends CI_Controller {
             // get shiften
             foreach ($keuzemogelijkheid->taken as $taak) {
                 $shiften = $this->Shiften_model->getAllByNaamWhereTaakId($taak->id);
+                $taak->verbergen = true;
                 $taak->shiften = $shiften;
                 foreach ($taak->shiften as $shift) {
                     //get personen in shift
                     $vrijwilligersInshiftObject  = $this->VrijwilligersInShift_model->getAllByShiftId($shift->id);
                     //print_r($vrijwilligersInshiftObject);
+                    if (count($vrijwilligersInshiftObject) !=0)
+                    {
+                        $taak->verbergen = false;
+                        $keuzemogelijkheid->verbergen = false;
+                    }
                     $vrijwilligers = array_map(create_function('$o', 'return $o->persoon;'), $vrijwilligersInshiftObject);
                     $shift->vrijwilligers = $vrijwilligers;
 
@@ -145,6 +152,10 @@ class Mail extends CI_Controller {
                 $keuzeoptie->personen = array();
 
                 $keuzeoptieVanDeelnemers = $this->KeuzeoptieVanDeelnemer_model->get_byKeuzeoptieId($keuzeoptie->id);
+                if (count($keuzeoptieVanDeelnemers) !=0)
+                {
+                    $keuzemogelijkheid->verbergen = false;
+                }
                 foreach ($keuzeoptieVanDeelnemers as $keuzeoptieVanDeelnemer) {
                     $deelnemendPersoon = $this->Persoon_model->get_byId($keuzeoptieVanDeelnemer->persoonId);
                     array_push($keuzeoptie->personen, $deelnemendPersoon);
