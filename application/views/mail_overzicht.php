@@ -73,7 +73,52 @@
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
                 <h5>Ontvangers</h5>
+                <?php
+                foreach ($keuzemogelijkheden as $keuzemogelijkheid)
+                {
+                    if (!$keuzemogelijkheid->verbergen)
+                    { ?>
+                        <div class='card'>
+                        <div class='card-header'>Keuzemogelijkheid " . <?php echo $keuzemogelijkheid->naam ?>: </div>
+                        <div class='card-body'>
+                        <?php
+                        foreach ($keuzemogelijkheid->taken as $taak)
+                        {
+                            if (!$taak->verbergen)
+                            {?>
+                                <h4>Taak <?php echo $taak->functie ?></h4>);
+                                <?php
+                                foreach ($taak->shiften as $shift)
+                                {
+                                    foreach ($shift->vrijwilligers as $vrijwilliger)
+                                    {
+                                        echo($vrijwilliger->naam . "<br>");
+                                    }
+                                }
+                            }
+                        }
+                        ?>
 
+                        <?php
+                        foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie)
+                        {
+                            if (!$keuzeoptie->verbergen)
+                            {
+                                echo "<h4>Keuzeoptie " . $keuzeoptie->naam . "</h4>";
+                                foreach ($keuzeoptie->personen as $persoon)
+                                {
+                                    echo $persoon->naam . "<br>";
+                                }
+                            }
+                        }
+                        ?>
+                        </div>
+                        </div>
+
+                    }
+
+                }
+                ?>
                 <label>Mailsjabloon</label>
                 <select id="form_mailsjabloon">
                     <?php foreach ($mailsjablonen as $sjabloon) {
@@ -114,45 +159,7 @@
                     <li><i>$soort</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
                 </ul>
                 <textarea id="sjabloon-inhoud" class="form-control" placeholder="Beste $naam,&#10;Welkom! U kunt via deze link naar onze pagina gaan: $token"></textarea>
-                <?php
-                foreach ($keuzemogelijkheden as $keuzemogelijkheid)
-                {
-                    if (!$keuzemogelijkheid->verbergen)
-                    {
-                        echo("<h3>Keuzemogelijkheid " . $keuzemogelijkheid->naam . ":</h3>");
-                        foreach ($keuzemogelijkheid->taken as $taak)
-                        {
-                            if (!$taak->verbergen)
-                            {
-                                echo ("<h4>Taak " . $taak->functie."</h4>");
-                                foreach ($taak->shiften as $shift)
-                                {
 
-                                    foreach ($shift->vrijwilligers as $vrijwilliger)
-                                    {
-                                        echo($vrijwilliger->naam . "<br>");
-                                    }
-                                }
-                            }
-
-
-                        }
-                        foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie)
-                        {
-                            if (!$keuzeoptie->verbergen)
-                            {
-                            echo "<h4>Keuzeoptie " . $keuzeoptie->naam . "</h4>";
-                                foreach ($keuzeoptie->personen as $persoon)
-                                {
-                                    echo $persoon->naam . "<br>";
-                                }
-                            }
-                        }
-
-                    }
-
-                }
-                ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Opslaan</button>
