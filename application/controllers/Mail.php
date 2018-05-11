@@ -112,10 +112,10 @@ class Mail extends CI_Controller {
         $this->load->model('Keuzemogelijkheid_model');
         $this->load->model('Taken_model');
         $this->load->model('Shiften_model');
-        $this->load->model('Shiften_model');
         $this->load->model("VrijwilligersInShift_model");
 
         $keuzemogelijkheden = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
+        print_r($keuzemogelijkheden);
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
             //get taken
             $taken = $this->Taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
