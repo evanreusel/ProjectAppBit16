@@ -120,6 +120,7 @@ class Mail extends CI_Controller {
             //get taken
             $taken = $this->Taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
             echo ("AANTAL TAKEN VOOR " . $keuzemogelijkheid->naam . ": " . count($taken));
+            $keuzemogelijkheden->taken = array();
             $keuzemogelijkheden->taken = $taken;
             print_r($keuzemogelijkheden->taken);
             // get shiften
