@@ -79,6 +79,8 @@ class Mail extends CI_Controller {
         $this->load->model('mailreminder_model');
         $this->load->model('mailsjabloon_model');
         $reminders = $this->mailreminder_model->getAll();
+        $data['keuzemogelijkheden'] = $this->get_personen();
+
         foreach ($reminders as $reminder) {
             $reminder->ontvangers =  $this->mailreminder_model->get_PersonenInReminder($reminder->id);
             $reminder->sjabloon = $this->mailsjabloon_model->get($reminder->sjabloonId);
@@ -102,7 +104,6 @@ class Mail extends CI_Controller {
         $data['css_files'] = array();
         $data['view'] = 'mail_voegtoe';
         $data['clearscreen'] = true;
-        $data['keuzemogelijkheden'] = $this->get_personen();
         $this->load->view('template/main', $data);
 
     }
