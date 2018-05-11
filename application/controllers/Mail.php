@@ -106,5 +106,11 @@ class Mail extends CI_Controller {
         $this->load->view('template/main', $data);
 
     }
+    public function get_personen()
+    {
+        $this->load->model('persoon_model');
+        // haal alle vrijwilligers op
+        echo json_encode($this->persoon_model->get_AllVrijwilligers());
+    }
 
 }

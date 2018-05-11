@@ -38,8 +38,7 @@
         <div class="card-header">Mailsjablonen</div>
         <div class="card-body">
             <div class="row row-eq-height">
-                <?php foreach ($mailsjablonen as $sjabloon) {
-                ?>
+                <?php foreach ($mailsjablonen as $sjabloon) {?>
                 <div class="col-lg-12">
 
                     <div class="card">
@@ -74,13 +73,7 @@
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
                 <h5>Ontvangers</h5>
-                <label><input type="radio" name="geactiveerd" value="0"> Geregistreerd voor shift/event</label><br>
-                <label><input type="radio" name="geactiveerd" value="1"> Niet geregistreerd voor shift/event</label><br>
-                <label><input type="radio" name="geactiveerd" value="-1"> Alle</label><br>
-                <h5>Type ontvanger</h5>
-                <label><input type="radio" name="typeOntvanger" value="0"> Vrijwilligers</label><br>
-                <label><input type="radio" name="typeOntvanger" value="1"> Deelnemers</label><br>
-                <label><input type="radio" name="typeOntvanger" value="-1"> Iedereen</label><br>
+
                 <label>Mailsjabloon</label>
                 <select id="form_mailsjabloon">
                     <?php foreach ($mailsjablonen as $sjabloon) {

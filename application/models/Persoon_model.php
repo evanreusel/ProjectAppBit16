@@ -43,7 +43,42 @@ class Persoon_model extends CI_Model {
 
         return null;
     }
-    function insert($persoon){        
+    function get_AllDeelnemers()
+    {
+        $this->db->where(array('soort' => "DEELNEMER"));
+        $query = $this->db->get('Persoon');
+
+        if($query->result() != null)
+        {
+            return $query->result();
+        }
+
+        return null;
+
+    }
+    function get_AllVrijwilligers()
+    {
+        $this->db->where(array('soort' => "VRIJWILLIGER"));
+        $query = $this->db->get('Persoon');
+
+        if($query->result() != null)
+        {
+            $this->load->model("vrijwilligersinshift_model");
+            foreach ($query->result() as $vrijwilliger) {
+                $shiften = $this->vrijwilligersinshift_model->get_byPersoonId($vrijwilliger->id);
+                $vrijwilliger->shiften = array();
+                if(count($shiften) !=0)
+                {
+                    $vrijwilliger->shiften = array_map(create_function('$o', 'return $o->shiftId;'), $shiften);
+                }
+
+            }
+        }
+
+
+        return null;
+    }
+    function insert($persoon){
         //haal het huidige jaargangid op om later te koppelen aan de persoon
         $this->load->model("Jaargang_model");
         $jaargang = $this->Jaargang_model->getActief();
