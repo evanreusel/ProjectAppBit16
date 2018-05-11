@@ -110,8 +110,10 @@ class Mail extends CI_Controller {
     {
         // get keuzemogelijkheden
         $this->load->model('Keuzemogelijkheid_model');
+        $this->load->model('KeuzeoptieVanDeelnemer_model');
         $this->load->model('Taken_model');
         $this->load->model('Shiften_model');
+        $this->load->model('Persoon_model');
         $this->load->model("VrijwilligersInShift_model");
 
         $keuzemogelijkheden = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
@@ -135,6 +137,15 @@ class Mail extends CI_Controller {
                     $shift->vrijwilligers = $vrijwilligers;
 
                 }
+            }
+            //get deelnemers van keuzeopties
+
+            foreach ($keuzemogelijkheden->keuzeopties as $keuzeoptie) {
+                $keuzeoptie->personen = array();
+                $keuzeoptieVanDeelnemer = $this->KeuzeoptieVanDeelnemer_model->get_byKeuzeoptieId($keuzeoptie->id);
+                $deelnemendPersoon = $this->persoon_model->get_byId($keuzeoptieVanDeelnemer->persoonId);
+                array_push($keuzeoptie->personen, $deelnemendPersoon);
+                
             }
 
         }
