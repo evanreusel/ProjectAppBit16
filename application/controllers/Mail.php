@@ -130,7 +130,7 @@ class Mail extends CI_Controller {
                 foreach ($taak->shiften as $shift) {
                     //get personen in shift
                     $vrijwilligersInshiftObject  = $this->VrijwilligersInShift_model->getAllByShiftId($shift->id);
-                    print_r($vrijwilligersInshiftObject);
+                    //print_r($vrijwilligersInshiftObject);
                     $vrijwilligers = array_map(create_function('$o', 'return $o->persoon;'), $vrijwilligersInshiftObject);
                     $shift->vrijwilligers = $vrijwilligers;
 
@@ -138,7 +138,7 @@ class Mail extends CI_Controller {
             }
 
         }
-        //print_r($keuzemogelijkheden);
+        print_r($keuzemogelijkheden);
         // get vrijwilligers zonder shiften
 
 
