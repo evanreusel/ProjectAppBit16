@@ -154,7 +154,7 @@ class Mail extends CI_Controller {
                 $keuzeoptieVanDeelnemers = $this->KeuzeoptieVanDeelnemer_model->get_byKeuzeoptieId($keuzeoptie->id);
                 if (count($keuzeoptieVanDeelnemers) !=0)
                 {
-                    $keuzemogelijkheid->verbergen = false;
+                    //$keuzemogelijkheid->verbergen = false;
                 }
                 foreach ($keuzeoptieVanDeelnemers as $keuzeoptieVanDeelnemer) {
                     $deelnemendPersoon = $this->Persoon_model->get_byId($keuzeoptieVanDeelnemer->persoonId);
