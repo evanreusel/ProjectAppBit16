@@ -122,7 +122,7 @@ class Mail extends CI_Controller {
             echo ("AANTAL TAKEN VOOR " . $keuzemogelijkheid->naam . ": " . count($taken));
             $keuzemogelijkheid->taken = array();
             $keuzemogelijkheid->taken = $taken;
-            
+
             // get shiften
             foreach ($keuzemogelijkheid->taken as $taak) {
                 $shiften = $this->Shiften_model->getAllByNaamWhereTaakId($taak->id);
@@ -130,6 +130,7 @@ class Mail extends CI_Controller {
                 foreach ($taak->shiften as $shift) {
                     //get personen in shift
                     $vrijwilligersInshiftObject  = $this->VrijwilligersInShift_model->get_byShiftId($shift->id);
+                    print_r($vrijwilligersInshiftObject);
                     $vrijwilligers = array_map(create_function('$o', 'return $o->persoon;'), $vrijwilligersInshiftObject);
                     $shift->vrijwilligers = $vrijwilligers;
 
