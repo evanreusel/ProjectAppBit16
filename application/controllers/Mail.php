@@ -102,11 +102,11 @@ class Mail extends CI_Controller {
         $data['css_files'] = array();
         $data['view'] = 'mail_voegtoe';
         $data['clearscreen'] = true;
-
+        $data['keuzemogelijkheden'] = $this->get_personen();
         $this->load->view('template/main', $data);
 
     }
-    public function get_personen()
+    private function get_personen()
     {
         // get keuzemogelijkheden
         $this->load->model('Keuzemogelijkheid_model');
@@ -151,7 +151,7 @@ class Mail extends CI_Controller {
             }
 
         }
-        print_r($keuzemogelijkheden);
+        return $keuzemogelijkheden;
         // get vrijwilligers zonder shiften
 
 

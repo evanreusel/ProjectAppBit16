@@ -114,7 +114,18 @@
                     <li><i>$soort</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
                 </ul>
                 <textarea id="sjabloon-inhoud" class="form-control" placeholder="Beste $naam,&#10;Welkom! U kunt via deze link naar onze pagina gaan: $token"></textarea>
-
+                <?php
+                foreach ($keuzemogelijkheden as $keuzemogelijkheid)
+                {
+                    foreach ($keuzemogelijkheid->taak as $taak) {
+                        foreach ($taak->shiften as $shift) {
+                            foreach ($shift->vrijwilligers as $vrijwilliger) {
+                                echo($vrijwilliger->naam . "<br>");
+                            }
+                        }
+                    }
+                }
+                ?>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Opslaan</button>
