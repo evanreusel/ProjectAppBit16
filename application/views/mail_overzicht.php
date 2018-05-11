@@ -124,7 +124,7 @@
                         {
                             if (!$taak->verbergen)
                             {
-                                echo ("<h4>Taak " . $taak->naam."</h4>");
+                                echo ("<h4>Taak " . $taak->functie."</h4>");
                                 foreach ($taak->shiften as $shift)
                                 {
 
