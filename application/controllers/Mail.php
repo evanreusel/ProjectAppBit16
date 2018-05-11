@@ -135,7 +135,7 @@ class Mail extends CI_Controller {
             }
 
         }
-        print_r($keuzemogelijkheden);
+        //print_r($keuzemogelijkheden);
         // get vrijwilligers zonder shiften
 
 
