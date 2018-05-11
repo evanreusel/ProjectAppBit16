@@ -70,6 +70,7 @@ class Persoon_model extends CI_Model {
             foreach ($vrijwilligers as $vrijwilliger) {
                 $shiften = $this->VrijwilligersInShift_model->get_byPersoonId($vrijwilliger->id);
                 $vrijwilliger->shiften = array();
+                print_r($shiften);
                 if(count($shiften) !=0)
                 {
                     $vrijwilliger->shiften = array_map(create_function('$o', 'return $o->shiftId;'), $shiften);
