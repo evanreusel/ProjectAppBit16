@@ -64,7 +64,8 @@ class Persoon_model extends CI_Model {
         if($query->result() != null)
         {
             $this->load->model("VrijwilligersInShift_model");
-            foreach ($query->result() as $vrijwilliger) {
+            $vrijwilligers = $query->result();
+            foreach ($vrijwilligers as $vrijwilliger) {
                 $shiften = $this->VrijwilligersInShift_model->get_byPersoonId($vrijwilliger->id);
                 $vrijwilliger->shiften = array();
                 if(count($shiften) !=0)
@@ -73,6 +74,7 @@ class Persoon_model extends CI_Model {
                 }
 
             }
+            return $vrijwilligers;
         }
 
 
