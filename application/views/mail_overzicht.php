@@ -79,7 +79,7 @@
                     if (!$keuzemogelijkheid->verbergen)
                     { ?>
                         <div class='card'>
-                        <div class='card-header'>Keuzemogelijkheid <?php echo $keuzemogelijkheid->naam ?>: </div>
+                        <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?>: </div>
                         <div class='card-body'>
                         <?php
 
