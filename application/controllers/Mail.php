@@ -143,7 +143,7 @@ class Mail extends CI_Controller {
             foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
                 $keuzeoptie->personen = array();
                 $keuzeoptieVanDeelnemer = $this->KeuzeoptieVanDeelnemer_model->get_byKeuzeoptieId($keuzeoptie->id);
-                $deelnemendPersoon = $this->persoon_model->get_byId($keuzeoptieVanDeelnemer->persoonId);
+                $deelnemendPersoon = $this->Persoon_model->get_byId($keuzeoptieVanDeelnemer->persoonId);
                 array_push($keuzeoptie->personen, $deelnemendPersoon);
 
             }
