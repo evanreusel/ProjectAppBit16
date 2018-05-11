@@ -115,12 +115,12 @@ class Mail extends CI_Controller {
         $this->load->model("VrijwilligersInShift_model");
 
         $keuzemogelijkheden = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
-        print_r($keuzemogelijkheden);
+        //print_r($keuzemogelijkheden);
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
             //get taken
             $taken = $this->Taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
             echo ("AANTAL TAKEN VOOR " . $keuzemogelijkheid->naam . ": " . count($taken));
-
+            $keuzemogelijkheden->taken = $taken;
             print_r($keuzemogelijkheden->taken);
             // get shiften
             foreach ($keuzemogelijkheden->taken as $taak) {
