@@ -59,12 +59,14 @@ class Persoon_model extends CI_Model {
     function get_AllVrijwilligers()
     {
         $this->db->where(array('soort' => "VRIJWILLIGER"));
-        $query = $this->db->get('Persoon');
 
-        if($query->result() != null)
+        $query = $this->db->get('Persoon');
+        $vrijwilligers = $query->result();
+        print_r($vrijwilligers);
+        if($vrijwilligers != null)
         {
             $this->load->model("VrijwilligersInShift_model");
-            $vrijwilligers = $query->result();
+
             foreach ($vrijwilligers as $vrijwilliger) {
                 $shiften = $this->VrijwilligersInShift_model->get_byPersoonId($vrijwilliger->id);
                 $vrijwilliger->shiften = array();
