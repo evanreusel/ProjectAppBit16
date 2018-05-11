@@ -119,8 +119,9 @@ class Mail extends CI_Controller {
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
             //get taken
             $taken = $this->Taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
-            print_r($taken);
-            $keuzemogelijkheden->taken = $taken;
+            echo ("AANTAL TAKEN VOOR " . $keuzemogelijkheid->naam . ": " . count($taken));
+
+            print_r($keuzemogelijkheden->taken);
             // get shiften
             foreach ($keuzemogelijkheden->taken as $taak) {
                 $shiften = $this->model->Shiften_model->getAllByNaamWhereTaakId($taak->id);
