@@ -79,20 +79,21 @@
                     if (!$keuzemogelijkheid->verbergen)
                     { ?>
                         <div class='card'>
-                        <div class='card-header'>Keuzemogelijkheid " . <?php echo $keuzemogelijkheid->naam ?>: </div>
+                        <div class='card-header'>Keuzemogelijkheid <?php echo $keuzemogelijkheid->naam ?>: </div>
                         <div class='card-body'>
                         <?php
                         foreach ($keuzemogelijkheid->taken as $taak)
                         {
                             if (!$taak->verbergen)
                             {?>
-                                <h4>Taak <?php echo $taak->functie ?></h4>);
+                                <h5>Taak <?php echo $taak->functie ?></h5>
                                 <?php
                                 foreach ($taak->shiften as $shift)
                                 {
                                     foreach ($shift->vrijwilligers as $vrijwilliger)
-                                    {
-                                        echo($vrijwilliger->naam . "<br>");
+                                    {?>
+                                         <label><input type="checkbox"> <?php echo $vrijwilliger->naam ?></label>
+                                    <?php
                                     }
                                 }
                             }
@@ -104,10 +105,11 @@
                         {
                             if (!$keuzeoptie->verbergen)
                             {
-                                echo "<h4>Keuzeoptie " . $keuzeoptie->naam . "</h4>";
+                                echo "<h5>Keuzeoptie " . $keuzeoptie->naam . "</h5>";
                                 foreach ($keuzeoptie->personen as $persoon)
-                                {
-                                    echo $persoon->naam . "<br>";
+                                {?>
+                                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                                <?php
                                 }
                             }
                         }
