@@ -117,7 +117,7 @@
                 <?php
                 foreach ($keuzemogelijkheden as $keuzemogelijkheid)
                 {
-                    foreach ($keuzemogelijkheid->taak as $taak) {
+                    foreach ($keuzemogelijkheid->taken as $taak) {
                         foreach ($taak->shiften as $shift) {
                             foreach ($shift->vrijwilligers as $vrijwilliger) {
                                 echo($vrijwilliger->naam . "<br>");
