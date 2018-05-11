@@ -150,11 +150,12 @@ class Mail extends CI_Controller {
 
             foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
                 $keuzeoptie->personen = array();
-
+                $keuzeoptie->verbergen = true;
                 $keuzeoptieVanDeelnemers = $this->KeuzeoptieVanDeelnemer_model->get_byKeuzeoptieId($keuzeoptie->id);
                 if (count($keuzeoptieVanDeelnemers) !=0)
                 {
-                    //$keuzemogelijkheid->verbergen = false;
+                    $keuzemogelijkheid->verbergen = false;
+                    $keuzeoptie->verbergen = false;
                 }
                 foreach ($keuzeoptieVanDeelnemers as $keuzeoptieVanDeelnemer) {
                     $deelnemendPersoon = $this->Persoon_model->get_byId($keuzeoptieVanDeelnemer->persoonId);

@@ -119,15 +119,36 @@
                 {
                     if (!$keuzemogelijkheid->verbergen)
                     {
-                        echo($keuzemogelijkheid->naam . ":<br>");
-                        foreach ($keuzemogelijkheid->taken as $taak) {
-                            foreach ($taak->shiften as $shift) {
+                        echo("<h3>Keuzemogelijkheid " . $keuzemogelijkheid->naam . ":</h3>");
+                        foreach ($keuzemogelijkheid->taken as $taak)
+                        {
+                            if (!$taak->verbergen)
+                            {
+                                echo ("<h4>Taak " . $taak->naam."</h4>");
+                                foreach ($taak->shiften as $shift)
+                                {
 
-                                foreach ($shift->vrijwilligers as $vrijwilliger) {
-                                    echo($vrijwilliger->naam . "<br>");
+                                    foreach ($shift->vrijwilligers as $vrijwilliger)
+                                    {
+                                        echo($vrijwilliger->naam . "<br>");
+                                    }
+                                }
+                            }
+
+
+                        }
+                        foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie)
+                        {
+                            if (!$keuzeoptie->verbergen)
+                            {
+                            echo "<h4>Keuzeoptie " . $keuzeoptie->naam . "</h4>";
+                                foreach ($keuzeoptie->personen as $persoon)
+                                {
+                                    echo $persoon->naam . "<br>";
                                 }
                             }
                         }
+
                     }
 
                 }
