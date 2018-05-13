@@ -85,9 +85,8 @@ class Persoon_model extends CI_Model {
     }
     function get_NietIngeschrevenVrijwilligers()
     {
-        $query = $this->db->select('*')
-        ->from('Persoon')
-        ->join('VrijwilligersInShift', 'Persoon.id = VrijwilligersInShift.persoonId', 'left');        $query = $this->db->get();
+        $query = $this->db->select('*')->from('Persoon')
+        ->join('VrijwilligersInShift', 'Persoon.id = VrijwilligersInShift.persoonId', 'left')
         ->get();
         return $query->result();
     }
