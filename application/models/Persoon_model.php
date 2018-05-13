@@ -95,7 +95,7 @@ class Persoon_model extends CI_Model {
                 return $e->shiftId == null;
             }
         );
-        return $query->result();
+        return $nietingeschreven;
 
     }
     function insert($persoon){
