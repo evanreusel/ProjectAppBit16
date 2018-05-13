@@ -96,7 +96,20 @@ class Persoon_model extends CI_Model {
             }
         );
         return $nietingeschreven;
-
+    }
+    function get_NietIngeschrevenDeelnemers()
+    {
+        $query = $this->db->select('*')->from('Persoon')
+            ->join('KeuzeoptieVanDeelnemer', 'Persoon.id = KeuzeoptieVanDeelnemer.persoonId', 'left')
+            ->where(array('soort' => "DEELNEMER"))
+            ->get();
+        $nietingeschreven = array_filter(
+            $query->result(),
+            function ($e)  {
+                return $e->keuzeoptieId == null;
+            }
+        );
+        return $nietingeschreven;
     }
     function insert($persoon){
         //haal het huidige jaargangid op om later te koppelen aan de persoon
