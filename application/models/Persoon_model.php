@@ -87,8 +87,8 @@ class Persoon_model extends CI_Model {
     {
 
         $this->db->select('*');
-        $this->db->from('persoon');
-        $this->db->join('VrijwilligersInShift', 'persoon.id = VrijwilligersInShift.persoonId', 'left');        $query = $this->db->get();
+        $this->db->from('Persoon');
+        $this->db->join('VrijwilligersInShift', 'Persoon.id = VrijwilligersInShift.persoonId', 'left');        $query = $this->db->get();
         $query = $this->db->get();
         return $query->result();
     }
