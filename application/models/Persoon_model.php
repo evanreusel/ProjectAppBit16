@@ -54,34 +54,30 @@ class Persoon_model extends CI_Model {
         }
 
         return null;
-
     }
     function get_AllVrijwilligers()
     {
-        $this->db->where(array('soort' => "VRIJWILLIGER"));
+        $this->load->model("VrijwilligersInShift");
 
-        $query = $this->db->get('Persoon');
+        $query = $this->db->select('*')->from('Persoon')
+            ->join('VrijwilligersInShift', 'Persoon.id = VrijwilligersInShift.persoonId', 'left')
+            ->where(array('soort' => "VRIJWILLIGER"))
+            ->get();
         $vrijwilligers = $query->result();
-        print_r($vrijwilligers);
-        if($vrijwilligers != null)
-        {
-            $this->load->model("VrijwilligersInShift_model");
-
-            foreach ($vrijwilligers as $vrijwilliger) {
-                $shiften = $this->VrijwilligersInShift_model->get_byPersoonId($vrijwilliger->id);
-                $vrijwilliger->shiften = array();
-                print_r($shiften);
-                if(count($shiften) !=0)
-                {
-                    $vrijwilliger->shiften = array_map(create_function('$o', 'return $o->shiftId;'), $shiften);
+        // get their shifts
+        $this->load->model("VrijwilligersInShift_model");
+        $vrijwilligersInShiftObject = $this->VrijwilligersInShift_model->getAll();
+        //$shiften = array_map(create_function('$o', 'return $o->shiftId;'), $vrijwilligersInShiftObject);
+        foreach ($vrijwilligers as $vrijwilliger) {
+            $shiften = array_filter(
+                $vrijwilligersInShiftObject,
+                function ($e) use($vrijwilliger)  {
+                    return $e->persoonId == $vrijwilliger;
                 }
+            );
 
-            }
-            return $vrijwilligers;
+
         }
-
-
-        return null;
     }
     function get_NietIngeschrevenVrijwilligers()
     {
@@ -95,6 +91,12 @@ class Persoon_model extends CI_Model {
                 return $e->shiftId == null;
             }
         );
+        // verwijder token
+        unset($nietingeschreven["token"]);
+        //verwijder shiftId, want deze is altijd leeg
+        unset($nietingeschreven["persoonId"]);
+        //verwijder persoonId, want deze is altijd leeg
+        unset($nietingeschreven["shiftId"]);
         return $nietingeschreven;
     }
     function get_NietIngeschrevenDeelnemers()
@@ -111,6 +113,7 @@ class Persoon_model extends CI_Model {
         );
         return $nietingeschreven;
     }
+
     function insert($persoon){
         //haal het huidige jaargangid op om later te koppelen aan de persoon
         $this->load->model("Jaargang_model");

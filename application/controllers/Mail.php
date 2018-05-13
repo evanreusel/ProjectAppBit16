@@ -174,14 +174,17 @@ class Mail extends CI_Controller {
             }
 
         }
-        return $keuzemogelijkheden;
-        // get vrijwilligers zonder shiften
+        //return $keuzemogelijkheden;
+
+        //get niet ingeschreven personen
 
 
-        //get keuzemogelijkheden (hierboven)
-        //get keuzeopties
-        //get deelnemers by keuzeopties
-        //get deelnemers zonder keuzeopties
+
+    }
+    private function get_personenv2()
+    {
+        //haal alle events op
+        //haal alle deelnemers op met shiften
 
     }
 
