@@ -82,7 +82,9 @@ class Mail extends CI_Controller {
         $this->load->model('mailsjabloon_model');
         $reminders = $this->mailreminder_model->getAll();
         $data['keuzemogelijkheden'] = $this->get_personen();
-
+        $data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers();
+        $data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers();
+        $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
         foreach ($reminders as $reminder) {
             $reminder->ontvangers =  $this->mailreminder_model->get_PersonenInReminder($reminder->id);
             $reminder->sjabloon = $this->mailsjabloon_model->get($reminder->sjabloonId);
@@ -177,14 +179,16 @@ class Mail extends CI_Controller {
         //return $keuzemogelijkheden;
 
         //get niet ingeschreven personen
-
+        $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
+        echo PHP_EOL;
+        echo PHP_EOL;
+        $nietingeschrevenDeelnemers = $this->Persoon_model->get_NietIngeschrevenDeelnemers();
+        $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
 
 
     }
     private function get_personenv2()
     {
-        //haal alle events op
-        //haal alle deelnemers op met shiften
 
     }
 

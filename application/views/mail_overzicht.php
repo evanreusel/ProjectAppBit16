@@ -121,6 +121,19 @@
                     }
 
                 }
+                foreach ($nietingeschrevenDeelnemers as $persoon)
+                {?>
+                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+
+                    <?php
+                }
+                foreach ($nietingeschrevenVrijwilligers as $persoon)
+                {?>
+                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+
+                    <?php
+                }
+
                 ?>
                 <label>Mailsjabloon</label>
                 <select id="form_mailsjabloon">
