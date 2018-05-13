@@ -107,6 +107,11 @@ class Mail extends CI_Controller {
         $this->load->view('template/main', $data);
 
     }
+    public function get_NietIngeschrevenVrijwilligers()
+    {
+        $this->load->model('Persoon_model');
+        print_r($this->Persoon_model->get_NietIngeschrevenVrijwilligers());
+    }
     private function get_personen()
     {
         // get keuzemogelijkheden

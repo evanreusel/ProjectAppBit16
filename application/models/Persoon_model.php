@@ -83,12 +83,20 @@ class Persoon_model extends CI_Model {
 
         return null;
     }
+    function get_NietIngeschrevenVrijwilligers()
+    {
+
+        $this->db->select('*');
+        $this->db->from('persoon');
+        $this->db->join('VrijwilligersInShift', 'persoon.id = VrijwilligersInShift.persoonId', 'left');        $query = $this->db->get();
+        $query = $this->db->get();
+        return $query->result();
+    }
     function insert($persoon){
         //haal het huidige jaargangid op om later te koppelen aan de persoon
         $this->load->model("Jaargang_model");
         $jaargang = $this->Jaargang_model->getActief();
         $persoon->jaarid = $jaargang->id;
-
         $persoon->token = $this->generatetoken();
 
         $this->db->insert('persoon', $persoon);
