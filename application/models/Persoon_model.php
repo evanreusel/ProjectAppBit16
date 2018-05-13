@@ -87,8 +87,16 @@ class Persoon_model extends CI_Model {
     {
         $query = $this->db->select('*')->from('Persoon')
         ->join('VrijwilligersInShift', 'Persoon.id = VrijwilligersInShift.persoonId', 'left')
+        ->where(array('soort' => "VRIJWILLIGER"));
         ->get();
+        $nietingeschreven = array_filter(
+            $query->result(),
+            function ($e)  {
+                return $e->shiftId == null;
+            }
+        );
         return $query->result();
+
     }
     function insert($persoon){
         //haal het huidige jaargangid op om later te koppelen aan de persoon

@@ -1,10 +1,12 @@
-<!-- 
-    ERIK
-	LAST UPDATED: 18 03 30
-	MAIL CONTROLLER
--->
 
 <?php
+
+/*
+    ERIK
+	LAST UPDATED: 18 05 13
+	MAIL CONTROLLER
+ */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mail extends CI_Controller {
