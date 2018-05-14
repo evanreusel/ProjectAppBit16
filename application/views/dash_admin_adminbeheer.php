@@ -5,7 +5,7 @@
 -->
 
 <p class="tooling">
-    Hier kan u de verschillende administrators voor de toepassing bewerken. <br/>
+    Hier kan u de verschillende administrators voor de toepassing bewerken.
 </p>
 
 <table class="table">
