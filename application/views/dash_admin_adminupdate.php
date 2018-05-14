@@ -20,6 +20,7 @@
 <script> 
     function passcheck(){
         if($('#id').val() != 0){
+            if($('#oudpass').val() != ""){
             $.ajax({
                 url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),
                 type: "GET",
@@ -28,11 +29,12 @@
                    formcontrole(data);
                 }
             });
-        }else{
-            return true;
+        } else {
+            formcontrole();
         }
-
-        return false;
+        }else{
+            formcontrole("dummy");
+        }
     }
 
     function nieuwpassmatch(){  
@@ -57,13 +59,14 @@
     }
 
     function formcontrole(passdata){
-        if(passdata){    
+        console.log("ok");
+        passmatch = nieuwpassmatch();
+        if(passdata != null){    
                 $('#oudpasserror').hide();
-                if(nieuwpassmatch()){
+                if(passmatch){
                 $('#adminform').submit();
                 }
             } else {
-                console.log("nope");
             $('#oudpasserror').show();
             }
     }
@@ -106,13 +109,13 @@
         <input type="password" id="nieuwpass" name="nieuwpass" class="form-control">
         <label for="nieuwpass"><?php if (!isset($data['admin'])){ echo 'Nieuw wachtwoord:'; }else{ echo 'Wachtwoord:'; }?></label>
     </div>
+    <div id="nieuwpasserror">
+        <label for="nieuwpass" style="color:red">Gelieve een wachtwoord in te vullen</label>
+    </div>
     
     <div class="md-form">
         <input type="password" id="nieuwpasscheck" class="form-control">
         <label for="nieuwpasscheck">Bevestig <?php if (!isset($data['admin'])) echo 'nieuw '; ?>wachtwoord:</label>
-    </div>
-    <div id="nieuwpasserror">
-        <label for="nieuwpasscheck" style="color:red">Gelieve een wachtwoord in te vullen</label>
     </div>
 
     <div id="nieuwpasscheckerror">
