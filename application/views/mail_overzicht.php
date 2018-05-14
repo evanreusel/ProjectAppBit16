@@ -38,38 +38,23 @@
         <div class="card-header">Mailsjablonen</div>
         <div class="card-body">
             <div class="row row-eq-height">
-                <div class="col-lg-6">
-
+                <?php foreach ($mailsjablonen as $sjabloon) {?>
+                <div class="col-lg-12">
 
                     <div class="card">
-                        <div class="card-header">Onderwerp</div>
+                        <div class="card-header"><?php echo $sjabloon->naam?></div>
                         <div class="card-body">
-                            Mail text blabla
+                            <?php echo $sjabloon->inhoud?>
                         </div>
                         <div class="card-footer">
                             <div class="btn-group align-content-center btn-block">
-                                <a href="#" class="btn btn-success btn-block">Aanpassen</a>
+                                <a href="#modalSjabloon" class="btn btn-success btn-block open-sjabloonvenster" data-toggle="modal" data-target="#modalSjabloon" data-sjabloon-naam="<?php echo $sjabloon->naam?>" data-sjabloon-inhoud="<?php echo $sjabloon->inhoud?>" data-sjabloon-id="<?php echo $sjabloon->id?>">Aanpassen</a>
                                 <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-
-
-                    <div class="card">
-                        <div class="card-header">Onderwerp</div>
-                        <div class="card-body">
-                            Mail text blabla 2
-                        </div>
-                        <div class="card-footer">
-                            <div class="btn-group align-content-center btn-block">
-                                <a href="#" class="btn btn-success btn-block">Aanpassen</a>
-                                <a href="#" class="btn btn-danger  btn-block">Verwijderen</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </div>
@@ -87,14 +72,79 @@
             <div class="modal-body">
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
-                <h6>Ontvangers</h6>
-                <label><input type="radio" name="geactiveerd" value="0">Geactiveerd</label><br>
-                <label><input type="radio" name="geactiveerd" value="1">Niet geactiveerd</label><br>
-                <label><input type="radio" name="geactiveerd" value="-1">Alle</label><br>
-                <h6>Type ontvanger</h6>
-                <label><input type="radio" name="typeOntvanger" value="0">Vrijwilliger</label><br>
-                <label><input type="radio" name="typeOntvanger" value="1">Deelnemer</label><br>
-                <label><input type="radio" name="typeOntvanger" value="-1">Alle Types</label><br>
+                <h5>Ontvangers</h5>
+                <?php
+                foreach ($keuzemogelijkheden as $keuzemogelijkheid)
+                {
+                    if (!$keuzemogelijkheid->verbergen)
+                    { ?>
+                        <div class='card'>
+                        <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?>: </div>
+                        <div class='card-body'>
+                        <?php
+
+                        foreach ($keuzemogelijkheid->taken as $taak)
+                        {
+                            if (!$taak->verbergen)
+                            {?>
+                                <h5>Vrijwilligers <?php echo $taak->functie ?></h5>
+                                <?php
+                                foreach ($taak->shiften as $shift)
+                                {
+                                    foreach ($shift->vrijwilligers as $vrijwilliger)
+                                    {?>
+                                         <label><input type="checkbox"> <?php echo $vrijwilliger->naam ?></label>
+                                    <?php
+                                    }
+                                }
+                            }
+                        }
+                        ?>
+
+                        <?php
+                        foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie)
+                        {
+                            if (!$keuzeoptie->verbergen)
+                            {
+                                echo "<h5>Deelnemers " . $keuzeoptie->naam . "</h5>";
+                                foreach ($keuzeoptie->personen as $persoon)
+                                {?>
+                                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                                <?php
+                                }
+                            }
+                        }
+                        ?>
+                        </div>
+                        </div>
+<?php
+                    }
+
+                }
+                foreach ($nietingeschrevenDeelnemers as $persoon)
+                {?>
+                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+
+                    <?php
+                }
+                foreach ($nietingeschrevenVrijwilligers as $persoon)
+                {?>
+                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+
+                    <?php
+                }
+
+                ?>
+                <label>Mailsjabloon</label>
+                <select id="form_mailsjabloon">
+                    <?php foreach ($mailsjablonen as $sjabloon) {
+                        ?>
+                        <option value="<?php echo $sjabloon->id?>">
+                            <?php echo $sjabloon->naam?>
+                        </option>
+                    <?php } ?>
+                </select>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Save changes</button>
@@ -103,6 +153,52 @@
         </div>
     </div>
 </div>
+<div class="modal" tabindex="-1" role="dialog" id="modalSjabloon">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Wijzig Reminder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="sjabloon-id"/>
+                <label for="modalReminderDatum">Onderwerp:</label>
+                <input type="text" id="sjabloon-naam">
+                <h5>Tekst</h5>
+                <i>Tip: je kan hier ook variabelen gebruiken.</i>
+                <ul>
+                    <li><i>$naam</i> voor de naam van de ontvanger;</li>
+                    <li><i>$token</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
+                    <li><i>$token</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
+                    <li><i>$soort</i> voor de link die de ontvanger gebruikt om naar de website te gaan;</li>
+                </ul>
+                <textarea id="sjabloon-inhoud" class="form-control" placeholder="Beste $naam,&#10;Welkom! U kunt via deze link naar onze pagina gaan: $token"></textarea>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Opslaan</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuleer</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
+
+    $( document ).ready(function() {
+        $( ".open-sjabloonvenster" ).click(function() {
+            console.log("SJABLOON");
+            var sjabloonId = $(this).data('sjabloon-id');
+            $("#sjabloon-id").val(sjabloonId);
+            if(sjabloonId != 0)
+            {
+                // sjabloon bewerken
+                $("#sjabloon-naam").val($(this).data('sjabloon-naam'));
+                $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
+            }
+        });
+
+    });
 
 </script>

@@ -24,25 +24,21 @@
 <script> 
     function passcheck(){
         if($('#id').val() != 0){
+            if($('#oudpass').val() != ""){
             $.ajax({
                 url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),
-                async: false,
                 type: "GET",
                 dataType:'json',
                 success: function(data){                    
-                    if(data != null){
-                        $('#oudpasserror').hide();
-                        return true;
-                    } else {
-                        $('#oudpasserror').show();
-                    }
+                   formcontrole(data);
                 }
             });
-        }else{
-            return true;
+        } else {
+            formcontrole();
         }
-
-        return false;
+        }else{
+            formcontrole("dummy");
+        }
     }
 
     function nieuwpassmatch(){  
@@ -66,15 +62,26 @@
         return $passsame && $passnietleeg;
     }
 
+    function formcontrole(passdata){
+        console.log("ok");
+        passmatch = nieuwpassmatch();
+        if(passdata != null){    
+                $('#oudpasserror').hide();
+                if(passmatch){
+                $('#adminform').submit();
+                }
+            } else {
+            $('#oudpasserror').show();
+            }
+    }
+
     $(document).ready(function () {
         $('#oudpasserror').hide();
         $('#nieuwpasserror').hide();
         $('#nieuwpasscheckerror').hide();
     
         $("#send").click(function(){
-            if(passcheck() && nieuwpassmatch()){    
-                $('#adminform').submit();
-            }
+            passcheck();
         });
     });
 </script>
@@ -106,13 +113,13 @@
         <input type="password" id="nieuwpass" name="nieuwpass" class="form-control">
         <label for="nieuwpass"><?php if (!isset($data['admin'])){ echo 'Nieuw wachtwoord:'; }else{ echo 'Wachtwoord:'; }?></label>
     </div>
+    <div id="nieuwpasserror">
+        <label for="nieuwpass" style="color:red">Gelieve een wachtwoord in te vullen</label>
+    </div>
     
     <div class="md-form">
         <input type="password" id="nieuwpasscheck" class="form-control">
         <label for="nieuwpasscheck">Bevestig <?php if (!isset($data['admin'])) echo 'nieuw '; ?>wachtwoord:</label>
-    </div>
-    <div id="nieuwpasserror">
-        <label for="nieuwpasscheck" style="color:red">Gelieve een wachtwoord in te vullen</label>
     </div>
 
     <div id="nieuwpasscheckerror">
@@ -127,8 +134,12 @@
                 <i class="fa fa-trash-o"></i> Verwijder
         </a>';
     }
+
+    
+    echo '<a class="btn btn-secondary" href="' . site_url() . '/admin/dash/adminbeheer/">Terug</a>' ;
     echo form_close();
 ?>
+
 
 <div class="modal fade" id="keuzeModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -143,7 +154,7 @@
         <p id="modaltekst">Weet u zeker dat u de administrator "<?php echo $data['admin']->username; ?>" wilt verwijderen?</p>
       </div>
       <div class="modal-footer">
-        <a href="http://projectab16.ddns.net/index.php/admin/delete/<?php echo $data['admin']->id; ?>" id="verwijderenKeuze" class="btn btn-danger btn-round">Verwijderen</a>
+        <a href="<?=site_url()?>/admin/delete/<?php echo $data['admin']->id; ?>" id="verwijderenKeuze" class="btn btn-danger btn-round">Verwijderen</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
       </div>
     </div>
