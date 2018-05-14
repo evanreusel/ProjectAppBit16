@@ -22,16 +22,10 @@
         if($('#id').val() != 0){
             $.ajax({
                 url: '<?= site_url(); ?>/admin/checkpass/' + $('#id').val() + '/' + $('#oudpass').val(),
-                async: false,
                 type: "GET",
                 dataType:'json',
                 success: function(data){                    
-                    if(data != null){
-                        $('#oudpasserror').hide();
-                        return true;
-                    } else {
-                        $('#oudpasserror').show();
-                    }
+                   formcontrole(data);
                 }
             });
         }else{
@@ -62,15 +56,25 @@
         return $passsame && $passnietleeg;
     }
 
+    function formcontrole(passdata){
+        if(passdata){    
+                $('#oudpasserror').hide();
+                if(nieuwpassmatch()){
+                $('#adminform').submit();
+                }
+            } else {
+                console.log("nope");
+            $('#oudpasserror').show();
+            }
+    }
+
     $(document).ready(function () {
         $('#oudpasserror').hide();
         $('#nieuwpasserror').hide();
         $('#nieuwpasscheckerror').hide();
     
         $("#send").click(function(){
-            if(passcheck() && nieuwpassmatch()){    
-                $('#adminform').submit();
-            }
+            passcheck();
         });
     });
 </script>
@@ -125,8 +129,12 @@
                 <i class="fa fa-trash-o"></i> Verwijder
         </a>';
     }
+
+    
+    echo '<a class="btn btn-secondary" href="' . site_url() . '/admin/dash/adminbeheer/">Terug</a>' ;
     echo form_close();
 ?>
+
 
 <div class="modal fade" id="keuzeModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -141,7 +149,7 @@
         <p id="modaltekst">Weet u zeker dat u de administrator "<?php echo $data['admin']->username; ?>" wilt verwijderen?</p>
       </div>
       <div class="modal-footer">
-        <a href="http://projectab16.ddns.net/index.php/admin/delete/<?php echo $data['admin']->id; ?>" id="verwijderenKeuze" class="btn btn-danger btn-round">Verwijderen</a>
+        <a href="<?=site_url()?>/admin/delete/<?php echo $data['admin']->id; ?>" id="verwijderenKeuze" class="btn btn-danger btn-round">Verwijderen</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
       </div>
     </div>
