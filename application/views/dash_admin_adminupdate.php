@@ -1,8 +1,12 @@
 <!-- 
     TIM
-    LAST UPDATED: 18 03 30
+    LAST UPDATED: 18 05 14
     DASH ADMIN ADD/UPDATE
 -->
+
+<p class="tooling">
+    Bewerk hier de verschillende eigenschappen voor de administrator "<?php echo $data['admin']->username; ?>". <br/>
+</p>
 
 <?php
     $arrayparameters = array();
@@ -115,9 +119,7 @@
     <label for="nieuwpasscheck" style="color:red">Het passwoord is niet correct</label>
     <br/></div>
     
-    <input type="hidden" name="id" id="id" value="<?php echo (isset($data['admin'])) ? $data['admin']->id : '0';?>" />
-    <!-- =================================================================================================== GREIF MATTHIAS -->
-    
+    <input type="hidden" name="id" id="id" value="<?php echo (isset($data['admin'])) ? $data['admin']->id : '0';?>" />    
 <?php    
     echo form_button($arrayparameters);
     if(isset($data['admin'])){
