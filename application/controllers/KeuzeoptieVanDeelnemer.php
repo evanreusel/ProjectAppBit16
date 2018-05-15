@@ -1,8 +1,5 @@
 <?php
 
-// Tim Swerts
-// last updated: 3/05/2018
-// shiften controller
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');

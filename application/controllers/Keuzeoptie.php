@@ -1,6 +1,6 @@
 <!-- 
     TIM SWERTS
-	LAST UPDATED: 18 03 30
+	LAST UPDATED: 18 05 15
 	KEUZEOPTIE CONTROLLER
 -->
 
@@ -43,6 +43,7 @@ class Keuzeoptie extends CI_Controller{
     }
     // =================================================================================================== /GREIF MATTHIAS
 
+    // Functie voor het aanpassen en aanmaken van keuzeopties
     public function update()
 	{
 		// klasse Keuzeoptie aanmaken en initialiseren
@@ -67,12 +68,15 @@ class Keuzeoptie extends CI_Controller{
         	$this->Keuzeoptie_model->update($keuzeoptie);
         }
 
+        // Keuzemogelijkheid aanmaken om te kunnen redirecten naar de juiste pagina
         $this->load->model('keuzemogelijkheid_model');
         $keuzemogelijkheid=$this->keuzemogelijkheid_model->get_byId($keuzeoptie->keuzemogelijkheidId);
-		// Redirect naar keuzemogelijkheid pagina
+        
+        // Redirect naar keuzemogelijkheid pagina
 		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
     }
-    
+
+    // Functie om keuzeopties te verwijderen    
     public function delete($id)
 	{
 		

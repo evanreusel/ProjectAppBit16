@@ -1,6 +1,6 @@
 <?php
 // Tim Swerts
-// last updated: 3/05/2018
+// last updated: 03/05/2018
 // shiften controller
 
 if (!defined('BASEPATH'))
@@ -22,6 +22,7 @@ class Shiften extends CI_Controller{
         // =================================================================================================== /GREIF MATTHIAS
     }
 
+    // Functie voor het aanpassen en aanmaken van shiften
     public function update()
 	{
 		// klasse shift aanmaken en initialiseren
@@ -47,6 +48,7 @@ class Shiften extends CI_Controller{
 		redirect('admin/dash/takenbeheer/'.$taak->keuzemogelijkheidId);
     }
 
+    // Functie voor het verwijderen van shiften
     public function delete($id)
 	{
 		
@@ -60,8 +62,9 @@ class Shiften extends CI_Controller{
         
 		// Redirect to keuzemogelijkheidbeheer
         redirect('admin/dash/takenbeheer/'.$redirectData->keuzemogelijkheidId);
-	}
-
+    }
+    
+    // Functie voor het toevoegen van een vrijwilliger in een shift 
     public function vrijwilligerInShiftToevoegen($shiftId, $persoonId)
     {
         $vrijwilligerInShift = new stdClass();
@@ -72,23 +75,28 @@ class Shiften extends CI_Controller{
         $this->load->model('VrijwilligersInShift_model');
         $this->VrijwilligersInShift_model->add($vrijwilligerInShift);
 
+        // Laden van de verkregen data in een ajax-venster
         $this->load->view('ajax_vrijwilligerinshift', $data);
     }
-    
+
+    // Functie voor het verwijderen van een vrijwilliger uit een shift 
     public function vrijwilligerInShiftVerwijderen($shiftId, $persoonId)
 	{
         $this->load->model('VrijwilligersInShift_model');
         $this->VrijwilligersInShift_model->delete($shiftId, $persoonId);
 
+        // Laden van de verkregen data in een ajax-venster
 		$this->load->view('ajax_vrijwilligerinshift', $data);
     }
-    
+
+    // Functie voor het weergeven van alle vrijwilliger van een bepaalde shift
     public function vrijwilligerInShiftWeergeven($shiftId)
     {
 
         $this->load->model('VrijwilligersInShift_model');
         $data['$shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
 
+        // Laden van de verkregen data in een ajax-venster
         $this->load->view('ajax_vrijwilligersinshift', $data);
 
     }
