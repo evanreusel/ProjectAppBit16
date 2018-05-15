@@ -185,9 +185,8 @@ class Mail extends CI_Controller {
     public function getPersonenInHerinnering($id)
     {
     $this->load->model("PersoonInHerinnering_model");
-    $personenInHerinnering = $this->PersoonInHerinnering_model->get_byHerinneringId(6);
+    $personenInHerinnering = $this->PersoonInHerinnering_model->get_byHerinneringId($id);
     echo json_encode($personenInHerinnering);
-
     }
     private function get_personenv2()
     {

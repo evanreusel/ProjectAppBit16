@@ -24,7 +24,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="btn-group align-content-center btn-block">
-                                    <a href="#modalReminder" class="btn btn-success btn-block" data-toggle="modal" data-target="#modalReminder">Aanpassen</a>
+                                    <a href="#modalReminder" class="btn btn-success btn-block open-herinneringvenster" data-toggle="modal" data-target="#modalReminder" data-reminder-datum="<?php echo $reminder->timer ?>" data-reminder-id="<?php echo $reminder->id?>" data-sjabloon-id="<?php echo $reminder->sjabloon->id ?>">Aanpassen</a>
                                     <button class="btn btn-danger  btn-block">Verwijderen</button>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
 
                 ?>
                 <label>Mailsjabloon</label>
-                <select id="form_mailsjabloon">
+                <select id="modalMailsjabloon">
                     <?php foreach ($mailsjablonen as $sjabloon) {
                         ?>
                         <option value="<?php echo $sjabloon->id?>">
@@ -205,6 +205,24 @@
                 // sjabloon bewerken
                 $("#sjabloon-naam").val($(this).data('sjabloon-naam'));
                 $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
+                $.ajax({
+                    url: "http://projectab16.ddns.net/index.php/mail/getPersonenInHerinnering/" + sja,
+                    context: document.body
+                }).done(function() {
+                    $( this ).addClass( "done" );
+                });
+            }
+        });
+        $( ".open-herinneringvenster" ).click(function() {
+            console.log("HERINNERING");
+            var herinneringId = $(this).data('herinnering-id');
+            $("#herinnering-id").val(herinneringId);
+            if(herinneringId != 0)
+            {
+                // herinnering velden bewerken
+                $("#modalReminderDatum").val($(this).data('herinnering-datum'));
+                $("#modalMailsjabloon").val($(this).data('herinnering-sjabloon'));
+
             }
         });
         $(".select-persoongroep").change(function() {
@@ -215,5 +233,6 @@
 
         });
     });
+
 
 </script>
