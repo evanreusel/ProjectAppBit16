@@ -20,7 +20,7 @@
     }
     else{
         $idData=form_hidden("keuzemogelijkheidId", $keuzemogelijkheid->id);
-        $redirect=$keuzemogelijkheid->id
+        $redirect=$keuzemogelijkheid->id;
         $data = "";
         $taak = new stdClass();
         $taak->id=$data;
