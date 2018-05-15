@@ -19,14 +19,9 @@ if(count($taken) > 0) {
     print_r($taken);
         if(count($taken) > 0) {
             foreach ($taken as $taak) {
-            echo '<div id="'. $taak->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';
-            
-                foreach ($kolommen as $kolom) {
-                    
-                    echo "<th>".$kolom."</th>";
-                }       
-                        
-           echo "<td></td><td></td></tr>";   
+            echo '<div id="'. $taak->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';       
+            echo "<th>Taak</th>";               
+            echo "<td></td><td></td></tr>";   
 
             foreach ($taak->shiften as $shift) {
                 echo "<tr>";
