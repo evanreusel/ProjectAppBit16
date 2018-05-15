@@ -134,6 +134,8 @@
                     <div class="card">
                         <div class="card-header">
                             Niet ingeschreven deelnemers
+                        </div>
+                        <div class="card-body">
 
                     <div class="select-persoongroep">
 
@@ -153,7 +155,8 @@
                     <div class="card">
                         <div class="card-header">
                             Niet ingeschreven vrijwilligers
-
+                        </div>
+                        <div class="card-body">
                             <div class="select-persoongroep">
                 <?php
                 foreach ($nietingeschrevenVrijwilligers as $persoon)
