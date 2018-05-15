@@ -19,7 +19,6 @@ if(count($taken) > 0) {
     print_r($taken);
         if(count($taken) > 0) {
             foreach ($taken as $taak) {
-            $kolommen= array("functie", "beschrijving");
             echo '<div id="'. $taak->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';
             
                 foreach ($kolommen as $kolom) {
@@ -31,11 +30,7 @@ if(count($taken) > 0) {
 
             foreach ($taak->shiften as $shift) {
                 echo "<tr>";
-
-                foreach ($kolommen as $kolom) {
-                    echo '<td>' . $shift->$kolom . '</td>';
-                }
-
+                echo '<td>' . $shift->naam . '</td>';
                 echo '<td>'.anchor('admin/dash/updatekeuzeoptie/'.$shift->id.'u','<button class="btn btn-round btn-warning" title="Druk hier om deze keuzeoptie aan te passen"><i class="fa fa-cog"></i> Aanpassen</button>').'</td>';
                 echo '<td>'.anchor('keuzeoptie/delete/'.$shift->id,'<button class="btn btn-round btn-danger" title="Druk hier om deze keuzeoptie te verwijderen"><i class="fa fa-trash"></i> Verwijderen</button>').'</td>';
 
