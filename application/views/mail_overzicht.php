@@ -268,7 +268,9 @@
                     success: function(data){
                         console.log(data);
                         for (i = 0; i < data.length; i++) {
+                            console.log(data[i].persoonId);
                             $('input[name="personen"][value='+ data[i].persoonId +']').prop("checked", true);
+
                         }
 
                     }
