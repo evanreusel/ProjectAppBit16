@@ -20,7 +20,7 @@ if(count($taken) > 0) {
         if(count($taken) > 0) {
             foreach ($taken as $taak) {
             echo '<div id="'. $taak->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';       
-            echo "<th>Taak</th>";               
+            echo "<th>Shift</th>";               
             echo "<td></td><td></td></tr>";   
 
             foreach ($taak->shiften as $shift) {
@@ -33,10 +33,9 @@ if(count($taken) > 0) {
             }
 
             echo "</table>";
-            echo anchor('admin/dash/updatekeuzeoptie/'.$taak->id.'i',"Keuzeoptie toevoegen",'class="btn btn-primary" title="Druk hier om een keuzeoptie toe te voegen"');
-            echo anchor('admin/dash/takenbeheer/'.$taak->id,'<button class="btn btn-round btn-warning" title="Druk hier om taken te beheren bij deze keuzemogelijkheid"><i class="fa fa-cog"></i>' .$activiteit->naam. ' vrijwilliger taken</button>').'</td>';
-            echo anchor('admin/dash/updatekeuzemogelijkheid/'.$taak->id,'<button class="btn btn-round btn-warning" title="Druk hier om de keuzemogelijkheid aan te passen"><i class="fa fa-cog"></i>' .$activiteit->naam. ' aanpassen</button>').'</td>';
-            echo anchor('Keuzemogelijkheid/delete/' . $taak->id, '<button type="button" class="btn btn-danger btn-round" title="Druk hier om de keuzemogelijkheid te verwijderen"><i class="fa fa-trash"></i>'. $activiteit->naam . 'Verwijderen</button></div>');
+            echo anchor('admin/dash/updatekeuzeoptie/'.$taak->id.'i',"Shift toevoegen",'class="btn btn-primary" title="Druk hier om een shift toe te voegen"');
+            echo anchor('admin/dash/updatekeuzemogelijkheid/'.$taak->id,'<button class="btn btn-round btn-warning" title="Druk hier om de Taak aan te passen"><i class="fa fa-cog"></i>' .$taak->naam. ' aanpassen</button>').'</td>';
+            echo anchor('Keuzemogelijkheid/delete/' . $taak->id, '<button type="button" class="btn btn-danger btn-round" title="Druk hier om de Taak te verwijderen"><i class="fa fa-trash"></i>'. $taak->naam . 'Verwijderen</button></div>');
 
         }
     }
