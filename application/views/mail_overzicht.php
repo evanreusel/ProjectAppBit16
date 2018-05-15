@@ -90,7 +90,7 @@
                     foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
                         if (!$keuzemogelijkheid->verbergen) { ?>
                             <div class='card'>
-                                <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?> <div class="pull-right"><input type="checkbox"</div></div>
+                                <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?> <div class="pull-right"><input type="checkbox"></div></div>
                                 <div class='card-body'>
                                     <?php
                                     foreach ($keuzemogelijkheid->taken as $taak) {
