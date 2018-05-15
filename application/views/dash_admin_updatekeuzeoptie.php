@@ -66,12 +66,12 @@
     </div>
     <div class="form-group row">
         <label for="minimum">Minimum aantal personen</label>
-        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'='number'),$keuzeoptie->min,$nummerAttributen); ?>
+        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number'),$keuzeoptie->min,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
         <label for="maximum">Maximum aantal personen</label>
-        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'='number'),$keuzeoptie->max,$nummerAttributen); ?>
+        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number'),$keuzeoptie->max,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
