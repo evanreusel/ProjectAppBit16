@@ -6,7 +6,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class $Shiften extends CI_Controller{
+class Shiften extends CI_Controller{
     
      public function __construct() {
         parent::__construct();
@@ -49,34 +49,34 @@ class $Shiften extends CI_Controller{
     }
 
 
-    public function vrijwilligerIn$ShiftToevoegen($$shiftId, $persoonId)
+    public function vrijwilligerInShiftToevoegen($shiftId, $persoonId)
     {
-        $vrijwilligerIn$Shift = new stdClass();
+        $vrijwilligerInShift = new stdClass();
 
-        $vrijwilligerIn$Shift->persoonId = $persoonId;
-        $vrijwilligerIn$Shift->$shiftId = $$shiftId;
+        $vrijwilligerInShift->persoonId = $persoonId;
+        $vrijwilligerInShift->$shiftId = $shiftId;
 
-        $this->load->model('VrijwilligersIn$Shift_model');
-        $this->VrijwilligersIn$Shift_model->add($vrijwilligerIn$Shift);
+        $this->load->model('VrijwilligersInShift_model');
+        $this->VrijwilligersInShift_model->add($vrijwilligerInShift);
 
-        $this->load->view('ajax_vrijwilligerin$shift', $data);
+        $this->load->view('ajax_vrijwilligerinshift', $data);
     }
     
-    public function vrijwilligerIn$ShiftVerwijderen($$shiftId, $persoonId)
+    public function vrijwilligerInShiftVerwijderen($shiftId, $persoonId)
 	{
-        $this->load->model('VrijwilligersIn$Shift_model');
-        $this->VrijwilligersIn$Shift_model->delete($$shiftId, $persoonId);
+        $this->load->model('VrijwilligersInShift_model');
+        $this->VrijwilligersInShift_model->delete($shiftId, $persoonId);
 
-		$this->load->view('ajax_vrijwilligerin$shift', $data);
+		$this->load->view('ajax_vrijwilligerinshift', $data);
     }
     
-    public function vrijwilligerIn$ShiftWeergeven($$shiftId)
+    public function vrijwilligerInShiftWeergeven($shiftId)
     {
 
-        $this->load->model('VrijwilligersIn$Shift_model');
-        $data['$shiften']=$this->VrijwilligersIn$Shift_model->getAllBy$ShiftId($$shiftId);
+        $this->load->model('VrijwilligersInShift_model');
+        $data['$shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
 
-        $this->load->view('ajax_vrijwilligersin$shift', $data);
+        $this->load->view('ajax_vrijwilligersinshift', $data);
 
     }
 }
