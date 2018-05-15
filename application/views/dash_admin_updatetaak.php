@@ -38,8 +38,8 @@
     <?php echo form_input(array('id'=>'functie', 'name'=>'functie'),$taak->functie); ?>
     </br>
     <label for="beschrijving">Beschrijving van de taak:</label>
-    <textarea name="beschrijving" form="taakForm"><?php $taak->beschrijving ?></textarea>
     </br>
+    <textarea name="beschrijving" form="taakForm"><?php $taak->beschrijving ?></textarea>
     </br>
     <?php
         echo $idData;    
