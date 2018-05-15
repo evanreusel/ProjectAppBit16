@@ -14,13 +14,13 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 
         // =================================================================================================== GREIF MATTHIAS
         // Autoload
-        $this->load->library('session');
+         // $this->load->library('session');
 
 		// Redirect to home if no session started
-        $this->load->model('beheer_model');
-        if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
-            redirect('/admin/index', 'location');
-        }
+            // $this->load->model('beheer_model');
+            // if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
+            //     redirect('/admin/index', 'location');
+            // }
         // =================================================================================================== /GREIF MATTHIAS
     }
 
