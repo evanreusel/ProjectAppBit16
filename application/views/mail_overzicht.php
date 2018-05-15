@@ -206,9 +206,7 @@
         });
         $(".select-persoongroep").change(function() {
 
-            if(this.checked) {
-                ('.persoongroep :check').next().prop("checked", this.checked);
-            }
+           $('.persoongroep :checkbox').next().prop("checked", this.checked);
         });
     });
 
