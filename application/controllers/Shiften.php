@@ -30,7 +30,7 @@ class Shiften extends CI_Controller{
 
         $shift->id = $this->input->post('id');
         $shift->naam = $this->input->post('naam');
-        $shift->taakId = $this->input->post('plaatsId');
+        $shift->taakId = $this->input->post('taakId');
 
 		// Model inladen
         $this->load->model('Shiften_model');
