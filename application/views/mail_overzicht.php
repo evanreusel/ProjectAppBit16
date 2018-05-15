@@ -82,11 +82,12 @@
                         <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?>: </div>
                         <div class='card-body'>
                         <?php
-
                         foreach ($keuzemogelijkheid->taken as $taak)
                         {
                             if (!$taak->verbergen)
                             {?>
+                                <div class="persoongroep">
+
 
                                 <h5><input type="checkbox"> Vrijwilligers <?php echo $taak->functie ?></h5>
                                 <?php
@@ -98,6 +99,9 @@
                                     <?php
                                     }
                                 }
+                            ?>
+                                </div>
+                            <?php
                             }
                         }
                         ?>
