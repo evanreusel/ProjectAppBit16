@@ -61,8 +61,9 @@
     </div>
     <div class="md-form">
         <label for="plaats">Plaats:</label>
+        <div class="dropdown-menu">
         <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId, array('class'=>'dropdown-item')) ?>
-
+        </div>
     </div>
     <div class="md-form">
         <label for="minimum">Minimum aantal personen</label>
