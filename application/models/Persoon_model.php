@@ -91,12 +91,7 @@ class Persoon_model extends CI_Model {
                 return $e->shiftId == null;
             }
         );
-        // verwijder token
-        unset($nietingeschreven["token"]);
-        //verwijder shiftId, want deze is altijd leeg
-        unset($nietingeschreven["persoonId"]);
-        //verwijder persoonId, want deze is altijd leeg
-        unset($nietingeschreven["shiftId"]);
+
         return $nietingeschreven;
     }
     function get_NietIngeschrevenDeelnemers()
