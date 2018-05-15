@@ -43,7 +43,7 @@ class Shiften extends CI_Controller{
         }
 
         $this->load->model('Taken_model');
-        $Taak=$this->Taken_model->get_byId($shift->taakId);
+        $taak=$this->Taken_model->get_byId($shift->taakId);
 		// Redirect naar taken pagina
 		redirect('admin/dash/takenbeheer/'.$taak->keuzemogelijkheidId);
     }
