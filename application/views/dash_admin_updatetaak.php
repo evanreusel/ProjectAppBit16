@@ -32,12 +32,14 @@
     
     <?php echo form_open('taken/update', array('name' => 'taakFrom', 'id' => 'taakForm', 'role' => 'form'));  ?>
     </br>
-    <label for="functie">Taaknaam:</label>
-    <?php echo form_input(array('id'=>'functie', 'name'=>'functie'),$taak->functie); ?>
+    <div class="form-group row">
+    <label for="functie" class="col-form-label">Taaknaam:</label>
+    <?php echo form_input(array('id'=>'functie', 'name'=>'functie', 'class'=>'form-control'),$taak->functie); ?>
     </br>
-    <label for="beschrijving">Beschrijving van de taak:</label>
+    <div class="form-group row">
+    <label for="beschrijving" class="col-form-label">Beschrijving van de taak:</label>
     </br>
-    <textarea name="beschrijving" form="taakForm"><?php echo $taak->beschrijving; ?></textarea>
+    <textarea name="beschrijving" form="taakForm" class="form-control"><?php echo $taak->beschrijving; ?></textarea>
     </br>
     <?php
         echo $idData;    

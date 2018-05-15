@@ -30,9 +30,10 @@
     
     <?php echo form_open('shiften/update', array('name' => 'shiftFrom', 'id' => 'shiftForm', 'role' => 'form'));  ?>
     </br>
-    <label for="naam">shiftnaam:</label>
-    <?php echo form_input(array('id'=>'naam', 'name'=>'naam'),$shift->naam); ?>
-    </br>
+    <div class="form-group row">
+    <label for="naam" class="col-form-label">shiftnaam:</label>
+    <?php echo form_input(array('id'=>'naam', 'name'=>'naam', 'class'=>'form-control'),$shift->naam); ?>
+    </div>
     <?php
         echo $idData;    
         echo form_button($arrayparameters);
