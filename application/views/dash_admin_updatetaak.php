@@ -28,6 +28,7 @@
         $arrayparameters['content'] = "Toevoegen";
 
     };
+    echo $taak->beschrijving;
 
 ?>
     
