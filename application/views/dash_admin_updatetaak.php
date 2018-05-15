@@ -16,6 +16,7 @@
     if($token != true){
         $idData=form_hidden("id", $taak->id).form_hidden("keuzemogelijkheidId", $taak->keuzemogelijkheidId);
         $arrayparameters['content'] = "Aanpassen";
+        $titel = $taak->functie.' aanpassen:';
     }
     else{
         $idData=form_hidden("keuzemogelijkheidId", $keuzemogelijkheid->id);
@@ -24,16 +25,16 @@
         $taak->id=$data;
         $taak->functie=$data;
         $taak->beschrijving=$data;
-
+        $titel = 'Nieuwe taak aanmaken:';
         $arrayparameters['content'] = "Toevoegen";
 
     };
 ?>
-    
+    <h2><?php echo $titel ?></h2>
     <?php echo form_open('taken/update', array('name' => 'taakFrom', 'id' => 'taakForm', 'role' => 'form'));  ?>
     </br>
     <div class="form-group row">
-    <label for="functie" class="col-form-label">Taaknaam:</label>
+    <label for="functie" class="col-form-label">Naam:</label>
     <?php echo form_input(array('id'=>'functie', 'name'=>'functie', 'class'=>'form-control'),$taak->functie); ?>
     </div>
     <div class="form-group row">

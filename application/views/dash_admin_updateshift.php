@@ -16,6 +16,7 @@
     if($token != true){
         $idData=form_hidden("id", $shift->id).form_hidden("taakId", $shift->taakId);
         $arrayparameters['content'] = "Aanpassen";
+        $titel = $shift->naam.' aanpassen:';
     }
     else{
         $idData=form_hidden("taakId", $taak->id);
@@ -23,11 +24,12 @@
         $shift = new stdClass();
         $shift->id=$data;
         $shift->naam=$data;
+        $titel = 'Nieuwe shift aanmaken:';
         $arrayparameters['content'] = "Toevoegen";
 
     };
 ?>
-    
+    <h2><?php echo $titel ?></h2>
     <?php echo form_open('shiften/update', array('name' => 'shiftFrom', 'id' => 'shiftForm', 'role' => 'form'));  ?>
     </br>
     <div class="form-group row">
