@@ -36,7 +36,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
     <div class="form-group row">
     <label for="plaats" class="col-form-label">Plaats:</label>
-    <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
+    <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId, 'class'=>'form-control') ?>
    
     </div>
     <div class="form-group row">
