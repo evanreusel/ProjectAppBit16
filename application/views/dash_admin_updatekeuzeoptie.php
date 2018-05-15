@@ -53,25 +53,37 @@
 
 
     <?php echo form_open('keuzeoptie/update', array('name' => 'keuzeoptieFrom', 'id' => 'keuzeoptieForm', 'role' => 'form'));  ?>
-    </br>
-    <label for="keuzeoptie">Naam keuzeoptie:</label>
-    <?php echo form_input(array('id'=>'keuzeoptie', 'name'=>'naam'),$keuzeoptie->naam); ?>
-    </br>
-    <label for="plaats">Plaats:</label>
-    <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId) ?>
-    </br>
-    <label for="minimum">Minimum aantal personen</label>
-    <?php echo form_input(array('id'=>'minimum', 'name'=>'min'),$keuzeoptie->min,$nummerAttributen); ?>
-    </br>
-    <label for="maximum">Maximum aantal personen</label>
-    <?php echo form_input(array('id'=>'maximum', 'name'=>'max'),$keuzeoptie->max,$nummerAttributen); ?>
-    </br>
-    <label for="begin">Begin datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
-    </br>
-    <label for="einde">Eind datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
-    </br>
+
+    <div class="md-form">
+        <label for="keuzeoptie">Naam keuzeoptie:</label>
+        <?php echo form_input(array('id'=>'keuzeoptie', 'name'=>'naam'),$keuzeoptie->naam); ?>
+
+    </div>
+    <div class="md-form">
+        <label for="plaats">Plaats:</label>
+        <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId) ?>
+
+    </div>
+    <div class="md-form">
+        <label for="minimum">Minimum aantal personen</label>
+        <?php echo form_input(array('id'=>'minimum', 'name'=>'min'),$keuzeoptie->min,$nummerAttributen); ?>
+
+    </div>
+    <div class="md-form">
+        <label for="maximum">Maximum aantal personen</label>
+        <?php echo form_input(array('id'=>'maximum', 'name'=>'max'),$keuzeoptie->max,$nummerAttributen); ?>
+
+    </div>
+    <div class="md-form">
+        <label for="begin">Begin datum en tijdstip:</label>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
+
+    </div>
+    <div class="md-form">
+        <label for="einde">Eind datum en tijdstip:</label>
+        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
+
+    </div>
     <?php
         echo $idData;    
         echo form_button($arrayparameters);
