@@ -1,10 +1,11 @@
 <?php
 /* 
 TIM SWERTS
-LAST UPDATED: 18 03 30
+LAST UPDATED: 18 05 15
 DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
 */
 
+// initialiseren van de parameters voor de submit knop.
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
     $arrayparameters['class'] = 'btn btn-primary';

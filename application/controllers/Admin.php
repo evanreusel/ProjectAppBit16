@@ -106,63 +106,7 @@ class Admin extends CI_Controller {
 					$data['data']['admin'] = $this->beheer_model->get_byId($extras);
 				}
 			break;
-			case "keuzemogelijkheidbeheer":										// Keuzemogelijkheid screen for jaargang
-				if($extras != null) {											
-					$this->load->model('jaargang_model');
-					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
-					$data['jaargang']=$this->jaargang_model->get_byId($extras);
-				}else{															// Can't load page without jaargang id => load indexpage
-					$view = 'index';
-				}
-			break;
-			case "takenbeheer":										// Keuzemogelijkheid screen for jaargang
-				if($extras != null) {											
-					$this->load->model('Taken_model');
-					$data['taken'] = $this->Taken_model->getAllWithShiften_byKeuzemogelijkheidId($extras);
-					$this->load->model('keuzemogelijkheid_model');
-					$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($extras);
-				}else{															// Can't load page without jaargang id => load indexpage
-					$view = 'index';
-				}
-			break;
-			case "updatetaak":
-				if($extras != null) {
-					if(strpos($extras,"i")!==false){
-						$this->load->model('keuzemogelijkheid_model');
-						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId(str_replace("i", "", $extras));
-						$data['token']=true;
-					}
-					if(strpos($extras,"u")!==false){
-						$this->load->model('taken_model');
-						$data['taak'] = $this->taken_model->get_byId($extras);
-						$this->load->model('keuzemogelijkheid_model');
-						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($data['taak']->keuzemogelijkheidId);
-						$data['token']=false;
-
-					}
-				}else{															// Can't load page without extra id => load indexpage
-					$view = 'index';
-				}
-			break;
-			case "updateshift":
-				if($extras != null) {
-					if(strpos($extras,"i")!==false){
-						$this->load->model('Taken_model');
-						$data['taak'] = $this->Taken_model->get_byId(str_replace("i", "", $extras));
-						$data['token']=true;
-					}
-					if(strpos($extras,"u")!==false){
-						$this->load->model('Shiften_model');
-						$data['shift'] = $this->Shiften_model->get_byId($extras);
-						$this->load->model('Taken_model');
-						$data['taak'] = $this->Taken_model->get_byId($data['shift']->taakId);
-						$data['token']=false;
-
-					}
-				}else{															// Can't load page without extra id => load indexpage
-					$view = 'index';
-				}
-			break;
+			
 			case "personeelsinschrijvingen":
 				if($extras != null) {											
 					$this->load->model('jaargang_model');
@@ -190,6 +134,7 @@ class Admin extends CI_Controller {
 			break;
 
 			// =================================================================================================== TIM SWERTS
+			// Doorverwijzen naar de pagina waarop keuzemogelijkheden worden aangepast.
 			case "updatekeuzemogelijkheid":
 
 				//plaatsen inladen voor dropdown list
@@ -200,6 +145,7 @@ class Admin extends CI_Controller {
 				$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($extras);
 			
 			break;
+			// Doorverwijzen naar de pagina waarop keuzemogelijkheden worden aangemaakt.
 			case "keuzemogelijkheidToevoegen":
 				//jaren inladen voor dropdown list
 				$this->load->model('jaargang_model');
@@ -209,18 +155,21 @@ class Admin extends CI_Controller {
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
 			break;
+			// Doorverwijzen naar de pagina waarop keuzeopties worden aangemaakt en aangepast.
 			case "updatekeuzeoptie":
 
 				//plaatsen inladen voor dropdown list
 				$this->load->model('plaats_model');
 				$data['plaatsen'] = $this->plaats_model->getAllByPlaatsnaam();
-
+				// kiezen of we een keuzeoptie moeten aanmaken of aanpassen en daarna alle gegevens ophalen.
 				if($extras != null) {
+					//Aanmaken van een keuzeoptie
 					if(strpos($extras,"i")!==false){
 						$this->load->model('keuzemogelijkheid_model');
 						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId(str_replace("i", "", $extras));
 						$data['token']=true;
 					}
+					// Aanpassen van een keuzeoptie
 					if(strpos($extras,"u")!==false){
 						$this->load->model('keuzeoptie_model');
 						$data['keuzeoptie'] = $this->keuzeoptie_model->get_byId($extras);
@@ -229,6 +178,73 @@ class Admin extends CI_Controller {
 						$data['token']=false;
 
 					}
+				}
+			break;
+			// Weergeven van alle keuzemogelijkheden voor een bepaald jaargang.
+			case "keuzemogelijkheidbeheer":										
+				if($extras != null) {											
+					$this->load->model('jaargang_model');
+					$data['data'] = $this->jaargang_model->getWithKeuzemogelijkheidWithOpties_byId($extras);
+					$data['jaargang']=$this->jaargang_model->get_byId($extras);
+				}else{															// Als er geen jaargang meegegeven wordt, word je doorverwezen naar de home-pagina
+					$view = 'index';
+				}
+			break;
+			// Weergeven van alle taken voor een bepaalde keuzemogelijkheid.
+			case "takenbeheer":											
+				if($extras != null) {											
+					$this->load->model('Taken_model');
+					$data['taken'] = $this->Taken_model->getAllWithShiften_byKeuzemogelijkheidId($extras);
+					$this->load->model('keuzemogelijkheid_model');
+					$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($extras);
+				}else{															// Als er geen keuzemogelijkheid meegegeven wordt, word je doorverwezen naar de home-pagina
+					$view = 'index';
+				}
+			break;
+			// Doorverwijzen naar de pagina waarop taken worden aangemaakt en aangepast.
+			case "updatetaak":
+				// kiezen of we een taak moeten aanmaken of aanpassen en daarna alle gegevens ophalen.
+				if($extras != null) {
+					//Aanmaken van een taak
+					if(strpos($extras,"i")!==false){
+						$this->load->model('keuzemogelijkheid_model');
+						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId(str_replace("i", "", $extras));
+						$data['token']=true;
+					}
+					// Aanpassen van een taak
+					if(strpos($extras,"u")!==false){
+						$this->load->model('taken_model');
+						$data['taak'] = $this->taken_model->get_byId($extras);
+						$this->load->model('keuzemogelijkheid_model');
+						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($data['taak']->keuzemogelijkheidId);
+						$data['token']=false;
+
+					}
+				}else{															// De index pagina zal geladen worden als er te weinig info wordt meegegeven.
+					$view = 'index';
+				}
+			break;
+			// Doorverwijzen naar de pagina waarop shiften worden aangemaakt en aangepast.
+			case "updateshift":
+				// kiezen of we een shift moeten aanmaken of aanpassen en daarna alle gegevens ophalen.
+				if($extras != null) {
+					// Aanmaken van een shift
+					if(strpos($extras,"i")!==false){
+						$this->load->model('Taken_model');
+						$data['taak'] = $this->Taken_model->get_byId(str_replace("i", "", $extras));
+						$data['token']=true;
+					}
+					// Aanpassen van een shift
+					if(strpos($extras,"u")!==false){
+						$this->load->model('Shiften_model');
+						$data['shift'] = $this->Shiften_model->get_byId($extras);
+						$this->load->model('Taken_model');
+						$data['taak'] = $this->Taken_model->get_byId($data['shift']->taakId);
+						$data['token']=false;
+
+					}
+				}else{															// De index pagina zal geladen worden als er te weinig info wordt meegegeven.
+					$view = 'index';
 				}
 			break;
 			// =================================================================================================== /TIM SWERTS
