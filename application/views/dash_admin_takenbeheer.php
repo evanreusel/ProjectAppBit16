@@ -4,7 +4,7 @@
     DASH ADMIN TAKENBeHEER
 -->
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs buttonmenu">
 <?php
 if(count($taken) > 0) {
     foreach ($taken as $taak) {
