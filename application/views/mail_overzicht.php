@@ -83,94 +83,94 @@
                 <h5>Ontvangers</h5>
                 <?php
                 foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
-                if (!$keuzemogelijkheid->verbergen) { ?>
-                <div class='card'>
-                    <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?>: <span
-                                class="pull-right"><input type="checkbox"
-                                                          data-select="activiteit"></span></div>
-                    <div class='card-body' class="activiteit">
-                        <?php
+                    if (!$keuzemogelijkheid->verbergen) { ?>
+                        <div class='card'>
+                            <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?>: <span
+                                        class="pull-right"><input type="checkbox"
+                                                                  data-select="activiteit"></span></div>
+                            <div class='card-body' class="activiteit">
+                                <?php
 
-                        foreach ($keuzemogelijkheid->taken as $taak) {
-                            if (!$taak->verbergen) {
+                                foreach ($keuzemogelijkheid->taken as $taak) {
+                                    if (!$taak->verbergen) {
+                                        ?>
+                                        <h5>Vrijwilligers <?php echo $taak->functie ?> <input type="checkbox"
+                                                                                              data-select="taak"></h5>
+                                        <div class="taak">
+                                            <?php
+                                            foreach ($taak->shiften as $shift) {
+                                                foreach ($shift->vrijwilligers as $vrijwilliger) {
+                                                    ?>
+                                                    <label><input type="checkbox"
+                                                                  data-persoonId="<?php echo $persoon->id ?>"> <?php echo $vrijwilliger->naam ?>
+                                                    </label>
+                                                    <?php
+                                                }
+                                            } ?>
+                                        </div>
+                                        <?php
+                                    }
+                                }
                                 ?>
-                                <h5>Vrijwilligers <?php echo $taak->functie ?> <input type="checkbox"
-                                                                                      data-select="taak"></h5>
-                                <div class="taak">
-                                    <?php
-                                    foreach ($taak->shiften as $shift) {
-                                        foreach ($shift->vrijwilligers as $vrijwilliger) {
+
+                                <?php
+                                foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
+                                    if (!$keuzeoptie->verbergen) {
+                                        ?>
+                                        <div class="keuzeoptie">
+                                        <h5>Deelnemers <?php echo $keuzeoptie->naam ?> </h5>
+                                        <?php
+                                        foreach ($keuzeoptie->personen as $persoon) {
                                             ?>
                                             <label><input type="checkbox"
-                                                          data-persoonId="<?php echo $persoon->id ?>"> <?php echo $vrijwilliger->naam ?>
+                                                          data-persoonId="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                             </label>
                                             <?php
                                         }
-                                    } ?>
-                                </div>
-                                <?php
-                            }
-                        }
-                        ?>
 
-                        <?php
-                        foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
-                            if (!$keuzeoptie->verbergen) {
-                                ?>
-                                <div class="keuzeoptie">
-                                <h5>Deelnemers <?php echo $keuzeoptie->naam ?> </h5>
-                                <?php
-                                foreach ($keuzeoptie->personen as $persoon) {
-                                    ?>
-                                    <label><input type="checkbox"
-                                                  data-persoonId="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
-                                    </label>
-                                    <?php
+                                    } ?></div><?php
                                 }
+                                ?>
+                            </div>
+                        </div>
+                        <?php
+                    }
 
-                            } ?></div><?php
-                        }
-                        ?>
-                    </div>
+                }
+                foreach ($nietingeschrevenDeelnemers as $persoon) {
+                    ?>
+                    <label><input type="checkbox"
+                                  data-persoonId="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?></label>
 
                     <?php
-                    }
-
-                    }
-                    foreach ($nietingeschrevenDeelnemers as $persoon) {
-                        ?>
-                        <label><input type="checkbox"
-                                      data-persoonId="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?></label>
-
-                        <?php
-                    }
-                    foreach ($nietingeschrevenVrijwilligers as $persoon) {
-                        ?>
-                        <label><input type="checkbox"
-                                      data-persoonId="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?></label>
-
-                        <?php
-                    }
-
+                }
+                foreach ($nietingeschrevenVrijwilligers as $persoon) {
                     ?>
-                    <label>Mailsjabloon</label>
-                    <select id="form_mailsjabloon">
-                        <?php foreach ($mailsjablonen as $sjabloon) {
-                            ?>
-                            <option value="<?php echo $sjabloon->id ?>">
-                                <?php echo $sjabloon->naam ?>
-                            </option>
-                        <?php } ?>
-                    </select>
-                </div>
+                    <label><input type="checkbox"
+                                  data-persoonId="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?></label>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <?php
+                }
+
+                ?>
+                <label>Mailsjabloon</label>
+                <select id="form_mailsjabloon">
+                    <?php foreach ($mailsjablonen as $sjabloon) {
+                        ?>
+                        <option value="<?php echo $sjabloon->id ?>">
+                            <?php echo $sjabloon->naam ?>
+                        </option>
+                    <?php } ?>
+                </select>
             </div>
-            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
     </div>
+</div>
 </div>
 <div class="modal" tabindex="-1" role="dialog" id="modalSjabloon">
     <div class="modal-dialog" role="document">
