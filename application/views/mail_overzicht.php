@@ -93,7 +93,7 @@
                                 {
                                     foreach ($shift->vrijwilligers as $persoon)
                                     {?>
-                                         <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                                         <label><input type="checkbox" data-id="<?php echo $persoon->id?>" data-soort="<?php echo $persoon->soort ?>" > <?php echo $persoon->naam ?></label>
                                     <?php
                                     }
                                 }
@@ -206,9 +206,7 @@
         });
         $(".select-persoongroep").change(function() {
             console.log("SELECTEER PERSONENGROEP");
-            var personengroep = $('persoongroep').next();
-
-           $(personengroep + ':checkbox').next().prop("checked", this.checked);
+            $(this).closest('.persoongroep').find(':checkbox').prop("checked", this.checked);
         });
     });
 
