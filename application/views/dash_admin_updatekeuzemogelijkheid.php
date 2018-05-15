@@ -30,9 +30,11 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     <h2><?php echo $keuzemogelijkheid->naam?> aanpassen:</h2>
     </br>
-    <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
-    <?php echo form_input(array('id'=>'keuzemogelijkheid', 'name'=>'naam', 'title'=>'Vul hier de naam in die je aan de keuzemogelijkheid wil geven.'),$keuzemogelijkheid->naam); ?>
-    </br>
+    <div class="form-group row">
+        <label for="keuzemogelijkheid" class="col-form-label">Naam keuzemogelijkheid:</label>
+        <?php echo form_input(array('id'=>'keuzemogelijkheid', 'name'=>'naam', 'title'=>'Vul hier de naam in die je aan de keuzemogelijkheid wil geven.', 'class'=>'form-control'),$keuzemogelijkheid->naam); ?>
+        </br>
+    </div>
     <label for="plaats">Plaats:</label>
     <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
     </br>
@@ -54,5 +56,5 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     ?>
     
     <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
     </script>            
