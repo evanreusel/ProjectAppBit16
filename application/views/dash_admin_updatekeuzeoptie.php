@@ -46,7 +46,7 @@
 
     $nummerAttributen = array(
         'size'  =>'10',
-        'type'  =>'number'
+        'type'  =>'number',
         'class' =>'form-control'
     );
 ?>
