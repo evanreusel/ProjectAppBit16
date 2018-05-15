@@ -43,6 +43,6 @@
     <?php
         echo $idData;    
         echo form_button($arrayparameters);
-        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId,'Annuleer','class="btn btn-primary"');
+        echo anchor('admin/dash/taakbeheer/'.$keuzemogelijkheid->id,'Annuleer','class="btn btn-primary"');
         echo form_close();
     ?>
