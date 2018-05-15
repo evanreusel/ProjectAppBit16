@@ -72,7 +72,7 @@ class Mail extends CI_Controller {
 
             //echo $this->mailjet->verstuur();
         }
-}
+    }
     public function overzicht()
     {
         $data['message'] = "Mail Reminder Overzicht";

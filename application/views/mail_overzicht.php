@@ -70,6 +70,9 @@
                 </button>
             </div>
             <div class="modal-body">
+                <form id="reminderForm">
+
+
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
                 <h5>Ontvangers</h5>
@@ -82,21 +85,24 @@
                         <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?>: </div>
                         <div class='card-body'>
                         <?php
-
                         foreach ($keuzemogelijkheid->taken as $taak)
                         {
                             if (!$taak->verbergen)
                             {?>
-                                <h5>Vrijwilligers <?php echo $taak->functie ?></h5>
+                               <h5><input type="checkbox" class="select-persoongroep" data-select="vrijwilliger<?php echo $taak->id?>"> Vrijwilligers <?php echo $taak->functie ?></h5>
+                                <div class="persoongroep" id="vrijwilliger<?php echo $taak->id?>">
                                 <?php
                                 foreach ($taak->shiften as $shift)
                                 {
-                                    foreach ($shift->vrijwilligers as $vrijwilliger)
+                                    foreach ($shift->vrijwilligers as $persoon)
                                     {?>
-                                         <label><input type="checkbox"> <?php echo $vrijwilliger->naam ?></label>
+                                         <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>" data-soort="<?php echo $persoon->soort ?>" > <?php echo $persoon->naam ?></label>
                                     <?php
                                     }
                                 }
+                            ?>
+                                </div>
+                            <?php
                             }
                         }
                         ?>
@@ -105,13 +111,16 @@
                         foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie)
                         {
                             if (!$keuzeoptie->verbergen)
-                            {
-                                echo "<h5>Deelnemers " . $keuzeoptie->naam . "</h5>";
-                                foreach ($keuzeoptie->personen as $persoon)
+                            {?>
+                                <h5><input type="checkbox" class="select-persoongroep" data-select="deelnemer<?php echo $keuzeoptie->id?>"> Deelnemers "<?php echo $keuzeoptie->naam?>"</h5>
+                                <div class="persoongroep" id="deelnemer<?php echo $keuzeoptie->id?>">
+                                <?php foreach ($keuzeoptie->personen as $persoon)
                                 {?>
-                                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                                    <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>"> <?php echo $persoon->naam ?></label>
                                 <?php
-                                }
+                                }?>
+                                </div>
+                            <?php
                             }
                         }
                         ?>
@@ -123,13 +132,13 @@
                 }
                 foreach ($nietingeschrevenDeelnemers as $persoon)
                 {?>
-                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                    <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>"> <?php echo $persoon->naam ?></label>
 
                     <?php
                 }
                 foreach ($nietingeschrevenVrijwilligers as $persoon)
                 {?>
-                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                    <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>"> <?php echo $persoon->naam ?></label>
 
                     <?php
                 }
@@ -144,7 +153,7 @@
                         </option>
                     <?php } ?>
                 </select>
-
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Save changes</button>
@@ -198,7 +207,13 @@
                 $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
             }
         });
+        $(".select-persoongroep").change(function() {
+            console.log("SELECTEER PERSONENGROEP");
+            select = $(this).data('select');
+            console.log(select);
+            $('#' + select + " :checkbox").prop("checked", this.checked);
 
+        });
     });
 
 </script>

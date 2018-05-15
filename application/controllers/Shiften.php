@@ -24,41 +24,50 @@ class Shiften extends CI_Controller{
 
     public function update()
 	{
-		// klasse Keuzeoptie aanmaken en initialiseren
-        $keuzeoptie = new stdClass();
+		// klasse shift aanmaken en initialiseren
+        $shift = new stdClass();
 
-        $keuzeoptie->id = $this->input->post('id');
-        $keuzeoptie->keuzemogelijkheidId = $this->input->post('keuzemogelijkheidId');
-        $keuzeoptie->naam = $this->input->post('naam');
-        $keuzeoptie->plaatsId = $this->input->post('plaatsId');
-        $keuzeoptie->min = $this->input->post('min');
-        $keuzeoptie->max = $this->input->post('max');
-        $keuzeoptie->eindTijdstip = $this->input->post('eindTijdstip');
-        $keuzeoptie->beginTijdstip = $this->input->post('beginTijdstip');
+        $shift->id = $this->input->post('id');
+        $shift->naam = $this->input->post('naam');
+        $shift->taakId = $this->input->post('taakId');
 
 		// Model inladen
-        $this->load->model('Keuzeoptie_model');
+        $this->load->model('Shiften_model');
 		
-		// Keuzeoptie toevoegen of aanpassen
-        if($keuzeoptie->id == 0){
-       		$this->Keuzeoptie_model->add($keuzeoptie);
+		// Shift toevoegen of aanpassen
+        if($shift->id == 0){
+       		$this->Shiften_model->add($shift);
         } else {
-        	$this->Keuzeoptie_model->update($keuzeoptie);
+        	$this->Shiften_model->update($shift);
         }
 
-        $this->load->model('keuzemogelijkheid_model');
-        $keuzemogelijkheid=$this->keuzemogelijkheid_model->get_byId($keuzeoptie->keuzemogelijkheidId);
-		// Redirect naar keuzemogelijkheid pagina
-		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
+        $this->load->model('Taken_model');
+        $taak=$this->Taken_model->get_byId($shift->taakId);
+		// Redirect naar taken pagina
+		redirect('admin/dash/takenbeheer/'.$taak->keuzemogelijkheidId);
     }
 
+    public function delete($id)
+	{
+		
+        $this->load->model('Shiften_model');
+        $returndata = $this->Shiften_model->get_byId($id);
+
+        $this->load->model('Taken_model');
+        $redirectData = $this->Taken_model->get_byId($returndata->taakId);
+
+        $this->Shiften_model->delete($id);
+        
+		// Redirect to keuzemogelijkheidbeheer
+        redirect('admin/dash/takenbeheer/'.$redirectData->keuzemogelijkheidId);
+	}
 
     public function vrijwilligerInShiftToevoegen($shiftId, $persoonId)
     {
         $vrijwilligerInShift = new stdClass();
 
         $vrijwilligerInShift->persoonId = $persoonId;
-        $vrijwilligerInShift->shiftId = $shiftId;
+        $vrijwilligerInShift->$shiftId = $shiftId;
 
         $this->load->model('VrijwilligersInShift_model');
         $this->VrijwilligersInShift_model->add($vrijwilligerInShift);
@@ -78,7 +87,7 @@ class Shiften extends CI_Controller{
     {
 
         $this->load->model('VrijwilligersInShift_model');
-        $data['shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
+        $data['$shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
 
         $this->load->view('ajax_vrijwilligersinshift', $data);
 

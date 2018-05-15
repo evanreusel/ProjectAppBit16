@@ -14,7 +14,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 
         // =================================================================================================== GREIF MATTHIAS
         // Autoload
-        $this->load->library('session');
+         // $this->load->library('session');
 
 		// Redirect to home if no session started
         if(!$this->session->has_userdata('id')){
