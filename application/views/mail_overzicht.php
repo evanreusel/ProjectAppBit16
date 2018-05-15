@@ -205,8 +205,10 @@
             }
         });
         $(".select-persoongroep").change(function() {
+            console.log("SELECTEER PERSONENGROEP");
+            var personengroep = $('persoongroep').next();
 
-           $('.persoongroep :checkbox').next().prop("checked", this.checked);
+           $(personengroep + ':checkbox').next().prop("checked", this.checked);
         });
     });
 
