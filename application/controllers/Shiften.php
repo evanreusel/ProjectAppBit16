@@ -1,6 +1,6 @@
 <?php
 // Tim Swerts
-// last updated: 3/05/2018
+// last updated: 03/05/2018
 // shiften controller
 
 if (!defined('BASEPATH'))
@@ -13,74 +13,90 @@ class Shiften extends CI_Controller{
 
         // =================================================================================================== GREIF MATTHIAS
         // Autoload
-            // $this->load->library('session');
+       $this->load->library('session');
 
-		// Redirect to home if no session started
-            // $this->load->model('beheer_model');
-            // if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
-            //     redirect('/admin/index', 'location');
-            // }
+       // Redirect to home if no session started
+       if(!$this->session->has_userdata('id')){
+           redirect('/admin/index', 'location');
+       }
         // =================================================================================================== /GREIF MATTHIAS
     }
 
+    // Functie voor het aanpassen en aanmaken van shiften
     public function update()
 	{
-		// klasse Keuzeoptie aanmaken en initialiseren
-        $keuzeoptie = new stdClass();
+		// klasse shift aanmaken en initialiseren
+        $shift = new stdClass();
 
-        $keuzeoptie->id = $this->input->post('id');
-        $keuzeoptie->keuzemogelijkheidId = $this->input->post('keuzemogelijkheidId');
-        $keuzeoptie->naam = $this->input->post('naam');
-        $keuzeoptie->plaatsId = $this->input->post('plaatsId');
-        $keuzeoptie->min = $this->input->post('min');
-        $keuzeoptie->max = $this->input->post('max');
-        $keuzeoptie->eindTijdstip = $this->input->post('eindTijdstip');
-        $keuzeoptie->beginTijdstip = $this->input->post('beginTijdstip');
+        $shift->id = $this->input->post('id');
+        $shift->naam = $this->input->post('naam');
+        $shift->taakId = $this->input->post('taakId');
 
 		// Model inladen
-        $this->load->model('Keuzeoptie_model');
+        $this->load->model('Shiften_model');
 		
-		// Keuzeoptie toevoegen of aanpassen
-        if($keuzeoptie->id == 0){
-       		$this->Keuzeoptie_model->add($keuzeoptie);
+		// Shift toevoegen of aanpassen
+        if($shift->id == 0){
+       		$this->Shiften_model->add($shift);
         } else {
-        	$this->Keuzeoptie_model->update($keuzeoptie);
+        	$this->Shiften_model->update($shift);
         }
 
-        $this->load->model('keuzemogelijkheid_model');
-        $keuzemogelijkheid=$this->keuzemogelijkheid_model->get_byId($keuzeoptie->keuzemogelijkheidId);
-		// Redirect naar keuzemogelijkheid pagina
-		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
+        $this->load->model('Taken_model');
+        $taak=$this->Taken_model->get_byId($shift->taakId);
+		// Redirect naar taken pagina
+		redirect('admin/dash/takenbeheer/'.$taak->keuzemogelijkheidId);
     }
 
+    // Functie voor het verwijderen van shiften
+    public function delete($id)
+	{
+		
+        $this->load->model('Shiften_model');
+        $returndata = $this->Shiften_model->get_byId($id);
 
+        $this->load->model('Taken_model');
+        $redirectData = $this->Taken_model->get_byId($returndata->taakId);
+
+        $this->Shiften_model->delete($id);
+        
+		// Redirect to keuzemogelijkheidbeheer
+        redirect('admin/dash/takenbeheer/'.$redirectData->keuzemogelijkheidId);
+    }
+    
+    // Functie voor het toevoegen van een vrijwilliger in een shift 
     public function vrijwilligerInShiftToevoegen($shiftId, $persoonId)
     {
         $vrijwilligerInShift = new stdClass();
 
         $vrijwilligerInShift->persoonId = $persoonId;
-        $vrijwilligerInShift->shiftId = $shiftId;
+        $vrijwilligerInShift->$shiftId = $shiftId;
 
         $this->load->model('VrijwilligersInShift_model');
         $this->VrijwilligersInShift_model->add($vrijwilligerInShift);
 
+        // Laden van de verkregen data in een ajax-venster
         $this->load->view('ajax_vrijwilligerinshift', $data);
     }
-    
+
+    // Functie voor het verwijderen van een vrijwilliger uit een shift 
     public function vrijwilligerInShiftVerwijderen($shiftId, $persoonId)
 	{
         $this->load->model('VrijwilligersInShift_model');
         $this->VrijwilligersInShift_model->delete($shiftId, $persoonId);
 
+        // Laden van de verkregen data in een ajax-venster
 		$this->load->view('ajax_vrijwilligerinshift', $data);
     }
-    
+
+    // Functie voor het weergeven van alle vrijwilliger van een bepaalde shift
     public function vrijwilligerInShiftWeergeven($shiftId)
     {
 
         $this->load->model('VrijwilligersInShift_model');
-        $data['shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
+        $data['$shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
 
+        // Laden van de verkregen data in een ajax-venster
         $this->load->view('ajax_vrijwilligersinshift', $data);
 
     }

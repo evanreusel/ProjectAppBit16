@@ -1,20 +1,23 @@
 <!-- 
     TIM SWERTS
-    LAST UPDATED: 18 03 30
+    LAST UPDATED: 18 05 14
     DASH ADMIN KEUZEMOGELIJKHEIDBEHEER
 -->
 
 <ul class="nav nav-tabs buttonmenu">
 <?php
+// Vormen van alle tab-knoppen van alle keuzemogelijkheden
 if(count($data['keuzemogelijkheden']) > 0) {
     foreach ($data['keuzemogelijkheden'] as $activiteit) {
         echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary" title="Druk hier om de keuzeopties voor deze keuzemogelijkheid aan te passen">'. $activiteit->naam .'</a></li>';
     }
 }?>
     <li><?php echo anchor("admin/dash/keuzemogelijkheidToevoegen/".$jaargang->id,"+",'class="btn btn-primary" title = "Druk hier om een nieuwe keuzemogelijkheid aan te maken"');?></li>
+    <?php echo anchor("admin/dash/jaargangbeheer/".$jaargang->id,"Ga terug",'class="btn btn-secondary right" title = "Druk hier om terug te gaan naar het jaargang overzicht."' )?>
 </ul>
 <div class="tab-content">
     <?php
+        // Invullen van de tabel met alle gevonden resultaten.
         if(count($data['keuzemogelijkheden']) > 0) {
             foreach ($data['keuzemogelijkheden'] as $activiteit) {
             $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
@@ -38,7 +41,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
                 echo '<td><button class="deleteKeuzeoptie btn btn-round btn-danger" title="Druk hier om deze keuzeoptie te verwijderen" data-toggle="modal" data-target="#keuzeModal" value="'.$keuzeoptie->id.'"><i class="fa fa-trash"></i> Verwijderen</button></td>';
                    echo "</tr>"; 
             }
-
+            // Aanmaak van de knoppen om het beheer van de keuzemogelijkheden en keuzeopties mogelijk te maken
             echo "</table>";
             echo anchor('admin/dash/updatekeuzeoptie/'.$activiteit->id.'i',"Keuzeoptie toevoegen",'class="btn btn-primary" title="Druk hier om een keuzeoptie toe te voegen"');
             echo anchor('admin/dash/takenbeheer/'.$activiteit->id,'<button class="btn btn-round btn-warning" title="Druk hier om taken te beheren bij deze keuzemogelijkheid"><i class="fa fa-cog"></i> ' .$activiteit->naam. ' vrijwilliger taken</button>').'</td>';
@@ -50,6 +53,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
         echo 'Er is geen data beschikbaar maak nieuwe keuzemogelijkheden aan door op de plus-knop te klikken';   
     }?>
 </div>
+<!-- Popup die aanpast aan het item dat verwijderd zal worden -->
 <div class="modal fade" id="keuzeModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

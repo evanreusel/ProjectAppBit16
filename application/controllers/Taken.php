@@ -26,6 +26,7 @@ class Taken extends CI_Controller{
         // =================================================================================================== /GREIF MATTHIAS
     }
 
+    // Functie voor het aanpassen en aanmaken van taken
     public function update()
 	{
 		// klasse keuzemogelijkheid aanmaken en initialiseren
@@ -50,6 +51,7 @@ class Taken extends CI_Controller{
 		redirect('admin/dash/takenbeheer/'. $taak->keuzemogelijkheidId);
     }
     
+    // Functie voor het verwijderen van taken
     public function delete($id)
 	{
 		

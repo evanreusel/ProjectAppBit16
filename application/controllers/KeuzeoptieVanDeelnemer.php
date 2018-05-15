@@ -1,8 +1,5 @@
 <?php
 
-// Tim Swerts
-// last updated: 3/05/2018
-// shiften controller
 
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
@@ -17,10 +14,9 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
          // $this->load->library('session');
 
 		// Redirect to home if no session started
-            // $this->load->model('beheer_model');
-            // if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
-            //     redirect('/admin/index', 'location');
-            // }
+        if(!$this->session->has_userdata('id')){
+            redirect('/admin/index', 'location');
+        }
         // =================================================================================================== /GREIF MATTHIAS
     }
 

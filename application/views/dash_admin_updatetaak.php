@@ -15,9 +15,8 @@
 
     if($token != true){
         $idData=form_hidden("id", $taak->id).form_hidden("keuzemogelijkheidId", $taak->keuzemogelijkheidId);
-        $taak="";
-
         $arrayparameters['content'] = "Aanpassen";
+        $titel = $taak->functie.' aanpassen:';
     }
     else{
         $idData=form_hidden("keuzemogelijkheidId", $keuzemogelijkheid->id);
@@ -26,25 +25,26 @@
         $taak->id=$data;
         $taak->functie=$data;
         $taak->beschrijving=$data;
-
+        $titel = 'Nieuwe taak aanmaken:';
         $arrayparameters['content'] = "Toevoegen";
 
     };
-
 ?>
     
     <?php echo form_open('taken/update', array('name' => 'taakFrom', 'id' => 'taakForm', 'role' => 'form'));  ?>
+    <h2><?php echo $titel ?></h2>
+    <div class="form-group row">
+    <label for="functie" class="col-form-label">Naam:</label>
+    <?php echo form_input(array('id'=>'functie', 'name'=>'functie', 'class'=>'form-control'),$taak->functie); ?>
+    </div>
+    <div class="form-group row">
+    <label for="beschrijving" class="col-form-label">Beschrijving van de taak:</label>
     </br>
-    <label for="functie">Taaknaam:</label>
-    <?php echo form_input(array('id'=>'functie', 'name'=>'functie'),$taak->functie); ?>
-    </br>
-    <label for="beschrijving">Beschrijving van de taak:</label>
-    <textarea name="beschrijving" form="taakForm"><?php $taak->beschrijving ?></textarea>
-    </br>
-    </br>
+    <textarea name="beschrijving" form="taakForm" class="form-control"><?php echo $taak->beschrijving; ?></textarea>
+    </div>
     <?php
         echo $idData;    
         echo form_button($arrayparameters);
-        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId,'Annuleer','class="btn btn-primary"');
+        echo anchor('admin/dash/takenbeheer/'.$keuzemogelijkheid->id,'Annuleer','class="btn btn-primary"');
         echo form_close();
     ?>

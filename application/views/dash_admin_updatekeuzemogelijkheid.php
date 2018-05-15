@@ -17,7 +17,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         'size'  =>'16',
         'type'  =>'text',
         'readonly',
-        'class' =>'form_datetime'
+        'class' =>'form_datetime form-control'
     );
 
     foreach ($plaatsen as $plek) {
@@ -30,29 +30,35 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     <h2><?php echo $keuzemogelijkheid->naam?> aanpassen:</h2>
     </br>
-    <label for="keuzemogelijkheid">Naam keuzemogelijkheid:</label>
-    <?php echo form_input(array('id'=>'keuzemogelijkheid', 'name'=>'naam', 'title'=>'Vul hier de naam in die je aan de keuzemogelijkheid wil geven.'),$keuzemogelijkheid->naam); ?>
-    </br>
-    <label for="plaats">Plaats:</label>
-    <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId) ?>
-    </br>
-    <label for="begin">Begin datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE,'title'=>'Vul hier de begin datum in.'),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
-    </br>
-    <label for="einde">Eind datum en tijdstip:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de eind datum in.'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
-    </br>
-    <label for="deadline">Datum en tijdstip voor deadline:</label>
-    <?php echo form_input(array('id'=>'begin', 'name'=>'deadlineTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de datum in waarop ze ten laatste kunnen inschrijven.'),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
-    </br>
+    <div class="form-group row">
+        <label for="keuzemogelijkheid" class="col-form-label">Naam keuzemogelijkheid:</label>
+        <?php echo form_input(array('id'=>'keuzemogelijkheid', 'name'=>'naam', 'title'=>'Vul hier de naam in die je aan de keuzemogelijkheid wil geven.', 'class'=>'form-control'),$keuzemogelijkheid->naam); ?>
+    </div>
+    <div class="form-group row">
+    <label for="plaats" class="col-form-label">Plaats:</label>
+    <?php echo form_dropdown("plaats", $plaats, $keuzemogelijkheid->plaatsId, array('class'=>'form-control')) ?>
+   
+    </div>
+    <div class="form-group row">
+        <label for="begin" class="col-form-label">Begin datum en tijdstip:</label>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE,'title'=>'Vul hier de begin datum in.'),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
+    </div>
+    <div class="form-group row">
+        <label for="einde" class="col-form-label">Eind datum en tijdstip:</label>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de eind datum in.'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
+    </div>
+    <div class="form-group row">
+        <label for="deadline" class="col-form-label">Datum en tijdstip voor deadline:</label>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'deadlineTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de datum in waarop ze ten laatste kunnen inschrijven.'),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
+    </div>
     <?php
         echo form_hidden('jaar', $keuzemogelijkheid->jaargangId);
         echo form_hidden('id', $keuzemogelijkheid->id);
         echo form_button($arrayparameters);
-        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId,'Annuleer','class="btn btn-primary"');
+        echo anchor('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId,'Annuleer','class="btn btn-warning"');
         echo form_close();
     ?>
     
     <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
     </script>            

@@ -42,6 +42,7 @@ class Keuzemogelijkheid extends CI_Controller{
     }
     // =================================================================================================== /GREIF MATTHIAS
 
+    // Functie voor het aanmaken en aanpassen van keuzemogelijkheden
     public function update()
 	{
 		// klasse keuzemogelijkheid aanmaken en initialiseren
@@ -68,7 +69,7 @@ class Keuzemogelijkheid extends CI_Controller{
 		// Redirect naar keuzemogelijkheid pagina
 		redirect('admin/dash/keuzemogelijkheidbeheer/'. $keuzemogelijkheid->jaargangId);
     }
-    
+    // Functie voor het verwijderen van keuzemogelijkheden.
     public function delete($id)
 	{
 		
