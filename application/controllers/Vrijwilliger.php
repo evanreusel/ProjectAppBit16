@@ -60,7 +60,7 @@ class Vrijwilliger extends CI_Controller {
 
 		// Get data for view
 		switch($view){
-			// Inladen van de view voor het kunnen inschrijven voor shiften
+			// Inladen van de view voor het kunnen inschrijven voor shiften, gemaakt door: Tim Swerts
 			case "inschrijvingshiften":
 				//haal het actief jaar op.													
 				$this->load->model('jaargang_model');

@@ -106,7 +106,7 @@ class Admin extends CI_Controller {
 					$data['data']['admin'] = $this->beheer_model->get_byId($extras);
 				}
 			break;
-			
+
 			case "personeelsinschrijvingen":
 				if($extras != null) {											
 					$this->load->model('jaargang_model');
