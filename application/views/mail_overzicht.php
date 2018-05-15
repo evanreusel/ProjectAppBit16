@@ -71,7 +71,7 @@
     </div>
 
 </div>
-<div class="modal" tabindex="-1" role="dialog" id="modalReminder">
+<div class="modal fade" tabindex="-1" role="dialog" id="modalReminder">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -90,7 +90,7 @@
                     foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
                         if (!$keuzemogelijkheid->verbergen) { ?>
                             <div class='card'>
-                                <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?> <div class="pull-right"><input type="checkbox"></div></div>
+                                <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?></div>
                                 <div class='card-body'>
                                     <?php
                                     foreach ($keuzemogelijkheid->taken as $taak) {
@@ -259,7 +259,15 @@
                 // herinnering velden bewerken
                 $("#modalReminderDatum").val($(this).data('reminder-datum'));
                 $("#modalMailsjabloon").val($(this).data('sjabloon-id'));
-
+                // vul checkboxes in
+                $.ajax({
+                    url: '<?= site_url(); ?>/mail/getPersonenInHerinnering/' + herinneringId,
+                    type: "GET",
+                    dataType:'json',
+                    success: function(data){
+                        console.log(data);
+                    }
+                });
             }
         });
         $(".select-persoongroep").change(function () {
