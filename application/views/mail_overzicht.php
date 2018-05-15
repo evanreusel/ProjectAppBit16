@@ -107,9 +107,9 @@
                         foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie)
                         {
                             if (!$keuzeoptie->verbergen)
-                            {?>
-                                <h5>Deelnemers<?php echo $keuzeoptie->naam ?></h5>
-                                <?php foreach ($keuzeoptie->personen as $persoon)
+                            {
+                                echo "<h5>Deelnemers " . $keuzeoptie->naam . "</h5>";
+                                foreach ($keuzeoptie->personen as $persoon)
                                 {?>
                                     <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
                                 <?php
