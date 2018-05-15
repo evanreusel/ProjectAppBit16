@@ -4,7 +4,7 @@
     DASH ADMIN KEUZEMOGELIJKHEIDBEHEER
 -->
 
-<ul class="nav nav-tabs">
+<ul class="nav nav-tabs buttonmenu">
 <?php
 if(count($data['keuzemogelijkheden']) > 0) {
     foreach ($data['keuzemogelijkheden'] as $activiteit) {
