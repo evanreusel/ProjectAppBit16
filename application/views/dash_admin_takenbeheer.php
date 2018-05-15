@@ -11,8 +11,8 @@ if(count($taken) > 0) {
         echo '<li><a href="#'.$taak->id.'" data-toggle="tab" class="btn btn-primary" title="Druk hier om de shiften voor deze taak aan te passen">'. $taak->functie .'</a></li>';
     }
 }?>
-    <li><?php echo anchor("admin/dash/updatetaak/".$keuzemogelijkheidId.'i',"+",'class="btn btn-primary" title = "Druk hier om een nieuwe taak aan te maken"');?></li>
-    <li><?php echo anchor("admin/dash/keuzemogelijkheidbeheer/")?></li>
+    <li><?php echo anchor("admin/dash/updatetaak/".$keuzemogelijkheid->id.'i',"+",'class="btn btn-primary" title = "Druk hier om een nieuwe taak aan te maken"');?></li>
+    <li><?php echo anchor("admin/dash/keuzemogelijkheidbeheer/".$keuzemogelijkheid->jaargangId,"Ga terug",'class="btn btn-primary float-right" title = "Druk hier om terug te gaan naar het keuzemogelijkheid overzicht."' )?></li>
 </ul>
 
 <div class="tab-content">

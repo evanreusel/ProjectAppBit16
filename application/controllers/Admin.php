@@ -119,7 +119,8 @@ class Admin extends CI_Controller {
 				if($extras != null) {											
 					$this->load->model('Taken_model');
 					$data['taken'] = $this->Taken_model->getAllWithShiften_byKeuzemogelijkheidId($extras);
-					$data['keuzemogelijkheidId'] = $extras;
+					$this->load->model('keuzemogelijkheid_model');
+					$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($extras);
 				}else{															// Can't load page without jaargang id => load indexpage
 					$view = 'index';
 				}
