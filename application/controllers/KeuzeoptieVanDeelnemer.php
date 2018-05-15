@@ -17,8 +17,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         $this->load->library('session');
 
 		// Redirect to home if no session started
-        $this->load->model('beheer_model');
-        if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
+        if(!$this->session->has_userdata('id')){
             redirect('/admin/index', 'location');
         }
         // =================================================================================================== /GREIF MATTHIAS

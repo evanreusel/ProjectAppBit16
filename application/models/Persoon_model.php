@@ -5,7 +5,8 @@ LAST UPDATED: 18 03 30
 PERSOON MODEL
 */
 
-class Persoon_model extends CI_Model {    
+class Persoon_model extends CI_Model {
+    // =================================================================================================== GREIF MATTHIAS
     function get_byIdAndToken($id, $token)
     {
         $this->db->where(array('id' => $id, 'token' => $token));
@@ -25,6 +26,7 @@ class Persoon_model extends CI_Model {
         
         return null;
     }
+    // =================================================================================================== /GREIF MATTHIAS
 
     function get_Id($id)
     {
@@ -132,11 +134,13 @@ class Persoon_model extends CI_Model {
         return $token;
     }
 
+    // =================================================================================================== GREIF MATTHIAS
     function get_bytoken($token){        
         $this->db->where('token', $token);
         $query = $this->db->get('Persoon');
         return $query->row();
     }
+    // =================================================================================================== /GREIF MATTHIAS
 
     //Haal alle medewerkers die voor een activiteit zijn ingeschreven 
     //samen met de gekoppelde activiteiten
