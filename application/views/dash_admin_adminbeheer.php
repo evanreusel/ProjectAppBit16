@@ -1,8 +1,13 @@
 <!-- 
     GREIF MATTHIAS
-    LAST UPDATED: 18 04 20
+    LAST UPDATED: 18 05 14
     DASH ADMIN BEHEER
 -->
+
+<p class="tooling">
+    Hier kan u de verschillende administrators voor de toepassing bewerken.
+</p>
+
 <table class="table">
     <tr class="colored">
         <td>Naam</td>
