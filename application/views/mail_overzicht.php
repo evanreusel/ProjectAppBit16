@@ -215,13 +215,13 @@
         });
         $( ".open-herinneringvenster" ).click(function() {
             console.log("HERINNERING");
-            var herinneringId = $(this).data('herinnering-id');
+            var herinneringId = $(this).data('reminder-id');
             $("#herinnering-id").val(herinneringId);
             if(herinneringId != 0)
             {
                 // herinnering velden bewerken
-                $("#modalReminderDatum").val($(this).data('herinnering-datum'));
-                $("#modalMailsjabloon").val($(this).data('herinnering-sjabloon'));
+                $("#modalReminderDatum").val($(this).data('reminder-datum'));
+                $("#modalMailsjabloon").val($(this).data('sjabloon-id'));
 
             }
         });
