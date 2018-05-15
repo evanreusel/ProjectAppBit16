@@ -16,6 +16,7 @@ if(count($taken) > 0) {
 
 <div class="tab-content">
     <?php
+    print_r($taken);
         if(count($taken) > 0) {
             foreach ($taken as $taak) {
             $kolommen= array("functie", "beschrijving");
