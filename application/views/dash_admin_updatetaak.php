@@ -15,8 +15,6 @@
 
     if($token != true){
         $idData=form_hidden("id", $taak->id).form_hidden("keuzemogelijkheidId", $taak->keuzemogelijkheidId);
-        $taak="";
-
         $arrayparameters['content'] = "Aanpassen";
     }
     else{
