@@ -12,6 +12,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
     }
 }?>
     <li><?php echo anchor("admin/dash/keuzemogelijkheidToevoegen/".$jaargang->id,"+",'class="btn btn-primary" title = "Druk hier om een nieuwe keuzemogelijkheid aan te maken"');?></li>
+    <?php echo anchor("admin/dash/jaargangbeheer/".$jaargang->id,"Ga terug",'class="btn btn-secondary right" title = "Druk hier om terug te gaan naar het jaargang overzicht."' )?>
 </ul>
 <div class="tab-content">
     <?php
