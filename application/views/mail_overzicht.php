@@ -70,6 +70,9 @@
                 </button>
             </div>
             <div class="modal-body">
+                <form id="reminderForm">
+
+
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
                 <h5>Ontvangers</h5>
@@ -93,7 +96,7 @@
                                 {
                                     foreach ($shift->vrijwilligers as $persoon)
                                     {?>
-                                         <label><input type="checkbox"  data-id="<?php echo $persoon->id?>" data-soort="<?php echo $persoon->soort ?>" > <?php echo $persoon->naam ?></label>
+                                         <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>" data-soort="<?php echo $persoon->soort ?>" > <?php echo $persoon->naam ?></label>
                                     <?php
                                     }
                                 }
@@ -113,7 +116,7 @@
                                 <div class="persoongroep" id="deelnemer<?php echo $keuzeoptie->id?>">
                                 <?php foreach ($keuzeoptie->personen as $persoon)
                                 {?>
-                                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                                    <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>"> <?php echo $persoon->naam ?></label>
                                 <?php
                                 }?>
                                 </div>
@@ -129,13 +132,13 @@
                 }
                 foreach ($nietingeschrevenDeelnemers as $persoon)
                 {?>
-                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                    <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>"> <?php echo $persoon->naam ?></label>
 
                     <?php
                 }
                 foreach ($nietingeschrevenVrijwilligers as $persoon)
                 {?>
-                    <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
+                    <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>"> <?php echo $persoon->naam ?></label>
 
                     <?php
                 }
@@ -150,7 +153,7 @@
                         </option>
                     <?php } ?>
                 </select>
-
+                </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">Save changes</button>
