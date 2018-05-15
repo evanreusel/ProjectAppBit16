@@ -127,7 +127,7 @@
                                             <div class="persoongroep" id="deelnemer<?php echo $keuzeoptie->id ?>">
                                                 <?php foreach ($keuzeoptie->personen as $persoon) {
                                                     ?>
-                                                    <label><input type="checkbox" name="personen[]"
+                                                    <label><input type="checkbox" name="personen"
                                                                   value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                                     </label>
                                                     <?php
@@ -156,7 +156,7 @@
                                 <?php
                                 foreach ($nietingeschrevenDeelnemers as $persoon) {
                                     ?>
-                                    <label><input type="checkbox" name="personen[]"
+                                    <label><input type="checkbox" name="personen"
                                                   value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                     </label>
                                     <?php
@@ -175,7 +175,7 @@
                                 <?php
                                 foreach ($nietingeschrevenVrijwilligers as $persoon) {
                                     ?>
-                                    <label><input type="checkbox" name="personen[]"
+                                    <label><input type="checkbox" name="personen"
                                                   value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                     </label>
 
@@ -250,7 +250,8 @@
 
             }
         });
-        $(".open-herinneringvenster").click(function () {
+        $(".open-herinneringvenster").click(function ()
+        {
             console.log("HERINNERING");
             var herinneringId = $(this).data('reminder-id');
             $("#herinnering-id").val(herinneringId);
@@ -266,6 +267,10 @@
                     dataType:'json',
                     success: function(data){
                         console.log(data);
+                        for (i = 0; i < data.length; i++) {
+                            $('input[name="personen"][value='+ data[i].persoonId +']').prop("checked", true);
+                        }
+
                     }
                 });
             }
