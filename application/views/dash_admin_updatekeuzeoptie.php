@@ -61,7 +61,7 @@
     </div>
     <div class="md-form">
         <label for="plaats">Plaats:</label>
-        <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId, array('class'=>'dropdown-menu')) ?>
+        <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId, array('class'=>'dropdown-item')) ?>
 
     </div>
     <div class="md-form">
