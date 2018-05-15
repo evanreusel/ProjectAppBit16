@@ -35,12 +35,12 @@
     <div class="form-group row">
     <label for="functie" class="col-form-label">Taaknaam:</label>
     <?php echo form_input(array('id'=>'functie', 'name'=>'functie', 'class'=>'form-control'),$taak->functie); ?>
-    </br>
+    </div>
     <div class="form-group row">
     <label for="beschrijving" class="col-form-label">Beschrijving van de taak:</label>
     </br>
     <textarea name="beschrijving" form="taakForm" class="form-control"><?php echo $taak->beschrijving; ?></textarea>
-    </br>
+    </div>
     <?php
         echo $idData;    
         echo form_button($arrayparameters);
