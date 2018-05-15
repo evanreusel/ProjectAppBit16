@@ -30,9 +30,9 @@
 
     };
 ?>
-    <h2><?php echo $titel ?></h2>
+    
     <?php echo form_open('taken/update', array('name' => 'taakFrom', 'id' => 'taakForm', 'role' => 'form'));  ?>
-    </br>
+    <h2><?php echo $titel ?></h2>
     <div class="form-group row">
     <label for="functie" class="col-form-label">Naam:</label>
     <?php echo form_input(array('id'=>'functie', 'name'=>'functie', 'class'=>'form-control'),$taak->functie); ?>
