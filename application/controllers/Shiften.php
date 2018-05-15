@@ -48,6 +48,20 @@ class Shiften extends CI_Controller{
 		redirect('admin/dash/takenbeheer/'.$taak->keuzemogelijkheidId);
     }
 
+    public function delete($id)
+	{
+		
+        $this->load->model('Shiften_model');
+        $returndata = $this->Shiften_model->get_byId($id);
+
+        $this->load->model('Taken_model');
+        $redirectData = $this->Taken_model->get_byId($returndata->taakId);
+
+        $this->Shiften_model->delete($id);
+        
+		// Redirect to keuzemogelijkheidbeheer
+        redirect('admin/dash/takenbeheer/'.$redirectData->keuzemogelijkheidId);
+	}
 
     public function vrijwilligerInShiftToevoegen($shiftId, $persoonId)
     {
