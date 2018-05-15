@@ -71,14 +71,14 @@ if(count($taken) > 0) {
             $('#modaltekst').text('Weet u zeker dat u deze shift wil verwijderen?')
 
             shiftId=$(this).val();
-            $('#verwijderenKeuze').attr("href", "http://projectab16.ddns.net/index.php/shiften/delete/"+keuzeoptieId);
+            $('#verwijderenShift').attr("href", "http://projectab16.ddns.net/index.php/shiften/delete/"+shiftId);
         });
         $('.deleteTaak').click(function(){
             $('#modaltitel').text('Taak verwijderen?')
             $('#modaltekst').text('Weet u zeker dat u deze taak wil verwijderen?')
             
             taakId=$(this).val();
-            $('#verwijderenKeuze').attr("href", "http://projectab16.ddns.net/index.php/taken/delete/"+keuzemogelijkheidId);
+            $('#verwijderenShift').attr("href", "http://projectab16.ddns.net/index.php/taken/delete/"+taakId);
         });
 
     });
