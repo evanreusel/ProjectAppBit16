@@ -87,7 +87,7 @@
                         {
                             if (!$taak->verbergen)
                             {?>
-                                <div class="taak">
+
                                 <h5><input type="checkbox"> Vrijwilligers <?php echo $taak->functie ?></h5>
                                 <?php
                                 foreach ($taak->shiften as $shift)
@@ -97,9 +97,8 @@
                                          <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
                                     <?php
                                     }
-                                }?>
-                                </div>
-                            <?php}
+                                }
+                            }
                         }
                         ?>
 
