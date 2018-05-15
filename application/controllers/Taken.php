@@ -34,7 +34,7 @@ class Taken extends CI_Controller{
         $taak->id = $this->input->post('id');
         $taak->functie = $this->input->post('functie');
         $taak->beschrijving = $this->input->post('beschrijving');
-        $taak->keuzemogelijkheidId = $this->input->post('KeuzemogelijkheidId');
+        $taak->keuzemogelijkheidId = $this->input->post('keuzemogelijkheidId');
 
 		// Model inladen
         $this->load->model('Taken_model');
