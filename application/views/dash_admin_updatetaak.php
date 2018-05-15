@@ -15,12 +15,10 @@
 
     if($token != true){
         $idData=form_hidden("id", $taak->id).form_hidden("keuzemogelijkheidId", $taak->keuzemogelijkheidId);
-        $redirect=$taak->keuzemogelijkheidId;
         $arrayparameters['content'] = "Aanpassen";
     }
     else{
         $idData=form_hidden("keuzemogelijkheidId", $keuzemogelijkheid->id);
-        $redirect=$keuzemogelijkheid->id;
         $data = "";
         $taak = new stdClass();
         $taak->id=$data;
@@ -45,6 +43,6 @@
     <?php
         echo $idData;    
         echo form_button($arrayparameters);
-        echo anchor('admin/dash/taakbeheer/'.$redirect,'Annuleer','class="btn btn-primary"');
+        echo anchor('admin/dash/takenbeheer/'.$keuzemogelijkheid->id,'Annuleer','class="btn btn-primary"');
         echo form_close();
     ?>

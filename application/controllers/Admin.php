@@ -135,7 +135,7 @@ class Admin extends CI_Controller {
 						$this->load->model('taken_model');
 						$data['taak'] = $this->taken_model->get_byId($extras);
 						$this->load->model('keuzemogelijkheid_model');
-						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($data['keuzeoptie']->keuzemogelijkheidId);
+						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId($data['taak']->keuzemogelijkheidId);
 						$data['token']=false;
 
 					}
