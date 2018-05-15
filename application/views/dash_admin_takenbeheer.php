@@ -19,7 +19,7 @@ if(count($taken) > 0) {
         if(count($taken) > 0) {
             foreach ($taken as $taak) {
             echo '<div id="'. $taak->id .'" class="tab-pane fade">';
-            echo '<h2>Beschrijving van de Taak:</h2>';
+            echo '<br><h3>Beschrijving van de Taak:</h3>';
             echo '<p>'. $taak->beschrijving .'</p>';
             echo '<table class="table"><tr class="colored">';       
             echo "<th>Shift</th>";               
