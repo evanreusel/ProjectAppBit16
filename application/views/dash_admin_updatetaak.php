@@ -28,8 +28,6 @@
         $arrayparameters['content'] = "Toevoegen";
 
     };
-    echo $taak->beschrijving;
-
 ?>
     
     <?php echo form_open('taken/update', array('name' => 'taakFrom', 'id' => 'taakForm', 'role' => 'form'));  ?>
@@ -39,7 +37,7 @@
     </br>
     <label for="beschrijving">Beschrijving van de taak:</label>
     </br>
-    <textarea name="beschrijving" form="taakForm"><?php $taak->beschrijving ?></textarea>
+    <textarea name="beschrijving" form="taakForm"><?php echo $taak->beschrijving; ?></textarea>
     </br>
     <?php
         echo $idData;    
