@@ -41,12 +41,13 @@
         'size'  =>'16',
         'type'  =>'text',
         'readonly',
-        'class' =>'form_datetime'
+        'class' =>'form_datetime form-control'
     );
 
     $nummerAttributen = array(
         'size'  =>'10',
         'type'  =>'number'
+        'class' =>'form-control'
     );
 ?>
     
@@ -54,31 +55,31 @@
 
     <?php echo form_open('keuzeoptie/update', array('name' => 'keuzeoptieFrom', 'id' => 'keuzeoptieForm', 'role' => 'form'));  ?>
 
-    <div class="md-form">
+    <div class="form-group row">
         <label for="keuzeoptie">Naam keuzeoptie:</label>
-        <?php echo form_input(array('id'=>'keuzeoptie', 'name'=>'naam'),$keuzeoptie->naam); ?>
+        <?php echo form_input(array('id'=>'keuzeoptie', 'name'=>'naam', 'class'=>'form-control'),$keuzeoptie->naam); ?>
 
     </div>
     <div class="form-group row">
         <label for="plaats" class="col-form-label">Plaats:</label>
-        <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId, array('class'=>'dropdown-item')) ?>
+        <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId, array('class'=>'form-control')) ?>
     </div>
-    <div class="md-form">
+    <div class="form-group row">
         <label for="minimum">Minimum aantal personen</label>
         <?php echo form_input(array('id'=>'minimum', 'name'=>'min'),$keuzeoptie->min,$nummerAttributen); ?>
 
     </div>
-    <div class="md-form">
+    <div class="form-group row">
         <label for="maximum">Maximum aantal personen</label>
         <?php echo form_input(array('id'=>'maximum', 'name'=>'max'),$keuzeoptie->max,$nummerAttributen); ?>
 
     </div>
-    <div class="md-form">
+    <div class="form-group row">
         <label for="begin">Begin datum en tijdstip:</label>
         <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
 
     </div>
-    <div class="md-form">
+    <div class="form-group row">
         <label for="einde">Eind datum en tijdstip:</label>
         <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
 
