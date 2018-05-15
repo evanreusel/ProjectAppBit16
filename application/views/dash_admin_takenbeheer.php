@@ -12,7 +12,7 @@ if(count($taken) > 0) {
     }
 }?>
     <li><?php echo anchor("admin/dash/updatetaak/".$keuzemogelijkheid->id.'i',"+",'class="btn btn-primary" title = "Druk hier om een nieuwe taak aan te maken"');?></li>
-    <?php echo anchor("admin/dash/keuzemogelijkheidbeheer/".$keuzemogelijkheid->jaargangId,"Ga terug",'class="btn btn-primary right" title = "Druk hier om terug te gaan naar het keuzemogelijkheid overzicht."' )?>
+    <?php echo anchor("admin/dash/keuzemogelijkheidbeheer/".$keuzemogelijkheid->jaargangId,"Ga terug",'class="btn btn-secondary right" title = "Druk hier om terug te gaan naar het keuzemogelijkheid overzicht."' )?>
 </ul>
 
 <div class="tab-content">
