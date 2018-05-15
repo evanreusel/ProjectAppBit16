@@ -16,10 +16,12 @@ if(count($taken) > 0) {
 
 <div class="tab-content">
     <?php
-    print_r($taken);
         if(count($taken) > 0) {
             foreach ($taken as $taak) {
-            echo '<div id="'. $taak->id .'" class="tab-pane fade"><table class="table"><tr class="colored">';       
+            echo '<div id="'. $taak->id .'" class="tab-pane fade">';
+            echo '<h2>Beschrijving van de Taak:</h2>';
+            echo '<p>'. $taak->beschrijving .'</p>';
+            echo '<table class="table"><tr class="colored">';       
             echo "<th>Shift</th>";               
             echo "<td></td><td></td></tr>";   
 
@@ -34,8 +36,8 @@ if(count($taken) > 0) {
 
             echo "</table>";
             echo anchor('admin/dash/updatekeuzeoptie/'.$taak->id.'i',"Shift toevoegen",'class="btn btn-primary" title="Druk hier om een shift toe te voegen"');
-            echo anchor('admin/dash/updatekeuzemogelijkheid/'.$taak->id,'<button class="btn btn-round btn-warning" title="Druk hier om de Taak aan te passen"><i class="fa fa-cog"></i>' .$taak->functie. ' aanpassen</button>').'</td>';
-            echo anchor('Keuzemogelijkheid/delete/' . $taak->id, '<button type="button" class="btn btn-danger btn-round" title="Druk hier om de Taak te verwijderen"><i class="fa fa-trash"></i>'. $taak->functie . 'Verwijderen</button></div>');
+            echo anchor('admin/dash/updatekeuzemogelijkheid/'.$taak->id,'<button class="btn btn-round btn-warning" title="Druk hier om de Taak aan te passen"><i class="fa fa-cog"></i> ' .$taak->functie. ' aanpassen</button>').'</td>';
+            echo anchor('Keuzemogelijkheid/delete/' . $taak->id, '<button type="button" class="btn btn-danger btn-round" title="Druk hier om de Taak te verwijderen"><i class="fa fa-trash"></i> '. $taak->functie . ' verwijderen</button></div>');
 
         }
     }
