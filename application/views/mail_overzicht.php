@@ -72,7 +72,7 @@
             <div class="modal-body">
                 <form id="reminderForm">
 
-
+                <input type="hidden" value="0" name="id" id="modalReminderId">
                 <label for="modalReminderDatum">Datum:</label>
                 <input type="date" id="modalReminderDatum">
                 <h5>Ontvangers</h5>
@@ -130,12 +130,32 @@
                     }
 
                 }
+                ?>
+                    <div class="card">
+                        <div class="card-header">
+                            Niet ingeschreven deelnemers
+
+                    <div class="select-persoongroep">
+
+
+                    <?php
                 foreach ($nietingeschrevenDeelnemers as $persoon)
                 {?>
                     <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>"> <?php echo $persoon->naam ?></label>
 
                     <?php
                 }
+                ?>
+                    </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Niet ingeschreven vrijwilligers
+
+                            <div class="select-persoongroep">
+                <?php
                 foreach ($nietingeschrevenVrijwilligers as $persoon)
                 {?>
                     <label><input type="checkbox" name="personen[]"  value="<?php echo $persoon->id?>"> <?php echo $persoon->naam ?></label>
@@ -144,6 +164,9 @@
                 }
 
                 ?>
+                            </div>
+                        </div>
+                    </div>
                 <label>Mailsjabloon</label>
                 <select id="modalMailsjabloon">
                     <?php foreach ($mailsjablonen as $sjabloon) {
@@ -205,12 +228,7 @@
                 // sjabloon bewerken
                 $("#sjabloon-naam").val($(this).data('sjabloon-naam'));
                 $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
-                $.ajax({
-                    url: "http://projectab16.ddns.net/index.php/mail/getPersonenInHerinnering/" + sja,
-                    context: document.body
-                }).done(function() {
-                    $( this ).addClass( "done" );
-                });
+
             }
         });
         $( ".open-herinneringvenster" ).click(function() {
@@ -219,6 +237,7 @@
             $("#herinnering-id").val(herinneringId);
             if(herinneringId != 0)
             {
+                $("#modalReminderId").val($(this).data('reminder-id'));
                 // herinnering velden bewerken
                 $("#modalReminderDatum").val($(this).data('reminder-datum'));
                 $("#modalMailsjabloon").val($(this).data('sjabloon-id'));
