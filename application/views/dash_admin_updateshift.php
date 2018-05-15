@@ -31,7 +31,7 @@
     <?php echo form_open('shiften/update', array('name' => 'shiftFrom', 'id' => 'shiftForm', 'role' => 'form'));  ?>
     </br>
     <label for="naam">shiftnaam:</label>
-    <?php echo form_input(array('id'=>'naam', 'name'=>'naam'),$shift->functie); ?>
+    <?php echo form_input(array('id'=>'naam', 'name'=>'naam'),$shift->naam); ?>
     </br>
     <?php
         echo $idData;    
