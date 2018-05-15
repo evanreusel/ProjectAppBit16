@@ -176,9 +176,14 @@ class Mail extends CI_Controller {
             }
 
         }
-        return $keuzemogelijkheden;
+        //return $keuzemogelijkheden;
 
         //get niet ingeschreven personen
+        $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
+        echo PHP_EOL;
+        echo PHP_EOL;
+        $nietingeschrevenDeelnemers = $this->Persoon_model->get_NietIngeschrevenDeelnemers();
+        $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
 
 
     }
