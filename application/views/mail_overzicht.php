@@ -204,7 +204,12 @@
                 $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
             }
         });
+        $(".select-persoongroep").change(function() {
 
+            if(this.checked) {
+                ('.persoongroep :check').next().prop("checked", this.checked);
+            }
+        });
     });
 
 </script>
