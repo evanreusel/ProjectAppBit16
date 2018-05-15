@@ -86,7 +86,7 @@
                     if (!$keuzemogelijkheid->verbergen) { ?>
                         <div class='card'>
                             <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?>: <span
-                                        class="pull-right"><input type="checkbox" class="form-control"
+                                        class="pull-right"><input type="checkbox"
                                                                   data-select="activiteit"></span></div>
                             <div class='card-body' class="activiteit">
                                 <?php
@@ -95,7 +95,6 @@
                                     if (!$taak->verbergen) {
                                         ?>
                                         <h5>Vrijwilligers <?php echo $taak->functie ?> <input type="checkbox"
-                                                                                              class="form-control"
                                                                                               data-select="taak"></h5>
                                         <div class="taak">
                                             <?php
@@ -133,7 +132,7 @@
                                 }
                                 ?>
                             </div>
-                        </div>
+
                         <?php
                     }
 
