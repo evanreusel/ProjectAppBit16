@@ -1,7 +1,7 @@
 <!-- 
     TIM SWERTS
     LAST UPDATED: 18 03 30
-    DASH ADMIN TAKENBeHEER
+    DASH ADMIN TAKENBEHEER
 -->
 
 <ul class="nav nav-tabs buttonmenu">

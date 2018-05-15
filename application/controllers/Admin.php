@@ -143,6 +143,25 @@ class Admin extends CI_Controller {
 					$view = 'index';
 				}
 			break;
+			case "updateshift":
+				if($extras != null) {
+					if(strpos($extras,"i")!==false){
+						$this->load->model('Taken_model');
+						$data['taak'] = $this->Taken_model->get_byId(str_replace("i", "", $extras));
+						$data['token']=true;
+					}
+					if(strpos($extras,"u")!==false){
+						$this->load->model('Shiften_model');
+						$data['shift'] = $this->Shiften_model->get_byId($extras);
+						$this->load->model('Taken_model');
+						$data['taak'] = $this->Taken_model->get_byId($data['shift']->taakId);
+						$data['token']=false;
+
+					}
+				}else{															// Can't load page without extra id => load indexpage
+					$view = 'index';
+				}
+			break;
 			case "personeelsinschrijvingen":
 				if($extras != null) {											
 					$this->load->model('jaargang_model');
