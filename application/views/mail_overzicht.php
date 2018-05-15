@@ -87,17 +87,19 @@
                         {
                             if (!$taak->verbergen)
                             {?>
-                                <h5>Vrijwilligers <?php echo $taak->functie ?></h5>
+                                <div class="taak">
+                                <h5><input type="checkbox"> Vrijwilligers <?php echo $taak->functie ?></h5>
                                 <?php
                                 foreach ($taak->shiften as $shift)
                                 {
-                                    foreach ($shift->vrijwilligers as $vrijwilliger)
+                                    foreach ($shift->vrijwilligers as $persoon)
                                     {?>
-                                         <label><input type="checkbox"> <?php echo $vrijwilliger->naam ?></label>
+                                         <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
                                     <?php
                                     }
-                                }
-                            }
+                                }?>
+                                </div>
+                            <?php}
                         }
                         ?>
 
@@ -105,9 +107,9 @@
                         foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie)
                         {
                             if (!$keuzeoptie->verbergen)
-                            {
-                                echo "<h5>Deelnemers " . $keuzeoptie->naam . "</h5>";
-                                foreach ($keuzeoptie->personen as $persoon)
+                            {?>
+                                <h5>Deelnemers<?php echo $keuzeoptie->naam ?></h5>
+                                <?php foreach ($keuzeoptie->personen as $persoon)
                                 {?>
                                     <label><input type="checkbox"> <?php echo $persoon->naam ?></label>
                                 <?php
