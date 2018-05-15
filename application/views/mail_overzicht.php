@@ -208,7 +208,7 @@
             console.log("SELECTEER PERSONENGROEP");
             select = $(this).data('select');
             console.log(select);
-            $(select + ":checkbox").prop("checked", this.checked);
+            $('#' + select + ":checkbox").prop("checked", this.checked);
 
         });
     });
