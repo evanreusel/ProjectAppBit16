@@ -28,14 +28,14 @@ if(count($taken) > 0) {
             foreach ($taak->shiften as $shift) {
                 echo "<tr>";
                 echo '<td>' . $shift->naam . '</td>';
-                echo '<td>'.anchor('admin/dash/updatekeuzeoptie/'.$shift->id.'u','<button class="btn btn-round btn-warning" title="Druk hier om deze keuzeoptie aan te passen"><i class="fa fa-cog"></i> Aanpassen</button>').'</td>';
-                echo '<td>'.anchor('keuzeoptie/delete/'.$shift->id,'<button class="btn btn-round btn-danger" title="Druk hier om deze keuzeoptie te verwijderen"><i class="fa fa-trash"></i> Verwijderen</button>').'</td>';
+                echo '<td>'.anchor('admin/dash/updateshift/'.$shift->id.'u','<button class="btn btn-round btn-warning" title="Druk hier om deze keuzeoptie aan te passen"><i class="fa fa-cog"></i> Aanpassen</button>').'</td>';
+                echo '<td>'.anchor('shiften/delete/'.$shift->id,'<button class="btn btn-round btn-danger" title="Druk hier om deze keuzeoptie te verwijderen"><i class="fa fa-trash"></i> Verwijderen</button>').'</td>';
 
                    echo "</tr>"; 
             }
 
             echo "</table>";
-            echo anchor('admin/dash/update/'.$taak->id.'i',"Shift toevoegen",'class="btn btn-primary" title="Druk hier om een shift toe te voegen"');
+            echo anchor('admin/dash/updateshift/'.$taak->id.'i',"Shift toevoegen",'class="btn btn-primary" title="Druk hier om een shift toe te voegen"');
             echo anchor('admin/dash/updatetaak/'.$taak->id.'u','<button class="btn btn-round btn-warning" title="Druk hier om de Taak aan te passen"><i class="fa fa-cog"></i> ' .$taak->functie. ' aanpassen</button>').'</td>';
             echo anchor('taken/delete/' . $taak->id, '<button type="button" class="btn btn-danger btn-round" title="Druk hier om de Taak te verwijderen"><i class="fa fa-trash"></i> '. $taak->functie . ' verwijderen</button></div>');
 
