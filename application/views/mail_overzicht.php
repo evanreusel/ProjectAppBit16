@@ -4,18 +4,18 @@
             Mailherinneringen
         </div>
         <div class="card-body">
-
-            <?php foreach ($reminders as $reminder) {
-                ?>
             <div class="card bg-success">
                 <div class="card-header" id="reminderHoofding<?php echo $reminder->id ?>">
-                        <a href="#modalReminder" class="open-herinneringvenster"
-                           data-toggle="modal" data-target="#modalReminder"
+                    <a href="#modalReminder" class="open-herinneringvenster"
+                       data-toggle="modal" data-target="#modalReminder"
 
-                           data-reminder-id="0"</a>
+                       data-reminder-id="0"></a>
 
                 </div>
             </div>
+            <?php foreach ($reminders as $reminder) {
+                ?>
+
                 <div class="card">
                     <div class="card-header" id="reminderHoofding<?php echo $reminder->id ?>">
                         <h5 class="mb-0">
