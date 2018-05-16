@@ -1,10 +1,8 @@
-<!-- 
-    TIM SWERTS
-	LAST UPDATED: 18 03 30
-	KEUZEOPTIE MODEL
--->
-
 <?php
+/// TIM SWERTS
+/// LAST UPDATED: 18 03 30
+/// KEUZEOPTIE MODEL
+///
 /// Model voor de database manipultie van de tabel Keuzeoptie.
 class Keuzeoptie_Model extends CI_Model{
     
