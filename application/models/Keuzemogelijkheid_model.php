@@ -40,7 +40,7 @@ class Keuzemogelijkheid_Model extends CI_Model {
  	*/
     function getAllByNaamWithKeuzeOpties($jaargangid)
     {
-        $keuzemogelijkheden = $this->getAllByNaam();
+        $keuzemogelijkheden = $this->getAllByNaam($jaargangid);
         $this->load->model('Keuzeoptie_model');
 
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
