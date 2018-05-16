@@ -1,0 +1,147 @@
+\hypertarget{class_c_i___d_b___cache}{}\section{C\+I\+\_\+\+D\+B\+\_\+\+Cache Class Reference}
+\label{class_c_i___d_b___cache}\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___d_b___cache_aaf2ef772755ec6f361d44e16cc9ffd69}{\+\_\+\+\_\+construct}} (\&\$db)
+\item 
+\mbox{\hyperlink{class_c_i___d_b___cache_adb73b6f91025d00c565d228c4f611f41}{check\+\_\+path}} (\$path=\textquotesingle{}\textquotesingle{})
+\item 
+\mbox{\hyperlink{class_c_i___d_b___cache_a6e421e93555105d187d7e6ba4c84521b}{read}} (\$sql)
+\item 
+\mbox{\hyperlink{class_c_i___d_b___cache_a483ea50183465928c931aa17b4f4b5b8}{write}} (\$sql, \$object)
+\item 
+\mbox{\hyperlink{class_c_i___d_b___cache_ab97f36d9c24db4b2e91c9e02342cc994}{delete}} (\$segment\+\_\+one=\textquotesingle{}\textquotesingle{}, \$segment\+\_\+two=\textquotesingle{}\textquotesingle{})
+\item 
+\mbox{\hyperlink{class_c_i___d_b___cache_ac83c8ea1573fe325dfd87a282627fe6d}{delete\+\_\+all}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___d_b___cache_ae0314d046ddf7fcfaec03222977427d3}{\$\+CI}}
+\item 
+\mbox{\hyperlink{class_c_i___d_b___cache_a1fa3127fc82f96b1436d871ef02be319}{\$db}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_i___d_b___cache_aaf2ef772755ec6f361d44e16cc9ffd69}\label{class_c_i___d_b___cache_aaf2ef772755ec6f361d44e16cc9ffd69}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\&}]{\$db }\end{DoxyParamCaption})}
+
+Constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \&\$db} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_i___d_b___cache_adb73b6f91025d00c565d228c4f611f41}\label{class_c_i___d_b___cache_adb73b6f91025d00c565d228c4f611f41}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}!check\+\_\+path@{check\+\_\+path}}
+\index{check\+\_\+path@{check\+\_\+path}!C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsubsection{\texorpdfstring{check\+\_\+path()}{check\_path()}}
+{\footnotesize\ttfamily check\+\_\+path (\begin{DoxyParamCaption}\item[{}]{\$path = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Set Cache Directory Path
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$path} & Path to the cache directory \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b___cache_ab97f36d9c24db4b2e91c9e02342cc994}\label{class_c_i___d_b___cache_ab97f36d9c24db4b2e91c9e02342cc994}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}!delete@{delete}}
+\index{delete@{delete}!C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$segment\+\_\+one = {\ttfamily \textquotesingle{}\textquotesingle{}},  }\item[{}]{\$segment\+\_\+two = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Delete cache files within a particular directory
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$segment\+\_\+one} & \\
+\hline
+string & {\em \$segment\+\_\+two} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b___cache_ac83c8ea1573fe325dfd87a282627fe6d}\label{class_c_i___d_b___cache_ac83c8ea1573fe325dfd87a282627fe6d}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}!delete\+\_\+all@{delete\+\_\+all}}
+\index{delete\+\_\+all@{delete\+\_\+all}!C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsubsection{\texorpdfstring{delete\+\_\+all()}{delete\_all()}}
+{\footnotesize\ttfamily delete\+\_\+all (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Delete all existing cache files
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b___cache_a6e421e93555105d187d7e6ba4c84521b}\label{class_c_i___d_b___cache_a6e421e93555105d187d7e6ba4c84521b}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}!read@{read}}
+\index{read@{read}!C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily read (\begin{DoxyParamCaption}\item[{}]{\$sql }\end{DoxyParamCaption})}
+
+Retrieve a cached query
+
+The U\+RI being requested will become the name of the cache sub-\/folder. An M\+D5 hash of the S\+QL statement will become the cache file name.
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$sql} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b___cache_a483ea50183465928c931aa17b4f4b5b8}\label{class_c_i___d_b___cache_a483ea50183465928c931aa17b4f4b5b8}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}!write@{write}}
+\index{write@{write}!C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily write (\begin{DoxyParamCaption}\item[{}]{\$sql,  }\item[{}]{\$object }\end{DoxyParamCaption})}
+
+Write a query to a cache file
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$sql} & \\
+\hline
+object & {\em \$object} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_i___d_b___cache_ae0314d046ddf7fcfaec03222977427d3}\label{class_c_i___d_b___cache_ae0314d046ddf7fcfaec03222977427d3}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}!\$\+CI@{\$\+CI}}
+\index{\$\+CI@{\$\+CI}!C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsubsection{\texorpdfstring{\$\+CI}{$CI}}
+{\footnotesize\ttfamily \$CI}
+
+\mbox{\Hypertarget{class_c_i___d_b___cache_a1fa3127fc82f96b1436d871ef02be319}\label{class_c_i___d_b___cache_a1fa3127fc82f96b1436d871ef02be319}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}!\$db@{\$db}}
+\index{\$db@{\$db}!C\+I\+\_\+\+D\+B\+\_\+\+Cache@{C\+I\+\_\+\+D\+B\+\_\+\+Cache}}
+\subsubsection{\texorpdfstring{\$db}{$db}}
+{\footnotesize\ttfamily \$db}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+system/database/\mbox{\hyperlink{_d_b__cache_8php}{D\+B\+\_\+cache.\+php}}\end{DoxyCompactItemize}
