@@ -90,7 +90,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="reminderForm">
+                <form action="<?= site_url(); ?>/mail/maakHerinnering/" method="post">
                     <input type="hidden" value="0" name="id" id="modalReminderId">
                     <label for="modalReminderDatum">Datum:</label>
                     <input type="date" id="modalReminderDatum">
@@ -261,6 +261,7 @@
         });
         $(".open-herinneringvenster").click(function ()
         {
+            $("#modalReminder :checkbox").prop('checked', false);
             console.log("HERINNERING");
 
             var herinneringId = $(this).data('reminder-id');
@@ -270,8 +271,8 @@
                 // herinnering velden bewerken
                 $("#modalReminderDatum").val($(this).data('reminder-datum'));
                 $("#modalMailsjabloon").val($(this).data('sjabloon-id'));
-                // vul checkboxes in, maak andere leeg
-                $(".select-persoongroep").prop('checked', false);
+                // vul checkboxes in
+
                 $.ajax({
                     url: '<?= site_url(); ?>/mail/getPersonenInHerinnering/' + herinneringId,
                     type: "GET",
@@ -287,6 +288,10 @@
                     }
                 });
             }
+            else
+                {
+
+                }
         });
         $(".select-persoongroep").change(function () {
             console.log("SELECTEER PERSONENGROEP");
