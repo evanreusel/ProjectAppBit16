@@ -1,11 +1,7 @@
-<!-- 
-    TIM SWERTS
-	LAST UPDATED: 18 03 30
-	KEUZEMOGELIJKHEID MODEL
--->
-
 <?php
-
+///TIM SWERTS
+///LAST UPDATED: 18 03 30
+///KEUZEMOGELIJKHEID MODEL
 /// klasse voor gegevens van de activiteiten te beheren
 class Keuzemogelijkheid_Model extends CI_Model {
     
@@ -14,6 +10,10 @@ class Keuzemogelijkheid_Model extends CI_Model {
     }
 
     /// Functie voor het ophalen van de specifieke keuzemogelijkheid op basis van een id.
+    /**
+	 * @param string $id
+	 *  Id van de Keuzeoptie die verwijderd moet worden
+ 	*/
     function get_byId($id)
     {
         $this->db->where('id', $id);
@@ -62,17 +62,29 @@ class Keuzemogelijkheid_Model extends CI_Model {
     }
     // =================================================================================================== /GREIF MATTHIAS
     /// Functie voor de aanpassen van een keuzemogelijkheid die mee wordt gegeven.
+    /**
+	 * @param stdClass $keuzemogelijkheid
+	 *  Id van de Keuzemogelijkheid die verwijderd moet worden
+ 	*/
     function update($keuzemogelijkheid)
     {
         $this->db->where('id', $keuzemogelijkheid->id);
         $this->db->update('KeuzeMogelijkheid', $keuzemogelijkheid);
     }
     /// Functie voor de toevoegen van een keuzemogelijkheid die mee wordt gegeven.
+    /**
+	 * @param stdClass $keuzemogelijkheid
+	 *  Id van de Keuzemogelijkheid die verwijderd moet worden
+ 	*/
     function add($keuzemogelijkheid){
         $this->db->insert('KeuzeMogelijkheid', $keuzemogelijkheid);
         return $this->db->insert_id();
     }
     /// Functie voor het verwijderen van de keuzemogelijkheid waarvan het id wordt meegegeven.
+    /**
+	 * @param string $id
+	 *  Id van de Keuzemogelijheid die verwijderd moet worden
+ 	*/
     function delete($id){
         $this->db->where('id', $id);
         $this->db->delete('KeuzeMogelijkheid');
