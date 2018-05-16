@@ -18,6 +18,8 @@ class Jaargang_model extends CI_Model {
 	 * Vraag informatie over jaargang
 	 * @param int $id
 	 *  Id van jaargang
+     * @retval Jaargang
+     *  Jaargang
  	*/
     function get_byId($id)
     {
@@ -28,6 +30,8 @@ class Jaargang_model extends CI_Model {
     
     /**
 	 * Vraag alle jaargangen op
+     * @retval List<Jaargang>
+     *  Jaargang lijst
  	*/
     function getAll()
     {
@@ -37,6 +41,8 @@ class Jaargang_model extends CI_Model {
 
     /**
 	 * Vraag alle jaargangen op gesorteerd op naam
+     * @retval List<Jaargang>
+     *  Jaargang lijst
  	*/
     function getAllByJaargang() {
         $this->db->order_by('naam', 'DESC');
@@ -46,6 +52,8 @@ class Jaargang_model extends CI_Model {
 
     /**
 	 * Vraag alle jaargangen op gesorteerd op begintijdstip
+     * @retval List<Jaargang>
+     *  Jaargang lijst
  	*/
     function getAllbyBeginTijdstip(){
         $this->db->order_by('beginTijdstip', 'DESC');
@@ -61,11 +69,12 @@ class Jaargang_model extends CI_Model {
     function end($jaargang){
         $this->db->where('id', $jaargang->id);
         $this->db->update('Jaargang', $jaargang);
-
     }   
 
     /**
 	 * Vraag actieve jaargang op
+     * @retval Jaargang
+     *  Jaargang
  	*/
     function getActief(){
         $this->db->where('actief', 1);
@@ -74,7 +83,7 @@ class Jaargang_model extends CI_Model {
     }
 
     /**
-	 * Verwijder jaargang
+	 * Update jaargang
      * @param Jaargang $jaargang
 	 *  Jaargang Object dat aangepast word
  	*/
@@ -87,6 +96,8 @@ class Jaargang_model extends CI_Model {
 	 * Voeg jaargang toe
      * @param Jaargang $jaargang
 	 *  Jaargang Object dat toegevoegd word
+     * @retval int
+     *  Id van jaargang dat toegevoegd word
  	*/
     function add($jaargang){
         $this->db->insert('Jaargang', $jaargang);
@@ -97,6 +108,8 @@ class Jaargang_model extends CI_Model {
 	 * Vraag jaargang op met keuzemogelijkheden
      * @param int $id
 	 *  Id van jaargang
+     * @retval List<Jaargang, Keuzemogelijkheid>
+     *  Lijst met Objects die Jaargang met Keuzemogelijkheid bevatten
  	*/
     function getWithKeuzemogelijkheidWithOpties_byId($id){
         $this->load->model('keuzemogelijkheid_model');
@@ -107,7 +120,6 @@ class Jaargang_model extends CI_Model {
         ];
         
         return $output;
-
     }
 }
 
