@@ -15,9 +15,9 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
 ?>
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     
-    <h2>Keuzemogelijkheid toevoegen voor jaar <?php echo $jaargang->naam; ?>:</h2>
+    <!-- =================================================================================================== GREIF MATTHIAS -->
+    <h2>Keuzemogelijkheid toevoegen voor "<?php echo $jaargang->naam; ?>":</h2>
 
-<!-- =================================================================================================== GREIF MATTHIAS -->
     <script type="text/javascript">
         $(document).ready(function(){
             $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
