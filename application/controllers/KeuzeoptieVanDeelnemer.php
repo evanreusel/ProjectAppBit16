@@ -19,7 +19,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 
     public function update()
 	{
-		// klasse Keuzeoptie aanmaken en initialiseren
+		/// klasse Keuzeoptie aanmaken en initialiseren
         $keuzeoptie = new stdClass();
 
         $keuzeoptie->id = $this->input->post('id');
@@ -31,10 +31,10 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         $keuzeoptie->eindTijdstip = $this->input->post('eindTijdstip');
         $keuzeoptie->beginTijdstip = $this->input->post('beginTijdstip');
 
-		// Model inladen
+		/// Model inladen
         $this->load->model('Keuzeoptie_model');
 		
-		// Keuzeoptie toevoegen of aanpassen
+		/// Keuzeoptie toevoegen of aanpassen
         if($keuzeoptie->id == 0){
        		$this->Keuzeoptie_model->add($keuzeoptie);
         } else {
@@ -43,12 +43,12 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 
         $this->load->model('keuzemogelijkheid_model');
         $keuzemogelijkheid=$this->keuzemogelijkheid_model->get_byId($keuzeoptie->keuzemogelijkheidId);
-		// Redirect naar keuzemogelijkheid pagina
+		/// Redirect naar keuzemogelijkheid pagina
 		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
     }
 
     // ==================================================================================== Proost Daan
-    // De keuzeoptie van de deelnemer wordt in de database opgeslagen
+    /// De keuzeoptie van de deelnemer wordt in de database opgeslagen
     public function deelnemerAanKeuzeoptieToevoegen($keuzeoptieId, $persoonId)
     {
         $deelnemerInKeuzeoptie = new stdClass();
@@ -61,7 +61,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 
         $this->load->view('ajax_vrijwilligerinshift', $data);
     }
-    // De keuzeoptie van de deelnemer wordt weer uit de database verwijderd
+    /// De keuzeoptie van de deelnemer wordt weer uit de database verwijderd
     public function deelnemerVanKeuzeoptieVerwijderen($keuzeoptieId, $persoonId)
 	{
         $this->load->model('KeuzeoptieVanDeelnemer_model');
