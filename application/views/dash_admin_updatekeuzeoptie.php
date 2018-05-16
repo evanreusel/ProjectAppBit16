@@ -97,8 +97,8 @@
             $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
         });
         $("#keuzeoptieForm").submit(function(event) {
-            var min = $('#minimum').text();
-            var max = $('#maximum').text();
+            var min = $('#minimum').val();
+            var max = $('#maximum').val();
             var begin =$('#begin').val(); 
             var einde =$('#einde').val();
             var naam = $('#keuzeoptie').val();
@@ -111,7 +111,7 @@
                 $('#keuzeoptie').addClass('is-invalid');
                 event.preventDefault();
             }
-            if ((int)min > (int)max) {
+            if (min > max) {
                 alert("Het minimum aantal deelnemers is groter dan het maximum.");
                 $('#minimum').addClass('is-invalid');
                 event.preventDefault();
