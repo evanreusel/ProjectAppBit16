@@ -111,10 +111,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af2af463bdcd6443ce1a30dade7d100c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88c8b0a6b02a7da7c5d1d573a66c11c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzemogelijkheid___model.html#a88c8b0a6b02a7da7c5d1d573a66c11c7">get_byId</a> ($id)</td></tr>
 <tr class="separator:a88c8b0a6b02a7da7c5d1d573a66c11c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dd8e66ae398c5e3ab1c39b62d24cf21"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzemogelijkheid___model.html#a0dd8e66ae398c5e3ab1c39b62d24cf21">getAllByNaam</a> ()</td></tr>
-<tr class="separator:a0dd8e66ae398c5e3ab1c39b62d24cf21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa91aa36f90acdb972b5ba59935d1f499"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzemogelijkheid___model.html#aa91aa36f90acdb972b5ba59935d1f499">getAllByNaamWithKeuzeOpties</a> ()</td></tr>
-<tr class="separator:aa91aa36f90acdb972b5ba59935d1f499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bd9ea550274de1237a3692a7b20c6d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzemogelijkheid___model.html#a4bd9ea550274de1237a3692a7b20c6d0">getAllByNaam</a> ($jaargangid)</td></tr>
+<tr class="separator:a4bd9ea550274de1237a3692a7b20c6d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d5fc8e9e11684de17948fb985466c3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzemogelijkheid___model.html#ac8d5fc8e9e11684de17948fb985466c3">getAllByNaamWithKeuzeOpties</a> ($jaargangid)</td></tr>
+<tr class="separator:ac8d5fc8e9e11684de17948fb985466c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a384efcd56387e3852dc75a5f1d4f5b9e"><td class="memItemLeft" align="right" valign="top"><a id="a384efcd56387e3852dc75a5f1d4f5b9e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>getAll_byJaargangId</b> ($id)</td></tr>
 <tr class="separator:a384efcd56387e3852dc75a5f1d4f5b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,8 +222,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0dd8e66ae398c5e3ab1c39b62d24cf21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dd8e66ae398c5e3ab1c39b62d24cf21">&#9670;&nbsp;</a></span>getAllByNaam()</h2>
+<a id="a4bd9ea550274de1237a3692a7b20c6d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bd9ea550274de1237a3692a7b20c6d0">&#9670;&nbsp;</a></span>getAllByNaam()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,17 +231,23 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Keuzemogelijkheid_Model::getAllByNaam </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$jaargangid</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Ophalen van alle keuzemogelijkheden gesorteerd op basis van naam </p>
+<p>Ophalen van alle keuzemogelijkheden gesorteerd op basis van naam </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$jaargang</td><td>het jaargang van de op te halen keuzeopties </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="aa91aa36f90acdb972b5ba59935d1f499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa91aa36f90acdb972b5ba59935d1f499">&#9670;&nbsp;</a></span>getAllByNaamWithKeuzeOpties()</h2>
+<a id="ac8d5fc8e9e11684de17948fb985466c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d5fc8e9e11684de17948fb985466c3">&#9670;&nbsp;</a></span>getAllByNaamWithKeuzeOpties()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,12 +255,18 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Keuzemogelijkheid_Model::getAllByNaamWithKeuzeOpties </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$jaargangid</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Ophalen van alle keuzemogelijkheden samen met de onderliggende keuzeopties. Regel 36 zorgt ervoor dat alle keuzeopties bij de juiste keuzemogelijkheid worden geplaatst </p>
+<p>Ophalen van alle keuzemogelijkheden samen met de onderliggende keuzeopties. Regel 36 zorgt ervoor dat alle keuzeopties bij de juiste keuzemogelijkheid worden geplaatst </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$jaargang</td><td>het jaargang van de op te halen keuzeopties </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -283,7 +295,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>application/models/Keuzemogelijkheid_model.php</li>
+<li>E:/DRIVE/COLLEGE/TM/P0202/KP0201/REPO/application/models/Keuzemogelijkheid_model.php</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
