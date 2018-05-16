@@ -1,0 +1,164 @@
+\hypertarget{class_admin}{}\section{Admin Class Reference}
+\label{class_admin}\index{Admin@{Admin}}
+
+
+Controller voor administratorfunctionaliteiten.  
+
+
+Inheritance diagram for Admin\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_admin}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_admin_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\item 
+\mbox{\hyperlink{class_admin_a149eb92716c1084a935e04a8d95f7347}{index}} ()
+\item 
+\mbox{\hyperlink{class_admin_a35f5125b52883ea70807c42282f60b54}{dash}} (\$view=null, \$extras=null)
+\item 
+\mbox{\hyperlink{class_admin_a3ea73f2d243749d401f168a6dc356528}{login}} (\$username=null, \$pass=null)
+\item 
+\mbox{\hyperlink{class_admin_a2df41f5feb0a50e8b308f7a7b6b25dfb}{checkpass}} (\$id=null, \$pass=null)
+\item 
+\mbox{\hyperlink{class_admin_a082405d89acd6835c3a7c7a08a7adbab}{logout}} ()
+\item 
+\mbox{\hyperlink{class_admin_a842e4774e3b3601a005b995c02f7e883}{update}} ()
+\item 
+\mbox{\hyperlink{class_admin_a2f8258add505482d7f00ea26493a5723}{delete}} (\$id)
+\item 
+\mbox{\hyperlink{class_admin_ab619c12069c76b755a2ceae543d527fe}{excel}} ()
+\begin{DoxyCompactList}\small\item\em lees een C\+SV bestand in met deelnemers/vrijwilligers en voeg deze toe aan de database \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Controller voor administratorfunctionaliteiten. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_admin_a095c5d389db211932136b53f25f39685}\label{class_admin_a095c5d389db211932136b53f25f39685}} 
+\index{Admin@{Admin}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Default Constructor 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_admin_a2df41f5feb0a50e8b308f7a7b6b25dfb}\label{class_admin_a2df41f5feb0a50e8b308f7a7b6b25dfb}} 
+\index{Admin@{Admin}!checkpass@{checkpass}}
+\index{checkpass@{checkpass}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{checkpass()}{checkpass()}}
+{\footnotesize\ttfamily checkpass (\begin{DoxyParamCaption}\item[{}]{\$id = {\ttfamily null},  }\item[{}]{\$pass = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Login A\+PI call, print return waarde op scherm 
+\begin{DoxyParams}[1]{Parameters}
+id & {\em \$id} & Id van gebruiker \\
+\hline
+string & {\em \$pass} & Wachtwoord van gebruiker \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_admin_a35f5125b52883ea70807c42282f60b54}\label{class_admin_a35f5125b52883ea70807c42282f60b54}} 
+\index{Admin@{Admin}!dash@{dash}}
+\index{dash@{dash}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{dash()}{dash()}}
+{\footnotesize\ttfamily dash (\begin{DoxyParamCaption}\item[{}]{\$view = {\ttfamily null},  }\item[{}]{\$extras = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Container voor alle dashbord schermen van administrator 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$view} & Scherm dat opgeroepen word in het dashbord van administrator \\
+\hline
+string & {\em \$extras} & Optionele parameters \\
+\hline
+\end{DoxyParams}
+Doorverwijzen naar de pagina waarop keuzemogelijkheden worden aangepast.
+
+plaatsen inladen voor dropdown list
+
+Doorverwijzen naar de pagina waarop keuzemogelijkheden worden aangemaakt.
+
+jaren inladen voor dropdown list
+
+plaatsen inladen voor dropdown list
+
+Doorverwijzen naar de pagina waarop keuzeopties worden aangemaakt en aangepast.
+
+plaatsen inladen voor dropdown list
+
+kiezen of we een keuzeoptie moeten aanmaken of aanpassen en daarna alle gegevens ophalen.
+
+Aanmaken van een keuzeoptie
+
+Aanpassen van een keuzeoptie
+
+Weergeven van alle keuzemogelijkheden voor een bepaald jaargang.
+
+Als er geen jaargang meegegeven wordt, word je doorverwezen naar de home-\/pagina
+
+Weergeven van alle taken voor een bepaalde keuzemogelijkheid.
+
+Als er geen keuzemogelijkheid meegegeven wordt, word je doorverwezen naar de home-\/pagina
+
+Doorverwijzen naar de pagina waarop taken worden aangemaakt en aangepast.
+
+Doorverwijzen naar de pagina waarop shiften worden aangemaakt en aangepast.
+
+De index pagina zal geladen worden als er te weinig info wordt meegegeven. \mbox{\Hypertarget{class_admin_a2f8258add505482d7f00ea26493a5723}\label{class_admin_a2f8258add505482d7f00ea26493a5723}} 
+\index{Admin@{Admin}!delete@{delete}}
+\index{delete@{delete}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+Verwijderd de administrator 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & Id van gebruiker \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_admin_ab619c12069c76b755a2ceae543d527fe}\label{class_admin_ab619c12069c76b755a2ceae543d527fe}} 
+\index{Admin@{Admin}!excel@{excel}}
+\index{excel@{excel}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{excel()}{excel()}}
+{\footnotesize\ttfamily excel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+lees een C\+SV bestand in met deelnemers/vrijwilligers en voeg deze toe aan de database 
+
+\mbox{\Hypertarget{class_admin_a149eb92716c1084a935e04a8d95f7347}\label{class_admin_a149eb92716c1084a935e04a8d95f7347}} 
+\index{Admin@{Admin}!index@{index}}
+\index{index@{index}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Laad loginscherm voor administrator \mbox{\Hypertarget{class_admin_a3ea73f2d243749d401f168a6dc356528}\label{class_admin_a3ea73f2d243749d401f168a6dc356528}} 
+\index{Admin@{Admin}!login@{login}}
+\index{login@{login}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{login()}{login()}}
+{\footnotesize\ttfamily login (\begin{DoxyParamCaption}\item[{}]{\$username = {\ttfamily null},  }\item[{}]{\$pass = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Login A\+PI call, print return waarde op scherm 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$username} & Gebruikersnaam van gebruiker \\
+\hline
+string & {\em \$pass} & Wachtwoord van gebruiker \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_admin_a082405d89acd6835c3a7c7a08a7adbab}\label{class_admin_a082405d89acd6835c3a7c7a08a7adbab}} 
+\index{Admin@{Admin}!logout@{logout}}
+\index{logout@{logout}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{logout()}{logout()}}
+{\footnotesize\ttfamily logout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Meld administrator af \mbox{\Hypertarget{class_admin_a842e4774e3b3601a005b995c02f7e883}\label{class_admin_a842e4774e3b3601a005b995c02f7e883}} 
+\index{Admin@{Admin}!update@{update}}
+\index{update@{update}!Admin@{Admin}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Update administratorgegevens 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+application/controllers/\mbox{\hyperlink{_admin_8php}{Admin.\+php}}\end{DoxyCompactItemize}

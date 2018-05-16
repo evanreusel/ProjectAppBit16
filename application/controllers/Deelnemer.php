@@ -7,6 +7,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/// Constructor voor deelnemer functionaliteiten
 class Deelnemer extends CI_Controller {
 	/**
 	 * Default Contstructor
