@@ -62,7 +62,7 @@ class Taken_Model extends CI_Model{
     /// Functie voor het aanpassen van een taak die mee wordt geleverd als object.
      /**
 	 * @param stdClass $taak
-	 *  Id van de taak die aangepast moet worden
+	 *  Object van de taak die aangepast moet worden
  	*/
     function update($taak)
     {
@@ -72,7 +72,7 @@ class Taken_Model extends CI_Model{
     /// Functie voor het toevoegen van een taak die mee wordt geleverd als object.
      /**
 	 * @param stdClass $taak
-	 *  Id van de taak die toegevoegd moet worden
+	 *  Object van de taak die toegevoegd moet worden
  	*/
     function add($taak){
         $this->db->insert('Taak', $taak);
