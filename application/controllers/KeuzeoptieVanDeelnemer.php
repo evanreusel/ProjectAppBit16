@@ -10,10 +10,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         parent::__construct();
 
         // =================================================================================================== GREIF MATTHIAS
-        // Autoload
-         // $this->load->library('session');
-
-		// Redirect to home if no session started
+		// Als er geen sessie gestart is, wordt er weer naar home genavigeerd
         if(!$this->session->has_userdata('id')){
             redirect('/admin/index', 'location');
         }
