@@ -45,7 +45,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
     <div class="form-group row">
         <label for="einde" class="col-form-label">Eind datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'begin', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de eind datum in.'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de eind datum in.'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
     </div>
     <div class="form-group row">
         <label for="deadline" class="">Datum en tijdstip voor deadline:</label>
