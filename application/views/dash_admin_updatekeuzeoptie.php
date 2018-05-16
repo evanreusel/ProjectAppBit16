@@ -99,8 +99,8 @@
         $("#keuzeoptieForm").submit(function(event) {
             var min = $('#minimum').val();
             var max = $('#maximum').val();
-            var begin =$('#begin').val()); 
-            var einde =$('#einde').val());
+            var begin =$('#begin').val(); 
+            var einde =$('#einde').val();
             console.log(begin);
             console.log(einde);
 
