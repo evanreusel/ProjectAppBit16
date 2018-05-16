@@ -104,8 +104,8 @@
 
 
             if (min > max) {
-
                 alert("Het minimum aantal deelnemers is groter dan het maximum.");
+                $('.min').addClass('is-invalid');
                 event.preventDefault();
             } else {
                 
