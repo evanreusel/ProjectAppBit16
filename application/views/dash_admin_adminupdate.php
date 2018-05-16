@@ -5,7 +5,7 @@
 -->
 
 <p class="tooling">
-    Bewerk hier de verschillende eigenschappen voor de administrator "<?php echo $data['admin']->username; ?>".
+    Bewerk hier de verschillende eigenschappen voor de administrator "<?php if(isset($data['admin']->username)) {  echo $data['admin']->username; } ?>".
 </p>
 
 <?php

@@ -173,7 +173,7 @@ sort();
 
 <?php
 
-
+if(empty($deelnemers)){
 foreach($deelnemers as $deelnemer){
     foreach($deelnemers[$deelnemer] as $keuzeoptie){
     echo "<tr>";
@@ -185,6 +185,9 @@ foreach($deelnemers as $deelnemer){
     echo "<td class=\"tijditem sortable\"> $tijd </td>";
     echo "</tr>";
     }
+}
+} else {
+    echo '<tr><td colspan="5"><h2> Sorry er zijn geen vrijwilligers voor dit jaargang </h2></td></tr>';
 }
 
 
