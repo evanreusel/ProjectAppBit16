@@ -87,6 +87,10 @@ class Deelnemer extends CI_Controller {
 				foreach ($data['keuzemogelijkheden'] as $keuzemogelijkheid) {
 					$this->load->model('keuzeoptie_model');
 					$keuzemogelijkheid->keuzeopties = $this->keuzeoptie_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+					foreach($keuzemogelijkheid->keuzeopties as $keuzeoptie){
+						$this->load->model('plaats_model');
+						$keuzeoptie->plaat = $this->plaats_model->getPlaatsById($keuzeoptie->plaatsId);
+					}
 
 				}
 				$this->load->model('KeuzeoptieVanDeelnemer_model');
