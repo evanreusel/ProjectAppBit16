@@ -10,20 +10,63 @@ Inheritance diagram for Plaats\+\_\+model\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_plaats__model_a39dfb5046fda394e79bc2b17c0d8bd1f}\label{class_plaats__model_a39dfb5046fda394e79bc2b17c0d8bd1f}} 
-{\bfseries get\+All\+By\+Plaatsnaam} ()
+\mbox{\hyperlink{class_plaats__model_a39dfb5046fda394e79bc2b17c0d8bd1f}{get\+All\+By\+Plaatsnaam}} ()
+\begin{DoxyCompactList}\small\item\em functie om alle plaatsen uit de database op te vragen \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_plaats__model_ad74fde1e8efdd97f181c649e8d869590}{get\+Plaats\+By\+Id}} (\$id)
 \item 
-\mbox{\Hypertarget{class_plaats__model_ad74fde1e8efdd97f181c649e8d869590}\label{class_plaats__model_ad74fde1e8efdd97f181c649e8d869590}} 
-{\bfseries get\+Plaats\+By\+Id} (\$id)
+\mbox{\hyperlink{class_plaats__model_a708c9f18b63ac2655c6121e63b5ffe7f}{insert}} (\$plaats)
 \item 
-\mbox{\Hypertarget{class_plaats__model_a708c9f18b63ac2655c6121e63b5ffe7f}\label{class_plaats__model_a708c9f18b63ac2655c6121e63b5ffe7f}} 
-{\bfseries insert} (\$plaats)
+\mbox{\hyperlink{class_plaats__model_ac03a8dd14ad6cf143baca5f054ab94a1}{update}} (\$plaats)
 \item 
-\mbox{\Hypertarget{class_plaats__model_ac03a8dd14ad6cf143baca5f054ab94a1}\label{class_plaats__model_ac03a8dd14ad6cf143baca5f054ab94a1}} 
-{\bfseries update} (\$plaats)
-\item 
-\mbox{\Hypertarget{class_plaats__model_aed60da9232b9f683e0d9d62897e43cd7}\label{class_plaats__model_aed60da9232b9f683e0d9d62897e43cd7}} 
-{\bfseries delete} (\$id)
+\mbox{\hyperlink{class_plaats__model_aed60da9232b9f683e0d9d62897e43cd7}{delete}} (\$id)
 \end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_plaats__model_aed60da9232b9f683e0d9d62897e43cd7}\label{class_plaats__model_aed60da9232b9f683e0d9d62897e43cd7}} 
+\index{Plaats\+\_\+model@{Plaats\+\_\+model}!delete@{delete}}
+\index{delete@{delete}!Plaats\+\_\+model@{Plaats\+\_\+model}}
+\subsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily Plaats\+\_\+model\+::delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+functie om plaats te verwijderen uit de database per id 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$id} & id van de plaats \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_plaats__model_ad74fde1e8efdd97f181c649e8d869590}\label{class_plaats__model_ad74fde1e8efdd97f181c649e8d869590}} 
+\index{Plaats\+\_\+model@{Plaats\+\_\+model}!get\+Plaats\+By\+Id@{get\+Plaats\+By\+Id}}
+\index{get\+Plaats\+By\+Id@{get\+Plaats\+By\+Id}!Plaats\+\_\+model@{Plaats\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+Plaats\+By\+Id()}{getPlaatsById()}}
+{\footnotesize\ttfamily Plaats\+\_\+model\+::get\+Plaats\+By\+Id (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+
+functie om plaats op te vragen met id 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$id} & id van de plaats \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_plaats__model_a708c9f18b63ac2655c6121e63b5ffe7f}\label{class_plaats__model_a708c9f18b63ac2655c6121e63b5ffe7f}} 
+\index{Plaats\+\_\+model@{Plaats\+\_\+model}!insert@{insert}}
+\index{insert@{insert}!Plaats\+\_\+model@{Plaats\+\_\+model}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily Plaats\+\_\+model\+::insert (\begin{DoxyParamCaption}\item[{}]{\$plaats }\end{DoxyParamCaption})}
+
+functie om plaats in de database toe te voegen 
+\begin{DoxyParams}[1]{Parameters}
+Std\+Class & {\em \$plaats} & plaatsobject om in de database toe te voegen \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_plaats__model_ac03a8dd14ad6cf143baca5f054ab94a1}\label{class_plaats__model_ac03a8dd14ad6cf143baca5f054ab94a1}} 
+\index{Plaats\+\_\+model@{Plaats\+\_\+model}!update@{update}}
+\index{update@{update}!Plaats\+\_\+model@{Plaats\+\_\+model}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Plaats\+\_\+model\+::update (\begin{DoxyParamCaption}\item[{}]{\$plaats }\end{DoxyParamCaption})}
+
+functie om plaatsobject te updaten 
+\begin{DoxyParams}[1]{Parameters}
+Std\+Class & {\em \$plaats} & plaatsobject om in de database te updaten \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
