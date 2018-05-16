@@ -5,7 +5,7 @@
 -->
 
 <?php
-class Mailreminder_model extends CI_Model {
+class Mailherinnering_model extends CI_Model {
     function get_HerinneringDag($datum)
     {
         $this->db->where(array('timer' => $datum));
