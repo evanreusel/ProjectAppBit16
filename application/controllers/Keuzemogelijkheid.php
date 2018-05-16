@@ -9,6 +9,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/// Controller voor keuzemogelijkheidfunctionaliteiten
 class Keuzemogelijkheid extends CI_Controller{
     
      public function __construct() {
