@@ -53,7 +53,7 @@ class Mail extends CI_Controller {
         foreach ($mailRemindersVandaag as $mailReminder)
         {
             $this->mailjet->leegBerichtObject();
-            $mailsjabloon = $this->Mailherinnering_model->get($mailReminder->sjabloonId);
+            $mailsjabloon = $this->mailsjabloon_model->get($mailReminder->sjabloonId);
             $ontvangers = array();
             $persoonIds = $this->Mailherinnering_model->get_PersonenInReminder($mailReminder->id);
             foreach ($persoonIds as $persoonId)
@@ -105,9 +105,13 @@ class Mail extends CI_Controller {
             $persoonInHerinnering->persoonId = $persoon;
             $this->PersoonInHerinnering_model->insert($persoonInHerinnering);
         }
-
-
-
+    }
+    public function verwijderHerinnering()
+    {
+        $id = $this->input->post('id');
+        $this->load->model("Mailherinnering_model");
+        $this->Mailherinnering_model->delete($id);
+        $this->overzicht();
     }
 
     public function overzicht()
