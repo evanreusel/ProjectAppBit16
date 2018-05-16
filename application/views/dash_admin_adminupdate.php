@@ -10,8 +10,8 @@
 
 <?php
 /**
-*parameters voor de knop om de adin aan te maken/te bewerken
-*de knoptext veranderd als er geen id voor de admin is meegegeven
+*parameters voor de knop om de admin aan te maken/te bewerken
+*de knoptext verandert als er geen id voor de admin is meegegeven
 */
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
@@ -28,7 +28,7 @@
 <script> 
     /**
     check met ajax of het ingevulde wachtwoord overeenkomt met de ingevulde adminID
-    de data wordt naar de functie formcontrole doorgestuurd waar wordt gechecked of het passwoord correct is en andere checks woren gedaan
+    de data wordt naar de functie formcontrole doorgestuurd waar wordt gecheckt of het passwoord correct is en andere checks worden gedaan
     als het passwoord overeenkomt geeft ajax een object terug, anders is de data leeg
     */
     function passcheck(){
@@ -51,9 +51,9 @@
     }
 
     /**
-    check of het wachtwoord en het controlewachtwoord zijn ingevuld en of ze overeen komen
-    indien er een probleem is wordt er een foutcontrole getoond
-    de functie geeft ook true terug in het geval er geen problemen zijn, dit is voor de functie formcontrole
+    check of het wachtwoord en het controlewachtwoord zijn ingevuld en of ze overeenkomen
+    indien er een probleem is, wordt er een foutcontrole getoond
+    de functie geeft ook true terug in het geval er geen problemen zijn. Dit is voor de functie formcontrole
     */
     function nieuwpassmatch(){  
         var $passnietleeg = false;
@@ -77,10 +77,10 @@
     }
 
     /**
-    controleer of aan de vooraarden voldoet
-    controleert of het nieuwe wachtwoord ingevuld is en of de bevetiging ervan correct is
-    checkt ook of de meegeven ajaxdata voor het wachtwoord niet leeg is    
-    indien er een error is wordt een foutboodschap getoond en kan het formulier niet gesubmit worden
+    controleer of aan de voorwaarden wordt voldaan
+    controleert of het nieuwe wachtwoord ingevuld is en of de bevestiging ervan correct is
+    checkt ook of de meegegeven ajaxdata voor het wachtwoord niet leeg is    
+    indien er een error is, wordt een foutboodschap getoond en kan het formulier niet gesubmit worden
     */
     function formcontrole(passdata){
         console.log("ok");
