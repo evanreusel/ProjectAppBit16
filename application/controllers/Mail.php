@@ -159,7 +159,7 @@ class Mail extends CI_Controller {
 
     }
     /**
-    Haalt niet ingeschreven personen op
+     * Haalt niet ingeschreven personen op
      */
     public function get_NietIngeschreven()
     {
@@ -170,7 +170,7 @@ class Mail extends CI_Controller {
         print_r($this->Persoon_model->get_NietIngeschrevenDeelnemers());
     }
     /**
-        Haalt alle personen/ontvangers op geordend per keuzemogelijkheid, keuzeoptie, taak, shift
+     * Haalt alle personen/ontvangers op geordend per keuzemogelijkheid, keuzeoptie, taak, shift
      */
     private function get_personen($jaargangid)
     {
@@ -237,7 +237,7 @@ class Mail extends CI_Controller {
 
     }
     /**
-        sHaalt personen in herinnering op
+     * Haalt personen in herinnering op
      * $param int id
      * Herinnering id
      */
@@ -247,6 +247,7 @@ class Mail extends CI_Controller {
     $personenInHerinnering = $this->PersoonInHerinnering_model->get_byHerinneringId($id);
     echo json_encode($personenInHerinnering);
     }
+    
     private function get_personenv2()
     {
 
