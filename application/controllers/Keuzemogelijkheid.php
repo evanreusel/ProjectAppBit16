@@ -12,21 +12,27 @@ if (!defined('BASEPATH'))
 class Keuzemogelijkheid extends CI_Controller{
     
      public function __construct() {
+         /**
+          * Default Constructor
+         */
         parent::__construct();
 
-        /// =================================================================================================== GREIF MATTHIAS
-        /// Autoload
+        // =================================================================================================== GREIF MATTHIAS
+        // Autoload
         $this->load->library('session');
         
-        /// Redirect to home if no session started
+        // Redirect to home if no session started
         $this->load->model('beheer_model');
         if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
             redirect('/admin/index', 'location');
         }
-        /// =================================================================================================== /GREIF MATTHIAS
     }
 
-    /// Get Keuzemogelijkheid by Id
+    /**
+	 * Vraag keuzemogelijkheid op
+	 * @param int $id
+	 *  Id van keuzemogelijkheid
+ 	*/
     public function get($id){
         $data['return'] = '';
 		
@@ -42,7 +48,9 @@ class Keuzemogelijkheid extends CI_Controller{
     }
     /// =================================================================================================== /GREIF MATTHIAS
 
-    /// Functie voor het aanmaken en aanpassen van keuzemogelijkheden
+    /**
+	 * Pas keuzemogelijkheid aan
+ 	*/
     public function update()
 	{
 		/// klasse keuzemogelijkheid aanmaken en initialiseren
@@ -69,7 +77,12 @@ class Keuzemogelijkheid extends CI_Controller{
 		/// Redirect naar keuzemogelijkheid pagina
 		redirect('admin/dash/keuzemogelijkheidbeheer/'. $keuzemogelijkheid->jaargangId);
     }
-    /// Functie voor het verwijderen van keuzemogelijkheden.
+    
+    /**
+	 * Verwijder keuzemogelijkheid
+	 * @param int $id
+	 *  Id van keuzemogelijkheid
+ 	*/
     public function delete($id)
 	{
 		
