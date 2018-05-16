@@ -1,11 +1,19 @@
 <?php
 class csv_model extends CI_Model
 {
+    /**
+	 * Default Constructor
+ 	*/
     function __construct()
     {
+
     }
 
-    ///lees een csv bestand in om een persoon toe te voegen aan de database met personen_model
+    /**
+	 * lees een csv bestand in om een persoon toe te voegen aan de database met personen_model 
+     * @param string $soort
+	 *  Duid op deelnemer of vrijwilliger
+ 	*/
     function readpersonen($soort)
     {
         ///lees de csv file

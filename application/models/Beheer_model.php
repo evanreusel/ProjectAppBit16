@@ -13,6 +13,7 @@ class Beheer_model extends CI_Model {
     {
  		$this->load->database();
     }
+    
     /**
 	 * Controleer inloggegevens van gebruiker
 	 * @param string $username
