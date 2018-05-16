@@ -171,6 +171,8 @@ class Mail extends CI_Controller {
     }
     /**
      * Haalt alle personen/ontvangers op geordend per keuzemogelijkheid, keuzeoptie, taak, shift
+     * @param int $jaargang
+     * het jaargang van de op te halen personen
      */
     private function get_personen($jaargangid)
     {
