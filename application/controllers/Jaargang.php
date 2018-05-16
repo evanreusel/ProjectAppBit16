@@ -9,6 +9,9 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 class Jaargang extends CI_Controller{
+    /**
+	 * Default Contstructor
+ 	*/
     public function __construct()
 	{
         parent::__construct();
@@ -23,8 +26,12 @@ class Jaargang extends CI_Controller{
         }
     }
 
+
+
     // FLOW
-    // Update jaargang
+    /**
+	 * Update jaargang
+ 	*/
     public function update()
     {
         $this->load->model('jaargang_model');
@@ -78,7 +85,11 @@ class Jaargang extends CI_Controller{
     }
     
     // API
-    // Deactivate jaargang
+    /**
+	 * Beeindig jaargang
+     * @param string $id
+	 *  Id van jaargang
+ 	*/
     public function end($id){
         if($id > 0)
         {
