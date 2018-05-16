@@ -424,7 +424,7 @@
 
                 emails.push($('this').data('email'))
             }
-            document.location.href = "mailto:bcc=" + emails.join();
+            document.location.href = "mailto:?bcc=" + emails.join();
         });
         $(".open-herinneringvenster").click(function ()
         {
