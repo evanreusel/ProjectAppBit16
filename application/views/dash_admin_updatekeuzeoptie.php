@@ -102,7 +102,10 @@
             var begin =$('#begin').val(); 
             var einde =$('#einde').val();
             var naam = $('#keuzeoptie').val();
-
+            
+            console.log(min);
+            console.log(max);
+            
             if (naam == "") {
                 alert("De keuzeoptie heeft geen naam.");
                 $('#keuzeoptie').addClass('is-invalid');
