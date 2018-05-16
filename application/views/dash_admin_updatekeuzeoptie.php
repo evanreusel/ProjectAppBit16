@@ -76,12 +76,12 @@
     </div>
     <div class="form-group row">
         <label for="begin" class="col-form-label">Begin datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE, 'class'=>'begin form-control'),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
 
     </div>
     <div class="form-group row">
         <label for="einde" class="col-form-label">Eind datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'class'=>'einde form-control'),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
 
     </div>
     <?php
@@ -105,14 +105,14 @@
 
             if (min > max) {
                 alert("Het minimum aantal deelnemers is groter dan het maximum.");
-                $('.min').addClass('is-invalid');
+                $('#min').addClass('is-invalid');
                 event.preventDefault();
             }
             if (begin>einde) {
                 alert("De begindatum vindt plaats na de einddatum.");
-                $('.begin').addClass('is-invalid');
+                $('#begin').addClass('is-invalid');
                 event.preventDefault();
-            } 
+            }
             else {
                 
             };
