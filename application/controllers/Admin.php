@@ -451,6 +451,8 @@ class Admin extends CI_Controller {
 	}
 
 	// =================================================================================================== TIM
+
+	///lees een CSV bestand in met deelnemers/vrijwilligers en voeg deze toe aan de database
 	public function excel(){		
 		$this->load->model('CSV_model');
         $soort = $this->input->post('soort', TRUE);
@@ -460,14 +462,7 @@ class Admin extends CI_Controller {
 		} else {
 		$this->dash("importfout");
 		}
-	}
-
-	public function list(){
-			$this->load->model('Persoon_model');
-        	$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
-		$this->load->view('dash_admin_personeelsoverzicht.php',$data);
-
-	}
+	}	
 	// =================================================================================================== /TIM
 }
 
