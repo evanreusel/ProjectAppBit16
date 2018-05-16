@@ -14,22 +14,22 @@ class Taken extends CI_Controller{
      public function __construct() {
         parent::__construct();
 
-        // =================================================================================================== GREIF MATTHIAS
-        // Autoload
+        /// =================================================================================================== GREIF MATTHIAS
+        /// Autoload
         $this->load->library('session');
 
-		// Redirect to home if no session started
+		/// Redirect to home if no session started
         $this->load->model('beheer_model');
         if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
             redirect('/admin/index', 'location');
         }
-        // =================================================================================================== /GREIF MATTHIAS
+        /// =================================================================================================== /GREIF MATTHIAS
     }
 
-    // Functie voor het aanpassen en aanmaken van taken
+    /// Functie voor het aanpassen en aanmaken van taken
     public function update()
 	{
-		// klasse keuzemogelijkheid aanmaken en initialiseren
+		/// klasse keuzemogelijkheid aanmaken en initialiseren
         $taak = new stdClass();
 
         $taak->id = $this->input->post('id');
@@ -37,21 +37,21 @@ class Taken extends CI_Controller{
         $taak->beschrijving = $this->input->post('beschrijving');
         $taak->keuzemogelijkheidId = $this->input->post('keuzemogelijkheidId');
 
-		// Model inladen
+		/// Model inladen
         $this->load->model('Taken_model');
 		
-		// Keuzemogelijkheid toevoegen of aanpassen
+		/// Keuzemogelijkheid toevoegen of aanpassen
         if($taak->id == 0){
        		$this->Taken_model->add($taak);
         } else {
         	$this->Taken_model->update($taak);
         }
 
-		// Redirect naar keuzemogelijkheid pagina
+		/// Redirect naar keuzemogelijkheid pagina
 		redirect('admin/dash/takenbeheer/'. $taak->keuzemogelijkheidId);
     }
     
-    // Functie voor het verwijderen van taken
+    /// Functie voor het verwijderen van taken
     public function delete($id)
 	{
 		
@@ -61,7 +61,7 @@ class Taken extends CI_Controller{
 
         $this->Taken_model->delete($id);
         
-		// Redirect to keuzemogelijkheidbeheer
+		/// Redirect to keuzemogelijkheidbeheer
         redirect('admin/dash/takenbeheer/'.$returndata->keuzemogelijkheidId);
 	}
 }
