@@ -5,7 +5,7 @@
         </div>
         <div class="card-body">
             <div class="card bg-success">
-                <div class="card-header" id="reminderHoofding<?php echo $reminder->id ?>">
+                <div class="card-header">
                     <a href="#modalReminder" class="open-herinneringvenster"
                        data-toggle="modal" data-target="#modalReminder"
 
