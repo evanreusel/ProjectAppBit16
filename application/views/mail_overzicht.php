@@ -158,9 +158,10 @@
 
                     }
                     ?>
+                <div class="persoongroep">
                     <div class="card">
                         <div class="card-header">
-                            Niet ingeschreven deelnemers
+                            <input type="checkbox" class="select-persoongroep" > Niet ingeschreven deelnemers
                         </div>
                         <div class="card-body">
 
@@ -179,10 +180,11 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
+                <div class="persoongroep">
                     <div class="card">
                         <div class="card-header">
-                            Niet ingeschreven vrijwilligers
+                            <input type="checkbox" class="select-persoongroep" > Niet ingeschreven vrijwilligers
                         </div>
                         <div class="card-body">
                             <div class="select-persoongroep">
@@ -200,6 +202,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                     <label>Mailsjabloon</label>
                     <select id="modalMailsjabloon" name="mailsjabloon">
                         <?php foreach ($mailsjablonen as $sjabloon) {
@@ -210,7 +213,8 @@
                         <?php } ?>
                     </select>
 
-            </div>
+                </div>
+
             <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Opslaan</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -304,7 +308,7 @@
             select = $(this).data('select');
             console.log(select);
             $('#' + select + " :checkbox").prop("checked", this.checked);
-            console.log($(this).closest(".persoongroep").find(":checkbox").not(".select-persoongroep"));
+            $(this).closest(".persoongroep").find(":checkbox").prop("checked", this.checked);
 
         });
     });
