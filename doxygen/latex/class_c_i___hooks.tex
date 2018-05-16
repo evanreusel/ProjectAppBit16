@@ -1,0 +1,120 @@
+\hypertarget{class_c_i___hooks}{}\section{C\+I\+\_\+\+Hooks Class Reference}
+\label{class_c_i___hooks}\index{C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___hooks_ab7da97fbbffcd188093b4674ef948335}{\+\_\+\+\_\+construct}} (\mbox{\hyperlink{class_c_i___config}{C\+I\+\_\+\+Config}} \$config)
+\item 
+\mbox{\hyperlink{class_c_i___hooks_a470d397aaf24f1ca3ef73021ad03492b}{call\+\_\+hook}} (\$which=\textquotesingle{}\textquotesingle{})
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___hooks_a8d376199cc641e3e7af6e1a0d5c736d9}{\$enabled}} = F\+A\+L\+SE
+\item 
+\mbox{\hyperlink{class_c_i___hooks_a05aec88c3516c6db5da524fbcc673aff}{\$hooks}} = array()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___hooks_a2cd07b3fcfaf153a37f164d3fbc7c3d9}{\+\_\+run\+\_\+hook}} (\$data)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___hooks_a7f925b11c74f8a8aa0d4627c6f7844ce}{\$\+\_\+objects}} = array()
+\item 
+\mbox{\hyperlink{class_c_i___hooks_a6e8d0edcf7a4fb3e76c0f6d00e70053e}{\$\+\_\+in\+\_\+progress}} = F\+A\+L\+SE
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_i___hooks_ab7da97fbbffcd188093b4674ef948335}\label{class_c_i___hooks_ab7da97fbbffcd188093b4674ef948335}} 
+\index{C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_i___config}{C\+I\+\_\+\+Config}}}]{\$config }\end{DoxyParamCaption})}
+
+Class constructor
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\hyperlink{class_c_i___config}{C\+I\+\_\+\+Config}} & {\em \$config} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_i___hooks_a2cd07b3fcfaf153a37f164d3fbc7c3d9}\label{class_c_i___hooks_a2cd07b3fcfaf153a37f164d3fbc7c3d9}} 
+\index{C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}!\+\_\+run\+\_\+hook@{\+\_\+run\+\_\+hook}}
+\index{\+\_\+run\+\_\+hook@{\+\_\+run\+\_\+hook}!C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}}
+\subsubsection{\texorpdfstring{\+\_\+run\+\_\+hook()}{\_run\_hook()}}
+{\footnotesize\ttfamily \+\_\+run\+\_\+hook (\begin{DoxyParamCaption}\item[{}]{\$data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Run Hook
+
+Runs a particular hook
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$data} & Hook details \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool T\+R\+UE on success or F\+A\+L\+SE on failure 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___hooks_a470d397aaf24f1ca3ef73021ad03492b}\label{class_c_i___hooks_a470d397aaf24f1ca3ef73021ad03492b}} 
+\index{C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}!call\+\_\+hook@{call\+\_\+hook}}
+\index{call\+\_\+hook@{call\+\_\+hook}!C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}}
+\subsubsection{\texorpdfstring{call\+\_\+hook()}{call\_hook()}}
+{\footnotesize\ttfamily call\+\_\+hook (\begin{DoxyParamCaption}\item[{}]{\$which = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})}
+
+Call Hook
+
+Calls a particular hook. Called by \mbox{\hyperlink{_code_igniter_8php}{Code\+Igniter.\+php}}.
+
+\mbox{\hyperlink{class_c_i___hooks_a2cd07b3fcfaf153a37f164d3fbc7c3d9}{C\+I\+\_\+\+Hooks\+::\+\_\+run\+\_\+hook()}}
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$which} & Hook name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool T\+R\+UE on success or F\+A\+L\+SE on failure 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_i___hooks_a6e8d0edcf7a4fb3e76c0f6d00e70053e}\label{class_c_i___hooks_a6e8d0edcf7a4fb3e76c0f6d00e70053e}} 
+\index{C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}!\$\+\_\+in\+\_\+progress@{\$\+\_\+in\+\_\+progress}}
+\index{\$\+\_\+in\+\_\+progress@{\$\+\_\+in\+\_\+progress}!C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}}
+\subsubsection{\texorpdfstring{\$\+\_\+in\+\_\+progress}{$\_in\_progress}}
+{\footnotesize\ttfamily \$\+\_\+in\+\_\+progress = F\+A\+L\+SE\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_c_i___hooks_a7f925b11c74f8a8aa0d4627c6f7844ce}\label{class_c_i___hooks_a7f925b11c74f8a8aa0d4627c6f7844ce}} 
+\index{C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}!\$\+\_\+objects@{\$\+\_\+objects}}
+\index{\$\+\_\+objects@{\$\+\_\+objects}!C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}}
+\subsubsection{\texorpdfstring{\$\+\_\+objects}{$\_objects}}
+{\footnotesize\ttfamily \$\+\_\+objects = array()\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_c_i___hooks_a8d376199cc641e3e7af6e1a0d5c736d9}\label{class_c_i___hooks_a8d376199cc641e3e7af6e1a0d5c736d9}} 
+\index{C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}!\$enabled@{\$enabled}}
+\index{\$enabled@{\$enabled}!C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}}
+\subsubsection{\texorpdfstring{\$enabled}{$enabled}}
+{\footnotesize\ttfamily \$enabled = F\+A\+L\+SE}
+
+\mbox{\Hypertarget{class_c_i___hooks_a05aec88c3516c6db5da524fbcc673aff}\label{class_c_i___hooks_a05aec88c3516c6db5da524fbcc673aff}} 
+\index{C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}!\$hooks@{\$hooks}}
+\index{\$hooks@{\$hooks}!C\+I\+\_\+\+Hooks@{C\+I\+\_\+\+Hooks}}
+\subsubsection{\texorpdfstring{\$hooks}{$hooks}}
+{\footnotesize\ttfamily \$hooks = array()}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+system/core/\mbox{\hyperlink{_hooks_8php}{Hooks.\+php}}\end{DoxyCompactItemize}

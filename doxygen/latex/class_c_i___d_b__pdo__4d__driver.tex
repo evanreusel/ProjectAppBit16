@@ -1,0 +1,192 @@
+\hypertarget{class_c_i___d_b__pdo__4d__driver}{}\section{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver Class Reference}
+\label{class_c_i___d_b__pdo__4d__driver}\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+Inheritance diagram for C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_c_i___d_b__pdo__4d__driver}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_a9162320adff1a1a4afd7f2372f753a3e}{\+\_\+\+\_\+construct}} (\$params)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_a1322ca756348b11d080cb7a4f590de15}{\$subdriver}} = \textquotesingle{}4d\textquotesingle{}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_a435c0f3ce54fe7daa178baa8532ebd54}{\+\_\+list\+\_\+tables}} (\$prefix\+\_\+limit=F\+A\+L\+SE)
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_a7ccb7f9c301fe7f0a9db701254142b63}{\+\_\+list\+\_\+columns}} (\$table=\textquotesingle{}\textquotesingle{})
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_a95247d9671893adc3444cb184ad32ea1}{\+\_\+field\+\_\+data}} (\$table)
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_a2540b03a93fa73ae74c10d0e16fc073e}{\+\_\+update}} (\$table, \$values)
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_a133ea8446ded52589bd22cc9163d0896}{\+\_\+delete}} (\$table)
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_a3a02ea06541b8ecc25a33a61651562c8}{\+\_\+limit}} (\$sql)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___d_b__pdo__4d__driver_aaec2fb0112850159063a8e47ad3aed6e}{\$\+\_\+escape\+\_\+char}} = array(\textquotesingle{}\mbox{[}\textquotesingle{}, \textquotesingle{}\mbox{]}\textquotesingle{})
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_a9162320adff1a1a4afd7f2372f753a3e}\label{class_c_i___d_b__pdo__4d__driver_a9162320adff1a1a4afd7f2372f753a3e}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
+\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}\item[{}]{\$params }\end{DoxyParamCaption})}
+
+Class constructor
+
+Builds the D\+SN if not already set.
+
+
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_a133ea8446ded52589bd22cc9163d0896}\label{class_c_i___d_b__pdo__4d__driver_a133ea8446ded52589bd22cc9163d0896}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\+\_\+delete@{\+\_\+delete}}
+\index{\+\_\+delete@{\+\_\+delete}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\+\_\+delete()}{\_delete()}}
+{\footnotesize\ttfamily \+\_\+delete (\begin{DoxyParamCaption}\item[{}]{\$table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Delete statement
+
+Generates a platform-\/specific delete string from the supplied data
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_a95247d9671893adc3444cb184ad32ea1}\label{class_c_i___d_b__pdo__4d__driver_a95247d9671893adc3444cb184ad32ea1}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\+\_\+field\+\_\+data@{\+\_\+field\+\_\+data}}
+\index{\+\_\+field\+\_\+data@{\+\_\+field\+\_\+data}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\+\_\+field\+\_\+data()}{\_field\_data()}}
+{\footnotesize\ttfamily \+\_\+field\+\_\+data (\begin{DoxyParamCaption}\item[{}]{\$table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Field data query
+
+Generates a platform-\/specific query so that the column data can be retrieved
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_a3a02ea06541b8ecc25a33a61651562c8}\label{class_c_i___d_b__pdo__4d__driver_a3a02ea06541b8ecc25a33a61651562c8}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\+\_\+limit@{\+\_\+limit}}
+\index{\+\_\+limit@{\+\_\+limit}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\+\_\+limit()}{\_limit()}}
+{\footnotesize\ttfamily \+\_\+limit (\begin{DoxyParamCaption}\item[{}]{\$sql }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+L\+I\+M\+IT
+
+Generates a platform-\/specific L\+I\+M\+IT clause
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$sql} & S\+QL Query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_a7ccb7f9c301fe7f0a9db701254142b63}\label{class_c_i___d_b__pdo__4d__driver_a7ccb7f9c301fe7f0a9db701254142b63}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\+\_\+list\+\_\+columns@{\+\_\+list\+\_\+columns}}
+\index{\+\_\+list\+\_\+columns@{\+\_\+list\+\_\+columns}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\+\_\+list\+\_\+columns()}{\_list\_columns()}}
+{\footnotesize\ttfamily \+\_\+list\+\_\+columns (\begin{DoxyParamCaption}\item[{}]{\$table = {\ttfamily \textquotesingle{}\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Show column query
+
+Generates a platform-\/specific query string so that the column names can be fetched
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_a435c0f3ce54fe7daa178baa8532ebd54}\label{class_c_i___d_b__pdo__4d__driver_a435c0f3ce54fe7daa178baa8532ebd54}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\+\_\+list\+\_\+tables@{\+\_\+list\+\_\+tables}}
+\index{\+\_\+list\+\_\+tables@{\+\_\+list\+\_\+tables}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\+\_\+list\+\_\+tables()}{\_list\_tables()}}
+{\footnotesize\ttfamily \+\_\+list\+\_\+tables (\begin{DoxyParamCaption}\item[{}]{\$prefix\+\_\+limit = {\ttfamily FALSE} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Show table query
+
+Generates a platform-\/specific query string so that the table names can be fetched
+
+
+\begin{DoxyParams}[1]{Parameters}
+bool & {\em \$prefix\+\_\+limit} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_a2540b03a93fa73ae74c10d0e16fc073e}\label{class_c_i___d_b__pdo__4d__driver_a2540b03a93fa73ae74c10d0e16fc073e}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\+\_\+update@{\+\_\+update}}
+\index{\+\_\+update@{\+\_\+update}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\+\_\+update()}{\_update()}}
+{\footnotesize\ttfamily \+\_\+update (\begin{DoxyParamCaption}\item[{}]{\$table,  }\item[{}]{\$values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Update statement
+
+Generates a platform-\/specific update string from the supplied data
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$table} & \\
+\hline
+array & {\em \$values} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_aaec2fb0112850159063a8e47ad3aed6e}\label{class_c_i___d_b__pdo__4d__driver_aaec2fb0112850159063a8e47ad3aed6e}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\$\+\_\+escape\+\_\+char@{\$\+\_\+escape\+\_\+char}}
+\index{\$\+\_\+escape\+\_\+char@{\$\+\_\+escape\+\_\+char}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\$\+\_\+escape\+\_\+char}{$\_escape\_char}}
+{\footnotesize\ttfamily \$\+\_\+escape\+\_\+char = array(\textquotesingle{}\mbox{[}\textquotesingle{}, \textquotesingle{}\mbox{]}\textquotesingle{})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_c_i___d_b__pdo__4d__driver_a1322ca756348b11d080cb7a4f590de15}\label{class_c_i___d_b__pdo__4d__driver_a1322ca756348b11d080cb7a4f590de15}} 
+\index{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}!\$subdriver@{\$subdriver}}
+\index{\$subdriver@{\$subdriver}!C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver@{C\+I\+\_\+\+D\+B\+\_\+pdo\+\_\+4d\+\_\+driver}}
+\subsubsection{\texorpdfstring{\$subdriver}{$subdriver}}
+{\footnotesize\ttfamily \$subdriver = \textquotesingle{}4d\textquotesingle{}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+system/database/drivers/pdo/subdrivers/\mbox{\hyperlink{pdo__4d__driver_8php}{pdo\+\_\+4d\+\_\+driver.\+php}}\end{DoxyCompactItemize}

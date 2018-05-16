@@ -1,0 +1,81 @@
+\hypertarget{class_c_i___driver___library}{}\section{C\+I\+\_\+\+Driver\+\_\+\+Library Class Reference}
+\label{class_c_i___driver___library}\index{C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}}
+Inheritance diagram for C\+I\+\_\+\+Driver\+\_\+\+Library\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_i___driver___library}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___driver___library_a2fac4d4694e05e7eeba5282bd6ff8caf}{\+\_\+\+\_\+get}} (\$child)
+\item 
+\mbox{\hyperlink{class_c_i___driver___library_a7cc2908487e106164664ef7d743690b8}{load\+\_\+driver}} (\$child)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_i___driver___library_a32d963b3d49fd67f188c1a74d38be6df}{\$valid\+\_\+drivers}} = array()
+\item 
+\mbox{\hyperlink{class_c_i___driver___library_ab820c27413d5904686c58f6b2941b603}{\$lib\+\_\+name}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_c_i___driver___library_a2fac4d4694e05e7eeba5282bd6ff8caf}\label{class_c_i___driver___library_a2fac4d4694e05e7eeba5282bd6ff8caf}} 
+\index{C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}!\+\_\+\+\_\+get@{\+\_\+\+\_\+get}}
+\index{\+\_\+\+\_\+get@{\+\_\+\+\_\+get}!C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+get()}{\_\_get()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+get (\begin{DoxyParamCaption}\item[{}]{\$child }\end{DoxyParamCaption})}
+
+Get magic method
+
+The first time a child is used it won\textquotesingle{}t exist, so we instantiate it subsequents calls will go straight to the proper child.
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Child class name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object Child class 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_i___driver___library_a7cc2908487e106164664ef7d743690b8}\label{class_c_i___driver___library_a7cc2908487e106164664ef7d743690b8}} 
+\index{C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}!load\+\_\+driver@{load\+\_\+driver}}
+\index{load\+\_\+driver@{load\+\_\+driver}!C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}}
+\subsubsection{\texorpdfstring{load\+\_\+driver()}{load\_driver()}}
+{\footnotesize\ttfamily load\+\_\+driver (\begin{DoxyParamCaption}\item[{}]{\$child }\end{DoxyParamCaption})}
+
+Load driver
+
+Separate load\+\_\+driver call to support explicit driver load by library or user
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Driver name (w/o parent prefix) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object Child class 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_c_i___driver___library_ab820c27413d5904686c58f6b2941b603}\label{class_c_i___driver___library_ab820c27413d5904686c58f6b2941b603}} 
+\index{C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}!\$lib\+\_\+name@{\$lib\+\_\+name}}
+\index{\$lib\+\_\+name@{\$lib\+\_\+name}!C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}}
+\subsubsection{\texorpdfstring{\$lib\+\_\+name}{$lib\_name}}
+{\footnotesize\ttfamily \$lib\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_c_i___driver___library_a32d963b3d49fd67f188c1a74d38be6df}\label{class_c_i___driver___library_a32d963b3d49fd67f188c1a74d38be6df}} 
+\index{C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}!\$valid\+\_\+drivers@{\$valid\+\_\+drivers}}
+\index{\$valid\+\_\+drivers@{\$valid\+\_\+drivers}!C\+I\+\_\+\+Driver\+\_\+\+Library@{C\+I\+\_\+\+Driver\+\_\+\+Library}}
+\subsubsection{\texorpdfstring{\$valid\+\_\+drivers}{$valid\_drivers}}
+{\footnotesize\ttfamily \$valid\+\_\+drivers = array()\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+system/libraries/\mbox{\hyperlink{_driver_8php}{Driver.\+php}}\end{DoxyCompactItemize}
