@@ -323,12 +323,13 @@ class Admin extends CI_Controller {
 				$data['creator'] = "";
 			break;
 
+			case "mail_overzicht":
+				$data['creator'] = "ERIK";
+			break;
+
 			default:
 				$data['creator'] = "GREIF MATTHIAS";
 				$view = 'index';
-				$this->load->model('Persoon_model');
-				$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
-				$this->load->view('dash_admin_personeelsoverzicht.php',$data);
 			break;
 		}
 
