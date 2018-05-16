@@ -8,6 +8,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller {
+	/**
+	 * Default Constructor
+ 	*/
 	public function __construct()
 	{
 		parent::__construct();
@@ -16,7 +19,13 @@ class Main extends CI_Controller {
         $this->load->library('session');
 	}
 
-	// Mail signin entrypoint
+	/**
+	 * Inlogmogelijkheid voor gebruikers door middel van link
+	 * @param int $id
+	 *  Id van gebruiker
+	 * @param string $token
+	 *  Beveiligingtoken van gebruiker
+ 	*/
 	public function signin($id = null, $token = null)
 	{
 		// Check login vals

@@ -87,7 +87,7 @@ class Jaargang extends CI_Controller{
     // API
     /**
 	 * Beeindig jaargang
-     * @param string $id
+     * @param int $id
 	 *  Id van jaargang
  	*/
     public function end($id){
