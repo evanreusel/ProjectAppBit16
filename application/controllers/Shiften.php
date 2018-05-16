@@ -76,7 +76,7 @@ class Shiften extends CI_Controller{
         $this->VrijwilligersInShift_model->add($vrijwilligerInShift);
 
         // Laden van de verkregen data in een ajax-venster
-        $this->load->view('ajax_vrijwilligerinshift', $data);
+        $this->load->view('ajax_resultatenTonen', $data);
     }
 
     // Functie voor het verwijderen van een vrijwilliger uit een shift 
@@ -86,7 +86,7 @@ class Shiften extends CI_Controller{
         $this->VrijwilligersInShift_model->delete($shiftId, $persoonId);
 
         // Laden van de verkregen data in een ajax-venster
-		$this->load->view('ajax_vrijwilligerinshift', $data);
+		$this->load->view('ajax_resultatenTonen', $data);
     }
 
     // Functie voor het weergeven van alle vrijwilliger van een bepaalde shift

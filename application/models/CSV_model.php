@@ -5,39 +5,52 @@ class csv_model extends CI_Model
     {
     }
 
-    //lees een csv bestand in om een persoon toe te voegen aan de database met personen_model
+    ///lees een csv bestand in om een persoon toe te voegen aan de database met personen_model
     function readpersonen($soort)
     {
-        //lees de csv file
+        ///lees de csv file
         $count=0;
         $fp = fopen($_FILES['userfile']['tmp_name'],'r') or die("can't open file");
         $personen = array();
+        $datatype = "";
 
         while($csv_line = fgetcsv($fp,1024))
         {
             $count++;
-            //pak de index van e headers van de csv file op de 1ste lijn
+            ///pak de index van e headers van de csv file op de 1ste lijn
             if($count == 1)
             {
-                //lees de 1ste lijn van de file
+                ///lees de 1ste lijn van de file
                 $csvheaders = $csv_line[0];
-                //slaag de index van de headers op voor later
-                if($csvheaders != "naam\tnummer\tmail\twoonplaats\tadres"){
+                ///slaag de index van de headers op voor later
+                if($csvheaders == "naam;nummer;mail;woonplaats;adres"){
+                   $datatype = ";";
+                } elseif($csv_line[0] == "naam" && $csv_line[1] == "nummer" && $csv_line[2] == "mail" && $csv_line[3] == "woonplaats" && $csv_line[4] == "adres") {
+                    $datatype=",";
+                } else {
                     return null;
                 }
+                
                 continue;
-
             }
 
-            //lees lijn per lijn de personen uit 
+            ///lees lijn per lijn de personen uit 
             for($i = 0, $j = count($csv_line); $i < $j; $i++)
             {
                 $csvdata = $csv_line[0];
             }
             $i++;
-            $data = explode("\t",$csvdata);
+            
+            if($datatype == ";"){
+            $data = explode(";",$csvdata);
+            } else {
+                $data = $csv_line;
+            }
+
             $persoon = new stdClass();
             
+            ///kijk of elk element is ingevuld
+            ///zoniet wordt een null opgelagen in het veld
              if($data[0] != null){
             $persoon->naam = $data[0];
             };
@@ -60,7 +73,7 @@ class csv_model extends CI_Model
 
             $persoon->soort = $soort;
 
-            //voeg de gelezen persoon toe
+            ///voeg de gelezen persoon toe
             $this->load->model("Persoon_model");
        		$this->Persoon_model->insert($persoon);
 
@@ -68,7 +81,7 @@ class csv_model extends CI_Model
 
             
         }
-        //einde csv file, stop de functie
+        ///einde csv file, stop de functie
         fclose($fp) or die("can't close file");
         return $personen;
     }

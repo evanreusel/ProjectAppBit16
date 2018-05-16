@@ -10,10 +10,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         parent::__construct();
 
         // =================================================================================================== GREIF MATTHIAS
-        // Autoload
-         // $this->load->library('session');
-
-		// Redirect to home if no session started
+		// Als er geen sessie gestart is, wordt er weer naar home genavigeerd
         if(!$this->session->has_userdata('id')){
             redirect('/admin/index', 'location');
         }
@@ -50,6 +47,8 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
     }
 
+    // ==================================================================================== Proost Daan
+    // De keuzeoptie van de deelnemer wordt in de database opgeslagen
     public function deelnemerAanKeuzeoptieToevoegen($keuzeoptieId, $persoonId)
     {
         $deelnemerInKeuzeoptie = new stdClass();
@@ -58,26 +57,18 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         $deelnemerInKeuzeoptie->keuzeoptieId = $keuzeoptieId;
 
         $this->load->model('KeuzeoptieVanDeelnemer_model');
-        $this->KeuzeoptieVanDeelnemer_model->addKeuzeoptieVanDeelnemer($deelnemerInKeuzeoptie);
+        $this->KeuzeoptieVanDeelnemer_model->add($deelnemerInKeuzeoptie);
 
         $this->load->view('ajax_vrijwilligerinshift', $data);
     }
-    
+    // De keuzeoptie van de deelnemer wordt weer uit de database verwijderd
     public function deelnemerVanKeuzeoptieVerwijderen($keuzeoptieId, $persoonId)
 	{
         $this->load->model('KeuzeoptieVanDeelnemer_model');
         $this->KeuzeoptieVanDeelnemer_model->delete($keuzeoptieId, $persoonId);
 
-		$this->load->view('ajax_vrijwilligerinshift', $data);
+		$this->load->view('ajax_resultatenTonen', $data);
     }
-    
-    public function vrijwilligerInShiftWeergeven($shiftId)
-    {
+    // ====================================================================================/ Proost Daan
 
-        $this->load->model('KeuzeoptieVanDeelnemer_model');
-        $data['keuzeopties']=$this->KeuzeoptieVanDeelnemer_model->getAllByKeuzemogelijkheidId($keuzeMogelijkheidId);
-
-        $this->load->view('ajax_vrijwilligersinshift', $data);
-
-    }
 }
