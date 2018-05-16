@@ -51,7 +51,7 @@
     </div>
 
     <!--Footer-->
-<footer class="footer sticky-footer font-small blue pt-4 mt-4">
+<footer class="footer font-small blue pt-4 mt-4">
 <!--Copyright-->
 <div class="footer-copyright py-3 text-center">
     UW NAAM HIER
