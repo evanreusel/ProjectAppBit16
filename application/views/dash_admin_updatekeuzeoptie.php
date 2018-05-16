@@ -10,7 +10,7 @@
     $arrayparameters['value'] = '0';
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
-    $arrayparameters['class'] = "btn btn-primary";
+    $arrayparameters['class'] = "btn btn-primary bevestig";
     
 
     $plaats = array('');
@@ -66,22 +66,22 @@
     </div>
     <div class="form-group row">
         <label for="minimum">Minimum aantal personen</label>
-        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number'),$keuzeoptie->min,$nummerAttributen); ?>
+        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number', 'class'=>'min'),$keuzeoptie->min,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
         <label for="maximum">Maximum aantal personen</label>
-        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number'),$keuzeoptie->max,$nummerAttributen); ?>
+        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number', 'class'=>'max'),$keuzeoptie->max,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
         <label for="begin">Begin datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE, 'class'=>'begin'),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
 
     </div>
     <div class="form-group row">
         <label for="einde">Eind datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'class'=>'einde'),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
 
     </div>
     <?php
@@ -94,4 +94,20 @@
     
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+
+        $("form").submit(function() {
+            var min = $('.min').val();
+            var max = $('.max').val();
+            var begin =$('.begin').val(); 
+            var einde =$('.einde').val();
+
+            if (min > max) {
+                $("body").alert("Het minimum aantal deelnemers is groter dan het maximum.");
+                event.preventDefault();
+            } else {
+                
+            };
+
+        });
+
     </script>            
