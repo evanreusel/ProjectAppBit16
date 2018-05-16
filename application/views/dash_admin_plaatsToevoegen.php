@@ -51,7 +51,7 @@ function ajaxplaats(plaatsId){
         <?php
         foreach ($plaatsen as $plaats) {
             echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . '<button onclick="ajaxplaats(' . $plaats->id . ')" type="button" class="btn btn-warning btn-round wijzig" value="' . $plaats->id . '" title="Druk hier om deze locatie te wijzigen" >Wijzig</button>' . "</td><td>" .
-            '<button class="verwijder btn btn-danger btn-round" data-toggle="modal" data-target="#taakModal" value="Plaats/verwijder/' . $plaats->id . '" title="Druk hier om deze locatie te verwijderen">Verwijderen</button></td></tr>';
+            '<button class="verwijder btn btn-danger btn-round" data-toggle="modal" data-target="#taakModal" value="/Plaats/verwijder/' . $plaats->id . '" title="Druk hier om deze locatie te verwijderen">Verwijderen</button></td></tr>';
         }
         
         ?>
