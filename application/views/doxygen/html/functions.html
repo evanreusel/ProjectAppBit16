@@ -116,6 +116,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_keuzemogelijkheid___model.html#a420eeb2819baee7810c6f75adc37bccd">Keuzemogelijkheid_Model</a>
 , <a class="el" href="class_keuzeoptie___model.html#a05a55a9298a5f2b2a37e3a2ce15046f1">Keuzeoptie_Model</a>
 , <a class="el" href="class_keuzeoptie_van_deelnemer___model.html#a0927ce812ee8eba5b7a14c26da4298c5">KeuzeoptieVanDeelnemer_Model</a>
+, <a class="el" href="class_mailsjabloon__model.html#ac8906f2f6b9aedabd697ab35ce11e407">Mailsjabloon_model</a>
 , <a class="el" href="class_shiften___model.html#ae95a20c13c92700b673c4b850a084b85">Shiften_Model</a>
 , <a class="el" href="class_taken___model.html#a4ef6e4ab1c71556c29cdc6549e8c888b">Taken_Model</a>
 , <a class="el" href="class_vrijwilligers_in_shift___model.html#ace0abb83991ff90729515c3e86c0a3ac">VrijwilligersInShift_Model</a>
@@ -175,6 +176,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>get()
 : <a class="el" href="class_keuzemogelijkheid.html#a507c36e7d7fd35a2a080524fce31ec4d">Keuzemogelijkheid</a>
 , <a class="el" href="class_keuzeoptie.html#abe1857ac53d46fe3f2ff1e601c46739a">Keuzeoptie</a>
+, <a class="el" href="class_mailsjabloon__model.html#a2fd2620c0951e3b9954e557652b74ff0">Mailsjabloon_model</a>
 </li>
 <li>get_byHerinneringId()
 : <a class="el" href="class_persoon_in_herinnering__model.html#aae7c684767759ee244cf1e190a516952">PersoonInHerinnering_model</a>
@@ -197,12 +199,16 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <li>get_byShiftId()
 : <a class="el" href="class_vrijwilligers_in_shift___model.html#ac7afbe51273364c55dd352b3c9554592">VrijwilligersInShift_Model</a>
 </li>
+<li>get_NietIngeschreven()
+: <a class="el" href="class_mail.html#a981094d50056d958426564d48c95cce1">Mail</a>
+</li>
 <li>getActief()
 : <a class="el" href="class_jaargang__model.html#a4e55f912a50eea5f66669fec3ae11f6d">Jaargang_model</a>
 </li>
 <li>getAll()
 : <a class="el" href="class_beheer__model.html#aba97799db4f1f7370737e0611bbff356">Beheer_model</a>
 , <a class="el" href="class_jaargang__model.html#a25674521a1a6a191c6cc77e524e5b8f5">Jaargang_model</a>
+, <a class="el" href="class_mailsjabloon__model.html#a6723ec4f9fa1a3f1195f93f0c9326239">Mailsjabloon_model</a>
 , <a class="el" href="class_vrijwilligers_in_shift___model.html#a8323f4be7e1a03445c0b6c46ede8d35c">VrijwilligersInShift_Model</a>
 </li>
 <li>getAll_ofJaargang_withShift()
@@ -241,6 +247,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>getEmptyPlaats()
 : <a class="el" href="class_plaats.html#a4edb281c57e2c512a3de32eb47242513">Plaats</a>
+</li>
+<li>getPersonenInHerinnering()
+: <a class="el" href="class_mail.html#af56bb11351090ce865a284a2c27ef3bb">Mail</a>
 </li>
 <li>getWithKeuzemogelijkheidWithOpties_byId()
 : <a class="el" href="class_jaargang__model.html#a99ab50dc52b431939edc5db85b857bc6">Jaargang_model</a>
@@ -282,8 +291,18 @@ $(document).ready(function(){initNavTree('functions.html','');});
 
 
 <h3><a id="index_m"></a>- m -</h3><ul>
+<li>maakHerinnering()
+: <a class="el" href="class_mail.html#a51675a2d0d65414634e3a21067462014">Mail</a>
+</li>
 <li>maakNieuwe()
 : <a class="el" href="class_plaats.html#a3e3826f42bcaf4f6c70da8f9acdcca4a">Plaats</a>
+</li>
+</ul>
+
+
+<h3><a id="index_o"></a>- o -</h3><ul>
+<li>overzicht()
+: <a class="el" href="class_mail.html#abb72118b34523cae188c03dc72955d8c">Mail</a>
 </li>
 </ul>
 
@@ -294,6 +313,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </li>
 <li>registreer()
 : <a class="el" href="class_plaats.html#a80dd308fc0b6be4fcb7853ee9a3556ad">Plaats</a>
+</li>
+<li>remindervandaag()
+: <a class="el" href="class_mail.html#a6b0bf7c864a3999c5b56222deb88874f">Mail</a>
 </li>
 </ul>
 
@@ -316,6 +338,7 @@ $(document).ready(function(){initNavTree('functions.html','');});
 , <a class="el" href="class_keuzeoptie.html#abb3bade0f37d81dc061789c5a3dba930">Keuzeoptie</a>
 , <a class="el" href="class_keuzeoptie___model.html#abe363a388f68ec737b0957b748f012d8">Keuzeoptie_Model</a>
 , <a class="el" href="class_keuze_optie_van_deelnemer.html#a04438616b87ca22ac662c94abc043c39">KeuzeOptieVanDeelnemer</a>
+, <a class="el" href="class_mailsjabloon__model.html#a4272406d2eee5775d951d5320d0618aa">Mailsjabloon_model</a>
 , <a class="el" href="class_shiften.html#af783a05fca5d9fe438122482ce10ded8">Shiften</a>
 , <a class="el" href="class_shiften___model.html#af5e1c7d324bab167ecaa3e827161ec13">Shiften_Model</a>
 , <a class="el" href="class_taken.html#a2c370b12ed83ff4617224675576b47a1">Taken</a>
@@ -327,6 +350,9 @@ $(document).ready(function(){initNavTree('functions.html','');});
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>verwijder()
 : <a class="el" href="class_plaats.html#a7e448db214202eec8608da6984fd1cd8">Plaats</a>
+</li>
+<li>verwijderHerinnering()
+: <a class="el" href="class_mail.html#a5870a82a870b3b579d503101494abaf9">Mail</a>
 </li>
 <li>vrijwilligerInShiftToevoegen()
 : <a class="el" href="class_shiften.html#a68ed5c1cd7c018cd80ceb6bc940afa7f">Shiften</a>
