@@ -102,7 +102,7 @@
 
 
                             <div class='card'>
-                                <div class='card-header'><input type="checkbox" class="select-persoongroep" >Activiteit <?php echo $keuzemogelijkheid->naam ?></div>
+                                <div class='card-header'><input type="checkbox" class="select-persoongroep" > Activiteit <?php echo $keuzemogelijkheid->naam ?></div>
                                 <div class='card-body'>
                                     <?php
                                     foreach ($keuzemogelijkheid->taken as $taak) {
@@ -110,9 +110,9 @@
                                             ?>
 
                                             <div class="persoongroep" id="vrijwilliger<?php echo $taak->id ?>">
-                                                <h5><input type="checkbox" class="select-persoongroep"
+                                                <p><b><input type="checkbox" class="select-persoongroep"
                                                            data-select="vrijwilliger<?php echo $taak->id ?>">
-                                                    Vrijwilligers <?php echo $taak->functie ?></h5>
+                                                        Vrijwilligers <?php echo $taak->functie ?></b></p>
                                                 <?php
                                                 foreach ($taak->shiften as $shift) {
                                                     foreach ($shift->vrijwilligers as $persoon) {
@@ -135,9 +135,9 @@
                                         if (!$keuzeoptie->verbergen) {
                                             ?>
                                             <div class="persoongroep" id="deelnemer<?php echo $keuzeoptie->id ?>">
-                                            <h5><input type="checkbox" class="select-persoongroep"
+                                            <p><b><input type="checkbox" class="select-persoongroep"
                                                        data-select="deelnemer<?php echo $keuzeoptie->id ?>"> Deelnemers
-                                                "<?php echo $keuzeoptie->naam ?>"</h5>
+                                                    "<?php echo $keuzeoptie->naam ?>"</b></p>
                                                 <?php foreach ($keuzeoptie->personen as $persoon) {
                                                     ?>
                                                     <label><input type="checkbox" name="personen[]"
