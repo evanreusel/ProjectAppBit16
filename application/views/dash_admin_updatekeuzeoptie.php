@@ -76,7 +76,7 @@
     </div>
     <div class="form-group row">
         <label for="begin" class="col-form-label">Begin datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE, 'class'=>'form_datetime'),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
 
     </div>
     <div class="form-group row">
