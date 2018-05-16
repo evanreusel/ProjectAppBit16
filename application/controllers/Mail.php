@@ -75,7 +75,21 @@ class Mail extends CI_Controller {
     }
     public function maakHerinnering()
     {
-        print_r($_POST);
+        //print_r($_POST);
+        $id= $this->input->post('id');
+        $personen = $this->input->post('personen');
+        $personen = array_unique($personen);
+        $datum = $id= $this->input->post('datum');
+        $mailsjabloon = $id= $this->input->post('mailsjabloon');
+        if ($id = "0")
+        {
+            // nieuwe herinnering aanmaken
+        }
+        else
+        {
+            // bestaande herinnering aanpassen
+        }
+        print_r($personen);
     }
     public function overzicht()
     {
