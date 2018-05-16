@@ -12,8 +12,9 @@ class Taken_Model extends CI_Model{
         $this->load->database();
 
     }
-    /// Functie voor het opvragen van een specifieke taak.
+
     /**
+     * Functie voor het opvragen van een specifieke taak.
 	 * @param string $id
 	 *  Id van de taak
  	*/
@@ -30,8 +31,9 @@ class Taken_Model extends CI_Model{
         $query = $this->db->get('Taak');
         return $query->result();
     }
-    /// Functie voor ophalen van alle taken die behoren tot een welbepaalde keuzemogelijkheid.
+
     /**
+     * Functie voor ophalen van alle taken die behoren tot een welbepaalde keuzemogelijkheid.
 	 * @param string $id
 	 *  Id van de keuzemogelijkheid
  	*/
@@ -42,8 +44,9 @@ class Taken_Model extends CI_Model{
         return $query->result();
 
     }
-    /// Functie voor het ophalen van alle shiften die tot een taak behoren met een specifieke keuzemogelijkheid.
+
     /**
+     * Functie voor het ophalen van alle shiften die tot een taak behoren met een specifieke keuzemogelijkheid.
 	 * @param string $id
 	 *  Id van de taak
  	*/
@@ -59,8 +62,9 @@ class Taken_Model extends CI_Model{
 
         return $taken;
     }
-    /// Functie voor het aanpassen van een taak die mee wordt geleverd als object.
+
      /**
+      * Functie voor het aanpassen van een taak die mee wordt geleverd als object.
 	 * @param stdClass $taak
 	 *  Object van de taak die aangepast moet worden
  	*/
@@ -69,8 +73,9 @@ class Taken_Model extends CI_Model{
         $this->db->where('id', $taak->id);
         $this->db->update('Taak', $taak);
     }
-    /// Functie voor het toevoegen van een taak die mee wordt geleverd als object.
+
      /**
+      * Functie voor het toevoegen van een taak die mee wordt geleverd als object.
 	 * @param stdClass $taak
 	 *  Object van de taak die toegevoegd moet worden
  	*/
@@ -79,8 +84,8 @@ class Taken_Model extends CI_Model{
         return $this->db->insert_id();
     }
     
-    /// Functie voor het verwijderen van een taak die mee wordt geleverd als id.
     /**
+     * Functie voor het verwijderen van een taak die mee wordt geleverd als id.
 	 * @param string $id
 	 *  Id van de taak die verwijderd moet worden
  	*/

@@ -18,8 +18,9 @@ class Shiften_Model extends CI_Model{
         $this->load->database();
 
     }
-    /// Functie voor het ophalen van een specifieke shift op basis van een id.
+
     /**
+     * Functie voor het ophalen van een specifieke shift op basis van een id.
 	 * @param string $id
 	 *  Id van de shift
  	*/
@@ -37,8 +38,8 @@ class Shiften_Model extends CI_Model{
         return $query->result();
     }
 
-    /// Functie voor het ophalen van alle shiften die bij een specifieke taak horen. Alle gevonden shiften worden gesorteerd op basis van naam.
      /**
+      * Functie voor het ophalen van alle shiften die bij een specifieke taak horen. Alle gevonden shiften worden gesorteerd op basis van naam.
 	 * @param string $id
 	 *  Id van de taak
  	*/
@@ -49,8 +50,9 @@ class Shiften_Model extends CI_Model{
         return $query->result();
 
     }
-    /// Functie voor het aanpassen van een welbepaalde shift die meegegeven wordt als object.
+
      /**
+      * Functie voor het aanpassen van een welbepaalde shift die meegegeven wordt als object.
 	 * @param stdClass $shift
 	 *  Object van een shift die aangepast moet worden
  	*/
@@ -59,8 +61,9 @@ class Shiften_Model extends CI_Model{
         $this->db->where('id', $shift->id);
         $this->db->update('Shift', $shift);
     }
-    /// Functie voor het tevoegen van een welbepaalde shift die meegegeven wordt als object.
+
      /**
+     * Functie voor het tevoegen van een welbepaalde shift die meegegeven wordt als object.
 	 * @param stdClass $shift
 	 *  Object van een shift die toegevoegd moet worden
  	*/
@@ -69,8 +72,8 @@ class Shiften_Model extends CI_Model{
         return $this->db->insert_id();
     }
     
-    /// Functie voor het verwijderen van een welbepaalde shift waarvan de id meegegeven word.
      /**
+     * Functie voor het verwijderen van een welbepaalde shift waarvan de id meegegeven word.
 	 * @param string $id
 	 *  Id van de shift de verwijderd moet worden
  	*/

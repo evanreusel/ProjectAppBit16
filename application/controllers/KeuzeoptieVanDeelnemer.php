@@ -4,6 +4,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/// Controller voor functionaliteiten van keuzeoptie voor deelnemer
 class KeuzeOptieVanDeelnemer extends CI_Controller{
     
      public function __construct() {
