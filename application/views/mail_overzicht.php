@@ -299,8 +299,8 @@
             console.log("SELECTEER PERSONENGROEP");
             select = $(this).data('select');
             console.log(select);
-            $('#' + select + " :checkbox:").not(".select-persoongroep").prop("checked", this.checked);
-            console.log($(this).closest(".persoongroep").find(":checkbox"));
+            $('#' + select + " :checkbox:").prop("checked", this.checked);
+            console.log($(this).closest(".persoongroep").find(":checkbox").not(".select-persoongroep"));
 
         });
     });
