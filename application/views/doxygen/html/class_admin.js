@@ -1,12 +1,12 @@
 var class_admin =
 [
-    [ "__construct", "class_admin.html#a095c5d389db211932136b53f25f39685", null ],
-    [ "checkpass", "class_admin.html#a2df41f5feb0a50e8b308f7a7b6b25dfb", null ],
-    [ "dash", "class_admin.html#a35f5125b52883ea70807c42282f60b54", null ],
-    [ "delete", "class_admin.html#a2f8258add505482d7f00ea26493a5723", null ],
-    [ "excel", "class_admin.html#ab619c12069c76b755a2ceae543d527fe", null ],
-    [ "index", "class_admin.html#a149eb92716c1084a935e04a8d95f7347", null ],
-    [ "login", "class_admin.html#a3ea73f2d243749d401f168a6dc356528", null ],
-    [ "logout", "class_admin.html#a082405d89acd6835c3a7c7a08a7adbab", null ],
-    [ "update", "class_admin.html#a842e4774e3b3601a005b995c02f7e883", null ]
+    [ "__construct", "class_admin.html#a14eb545baec47d1bccb823fdcea061d4", null ],
+    [ "checkpass", "class_admin.html#a3a644a6067cccdf84a5649a7777c1197", null ],
+    [ "dash", "class_admin.html#a7c5b27650e2fd63227f09ece49beb2e9", null ],
+    [ "delete", "class_admin.html#af559704017572a72fef6280a651e1245", null ],
+    [ "excel", "class_admin.html#a6f3af7077b5bdaee0e8d4b43c0af9094", null ],
+    [ "index", "class_admin.html#ae7187e96036e6bd23086e02b936b214a", null ],
+    [ "login", "class_admin.html#ae84deedea35076345e2e892ea0d60413", null ],
+    [ "logout", "class_admin.html#ac008e1e771793cdd2b8223eec46061ae", null ],
+    [ "update", "class_admin.html#a5c7b585615c86fd80fe4b2dd8e282da0", null ]
 ];

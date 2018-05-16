@@ -1,9 +1,9 @@
 var class_shiften =
 [
-    [ "__construct", "class_shiften.html#a095c5d389db211932136b53f25f39685", null ],
-    [ "delete", "class_shiften.html#a2f8258add505482d7f00ea26493a5723", null ],
-    [ "update", "class_shiften.html#a842e4774e3b3601a005b995c02f7e883", null ],
-    [ "vrijwilligerInShiftToevoegen", "class_shiften.html#ab799250126ff159fd1ca9e896a57bcb6", null ],
-    [ "vrijwilligerInShiftVerwijderen", "class_shiften.html#acd0ea5b1f1b5ef6ee363916d98a261cb", null ],
-    [ "vrijwilligerInShiftWeergeven", "class_shiften.html#acc7f0b07717791306d83399416669ef9", null ]
+    [ "__construct", "class_shiften.html#ab8a8594268fd644b65cbc27698fd94f4", null ],
+    [ "delete", "class_shiften.html#a68ff1255b0af39c545eae586c3fac0b8", null ],
+    [ "update", "class_shiften.html#af783a05fca5d9fe438122482ce10ded8", null ],
+    [ "vrijwilligerInShiftToevoegen", "class_shiften.html#a68ed5c1cd7c018cd80ceb6bc940afa7f", null ],
+    [ "vrijwilligerInShiftVerwijderen", "class_shiften.html#a67201ed9a01bf5fe153c6c8d2a60e9ad", null ],
+    [ "vrijwilligerInShiftWeergeven", "class_shiften.html#a9919cdc243d1281466d02e8b5d102e69", null ]
 ];
