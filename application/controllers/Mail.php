@@ -78,11 +78,11 @@ class Mail extends CI_Controller {
         $this->load->model("Mailherinnering_model");
         $this->load->model("PersoonInHerinnering_model");
         //print_r($_POST);
-        $id= $this->input->post('id');
+        $id = $this->input->post('id');
         $personen = $this->input->post('personen');
         $personen = array_unique($personen);
-        $datum = $id= $this->input->post('datum');
-        $mailsjabloon = $id= $this->input->post('mailsjabloon');
+        $datum = $this->input->post('datum');
+        $mailsjabloon = $this->input->post('mailsjabloon');
 
         // nieuwe herinnering aanmaken
         $mailherinnering = new stdClass();
@@ -106,7 +106,7 @@ class Mail extends CI_Controller {
         }
 
 
-        
+
     }
 
     public function overzicht()
