@@ -46,7 +46,7 @@
         $("#shiftForm").submit(function(event) {
             var naam = $('#naam').val();
 
-            if (naam !== "") {
+            if (naam == "") {
                 alert("De shift heeft geen naam.");
                 $('#naam').addClass('is-invalid');
                 event.preventDefault();

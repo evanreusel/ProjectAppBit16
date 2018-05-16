@@ -52,7 +52,7 @@
         $("#taakForm").submit(function(event) {
             var naam = $('#functie').val();
 
-            if (naam !== "") {
+            if (naam == "") {
                 alert("De taak heeft geen naam.");
                 $('#functie').addClass('is-invalid');
                 event.preventDefault();

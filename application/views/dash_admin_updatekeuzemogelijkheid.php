@@ -68,7 +68,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
             var einde =$('#einde').val();
             var naam =$('#keuzemogelijkheid').val();
 
-            if (naam !== "") {
+            if (naam == "") {
                 alert("De keuzemogelijkheid heeft geen naam.");
                 $('#keuzemogelijkheid').addClass('is-invalid');
                 event.preventDefault();
