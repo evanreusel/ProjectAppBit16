@@ -1,4 +1,7 @@
 <?php
+/**
+*button initialiseren voor de submit
+*/
     $arrayparameters = array();
     $arrayparameters['id'] = 'submit';
     $arrayparameters['value']= 'submit';
@@ -13,11 +16,14 @@
 var error;
 var errortitle;
 
+/**
+controle bestand
+*/
 function filecheck(){
     var file = $("#userfile").val();
     console.log(file);
 
-    //kijken of een persoonstype is gekozen
+    ///kijken of een persoonstype is gekozen
     var soortselected = false;
     
     $(".soortbutton").each(function(){
@@ -32,7 +38,8 @@ function filecheck(){
         return false;
     }
 
-    //kijken of file in orde is
+    ///kijken of file in orde is
+    /// indien er een probleem is wordt de foutboodschap aangepast
     if(file != ""){
     if(RegExp('\\.csv$').test(file)){     
         return true
@@ -47,6 +54,10 @@ function filecheck(){
     return false;    
 }
 
+/**
+soort van de persoon kiezen
+stijl knoppen in orde brengen
+*/
 function soortselect(){
     $(".soortbutton").click(function(){
         $(".soortbutton").each(function(){
@@ -69,10 +80,13 @@ function soortselect(){
 
  soortselect();
 
+/**
+indien de file in orde is wordt deze ingediend
+indien er een probleem is wordt er een foutboodschap getoond
+*/
  $("#submit").click(function(event){
      if(!filecheck()){
         event.preventDefault();
-        console.log("error");  
         $("#errormessage").text(error);
         $('#errorpopup').dialog();
         $('#errorpopup').dialog("option","title", errortitle);    

@@ -10,7 +10,7 @@
 laatstgesorteerd = "";
 asc = true;
 
-/*
+/**
 *De hide functie gaat alle elementen verbergen met de class 'hidden'
 */
 function hide(){
@@ -23,7 +23,7 @@ $("tr").each(function(){
 });
 }
 
-/*
+/**
 *
 *De search functie zorgt ervoor dat als je op een veld met een 'search' class drukt alle onderliggende elementen alphabetisch gesorteerd worden
 *Een vereiste hiervoor is dat de header de class 'search' en het id 'Xsearch' heeft
@@ -50,7 +50,7 @@ $(".search").keyup(function(){
 hide();
 });
 }
-/*
+/**
 *
 *De search functie zorgt ervoor dat als je op een veld met een 'search' class drukt alle onderliggende elementen alphabetisch gesorteerd worden
 *Een vereiste hiervoor is dat de header de class 'Xsort' en het id 'sort' heeft
@@ -65,6 +65,9 @@ function sort(){
     attribuut = $(this).attr('id');
     attribuut = attribuut.replace('sort',''); 
 
+    /**
+    * icons aanpassen naar de juiste sorteervolgorde
+    */
     $(".sort > i").each(function(){
         if($(this).hasClass("fa-angle-down")){
             $(this).removeClass("fa-angle-down");
@@ -82,10 +85,12 @@ function sort(){
     }
     laatstgesorteerd = attribuut;
     
-    console.log(asc);
-
+    
+    /**
+    * lijst ophalen met alle elementen die gesorteerd moeten worden
+    */ 
     rijen = document.getElementsByClassName(attribuut + "item");
-    console.log(rijen);
+    
 
     for (i = 0; i < (rijen.length - 1); i++) {
     wissel = true;
@@ -93,14 +98,18 @@ function sort(){
 
     do {
 
+    /**
+    * een lineaire sorteer functie:
+    * checken of een element alfabetisch een hogere waarde heeft als het vorige element
+    * indien de waarde hoer is worden deze 2 elementen verwisseld
+    * dit gebeurd totdat het element een lagere waarde heeft als het vorige element
+    */
     hoger = rijen[teller].innerHTML.toLowerCase() > rijen[teller+1].innerHTML.toLowerCase();
     if( (hoger && asc) || (!hoger && !asc)){
     rijen[teller].closest('tr').parentNode.insertBefore(rijen[teller + 1].closest('tr'), rijen[teller].closest('tr'));
     teller = teller - 1;
-    console.log("ok");
     } else {
         wissel = false;
-        console.log("nxt");
     }
     }while(wissel && teller >= 0);
 
@@ -147,9 +156,10 @@ sort();
 <?php
 /**
  *
- * Hier is een lijst met de namen van alle zoekvelden.
- * Het is belangrijk voor de search functie in jquery dat alle inputs
- * een class 'search' hebben en een id 'Xsearch' waarbij X de naam van het veld is 
+ * Hier worden alle velden ingevuld met de bijhorende gegevens van de database
+ * voor de search en de sort functie is het belangrijk dat de velden de class 'Xitem' hebben
+ * waarbij X de naam van de rowheader is
+ * Voor de sort functie moeten de velden de class sortable hebben
  *
  */
 ?>
@@ -163,19 +173,12 @@ sort();
 
 <?php
 
-/**
- *
- * Hier worden alle velden ingevuld met de bijhorende gegevens van de database
- * voor de search en de sort functie is het belangrijk dat de velden de class 'Xitem' hebben
- * waarbij X de naam van de rowheader is
- * Voor de sort functie moeten de velden de class sortable hebben
- *
- */
+
 foreach($deelnemers as $deelnemer){
     foreach($deelnemers[$deelnemer] as $keuzeoptie){
     echo "<tr>";
     echo "<td class=\"naamitem sortable\"> $deelnemer->naam </td>";
-    echo "<td class=\"mailitem sortable\"> $deelnemer->mail </td>";
+    echo "<td class=\"mailitem sortable\"> <a href=\"mailto:$deelnemer->mail\"> $deelnemer->mail </a> </td>";
     $naam = $keuzeoptie->naam;
     echo "<td class=\"activiteititem sortable\"> $naam </td>";
     $tijd = $keuzeoptie->keuzemogelijkheid->beginTijdstip;
