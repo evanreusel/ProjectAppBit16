@@ -60,8 +60,8 @@ class Mail extends CI_Controller {
             {
                 $persoon = $this->persoon_model->get_byId($persoonId->persoonId);
                 //TODO: Maak vulsjabloon()
-                $sjabloonIngevuld = str_replace("$naam", $persoon->naam, $$mailsjabloon->inhoud);
-                $sjabloonIngevuld = str_replace("$token", $persoon->token, $$mailsjabloon->inhoud);
+                $sjabloonIngevuld = str_replace("#naam", $persoon->naam, $$mailsjabloon->inhoud);
+                $sjabloonIngevuld = str_replace("#token", $persoon->token, $$mailsjabloon->inhoud);
                 $mailObject = $this->mailjet->maakBerichtObject($persoon->mail, $persoon->naam, $mailsjabloon->naam, $sjabloonIngevuld, $sjabloonIngevuld);
                 $this->mailjet->voegBerichtObjectToe($mailObject);
             }
