@@ -118,7 +118,7 @@ class Persoon_model extends CI_Model {
         $persoon->jaarid = $jaargang->id;
         $persoon->token = $this->generatetoken();
 
-        $this->db->insert('persoon', $persoon);
+        $this->db->insert('Persoon', $persoon);
     }
 
     function generatetoken(){
