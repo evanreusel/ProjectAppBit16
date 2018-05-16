@@ -95,13 +95,16 @@
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 
-        $("form").submit(function() {
+        $("#keuzeoptieForm").submit(function(event) {
             var min = $('.min').val();
             var max = $('.max').val();
             var begin =$('.begin').val(); 
             var einde =$('.einde').val();
+            
+
 
             if (min > max) {
+
                 $("body").alert("Het minimum aantal deelnemers is groter dan het maximum.");
                 event.preventDefault();
             } else {
