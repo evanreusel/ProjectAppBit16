@@ -108,7 +108,7 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
   </div>
 </div>
 <script>
-$('.verwijder').Click(function(){
+$('.verwijder').click(function(){
     $('#verwijderenLocatie').attr("href",$(this).val());
 });
 </script>
