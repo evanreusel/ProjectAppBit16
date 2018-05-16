@@ -187,7 +187,7 @@ foreach($deelnemers as $deelnemer){
     }
 }
 } else {
-    echo '<tr><td colspan="5"><h2> Sorry er zijn geen vrijwilligers voor dit jaargang </h2></td></tr>';
+    echo '<tr><td colspan="5"><h2> Sorry, er zijn geen vrijwilligers ingeschreven voor deze jaargang. </h2></td></tr>';
 }
 
 
