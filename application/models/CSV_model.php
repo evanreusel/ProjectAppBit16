@@ -12,6 +12,7 @@ class csv_model extends CI_Model
         $count=0;
         $fp = fopen($_FILES['userfile']['tmp_name'],'r') or die("can't open file");
         $personen = array();
+        $datatype = "";
 
         while($csv_line = fgetcsv($fp,1024))
         {
@@ -21,14 +22,16 @@ class csv_model extends CI_Model
             {
                 ///lees de 1ste lijn van de file
                 $csvheaders = $csv_line[0];
-                ///converter voor alternatieve csv template
-                $csvheaders = str_replace(",",";",$csvheaders);
                 ///slaag de index van de headers op voor later
-                if($csvheaders != "naam;nummer;mail;woonplaats;adres"){
+                if($csvheaders == "naam;nummer;mail;woonplaats;adres"){
+                   $datatype = ";";
+                } elseif($csv_line[0] == "naam" && $csv_line[1] == "nummer" && $csv_line[2] == "mail" && $csv_line[3] == "woonplaats" && $csv_line[4] == "adres") {
+                    $datatype=",";
+                } else {
                     return null;
                 }
+                
                 continue;
-
             }
 
             ///lees lijn per lijn de personen uit 
@@ -37,9 +40,13 @@ class csv_model extends CI_Model
                 $csvdata = $csv_line[0];
             }
             $i++;
-            ///converter voor alternatieve csv template
-            $csvdata = str_replace(",",";",$csvdata);
+            
+            if($datatype == ";"){
             $data = explode(";",$csvdata);
+            } else {
+                $data = $csv_line;
+            }
+
             $persoon = new stdClass();
             
             ///kijk of elk element is ingevuld
