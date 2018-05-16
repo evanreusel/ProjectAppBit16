@@ -93,7 +93,7 @@
             <div class="modal-body">
                     <input type="hidden" value="0" name="id" id="modalReminderId">
                     <label for="modalReminderDatum">Datum:</label>
-                    <input type="date" id="modalReminderDatum">
+                    <input type="date" id="modalReminderDatum" name="datum">
                     <h5>Ontvangers</h5>
                     <?php
                     foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
@@ -196,7 +196,7 @@
                         </div>
                     </div>
                     <label>Mailsjabloon</label>
-                    <select id="modalMailsjabloon">
+                    <select id="modalMailsjabloon" name="mailsjabloon">
                         <?php foreach ($mailsjablonen as $sjabloon) {
                             ?>
                             <option value="<?php echo $sjabloon->id ?>">
