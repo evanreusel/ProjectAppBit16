@@ -160,9 +160,11 @@
 <?php    
     echo form_button($arrayparameters);
     if(isset($data['admin'])){
+        if( $data['admin']->id != $this->session->userdata('id') ){
         echo '<a class="btn btn-danger" data-toggle="modal" data-target="#keuzeModal">
                 <i class="fa fa-trash-o"></i> Verwijder
         </a>';
+    }
     }
 
     
