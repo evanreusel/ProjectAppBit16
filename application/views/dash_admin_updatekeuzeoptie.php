@@ -111,7 +111,7 @@
                 $('#keuzeoptie').addClass('is-invalid');
                 event.preventDefault();
             }
-            if (min > max) {
+            if ((int)min > (int)max) {
                 alert("Het minimum aantal deelnemers is groter dan het maximum.");
                 $('#minimum').addClass('is-invalid');
                 event.preventDefault();
