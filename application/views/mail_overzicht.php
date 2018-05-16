@@ -98,8 +98,11 @@
                     <?php
                     foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
                         if (!$keuzemogelijkheid->verbergen) { ?>
+                            <div class="persoongroep">
+
+
                             <div class='card'>
-                                <div class='card-header'>Activiteit <?php echo $keuzemogelijkheid->naam ?></div>
+                                <div class='card-header'><input type="checkbox" class="select-persoongroep" >Activiteit <?php echo $keuzemogelijkheid->naam ?></div>
                                 <div class='card-body'>
                                     <?php
                                     foreach ($keuzemogelijkheid->taken as $taak) {
@@ -148,6 +151,7 @@
                                     }
                                     ?>
                                 </div>
+                            </div>
                             </div>
                             <?php
                         }
