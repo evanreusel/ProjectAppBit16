@@ -1,45 +1,41 @@
+<!-- 
+    PROOST DAAN
+	LAST UPDATED: 16 05 18
+	VIEW DEELNEMERS INSCHRIJVEN
+-->
+
 <?php 
+
+// Nagaan of deelnemer reeds ingeschreven is
 $ingeschrevenActiviteiten = new stdClass();
 foreach ($ingeschreven as $key) {
     $id=$key->keuzeoptieId;
     $ingeschrevenActiviteiten->$id=0; 
 }
 
-print_r($keuzemogelijkheden);
-echo '</br></br>';
-print_r($ingeschreven);
+// Keuzemogelijkheden oplijsten (zoals eten, activiteiten,...) met daarin de keuzeopties (vis/vlees, tennis,...)
 foreach($keuzemogelijkheden as $keuzemogelijkheid) {
     echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
 
         foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie ) {
                     $id = $keuzeoptie->id;
                     echo '<li class="list-group-item justify-content-between align-items-center">'.$keuzeoptie->naam;
-                    /*echo '<button class="btn btn-warning float-right ';
-                    if (!isset($ingeschrevenActiviteiten->$id)) {
-                        echo 'hidden';
-                    }
-                    echo '" id="uitschrijven" value="'.$keuzeoptie->id.'" title="uitschrijven voor deze taak">Uitschrijven</button>';
-                    echo '<button class="btn btn-primary float-right ';
-                    if (isset($ingeschrevenActiviteiten->$id)) {
-                        echo 'hidden';
-                    }echo '" id="inschrijven" value="'.$keuzeoptie->id.'" title="inschrijven voor deze taak">Inschrijven</button>';
-                    */
-
                     echo '<button class="btn keuzeoptie float-right ';
+
+                    // btn-primary met tekst 'inschrijven' als er nog niet is ingeschreven, anders btn-warning met tekst 'uitschrijven'
                     if (!isset($ingeschrevenActiviteiten->$id)) {
                         echo 'btn-primary" title="inschrijven voor deze taak';
                     } else {
                         echo 'btn-warning title="uitschrijven voor deze taak';
                     }echo '" id="'. $keuzeoptie->id .'" value="'.$keuzeoptie->id.'">';
 
+                    // Tekst van de knop aanpassen nadat erop wordt geklikt (als op 'inschrijven' wordt geklikt, verandert dit in 'uitschrijven')
                     if (!isset($ingeschrevenActiviteiten->$id)) {
                         echo 'inschrijven';
                     } else {
                         echo 'uitschrijven';
-                    }
-                    
-                    echo '</button>';
-                    
+                    }  
+                    echo '</button>';          
         }     
         echo "</li></ul></li>";
     ;
