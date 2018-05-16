@@ -106,13 +106,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a095c5d389db211932136b53f25f39685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzeoptie_van_deelnemer___model.html#a095c5d389db211932136b53f25f39685">__construct</a> ()</td></tr>
 <tr class="separator:a095c5d389db211932136b53f25f39685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5240031a73a1db935718f12ab29d80ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzeoptie_van_deelnemer___model.html#a5240031a73a1db935718f12ab29d80ad">get_byKeuzeoptieId</a> ($id)</td></tr>
+<tr class="memdesc:a5240031a73a1db935718f12ab29d80ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">opvragen van keuzeoptie door id mee te geven  <a href="#a5240031a73a1db935718f12ab29d80ad">More...</a><br /></td></tr>
 <tr class="separator:a5240031a73a1db935718f12ab29d80ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa04bd86e024fed6b73b051c9cbb9ec52"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzeoptie_van_deelnemer___model.html#aa04bd86e024fed6b73b051c9cbb9ec52">get_byPersoonId</a> ($id)</td></tr>
+<tr class="memdesc:aa04bd86e024fed6b73b051c9cbb9ec52"><td class="mdescLeft">&#160;</td><td class="mdescRight">opvragen van persoon door id mee te geven  <a href="#aa04bd86e024fed6b73b051c9cbb9ec52">More...</a><br /></td></tr>
 <tr class="separator:aa04bd86e024fed6b73b051c9cbb9ec52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59e9964aa59737ee3789f9458fdc4ee2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzeoptie_van_deelnemer___model.html#a59e9964aa59737ee3789f9458fdc4ee2">add</a> ($KeuzeoptieVanDeelnemer)</td></tr>
+<tr class="memdesc:a59e9964aa59737ee3789f9458fdc4ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">toevoegen van nieuwe keuzeoptie van een persoon aan de database  <a href="#a59e9964aa59737ee3789f9458fdc4ee2">More...</a><br /></td></tr>
 <tr class="separator:a59e9964aa59737ee3789f9458fdc4ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b51c4f3d41dcc04514f7ea8405f4ed3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzeoptie_van_deelnemer___model.html#a0b51c4f3d41dcc04514f7ea8405f4ed3">delete</a> ($shiftId, $persoonId)</td></tr>
-<tr class="separator:a0b51c4f3d41dcc04514f7ea8405f4ed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af718b06f52e41eecd48c19b480fd237a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_keuzeoptie_van_deelnemer___model.html#af718b06f52e41eecd48c19b480fd237a">delete</a> ($keuzeoptieId, $persoonId)</td></tr>
+<tr class="memdesc:af718b06f52e41eecd48c19b480fd237a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verwijderen van keuzeoptie van een persoon uit de database.  <a href="#af718b06f52e41eecd48c19b480fd237a">More...</a><br /></td></tr>
+<tr class="separator:af718b06f52e41eecd48c19b480fd237a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a095c5d389db211932136b53f25f39685"></a>
@@ -149,10 +153,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>toevoegen van nieuwe keuzeoptie van een persoon aan de database </p>
+
 </div>
 </div>
-<a id="a0b51c4f3d41dcc04514f7ea8405f4ed3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b51c4f3d41dcc04514f7ea8405f4ed3">&#9670;&nbsp;</a></span>delete()</h2>
+<a id="af718b06f52e41eecd48c19b480fd237a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af718b06f52e41eecd48c19b480fd237a">&#9670;&nbsp;</a></span>delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,7 +167,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">delete </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$shiftId</em>, </td>
+          <td class="paramname"><em>$keuzeoptieId</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -176,6 +182,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verwijderen van keuzeoptie van een persoon uit de database. </p>
 
 </div>
 </div>
@@ -195,6 +203,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>opvragen van keuzeoptie door id mee te geven </p>
+
 </div>
 </div>
 <a id="aa04bd86e024fed6b73b051c9cbb9ec52"></a>
@@ -212,6 +222,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>opvragen van persoon door id mee te geven </p>
 
 </div>
 </div>
