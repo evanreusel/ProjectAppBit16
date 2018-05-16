@@ -6,7 +6,7 @@
 
 <ul class="nav nav-tabs buttonmenu">
 <?php
-// Vormen van alle tab-knoppen van alle keuzemogelijkheden
+/// Vormen van alle tab-knoppen van alle keuzemogelijkheden
 if(count($data['keuzemogelijkheden']) > 0) {
     foreach ($data['keuzemogelijkheden'] as $activiteit) {
         echo '<li><a href="#'.$activiteit->id.'" data-toggle="tab" class="btn btn-primary" title="Druk hier om de keuzeopties voor deze keuzemogelijkheid aan te passen">'. $activiteit->naam .'</a></li>';
@@ -17,7 +17,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
 </ul>
 <div class="tab-content">
     <?php
-        // Invullen van de tabel met alle gevonden resultaten.
+        /// Invullen van de tabel met alle gevonden resultaten.
         if(count($data['keuzemogelijkheden']) > 0) {
             foreach ($data['keuzemogelijkheden'] as $activiteit) {
             $kolommen= array("naam", "plaatsId", "min", "max", "beginTijdstip","eindTijdstip");
@@ -41,7 +41,7 @@ if(count($data['keuzemogelijkheden']) > 0) {
                 echo '<td><button class="deleteKeuzeoptie btn btn-round btn-danger" title="Druk hier om deze keuzeoptie te verwijderen" data-toggle="modal" data-target="#keuzeModal" value="'.$keuzeoptie->id.'"><i class="fa fa-trash"></i> Verwijderen</button></td>';
                    echo "</tr>"; 
             }
-            // Aanmaak van de knoppen om het beheer van de keuzemogelijkheden en keuzeopties mogelijk te maken
+            /// Aanmaak van de knoppen om het beheer van de keuzemogelijkheden en keuzeopties mogelijk te maken
             echo "</table>";
             echo anchor('admin/dash/updatekeuzeoptie/'.$activiteit->id.'i',"Keuzeoptie toevoegen",'class="btn btn-primary" title="Druk hier om een keuzeoptie toe te voegen"');
             echo anchor('admin/dash/takenbeheer/'.$activiteit->id,'<button class="btn btn-round btn-warning" title="Druk hier om taken te beheren bij deze keuzemogelijkheid"><i class="fa fa-cog"></i> ' .$activiteit->naam. ' vrijwilliger taken</button>').'</td>';
