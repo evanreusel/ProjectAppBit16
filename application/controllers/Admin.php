@@ -463,9 +463,11 @@ class Admin extends CI_Controller {
  	*/
     public function delete($id)
 	{
+		if($id != $this->session->userdata('id') ){
 		// Delete
         $this->load->model('beheer_model');
         $this->beheer_model->delete($id);
+		}
 		
 		// Redirect to adminbeheer
 		redirect('admin/dash/adminbeheer');
