@@ -7,6 +7,13 @@ PERSOON MODEL
 
 class Persoon_model extends CI_Model {
     // =================================================================================================== GREIF MATTHIAS
+    /**
+	 * Haal een persoon op uit de database met de meegegeven id en token
+	 * @param int $id
+     * id van de op te halen persoon
+	 * @param int $token
+     * token van de op te halen pesoon
+ 	*/  
     function get_byIdAndToken($id, $token)
     {
         $this->db->where(array('id' => $id, 'token' => $token));
@@ -15,6 +22,11 @@ class Persoon_model extends CI_Model {
         return $query->result()[0];
     }
 
+    /**
+	 * Haal een persoon op uit de database met de meegegeven id
+	 * @param int $id
+     * id van de op te halen persoon
+ 	*/ 
     function get_byId($id)
     {
         $this->db->where(array('id' => $id));
@@ -28,12 +40,21 @@ class Persoon_model extends CI_Model {
     }
     // =================================================================================================== /GREIF MATTHIAS
 
+    /**
+	 * Haal een persoon op uit de database met de meegegeven id
+	 * @param int $id
+     * id van de op te halen persoon
+ 	*/ 
     function get_Id($id)
     {
         $this->db->where("id", $id);
         $query = $this->db->get('Persoon');
         return $query->row(); 
     }
+
+    /**
+	 * Haal alle personen op uit de database
+ 	*/ 
     function get_All()
     {
         //$this->db->where(array('id' => $id));
@@ -45,6 +66,10 @@ class Persoon_model extends CI_Model {
 
         return null;
     }
+
+    /**
+	 * Haal alle deelnemers op uit de database die zijn ingeschreven als deelnemer
+ 	*/ 
     function get_AllDeelnemers()
     {
         $this->db->where(array('soort' => "DEELNEMER"));
@@ -57,6 +82,10 @@ class Persoon_model extends CI_Model {
 
         return null;
     }
+
+    /**
+	 * Haal alle personen op uit de database die zijn ingeschreven als vrijwilliger
+ 	*/ 
     function get_AllVrijwilligers()
     {
         $this->load->model("VrijwilligersInShift");
@@ -81,6 +110,10 @@ class Persoon_model extends CI_Model {
 
         }
     }
+
+    /**
+	 * Haal alle vrijwilligers op uit de database die niet zijn ingeschreven voor een activiteit
+ 	*/ 
     function get_NietIngeschrevenVrijwilligers()
     {
         $query = $this->db->select('*')->from('Persoon')
@@ -96,6 +129,12 @@ class Persoon_model extends CI_Model {
 
         return $nietingeschreven;
     }
+
+   /**
+	 * Haal alle deelnemers op uit de database die niet zijn ingeschreven voor een activiteit
+     * @param int $jaargang
+     * het jaargang van de op te halen personen
+ 	*/  
     function get_NietIngeschrevenDeelnemers($jaargang)
     {
         $query = $this->db->select('*')->from('Persoon')
@@ -111,6 +150,11 @@ class Persoon_model extends CI_Model {
         return $nietingeschreven;
     }
 
+ /**
+	 * voeg een persoon toe aan de database
+     * @param stdclass $persoon
+     * de toe te voegen persoon
+ 	*/  
     function insert($persoon){
         //haal het huidige jaargangid op om later te koppelen aan de persoon
         $this->load->model("Jaargang_model");
@@ -121,6 +165,9 @@ class Persoon_model extends CI_Model {
         $this->db->insert('Persoon', $persoon);
     }
 
+    /**
+	 * genereer een unieke token
+ 	*/ 
     function generatetoken(){
         do{
         $token = bin2hex(random_bytes(30));
@@ -130,6 +177,11 @@ class Persoon_model extends CI_Model {
     }
 
     // =================================================================================================== GREIF MATTHIAS
+    /**
+	 * zoek een persoon in de database met een bepaald token
+     * @param token
+     * de token voor de op te zoeken persoon
+ 	*/ 
     function get_bytoken($token){        
         $this->db->where('token', $token);
         $query = $this->db->get('Persoon');
@@ -137,8 +189,13 @@ class Persoon_model extends CI_Model {
     }
     // =================================================================================================== /GREIF MATTHIAS
 
-    ///Haal alle medewerkers die voor een activiteit zijn ingeschreven voor een meegegeven jaargang
-    ///samen met de gekoppelde activiteiten 
+   
+    /**
+	 *     Haal alle medewerkers die voor een activiteit zijn ingeschreven voor een meegegeven jaargang
+     *     samen met de gekoppelde activiteiten 
+     * @param jaargangid
+     * de jaargang van de op te zoeken medewerkers
+ 	*/ 
     function getallwithactiviteit($jaargangId){
 
         //tussenvariabele ophalen
@@ -181,7 +238,11 @@ class Persoon_model extends CI_Model {
 
     // =================================================================================================== MATTHIAS
     
-    
+     /**
+	 * haal alle personen van een bepaald jaargang
+     * @param $jaargangid
+     * het jaargang van de op te halen personen
+ 	*/ 
     function getAll_ofJaargang($jaargangId){
         $query = $this->db->where('jaarid', $jaargangId);
         $query = $this->db->get('Persoon');
@@ -189,7 +250,11 @@ class Persoon_model extends CI_Model {
         return $query->result();
     }
 
-    ///vrijwilligers koppelen aan hun keuzemogelijkheden van het gekozen jaargang
+     /**
+	 * Alle vrijwilligers ophalen met hun activiteiten van een bepaald jaargang
+     * @param $jaargangid
+     * het jaargang van de op te halen personen
+ 	*/ 
     function getAll_ofJaargang_withShift($jaargangId){
         // Get all Personen of Jaargang
         $personen = $this->getAll_ofJaargang($jaargangId);
@@ -231,7 +296,10 @@ class Persoon_model extends CI_Model {
     }
     // =================================================================================================== /MATTHIAS
     
-    function getAll($id)
+    /**
+	 * haal alle personen op
+ 	*/ 
+    function getAll()
     {
 
         $query = $this->db->get('Persoon');

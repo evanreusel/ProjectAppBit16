@@ -5,10 +5,6 @@
 -->
 
 <?php
-/// TIM SWERTS
-/// LAST UPDATED: 18 03 30
-/// Shiften MODEL
-///
 /// Model voor het beheren van de tabel shiften in de database
 class Shiften_Model extends CI_Model{
     

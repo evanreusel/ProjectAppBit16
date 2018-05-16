@@ -1,10 +1,5 @@
 \hypertarget{class_keuzeoptie}{}\section{Keuzeoptie Class Reference}
 \label{class_keuzeoptie}\index{Keuzeoptie@{Keuzeoptie}}
-
-
-Controller voor keuzeoptiefunctionaliteiten.  
-
-
 Inheritance diagram for Keuzeoptie\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,73 +9,48 @@ Inheritance diagram for Keuzeoptie\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_keuzeoptie_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\Hypertarget{class_keuzeoptie_a6ae8df82eb6e4ca3774f76a7ba1e165b}\label{class_keuzeoptie_a6ae8df82eb6e4ca3774f76a7ba1e165b}} 
+\mbox{\hyperlink{class_keuzeoptie_a6ae8df82eb6e4ca3774f76a7ba1e165b}{\+\_\+\+\_\+construct}} ()
+\begin{DoxyCompactList}\small\item\em Initialiseerd de benogigde libraries/models die nodig zijn voor deze controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_keuzeoptie_abe1857ac53d46fe3f2ff1e601c46739a}{get}} (\$id)
 \item 
-\mbox{\hyperlink{class_keuzeoptie_a50e3bfb586b2f42932a6a93f3fbb0828}{get}} (\$id)
+\mbox{\hyperlink{class_keuzeoptie_abb3bade0f37d81dc061789c5a3dba930}{update}} ()
 \item 
-\mbox{\hyperlink{class_keuzeoptie_a842e4774e3b3601a005b995c02f7e883}{update}} ()
-\begin{DoxyCompactList}\small\item\em =================================================================================================== /\+G\+R\+E\+IF M\+A\+T\+T\+H\+I\+AS \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_keuzeoptie_a2f8258add505482d7f00ea26493a5723}{delete}} (\$id)
-\begin{DoxyCompactList}\small\item\em Functie om keuzeopties te verwijderen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_keuzeoptie_a0b17edfec4d51362fe3863774dbbb1cf}{delete}} (\$id)
+\end{DoxyCompactItemize}
 
-
-\subsection{Detailed Description}
-Controller voor keuzeoptiefunctionaliteiten. 
-
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_keuzeoptie_a095c5d389db211932136b53f25f39685}\label{class_keuzeoptie_a095c5d389db211932136b53f25f39685}} 
-\index{Keuzeoptie@{Keuzeoptie}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
-\index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Keuzeoptie@{Keuzeoptie}}
-\subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-=================================================================================================== G\+R\+E\+IF M\+A\+T\+T\+H\+I\+AS Autoload ~\newline
-~\newline
- Redirect to home if no session started
-
-=================================================================================================== /\+G\+R\+E\+IF M\+A\+T\+T\+H\+I\+AS 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_keuzeoptie_a2f8258add505482d7f00ea26493a5723}\label{class_keuzeoptie_a2f8258add505482d7f00ea26493a5723}} 
+\mbox{\Hypertarget{class_keuzeoptie_a0b17edfec4d51362fe3863774dbbb1cf}\label{class_keuzeoptie_a0b17edfec4d51362fe3863774dbbb1cf}} 
 \index{Keuzeoptie@{Keuzeoptie}!delete@{delete}}
 \index{delete@{delete}!Keuzeoptie@{Keuzeoptie}}
 \subsubsection{\texorpdfstring{delete()}{delete()}}
-{\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Keuzeoptie\+::delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
 
-
-
-Functie om keuzeopties te verwijderen. 
-
-Redirect to keuzemogelijkheidbeheer \mbox{\Hypertarget{class_keuzeoptie_a50e3bfb586b2f42932a6a93f3fbb0828}\label{class_keuzeoptie_a50e3bfb586b2f42932a6a93f3fbb0828}} 
+Delete een keuzeoptie uit de database 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & id van de te verwijderen keuzeoptie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_keuzeoptie_abe1857ac53d46fe3f2ff1e601c46739a}\label{class_keuzeoptie_abe1857ac53d46fe3f2ff1e601c46739a}} 
 \index{Keuzeoptie@{Keuzeoptie}!get@{get}}
 \index{get@{get}!Keuzeoptie@{Keuzeoptie}}
 \subsubsection{\texorpdfstring{get()}{get()}}
-{\footnotesize\ttfamily get (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Keuzeoptie\+::get (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
 
-=================================================================================================== G\+R\+E\+IF M\+A\+T\+T\+H\+I\+AS Get \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} by Id Get data from db
-
-Return data
-
-Print in default api output view \mbox{\Hypertarget{class_keuzeoptie_a842e4774e3b3601a005b995c02f7e883}\label{class_keuzeoptie_a842e4774e3b3601a005b995c02f7e883}} 
+Haal een keuzeoptie op uit de database 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & id van de op te halen keuzeoptie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_keuzeoptie_abb3bade0f37d81dc061789c5a3dba930}\label{class_keuzeoptie_abb3bade0f37d81dc061789c5a3dba930}} 
 \index{Keuzeoptie@{Keuzeoptie}!update@{update}}
 \index{update@{update}!Keuzeoptie@{Keuzeoptie}}
 \subsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Keuzeoptie\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-=================================================================================================== /\+G\+R\+E\+IF M\+A\+T\+T\+H\+I\+AS 
-
-Functie voor het aanpassen en aanmaken van keuzeopties klasse \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} aanmaken en initialiseren
-
-Model inladen
-
-\mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} toevoegen of aanpassen
-
-\mbox{\hyperlink{class_keuzemogelijkheid}{Keuzemogelijkheid}} aanmaken om te kunnen redirecten naar de juiste pagina
-
-Redirect naar keuzemogelijkheid pagina 
+Delete een keuzeoptie uit de database De parameters worden opgehaald vanuit de wabpagina waar deze functie is opgeroepen 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-application/controllers/\mbox{\hyperlink{_keuzeoptie_8php}{Keuzeoptie.\+php}}\end{DoxyCompactItemize}
+application/controllers/Keuzeoptie.\+php\end{DoxyCompactItemize}

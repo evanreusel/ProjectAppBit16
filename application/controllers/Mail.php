@@ -35,13 +35,16 @@ class Mail extends CI_Controller {
     public function verstuur()
     {
         $this->load->library('mailjet');
-        $berichtobj = $this->mailjet->maakBerichtObject(    "evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html");
+        $berichtobj = $this->mailjet->maakBerichtObject("evanreusel@gmail.com", "Erik", "Onderwerp", "hoi", "Hoi html");
         $Messages = array($berichtobj);
         echo json_encode($Messages);
         $mjobj = new stdClass();
         $mjobj->Messages = $Messages;
         echo $this->mailjet->verstuur($mjobj);
     }
+    /**
+     * Controleert of er vandaag mails moeten verstuurd worden, verstuurt diegene die van toepassing zijn
+     */
     public function remindervandaag()
     {
         $this->load->model('Mailherinnering_model');
@@ -75,6 +78,9 @@ class Mail extends CI_Controller {
             echo $this->mailjet->verstuur();
         }
     }
+    /**
+     * Maak een herinnering aan
+     */
     public function maakHerinnering()
     {
         $this->load->model("Mailherinnering_model");
@@ -109,6 +115,9 @@ class Mail extends CI_Controller {
             $this->PersoonInHerinnering_model->insert($persoonInHerinnering);
         }
     }
+    /**
+    * Verwijdert de herinnering, adhv Id
+     */
     public function verwijderHerinnering()
     {
         $id = $this->input->post('id');
@@ -116,7 +125,9 @@ class Mail extends CI_Controller {
         $this->Mailherinnering_model->delete($id);
         $this->overzicht();
     }
-
+    /**
+        * Laadt het overzichtspagina van alle mailherinneringen, sjablonen en ontvangers.
+     */
     public function overzicht()
     {
         $data['message'] = "Mail Reminder Overzicht";
@@ -143,23 +154,13 @@ class Mail extends CI_Controller {
         $data['reminders'] = $reminders;
         //$data['css_files'] = array("login.css");
         $data['clearscreen'] = true;
-
+        $data["creator"] = "Erik Vzn Reusel";
         $this->load->view('template/main', $data);
 
     }
-    public function voegtoe()
-    {
-        $this->load->model('persoon_model');
-        $ontvangers = $this->persoon_model->get_All();
-        $data['ontvangers'] = $ontvangers;
-//        print_r($ontvangers);
-        $data['message'] = "Mail Reminder Toevoegen";
-        $data['css_files'] = array();
-        $data['view'] = 'mail_voegtoe';
-        $data['clearscreen'] = true;
-        $this->load->view('template/main', $data);
-
-    }
+    /**
+    Haalt niet ingeschreven personen op
+     */
     public function get_NietIngeschreven()
     {
         $this->load->model('Persoon_model');
@@ -168,8 +169,12 @@ class Mail extends CI_Controller {
         echo PHP_EOL;
         print_r($this->Persoon_model->get_NietIngeschrevenDeelnemers());
     }
+    /**
+        Haalt alle personen/ontvangers op geordend per keuzemogelijkheid, keuzeoptie, taak, shift
+     */
     private function get_personen()
     {
+
         // get keuzemogelijkheden
         $this->load->model('Keuzemogelijkheid_model');
         $this->load->model('KeuzeoptieVanDeelnemer_model');
@@ -231,6 +236,11 @@ class Mail extends CI_Controller {
 
 
     }
+    /**
+        sHaalt personen in herinnering op
+     * $param int id
+     * Herinnering id
+     */
     public function getPersonenInHerinnering($id)
     {
     $this->load->model("PersoonInHerinnering_model");
