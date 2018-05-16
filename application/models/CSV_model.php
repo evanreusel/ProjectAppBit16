@@ -22,7 +22,7 @@ class csv_model extends CI_Model
                 ///lees de 1ste lijn van de file
                 $csvheaders = $csv_line[0];
                 ///converter voor alternatieve csv template
-                $csvheaders = str_replace($csvheaders,";",",");
+                $csvheaders = str_replace(",",";",$csvheaders);
                 ///slaag de index van de headers op voor later
                 if($csvheaders != "naam;nummer;mail;woonplaats;adres"){
                     return null;
@@ -38,7 +38,7 @@ class csv_model extends CI_Model
             }
             $i++;
             ///converter voor alternatieve csv template
-            $csvdata = str_replace($csvdata,";",",");
+            $csvdata = str_replace(",",";",$csvdata);
             $data = explode(";",$csvdata);
             $persoon = new stdClass();
             

@@ -10,10 +10,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         parent::__construct();
 
         // =================================================================================================== GREIF MATTHIAS
-        // Autoload
-         // $this->load->library('session');
-
-		// Redirect to home if no session started
+		// Als er geen sessie gestart is, wordt er weer naar home genavigeerd
         if(!$this->session->has_userdata('id')){
             redirect('/admin/index', 'location');
         }
@@ -70,19 +67,8 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         $this->load->model('KeuzeoptieVanDeelnemer_model');
         $this->KeuzeoptieVanDeelnemer_model->delete($keuzeoptieId, $persoonId);
 
-		$this->load->view('ajax_vrijwilligerinshift', $data);
+		$this->load->view('ajax_resultatenTonen', $data);
     }
     // ====================================================================================/ Proost Daan
 
-
-    
-    // public function vrijwilligerInShiftWeergeven($shiftId)
-    // {
-
-    //     $this->load->model('KeuzeoptieVanDeelnemer_model');
-    //     $data['keuzeopties']=$this->KeuzeoptieVanDeelnemer_model->getAllByKeuzemogelijkheidId($keuzeMogelijkheidId);
-
-    //     $this->load->view('ajax_vrijwilligersinshift', $data);
-
-    // }
 }

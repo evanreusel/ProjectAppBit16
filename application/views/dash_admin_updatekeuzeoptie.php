@@ -66,12 +66,12 @@
     </div>
     <div class="form-group row">
         <label for="minimum" class="col-form-label">Minimum aantal personen</label>
-        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number', 'class'=>'min form-control'),$keuzeoptie->min,$nummerAttributen); ?>
+        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number'),$keuzeoptie->min,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
         <label for="maximum" class="col-form-label">Maximum aantal personen</label>
-        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number', 'class'=>'max form-control'),$keuzeoptie->max,$nummerAttributen); ?>
+        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number'),$keuzeoptie->max,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
@@ -95,11 +95,24 @@
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 
+        $("#minimum", "#maximum").focusout(function (){
+            var min = $('#minimum').val();
+            var max = $('#maximum').val();
+
+            if (min > max) {
+                alert("Het minimum aantal deelnemers is groter dan het maximum.");
+                $('#min').addClass('is-invalid');
+                $(".bevestig").attr("disabled", true);
+            }else{
+                $(".bevestig").attr("disabled", false);
+            };
+        });
+
         $("#keuzeoptieForm").submit(function(event) {
             var min = $('.min').val();
             var max = $('.max').val();
-            var begin =new date($('#begin').val()); 
-            var einde =new date($('#einde').val());
+            var begin =$('#begin').val()); 
+            var einde =$('#einde').val());
             console.log(begin);
             console.log(einde);
 
