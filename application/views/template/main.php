@@ -21,11 +21,12 @@
     <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>assets/css/fontawesome-all.css" />
     <?php
         foreach ($css_files as $file)
-        {?>
+        {
+    ?>
         <link rel="stylesheet" type="text/css" media="screen" href="<?php echo base_url(); ?>assets/css/<?php  echo $file ?>" />
-        <?php
+    <?php
         }
-        ?>
+    ?>
 </head>
 
 <body>
