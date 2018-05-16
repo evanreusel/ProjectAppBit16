@@ -47,7 +47,7 @@
     $nummerAttributen = array(
         'size'  =>'10',
         'type'  =>'number',
-        'class' =>'form-control'
+        'class' =>'form-control nummerinput'
     );
 ?>
     
@@ -95,7 +95,7 @@
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 
-        $("#minimum").focus(function (){
+        $(".nummerinput").focus(function (){
             var min = $('#minimum').val();
             var max = $('#maximum').val();
             console.log("fire");
