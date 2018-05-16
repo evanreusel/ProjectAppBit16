@@ -273,8 +273,8 @@
                                                         ?>
                                                         <label><input type="checkbox" name="personen[]"
                                                                       value="<?php echo $persoon->id ?>"
-                                                                      data-soort="<?php echo $persoon->soort ?>"> <?php echo $persoon->naam ?>
-                                                                    data-email="<?php echo $persoon->mail ?>"
+                                                                      data-soort="<?php echo $persoon->soort ?>" data-email="<?php echo $persoon->mail ?>"> <?php echo $persoon->naam ?>
+
                                                         </label>
                                                         <?php
                                                     }
