@@ -136,7 +136,7 @@
                                             <div class="persoongroep" id="deelnemer<?php echo $keuzeoptie->id ?>">
                                                 <?php foreach ($keuzeoptie->personen as $persoon) {
                                                     ?>
-                                                    <label><input type="checkbox" name="personen"
+                                                    <label><input type="checkbox" name="personen[]"
                                                                   value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                                     </label>
                                                     <?php
@@ -165,7 +165,7 @@
                                 <?php
                                 foreach ($nietingeschrevenDeelnemers as $persoon) {
                                     ?>
-                                    <label><input type="checkbox" name="personen"
+                                    <label><input type="checkbox" name="personen[]"
                                                   value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                     </label>
                                     <?php
@@ -184,7 +184,7 @@
                                 <?php
                                 foreach ($nietingeschrevenVrijwilligers as $persoon) {
                                     ?>
-                                    <label><input type="checkbox" name="personen"
+                                    <label><input type="checkbox" name="personen[]"
                                                   value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                     </label>
 
@@ -282,7 +282,7 @@
                         console.log(data);
                         for (i = 0; i < data.length; i++) {
                             console.log(data[i].persoonId);
-                            $('input[name="personen"][value='+ data[i].persoonId +']').prop("checked", true);
+                            $('input[name="personen[]"][value='+ data[i].persoonId +']').prop("checked", true);
 
                         }
 
