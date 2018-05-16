@@ -89,8 +89,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
                 <form action="<?= site_url(); ?>/mail/maakHerinnering/" method="post">
+            <div class="modal-body">
                     <input type="hidden" value="0" name="id" id="modalReminderId">
                     <label for="modalReminderDatum">Datum:</label>
                     <input type="date" id="modalReminderDatum">
