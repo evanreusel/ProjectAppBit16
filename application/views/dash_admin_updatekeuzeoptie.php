@@ -97,8 +97,8 @@
             $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
         });
         $("#keuzeoptieForm").submit(function(event) {
-            var min = $('#minimum').val();
-            var max = $('#maximum').val();
+            var min = $('#minimum').html();
+            var max = $('#maximum').html();
             var begin =$('#begin').val(); 
             var einde =$('#einde').val();
             var naam = $('#keuzeoptie').val();
