@@ -16,7 +16,7 @@ class PersoonInHerinnering_model extends CI_Model
     }
     /**
      * Haalt een emailherinnering op
-     * @param string $id
+     * @param int $id
      *  Id van emailherinnering
      */
     function get_byHerinneringId($id)
@@ -27,7 +27,7 @@ class PersoonInHerinnering_model extends CI_Model
     }
     /**
      * Maakt een nieuwe record aan voor persoon in herinnering
-     * @param string $id
+     * @param int $id
      *  PersoonInHerinnering object
      */
     function insert($persoonInherinnering) {
@@ -37,7 +37,7 @@ class PersoonInHerinnering_model extends CI_Model
 
     /**
      * Verwijderd de persoon in een specifieke herinnering
-     * @param string $id
+     * @param int $id
      *  Id van Herinnering
      */
     function delete($herinneringId) {
