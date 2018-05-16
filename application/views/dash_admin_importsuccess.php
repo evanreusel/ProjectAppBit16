@@ -2,7 +2,9 @@
 laatstgesorteerd = "";
 asc = true;
 
-//hide alle elementen met een hidden class
+/**
+*De hide functie gaat alle elementen verbergen met de class 'hidden'
+*/
 function hide(){
 $("tr").each(function(){
     if($(this).is('[class*="hidden"]')){
@@ -13,7 +15,12 @@ $("tr").each(function(){
 });
 }
 
-//zoek een element in de table
+/**
+*De search functie zorgt ervoor dat als je op een veld met een 'search' class drukt alle onderliggende elementen alphabetisch gesorteerd worden
+*Een vereiste hiervoor is dat de header de class 'search' en het id 'Xsearch' heeft
+*Alle onderliggende elementen moeten de class 'X' hebben waarbij X de naam van de header is.
+*De functie
+*/
 function search(){
 $(".search").keyup(function(){
     waarde = $(this).val().toLowerCase();
@@ -34,6 +41,12 @@ hide();
 });
 }
 
+/**
+*De search functie zorgt ervoor dat als je op een veld met een 'search' class drukt alle onderliggende elementen alphabetisch gesorteerd worden
+*Een vereiste hiervoor is dat de header de class 'Xsort' en het id 'sort' heeft
+*Alle onderliggende elementen moeten de class 'X' en de class 'sortable' hebben waarbij X de naam van de header is.
+*De functie
+*/
 function sort(){
     $(".sort").click(function(){
 
@@ -49,6 +62,9 @@ function sort(){
         }
     });
 
+    /**
+    * icons aanpassen naar de juiste sorteervolgorde
+    */
     if(attribuut == laatstgesorteerd && asc){
     $(this).children("i").addClass("fas fa-angle-down");
         asc = false;
@@ -60,6 +76,9 @@ function sort(){
     
     console.log(asc);
 
+     /**
+    * lijst ophalen met alle elementen die gesorteerd moeten worden
+    */ 
     rijen = document.getElementsByClassName(attribuut + "item");
     console.log(rijen);
 
@@ -69,6 +88,12 @@ function sort(){
 
     do {
 
+    /**
+    * een lineaire sorteer functie:
+    * checken of een element alfabetisch een hogere waarde heeft als het vorige element
+    * indien de waarde hoer is worden deze 2 elementen verwisseld
+    * dit gebeurd totdat het element een lagere waarde heeft als het vorige element
+    */
     hoger = rijen[teller].innerHTML.toLowerCase() > rijen[teller+1].innerHTML.toLowerCase();
     if( (hoger && asc) || (!hoger && !asc)){
     rijen[teller].closest('tr').parentNode.insertBefore(rijen[teller + 1].closest('tr'), rijen[teller].closest('tr'));
@@ -100,12 +125,27 @@ $first = true;
 
 echo "<tr class=\"colored\">";
 
+/**
+ *
+ * Hier is een lijst met de namen van alle zoekvelden.
+ * Het is belangrijk voor de search functie in jquery dat alle inputs
+ * een class 'search' hebben en een id 'Xsearch' waarbij X de naam van het veld is 
+ *
+ */
 foreach($personen[0] as $onderdeel => $item){
             echo  '<td id="' . $onderdeel . 'sort" class="sort" title="Druk her om te sortere op deze rij"><i></i>' . $onderdeel . '</td>';
 }
 
 echo "</tr><tr>";
 
+/**
+ *
+ * Hier worden alle velden ingevuld met de bijhorende gegevens van de database
+ * voor de search en de sort functie is het belangrijk dat de velden de class 'Xitem' hebben
+ * waarbij X de naam van de rowheader is
+ * Voor de sort functie moeten de velden de class sortable hebben
+ *
+ */
 foreach($personen[0] as $onderdeel => $item){
     echo '<td><input type="text" id="' . $onderdeel  . 'search" class="search" title="Vul hier een waarde in om te zoeken naar een object waar deze waarde in voorkomt"></td>';
 }

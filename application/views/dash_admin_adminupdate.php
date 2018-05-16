@@ -9,6 +9,10 @@
 </p>
 
 <?php
+/**
+*parameters voor de knop om de adin aan te maken/te bewerken
+*de knoptext veranderd als er geen id voor de admin is meegegeven
+*/
     $arrayparameters = array();
     $arrayparameters['id'] = 'send';
     $arrayparameters['class'] = 'btn btn-primary';
@@ -22,6 +26,11 @@
 ?>
 
 <script> 
+    /**
+    check met ajax of het ingevulde wachtwoord overeenkomt met de ingevulde adminID
+    de data wordt naar de functie formcontrole doorgestuurd waar wordt gechecked of het passwoord correct is en andere checks woren gedaan
+    als het passwoord overeenkomt geeft ajax een object terug, anders is de data leeg
+    */
     function passcheck(){
         if($('#id').val() != 0){
             if($('#oudpass').val() != ""){
@@ -41,6 +50,11 @@
         }
     }
 
+    /**
+    check of het wachtwoord en het controlewachtwoord zijn ingevuld en of ze overeen komen
+    indien er een probleem is wordt er een foutcontrole getoond
+    de functie geeft ook true terug in het geval er geen problemen zijn, dit is voor de functie formcontrole
+    */
     function nieuwpassmatch(){  
         var $passnietleeg = false;
         var $passsame = false;
@@ -62,6 +76,12 @@
         return $passsame && $passnietleeg;
     }
 
+    /**
+    controleer of aan de vooraarden voldoet
+    controleert of het nieuwe wachtwoord ingevuld is en of de bevetiging ervan correct is
+    checkt ook of de meegeven ajaxdata voor het wachtwoord niet leeg is    
+    indien er een error is wordt een foutboodschap getoond en kan het formulier niet gesubmit worden
+    */
     function formcontrole(passdata){
         console.log("ok");
         passmatch = nieuwpassmatch();
