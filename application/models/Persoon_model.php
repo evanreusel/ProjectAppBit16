@@ -96,11 +96,11 @@ class Persoon_model extends CI_Model {
 
         return $nietingeschreven;
     }
-    function get_NietIngeschrevenDeelnemers()
+    function get_NietIngeschrevenDeelnemers($jaargangid)
     {
         $query = $this->db->select('*')->from('Persoon')
             ->join('KeuzeoptieVanDeelnemer', 'Persoon.id = KeuzeoptieVanDeelnemer.persoonId', 'left')
-            ->where(array('soort' => "DEELNEMER"))
+            ->where(array('soort' => "DEELNEMER", 'jaarId' => $jaargangid))
             ->get();
         $nietingeschreven = array_filter(
             $query->result(),
