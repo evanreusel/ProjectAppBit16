@@ -93,7 +93,7 @@
 
     
     <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
 
         $(".nummerinput").click(function(){
             var min = $('#minimum').val();
