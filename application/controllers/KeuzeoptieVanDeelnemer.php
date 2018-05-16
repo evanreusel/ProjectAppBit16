@@ -50,6 +50,8 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
     }
 
+    // ==================================================================================== Proost Daan
+    // De keuzeoptie van de deelnemer wordt in de database opgeslagen
     public function deelnemerAanKeuzeoptieToevoegen($keuzeoptieId, $persoonId)
     {
         $deelnemerInKeuzeoptie = new stdClass();
@@ -62,7 +64,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 
         $this->load->view('ajax_vrijwilligerinshift', $data);
     }
-    
+    // De keuzeoptie van de deelnemer wordt weer uit de database verwijderd
     public function deelnemerVanKeuzeoptieVerwijderen($keuzeoptieId, $persoonId)
 	{
         $this->load->model('KeuzeoptieVanDeelnemer_model');
@@ -70,6 +72,9 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 
 		$this->load->view('ajax_vrijwilligerinshift', $data);
     }
+    // ====================================================================================/ Proost Daan
+
+
     
     public function vrijwilligerInShiftWeergeven($shiftId)
     {
