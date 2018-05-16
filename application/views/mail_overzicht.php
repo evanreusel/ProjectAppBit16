@@ -87,7 +87,6 @@
         <div class="card-body">
             <a href="#modalIndividueleMail" class="open-herinneringvenster class=btn btn-block"
                data-toggle="modal" data-target="#modalIndividueleMail"
-
                data-reminder-id="0">Selecteer ontvangers</a>
         </div>
     </div>
@@ -347,7 +346,7 @@
                                 foreach ($nietingeschrevenVrijwilligers as $persoon) {
                                     ?>
                                     <label><input type="checkbox" name="personen[]"
-                                                  value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
+                                                  data-email="<?php echo $persoon->email ?>" value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                     </label>
 
                                     <?php
@@ -363,7 +362,7 @@
                 </div>
 
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Open mail</button>
+                <button type="button" id="genereer-mailto" class="btn btn-primary">Open mail</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
 
@@ -415,6 +414,15 @@
                 $("#sjabloon-inhoud").val($(this).data('sjabloon-inhoud'));
 
             }
+        });
+        $("#genereer-mailto").click(function () {
+            console.log("GENEREER MAILTO");
+            ontvangers = $("#modalIndividueleMail :checked").not('.select-persoongroep');
+            emails = [];
+            for (i = 0; i < ontvangers.length; i++) {
+                email.push($('this').data('email'))
+            }
+            document.location.href = "mailto:bcc=" + ontvangers.join();
         });
         $(".open-herinneringvenster").click(function ()
         {
