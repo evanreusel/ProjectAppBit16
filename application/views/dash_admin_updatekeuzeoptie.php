@@ -76,7 +76,7 @@
     </div>
     <div class="form-group row">
         <label for="begin" class="col-form-label">Begin datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE, 'class'=>'form_datetime'),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
 
     </div>
     <div class="form-group row">
@@ -93,31 +93,32 @@
 
     
     <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
+        $( document ).ready(function() {
+            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
+        });
+        $("#keuzeoptieForm").submit(function(event) {
+            var min = $('#minimum').val();
+            var max = $('#maximum').val();
+            var begin =$('#begin').val(); 
+            var einde =$('#einde').val();
+            console.log(begin);
+            console.log(einde);
 
-        // $("#keuzeoptieForm").submit(function(event) {
-        //     var min = $('#minimum').val();
-        //     var max = $('#maximum').val();
-        //     var begin =$('#begin').val()); 
-        //     var einde =$('#einde').val());
-        //     console.log(begin);
-        //     console.log(einde);
 
-
-        //     if (min > max) {
-        //         alert("Het minimum aantal deelnemers is groter dan het maximum.");
-        //         $('#minimum').addClass('is-invalid');
-        //         event.preventDefault();
-        //     }
-        //     if (begin>einde) {
-        //         alert("De begindatum vindt plaats na de einddatum.");
-        //         $('#begin').addClass('is-invalid');
-        //         event.preventDefault();
-        //     }
-        //     else {
+            if (min > max) {
+                alert("Het minimum aantal deelnemers is groter dan het maximum.");
+                $('#minimum').addClass('is-invalid');
+                event.preventDefault();
+            }
+            if (begin>einde) {
+                alert("De begindatum vindt plaats na de einddatum.");
+                $('#begin').addClass('is-invalid');
+                event.preventDefault();
+            }
+            else {
                 
-        //     };
+            };
 
-        // });
+        });
 
     </script>            

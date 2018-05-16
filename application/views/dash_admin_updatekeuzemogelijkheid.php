@@ -25,8 +25,6 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     }
 ?>
     
-
-
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     <h2><?php echo $keuzemogelijkheid->naam?> aanpassen:</h2>
     </br>
