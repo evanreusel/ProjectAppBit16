@@ -9,7 +9,6 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-/// Controller voor keuzeoptiefunctionaliteiten
 class Keuzeoptie extends CI_Controller{
     
     ///Initialiseerd de benogigde libraries/models die nodig zijn voor deze controller
@@ -30,7 +29,11 @@ class Keuzeoptie extends CI_Controller{
 
     // =================================================================================================== GREIF MATTHIAS
     // Get Keuzeoptie by Id
-    ///Haal een keuzeoptie op uit de database
+    /**
+	 * Haal een keuzeoptie op uit de database
+	 * @param int $id
+     * id van de op te halen keuzeoptie
+ 	*/  
     public function get($id){
         $data['return'] = '';
 		
