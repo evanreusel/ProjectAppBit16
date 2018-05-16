@@ -1,6 +1,6 @@
 <?php
 /// TIM SWERTS
-/// LAST UPDATED: 18 03 30
+/// LAST UPDATED: 18 04 30
 /// KEUZEOPTIE MODEL
 ///
 /// Model voor de database manipultie van de tabel Keuzeoptie.
