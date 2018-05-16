@@ -8,6 +8,7 @@ JAARGANG CONTROLLER
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/// Controller voor jaargangfunctionaliteiten
 class Jaargang extends CI_Controller{
     /**
 	 * Default Contstructor

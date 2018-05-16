@@ -1,5 +1,10 @@
 \hypertarget{class_keuzeoptie___model}{}\section{Keuzeoptie\+\_\+\+Model Class Reference}
 \label{class_keuzeoptie___model}\index{Keuzeoptie\+\_\+\+Model@{Keuzeoptie\+\_\+\+Model}}
+
+
+Model voor de database manipultie van de tabel \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}}.  
+
+
 Inheritance diagram for Keuzeoptie\+\_\+\+Model\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,22 +17,20 @@ Inheritance diagram for Keuzeoptie\+\_\+\+Model\+:\begin{figure}[H]
 \mbox{\hyperlink{class_keuzeoptie___model_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
 \item 
 \mbox{\hyperlink{class_keuzeoptie___model_a98d28a4d9a29d40c5a8aa0176f19a919}{get\+\_\+by\+Id}} (\$id)
-\begin{DoxyCompactList}\small\item\em Functie voor het ophalen van de specifieke keuzeoptie op basis van een id. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{class_keuzeoptie___model_a2b035b1ffd1cbe651b35bb3e53d72c09}{get\+All\+By\+Naam}} ()
-\begin{DoxyCompactList}\small\item\em Ophalen van alle keuzeopties gesorteerd op basis van naam. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{class_keuzeoptie___model_a6f3e4d26ab480501524eabb01683f5f7}{get\+All\+By\+Naam\+Where\+Keuze\+Mogelijkheid}} (\$id)
-\begin{DoxyCompactList}\small\item\em Functie voor het ophalen van alle keuzeopties die behoren tot een specifieke keuzemogelijkheid. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{class_keuzeoptie___model_a9d98d1a6c3919a0e7b946d37fa385948}{update}} (\$keuzeoptie)
-\begin{DoxyCompactList}\small\item\em Functie voor de aanpassen van een keuzeoptie die mee wordt gegeven. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{class_keuzeoptie___model_a2452f524e794bc3f418d60cb296e19b5}{add}} (\$keuzeoptie)
-\begin{DoxyCompactList}\small\item\em Functie voor de toevoegen van een keuzeoptie die mee wordt gegeven. \end{DoxyCompactList}\item 
+\item 
 \mbox{\hyperlink{class_keuzeoptie___model_a2f8258add505482d7f00ea26493a5723}{delete}} (\$id)
-\begin{DoxyCompactList}\small\item\em Functie voor het verwijderen van de keuzeoptie waarvan het id wordt meegegeven. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-T\+IM S\+W\+E\+R\+TS L\+A\+ST U\+P\+D\+A\+T\+ED\+: 18 04 30 K\+E\+U\+Z\+E\+O\+P\+T\+IE M\+O\+D\+EL
-
 Model voor de database manipultie van de tabel \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}}. 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -37,7 +40,7 @@ Model voor de database manipultie van de tabel \mbox{\hyperlink{class_keuzeoptie
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
 {\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
+Default Constructor 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{class_keuzeoptie___model_a2452f524e794bc3f418d60cb296e19b5}\label{class_keuzeoptie___model_a2452f524e794bc3f418d60cb296e19b5}} 
@@ -46,11 +49,7 @@ Model voor de database manipultie van de tabel \mbox{\hyperlink{class_keuzeoptie
 \subsubsection{\texorpdfstring{add()}{add()}}
 {\footnotesize\ttfamily add (\begin{DoxyParamCaption}\item[{}]{\$keuzeoptie }\end{DoxyParamCaption})}
 
-
-
 Functie voor de toevoegen van een keuzeoptie die mee wordt gegeven. 
-
-
 \begin{DoxyParams}[1]{Parameters}
 std\+Class & {\em \$keuzeoptie} & Object van de \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} die toegevoegd moet worden \\
 \hline
@@ -61,11 +60,7 @@ std\+Class & {\em \$keuzeoptie} & Object van de \mbox{\hyperlink{class_keuzeopti
 \subsubsection{\texorpdfstring{delete()}{delete()}}
 {\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
 
-
-
 Functie voor het verwijderen van de keuzeoptie waarvan het id wordt meegegeven. 
-
-
 \begin{DoxyParams}[1]{Parameters}
 string & {\em \$id} & Id van de \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} die verwijderd moet worden \\
 \hline
@@ -76,11 +71,7 @@ string & {\em \$id} & Id van de \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} 
 \subsubsection{\texorpdfstring{get\+\_\+by\+Id()}{get\_byId()}}
 {\footnotesize\ttfamily get\+\_\+by\+Id (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
 
-
-
 Functie voor het ophalen van de specifieke keuzeoptie op basis van een id. 
-
-
 \begin{DoxyParams}[1]{Parameters}
 string & {\em \$id} & Id van de \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} \\
 \hline
@@ -91,21 +82,13 @@ string & {\em \$id} & Id van de \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} 
 \subsubsection{\texorpdfstring{get\+All\+By\+Naam()}{getAllByNaam()}}
 {\footnotesize\ttfamily get\+All\+By\+Naam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-
-
-Ophalen van alle keuzeopties gesorteerd op basis van naam. 
-
-\mbox{\Hypertarget{class_keuzeoptie___model_a6f3e4d26ab480501524eabb01683f5f7}\label{class_keuzeoptie___model_a6f3e4d26ab480501524eabb01683f5f7}} 
+Ophalen van alle keuzeopties gesorteerd op basis van naam. \mbox{\Hypertarget{class_keuzeoptie___model_a6f3e4d26ab480501524eabb01683f5f7}\label{class_keuzeoptie___model_a6f3e4d26ab480501524eabb01683f5f7}} 
 \index{Keuzeoptie\+\_\+\+Model@{Keuzeoptie\+\_\+\+Model}!get\+All\+By\+Naam\+Where\+Keuze\+Mogelijkheid@{get\+All\+By\+Naam\+Where\+Keuze\+Mogelijkheid}}
 \index{get\+All\+By\+Naam\+Where\+Keuze\+Mogelijkheid@{get\+All\+By\+Naam\+Where\+Keuze\+Mogelijkheid}!Keuzeoptie\+\_\+\+Model@{Keuzeoptie\+\_\+\+Model}}
 \subsubsection{\texorpdfstring{get\+All\+By\+Naam\+Where\+Keuze\+Mogelijkheid()}{getAllByNaamWhereKeuzeMogelijkheid()}}
 {\footnotesize\ttfamily get\+All\+By\+Naam\+Where\+Keuze\+Mogelijkheid (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
 
-
-
 Functie voor het ophalen van alle keuzeopties die behoren tot een specifieke keuzemogelijkheid. 
-
-
 \begin{DoxyParams}[1]{Parameters}
 string & {\em \$id} & Id van de \mbox{\hyperlink{class_keuzemogelijkheid}{Keuzemogelijkheid}} \\
 \hline
@@ -116,11 +99,7 @@ string & {\em \$id} & Id van de \mbox{\hyperlink{class_keuzemogelijkheid}{Keuzem
 \subsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily update (\begin{DoxyParamCaption}\item[{}]{\$keuzeoptie }\end{DoxyParamCaption})}
 
-
-
 Functie voor de aanpassen van een keuzeoptie die mee wordt gegeven. 
-
-
 \begin{DoxyParams}[1]{Parameters}
 std\+Class & {\em \$keuzeoptie} & Object van de \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} die aangepast moet worden \\
 \hline

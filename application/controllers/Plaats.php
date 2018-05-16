@@ -7,6 +7,7 @@ PLAATS CONTROLLER
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/// Controller voor plaats
 class Plaats extends CI_Controller {
 	public function __construct()
 	{

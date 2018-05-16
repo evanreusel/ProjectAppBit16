@@ -6,15 +6,12 @@
         </div>
         <div class="card-body">
             <p>Hier kunt u mailherinneringen opstellen aan de hand van een sjabloon. Deze mail wordt via een centraal emailadres verstuurd naar de ontvangers die u selecteert, op het aangegeven tijdstip.</p>
-            <div class="card bg-success">
-                <div class="card-header">
-                    <a href="#modalReminder" class="open-herinneringvenster class=btn btn-block"
+
+                    <a href="#modalReminder" class="open-herinneringvenster class=btn btn-block btn-success"
                        data-toggle="modal" data-target="#modalReminder"
 
                        data-reminder-id="0">Mailherinnering toevoegen</a>
 
-                </div>
-            </div>
             <?php foreach ($reminders as $reminder) {
                 ?>
 

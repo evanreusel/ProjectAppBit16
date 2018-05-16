@@ -2,7 +2,7 @@
 //TIM SWERTS
 //LAST UPDATED: 18 03 30
 //KEUZEMOGELIJKHEID MODEL
-/// klasse voor gegevens van de activiteiten te beheren
+/// Klasse voor gegevens van de activiteiten te beheren
 class Keuzemogelijkheid_Model extends CI_Model {
     /**
      * Default constructor

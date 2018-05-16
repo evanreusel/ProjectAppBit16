@@ -1,5 +1,10 @@
 \hypertarget{class_admin}{}\section{Admin Class Reference}
 \label{class_admin}\index{Admin@{Admin}}
+
+
+Controller voor administratorfunctionaliteiten.  
+
+
 Inheritance diagram for Admin\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,10 +31,11 @@ Inheritance diagram for Admin\+:\begin{figure}[H]
 \mbox{\hyperlink{class_admin_a2f8258add505482d7f00ea26493a5723}{delete}} (\$id)
 \item 
 \mbox{\hyperlink{class_admin_ab619c12069c76b755a2ceae543d527fe}{excel}} ()
-\item 
-\mbox{\hyperlink{class_admin_a635cee6ce0ca514b13a5e5a9030e5ca8}{list}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em lees een C\+SV bestand in met deelnemers/vrijwilligers en voeg deze toe aan de database \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Controller voor administratorfunctionaliteiten. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_admin_a095c5d389db211932136b53f25f39685}\label{class_admin_a095c5d389db211932136b53f25f39685}} 
@@ -116,19 +122,17 @@ int & {\em \$id} & Id van gebruiker \\
 \subsubsection{\texorpdfstring{excel()}{excel()}}
 {\footnotesize\ttfamily excel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+lees een C\+SV bestand in met deelnemers/vrijwilligers en voeg deze toe aan de database 
+
 \mbox{\Hypertarget{class_admin_a149eb92716c1084a935e04a8d95f7347}\label{class_admin_a149eb92716c1084a935e04a8d95f7347}} 
 \index{Admin@{Admin}!index@{index}}
 \index{index@{index}!Admin@{Admin}}
 \subsubsection{\texorpdfstring{index()}{index()}}
 {\footnotesize\ttfamily index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Laad loginscherm voor administrator \mbox{\Hypertarget{class_admin_a635cee6ce0ca514b13a5e5a9030e5ca8}\label{class_admin_a635cee6ce0ca514b13a5e5a9030e5ca8}} 
-\index{Admin@{Admin}!list@{list}}
-\index{list@{list}!Admin@{Admin}}
-\subsubsection{\texorpdfstring{list()}{list()}}
-{\footnotesize\ttfamily list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_admin_a3ea73f2d243749d401f168a6dc356528}\label{class_admin_a3ea73f2d243749d401f168a6dc356528}} 
+Laad loginscherm voor administrator \mbox{\Hypertarget{class_admin_a3ea73f2d243749d401f168a6dc356528}\label{class_admin_a3ea73f2d243749d401f168a6dc356528}} 
 \index{Admin@{Admin}!login@{login}}
 \index{login@{login}!Admin@{Admin}}
 \subsubsection{\texorpdfstring{login()}{login()}}

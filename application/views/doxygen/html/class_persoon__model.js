@@ -13,6 +13,6 @@ var class_persoon__model =
     [ "getAll", "class_persoon__model.html#a9169319ec748964dc67f0f640d182250", null ],
     [ "getAll_ofJaargang", "class_persoon__model.html#aba5a7a9b6a803620d0fddcbfffa83148", null ],
     [ "getAll_ofJaargang_withShift", "class_persoon__model.html#afa062e8195502a034cfa2780c6763cf6", null ],
-    [ "getallwithactiviteit", "class_persoon__model.html#a20a10592218dbf11fd43c955ce5fcee1", null ],
+    [ "getallwithactiviteit", "class_persoon__model.html#a9767acf5a4796aaacd967a4ac44e7a33", null ],
     [ "insert", "class_persoon__model.html#abb16337bee193e227f25cb9e37ac9394", null ]
 ];
