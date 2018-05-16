@@ -8,6 +8,7 @@ JAARGANG CONTROLLER
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
+/// Controller voor jaargangfunctionaliteiten
 class Jaargang extends CI_Controller{
     /**
 	 * Default Contstructor
@@ -87,7 +88,7 @@ class Jaargang extends CI_Controller{
     // API
     /**
 	 * Beeindig jaargang
-     * @param string $id
+     * @param int $id
 	 *  Id van jaargang
  	*/
     public function end($id){

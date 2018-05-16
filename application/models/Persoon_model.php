@@ -137,15 +137,12 @@ class Persoon_model extends CI_Model {
     }
     // =================================================================================================== /GREIF MATTHIAS
 
-    //Haal alle medewerkers die voor een activiteit zijn ingeschreven 
-    //samen met de gekoppelde activiteiten
-    function getallwithactiviteit(){
-        //jaargang ophalen
-        $this->load->model("jaargang_model");
-        $jaar = $this->jaargang_model->getActief();
+    ///Haal alle medewerkers die voor een activiteit zijn ingeschreven voor een meegegeven jaargang
+    ///samen met de gekoppelde activiteiten 
+    function getallwithactiviteit($jaargangId){
 
         //tussenvariabele ophalen
-        $query = $this->db->where('jaarid', $jaar->id);
+        $query = $this->db->where('jaarid', $jaargangId);
         $query = $this->db->get('Persoon');
         $personen = $query->result();
 
@@ -160,6 +157,7 @@ class Persoon_model extends CI_Model {
         //keuzemogelijkheden per persoon ophalen
         $keuzeopties = array();
 
+        //indien de medewerker is ingeschreven wordt de info over de activiteit opgehaald
         if($data != null){
         foreach($data as $item){
         $query = $this->db->where('id', $item->keuzeoptieId);
@@ -191,6 +189,7 @@ class Persoon_model extends CI_Model {
         return $query->result();
     }
 
+    ///vrijwilligers koppelen aan hun keuzemogelijkheden van het gekozen jaargang
     function getAll_ofJaargang_withShift($jaargangId){
         // Get all Personen of Jaargang
         $personen = $this->getAll_ofJaargang($jaargangId);

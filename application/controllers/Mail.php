@@ -127,7 +127,6 @@ class Mail extends CI_Controller {
         $this->load->model('jaargang_model');
 
         $jaargangid = $this->jaargang_model->getActief();
-        echo print_r($jaargangid);
 
         $reminders = $this->Mailherinnering_model->getAll();
         $data['keuzemogelijkheden'] = $this->get_personen();
