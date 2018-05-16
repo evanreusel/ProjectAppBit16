@@ -63,7 +63,7 @@ class Mail extends CI_Controller {
             {
                 $persoon = $this->persoon_model->get_byId($persoonId->persoonId);
                 $teZoekenTags = array("#naam", "#token");
-                $teVervangenMet = array("$persoon->naam", site_url()."/index.php/main/signin/" . $persoon->id . "/".$persoon->token);
+                $teVervangenMet = array("$persoon->naam", site_url()."/main/signin/" . $persoon->id . "/".$persoon->token);
 
                 $sjabloonIngevuld = str_replace($teZoekenTags, $teVervangenMet, $mailsjabloon->inhoud);
                 $mailObject = $this->mailjet->maakBerichtObject($persoon->mail, $persoon->naam, $mailsjabloon->naam, $sjabloonIngevuld, $sjabloonIngevuld);
