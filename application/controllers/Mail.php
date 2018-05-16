@@ -141,9 +141,9 @@ class Mail extends CI_Controller {
         $jaargangid = $this->jaargang_model->getActief();
 
         $reminders = $this->Mailherinnering_model->getAll();
-        $data['keuzemogelijkheden'] = $this->get_personen($jaargangid);
-        $data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers($jaargangid);
-        $data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenVrijwilligers($jaargangid);
+        $data['keuzemogelijkheden'] = $this->get_personen($jaargangid->id);
+        $data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers($jaargangid->id);
+        $data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenVrijwilligers($jaargangid->);
         $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
         foreach ($reminders as $reminder) {
             $reminder->ontvangers =  $this->Mailherinnering_model->get_PersonenInReminder($reminder->id);
