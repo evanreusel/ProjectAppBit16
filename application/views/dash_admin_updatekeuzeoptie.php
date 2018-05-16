@@ -10,7 +10,7 @@
     $arrayparameters['value'] = '0';
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
-    $arrayparameters['class'] = "btn btn-primary";
+    $arrayparameters['class'] = "btn btn-primary bevestig";
     
 
     $plaats = array('');
@@ -65,22 +65,22 @@
         <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId, array('class'=>'form-control')) ?>
     </div>
     <div class="form-group row">
-        <label for="minimum">Minimum aantal personen</label>
-        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number'),$keuzeoptie->min,$nummerAttributen); ?>
+        <label for="minimum" class="col-form-label">Minimum aantal personen</label>
+        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number', 'class'=>'min form-control'),$keuzeoptie->min,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
-        <label for="maximum">Maximum aantal personen</label>
-        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number'),$keuzeoptie->max,$nummerAttributen); ?>
+        <label for="maximum" class="col-form-label">Maximum aantal personen</label>
+        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number', 'class'=>'max form-control'),$keuzeoptie->max,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
-        <label for="begin">Begin datum en tijdstip:</label>
+        <label for="begin" class="col-form-label">Begin datum en tijdstip:</label>
         <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
 
     </div>
     <div class="form-group row">
-        <label for="einde">Eind datum en tijdstip:</label>
+        <label for="einde" class="col-form-label">Eind datum en tijdstip:</label>
         <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
 
     </div>
@@ -94,4 +94,29 @@
     
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+
+        $("#keuzeoptieForm").submit(function(event) {
+            var min = $('.min').val();
+            var max = $('.max').val();
+            var begin =$('.begin').val(); 
+            var einde =$('.einde').val();
+            
+
+
+            if (min > max) {
+                alert("Het minimum aantal deelnemers is groter dan het maximum.");
+                $('#min').addClass('is-invalid');
+                event.preventDefault();
+            }
+            if (begin>einde) {
+                alert("De begindatum vindt plaats na de einddatum.");
+                $('#begin').addClass('is-invalid');
+                event.preventDefault();
+            }
+            else {
+                
+            };
+
+        });
+
     </script>            
