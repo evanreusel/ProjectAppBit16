@@ -199,7 +199,7 @@ class Persoon_model extends CI_Model {
         foreach($personen as $persoon){            
             // Get Shifts
             $query = $this->db->where('persoonid', $persoon->id);
-            $query = $this->db->get('Vrijwilligersinshift');
+            $query = $this->db->get('VrijwilligersInShift');
             $data = $query->result();
 
             $shiften = array();
