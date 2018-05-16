@@ -1,6 +1,6 @@
 <!-- 
-    ERIK
-    LAST UPDATED: 18 03 30
+    GREIF MATTHIAS
+    LAST UPDATED: 18 05 16
     MAIN VIEW
 -->
 
@@ -30,13 +30,10 @@
 
 <body>
     <script src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
-    <script src="https://unpkg.com/popper.js@1.14.3/dist/umd/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/mdb.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/bootstrap-datetimepicker.js"></script>
 
     <?php
-    // =================================================================================================== GREIF MATTHIAS
         if(!isset($clearscreen)){
             $this->load->view('template/header');
         }
@@ -46,16 +43,16 @@
     <div class="container">
     <?php
         $this->load->view($view);
-    // =================================================================================================== /GREIF MATTHIAS
     ?>
     </div>
 
   <div id="footer">
     <div class="container">
-      <p class="footer-block">Place sticky footer content here.</p>
+      <p class="footer-block">
+        <?php echo $creator; ?>
+      </p>
     </div>
   </div>
-
 </body>
 
 </html>

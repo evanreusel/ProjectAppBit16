@@ -66,6 +66,7 @@ class Deelnemer extends CI_Controller {
 		// Get data for view
 		switch($view){
 			case "personeelsinschrijvingen":
+				$creator = "";
 				//haal het actief jaar op.													
 				$this->load->model('jaargang_model');
 				$data['actiefJaar']=$this->jaargang_model->getActief();
@@ -84,8 +85,8 @@ class Deelnemer extends CI_Controller {
 				break;
 		
 			case "vrijwilligersucces":
-			$data['persoon'] = $extras;
-
+				$creator = "";
+				$data['persoon'] = $extras;
 			break;
 		}
 
