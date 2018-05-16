@@ -325,6 +325,33 @@ class Admin extends CI_Controller {
 
 			case "mail_overzicht":
 				$data['creator'] = "ERIK";
+
+				$data['message'] = "Mail Reminder Overzicht";
+				$data['css_files'] = array();
+				$data['view'] = 'mail_overzicht';
+
+				$this->load->model('Mailherinnering_model');
+				$this->load->model('mailsjabloon_model');
+				$this->load->model('jaargang_model');
+
+				$jaargangid = $this->jaargang_model->getActief();
+
+				$reminders = $this->Mailherinnering_model->getAll();
+				$data['keuzemogelijkheden'] = $this->get_personen($jaargangid->id);
+				$data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers($jaargangid->id);
+				$data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenVrijwilligers($jaargangid->id);
+				$nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers($jaargangid->id);
+				foreach ($reminders as $reminder) {
+					$reminder->ontvangers =  $this->Mailherinnering_model->get_PersonenInReminder($reminder->id);
+					$reminder->sjabloon = $this->mailsjabloon_model->get($reminder->sjabloonId);
+
+				}
+				$data['mailsjablonen'] = $this->mailsjabloon_model->getAll();
+				$data['reminders'] = $reminders;
+				//$data['css_files'] = array("login.css");
+				$data['clearscreen'] = true;
+				$data["creator"] = "Erik Vzn Reusel";
+				$this->load->view('template/main', $data);
 			break;
 
 			default:
