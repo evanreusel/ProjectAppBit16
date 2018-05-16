@@ -86,7 +86,7 @@ class Mail extends CI_Controller {
 
         // nieuwe herinnering aanmaken
         $mailherinnering = new stdClass();
-        $mailherinnering->datum = $datum;
+        $mailherinnering->timer = $datum;
         $mailherinnering->sjabloonId = $mailsjabloon;
         if ($id == 0)
         {
