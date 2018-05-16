@@ -122,11 +122,17 @@ class Mail extends CI_Controller {
         $data['message'] = "Mail Reminder Overzicht";
         $data['css_files'] = array();
         $data['view'] = 'mail_overzicht';
+
         $this->load->model('Mailherinnering_model');
         $this->load->model('mailsjabloon_model');
+        $this->load->model('jaargang_model');
+
+        $jaargangid = $this->jaargang_model->getActief();
+        echo print_r($jaargangid);
+
         $reminders = $this->Mailherinnering_model->getAll();
         $data['keuzemogelijkheden'] = $this->get_personen();
-        $data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers();
+        $data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers($jaargangid);
         $data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
         $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
         foreach ($reminders as $reminder) {

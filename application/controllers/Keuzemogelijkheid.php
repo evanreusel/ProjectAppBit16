@@ -14,38 +14,38 @@ class Keuzemogelijkheid extends CI_Controller{
      public function __construct() {
         parent::__construct();
 
-        // =================================================================================================== GREIF MATTHIAS
-        // Autoload
+        /// =================================================================================================== GREIF MATTHIAS
+        /// Autoload
         $this->load->library('session');
         
-        // Redirect to home if no session started
+        /// Redirect to home if no session started
         $this->load->model('beheer_model');
         if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
             redirect('/admin/index', 'location');
         }
-        // =================================================================================================== /GREIF MATTHIAS
+        /// =================================================================================================== /GREIF MATTHIAS
     }
 
-    // Get Keuzemogelijkheid by Id
+    /// Get Keuzemogelijkheid by Id
     public function get($id){
         $data['return'] = '';
 		
-        // Get data from db
+        /// Get data from db
         $this->load->model('keuzemogelijkheid_model');
         $returndata = $this->keuzemogelijkheid_model->get_byId($id);
 
-        // Return data
+        /// Return data
         $data['return'] = json_encode($returndata);
 		
-		// Print in default api output view
+		/// Print in default api output view
 		$this->load->view('req_output', $data);
     }
-    // =================================================================================================== /GREIF MATTHIAS
+    /// =================================================================================================== /GREIF MATTHIAS
 
-    // Functie voor het aanmaken en aanpassen van keuzemogelijkheden
+    /// Functie voor het aanmaken en aanpassen van keuzemogelijkheden
     public function update()
 	{
-		// klasse keuzemogelijkheid aanmaken en initialiseren
+		/// klasse keuzemogelijkheid aanmaken en initialiseren
         $keuzemogelijkheid = new stdClass();
 
         $keuzemogelijkheid->id = $this->input->post('id');
@@ -56,20 +56,20 @@ class Keuzemogelijkheid extends CI_Controller{
         $keuzemogelijkheid->beginTijdstip = $this->input->post('beginTijdstip');
         $keuzemogelijkheid->deadlineTijdstip = $this->input->post('deadlineTijdstip');
 
-		// Model inladen
+		/// Model inladen
         $this->load->model('keuzemogelijkheid_model');
 		
-		// Keuzemogelijkheid toevoegen of aanpassen
+		/// Keuzemogelijkheid toevoegen of aanpassen
         if($keuzemogelijkheid->id == 0){
        		$this->keuzemogelijkheid_model->add($keuzemogelijkheid);
         } else {
         	$this->keuzemogelijkheid_model->update($keuzemogelijkheid);
         }
 
-		// Redirect naar keuzemogelijkheid pagina
+		/// Redirect naar keuzemogelijkheid pagina
 		redirect('admin/dash/keuzemogelijkheidbeheer/'. $keuzemogelijkheid->jaargangId);
     }
-    // Functie voor het verwijderen van keuzemogelijkheden.
+    /// Functie voor het verwijderen van keuzemogelijkheden.
     public function delete($id)
 	{
 		
@@ -79,7 +79,7 @@ class Keuzemogelijkheid extends CI_Controller{
 
         $this->keuzemogelijkheid_model->delete($id);
         
-		// Redirect to keuzemogelijkheidbeheer
+		/// Redirect to keuzemogelijkheidbeheer
         redirect('admin/dash/keuzemogelijkheidbeheer/'.$returndata->jaargangId);
 	}
 }
