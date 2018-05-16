@@ -60,8 +60,9 @@ class Mail extends CI_Controller {
             {
                 $persoon = $this->persoon_model->get_byId($persoonId->persoonId);
                 //TODO: Maak vulsjabloon()
-
-                $mailObject = $this->mailjet->maakBerichtObject($persoon->mail, $persoon->naam, $mailsjabloon->naam, $mailsjabloon->inhoud, $mailsjabloon->inhoud);
+                $sjabloonIngevuld = str_replace("$naam", $persoon->naam, $$mailsjabloon->inhoud);
+                $sjabloonIngevuld = str_replace("$token", $persoon->token, $$mailsjabloon->inhoud);
+                $mailObject = $this->mailjet->maakBerichtObject($persoon->mail, $persoon->naam, $mailsjabloon->naam, $sjabloonIngevuld, $sjabloonIngevuld);
                 $this->mailjet->voegBerichtObjectToe($mailObject);
             }
             echo PHP_EOL;
@@ -99,7 +100,8 @@ class Mail extends CI_Controller {
         }
         //pas personen in herinnering aan
         $this->PersoonInHerinnering_model->delete($id);
-        foreach ($personen as $persoon) {
+        foreach ($personen as $persoon)
+        {
             $persoonInHerinnering = new stdClass();
             $persoonInHerinnering->mailherinneringId = $id;
             $persoonInHerinnering->persoonId = $persoon;
