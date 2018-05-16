@@ -1,5 +1,10 @@
 \hypertarget{class_shiften}{}\section{Shiften Class Reference}
 \label{class_shiften}\index{Shiften@{Shiften}}
+
+
+Controller voor shiften.  
+
+
 Inheritance diagram for Shiften\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -9,26 +14,29 @@ Inheritance diagram for Shiften\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_shiften_a095c5d389db211932136b53f25f39685}{\+\_\+\+\_\+construct}} ()
+\mbox{\hyperlink{class_shiften_ab8a8594268fd644b65cbc27698fd94f4}{\+\_\+\+\_\+construct}} ()
 \item 
-\mbox{\hyperlink{class_shiften_a842e4774e3b3601a005b995c02f7e883}{update}} ()
+\mbox{\hyperlink{class_shiften_af783a05fca5d9fe438122482ce10ded8}{update}} ()
 \begin{DoxyCompactList}\small\item\em Functie voor het aanpassen en aanmaken van shiften. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_shiften_a2f8258add505482d7f00ea26493a5723}{delete}} (\$id)
-\begin{DoxyCompactList}\small\item\em Functie voor het verwijderen van shiften. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_shiften_ab799250126ff159fd1ca9e896a57bcb6}{vrijwilliger\+In\+Shift\+Toevoegen}} (\$shift\+Id, \$persoon\+Id)
-\begin{DoxyCompactList}\small\item\em Functie voor het toevoegen van een vrijwilliger in een shift. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_shiften_acd0ea5b1f1b5ef6ee363916d98a261cb}{vrijwilliger\+In\+Shift\+Verwijderen}} (\$shift\+Id, \$persoon\+Id)
-\begin{DoxyCompactList}\small\item\em Functie voor het verwijderen van een vrijwilliger uit een shift. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_shiften_acc7f0b07717791306d83399416669ef9}{vrijwilliger\+In\+Shift\+Weergeven}} (\$shift\+Id)
-\begin{DoxyCompactList}\small\item\em Functie voor het weergeven van alle vrijwilliger van een bepaalde shift. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{class_shiften_a68ff1255b0af39c545eae586c3fac0b8}{delete}} (\$id)
+\item 
+\mbox{\hyperlink{class_shiften_a68ed5c1cd7c018cd80ceb6bc940afa7f}{vrijwilliger\+In\+Shift\+Toevoegen}} (\$shift\+Id, \$persoon\+Id)
+\item 
+\mbox{\hyperlink{class_shiften_a67201ed9a01bf5fe153c6c8d2a60e9ad}{vrijwilliger\+In\+Shift\+Verwijderen}} (\$shift\+Id, \$persoon\+Id)
+\item 
+\mbox{\hyperlink{class_shiften_a9919cdc243d1281466d02e8b5d102e69}{vrijwilliger\+In\+Shift\+Weergeven}} (\$shift\+Id)
+\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Controller voor shiften. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_shiften_a095c5d389db211932136b53f25f39685}\label{class_shiften_a095c5d389db211932136b53f25f39685}} 
+\mbox{\Hypertarget{class_shiften_ab8a8594268fd644b65cbc27698fd94f4}\label{class_shiften_ab8a8594268fd644b65cbc27698fd94f4}} 
 \index{Shiften@{Shiften}!\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}}
 \index{\+\_\+\+\_\+construct@{\+\_\+\+\_\+construct}!Shiften@{Shiften}}
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+construct()}{\_\_construct()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Shiften\+::\+\_\+\+\_\+construct (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 =================================================================================================== G\+R\+E\+IF M\+A\+T\+T\+H\+I\+AS Autoload ~\newline
 ~\newline
@@ -37,21 +45,22 @@ Inheritance diagram for Shiften\+:\begin{figure}[H]
 =================================================================================================== /\+G\+R\+E\+IF M\+A\+T\+T\+H\+I\+AS 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_shiften_a2f8258add505482d7f00ea26493a5723}\label{class_shiften_a2f8258add505482d7f00ea26493a5723}} 
+\mbox{\Hypertarget{class_shiften_a68ff1255b0af39c545eae586c3fac0b8}\label{class_shiften_a68ff1255b0af39c545eae586c3fac0b8}} 
 \index{Shiften@{Shiften}!delete@{delete}}
 \index{delete@{delete}!Shiften@{Shiften}}
 \subsubsection{\texorpdfstring{delete()}{delete()}}
-{\footnotesize\ttfamily delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Shiften\+::delete (\begin{DoxyParamCaption}\item[{}]{\$id }\end{DoxyParamCaption})}
 
-
-
-Functie voor het verwijderen van shiften. 
-
-Redirect to keuzemogelijkheidbeheer \mbox{\Hypertarget{class_shiften_a842e4774e3b3601a005b995c02f7e883}\label{class_shiften_a842e4774e3b3601a005b995c02f7e883}} 
+Functie voor het verwijderen van shiften 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$id} & Id van de shift die verwijderd moet worden \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_shiften_af783a05fca5d9fe438122482ce10ded8}\label{class_shiften_af783a05fca5d9fe438122482ce10ded8}} 
 \index{Shiften@{Shiften}!update@{update}}
 \index{update@{update}!Shiften@{Shiften}}
 \subsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Shiften\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -61,40 +70,45 @@ klasse shift aanmaken en initialiseren
 
 Model inladen
 
-Shift toevoegen of aanpassen
-
-Redirect naar taken pagina \mbox{\Hypertarget{class_shiften_ab799250126ff159fd1ca9e896a57bcb6}\label{class_shiften_ab799250126ff159fd1ca9e896a57bcb6}} 
+Shift toevoegen of aanpassen \mbox{\Hypertarget{class_shiften_a68ed5c1cd7c018cd80ceb6bc940afa7f}\label{class_shiften_a68ed5c1cd7c018cd80ceb6bc940afa7f}} 
 \index{Shiften@{Shiften}!vrijwilliger\+In\+Shift\+Toevoegen@{vrijwilliger\+In\+Shift\+Toevoegen}}
 \index{vrijwilliger\+In\+Shift\+Toevoegen@{vrijwilliger\+In\+Shift\+Toevoegen}!Shiften@{Shiften}}
 \subsubsection{\texorpdfstring{vrijwilliger\+In\+Shift\+Toevoegen()}{vrijwilligerInShiftToevoegen()}}
-{\footnotesize\ttfamily vrijwilliger\+In\+Shift\+Toevoegen (\begin{DoxyParamCaption}\item[{}]{\$shift\+Id,  }\item[{}]{\$persoon\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Shiften\+::vrijwilliger\+In\+Shift\+Toevoegen (\begin{DoxyParamCaption}\item[{}]{\$shift\+Id,  }\item[{}]{\$persoon\+Id }\end{DoxyParamCaption})}
 
-
-
-Functie voor het toevoegen van een vrijwilliger in een shift. 
-
-Laden van de verkregen data in een ajax-\/venster \mbox{\Hypertarget{class_shiften_acd0ea5b1f1b5ef6ee363916d98a261cb}\label{class_shiften_acd0ea5b1f1b5ef6ee363916d98a261cb}} 
+Functie voor het toevoegen van een vrijwilliger in een shift 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$shift\+Id} & Id van de shift \\
+\hline
+string & {\em \$persoon\+Id} & Id van de vrijwilliger \\
+\hline
+\end{DoxyParams}
+Laden van de verkregen data in een ajax-\/venster \mbox{\Hypertarget{class_shiften_a67201ed9a01bf5fe153c6c8d2a60e9ad}\label{class_shiften_a67201ed9a01bf5fe153c6c8d2a60e9ad}} 
 \index{Shiften@{Shiften}!vrijwilliger\+In\+Shift\+Verwijderen@{vrijwilliger\+In\+Shift\+Verwijderen}}
 \index{vrijwilliger\+In\+Shift\+Verwijderen@{vrijwilliger\+In\+Shift\+Verwijderen}!Shiften@{Shiften}}
 \subsubsection{\texorpdfstring{vrijwilliger\+In\+Shift\+Verwijderen()}{vrijwilligerInShiftVerwijderen()}}
-{\footnotesize\ttfamily vrijwilliger\+In\+Shift\+Verwijderen (\begin{DoxyParamCaption}\item[{}]{\$shift\+Id,  }\item[{}]{\$persoon\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Shiften\+::vrijwilliger\+In\+Shift\+Verwijderen (\begin{DoxyParamCaption}\item[{}]{\$shift\+Id,  }\item[{}]{\$persoon\+Id }\end{DoxyParamCaption})}
 
-
-
-Functie voor het verwijderen van een vrijwilliger uit een shift. 
-
-Laden van de verkregen data in een ajax-\/venster \mbox{\Hypertarget{class_shiften_acc7f0b07717791306d83399416669ef9}\label{class_shiften_acc7f0b07717791306d83399416669ef9}} 
+Functie voor het verwijderen van een vrijwilliger uit een shift 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$shift\+Id} & Id van de shift \\
+\hline
+string & {\em \$persoon\+Id} & Id van de vrijwilliger \\
+\hline
+\end{DoxyParams}
+Laden van de verkregen data in een ajax-\/venster \mbox{\Hypertarget{class_shiften_a9919cdc243d1281466d02e8b5d102e69}\label{class_shiften_a9919cdc243d1281466d02e8b5d102e69}} 
 \index{Shiften@{Shiften}!vrijwilliger\+In\+Shift\+Weergeven@{vrijwilliger\+In\+Shift\+Weergeven}}
 \index{vrijwilliger\+In\+Shift\+Weergeven@{vrijwilliger\+In\+Shift\+Weergeven}!Shiften@{Shiften}}
 \subsubsection{\texorpdfstring{vrijwilliger\+In\+Shift\+Weergeven()}{vrijwilligerInShiftWeergeven()}}
-{\footnotesize\ttfamily vrijwilliger\+In\+Shift\+Weergeven (\begin{DoxyParamCaption}\item[{}]{\$shift\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Shiften\+::vrijwilliger\+In\+Shift\+Weergeven (\begin{DoxyParamCaption}\item[{}]{\$shift\+Id }\end{DoxyParamCaption})}
 
-
-
-Functie voor het weergeven van alle vrijwilliger van een bepaalde shift. 
-
+Functie voor het weergeven van alle vrijwilliger van een bepaalde shift 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$shift\+Id} & Id van de shift \\
+\hline
+\end{DoxyParams}
 Laden van de verkregen data in een ajax-\/venster 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-application/controllers/\mbox{\hyperlink{_shiften_8php}{Shiften.\+php}}\end{DoxyCompactItemize}
+application/controllers/Shiften.\+php\end{DoxyCompactItemize}

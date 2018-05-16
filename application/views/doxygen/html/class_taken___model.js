@@ -1,11 +1,11 @@
 var class_taken___model =
 [
-    [ "__construct", "class_taken___model.html#a095c5d389db211932136b53f25f39685", null ],
-    [ "add", "class_taken___model.html#ab4986b088d8f7831b9a8dce8e97485bb", null ],
-    [ "delete", "class_taken___model.html#a2f8258add505482d7f00ea26493a5723", null ],
-    [ "get_byId", "class_taken___model.html#a98d28a4d9a29d40c5a8aa0176f19a919", null ],
-    [ "getAllByNaam", "class_taken___model.html#a2b035b1ffd1cbe651b35bb3e53d72c09", null ],
-    [ "getAllByNaamWhereKeuzeMogelijkheid", "class_taken___model.html#a6f3e4d26ab480501524eabb01683f5f7", null ],
-    [ "getAllWithShiften_byKeuzemogelijkheidId", "class_taken___model.html#a43d1fa46aefbe64343373fac217d6bdb", null ],
-    [ "update", "class_taken___model.html#a2fdc722cb2e60f87bc93a5f2390f88bc", null ]
+    [ "__construct", "class_taken___model.html#ae294aa33360c401507919f69a17eb196", null ],
+    [ "add", "class_taken___model.html#a4ef6e4ab1c71556c29cdc6549e8c888b", null ],
+    [ "delete", "class_taken___model.html#ab00c14e7a0a268dc3f708b45f3bd172b", null ],
+    [ "get_byId", "class_taken___model.html#ab8c238bca4fc5170294717b94c875cc3", null ],
+    [ "getAllByNaam", "class_taken___model.html#a5e53ebfe17a0adb72cccb12728f83d6a", null ],
+    [ "getAllByNaamWhereKeuzeMogelijkheid", "class_taken___model.html#aee432ed4b391407df1bf5d8c4973e5fa", null ],
+    [ "getAllWithShiften_byKeuzemogelijkheidId", "class_taken___model.html#a1b4e18ac99960b20467b3b3cbaa817b4", null ],
+    [ "update", "class_taken___model.html#ab4e93ac196a1aeb83582faa332619c86", null ]
 ];

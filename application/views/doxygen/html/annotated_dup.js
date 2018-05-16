@@ -25,7 +25,6 @@ var annotated_dup =
     [ "Soort_model", "class_soort__model.html", "class_soort__model" ],
     [ "Taken", "class_taken.html", "class_taken" ],
     [ "Taken_Model", "class_taken___model.html", "class_taken___model" ],
-    [ "Vervoerswijze_model", "class_vervoerswijze__model.html", null ],
     [ "Vrijwilliger", "class_vrijwilliger.html", "class_vrijwilliger" ],
     [ "VrijwilligersInShift_Model", "class_vrijwilligers_in_shift___model.html", "class_vrijwilligers_in_shift___model" ]
 ];

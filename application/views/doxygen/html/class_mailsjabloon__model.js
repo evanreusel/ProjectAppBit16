@@ -1,7 +1,7 @@
 var class_mailsjabloon__model =
 [
-    [ "add", "class_mailsjabloon__model.html#a412547fc897d39826ee90937b53995e6", null ],
-    [ "get", "class_mailsjabloon__model.html#a50e3bfb586b2f42932a6a93f3fbb0828", null ],
-    [ "getAll", "class_mailsjabloon__model.html#aba0d5b303383fb5b1fabb5fd01cd3800", null ],
-    [ "update", "class_mailsjabloon__model.html#ae7c31bc24182f5bed6dc1bfb9652e9ed", null ]
+    [ "add", "class_mailsjabloon__model.html#ac8906f2f6b9aedabd697ab35ce11e407", null ],
+    [ "get", "class_mailsjabloon__model.html#a2fd2620c0951e3b9954e557652b74ff0", null ],
+    [ "getAll", "class_mailsjabloon__model.html#a6723ec4f9fa1a3f1195f93f0c9326239", null ],
+    [ "update", "class_mailsjabloon__model.html#a4272406d2eee5775d951d5320d0618aa", null ]
 ];

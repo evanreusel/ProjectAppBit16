@@ -1,7 +1,7 @@
 var class_keuzemogelijkheid =
 [
-    [ "__construct", "class_keuzemogelijkheid.html#a095c5d389db211932136b53f25f39685", null ],
-    [ "delete", "class_keuzemogelijkheid.html#a2f8258add505482d7f00ea26493a5723", null ],
-    [ "get", "class_keuzemogelijkheid.html#a50e3bfb586b2f42932a6a93f3fbb0828", null ],
-    [ "update", "class_keuzemogelijkheid.html#a842e4774e3b3601a005b995c02f7e883", null ]
+    [ "__construct", "class_keuzemogelijkheid.html#a11bdb9d39ff85f7e9a5a7f4f13eca123", null ],
+    [ "delete", "class_keuzemogelijkheid.html#a569638d382493486135eeea9b7d1cca5", null ],
+    [ "get", "class_keuzemogelijkheid.html#a507c36e7d7fd35a2a080524fce31ec4d", null ],
+    [ "update", "class_keuzemogelijkheid.html#ae621c2f2cc768da82291345a301f746a", null ]
 ];
