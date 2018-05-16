@@ -36,6 +36,9 @@ class Admin extends CI_Controller {
 	
 	// VIEWS
 	// DEFAULT
+	/**
+	 * Laad loginscherm voor administrator
+ 	*/
 	public function index()
 	{
 		// Load default login view
@@ -48,6 +51,13 @@ class Admin extends CI_Controller {
 		$this->load->view('template/main', $data);
 	}
 
+	/**
+	 * Container voor alle dashbord schermen van administrator
+	 * @param string $view
+	 *  Scherm dat opgeroepen word in het dashbord van administrator
+	 * @param string $extras
+	 *  Optionele parameters
+ 	*/
 	public function dash($view = null, $extras = null){
 		// Load models
 		$this->load->model('beheer_model');
@@ -324,6 +334,13 @@ class Admin extends CI_Controller {
 
 	// API
 	// LOGIN
+	/**
+	 * Login API call, print return waarde op scherm
+	 * @param string $username
+	 *  Gebruikersnaam van gebruiker
+	 * @param string $pass
+	 *  Wachtwoord van gebruiker
+ 	*/
 	public function login($username = null, $pass = null)
 	{
 		$data['return'] = '';
@@ -348,7 +365,13 @@ class Admin extends CI_Controller {
 		$this->load->view('req_output', $data);
 	}
 
-	// =================================================================================================== TIM
+	/**
+	 * Login API call, print return waarde op scherm
+	 * @param string $id
+	 *  Id van gebruiker
+	 * @param string $pass
+	 *  Wachtwoord van gebruiker
+ 	*/
 	public function checkpass($id = null, $pass = null)
 	{
 		$data['return'] = '';
@@ -366,10 +389,13 @@ class Admin extends CI_Controller {
 		// Print in default api output view
 		$this->load->view('req_output', $data);
 	}
-	// =================================================================================================== /TIM
+
+
 
 	// FLOW
-	// Logout admin
+	/**
+	 * Meld administrator af
+ 	*/
 	public function logout(){
 		$this->session->unset_userdata('id');
 
@@ -378,6 +404,9 @@ class Admin extends CI_Controller {
 	}
 
 	// Update admin
+	/**
+	 * Update administratorgegevens
+ 	*/
 	public function update()
 	{
 		// Setup Admin class
@@ -401,7 +430,11 @@ class Admin extends CI_Controller {
 		redirect('admin/dash/adminbeheer');
 	}
 
-	// Delete admin
+	/**
+	 * Verwijderd de administrator
+	 * @param string $id
+	 *  Id van gebruiker
+ 	*/
     public function delete($id)
 	{
 		// Delete
@@ -412,6 +445,7 @@ class Admin extends CI_Controller {
 		redirect('admin/dash/adminbeheer');
 	}
 
+	// =================================================================================================== TIM
 	public function excel(){		
 		$this->load->model('CSV_model');
         $soort = $this->input->post('soort', TRUE);
@@ -429,7 +463,7 @@ class Admin extends CI_Controller {
 		$this->load->view('dash_admin_personeelsoverzicht.php',$data);
 
 	}
-	// =================================================================================================== TIM
+	// =================================================================================================== /TIM
 }
 
 ?>
