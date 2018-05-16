@@ -94,7 +94,8 @@ class Mail extends CI_Controller {
         }
         else
         {
-            $this->Mailherinnering_model->update($mailherinnering->id);
+            $mailherinnering->id = $id;
+            $this->Mailherinnering_model->update($mailherinnering);
         }
         //pas personen in herinnering aan
         $this->PersoonInHerinnering_model->delete($id);

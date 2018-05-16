@@ -29,7 +29,7 @@ class Mailherinnering_model extends CI_Model {
     }
     function update($herinnering) {
         $this->db->where('id', $herinnering->id);
-        $this->db->update('MailHerinnering', $herinnering);
+        $this->db->update('MailHerinnering', $herinnering->id);
     }
     function delete($herinneringId) {
         $this->db->where('herinneringId', $herinneringId);
