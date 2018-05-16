@@ -24,7 +24,7 @@ class Mailherinnering_model extends CI_Model {
         return $query->result();
     }
     function insert($herinnering) {
-        $this->db->insert('PersoonInHerinnering', $herinnering);
+        $this->db->insert('MailHerinnering', $herinnering);
         return $this->db->insert_id();
     }
     function update($herinnering) {
