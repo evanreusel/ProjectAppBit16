@@ -43,12 +43,19 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
 };
 
 ?>
-<p id="val"></p>
-<p id="test"></p>
+<!-- <p id="val"></p>
+<p id="test"></p> -->
+
+
+<!--
+    Script dat zorgt voor de click-functie op de verschillende keuzeopties
+    Met dit script wordt de keuze aan de database toegevoegd
+ -->
 <script>
 $(document).ready(function(){
     $(".keuzeoptie").click(function(){        
         var keuzemogelijkheidId = $(this).val();
+        // Als er nog niet ingeschreven werd
         if($(this).hasClass('btn-primary')){
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerAanKeuzeoptieToevoegen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,
@@ -64,6 +71,7 @@ $(document).ready(function(){
                     console.log("-- ERROR IN AJAX --\n\n" + xhr.responseText);
                 }
             });
+            // Als er al wel ingeschreven werd
     } else {
         $.ajax({
                 url: '<?= site_url(); ?>/KeuzeoptieVanDeelnemer/deelnemerVanKeuzeoptieVerwijderen/'+ keuzemogelijkheidId +'/' + <?= $user->id; ?>,

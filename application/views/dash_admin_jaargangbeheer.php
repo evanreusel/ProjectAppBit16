@@ -16,44 +16,32 @@
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-        <div class="navbar">
-            <!-- Links for contents -->
-            <ul class="navbar-nav mr-auto">
-            
+        <!-- Links for contents -->
+        <ul class="nav nav-tabs buttonmenu">
             <?php
                 if($data['jaargang']->actief){
             ?>
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/jaargangupdate/<?php echo $data['jaargang']->id; ?>">
-                    Wijzig jaargang
-                </a>
+            <li>
+                <a href="<?= base_url()?>index.php/admin/dash/jaargangupdate/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary"
+                title="Pas details aan van de editie">Wijzig jaargang</a>
             </li>
             <?php
                 }
             ?>
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $data['jaargang']->id; ?>">
-                    Keuzemogelijkheden
-                </a>
+            <li>
+                <a href="<?= base_url()?>index.php/admin/dash/keuzemogelijkheidbeheer/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary"
+                title="Pas keuzemogelijkheden aan van de editie">Keuzemogelijkheden</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/vrijwilligersoverzicht/<?php echo $data['jaargang']->id; ?>">
-                    Vrijwilligers
-                </a>
+            <li>
+                <a href="<?= base_url()?>index.php/admin/dash/vrijwilligersoverzicht/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary"
+                title="Bekijk vrijwilligers van de editie">Vrijwilligers</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/deelnemersoverzicht/<?php echo $data['jaargang']->id; ?>">
-                    Deelnemers
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="<?= base_url()?>index.php/admin/dash/personeelimporteren/<?php echo $data['jaargang']->id; ?>">
-                    Personen
-                </a>
+            <li>
+                <a href="<?= base_url()?>index.php/admin/dash/deelnemersoverzicht/<?php echo $data['jaargang']->id; ?>" class="btn btn-primary"
+                title="Bekijk deelnemers van de editie">Deelnemers</a>
             </li>
 
             <li class="nav-item">
