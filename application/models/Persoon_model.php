@@ -118,7 +118,7 @@ class Persoon_model extends CI_Model {
     {
         $query = $this->db->select('*')->from('Persoon')
         ->join('VrijwilligersInShift', 'Persoon.id = VrijwilligersInShift.persoonId', 'left')
-        ->where(array('soort' => "VRIJWILLIGER", 'jaarId' => $jaargang))
+        ->where(array('soort' => "VRIJWILLIGER", 'jaarId' => $jaargangid))
         ->get();
         $nietingeschreven = array_filter(
             $query->result(),
