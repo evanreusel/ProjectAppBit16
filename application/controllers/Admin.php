@@ -12,6 +12,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // - DASH
 
 class Admin extends CI_Controller {
+	/**
+	 * Default Constructor
+ 	*/
 	public function __construct()
 	{
 		parent::__construct();
