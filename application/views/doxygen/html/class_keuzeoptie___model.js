@@ -1,10 +1,10 @@
 var class_keuzeoptie___model =
 [
-    [ "__construct", "class_keuzeoptie___model.html#a095c5d389db211932136b53f25f39685", null ],
-    [ "add", "class_keuzeoptie___model.html#a2452f524e794bc3f418d60cb296e19b5", null ],
-    [ "delete", "class_keuzeoptie___model.html#a2f8258add505482d7f00ea26493a5723", null ],
-    [ "get_byId", "class_keuzeoptie___model.html#a98d28a4d9a29d40c5a8aa0176f19a919", null ],
-    [ "getAllByNaam", "class_keuzeoptie___model.html#a2b035b1ffd1cbe651b35bb3e53d72c09", null ],
-    [ "getAllByNaamWhereKeuzeMogelijkheid", "class_keuzeoptie___model.html#a6f3e4d26ab480501524eabb01683f5f7", null ],
-    [ "update", "class_keuzeoptie___model.html#a9d98d1a6c3919a0e7b946d37fa385948", null ]
+    [ "__construct", "class_keuzeoptie___model.html#a114b17b36115323960a9837ce075cbcf", null ],
+    [ "add", "class_keuzeoptie___model.html#a05a55a9298a5f2b2a37e3a2ce15046f1", null ],
+    [ "delete", "class_keuzeoptie___model.html#a6ed94c4decb1bb7e43021fb8d45574f7", null ],
+    [ "get_byId", "class_keuzeoptie___model.html#ac16584888f32902c1b65c7b06fd6999a", null ],
+    [ "getAllByNaam", "class_keuzeoptie___model.html#a9e17f249c95fd5a6a3d5e6222b048b4c", null ],
+    [ "getAllByNaamWhereKeuzeMogelijkheid", "class_keuzeoptie___model.html#af29156c45eb0464a373c6e908982be59", null ],
+    [ "update", "class_keuzeoptie___model.html#abe363a388f68ec737b0957b748f012d8", null ]
 ];

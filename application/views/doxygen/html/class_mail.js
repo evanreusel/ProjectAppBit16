@@ -1,13 +1,13 @@
 var class_mail =
 [
-    [ "__construct", "class_mail.html#a095c5d389db211932136b53f25f39685", null ],
-    [ "get_NietIngeschreven", "class_mail.html#a7b5977af30820df385dc88ee0fd2a6bd", null ],
-    [ "getPersonenInHerinnering", "class_mail.html#a08ee322d4585335986150c5b3504b1a6", null ],
-    [ "maakbericht", "class_mail.html#a81e2a70ab567831ba097167138f7a01f", null ],
-    [ "maakHerinnering", "class_mail.html#a6c70daaf35d6c8f7ff2531c57b5e8cbb", null ],
-    [ "overzicht", "class_mail.html#aedd51c36c569faeb3c151027eb79e67d", null ],
-    [ "remindervandaag", "class_mail.html#ad32500041b0b1aca5cb9857134aef2fa", null ],
-    [ "verstuur", "class_mail.html#abc7aefe96831182f37ef67ef34e62527", null ],
-    [ "verwijderHerinnering", "class_mail.html#af953414894f70a47dcf5986212c7e68d", null ],
-    [ "voegtoe", "class_mail.html#aba42b30d30a5aca661ea48add5edb520", null ]
+    [ "__construct", "class_mail.html#aeed5d07076a358f294f84769915d5029", null ],
+    [ "get_NietIngeschreven", "class_mail.html#a981094d50056d958426564d48c95cce1", null ],
+    [ "getPersonenInHerinnering", "class_mail.html#af56bb11351090ce865a284a2c27ef3bb", null ],
+    [ "maakbericht", "class_mail.html#a9e19643f7bd6b63ac867a99a42513790", null ],
+    [ "maakHerinnering", "class_mail.html#a51675a2d0d65414634e3a21067462014", null ],
+    [ "overzicht", "class_mail.html#abb72118b34523cae188c03dc72955d8c", null ],
+    [ "remindervandaag", "class_mail.html#a6b0bf7c864a3999c5b56222deb88874f", null ],
+    [ "verstuur", "class_mail.html#a698adc5d93072946dbb03cb5e8025a92", null ],
+    [ "verwijderHerinnering", "class_mail.html#a5870a82a870b3b579d503101494abaf9", null ],
+    [ "voegtoe", "class_mail.html#a8a6872c776064a3e379e20b88533dfc8", null ]
 ];

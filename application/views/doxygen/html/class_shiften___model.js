@@ -1,10 +1,10 @@
 var class_shiften___model =
 [
-    [ "__construct", "class_shiften___model.html#a095c5d389db211932136b53f25f39685", null ],
-    [ "add", "class_shiften___model.html#a3fc76f85c3f3f387825bd98a099eb973", null ],
-    [ "delete", "class_shiften___model.html#a2f8258add505482d7f00ea26493a5723", null ],
-    [ "get_byId", "class_shiften___model.html#a98d28a4d9a29d40c5a8aa0176f19a919", null ],
-    [ "getAllByNaam", "class_shiften___model.html#a2b035b1ffd1cbe651b35bb3e53d72c09", null ],
-    [ "getAllByNaamWhereTaakId", "class_shiften___model.html#a537c83774b71a66979239cdffbb584d4", null ],
-    [ "update", "class_shiften___model.html#a0275d30c0139203609e59da92dc43790", null ]
+    [ "__construct", "class_shiften___model.html#a175772ceb929a2016dc23b2ec90eba13", null ],
+    [ "add", "class_shiften___model.html#ae95a20c13c92700b673c4b850a084b85", null ],
+    [ "delete", "class_shiften___model.html#aa8ebb0f37babc9dbfc4c026f0a73d6e6", null ],
+    [ "get_byId", "class_shiften___model.html#a0e222557a11630559c7eaa6ca29c55a6", null ],
+    [ "getAllByNaam", "class_shiften___model.html#aad336432fa42862a23f7c8b772e46f64", null ],
+    [ "getAllByNaamWhereTaakId", "class_shiften___model.html#a23921f9ceba4ae6768237864469d1cf5", null ],
+    [ "update", "class_shiften___model.html#af5e1c7d324bab167ecaa3e827161ec13", null ]
 ];
