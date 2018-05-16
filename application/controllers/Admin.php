@@ -95,7 +95,7 @@ class Admin extends CI_Controller {
 			],
 			[
 				'title' => 'Mails',
-				'url' => base_url() . 'index.php/mail/overzicht/'
+				'url' => base_url() . 'index.php/admin/dash/mail_overzicht/'
 			]
 		];
 		$data['actions'] = [
