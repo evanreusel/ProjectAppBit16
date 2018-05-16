@@ -41,7 +41,7 @@
         'size'  =>'16',
         'type'  =>'text',
         'readonly',
-        'class' =>'form_datetime form-control'
+        'class' =>'form_datetime'
     );
 
     $nummerAttributen = array(
