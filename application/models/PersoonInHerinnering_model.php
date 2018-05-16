@@ -25,7 +25,7 @@ class PersoonInHerinnering_model extends CI_Model
 
 
     function delete($herinneringId) {
-        $this->db->where('herinneringId', $herinneringId);
+        $this->db->where('mailherinneringId', $herinneringId);
         $this->db->delete('PersoonInHerinnering');
     }
 }
