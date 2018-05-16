@@ -1,6 +1,6 @@
 var class_taken =
 [
-    [ "__construct", "class_taken.html#a095c5d389db211932136b53f25f39685", null ],
-    [ "delete", "class_taken.html#a2f8258add505482d7f00ea26493a5723", null ],
-    [ "update", "class_taken.html#a842e4774e3b3601a005b995c02f7e883", null ]
+    [ "__construct", "class_taken.html#aed7046ad0bd4a755417ca55cb1621b8e", null ],
+    [ "delete", "class_taken.html#a696d6a2a1c533a261e2f0e29a4537662", null ],
+    [ "update", "class_taken.html#a2c370b12ed83ff4617224675576b47a1", null ]
 ];

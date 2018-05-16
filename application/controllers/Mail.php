@@ -9,6 +9,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/// Controller voor mailfunctionaliteiten
 class Mail extends CI_Controller {
     public function __construct()
     {

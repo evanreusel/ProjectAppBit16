@@ -7,6 +7,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/// Controller voor vrijwilligersfunctionaliteiten
 class Vrijwilliger extends CI_Controller {
 	/**
 	 * Default Contstructor
