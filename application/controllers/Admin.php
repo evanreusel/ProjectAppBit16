@@ -39,6 +39,7 @@ class Admin extends CI_Controller {
 	public function index()
 	{
 		// Load default login view
+		$data['creator'] = "GREIF MATTHIAS";
 		$data['message'] = "Welcome admin | Login";
 	    $data['view'] = 'login';
 		$data['css_files'] = array("login.css");
