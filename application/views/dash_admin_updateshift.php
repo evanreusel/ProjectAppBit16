@@ -42,3 +42,15 @@
         echo anchor('admin/dash/takenbeheer/'.$taak->keuzemogelijkheidId,'Annuleer','class="btn btn-primary"');
         echo form_close();
     ?>
+     <script type="text/javascript">
+        $("#shiftForm").submit(function(event) {
+            var naam = $('#naam').val();
+
+            if (naam !== "") {
+                alert("De shift heeft geen naam.");
+                $('#naam').addClass('is-invalid');
+                event.preventDefault();
+            }
+        });
+
+    </script>          

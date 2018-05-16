@@ -48,3 +48,15 @@
         echo anchor('admin/dash/takenbeheer/'.$keuzemogelijkheid->id,'Annuleer','class="btn btn-primary"');
         echo form_close();
     ?>
+     <script type="text/javascript">
+        $("#taakForm").submit(function(event) {
+            var naam = $('#functie').val();
+
+            if (naam !== "") {
+                alert("De taak heeft geen naam.");
+                $('#functie').addClass('is-invalid');
+                event.preventDefault();
+            }
+        });
+
+    </script>          
