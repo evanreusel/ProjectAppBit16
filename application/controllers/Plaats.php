@@ -24,8 +24,9 @@ class Plaats extends CI_Controller {
         }
         // =================================================================================================== /GREIF MATTHIAS
 	}
-	
-        function getEmptyPlaats() {
+    
+    /// Geeft nieuw leeg plaatsobject
+    public function getEmptyPlaats() {
         $plaats = new stdClass();
 
         $plaats->id = 0;
@@ -35,10 +36,10 @@ class Plaats extends CI_Controller {
 
         return $plaats;
     }
-        
+    /// maak nieuw plaatsobject
     public function maakNieuwe() {
         $data['titel'] = 'Plaats toevoegen';
-        $data['plaats'] = $this->getEmptyPlaats($id);
+        $data['plaats'] = $this->getEmptyPlaats();
  
 
         $data['view'] = 'plaatsToevoegen';
@@ -46,6 +47,8 @@ class Plaats extends CI_Controller {
         redirect('admin/dash/plaatsToevoegen');
     }
     
+    /// Registreer wat de administrator invult. Als hij op wijzig klikt, wordt het bestaande plaatsobject geupdatet. Wanneer hij een nieuwe plaats toevoegt (en dus gewoon de veldjes invult zonder op wijzig geklikt te hebben), wordt het nieuwe plaatsobject in de database geïnsert.
+
     public function registreer() {
         $plaats = new stdClass();
 
@@ -65,6 +68,7 @@ class Plaats extends CI_Controller {
         redirect('admin/dash/plaatsToevoegen');
     }
 
+    /// Functie om een locatie uit de database te verwijderen
     public function verwijder($id) {
         $this->load->model('plaats_model');
         $this->plaats_model->delete($id);
@@ -72,11 +76,12 @@ class Plaats extends CI_Controller {
         redirect('admin/dash/plaatsToevoegen');
     }
 
+    /// Functie om een bestaande locatie te wijzigen in de database
     public function wijzig($id) {
         redirect('admin/dash/plaatsToevoegen/' .$id, 'refresh');
     }
 
-
+    /// Functie om plaats op te halen
     	public function jsonplaats($id)
 	{
 		$data['return'] = '';
@@ -89,7 +94,7 @@ class Plaats extends CI_Controller {
 			$data['return'] = json_encode($plaats);
 
 		
-		// Print in default api output view
+		// Data tonen in req_output
 		$this->load->view('req_output', $data);
 	}
 }
