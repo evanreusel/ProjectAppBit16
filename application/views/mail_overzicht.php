@@ -1,9 +1,11 @@
 <div class="container">
+    Op deze pagina kunt u mails versturen naar de deelnemers en/of vrijwilligers. U kunt de sjablonen voor deze mails beheren, of een individuele mail opstellen en ze van uw eigen emailadres versturen.
     <div class="card">
         <div class="card-header">
             Mailherinneringen
         </div>
         <div class="card-body">
+            <p>Hier kunt u mailherinneringen opstellen aan de hand van een sjabloon. Deze mail wordt via een centraal emailadres verstuurd naar de ontvangers die u selecteert, op het aangegeven tijdstip.</p>
             <div class="card bg-success">
                 <div class="card-header">
                     <a href="#modalReminder" class="open-herinneringvenster"
@@ -125,7 +127,7 @@
                                                     }
                                                 }
                                                 ?>
-                                            <br></div>
+                                                <br><br></div>
                                             <?php
                                         }
                                     }
@@ -145,7 +147,7 @@
                                                     </label>
                                                     <?php
                                                 } ?>
-                                            <br></div>
+                                            <br><br></div>
                                             <?php
                                         }
                                     }
