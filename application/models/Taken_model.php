@@ -1,8 +1,8 @@
 <?php
-/// TIM SWERTS
-///	LAST UPDATED: 18 03 30
-///	TAAK MODEL
-///
+// TIM SWERTS
+//	LAST UPDATED: 18 03 30
+//	TAAK MODEL
+
 /// Model voor beheren van de tabel taken van de database.
 class Taken_Model extends CI_Model{
     

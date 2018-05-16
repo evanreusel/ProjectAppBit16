@@ -27,7 +27,6 @@ var hierarchy =
       [ "PersoonInHerinnering_model", "class_persoon_in_herinnering__model.html", null ],
       [ "Plaats_model", "class_plaats__model.html", null ],
       [ "Shiften_Model", "class_shiften___model.html", null ],
-      [ "Soort_model", "class_soort__model.html", null ],
       [ "Taken_Model", "class_taken___model.html", null ],
       [ "VrijwilligersInShift_Model", "class_vrijwilligers_in_shift___model.html", null ]
     ] ]

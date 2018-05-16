@@ -22,7 +22,6 @@ var annotated_dup =
     [ "Plaats_model", "class_plaats__model.html", "class_plaats__model" ],
     [ "Shiften", "class_shiften.html", "class_shiften" ],
     [ "Shiften_Model", "class_shiften___model.html", "class_shiften___model" ],
-    [ "Soort_model", "class_soort__model.html", "class_soort__model" ],
     [ "Taken", "class_taken.html", "class_taken" ],
     [ "Taken_Model", "class_taken___model.html", "class_taken___model" ],
     [ "Vrijwilliger", "class_vrijwilliger.html", "class_vrijwilliger" ],

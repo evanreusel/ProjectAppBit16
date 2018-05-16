@@ -9,24 +9,82 @@ Inheritance diagram for Mailherinnering\+\_\+model\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_mailherinnering__model_a422d531c661ec9d18803bc7c9ec95a82}\label{class_mailherinnering__model_a422d531c661ec9d18803bc7c9ec95a82}} 
-{\bfseries get\+\_\+\+Herinnering\+Dag} (\$datum)
+\mbox{\hyperlink{class_mailherinnering__model_a422d531c661ec9d18803bc7c9ec95a82}{get\+\_\+\+Herinnering\+Dag}} (\$datum)
 \item 
-\mbox{\Hypertarget{class_mailherinnering__model_a52d132c8b5bed589d41796c2bccaeea0}\label{class_mailherinnering__model_a52d132c8b5bed589d41796c2bccaeea0}} 
-{\bfseries get\+All} ()
+\mbox{\hyperlink{class_mailherinnering__model_a52d132c8b5bed589d41796c2bccaeea0}{get\+All}} ()
 \item 
-\mbox{\Hypertarget{class_mailherinnering__model_ae3c0049788b3d538c73c2b6f78fff595}\label{class_mailherinnering__model_ae3c0049788b3d538c73c2b6f78fff595}} 
-{\bfseries get\+\_\+\+Personen\+In\+Reminder} (\$reminder\+Id)
+\mbox{\hyperlink{class_mailherinnering__model_ae3c0049788b3d538c73c2b6f78fff595}{get\+\_\+\+Personen\+In\+Reminder}} (\$reminder\+Id)
 \item 
-\mbox{\Hypertarget{class_mailherinnering__model_a1e936efd2fa8e6e311a0289dacec6243}\label{class_mailherinnering__model_a1e936efd2fa8e6e311a0289dacec6243}} 
-{\bfseries insert} (\$herinnering)
+\mbox{\hyperlink{class_mailherinnering__model_a1e936efd2fa8e6e311a0289dacec6243}{insert}} (\$herinnering)
 \item 
-\mbox{\Hypertarget{class_mailherinnering__model_abcd691276b2a166a51c20bd1507acf9e}\label{class_mailherinnering__model_abcd691276b2a166a51c20bd1507acf9e}} 
-{\bfseries update} (\$herinnering)
+\mbox{\hyperlink{class_mailherinnering__model_abcd691276b2a166a51c20bd1507acf9e}{update}} (\$herinnering)
 \item 
-\mbox{\Hypertarget{class_mailherinnering__model_a6c3374952042cc2f90cdbb27cc1bb07d}\label{class_mailherinnering__model_a6c3374952042cc2f90cdbb27cc1bb07d}} 
-{\bfseries delete} (\$herinnering\+Id)
+\mbox{\hyperlink{class_mailherinnering__model_a6c3374952042cc2f90cdbb27cc1bb07d}{delete}} (\$herinnering\+Id)
 \end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mailherinnering__model_a6c3374952042cc2f90cdbb27cc1bb07d}\label{class_mailherinnering__model_a6c3374952042cc2f90cdbb27cc1bb07d}} 
+\index{Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}!delete@{delete}}
+\index{delete@{delete}!Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}}
+\subsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily Mailherinnering\+\_\+model\+::delete (\begin{DoxyParamCaption}\item[{}]{\$herinnering\+Id }\end{DoxyParamCaption})}
+
+Voegt een mailherinnering op adhv id 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$herinnering\+Id} & object van mailherinnering \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mailherinnering__model_a422d531c661ec9d18803bc7c9ec95a82}\label{class_mailherinnering__model_a422d531c661ec9d18803bc7c9ec95a82}} 
+\index{Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}!get\+\_\+\+Herinnering\+Dag@{get\+\_\+\+Herinnering\+Dag}}
+\index{get\+\_\+\+Herinnering\+Dag@{get\+\_\+\+Herinnering\+Dag}!Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+\+Herinnering\+Dag()}{get\_HerinneringDag()}}
+{\footnotesize\ttfamily Mailherinnering\+\_\+model\+::get\+\_\+\+Herinnering\+Dag (\begin{DoxyParamCaption}\item[{}]{\$datum }\end{DoxyParamCaption})}
+
+Haalt een mailherinnering op adhv id 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & Id van mailherinnering \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mailherinnering__model_ae3c0049788b3d538c73c2b6f78fff595}\label{class_mailherinnering__model_ae3c0049788b3d538c73c2b6f78fff595}} 
+\index{Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}!get\+\_\+\+Personen\+In\+Reminder@{get\+\_\+\+Personen\+In\+Reminder}}
+\index{get\+\_\+\+Personen\+In\+Reminder@{get\+\_\+\+Personen\+In\+Reminder}!Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+\_\+\+Personen\+In\+Reminder()}{get\_PersonenInReminder()}}
+{\footnotesize\ttfamily Mailherinnering\+\_\+model\+::get\+\_\+\+Personen\+In\+Reminder (\begin{DoxyParamCaption}\item[{}]{\$reminder\+Id }\end{DoxyParamCaption})}
+
+Haalt alle personen in een mailherinneringen op 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$id} & Id van mailherinnering \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mailherinnering__model_a52d132c8b5bed589d41796c2bccaeea0}\label{class_mailherinnering__model_a52d132c8b5bed589d41796c2bccaeea0}} 
+\index{Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}!get\+All@{get\+All}}
+\index{get\+All@{get\+All}!Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}}
+\subsubsection{\texorpdfstring{get\+All()}{getAll()}}
+{\footnotesize\ttfamily Mailherinnering\+\_\+model\+::get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Haalt alle mailherinneringen \mbox{\Hypertarget{class_mailherinnering__model_a1e936efd2fa8e6e311a0289dacec6243}\label{class_mailherinnering__model_a1e936efd2fa8e6e311a0289dacec6243}} 
+\index{Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}!insert@{insert}}
+\index{insert@{insert}!Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily Mailherinnering\+\_\+model\+::insert (\begin{DoxyParamCaption}\item[{}]{\$herinnering }\end{DoxyParamCaption})}
+
+Voegt een mailherinnering op 
+\begin{DoxyParams}[1]{Parameters}
+mailherinnering & {\em \$mailherinnering} & object van mailherinnering \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_mailherinnering__model_abcd691276b2a166a51c20bd1507acf9e}\label{class_mailherinnering__model_abcd691276b2a166a51c20bd1507acf9e}} 
+\index{Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}!update@{update}}
+\index{update@{update}!Mailherinnering\+\_\+model@{Mailherinnering\+\_\+model}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily Mailherinnering\+\_\+model\+::update (\begin{DoxyParamCaption}\item[{}]{\$herinnering }\end{DoxyParamCaption})}
+
+Past een mailherinnering aan 
+\begin{DoxyParams}[1]{Parameters}
+mailherinnering & {\em \$mailherinnering} & object van mailherinnering \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
