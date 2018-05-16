@@ -11,42 +11,48 @@ if (!defined('BASEPATH'))
 
 class Keuzeoptie extends CI_Controller{
     
+    ///Initialiseerd de benogigde libraries/models die nodig zijn voor deze controller
      public function __construct() {
         parent::__construct();
 
-        /// =================================================================================================== GREIF MATTHIAS
-        /// Autoload
+        // =================================================================================================== GREIF MATTHIAS
+        // Autoload
         $this->load->library('session');
 
-		/// Redirect to home if no session started
+		// Redirect to home if no session started
         $this->load->model('beheer_model');
         if(!$this->session->has_userdata('id') || $this->beheer_model->get_byId($this->session->userdata('id')) == null){
             redirect('/admin/index', 'location');
         }
-        /// =================================================================================================== /GREIF MATTHIAS
+        // =================================================================================================== /GREIF MATTHIAS
     }
 
-    /// =================================================================================================== GREIF MATTHIAS
-    /// Get Keuzeoptie by Id
+    // =================================================================================================== GREIF MATTHIAS
+    // Get Keuzeoptie by Id
+    ///Haal een keuzeoptie op uit de database
     public function get($id){
         $data['return'] = '';
 		
-        /// Get data from db
+        // Get data from db
         $this->load->model('$keuzeoptie_model');
         $returndata = $this->$keuzeoptie_model->get_byId($id);
 
-        /// Return data
+        // Return data
         $data['return'] = json_encode($returndata);
 		
-		/// Print in default api output view
+		// Print in default api output view
 		$this->load->view('req_output', $data);
     }
-    /// =================================================================================================== /GREIF MATTHIAS
+    // =================================================================================================== /GREIF MATTHIAS
 
-    /// Functie voor het aanpassen en aanmaken van keuzeopties
+    // Functie voor het aanpassen en aanmaken van keuzeopties
+    /**
+	 * Delete een keuzeoptie uit de database
+     * De parameters worden opgehaald vanuit de wabpagina waar deze functie is opgeroepen 
+ 	*/  
     public function update()
 	{
-		/// klasse Keuzeoptie aanmaken en initialiseren
+		// klasse Keuzeoptie aanmaken en initialiseren
         $keuzeoptie = new stdClass();
 
         $keuzeoptie->id = $this->input->post('id');
@@ -58,25 +64,30 @@ class Keuzeoptie extends CI_Controller{
         $keuzeoptie->eindTijdstip = $this->input->post('eindTijdstip');
         $keuzeoptie->beginTijdstip = $this->input->post('beginTijdstip');
 
-		/// Model inladen
+		// Model inladen
         $this->load->model('Keuzeoptie_model');
 		
-		/// Keuzeoptie toevoegen of aanpassen
+		// Keuzeoptie toevoegen of aanpassen
         if($keuzeoptie->id == 0){
        		$this->Keuzeoptie_model->add($keuzeoptie);
         } else {
         	$this->Keuzeoptie_model->update($keuzeoptie);
         }
 
-        /// Keuzemogelijkheid aanmaken om te kunnen redirecten naar de juiste pagina
+        // Keuzemogelijkheid aanmaken om te kunnen redirecten naar de juiste pagina
         $this->load->model('keuzemogelijkheid_model');
         $keuzemogelijkheid=$this->keuzemogelijkheid_model->get_byId($keuzeoptie->keuzemogelijkheidId);
         
-        /// Redirect naar keuzemogelijkheid pagina
+        // Redirect naar keuzemogelijkheid pagina
 		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
     }
 
-    /// Functie om keuzeopties te verwijderen    
+    // Functie om keuzeopties te verwijderen  
+    /**
+	 * Delete een keuzeoptie uit de database
+	 * @param int $id
+     * id van de te verwijderen keuzeoptie
+ 	*/  
     public function delete($id)
 	{
 		
@@ -84,7 +95,7 @@ class Keuzeoptie extends CI_Controller{
 
         $this->Keuzeoptie_model->delete($id);
 		
-		/// Redirect to keuzemogelijkheidbeheer
+		// Redirect to keuzemogelijkheidbeheer
 		redirect('admin/dash/jaargangoverzicht');
 	}
 }
