@@ -8,11 +8,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Deelnemer extends CI_Controller {
+	/**
+	 * Default Contstructor
+ 	*/
 	public function __construct()
 	{
 		parent::__construct();
 
-		// =================================================================================================== GREIF MATTHIAS
 		// Autoload
 		$this->load->library('session');
 
@@ -20,9 +22,15 @@ class Deelnemer extends CI_Controller {
 		if(!$this->session->has_userdata('id')){
 			redirect('/main/index', 'location');
 		}
-		// =================================================================================================== /GREIF MATTHIAS		
 	}
 	
+	/**
+	 * Container voor alle dashbord schermen van deelnemer
+	 * @param string $view
+	 *  Scherm dat opgeroepen word in het dashbord van administrator
+	 * @param string $extras
+	 *  Optionele parameters
+ 	*/
 	public function dash($view = null, $extras = null){
 		// Load models
 		$this->load->model('persoon_model');
@@ -65,6 +73,7 @@ class Deelnemer extends CI_Controller {
 
 		// Get data for view
 		switch($view){
+			// =================================================================================================== 
 			case "personeelsinschrijvingen":
 				$data['creator'] = "";
 				//haal het actief jaar op.													
@@ -88,6 +97,7 @@ class Deelnemer extends CI_Controller {
 				$data['creator'] = "";
 				$data['persoon'] = $extras;
 			break;
+			// =================================================================================================== /	
 		}
 
 		// Set view
@@ -96,6 +106,9 @@ class Deelnemer extends CI_Controller {
 		$this->load->view('template/main', $data);
 	}
 
+	/**
+	 * Meld administrator af
+ 	*/
 	public function logout(){
 		$this->session->unset_userdata('id');
 
@@ -103,6 +116,7 @@ class Deelnemer extends CI_Controller {
 		redirect('/');
 	}
 
+	// =================================================================================================== 
 	public function vrijwilligertoevoegen(){
             $persoon = new stdClass();
 
@@ -117,4 +131,5 @@ class Deelnemer extends CI_Controller {
 
 			$this->dash('vrijwilligersucces',$persoon);
 	}
+	// =================================================================================================== /
 }
