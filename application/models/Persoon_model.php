@@ -85,6 +85,8 @@ class Persoon_model extends CI_Model {
 
     /**
 	 * Haal alle personen op uit de database die zijn ingeschreven als vrijwilliger
+     * @param int $jaargang
+     * het jaargang van de op te halen personen
  	*/ 
     function get_AllVrijwilligers()
     {
@@ -113,6 +115,8 @@ class Persoon_model extends CI_Model {
 
     /**
 	 * Haal alle vrijwilligers op uit de database die niet zijn ingeschreven voor een activiteit
+     * @param int $jaargang
+     * het jaargang van de op te halen personen
  	*/ 
     function get_NietIngeschrevenVrijwilligers($jaargangid)
     {

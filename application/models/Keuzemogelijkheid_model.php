@@ -26,6 +26,8 @@ class Keuzemogelijkheid_Model extends CI_Model {
     
     /**
      * Ophalen van alle keuzemogelijkheden gesorteerd op basis van naam
+     * @param int $jaargang
+     * het jaargang van de op te halen keuzeopties
  	*/
     function getAllByNaam($jaargangid)
     {
@@ -37,7 +39,9 @@ class Keuzemogelijkheid_Model extends CI_Model {
     
     /**
      * Ophalen van alle keuzemogelijkheden samen met de onderliggende keuzeopties. Regel 36 zorgt ervoor dat alle keuzeopties bij de juiste keuzemogelijkheid worden geplaatst
- 	*/
+ 	* @param int $jaargang
+     * het jaargang van de op te halen keuzeopties
+     */
     function getAllByNaamWithKeuzeOpties($jaargangid)
     {
         $keuzemogelijkheden = $this->getAllByNaam($jaargangid);
