@@ -101,12 +101,14 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
         <p id="modaltekst">Weet u zeker dat u deze shift wil verwijderen?</p>
       </div>
       <div class="modal-footer">
-        <a id="verwijderenShift" class="btn btn-danger btn-round">Verwijderen</a>
+        <a id="verwijderenLocatie" class="btn btn-danger btn-round">Verwijderen</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
       </div>
     </div>
   </div>
 </div>
 <script>
-
+$('.verwijder').Click(function(){
+    $('#verwijderenLocatie').attr('href',$(this).val()):
+});
 </script>
