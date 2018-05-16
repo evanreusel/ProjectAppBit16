@@ -43,8 +43,8 @@ foreach($keuzemogelijkheden as $keuzemogelijkheid) {
 };
 
 ?>
-<p id="val"></p>
-<p id="test"></p>
+<!-- <p id="val"></p>
+<p id="test"></p> -->
 <script>
 $(document).ready(function(){
     $(".keuzeoptie").click(function(){        
