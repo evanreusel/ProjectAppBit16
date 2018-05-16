@@ -422,7 +422,7 @@
             emails = [];
             for (i = 0; i < ontvangers.length; i++) {
 
-                emails.push($('this').data('email'))
+                emails.push($(ontvangers[i]).data('email'));
             }
             document.location.href = "mailto:?bcc=" + emails.join();
         });

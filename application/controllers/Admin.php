@@ -227,15 +227,15 @@ class Admin extends CI_Controller {
 			/// Doorverwijzen naar de pagina waarop taken worden aangemaakt en aangepast.
 			case "updatetaak":
 				$data['creator'] = "TIM SWERTS";
-				/// kiezen of we een taak moeten aanmaken of aanpassen en daarna alle gegevens ophalen.
+				// kiezen of we een taak moeten aanmaken of aanpassen en daarna alle gegevens ophalen.
 				if($extras != null) {
-					///Aanmaken van een taak
+					//Aanmaken van een taak
 					if(strpos($extras,"i")!==false){
 						$this->load->model('keuzemogelijkheid_model');
 						$data['keuzemogelijkheid'] = $this->keuzemogelijkheid_model->get_byId(str_replace("i", "", $extras));
 						$data['token']=true;
 					}
-					/// Aanpassen van een taak
+					// Aanpassen van een taak
 					if(strpos($extras,"u")!==false){
 						$this->load->model('taken_model');
 						$data['taak'] = $this->taken_model->get_byId($extras);
@@ -245,22 +245,22 @@ class Admin extends CI_Controller {
 
 					}
 				}else{
-					/// De index pagina zal geladen worden als er te weinig info wordt meegegeven.
+					// De index pagina zal geladen worden als er te weinig info wordt meegegeven.
 					$view = 'index';
 				}
 			break;
 			/// Doorverwijzen naar de pagina waarop shiften worden aangemaakt en aangepast.
 			case "updateshift":
 				$data['creator'] = "TIM SWERTS";
-				/// kiezen of we een shift moeten aanmaken of aanpassen en daarna alle gegevens ophalen.
+				// kiezen of we een shift moeten aanmaken of aanpassen en daarna alle gegevens ophalen.
 				if($extras != null) {
-					/// Aanmaken van een shift
+					// Aanmaken van een shift
 					if(strpos($extras,"i")!==false){
 						$this->load->model('Taken_model');
 						$data['taak'] = $this->Taken_model->get_byId(str_replace("i", "", $extras));
 						$data['token']=true;
 					}
-					/// Aanpassen van een shift
+					// Aanpassen van een shift
 					if(strpos($extras,"u")!==false){
 						$this->load->model('Shiften_model');
 						$data['shift'] = $this->Shiften_model->get_byId($extras);
@@ -370,7 +370,7 @@ class Admin extends CI_Controller {
 
 	/**
 	 * Login API call, print return waarde op scherm
-	 * @param string $id
+	 * @param id $id
 	 *  Id van gebruiker
 	 * @param string $pass
 	 *  Wachtwoord van gebruiker
@@ -435,7 +435,7 @@ class Admin extends CI_Controller {
 
 	/**
 	 * Verwijderd de administrator
-	 * @param string $id
+	 * @param int $id
 	 *  Id van gebruiker
  	*/
     public function delete($id)
