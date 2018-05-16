@@ -199,7 +199,7 @@ class Persoon_model extends CI_Model {
         foreach($personen as $persoon){            
             // Get Shifts
             $query = $this->db->where('persoonid', $persoon->id);
-            $query = $this->db->get('vrijwilligersinshift');
+            $query = $this->db->get('Vrijwilligersinshift');
             $data = $query->result();
 
             $shiften = array();
@@ -208,17 +208,17 @@ class Persoon_model extends CI_Model {
             if(!empty($data)){
             foreach($data as $item){
             $query = $this->db->where('id', $item->shiftId);
-            $query = $this->db->get('shift');
+            $query = $this->db->get('Shift');
             $shift = $query->row();
 
             //keuzemogelijkheid koppelen aan keuzeoptie
             $query = $this->db->where('id', $shift->taakId);
-            $query = $this->db->get('taak');
+            $query = $this->db->get('Taak');
             $shift->taak = $query->row();
 
             //keuzemogelijkheid koppelen aan keuzeoptie
             $query = $this->db->where('id', $shift->taak->keuzemogelijkheidId);
-            $query = $this->db->get('keuzemogelijkheid');
+            $query = $this->db->get('Keuzemogelijkheid');
             $shift->taak->keuzemogelijkheid = $query->row();
 
             $shiften[] = $shift;
