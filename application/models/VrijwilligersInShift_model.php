@@ -1,9 +1,9 @@
 <?php
-/**
- * TIM SWERTS
- * LAST UPDATED : 18/05/15
- * VrijwilliggersInShift_Model
- */
+// TIM SWERTS
+// LAST UPDATED : 18/05/15
+// VrijwilliggersInShift_Model
+
+/// Model voor beheren van de tabel shift van de database.
 class VrijwilligersInShift_Model extends CI_Model{
     
     
