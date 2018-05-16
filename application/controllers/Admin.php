@@ -326,10 +326,6 @@ class Admin extends CI_Controller {
 			case "mail_overzicht":
 				$data['creator'] = "ERIK";
 
-				$data['message'] = "Mail Reminder Overzicht";
-				$data['css_files'] = array();
-				$data['view'] = 'mail_overzicht';
-
 				$this->load->model('Mailherinnering_model');
 				$this->load->model('mailsjabloon_model');
 				$this->load->model('jaargang_model');
@@ -348,10 +344,6 @@ class Admin extends CI_Controller {
 				}
 				$data['mailsjablonen'] = $this->mailsjabloon_model->getAll();
 				$data['reminders'] = $reminders;
-				//$data['css_files'] = array("login.css");
-				$data['clearscreen'] = true;
-				$data["creator"] = "Erik Vzn Reusel";
-				$this->load->view('template/main', $data);
 			break;
 
 			default:
@@ -505,7 +497,6 @@ class Admin extends CI_Controller {
 	
 	private function get_personen($jaargangid)
     {
-
         // get keuzemogelijkheden
         $this->load->model('Keuzemogelijkheid_model');
         $this->load->model('KeuzeoptieVanDeelnemer_model');
