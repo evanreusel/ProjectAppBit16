@@ -301,8 +301,10 @@ class Admin extends CI_Controller {
 
 			case 'deelnemersoverzicht':
 				$data['creator'] = "";
+				if($extras != null) {
 				$this->load->model('Persoon_model');
-				$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
+				$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit($extras);
+				}
 			break;
 			case 'vrijwilligersoverzicht':
 				$data['creator'] = "GREIF MATTHIAS";
