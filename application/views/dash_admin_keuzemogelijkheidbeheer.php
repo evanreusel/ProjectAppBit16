@@ -80,14 +80,14 @@ if(count($data['keuzemogelijkheden']) > 0) {
             $('#modaltekst').text('Weet u zeker dat u deze keuzeoptie wil verwijderen?')
 
             keuzeoptieId=$(this).val();
-            $('#verwijderenKeuze').attr("href", "<?php echo base_url() ?>/index.php/keuzeoptie/delete/"+keuzeoptieId);
+            $('#verwijderenKeuze').attr("href", "<?php echo base_url() ?>index.php/keuzeoptie/delete/"+keuzeoptieId);
         });
         $('.deleteKeuzemogelijkheid').click(function(){
             $('#modaltitel').text('Keuzemogelijkheid verwijderen?')
             $('#modaltekst').text('Weet u zeker dat u deze keuzemogelijkheid wil verwijderen?')
             
             keuzemogelijkheidId=$(this).val();
-            $('#verwijderenKeuze').attr("href", "<?php echo base_url() ?>/index.php/keuzemogelijkheid/delete/"+keuzemogelijkheidId);
+            $('#verwijderenKeuze').attr("href", "<?php echo base_url() ?>index.php/keuzemogelijkheid/delete/"+keuzemogelijkheidId);
         });
 
     });
