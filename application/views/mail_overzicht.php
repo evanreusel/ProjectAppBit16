@@ -253,6 +253,7 @@
         $(".open-herinneringvenster").click(function ()
         {
             console.log("HERINNERING");
+
             var herinneringId = $(this).data('reminder-id');
             $("#herinnering-id").val(herinneringId);
             if (herinneringId != 0) {
@@ -260,7 +261,8 @@
                 // herinnering velden bewerken
                 $("#modalReminderDatum").val($(this).data('reminder-datum'));
                 $("#modalMailsjabloon").val($(this).data('sjabloon-id'));
-                // vul checkboxes in
+                // vul checkboxes in, maak andere leeg
+                $(".select-persoongroep").prop('checked', false);
                 $.ajax({
                     url: '<?= site_url(); ?>/mail/getPersonenInHerinnering/' + herinneringId,
                     type: "GET",
