@@ -105,10 +105,11 @@
                                     foreach ($keuzemogelijkheid->taken as $taak) {
                                         if (!$taak->verbergen) {
                                             ?>
-                                            <h5><input type="checkbox" class="select-persoongroep"
-                                                       data-select="vrijwilliger<?php echo $taak->id ?>">
-                                                Vrijwilligers <?php echo $taak->functie ?></h5>
+
                                             <div class="persoongroep" id="vrijwilliger<?php echo $taak->id ?>">
+                                                <h5><input type="checkbox" class="select-persoongroep"
+                                                           data-select="vrijwilliger<?php echo $taak->id ?>">
+                                                    Vrijwilligers <?php echo $taak->functie ?></h5>
                                                 <?php
                                                 foreach ($taak->shiften as $shift) {
                                                     foreach ($shift->vrijwilligers as $persoon) {
@@ -130,10 +131,10 @@
                                     foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
                                         if (!$keuzeoptie->verbergen) {
                                             ?>
+                                            <div class="persoongroep" id="deelnemer<?php echo $keuzeoptie->id ?>">
                                             <h5><input type="checkbox" class="select-persoongroep"
                                                        data-select="deelnemer<?php echo $keuzeoptie->id ?>"> Deelnemers
                                                 "<?php echo $keuzeoptie->naam ?>"</h5>
-                                            <div class="persoongroep" id="deelnemer<?php echo $keuzeoptie->id ?>">
                                                 <?php foreach ($keuzeoptie->personen as $persoon) {
                                                     ?>
                                                     <label><input type="checkbox" name="personen[]"
@@ -299,6 +300,7 @@
             select = $(this).data('select');
             console.log(select);
             $('#' + select + " :checkbox").prop("checked", this.checked);
+            console.log($(this).closest(".persoongroep").find(":checkbox"));
 
         });
     });
