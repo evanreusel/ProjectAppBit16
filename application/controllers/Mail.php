@@ -101,9 +101,9 @@ class Mail extends CI_Controller {
         $this->PersoonInHerinnering_model->delete($id);
         foreach ($personen as $persoon) {
             $persoonInHerinnering = new stdClass();
-            $persoonInHerinnering->mailHerinneringId = $id;
+            $persoonInHerinnering->mailherinneringId = $id;
             $persoonInHerinnering->persoonId = $persoon;
-            $this->PersoonInHerinnering_model->insert($id);
+            $this->PersoonInHerinnering_model->insert($persoonInHerinnering);
         }
 
 
