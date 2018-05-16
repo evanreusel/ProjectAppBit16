@@ -85,6 +85,8 @@ class Persoon_model extends CI_Model {
 
     /**
 	 * Haal alle personen op uit de database die zijn ingeschreven als vrijwilliger
+     * @param int $jaargang
+     * het jaargang van de op te halen personen
  	*/ 
     function get_AllVrijwilligers()
     {
@@ -113,12 +115,14 @@ class Persoon_model extends CI_Model {
 
     /**
 	 * Haal alle vrijwilligers op uit de database die niet zijn ingeschreven voor een activiteit
+     * @param int $jaargang
+     * het jaargang van de op te halen personen
  	*/ 
     function get_NietIngeschrevenVrijwilligers($jaargangid)
     {
         $query = $this->db->select('*')->from('Persoon')
         ->join('VrijwilligersInShift', 'Persoon.id = VrijwilligersInShift.persoonId', 'left')
-        ->where(array('soort' => "VRIJWILLIGER", $jaargangid => 'jaargangId'))
+        ->where(array('soort' => "VRIJWILLIGER", 'jaarId' => $jaargangid))
         ->get();
         $nietingeschreven = array_filter(
             $query->result(),
@@ -139,7 +143,7 @@ class Persoon_model extends CI_Model {
     {
         $query = $this->db->select('*')->from('Persoon')
             ->join('KeuzeoptieVanDeelnemer', 'Persoon.id = KeuzeoptieVanDeelnemer.persoonId', 'left')
-            ->where(array('soort' => "DEELNEMER", 'jaarId' => $jaargang->id))
+            ->where(array('soort' => "DEELNEMER", 'jaarId' => $jaargang))
             ->get();
         $nietingeschreven = array_filter(
             $query->result(),

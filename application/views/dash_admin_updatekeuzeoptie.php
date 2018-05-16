@@ -41,7 +41,7 @@
         'size'  =>'16',
         'type'  =>'text',
         'readonly',
-        'class' =>'form_datetime'
+        'class' =>'form_datetime form-control'
     );
 
     $nummerAttributen = array(
@@ -93,34 +93,21 @@
 
     
     <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
-
-        $(".nummerinput").click(function(){
+        $( document ).ready(function() {
+            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
+        });
+        $("#keuzeoptieForm").submit(function(event) {
             var min = $('#minimum').val();
             var max = $('#maximum').val();
-            console.log("fire");
-
-            if (min > max) {
-                alert("Het minimum aantal deelnemers is groter dan het maximum.");
-                $('#min').addClass('is-invalid');
-                $(".bevestig").attr("disabled", true);
-            }else{
-                $(".bevestig").attr("disabled", false);
-            };
-        });
-
-        $("#keuzeoptieForm").submit(function(event) {
-            var min = $('.min').val();
-            var max = $('.max').val();
-            var begin =$('#begin').val()); 
-            var einde =$('#einde').val());
+            var begin =$('#begin').val(); 
+            var einde =$('#einde').val();
             console.log(begin);
             console.log(einde);
 
 
             if (min > max) {
                 alert("Het minimum aantal deelnemers is groter dan het maximum.");
-                $('#min').addClass('is-invalid');
+                $('#minimum').addClass('is-invalid');
                 event.preventDefault();
             }
             if (begin>einde) {

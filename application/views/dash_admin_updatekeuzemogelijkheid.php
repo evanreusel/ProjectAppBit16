@@ -17,7 +17,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         'size'  =>'16',
         'type'  =>'text',
         'readonly',
-        'class' =>'form_datetime'
+        'class' =>'form_datetime form-control'
     );
 
     foreach ($plaatsen as $plek) {
@@ -25,8 +25,6 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     }
 ?>
     
-
-
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     <h2><?php echo $keuzemogelijkheid->naam?> aanpassen:</h2>
     </br>
@@ -45,7 +43,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
     <div class="form-group row">
         <label for="einde" class="col-form-label">Eind datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'begin', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de eind datum in.'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de eind datum in.'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
     </div>
     <div class="form-group row">
         <label for="deadline" class="">Datum en tijdstip voor deadline:</label>

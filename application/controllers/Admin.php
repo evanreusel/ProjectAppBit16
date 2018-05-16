@@ -95,7 +95,7 @@ class Admin extends CI_Controller {
 			],
 			[
 				'title' => 'Mails',
-				'url' => base_url() . 'index.php/mail/overzicht/'
+				'url' => base_url() . 'index.php/admin/dash/mail_overzicht/'
 			]
 		];
 		$data['actions'] = [
@@ -323,12 +323,32 @@ class Admin extends CI_Controller {
 				$data['creator'] = "";
 			break;
 
+			case "mail_overzicht":
+				$data['creator'] = "ERIK";
+
+				$this->load->model('Mailherinnering_model');
+				$this->load->model('mailsjabloon_model');
+				$this->load->model('jaargang_model');
+
+				$jaargangid = $this->jaargang_model->getActief();
+
+				$reminders = $this->Mailherinnering_model->getAll();
+				$data['keuzemogelijkheden'] = $this->get_personen($jaargangid->id);
+				$data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers($jaargangid->id);
+				$data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenVrijwilligers($jaargangid->id);
+				$nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers($jaargangid->id);
+				foreach ($reminders as $reminder) {
+					$reminder->ontvangers =  $this->Mailherinnering_model->get_PersonenInReminder($reminder->id);
+					$reminder->sjabloon = $this->mailsjabloon_model->get($reminder->sjabloonId);
+
+				}
+				$data['mailsjablonen'] = $this->mailsjabloon_model->getAll();
+				$data['reminders'] = $reminders;
+			break;
+
 			default:
 				$data['creator'] = "GREIF MATTHIAS";
 				$view = 'index';
-				$this->load->model('Persoon_model');
-				$data["deelnemers"] = $this->Persoon_model->getallwithactiviteit();
-				$this->load->view('dash_admin_personeelsoverzicht.php',$data);
 			break;
 		}
 
@@ -465,6 +485,79 @@ class Admin extends CI_Controller {
 		}
 	}	
 	// =================================================================================================== /TIM
+
+	public function get_NietIngeschreven()
+    {
+        $this->load->model('Persoon_model');
+        print_r($this->Persoon_model->get_NietIngeschrevenVrijwilligers());
+        echo PHP_EOL;
+        echo PHP_EOL;
+        print_r($this->Persoon_model->get_NietIngeschrevenDeelnemers());
+	}
+	
+	private function get_personen($jaargangid)
+    {
+        // get keuzemogelijkheden
+        $this->load->model('Keuzemogelijkheid_model');
+        $this->load->model('KeuzeoptieVanDeelnemer_model');
+        $this->load->model('Taken_model');
+        $this->load->model('Shiften_model');
+        $this->load->model('Persoon_model');
+        $this->load->model("VrijwilligersInShift_model");
+
+        $keuzemogelijkheden = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties($jaargangid);
+        //print_r($keuzemogelijkheden);
+        foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
+            $keuzemogelijkheid->verbergen = true;
+            //get taken
+            $taken = $this->Taken_model->getAllByNaamWhereKeuzeMogelijkheid($keuzemogelijkheid->id);
+            //echo ("AANTAL TAKEN VOOR " . $keuzemogelijkheid->naam . ": " . count($taken));
+            $keuzemogelijkheid->taken = array();
+            $keuzemogelijkheid->taken = $taken;
+
+            // get shiften
+            foreach ($keuzemogelijkheid->taken as $taak) {
+                $shiften = $this->Shiften_model->getAllByNaamWhereTaakId($taak->id);
+                $taak->verbergen = true;
+                $taak->shiften = $shiften;
+                foreach ($taak->shiften as $shift) {
+                    //get personen in shift
+                    $vrijwilligersInshiftObject  = $this->VrijwilligersInShift_model->getAllByShiftId($shift->id);
+                    //print_r($vrijwilligersInshiftObject);
+                    if (count($vrijwilligersInshiftObject) !=0)
+                    {
+                        $taak->verbergen = false;
+                        $keuzemogelijkheid->verbergen = false;
+                    }
+                    $vrijwilligers = array_map(create_function('$o', 'return $o->persoon;'), $vrijwilligersInshiftObject);
+                    $shift->vrijwilligers = $vrijwilligers;
+
+                }
+            }
+            //get deelnemers van keuzeopties
+
+            foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
+                $keuzeoptie->personen = array();
+                $keuzeoptie->verbergen = true;
+                $keuzeoptieVanDeelnemers = $this->KeuzeoptieVanDeelnemer_model->get_byKeuzeoptieId($keuzeoptie->id);
+                if (count($keuzeoptieVanDeelnemers) !=0)
+                {
+                    $keuzemogelijkheid->verbergen = false;
+                    $keuzeoptie->verbergen = false;
+                }
+                foreach ($keuzeoptieVanDeelnemers as $keuzeoptieVanDeelnemer) {
+                    $deelnemendPersoon = $this->Persoon_model->get_byId($keuzeoptieVanDeelnemer->persoonId);
+                    array_push($keuzeoptie->personen, $deelnemendPersoon);
+                }
+            }
+
+        }
+        return $keuzemogelijkheden;
+
+        //get niet ingeschreven personen
+
+
+    }
 }
 
 ?>
