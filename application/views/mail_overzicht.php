@@ -420,7 +420,7 @@
             ontvangers = $("#modalIndividueleMail :checked").not('.select-persoongroep');
             emails = [];
             for (i = 0; i < ontvangers.length; i++) {
-                email.push($('this').data('email'))
+                emails.push($('this').data('email'))
             }
             document.location.href = "mailto:bcc=" + ontvangers.join();
         });
