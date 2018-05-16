@@ -51,7 +51,7 @@ function ajaxplaats(plaatsId){
         <?php
         foreach ($plaatsen as $plaats) {
             echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . '<button onclick="ajaxplaats(' . $plaats->id . ')" type="button" class="btn btn-warning btn-round wijzig" value="' . $plaats->id . '" title="Druk hier om deze locatie te wijzigen" >Wijzig</button>' . "</td><td>" .
-            '<button class="verwijder btn btn-danger btn-round" data-toggle="modal" data-target="#taakModal" value="Plaats/verwijder/"' . $plaats->id . '" title="Druk hier om deze locatie te verwijderen">Verwijderen</button></td></tr>';
+            '<button class="verwijder btn btn-danger btn-round" data-toggle="modal" data-target="#taakModal" value="Plaats/verwijder/' . $plaats->id . '" title="Druk hier om deze locatie te verwijderen">Verwijderen</button></td></tr>';
         }
         
         ?>
@@ -101,12 +101,14 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
         <p id="modaltekst">Weet u zeker dat u deze shift wil verwijderen?</p>
       </div>
       <div class="modal-footer">
-        <a id="verwijderenShift" class="btn btn-danger btn-round">Verwijderen</a>
+        <a id="verwijderenLocatie" class="btn btn-danger btn-round">Verwijderen</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
       </div>
     </div>
   </div>
 </div>
 <script>
-
+$('.verwijder').click(function(){
+    $('#verwijderenLocatie').attr("href",$(this).val());
+});
 </script>
