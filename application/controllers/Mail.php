@@ -141,9 +141,9 @@ class Mail extends CI_Controller {
         $jaargangid = $this->jaargang_model->getActief();
 
         $reminders = $this->Mailherinnering_model->getAll();
-        $data['keuzemogelijkheden'] = $this->get_personen();
-        $data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers($jaargangid);
-        $data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
+        $data['keuzemogelijkheden'] = $this->get_personen($jaargangid->id);
+        $data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers($jaargangid->id);
+        $data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenVrijwilligers($jaargangid->);
         $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
         foreach ($reminders as $reminder) {
             $reminder->ontvangers =  $this->Mailherinnering_model->get_PersonenInReminder($reminder->id);
@@ -172,7 +172,7 @@ class Mail extends CI_Controller {
     /**
         Haalt alle personen/ontvangers op geordend per keuzemogelijkheid, keuzeoptie, taak, shift
      */
-    private function get_personen()
+    private function get_personen($jaargangid)
     {
 
         // get keuzemogelijkheden
@@ -183,7 +183,7 @@ class Mail extends CI_Controller {
         $this->load->model('Persoon_model');
         $this->load->model("VrijwilligersInShift_model");
 
-        $keuzemogelijkheden = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties();
+        $keuzemogelijkheden = $this->Keuzemogelijkheid_model->getAllByNaamWithKeuzeOpties($jaargangid);
         //print_r($keuzemogelijkheden);
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
             $keuzemogelijkheid->verbergen = true;

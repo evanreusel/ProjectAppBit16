@@ -27,9 +27,10 @@ class Keuzemogelijkheid_Model extends CI_Model {
     /**
      * Ophalen van alle keuzemogelijkheden gesorteerd op basis van naam
  	*/
-    function getAllByNaam()
+    function getAllByNaam($jaargangid)
     {
         $this->db->order_by('naam', 'asc');
+        $this->db->where('jaargangId', $jaargangid);
         $query = $this->db->get('KeuzeMogelijkheid');
         return $query->result();
     }
@@ -37,9 +38,9 @@ class Keuzemogelijkheid_Model extends CI_Model {
     /**
      * Ophalen van alle keuzemogelijkheden samen met de onderliggende keuzeopties. Regel 36 zorgt ervoor dat alle keuzeopties bij de juiste keuzemogelijkheid worden geplaatst
  	*/
-    function getAllByNaamWithKeuzeOpties()
+    function getAllByNaamWithKeuzeOpties($jaargangid)
     {
-        $keuzemogelijkheden = $this->getAllByNaam();
+        $keuzemogelijkheden = $this->getAllByNaam($jaargangid);
         $this->load->model('Keuzeoptie_model');
 
         foreach ($keuzemogelijkheden as $keuzemogelijkheid) {

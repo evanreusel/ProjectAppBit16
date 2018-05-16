@@ -17,7 +17,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         'size'  =>'16',
         'type'  =>'text',
         'readonly',
-        'class' =>'form_datetime'
+        'class' =>'form_datetime form-control'
     );
 
     foreach ($plaatsen as $plek) {
