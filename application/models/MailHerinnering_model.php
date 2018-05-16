@@ -1,7 +1,7 @@
 <!-- 
-    TIM
+    ERIK
 	LAST UPDATED: 18 03 30
-	PERSOON MODEL
+	MAILREMINDER MODEL
 -->
 
 <?php
@@ -10,7 +10,6 @@ class Mailreminder_model extends CI_Model {
     {
         $this->db->where(array('timer' => $datum));
         $query = $this->db->get('MailHerinnering');
-
         return $query->result();
     }
     function getAll() {
