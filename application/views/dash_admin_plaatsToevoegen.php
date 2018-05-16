@@ -1,12 +1,12 @@
 <!-- 
     DAAN
-    LAST UPDATED: 20 04 30
+    LAST UPDATED: 16 05 18
     DASH ADMIN PLAATS ADD/UPDATE
 -->
 
 <script>
 
-// ajax om object te tonen
+/// ajax om object te tonen
 function ajaxplaats(plaatsId){
     console.log("<?php echo site_url(); ?>" + '/plaats/jsonplaats/' + plaatsId);
 
@@ -60,11 +60,12 @@ function ajaxplaats(plaatsId){
 <?php
     echo form_open('plaats/registreer', $attributes);
 
-// testen of plaats leeg is
+/// Leeg locatieobject aanmaken voor wanneer er een nieuwe locatie wordt toegevoegd
 $plaatsTest='';
 $locatieTest='';
 $locatieId = 0;
 
+/// Als de plaats bestaat (en er dus op wijzig is geklikt van een bestaande plaats) worden de velden onderaan ingevuld
 if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $huidigePlaats->locatie; $locatieId = $huidigePlaats->id;} 
     echo form_labelpro('Naam', 'naam');
     echo form_input(array('name' => 'naam',
@@ -87,6 +88,10 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
     echo form_submit('knop', 'Verzenden');
     echo form_close();
     ?>
+
+    <!-- 
+        Dialog div om een pop-upvenster te laten verschijnen met de vraag of je zeker wilt verwijderen
+    -->
 </div>
 <div class="modal fade" id="taakModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -107,9 +112,10 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
     </div>
   </div>
 </div>
+
 <script>
+/// JQuery script om de functie verwijder in de controller 'plaats' aan te roepen na het klikken op 'verwijder'
 $('.verwijder').click(function(){
-    console.log($(this).val());
     $('#verwijderenLocatie').attr("href","<?php echo site_url() ?>" + $(this).val());
 });
 </script>
