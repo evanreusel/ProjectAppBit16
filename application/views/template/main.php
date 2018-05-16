@@ -50,16 +50,12 @@
     ?>
     </div>
 
-    <!--Footer-->
-<footer class="footer font-small blue pt-4 mt-4">
-<!--Copyright-->
-<div class="footer-copyright py-3 text-center">
-    UW NAAM HIER
-</div>
-<!--/.Copyright-->
+  <div id="footer">
+    <div class="container">
+      <p class="footer-block">Place sticky footer content here.</p>
+    </div>
+  </div>
 
-</footer>
-<!--/.Footer-->
 </body>
 
 </html>
