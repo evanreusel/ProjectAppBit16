@@ -12,8 +12,8 @@ class Keuzeoptie_Model extends CI_Model{
         $this->load->database();
 
     }
-    /// Functie voor het ophalen van de specifieke keuzeoptie op basis van een id.
     /**
+     * Functie voor het ophalen van de specifieke keuzeoptie op basis van een id.
 	 * @param string $id
 	 *  Id van de Keuzeoptie
  	*/
@@ -30,8 +30,8 @@ class Keuzeoptie_Model extends CI_Model{
         $query = $this->db->get('KeuzeOptie');
         return $query->result();
     }
-    /// Functie voor het ophalen van alle keuzeopties die behoren tot een specifieke keuzemogelijkheid.
     /**
+     * Functie voor het ophalen van alle keuzeopties die behoren tot een specifieke keuzemogelijkheid.
 	 * @param string $id
 	 *  Id van de Keuzemogelijkheid
  	*/
@@ -41,8 +41,8 @@ class Keuzeoptie_Model extends CI_Model{
         $query = $this->db->get('KeuzeOptie');
         return $query->result();
     }
-    /// Functie voor de aanpassen van een keuzeoptie die mee wordt gegeven.
     /**
+     * Functie voor de aanpassen van een keuzeoptie die mee wordt gegeven.
 	 * @param stdClass $keuzeoptie
 	 *  Object van de Keuzeoptie die aangepast moet worden
  	*/
@@ -51,8 +51,8 @@ class Keuzeoptie_Model extends CI_Model{
         $this->db->where('id', $keuzeoptie->id);
         $this->db->update('KeuzeOptie', $keuzeoptie);
     }
-    /// Functie voor de toevoegen van een keuzeoptie die mee wordt gegeven.
     /**
+     * Functie voor de toevoegen van een keuzeoptie die mee wordt gegeven.
 	 * @param stdClass $keuzeoptie
 	 *  Object van de Keuzeoptie die toegevoegd moet worden
  	*/
@@ -60,8 +60,8 @@ class Keuzeoptie_Model extends CI_Model{
         $this->db->insert('KeuzeOptie', $keuzeoptie);
         return $this->db->insert_id();
     }
-    /// Functie voor het verwijderen van de keuzeoptie waarvan het id wordt meegegeven.
     /**
+     * Functie voor het verwijderen van de keuzeoptie waarvan het id wordt meegegeven.
 	 * @param string $id
 	 *  Id van de Keuzeoptie die verwijderd moet worden
  	*/
