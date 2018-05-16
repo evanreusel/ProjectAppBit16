@@ -105,7 +105,7 @@
 
             if (min > max) {
 
-                $("body").alert("Het minimum aantal deelnemers is groter dan het maximum.");
+                alert("Het minimum aantal deelnemers is groter dan het maximum.");
                 event.preventDefault();
             } else {
                 
