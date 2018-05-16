@@ -5,7 +5,17 @@
 -->
 
 <p class="tooling">
+    <?php
+        if(isset($data['admin']->username)) {
+    ?>
     Bewerk hier de verschillende eigenschappen voor de administrator "<?php echo $data['admin']->username; ?>".
+    <?php
+        }else{
+    ?>
+    Hier kan u een nieuwe administrator toevoegen.    
+    <?php
+        }
+    ?>
 </p>
 
 <?php
@@ -150,9 +160,11 @@
 <?php    
     echo form_button($arrayparameters);
     if(isset($data['admin'])){
+        if( $data['admin']->id != $this->session->userdata('id') ){
         echo '<a class="btn btn-danger" data-toggle="modal" data-target="#keuzeModal">
                 <i class="fa fa-trash-o"></i> Verwijder
         </a>';
+    }
     }
 
     

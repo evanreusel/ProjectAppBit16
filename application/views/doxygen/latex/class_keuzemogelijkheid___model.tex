@@ -18,9 +18,9 @@ Inheritance diagram for Keuzemogelijkheid\+\_\+\+Model\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_keuzemogelijkheid___model_a88c8b0a6b02a7da7c5d1d573a66c11c7}{get\+\_\+by\+Id}} (\$id)
 \item 
-\mbox{\hyperlink{class_keuzemogelijkheid___model_a0dd8e66ae398c5e3ab1c39b62d24cf21}{get\+All\+By\+Naam}} ()
+\mbox{\hyperlink{class_keuzemogelijkheid___model_a4bd9ea550274de1237a3692a7b20c6d0}{get\+All\+By\+Naam}} (\$jaargangid)
 \item 
-\mbox{\hyperlink{class_keuzemogelijkheid___model_aa91aa36f90acdb972b5ba59935d1f499}{get\+All\+By\+Naam\+With\+Keuze\+Opties}} ()
+\mbox{\hyperlink{class_keuzemogelijkheid___model_ac8d5fc8e9e11684de17948fb985466c3}{get\+All\+By\+Naam\+With\+Keuze\+Opties}} (\$jaargangid)
 \item 
 \mbox{\Hypertarget{class_keuzemogelijkheid___model_a384efcd56387e3852dc75a5f1d4f5b9e}\label{class_keuzemogelijkheid___model_a384efcd56387e3852dc75a5f1d4f5b9e}} 
 {\bfseries get\+All\+\_\+by\+Jaargang\+Id} (\$id)
@@ -82,19 +82,29 @@ Functie voor het ophalen van de specifieke keuzemogelijkheid op basis van een id
 string & {\em \$id} & Id van de \mbox{\hyperlink{class_keuzeoptie}{Keuzeoptie}} die gezocht moet worden \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_keuzemogelijkheid___model_a0dd8e66ae398c5e3ab1c39b62d24cf21}\label{class_keuzemogelijkheid___model_a0dd8e66ae398c5e3ab1c39b62d24cf21}} 
+\mbox{\Hypertarget{class_keuzemogelijkheid___model_a4bd9ea550274de1237a3692a7b20c6d0}\label{class_keuzemogelijkheid___model_a4bd9ea550274de1237a3692a7b20c6d0}} 
 \index{Keuzemogelijkheid\+\_\+\+Model@{Keuzemogelijkheid\+\_\+\+Model}!get\+All\+By\+Naam@{get\+All\+By\+Naam}}
 \index{get\+All\+By\+Naam@{get\+All\+By\+Naam}!Keuzemogelijkheid\+\_\+\+Model@{Keuzemogelijkheid\+\_\+\+Model}}
 \subsubsection{\texorpdfstring{get\+All\+By\+Naam()}{getAllByNaam()}}
-{\footnotesize\ttfamily Keuzemogelijkheid\+\_\+\+Model\+::get\+All\+By\+Naam (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Keuzemogelijkheid\+\_\+\+Model\+::get\+All\+By\+Naam (\begin{DoxyParamCaption}\item[{}]{\$jaargangid }\end{DoxyParamCaption})}
 
-Ophalen van alle keuzemogelijkheden gesorteerd op basis van naam \mbox{\Hypertarget{class_keuzemogelijkheid___model_aa91aa36f90acdb972b5ba59935d1f499}\label{class_keuzemogelijkheid___model_aa91aa36f90acdb972b5ba59935d1f499}} 
+Ophalen van alle keuzemogelijkheden gesorteerd op basis van naam 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$jaargang} & het jaargang van de op te halen keuzeopties \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_keuzemogelijkheid___model_ac8d5fc8e9e11684de17948fb985466c3}\label{class_keuzemogelijkheid___model_ac8d5fc8e9e11684de17948fb985466c3}} 
 \index{Keuzemogelijkheid\+\_\+\+Model@{Keuzemogelijkheid\+\_\+\+Model}!get\+All\+By\+Naam\+With\+Keuze\+Opties@{get\+All\+By\+Naam\+With\+Keuze\+Opties}}
 \index{get\+All\+By\+Naam\+With\+Keuze\+Opties@{get\+All\+By\+Naam\+With\+Keuze\+Opties}!Keuzemogelijkheid\+\_\+\+Model@{Keuzemogelijkheid\+\_\+\+Model}}
 \subsubsection{\texorpdfstring{get\+All\+By\+Naam\+With\+Keuze\+Opties()}{getAllByNaamWithKeuzeOpties()}}
-{\footnotesize\ttfamily Keuzemogelijkheid\+\_\+\+Model\+::get\+All\+By\+Naam\+With\+Keuze\+Opties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Keuzemogelijkheid\+\_\+\+Model\+::get\+All\+By\+Naam\+With\+Keuze\+Opties (\begin{DoxyParamCaption}\item[{}]{\$jaargangid }\end{DoxyParamCaption})}
 
-Ophalen van alle keuzemogelijkheden samen met de onderliggende keuzeopties. Regel 36 zorgt ervoor dat alle keuzeopties bij de juiste keuzemogelijkheid worden geplaatst \mbox{\Hypertarget{class_keuzemogelijkheid___model_ab075f39b3a3ea0b4ee501c57ee9ca56c}\label{class_keuzemogelijkheid___model_ab075f39b3a3ea0b4ee501c57ee9ca56c}} 
+Ophalen van alle keuzemogelijkheden samen met de onderliggende keuzeopties. Regel 36 zorgt ervoor dat alle keuzeopties bij de juiste keuzemogelijkheid worden geplaatst 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$jaargang} & het jaargang van de op te halen keuzeopties \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_keuzemogelijkheid___model_ab075f39b3a3ea0b4ee501c57ee9ca56c}\label{class_keuzemogelijkheid___model_ab075f39b3a3ea0b4ee501c57ee9ca56c}} 
 \index{Keuzemogelijkheid\+\_\+\+Model@{Keuzemogelijkheid\+\_\+\+Model}!update@{update}}
 \index{update@{update}!Keuzemogelijkheid\+\_\+\+Model@{Keuzemogelijkheid\+\_\+\+Model}}
 \subsubsection{\texorpdfstring{update()}{update()}}
@@ -109,4 +119,4 @@ std\+Class & {\em \$keuzemogelijkheid} & Id van de \mbox{\hyperlink{class_keuzem
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-application/models/Keuzemogelijkheid\+\_\+model.\+php\end{DoxyCompactItemize}
+E\+:/\+D\+R\+I\+V\+E/\+C\+O\+L\+L\+E\+G\+E/\+T\+M/\+P0202/\+K\+P0201/\+R\+E\+P\+O/application/models/Keuzemogelijkheid\+\_\+model.\+php\end{DoxyCompactItemize}

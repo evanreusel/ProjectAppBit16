@@ -116,8 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af681009d10a4938d8df855aaadff3f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ec3c4838d03ea025746333367305dfc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_persoon__model.html#a3ec3c4838d03ea025746333367305dfc">get_AllVrijwilligers</a> ()</td></tr>
 <tr class="separator:a3ec3c4838d03ea025746333367305dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4402d0963685ffa0de9bba1ec29c4b60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_persoon__model.html#a4402d0963685ffa0de9bba1ec29c4b60">get_NietIngeschrevenVrijwilligers</a> ()</td></tr>
-<tr class="separator:a4402d0963685ffa0de9bba1ec29c4b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc89349e61542f626e55f722d5c09c98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_persoon__model.html#adc89349e61542f626e55f722d5c09c98">get_NietIngeschrevenVrijwilligers</a> ($jaargangid)</td></tr>
+<tr class="separator:adc89349e61542f626e55f722d5c09c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57ca8d2df6874e19154b614986f1a7a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_persoon__model.html#a57ca8d2df6874e19154b614986f1a7a5">get_NietIngeschrevenDeelnemers</a> ($jaargang)</td></tr>
 <tr class="separator:a57ca8d2df6874e19154b614986f1a7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c311e5cb508141c1bae2566b3169615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_persoon__model.html#a2c311e5cb508141c1bae2566b3169615">insert</a> ($persoon)</td></tr>
@@ -204,7 +204,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Haal alle personen op uit de database die zijn ingeschreven als vrijwilliger </p>
+<p>Haal alle personen op uit de database die zijn ingeschreven als vrijwilliger </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$jaargang</td><td>het jaargang van de op te halen personen </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -339,8 +344,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4402d0963685ffa0de9bba1ec29c4b60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4402d0963685ffa0de9bba1ec29c4b60">&#9670;&nbsp;</a></span>get_NietIngeschrevenVrijwilligers()</h2>
+<a id="adc89349e61542f626e55f722d5c09c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc89349e61542f626e55f722d5c09c98">&#9670;&nbsp;</a></span>get_NietIngeschrevenVrijwilligers()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,12 +353,18 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Persoon_model::get_NietIngeschrevenVrijwilligers </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$jaargangid</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Haal alle vrijwilligers op uit de database die niet zijn ingeschreven voor een activiteit </p>
+<p>Haal alle vrijwilligers op uit de database die niet zijn ingeschreven voor een activiteit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$jaargang</td><td>het jaargang van de op te halen personen </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -472,7 +483,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>application/models/Persoon_model.php</li>
+<li>E:/DRIVE/COLLEGE/TM/P0202/KP0201/REPO/application/models/Persoon_model.php</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
