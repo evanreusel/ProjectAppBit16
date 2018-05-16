@@ -77,7 +77,11 @@ class Keuzeoptie extends CI_Controller{
 		redirect('admin/dash/keuzemogelijkheidbeheer/'.$keuzemogelijkheid->jaargangId);
     }
 
-    /// Functie om keuzeopties te verwijderen    
+    /**
+     * Functie voor het verwijderen van keuzeopties
+     * @param string $id
+     * Id van de keuzeoptie die verwijderd moet worden
+     */   
     public function delete($id)
 	{
 		

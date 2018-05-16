@@ -45,11 +45,15 @@ class Shiften extends CI_Controller{
 
         $this->load->model('Taken_model');
         $taak=$this->Taken_model->get_byId($shift->taakId);
-		/// Redirect naar taken pagina
+		// Redirect naar taken pagina
 		redirect('admin/dash/takenbeheer/'.$taak->keuzemogelijkheidId);
     }
 
-    /// Functie voor het verwijderen van shiften
+    /**
+     * Functie voor het verwijderen van shiften
+     * @param string $id
+     * Id van de shift die verwijderd moet worden
+     */
     public function delete($id)
 	{
 		
@@ -61,11 +65,18 @@ class Shiften extends CI_Controller{
 
         $this->Shiften_model->delete($id);
         
-		/// Redirect to keuzemogelijkheidbeheer
+		// Redirect to keuzemogelijkheidbeheer
         redirect('admin/dash/takenbeheer/'.$redirectData->keuzemogelijkheidId);
     }
     
-    /// Functie voor het toevoegen van een vrijwilliger in een shift 
+    
+    /**
+     * Functie voor het toevoegen van een vrijwilliger in een shift
+     * @param string $shiftId
+     * Id van de shift
+     * @param string $persoonId
+     * Id van de vrijwilliger
+     */
     public function vrijwilligerInShiftToevoegen($shiftId, $persoonId)
     {
         $vrijwilligerInShift = new stdClass();
@@ -79,8 +90,14 @@ class Shiften extends CI_Controller{
         /// Laden van de verkregen data in een ajax-venster
         $this->load->view('ajax_resultatenTonen', $data);
     }
-
-    /// Functie voor het verwijderen van een vrijwilliger uit een shift 
+ 
+    /**
+     * Functie voor het verwijderen van een vrijwilliger uit een shift
+     * @param string $shiftId
+     * Id van de shift
+     * @param string $persoonId
+     * Id van de vrijwilliger
+     */
     public function vrijwilligerInShiftVerwijderen($shiftId, $persoonId)
 	{
         $this->load->model('VrijwilligersInShift_model');
@@ -90,7 +107,11 @@ class Shiften extends CI_Controller{
 		$this->load->view('ajax_resultatenTonen', $data);
     }
 
-    /// Functie voor het weergeven van alle vrijwilliger van een bepaalde shift
+    /**
+     * Functie voor het weergeven van alle vrijwilliger van een bepaalde shift
+     * @param string $shiftId
+     * Id van de shift
+     */
     public function vrijwilligerInShiftWeergeven($shiftId)
     {
 
