@@ -225,6 +225,140 @@
         </div>
     </div>
 </div>
+<div class="modal fade" tabindex="-1" role="dialog" id="modalIndividueleMail">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Verstuur individuele email</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                    <label for="modalReminderDatum">Datum:</label>
+                    <input type="date" id="modalReminderDatum" name="datum">
+                    <h5>Ontvangers</h5>
+                    <?php
+                    foreach ($keuzemogelijkheden as $keuzemogelijkheid) {
+                        if (!$keuzemogelijkheid->verbergen) { ?>
+                            <div class="persoongroep">
+
+
+                            <div class='card'>
+                                <div class='card-header'><input type="checkbox" class="select-persoongroep" > Activiteit <?php echo $keuzemogelijkheid->naam ?></div>
+                                <div class='card-body'>
+                                    <?php
+                                    foreach ($keuzemogelijkheid->taken as $taak) {
+                                        if (!$taak->verbergen) {
+                                            ?>
+
+                                            <div class="persoongroep" id="vrijwilliger<?php echo $taak->id ?>">
+                                                <p><b><input type="checkbox" class="select-persoongroep"
+                                                           data-select="vrijwilliger<?php echo $taak->id ?>">
+                                                        Vrijwilligers <?php echo $taak->functie ?></b></p>
+                                                <?php
+                                                foreach ($taak->shiften as $shift) {
+                                                    foreach ($shift->vrijwilligers as $persoon) {
+                                                        ?>
+                                                        <label><input type="checkbox" name="personen[]"
+                                                                      value="<?php echo $persoon->id ?>"
+                                                                      data-soort="<?php echo $persoon->soort ?>"> <?php echo $persoon->naam ?>
+                                                        </label>
+                                                        <?php
+                                                    }
+                                                }
+                                                ?>
+                                                <br><br></div>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+                                    <?php
+                                    foreach ($keuzemogelijkheid->keuzeopties as $keuzeoptie) {
+                                        if (!$keuzeoptie->verbergen) {
+                                            ?>
+                                            <div class="persoongroep" id="deelnemer<?php echo $keuzeoptie->id ?>">
+                                            <p><b><input type="checkbox" class="select-persoongroep"
+                                                       data-select="deelnemer<?php echo $keuzeoptie->id ?>"> Deelnemers
+                                                    "<?php echo $keuzeoptie->naam ?>"</b></p>
+                                                <?php foreach ($keuzeoptie->personen as $persoon) {
+                                                    ?>
+                                                    <label><input type="checkbox" name="personen[]"
+                                                                  value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
+                                                    </label>
+                                                    <?php
+                                                } ?>
+                                            <br><br></div>
+                                            <?php
+                                        }
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            </div>
+                            <?php
+                        }
+
+                    }
+                    ?>
+                <div class="persoongroep">
+                    <div class="card">
+                        <div class="card-header">
+                            <input type="checkbox" class="select-persoongroep" > Niet ingeschreven deelnemers
+                        </div>
+                        <div class="card-body">
+
+                            <div class="select-persoongroep">
+
+
+                                <?php
+                                foreach ($nietingeschrevenDeelnemers as $persoon) {
+                                    ?>
+                                    <label><input type="checkbox" name="personen[]"
+                                                  value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
+                                    </label>
+                                    <?php
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="persoongroep">
+                    <div class="card">
+                        <div class="card-header">
+                            <input type="checkbox" class="select-persoongroep" > Niet ingeschreven vrijwilligers
+                        </div>
+                        <div class="card-body">
+                            <div class="select-persoongroep">
+                                <?php
+                                foreach ($nietingeschrevenVrijwilligers as $persoon) {
+                                    ?>
+                                    <label><input type="checkbox" name="personen[]"
+                                                  value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
+                                    </label>
+
+                                    <?php
+                                }
+
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">Open mail</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
 <div class="modal" tabindex="-1" role="dialog" id="modalSjabloon">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
