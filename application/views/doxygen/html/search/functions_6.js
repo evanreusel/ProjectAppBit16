@@ -31,7 +31,7 @@ var searchData=
   ['getallbynaamwithkeuzeopties',['getAllByNaamWithKeuzeOpties',['../class_keuzemogelijkheid___model.html#a2762d72d382c5c81da0d0830d5d91805',1,'Keuzemogelijkheid_Model']]],
   ['getallbyplaatsnaam',['getAllByPlaatsnaam',['../class_plaats__model.html#a114ba0a4348ec4fb01b91fd2ae7f4ace',1,'Plaats_model']]],
   ['getallbyshiftid',['getAllByShiftId',['../class_vrijwilligers_in_shift___model.html#a35126fd2943dda2b4d2d9ad9b6ca127f',1,'VrijwilligersInShift_Model']]],
-  ['getallwithactiviteit',['getallwithactiviteit',['../class_persoon__model.html#a20a10592218dbf11fd43c955ce5fcee1',1,'Persoon_model']]],
+  ['getallwithactiviteit',['getallwithactiviteit',['../class_persoon__model.html#a9767acf5a4796aaacd967a4ac44e7a33',1,'Persoon_model']]],
   ['getallwithkeuzeopties_5fbyjaargangid',['getAllWithKeuzeOpties_byJaargangId',['../class_keuzemogelijkheid___model.html#afee956c75c2fe9966783b18602ace19a',1,'Keuzemogelijkheid_Model']]],
   ['getallwithshiften_5fbykeuzemogelijkheidid',['getAllWithShiften_byKeuzemogelijkheidId',['../class_taken___model.html#a43d1fa46aefbe64343373fac217d6bdb',1,'Taken_Model']]],
   ['getemptyplaats',['getEmptyPlaats',['../class_plaats.html#a3a5c8647f1efcdff577c49894a2bdde8',1,'Plaats']]],

@@ -11,6 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // - LOGIN
 // - DASH
 
+/// Controller voor administratorfunctionaliteiten
 class Admin extends CI_Controller {
 	/**
 	 * Default Constructor

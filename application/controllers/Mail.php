@@ -9,6 +9,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/// Controller voor mailfunctionaliteiten
 class Mail extends CI_Controller {
     public function __construct()
     {
@@ -40,7 +41,6 @@ class Mail extends CI_Controller {
         $mjobj = new stdClass();
         $mjobj->Messages = $Messages;
         echo $this->mailjet->verstuur($mjobj);
-
     }
     public function remindervandaag()
     {
@@ -72,7 +72,7 @@ class Mail extends CI_Controller {
             echo PHP_EOL;
             echo PHP_EOL;
 
-            //echo $this->mailjet->verstuur();
+            echo $this->mailjet->verstuur();
         }
     }
     public function maakHerinnering()
