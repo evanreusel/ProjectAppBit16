@@ -60,7 +60,7 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
         $deelnemerInKeuzeoptie->keuzeoptieId = $keuzeoptieId;
 
         $this->load->model('KeuzeoptieVanDeelnemer_model');
-        $this->KeuzeoptieVanDeelnemer_model->addKeuzeoptieVanDeelnemer($deelnemerInKeuzeoptie);
+        $this->KeuzeoptieVanDeelnemer_model->add($deelnemerInKeuzeoptie);
 
         $this->load->view('ajax_vrijwilligerinshift', $data);
     }
@@ -76,13 +76,13 @@ class KeuzeOptieVanDeelnemer extends CI_Controller{
 
 
     
-    public function vrijwilligerInShiftWeergeven($shiftId)
-    {
+    // public function vrijwilligerInShiftWeergeven($shiftId)
+    // {
 
-        $this->load->model('KeuzeoptieVanDeelnemer_model');
-        $data['keuzeopties']=$this->KeuzeoptieVanDeelnemer_model->getAllByKeuzemogelijkheidId($keuzeMogelijkheidId);
+    //     $this->load->model('KeuzeoptieVanDeelnemer_model');
+    //     $data['keuzeopties']=$this->KeuzeoptieVanDeelnemer_model->getAllByKeuzemogelijkheidId($keuzeMogelijkheidId);
 
-        $this->load->view('ajax_vrijwilligersinshift', $data);
+    //     $this->load->view('ajax_vrijwilligersinshift', $data);
 
-    }
+    // }
 }
