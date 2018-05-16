@@ -107,7 +107,13 @@
                 alert("Het minimum aantal deelnemers is groter dan het maximum.");
                 $('.min').addClass('is-invalid');
                 event.preventDefault();
-            } else {
+            }
+            if (begin>einde) {
+                alert("De begindatum vindt plaats na de einddatum.");
+                $('.begin').addClass('is-invalid');
+                event.preventDefault();
+            } 
+            else {
                 
             };
 
