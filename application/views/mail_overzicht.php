@@ -9,7 +9,7 @@
                     <a href="#modalReminder" class="open-herinneringvenster"
                        data-toggle="modal" data-target="#modalReminder"
 
-                       data-reminder-id="0"></a>
+                       data-reminder-id="0">Mailherinnering toevoegen</a>
 
                 </div>
             </div>
