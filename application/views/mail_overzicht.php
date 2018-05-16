@@ -274,6 +274,7 @@
                                                         <label><input type="checkbox" name="personen[]"
                                                                       value="<?php echo $persoon->id ?>"
                                                                       data-soort="<?php echo $persoon->soort ?>"> <?php echo $persoon->naam ?>
+                                                                    data-email="<?php echo $persoon->mail ?>"
                                                         </label>
                                                         <?php
                                                     }
@@ -294,7 +295,7 @@
                                                     "<?php echo $keuzeoptie->naam ?>"</b></p>
                                                 <?php foreach ($keuzeoptie->personen as $persoon) {
                                                     ?>
-                                                    <label><input type="checkbox" name="personen[]"
+                                                    <label><input type="checkbox" name="personen[]" data-email="<?php echo $persoon->mail ?>"
                                                                   value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                                     </label>
                                                     <?php
@@ -326,7 +327,7 @@
                                 foreach ($nietingeschrevenDeelnemers as $persoon) {
                                     ?>
                                     <label><input type="checkbox" name="personen[]"
-                                                  value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
+                                                  data-email="<?php echo $persoon->mail ?>"  value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                     </label>
                                     <?php
                                 }
@@ -420,9 +421,10 @@
             ontvangers = $("#modalIndividueleMail :checked").not('.select-persoongroep');
             emails = [];
             for (i = 0; i < ontvangers.length; i++) {
+
                 emails.push($('this').data('email'))
             }
-            document.location.href = "mailto:bcc=" + emails.join();
+            document.location.href = "mailto:?bcc=" + emails.join();
         });
         $(".open-herinneringvenster").click(function ()
         {
