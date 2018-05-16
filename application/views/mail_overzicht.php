@@ -346,7 +346,7 @@
                                 foreach ($nietingeschrevenVrijwilligers as $persoon) {
                                     ?>
                                     <label><input type="checkbox" name="personen[]"
-                                                  data-email="<?php echo $persoon->email ?>" value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
+                                                  data-email="<?php echo $persoon->mail ?>" value="<?php echo $persoon->id ?>"> <?php echo $persoon->naam ?>
                                     </label>
 
                                     <?php

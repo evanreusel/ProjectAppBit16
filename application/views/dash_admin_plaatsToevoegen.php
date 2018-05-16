@@ -6,6 +6,7 @@
 
 <script>
 
+// ajax om object te tonen
 function ajaxplaats(plaatsId){
     console.log("<?php echo site_url(); ?>" + '/plaats/jsonplaats/' + plaatsId);
 
@@ -28,7 +29,9 @@ function ajaxplaats(plaatsId){
 }
 
 </script>
-
+<!-- 
+    Omschrijving van hoe de administrator deze pagina kan gebruiken
+-->
 <p class="tooling">
     Beheer hier de verschillende locaties die u wilt kunnen gebruiken doorheen de applicatie.
 </p>
@@ -48,7 +51,7 @@ function ajaxplaats(plaatsId){
         <?php
         foreach ($plaatsen as $plaats) {
             echo "<tr><td>" . $plaats->naam . "</td><td>" . $plaats->locatie . "</td><td>" . '<button onclick="ajaxplaats(' . $plaats->id . ')" type="button" class="btn btn-warning btn-round wijzig" value="' . $plaats->id . '" title="Druk hier om deze locatie te wijzigen" >Wijzig</button>' . "</td><td>" .
-            anchor('Plaats/verwijder/' . $plaats->id, '<button type="button" class="btn btn-danger btn-round" title="Druk hier om deze locatie te verwijderen">Verwijderen</button>') .  '</td></tr>';
+            '<button class="verwijder btn btn-danger btn-round" data-toggle="modal" data-target="#taakModal" value="Plaats/verwijder/"' . $plaats->id . '" title="Druk hier om deze locatie te verwijderen">Verwijderen</button></td></tr>';
         }
         
         ?>
@@ -85,4 +88,25 @@ if(isset($huidigePlaats)){$plaatsTest = $huidigePlaats->naam; $locatieTest = $hu
     echo form_close();
     ?>
 </div>
+<div class="modal fade" id="taakModal" tabindex="-1" role="dialog" aria-labelledby="modaltitel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modaltitel">Shift verwijderen?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="modaltekst">Weet u zeker dat u deze shift wil verwijderen?</p>
+      </div>
+      <div class="modal-footer">
+        <a id="verwijderenShift" class="btn btn-danger btn-round">Verwijderen</a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Annuleer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
 
+</script>
