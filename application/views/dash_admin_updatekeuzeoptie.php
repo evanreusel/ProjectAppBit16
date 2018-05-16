@@ -95,7 +95,7 @@
     <script type="text/javascript">
         $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 
-        $("#minimum", "#maximum").focusout(function (){
+        $("#minimum").focusout(function (){
             var min = $('#minimum').val();
             var max = $('#maximum').val();
 
