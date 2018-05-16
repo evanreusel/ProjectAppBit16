@@ -12,7 +12,7 @@ class Keuzemogelijkheid_Model extends CI_Model {
     /// Functie voor het ophalen van de specifieke keuzemogelijkheid op basis van een id.
     /**
 	 * @param string $id
-	 *  Id van de Keuzeoptie die verwijderd moet worden
+	 *  Id van de Keuzeoptie die gezocht moet worden
  	*/
     function get_byId($id)
     {
@@ -64,7 +64,7 @@ class Keuzemogelijkheid_Model extends CI_Model {
     /// Functie voor de aanpassen van een keuzemogelijkheid die mee wordt gegeven.
     /**
 	 * @param stdClass $keuzemogelijkheid
-	 *  Id van de Keuzemogelijkheid die verwijderd moet worden
+	 *  Id van de Keuzemogelijkheid die aangepast moet worden
  	*/
     function update($keuzemogelijkheid)
     {
@@ -74,7 +74,7 @@ class Keuzemogelijkheid_Model extends CI_Model {
     /// Functie voor de toevoegen van een keuzemogelijkheid die mee wordt gegeven.
     /**
 	 * @param stdClass $keuzemogelijkheid
-	 *  Id van de Keuzemogelijkheid die verwijderd moet worden
+	 *  Id van de Keuzemogelijkheid die toegevoegd moet worden
  	*/
     function add($keuzemogelijkheid){
         $this->db->insert('KeuzeMogelijkheid', $keuzemogelijkheid);
