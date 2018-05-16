@@ -84,7 +84,6 @@ var NAVTREEINDEX0 =
 "class_mail.html#a5870a82a870b3b579d503101494abaf9":[0,0,12,8],
 "class_mail.html#a698adc5d93072946dbb03cb5e8025a92":[0,0,12,7],
 "class_mail.html#a6b0bf7c864a3999c5b56222deb88874f":[0,0,12,6],
-"class_mail.html#a8a6872c776064a3e379e20b88533dfc8":[0,0,12,9],
 "class_mail.html#a981094d50056d958426564d48c95cce1":[0,0,12,1],
 "class_mail.html#a9e19643f7bd6b63ac867a99a42513790":[0,0,12,3],
 "class_mail.html#abb72118b34523cae188c03dc72955d8c":[0,0,12,5],

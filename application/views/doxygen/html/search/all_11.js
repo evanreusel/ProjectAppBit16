@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['verwijder',['verwijder',['../class_plaats.html#a7e448db214202eec8608da6984fd1cd8',1,'Plaats']]],
-  ['vrijwilliger',['Vrijwilliger',['../class_vrijwilliger.html',1,'']]],
-  ['vrijwilligerinshifttoevoegen',['vrijwilligerInShiftToevoegen',['../class_shiften.html#a68ed5c1cd7c018cd80ceb6bc940afa7f',1,'Shiften']]],
-  ['vrijwilligerinshiftverwijderen',['vrijwilligerInShiftVerwijderen',['../class_shiften.html#a67201ed9a01bf5fe153c6c8d2a60e9ad',1,'Shiften']]],
-  ['vrijwilligerinshiftweergeven',['vrijwilligerInShiftWeergeven',['../class_shiften.html#a9919cdc243d1281466d02e8b5d102e69',1,'Shiften']]],
-  ['vrijwilligersinshift_5fmodel',['VrijwilligersInShift_Model',['../class_vrijwilligers_in_shift___model.html',1,'']]]
+  ['update',['update',['../class_admin.html#a5c7b585615c86fd80fe4b2dd8e282da0',1,'Admin\update()'],['../class_jaargang.html#aaa73e406504c88e78c151e120f2e1097',1,'Jaargang\update()'],['../class_keuzemogelijkheid.html#ae621c2f2cc768da82291345a301f746a',1,'Keuzemogelijkheid\update()'],['../class_keuzeoptie.html#abb3bade0f37d81dc061789c5a3dba930',1,'Keuzeoptie\update()'],['../class_keuze_optie_van_deelnemer.html#a04438616b87ca22ac662c94abc043c39',1,'KeuzeOptieVanDeelnemer\update()'],['../class_shiften.html#af783a05fca5d9fe438122482ce10ded8',1,'Shiften\update()'],['../class_taken.html#a2c370b12ed83ff4617224675576b47a1',1,'Taken\update()'],['../class_beheer__model.html#a8b3d24b26b83af152966907ca35672d5',1,'Beheer_model\update()'],['../class_jaargang__model.html#a18ab753f7cf3d830f513979cff49e2b8',1,'Jaargang_model\update()'],['../class_keuzemogelijkheid___model.html#ab075f39b3a3ea0b4ee501c57ee9ca56c',1,'Keuzemogelijkheid_Model\update()'],['../class_keuzeoptie___model.html#abe363a388f68ec737b0957b748f012d8',1,'Keuzeoptie_Model\update()'],['../class_mailsjabloon__model.html#a4272406d2eee5775d951d5320d0618aa',1,'Mailsjabloon_model\update()'],['../class_shiften___model.html#af5e1c7d324bab167ecaa3e827161ec13',1,'Shiften_Model\update()'],['../class_taken___model.html#ab4e93ac196a1aeb83582faa332619c86',1,'Taken_Model\update()']]]
 ];

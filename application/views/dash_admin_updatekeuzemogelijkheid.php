@@ -17,7 +17,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         'size'  =>'16',
         'type'  =>'text',
         'readonly',
-        'class' =>'form_datetime form-control'
+        'class' =>'form_datetime'
     );
 
     foreach ($plaatsen as $plek) {
@@ -48,7 +48,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <?php echo form_input(array('id'=>'begin', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de eind datum in.'),$keuzemogelijkheid->eindTijdstip,$datumAttributen); ?>
     </div>
     <div class="form-group row">
-        <label for="deadline" class="col-form-label">Datum en tijdstip voor deadline:</label>
+        <label for="deadline" class="">Datum en tijdstip voor deadline:</label>
         <?php echo form_input(array('id'=>'begin', 'name'=>'deadlineTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de datum in waarop ze ten laatste kunnen inschrijven.'),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
     </div>
     <?php

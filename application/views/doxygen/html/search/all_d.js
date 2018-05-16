@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['readpersonen',['readpersonen',['../classcsv__model.html#a30a1a661f6bbd9fabd697b21b7c9ebce',1,'csv_model']]],
-  ['registreer',['registreer',['../class_plaats.html#a80dd308fc0b6be4fcb7853ee9a3556ad',1,'Plaats']]]
+  ['persoon_5fmodel',['Persoon_model',['../class_persoon__model.html',1,'']]],
+  ['persooninherinnering_5fmodel',['PersoonInHerinnering_model',['../class_persoon_in_herinnering__model.html',1,'']]],
+  ['plaats',['Plaats',['../class_plaats.html',1,'']]],
+  ['plaats_5fmodel',['Plaats_model',['../class_plaats__model.html',1,'']]]
 ];

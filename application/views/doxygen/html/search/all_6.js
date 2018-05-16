@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['get',['get',['../class_keuzemogelijkheid.html#a507c36e7d7fd35a2a080524fce31ec4d',1,'Keuzemogelijkheid\get()'],['../class_keuzeoptie.html#abe1857ac53d46fe3f2ff1e601c46739a',1,'Keuzeoptie\get()']]],
+  ['get',['get',['../class_keuzemogelijkheid.html#a507c36e7d7fd35a2a080524fce31ec4d',1,'Keuzemogelijkheid\get()'],['../class_keuzeoptie.html#abe1857ac53d46fe3f2ff1e601c46739a',1,'Keuzeoptie\get()'],['../class_mailsjabloon__model.html#a2fd2620c0951e3b9954e557652b74ff0',1,'Mailsjabloon_model\get()']]],
   ['get_5fbyherinneringid',['get_byHerinneringId',['../class_persoon_in_herinnering__model.html#aae7c684767759ee244cf1e190a516952',1,'PersoonInHerinnering_model']]],
   ['get_5fbyid',['get_byId',['../class_beheer__model.html#aea3ea2a1c2a1f62d945524f87fa9ff39',1,'Beheer_model\get_byId()'],['../class_jaargang__model.html#a10cf39c5710240aec9aad633253e3048',1,'Jaargang_model\get_byId()'],['../class_keuzemogelijkheid___model.html#a88c8b0a6b02a7da7c5d1d573a66c11c7',1,'Keuzemogelijkheid_Model\get_byId()'],['../class_keuzeoptie___model.html#ac16584888f32902c1b65c7b06fd6999a',1,'Keuzeoptie_Model\get_byId()'],['../class_shiften___model.html#a0e222557a11630559c7eaa6ca29c55a6',1,'Shiften_Model\get_byId()'],['../class_taken___model.html#ab8c238bca4fc5170294717b94c875cc3',1,'Taken_Model\get_byId()']]],
   ['get_5fbykeuzeoptieid',['get_byKeuzeoptieId',['../class_keuzeoptie_van_deelnemer___model.html#a2c5a659c1a9ac27412da831c77dc6278',1,'KeuzeoptieVanDeelnemer_Model']]],
   ['get_5fbypersoonid',['get_byPersoonId',['../class_keuzeoptie_van_deelnemer___model.html#a24cf82d6b80c9d3429c1ad3d0b062cf3',1,'KeuzeoptieVanDeelnemer_Model\get_byPersoonId()'],['../class_vrijwilligers_in_shift___model.html#aae12e5673029c5081662fa51503c4413',1,'VrijwilligersInShift_Model\get_byPersoonId()']]],
   ['get_5fbyshiftid',['get_byShiftId',['../class_vrijwilligers_in_shift___model.html#ac7afbe51273364c55dd352b3c9554592',1,'VrijwilligersInShift_Model']]],
+  ['get_5fnietingeschreven',['get_NietIngeschreven',['../class_mail.html#a981094d50056d958426564d48c95cce1',1,'Mail']]],
   ['getactief',['getActief',['../class_jaargang__model.html#a4e55f912a50eea5f66669fec3ae11f6d',1,'Jaargang_model']]],
-  ['getall',['getAll',['../class_beheer__model.html#aba97799db4f1f7370737e0611bbff356',1,'Beheer_model\getAll()'],['../class_jaargang__model.html#a25674521a1a6a191c6cc77e524e5b8f5',1,'Jaargang_model\getAll()'],['../class_vrijwilligers_in_shift___model.html#a8323f4be7e1a03445c0b6c46ede8d35c',1,'VrijwilligersInShift_Model\getAll()']]],
+  ['getall',['getAll',['../class_beheer__model.html#aba97799db4f1f7370737e0611bbff356',1,'Beheer_model\getAll()'],['../class_jaargang__model.html#a25674521a1a6a191c6cc77e524e5b8f5',1,'Jaargang_model\getAll()'],['../class_mailsjabloon__model.html#a6723ec4f9fa1a3f1195f93f0c9326239',1,'Mailsjabloon_model\getAll()'],['../class_vrijwilligers_in_shift___model.html#a8323f4be7e1a03445c0b6c46ede8d35c',1,'VrijwilligersInShift_Model\getAll()']]],
   ['getall_5fofjaargang_5fwithshift',['getAll_ofJaargang_withShift',['../class_persoon__model.html#abe2394803431cfb447887c36bba2b8eb',1,'Persoon_model']]],
   ['getallbybegintijdstip',['getAllbyBeginTijdstip',['../class_jaargang__model.html#aba56cc05b3878d487d723edfe4464803',1,'Jaargang_model']]],
   ['getallbyjaargang',['getAllByJaargang',['../class_jaargang__model.html#ab77c5c935c05d5bc08630111f3f0273f',1,'Jaargang_model']]],
@@ -19,5 +20,6 @@ var searchData=
   ['getallwithactiviteit',['getallwithactiviteit',['../class_persoon__model.html#a72d8c06b34d07ca558ec53c759996b60',1,'Persoon_model']]],
   ['getallwithshiften_5fbykeuzemogelijkheidid',['getAllWithShiften_byKeuzemogelijkheidId',['../class_taken___model.html#a1b4e18ac99960b20467b3b3cbaa817b4',1,'Taken_Model']]],
   ['getemptyplaats',['getEmptyPlaats',['../class_plaats.html#a4edb281c57e2c512a3de32eb47242513',1,'Plaats']]],
+  ['getpersoneninherinnering',['getPersonenInHerinnering',['../class_mail.html#af56bb11351090ce865a284a2c27ef3bb',1,'Mail']]],
   ['getwithkeuzemogelijkheidwithopties_5fbyid',['getWithKeuzemogelijkheidWithOpties_byId',['../class_jaargang__model.html#a99ab50dc52b431939edc5db85b857bc6',1,'Jaargang_model']]]
 ];

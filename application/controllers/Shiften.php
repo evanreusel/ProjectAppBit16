@@ -12,15 +12,15 @@ class Shiften extends CI_Controller{
      public function __construct() {
         parent::__construct();
 
-        //// =================================================================================================== GREIF MATTHIAS
-        /// Autoload
+        // =================================================================================================== GREIF MATTHIAS
+        // Autoload
        $this->load->library('session');
 
        /// Redirect to home if no session started
        if(!$this->session->has_userdata('id')){
            redirect('/admin/index', 'location');
        }
-        /// =================================================================================================== /GREIF MATTHIAS
+        // =================================================================================================== /GREIF MATTHIAS
     }
 
     /// Functie voor het aanpassen en aanmaken van shiften
