@@ -44,18 +44,18 @@ class Mail extends CI_Controller {
     }
     public function remindervandaag()
     {
-        $this->load->model('mailreminder_model');
+        $this->load->model('Mailherinnering_model');
         $this->load->model('persoon_model');
         $this->load->model('mailsjabloon_model');
         $this->load->library('mailjet');
         $vandaag = date('Y-m-d');
-        $mailRemindersVandaag = $this->mailreminder_model->get_HerinneringDag($vandaag);
+        $mailRemindersVandaag = $this->Mailherinnering_model->get_HerinneringDag($vandaag);
         foreach ($mailRemindersVandaag as $mailReminder)
         {
             $this->mailjet->leegBerichtObject();
-            $mailsjabloon = $this->mailsjabloon_model->get($mailReminder->sjabloonId);
+            $mailsjabloon = $this->Mailherinnering_model->get($mailReminder->sjabloonId);
             $ontvangers = array();
-            $persoonIds = $this->mailreminder_model->get_PersonenInReminder($mailReminder->id);
+            $persoonIds = $this->Mailherinnering_model->get_PersonenInReminder($mailReminder->id);
             foreach ($persoonIds as $persoonId)
             {
                 $persoon = $this->persoon_model->get_byId($persoonId->persoonId);
@@ -75,21 +75,38 @@ class Mail extends CI_Controller {
     }
     public function maakHerinnering()
     {
+        $this->load->model("Mailherinnering_model");
+        $this->load->model("PersoonInHerinnering_model");
         //print_r($_POST);
         $id= $this->input->post('id');
         $personen = $this->input->post('personen');
         $personen = array_unique($personen);
         $datum = $id= $this->input->post('datum');
         $mailsjabloon = $id= $this->input->post('mailsjabloon');
-        if ($id = "0")
+
+        // nieuwe herinnering aanmaken
+        $mailherinnering = new stdClass();
+        $mailherinnering->datum = $datum;
+        $mailherinnering->sjabloonId = $mailsjabloon;
+        if ($id == 0)
         {
-            // nieuwe herinnering aanmaken
+            $id = $this->Mailherinnering_model->insert($mailherinnering);
         }
         else
         {
-            // bestaande herinnering aanpassen
+            $this->Mailherinnering_model->update($mailherinnering);
         }
-        print_r($personen);
+        //pas personen in herinnering aan
+        $this->PersoonInHerinnering_model->delete($id);
+        foreach ($personen as $persoon) {
+            $persoonInHerinnering = new stdClass();
+            $persoonInHerinnering->mailHerinneringId = $id;
+            $persoonInHerinnering->persoonId = $persoon;
+            $this->PersoonInHerinnering_model->insert($id);
+        }
+
+
+        
     }
 
     public function overzicht()

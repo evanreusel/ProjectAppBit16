@@ -18,6 +18,15 @@ class PersoonInHerinnering_model extends CI_Model
         $query = $this->db->get('PersoonInHerinnering');
         return $query->result();
     }
+    function insert($persoonInherinnering) {
+        $this->db->insert('PersoonInHerinnering', $persoonInherinnering);
+        return true;
+    }
 
+
+    function delete($herinneringId) {
+        $this->db->where('herinneringId', $herinneringId);
+        $this->db->delete('PersoonInHerinnering');
+    }
 }
     ?>
