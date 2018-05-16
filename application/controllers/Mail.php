@@ -83,7 +83,7 @@ class Mail extends CI_Controller {
         $reminders = $this->mailreminder_model->getAll();
         $data['keuzemogelijkheden'] = $this->get_personen();
         $data['nietingeschrevenDeelnemers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers();
-        $data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenDeelnemers();
+        $data['nietingeschrevenVrijwilligers']  = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
         $nietingeschrevenVrijwilligers = $this->Persoon_model->get_NietIngeschrevenVrijwilligers();
         foreach ($reminders as $reminder) {
             $reminder->ontvangers =  $this->mailreminder_model->get_PersonenInReminder($reminder->id);
