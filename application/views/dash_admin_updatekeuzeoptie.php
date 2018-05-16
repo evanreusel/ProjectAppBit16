@@ -65,23 +65,23 @@
         <?php echo form_dropdown("plaatsId", $plaats, $keuzeoptie->plaatsId, array('class'=>'form-control')) ?>
     </div>
     <div class="form-group row">
-        <label for="minimum">Minimum aantal personen</label>
-        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number', 'class'=>'min'),$keuzeoptie->min,$nummerAttributen); ?>
+        <label for="minimum" class="col-form-label">Minimum aantal personen</label>
+        <?php echo form_input(array('id'=>'minimum', 'name'=>'min', 'type'=>'number', 'class'=>'min form-control'),$keuzeoptie->min,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
-        <label for="maximum">Maximum aantal personen</label>
-        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number', 'class'=>'max'),$keuzeoptie->max,$nummerAttributen); ?>
+        <label for="maximum" class="col-form-label">Maximum aantal personen</label>
+        <?php echo form_input(array('id'=>'maximum', 'name'=>'max', 'type'=>'number', 'class'=>'max form-control'),$keuzeoptie->max,$nummerAttributen); ?>
 
     </div>
     <div class="form-group row">
-        <label for="begin">Begin datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE, 'class'=>'begin'),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
+        <label for="begin" class="col-form-label">Begin datum en tijdstip:</label>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE, 'class'=>'begin form-control'),$keuzeoptie->beginTijdstip,$datumAttributen); ?>
 
     </div>
     <div class="form-group row">
-        <label for="einde">Eind datum en tijdstip:</label>
-        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'class'=>'einde'),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
+        <label for="einde" class="col-form-label">Eind datum en tijdstip:</label>
+        <?php echo form_input(array('id'=>'einde', 'name'=>'eindTijdstip', 'readonly'=>TRUE, 'class'=>'einde form-control'),$keuzeoptie->eindTijdstip,$datumAttributen); ?>
 
     </div>
     <?php
