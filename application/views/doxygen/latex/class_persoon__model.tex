@@ -21,7 +21,7 @@ Inheritance diagram for Persoon\+\_\+model\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_persoon__model_a3ec3c4838d03ea025746333367305dfc}{get\+\_\+\+All\+Vrijwilligers}} ()
 \item 
-\mbox{\hyperlink{class_persoon__model_a4402d0963685ffa0de9bba1ec29c4b60}{get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers}} ()
+\mbox{\hyperlink{class_persoon__model_adc89349e61542f626e55f722d5c09c98}{get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers}} (\$jaargangid)
 \item 
 \mbox{\hyperlink{class_persoon__model_a57ca8d2df6874e19154b614986f1a7a5}{get\+\_\+\+Niet\+Ingeschreven\+Deelnemers}} (\$jaargang)
 \item 
@@ -66,7 +66,12 @@ Haal alle deelnemers op uit de database die zijn ingeschreven als deelnemer \mbo
 \subsubsection{\texorpdfstring{get\+\_\+\+All\+Vrijwilligers()}{get\_AllVrijwilligers()}}
 {\footnotesize\ttfamily Persoon\+\_\+model\+::get\+\_\+\+All\+Vrijwilligers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Haal alle personen op uit de database die zijn ingeschreven als vrijwilliger \mbox{\Hypertarget{class_persoon__model_a0b88e4e63e880d5c6a5c18a12ac21272}\label{class_persoon__model_a0b88e4e63e880d5c6a5c18a12ac21272}} 
+Haal alle personen op uit de database die zijn ingeschreven als vrijwilliger 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$jaargang} & het jaargang van de op te halen personen \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_persoon__model_a0b88e4e63e880d5c6a5c18a12ac21272}\label{class_persoon__model_a0b88e4e63e880d5c6a5c18a12ac21272}} 
 \index{Persoon\+\_\+model@{Persoon\+\_\+model}!get\+\_\+by\+Id@{get\+\_\+by\+Id}}
 \index{get\+\_\+by\+Id@{get\+\_\+by\+Id}!Persoon\+\_\+model@{Persoon\+\_\+model}}
 \subsubsection{\texorpdfstring{get\+\_\+by\+Id()}{get\_byId()}}
@@ -123,13 +128,18 @@ Haal alle deelnemers op uit de database die niet zijn ingeschreven voor een acti
 int & {\em \$jaargang} & het jaargang van de op te halen personen \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_persoon__model_a4402d0963685ffa0de9bba1ec29c4b60}\label{class_persoon__model_a4402d0963685ffa0de9bba1ec29c4b60}} 
+\mbox{\Hypertarget{class_persoon__model_adc89349e61542f626e55f722d5c09c98}\label{class_persoon__model_adc89349e61542f626e55f722d5c09c98}} 
 \index{Persoon\+\_\+model@{Persoon\+\_\+model}!get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers@{get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers}}
 \index{get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers@{get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers}!Persoon\+\_\+model@{Persoon\+\_\+model}}
 \subsubsection{\texorpdfstring{get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers()}{get\_NietIngeschrevenVrijwilligers()}}
-{\footnotesize\ttfamily Persoon\+\_\+model\+::get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Persoon\+\_\+model\+::get\+\_\+\+Niet\+Ingeschreven\+Vrijwilligers (\begin{DoxyParamCaption}\item[{}]{\$jaargangid }\end{DoxyParamCaption})}
 
-Haal alle vrijwilligers op uit de database die niet zijn ingeschreven voor een activiteit \mbox{\Hypertarget{class_persoon__model_a82a921cf28a86b52a32d48235e30c0f1}\label{class_persoon__model_a82a921cf28a86b52a32d48235e30c0f1}} 
+Haal alle vrijwilligers op uit de database die niet zijn ingeschreven voor een activiteit 
+\begin{DoxyParams}[1]{Parameters}
+int & {\em \$jaargang} & het jaargang van de op te halen personen \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_persoon__model_a82a921cf28a86b52a32d48235e30c0f1}\label{class_persoon__model_a82a921cf28a86b52a32d48235e30c0f1}} 
 \index{Persoon\+\_\+model@{Persoon\+\_\+model}!get\+All@{get\+All}}
 \index{get\+All@{get\+All}!Persoon\+\_\+model@{Persoon\+\_\+model}}
 \subsubsection{\texorpdfstring{get\+All()}{getAll()}}
@@ -183,4 +193,4 @@ stdclass & {\em \$persoon} & de toe te voegen persoon \\
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-application/models/Persoon\+\_\+model.\+php\end{DoxyCompactItemize}
+E\+:/\+D\+R\+I\+V\+E/\+C\+O\+L\+L\+E\+G\+E/\+T\+M/\+P0202/\+K\+P0201/\+R\+E\+P\+O/application/models/Persoon\+\_\+model.\+php\end{DoxyCompactItemize}

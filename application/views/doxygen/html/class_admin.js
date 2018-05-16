@@ -5,6 +5,7 @@ var class_admin =
     [ "dash", "class_admin.html#a7c5b27650e2fd63227f09ece49beb2e9", null ],
     [ "delete", "class_admin.html#af559704017572a72fef6280a651e1245", null ],
     [ "excel", "class_admin.html#a6f3af7077b5bdaee0e8d4b43c0af9094", null ],
+    [ "get_NietIngeschreven", "class_admin.html#a1842b1e31f070f58cc1a494739708244", null ],
     [ "index", "class_admin.html#ae7187e96036e6bd23086e02b936b214a", null ],
     [ "login", "class_admin.html#ae84deedea35076345e2e892ea0d60413", null ],
     [ "logout", "class_admin.html#ac008e1e771793cdd2b8223eec46061ae", null ],

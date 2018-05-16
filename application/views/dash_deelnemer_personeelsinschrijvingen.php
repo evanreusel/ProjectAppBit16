@@ -14,6 +14,7 @@ foreach ($ingeschreven as $key) {
 }
 
 // Keuzemogelijkheden oplijsten (zoals eten, activiteiten,...) met daarin de keuzeopties (vis/vlees, tennis,...)
+
 foreach($keuzemogelijkheden as $keuzemogelijkheid) {
     echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
 
