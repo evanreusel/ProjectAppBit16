@@ -12,6 +12,10 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['value'] = '0';
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
+
+    foreach ($plaatsen as $plek) {
+        array_push($plaats, $plek->naam);
+    }
 ?>
     <?php echo form_open('keuzemogelijkheid/update', array('name' => 'keuzemogelijkheidFrom', 'id' => 'keuzemogelijkheidForm', 'role' => 'form'));  ?>
     
@@ -36,7 +40,12 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <input type="text" name="naam" id="keuzemogelijkheid" class="form-control">
     </div>
 
-    <div class="btn-group">
+    <div class="form-group row">
+        <label for="begin" class="col-form-label">Begin datum en tijdstip:</label>
+        <?php echo form_input(array('id'=>'begin', 'name'=>'beginTijdstip', 'readonly'=>TRUE,'title'=>'Vul hier de begin datum in.'),$keuzemogelijkheid->beginTijdstip,$datumAttributen); ?>
+    </div>
+
+    <!-- <div class="btn-group">
         <button id="btnPlaats" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plaats</button>
 
         <div class="dropdown-menu">
@@ -44,7 +53,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
             <a class="dropdown-item plaats" href="#" data-naam="<?php echo $p->naam; ?>" data-id="<?php echo $p->id; ?>"><?php echo $p->naam; ?></a>
             <?php } ?>
         </div>
-    </div>
+    </div> -->
 
     <div class="md-form">
         <label for="begin" class="labelkeuze">Begin datum en tijdstip:</label></br>
