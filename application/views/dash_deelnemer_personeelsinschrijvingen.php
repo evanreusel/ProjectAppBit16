@@ -15,8 +15,11 @@ foreach ($ingeschreven as $key) {
 
 // Informatie voor de gebruiker
 ?>
+<div class="card header">
+</div>
+<div class="card body">
 <p>Onderaan kan u per keuzemogelijkheid aanduiden welke keuzeoptie u wilt kiezen. Onder 'eten' kan u bijvoorbeeld kiezen voor het vlees- vis- of vegetarische menu. Let wel: het is de bedoeling dat u slechts <strong>één keuzeoptie per keuzemogelijkheid</stong> kiest!</p>
-
+</div>
 <?php
 
 // Keuzemogelijkheden oplijsten (zoals eten, activiteiten,...) met daarin de keuzeopties (vis/vlees, tennis,...)
