@@ -286,7 +286,7 @@ class Persoon_model extends CI_Model {
 
             //keuzemogelijkheid koppelen aan keuzeoptie
             $query = $this->db->where('id', $shift->taak->keuzemogelijkheidId);
-            $query = $this->db->get('Keuzemogelijkheid');
+            $query = $this->db->get('KeuzeMogelijkheid');
             $shift->taak->keuzemogelijkheid = $query->row();
 
             $shiften[] = $shift;
