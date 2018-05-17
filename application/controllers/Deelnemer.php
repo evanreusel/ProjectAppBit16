@@ -53,6 +53,7 @@ class Deelnemer extends CI_Controller {
 		$data['primaryColor'] = 'blue';											// Primary color (purple for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/deelnemer/dash/';				// Dash homepage
+		$data['creator'] = "TIM VAN MEERBEECK";
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Inschrijven',
