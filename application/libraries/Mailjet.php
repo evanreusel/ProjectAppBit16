@@ -9,8 +9,10 @@
 class Mailjet
 {
 
-    private $key = "953f6f7ade8e9dde2005d811eee8752b";
-    private $secret = "cecefe743a41d7f6ba62444b39127d30";
+    //private $key = "953f6f7ade8e9dde2005d811eee8752b";
+    //private $secret = "cecefe743a41d7f6ba62444b39127d30";
+    private $key = "b11e7e781e0b494ec7737d0d39c6b285";
+    private $secret = " 731356aa3c11146d8d01ec92a7add6d6";
 
 
     private $afzenderEmail = "r0581776@student.thomasmore.be";
