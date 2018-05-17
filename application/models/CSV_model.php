@@ -57,6 +57,12 @@ class csv_model extends CI_Model
 
             $persoon = new stdClass();
             
+            $persoon->naam = "";
+            $persoon->nummer = "";
+            $persoon->mail = "";
+            $persoon->adres = "";
+            $persoon->woonplaats = "";
+            
             //kijk of elk element is ingevuld
             //zoniet wordt een null opgelagen in het veld
              if($data[0] != null){
