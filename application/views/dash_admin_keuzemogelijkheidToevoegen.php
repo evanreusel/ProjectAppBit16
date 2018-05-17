@@ -13,6 +13,8 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     $arrayparameters['type'] = 'submit';
     $arrayparameters['content'] = "Bevestig";
 
+    $plaats = array('');
+    
     foreach ($plaatsen as $plek) {
         array_push($plaats, $plek->naam);
     }
