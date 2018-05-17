@@ -49,9 +49,9 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
         <button id="btnPlaats" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Plaats</button>
 
         <div class="dropdown-menu">
-            <?php foreach($plaatsen as $p){ ?>
-            <a class="dropdown-item plaats" href="#" data-naam="<?php echo $p->naam; ?>" data-id="<?php echo $p->id; ?>"><?php echo $p->naam; ?></a>
-            <?php } ?>
+            <?php// foreach($plaatsen as $p){ ?>
+            <a class="dropdown-item plaats" href="#" data-naam="<?php// echo $p->naam; ?>" data-id="<?php// echo $p->id; ?>"><?php// echo $p->naam; ?></a>
+            <?php// } ?>
         </div>
     </div> -->
 
