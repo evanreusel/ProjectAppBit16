@@ -116,7 +116,7 @@ class Shiften extends CI_Controller{
     {
 
         $this->load->model('VrijwilligersInShift_model');
-        $data['$shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
+        $data['shiften']=$this->VrijwilligersInShift_model->getAllByShiftId($shiftId);
 
         /// Laden van de verkregen data in een ajax-venster
         $this->load->view('ajax_vrijwilligersinshift', $data);
