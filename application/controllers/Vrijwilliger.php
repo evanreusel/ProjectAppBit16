@@ -47,7 +47,7 @@ class Vrijwilliger extends CI_Controller {
 
 		// Load view
 		$data['user']->username = $data['user']->naam;
-		$data['message'] = 'Hello there ' . $data['user']->naam . ' | Dash';// Title
+		$data['message'] = 'Hello there ' . $data['user']->naam . ' | Dash';	// Title
 		$data['css_files'] = array("dash.css");									// Default dash style
 
 		$data['primaryColor'] = 'blue';											// Primary color (purple for admin, blue for others??)
