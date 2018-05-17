@@ -173,7 +173,7 @@ sort();
 
 <?php
 
-if(empty($deelnemers)){
+if(!empty($deelnemers)){
 foreach($deelnemers as $deelnemer){
     foreach($deelnemers[$deelnemer] as $keuzeoptie){
     echo "<tr>";

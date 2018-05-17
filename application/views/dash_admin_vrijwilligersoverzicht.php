@@ -172,7 +172,7 @@ sort();
 
 <?php
 
-if(empty($vrijwilligers)){
+if(!empty($vrijwilligers)){
 foreach($vrijwilligers as $vrijwilliger){
     foreach($vrijwilligers[$vrijwilliger] as $shift){
     echo "<tr>";
