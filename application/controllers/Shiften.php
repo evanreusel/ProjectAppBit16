@@ -82,7 +82,7 @@ class Shiften extends CI_Controller{
         $vrijwilligerInShift = new stdClass();
 
         $vrijwilligerInShift->persoonId = $persoonId;
-        $vrijwilligerInShift->$shiftId = $shiftId;
+        $vrijwilligerInShift->shiftId = $shiftId;
 
         $this->load->model('VrijwilligersInShift_model');
         $this->VrijwilligersInShift_model->add($vrijwilligerInShift);

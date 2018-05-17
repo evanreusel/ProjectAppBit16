@@ -114,6 +114,7 @@ class Mail extends CI_Controller {
             $persoonInHerinnering->persoonId = $persoon;
             $this->PersoonInHerinnering_model->insert($persoonInHerinnering);
         }
+        redirect("http://projectab16.ddns.net/index.php/admin/dash/mail_overzicht/");
     }
     /**
     * Verwijdert de herinnering, adhv Id
@@ -123,7 +124,7 @@ class Mail extends CI_Controller {
         $id = $this->input->post('id');
         $this->load->model("Mailherinnering_model");
         $this->Mailherinnering_model->delete($id);
-        $this->overzicht();
+        redirect("http://projectab16.ddns.net/index.php/admin/dash/mail_overzicht/");
     }
     /**
         * Laadt het overzichtspagina van alle mailherinneringen, sjablonen en ontvangers.
