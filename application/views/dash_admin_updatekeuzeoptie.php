@@ -101,10 +101,16 @@
             var max = $('#maximum').val();
             var begin =$('#begin').val(); 
             var einde =$('#einde').val();
-            console.log(begin);
-            console.log(einde);
-
-
+            var naam = $('#keuzeoptie').val();
+            
+            console.log(min);
+            console.log(max);
+            
+            if (naam == "") {
+                alert("De keuzeoptie heeft geen naam.");
+                $('#keuzeoptie').addClass('is-invalid');
+                event.preventDefault();
+            }
             if (min > max) {
                 alert("Het minimum aantal deelnemers is groter dan het maximum.");
                 $('#minimum').addClass('is-invalid');
@@ -115,10 +121,6 @@
                 $('#begin').addClass('is-invalid');
                 event.preventDefault();
             }
-            else {
-                
-            };
-
         });
 
     </script>            

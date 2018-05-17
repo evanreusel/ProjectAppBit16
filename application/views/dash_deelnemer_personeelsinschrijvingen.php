@@ -13,7 +13,16 @@ foreach ($ingeschreven as $key) {
     $ingeschrevenActiviteiten->$id=0; 
 }
 
+// Informatie voor de gebruiker
+?>
+
+<div class="shiften card body" style="padding:10px;">
+<p>Onderaan kan u per keuzemogelijkheid aanduiden welke keuzeoptie u wilt kiezen. Onder 'eten' kan u bijvoorbeeld kiezen voor het vlees- vis- of vegetarische menu. Let wel: het is de bedoeling dat u slechts <strong>één keuzeoptie per keuzemogelijkheid</strong> kiest!</p>
+</div>
+<?php
+
 // Keuzemogelijkheden oplijsten (zoals eten, activiteiten,...) met daarin de keuzeopties (vis/vlees, tennis,...)
+
 foreach($keuzemogelijkheden as $keuzemogelijkheid) {
     echo '<div class="shiften card"><div class="card-header bg-primary text-white">'.$keuzemogelijkheid->naam.'</div><div class="card-body"><ul class="list-group">';
 

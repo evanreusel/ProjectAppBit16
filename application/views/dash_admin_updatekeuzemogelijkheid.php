@@ -47,7 +47,7 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     </div>
     <div class="form-group row">
         <label for="deadline" class="">Datum en tijdstip voor deadline:</label>
-        <?php echo form_input(array('id'=>'begin', 'name'=>'deadlineTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de datum in waarop ze ten laatste kunnen inschrijven.'),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
+        <?php echo form_input(array('id'=>'deadline', 'name'=>'deadlineTijdstip', 'readonly'=>TRUE, 'title'=>'Vul hier de datum in waarop ze ten laatste kunnen inschrijven.'),$keuzemogelijkheid->deadlineTijdstip,$datumAttributen); ?>
     </div>
     <?php
         echo form_hidden('jaar', $keuzemogelijkheid->jaargangId);
@@ -58,5 +58,30 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
     ?>
     
     <script type="text/javascript">
-        $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
+        $( document ).ready(function() {
+            $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd'});
+        });
+
+        $("#keuzemogelijkheidForm").submit(function(event) {
+            var dealine = $('#deadline').val();
+            var begin =$('#begin').val(); 
+            var einde =$('#einde').val();
+            var naam =$('#keuzemogelijkheid').val();
+
+            if (naam == "") {
+                alert("De keuzemogelijkheid heeft geen naam.");
+                $('#keuzemogelijkheid').addClass('is-invalid');
+                event.preventDefault();
+            }
+            if (deadline > begin) {
+                alert("De deadlinedatum komt na de begindatum.");
+                $('#deadline').addClass('is-invalid');
+                event.preventDefault();
+            }
+            if (begin>einde) {
+                alert("De begindatum vindt plaats na de einddatum.");
+                $('#begin').addClass('is-invalid');
+                event.preventDefault();
+            }
+        });
     </script>            
