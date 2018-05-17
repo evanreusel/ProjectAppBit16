@@ -73,11 +73,11 @@ DASH ADMIN KEUZEMOGELIJKHEID ADD/UPDATE
                 $('#keuzemogelijkheid').addClass('is-invalid');
                 event.preventDefault();
             }
-            if (deadline > begin) {
-                alert("De deadlinedatum komt na de begindatum.");
-                $('#deadline').addClass('is-invalid');
-                event.preventDefault();
-            }
+            // if (deadline > begin) {
+            //     alert("De deadlinedatum komt na de begindatum.");
+            //     $('#deadline').addClass('is-invalid');
+            //     event.preventDefault();
+            // }
             if (begin>einde) {
                 alert("De begindatum vindt plaats na de einddatum.");
                 $('#begin').addClass('is-invalid');
