@@ -13,6 +13,12 @@ foreach ($ingeschreven as $key) {
     $ingeschrevenActiviteiten->$id=0; 
 }
 
+// Informatie voor de gebruiker
+?>
+<p>Onderaan kan u per keuzemogelijkheid aanduiden welke keuzeoptie u wilt kiezen. Onder 'eten' kan u bijvoorbeeld kiezen voor het vlees- vis- of vegetarische menu. Let wel: het is de bedoeling dat u slechts <strong>één keuzeoptie per keuzemogelijkheid</stong> kiest!</p>
+
+<?php
+
 // Keuzemogelijkheden oplijsten (zoals eten, activiteiten,...) met daarin de keuzeopties (vis/vlees, tennis,...)
 
 foreach($keuzemogelijkheden as $keuzemogelijkheid) {
