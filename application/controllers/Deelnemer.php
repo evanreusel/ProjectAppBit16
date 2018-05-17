@@ -42,7 +42,7 @@ class Deelnemer extends CI_Controller {
 		// Check if dashboard view is requested else default homeview
 		if(is_null($view) )
 		{
-			$view = 'index';
+			$view = 'personeelsinschrijvingen';
 		}
 
 		// Load view
@@ -53,6 +53,7 @@ class Deelnemer extends CI_Controller {
 		$data['primaryColor'] = 'blue';											// Primary color (purple for admin, blue for others??)
 		$data['currentview'] = $view;											// Current view indicator (for navbar indicator??)
 		$data['homelink'] = base_url() . 'index.php/deelnemer/dash/';				// Dash homepage
+		$data['creator'] = "TIM VAN MEERBEECK";
 		$data['links'] = [														// Available links for navbar
 			[
 				'title' => 'Inschrijven',
@@ -76,7 +77,7 @@ class Deelnemer extends CI_Controller {
 		switch($view){
 			// =================================================================================================== 
 			case "personeelsinschrijvingen":
-				$data['creator'] = "";
+				$data['creator'] = "PROOST DAAN";
 				//haal het actief jaar op.													
 				$this->load->model('jaargang_model');
 				$data['actiefJaar']=$this->jaargang_model->getActief();
