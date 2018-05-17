@@ -42,7 +42,7 @@ class Vrijwilliger extends CI_Controller {
 		// Check if dashboard view is requested else default homeview
 		if(is_null($view) )
 		{
-			$view = 'index';
+			$view = 'inschrijvingshiften';
 		}
 
 		// Load view
